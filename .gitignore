@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Jupyter
+*.nbconvert.ipynb
+
+# Data too large or not redistributable (keep small source files tracked)
+data/raw/*.zip
+data/raw/*.gpkg
+data/raw/*.tif
+data/processed/*.parquet
+
+# OS / Drive
+.DS_Store
+Icon?
+*.gdoc
+*.gsheet
