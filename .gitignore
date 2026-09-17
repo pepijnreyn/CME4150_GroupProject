@@ -13,6 +13,9 @@ data/raw/*.zip
 data/raw/*.gpkg
 data/raw/*.tif
 data/processed/*.parquet
+# BRO head series: ~2.5 GB of CSV, regenerable with
+# scripts/fetch_bro_grondwater.py --series. The index stays tracked.
+data/raw/APIDatacollection/series/GLD*.csv
 
 # OS / Drive
 .DS_Store
