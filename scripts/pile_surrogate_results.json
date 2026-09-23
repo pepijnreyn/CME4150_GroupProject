@@ -1,0 +1,63 @@
+{
+  "n": 2000000,
+  "seed": 1,
+  "distribution_convention": "Normal(mean, CoV); Lognormal(arithmetic mean, CoV). Inputs independent.",
+  "central_case": {
+    "diameter_mm": 239.9,
+    "bending_stress_MPa": 3.7061730956346928,
+    "axial_stress_MPa": 0.4424657087511497,
+    "total_stress_MPa": 4.148638804385842,
+    "MOR_MPa": 22.0
+  },
+  "claimed_beta_benchmark": 1.5,
+  "failure_probability_corresponding_to_beta_1_5": 0.06680720126885809,
+  "results": {
+    "time_0_random_q": {
+      "failure_count": 683,
+      "failure_probability": 0.0003415,
+      "beta": 3.3963138359017178,
+      "monte_carlo_95pct_wilson_interval": [
+        0.00031683501431380254,
+        0.0003680843995516826
+      ]
+    },
+    "time_15_random_q": {
+      "failure_count": 1354,
+      "failure_probability": 0.000677,
+      "beta": 3.204281543447638,
+      "monte_carlo_95pct_wilson_interval": [
+        0.000641898408211068,
+        0.000714019716847458
+      ]
+    },
+    "time_15_fixed_q_7": {
+      "failure_count": 1353,
+      "failure_probability": 0.0006765,
+      "beta": 3.204494234830272,
+      "monte_carlo_95pct_wilson_interval": [
+        0.0006414117095133768,
+        0.0007135064174658751
+      ]
+    }
+  },
+  "checkpoints": [
+    {
+      "n": 100000,
+      "failure_probability_time_15": 0.0006
+    },
+    {
+      "n": 1000000,
+      "failure_probability_time_15": 0.000656
+    },
+    {
+      "n": 2000000,
+      "failure_probability_time_15": 0.000677
+    }
+  ],
+  "unphysical_draw_counts": {
+    "nonpositive_diameter": 0,
+    "nonpositive_strength": 0,
+    "negative_q": 0
+  },
+  "caveat": "This checks an interpretation of the manuscript's surrogate and table, not its author's unseen implementation. Evaluating diameter at 15 years does not itself establish a 15-year failure probability."
+}
