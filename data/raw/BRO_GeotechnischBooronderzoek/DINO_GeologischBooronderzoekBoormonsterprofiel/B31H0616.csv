@@ -1,0 +1,18 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H0616","136650","456010","RD2000","31H","Onbekend","Utrecht","Utrecht","3.0","Onbekend","","18.5","04-01-1967","Onbekend","Dijk, van, De Meern","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Onbekend","Onbekend","Onbekend","","D","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","2.0","onbekend","klei","","","","","","","","","","","","","","","",""
+"2.0","6.5","onbekend","zand","","","grove  categorie (O)","","","","","","","","","","","","",""
+"6.5","9.0","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"9.0","11.5","onbekend","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"11.5","11.6","onbekend","zand","","","fijne categorie (O)","kleiig ","","","","","","","","","","","",""
+"11.6","12.0","onbekend","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"12.0","15.0","onbekend","zand","","","grove  categorie (O)","","","","","","","","","","","","",""
+"15.0","18.5","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""

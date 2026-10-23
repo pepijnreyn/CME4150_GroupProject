@@ -1,0 +1,32 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H0454","137070","456240","RD2000","31H","Onbekend","Utrecht, De Drift 23","Utrecht","3.2","Onbekend","","94","09-06-1960","Onbekend","Tjaden en Zn., H.J., Haarlem","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Onbekend","Onbekend","Onbekend","","E","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","1.7","onbekend","zand","","","","","","","","","","","","","","","",""
+"1.7","16.8","onbekend","zand","","","matig grof (O)","","","","","","","","","","","","",""
+"16.8","20.3","onbekend","zand","","","grove  categorie (O)","","","","","","","zwak grindig","","","","","",""
+"20.3","22.8","onbekend","grind","","","","","","","","zandig","","","","","","","",""
+"22.8","28.6","onbekend","zand","","","","","","","","","","","","","","","",""
+"28.6","40.5","grijs","zand","","","matig grof (O)","","","","","","","","","","","","",""
+"40.5","52.5","grijs","zand","","","","","","","","","","","","","","","",""
+"52.5","54.8","onbekend","klei","","","","","","","","zandig","","","","","","","",""
+"54.8","55.1","onbekend","stenen","","","","kleiig ","","","","zandig","","","","","","","",""
+"55.1","64.4","onbekend","klei","","","","","","","","","","","","","","","",""
+"64.4","67.7","grijs","klei","","","","","","","","","","","","","","","",""
+"67.7","69.0","onbekend","klei","","","","","","","","zwak zandig","","","","","","","",""
+"69.0","71.0","onbekend","zand","","","grove  categorie (O)","","","","","","","","","","","","",""
+"71.0","73.3","onbekend","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"73.3","78.0","onbekend","zand","","","grove  categorie (O)","","","","","","","","","","","","",""
+"78.0","80.0","onbekend","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"80.0","82.5","onbekend","zand","","","matig grof (O)","","","","","","","","","","","","",""
+"82.5","84.5","onbekend","zand","","","grove  categorie (O)","","","","","","","","","","","","",""
+"84.5","86.5","onbekend","zand","","","grove  categorie (O)","zwak kleiig","","","","","","","","","","","",""
+"86.5","87.0","onbekend","klei","","","","","","","","","","","","","","","",""
+"87.0","92.0","onbekend","zand","","","grove  categorie (O)","","","","","","","","","","","","",""
+"92.0","94.0","onbekend","zand","","","fijne categorie (O)","","","","","","","","","","","","",""

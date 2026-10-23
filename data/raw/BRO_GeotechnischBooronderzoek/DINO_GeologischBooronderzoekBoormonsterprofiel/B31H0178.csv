@@ -1,0 +1,28 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H0178","137030","455130","RD2000","31H","Onbekend","Utrecht","Utrecht","3.26","Onbekend","","22.06","01-01-1867","Onbekend","Onbekend","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Onbekend","Onbekend","Onbekend","","D","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","0.96","blauw","klei","","","","","","","","","","","","","","","",""
+"0.96","1.86","blauw","klei","","","","","","","","","","","","","","","",""
+"1.86","2.86","blauw","klei","","","","","","","","","","","","","","","",""
+"2.86","3.76","onbekend","zand","","","","kleiig ","","","","","","","","","","","",""
+"3.76","4.76","onbekend","zand","","","","kleiig ","","","","","","","","","","","",""
+"4.76","6.66","geel","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"6.66","8.56","geel","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"8.56","10.56","geel","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"10.56","11.46","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"11.46","12.46","onbekend","zand","","","grove  categorie (O)","","","siltig","","","","","","","","","",""
+"12.46","13.36","onbekend","zand","","","grove  categorie (O)","","","siltig","","","","","","","","","",""
+"13.36","14.36","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"14.36","15.36","onbekend","zand","","","grove  categorie (O)","","","siltig","","","","grindig","","","","","",""
+"15.36","16.26","geel","zand","","","grove  categorie (O)","","","","","","","grindig","","","","kalkarm","",""
+"16.26","19.16","onbekend","zand","","","grove  categorie (O)","","","","","","","zwak grindig","","","","","",""
+"19.16","20.16","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"20.16","21.06","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"21.06","22.06","onbekend","zand","","","grove  categorie (O)","","","","","","","sterk grindig","","","","","",""

@@ -1,0 +1,27 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H0462","136650","455860","RD2000","31H","Onbekend","Utrecht","Utrecht","4.3","Onbekend","","41","01-01-1962","Onbekend","Haitjema, H., Dedemsvaart","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Rijksinstituut voor Drinkwatervoorziening","Onbekend","Onbekend","","B","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","3.0","onbekend","geen monster","","","","","","","","","","","","","","","",""
+"3.0","5.0","licht--grijs-geel-","leem","","","","kleiig ","","","","zandig","","","","","","kalkrijk","",""
+"5.0","6.75","licht--grijs-geel-","leem","","","","kleiig ","","","","zandig","","zwak grindig","","","","kalkrijk","",""
+"6.75","9.0","licht--geel-bruin-","zand","","","matig grof (O)","","","","","","","","","","","kalkarm","",""
+"9.0","9.8","geel-bruin-","zand","","","zeer grof (O)","","","zwak siltig","","","","matig grindig","","","","kalkarm","",""
+"9.8","15.5","licht--geel-bruin-","zand","","","matig grof (O)","","","","","","","zwak grindig","","","","kalkarm","",""
+"15.5","17.0","licht--grijs-geel-","zand","","","zeer grof (O)","","","","","","","","","","","kalkarm","",""
+"17.0","18.75","grijs","zand","","","zeer grof (O)","","","","","","","zwak grindig","","","","kalkarm","",""
+"18.75","21.0","licht--grijs-geel-","zand","","","matig grof (O)","","","","","","","","","","","kalkarm","",""
+"21.0","23.25","licht--grijs-geel-","zand","","","grove  categorie (O)","","","","","","","sterk grindig","","","","kalkarm","",""
+"23.25","24.5","licht--grijs-geel-","zand","","","zeer grof (O)","","","","","","","sterk grindig","","","","kalkarm","",""
+"24.5","25.5","grijs-geel-","zand","","","matig grof (O)","","","zwak siltig","","","","zwak grindig","","","","kalkarm","",""
+"25.5","26.75","onbekend","grind","","","","","","zwak siltig","","","","","","","","kalkarm","",""
+"26.75","28.0","licht--grijs-geel-","zand","","","zeer grof (O)","","","","","","","zwak grindig","","","","kalkarm","",""
+"28.0","31.0","licht--grijs-geel-","zand","","","matig grof (O)","","","","","","","zwak grindig","","matig humeus","","kalkarm","",""
+"31.0","36.5","grijs","zand","","","grove  categorie (O)","","","","","","","sterk grindig","","","","kalkarm","",""
+"36.5","41.0","donker--grijs","zand","","","matig grof (O)","","","zwak siltig","","","","","","","","kalkrijk","",""

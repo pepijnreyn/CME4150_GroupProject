@@ -1,0 +1,727 @@
+Nummer,Naam,Objecttype,Kunstwerktype,Aanlegjaar,Eindjaar,Lengte_m,H_m,t_m,canal_depth_m,ghg_depth_m,glg_depth_m,gw_support,soil_type,soil_boring_m,soil_support,missing,n_missing,notes
+BS050163,Weg Naar Rhijnauwenbeschoeiing 01,Damwand,(blank),1926,2006,110.7,,,0.8,1.45,1.71,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KM050008,Kromme Rijnkademuur 01,Damwand,(blank),1915,1995,29.0,,,2.9,2.02,2.21,weakly supported,soft_clay_peat,217.0,far,H; t,2,
+KM040007,Gruttersdijkbeschoeiing 01www1,Kademuur,Damwand,1904,1984,198.7,,,2.0,1.67,2.08,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KM040011,Gruttersdijkbeschoeiing 02,Kademuur,Damwand,1904,1984,16.9,,,2.0,1.93,2.37,weakly supported,sand,98.0,nearby,H; t,2,
+KM040013,Gruttersdijkbeschoeiing 04www1,Kademuur,Damwand,1923,2003,27.3,,,0.7,1.65,2.05,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS010043,Park Oog In Al-beschoeiing 03,Beschoeiing,Glooiing steen,1936,2016,60.8,,,,1.73,1.91,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+BS010044,Leidsewegbeschoeiing 06,Kademuur,Kademuur,1920,2000,43.6,,,0.4,1.64,1.85,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS010045,Leidsewegbeschoeiing 06,Kademuur,Kademuur,1920,2000,18.5,,,0.4,1.63,1.84,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS020009,Vechtbeschoeiing 22B,Kademuur,Kademuur,1904,1984,7.5,,,0.4,1.94,2.19,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS020010,Vechtbeschoeiing 22A,Kademuur,Kademuur,1850,1930,14.0,,,0.7,1.54,1.93,no support,,,no boring within 250 m,H; t; groundwater; soil type,4,groundwater: no well within 400 m
+BS020028,Vechtbeschoeiing 21B,Kademuur,Kademuur,1935,2015,6.0,1.0,,1.65,1.27,1.73,interpolated,,,no boring within 250 m,t; soil type,2,
+BS030151,Vechtbeschoeiing 04A,Kademuur,Kademuur,1932,2012,8.0,,,0.5,1.33,1.79,interpolated,,,no boring within 250 m,H; t; soil type,3,
+BS030152,Vechtbeschoeiing 04B,Kademuur,Kademuur,1930,2010,21.3,,,0.5,1.38,1.84,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS040100,Vechtbeschoeiing 16,Kademuur,Kademuur,1904,1984,82.2,,,3.2,1.74,2.21,interpolated,,,no boring within 250 m,H; t; soil type,3,
+BS040101,Vechtbeschoeiing 16www1,Kademuur,Kademuur,1904,1984,18.8,,,3.2,1.76,2.23,interpolated,sand,246.0,far,H; t,2,
+BS040157,Stadsbuitengrachtbeschoeiing 05,Kademuur,Kademuur,1884,1964,71.3,,,1.2,1.63,2.05,interpolated,sand,155.0,far,H; t,2,
+BS050177,Wilhelminaparkbeschoeiing 01,Kademuur,Kademuur,1903,1983,376.7,,,0.5,1.32,1.67,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS050178,Wilhelminaparkbeschoeiing 01www1,Kademuur,Kademuur,1913,1993,426.8,,,0.5,1.33,1.69,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS050179,Wilhelminaparkbeschoeiing 01www2,Kademuur,Kademuur,1913,1993,69.4,,,0.5,1.33,1.68,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+BS050180,Wilhelminaparkbeschoeiing 01www3,Kademuur,Kademuur,1903,1983,63.1,,,0.5,1.28,1.62,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KM020002,Zeedijkkademuur 01www1,Kademuur,Kademuur,1920,2000,35.2,,,2.7,1.77,2.25,interpolated,sand,227.0,far,H; t,2,
+KM020006,Weerdsingel W.Z. kademuur 01,Kademuur,Kademuur,1860,1940,25.4,,,,1.75,2.22,interpolated,sand,155.0,far,H; t; canal level,3,
+KM040005,Wittevrouwensingelbeschoeiing 01,Kademuur,Kademuur,1920,2000,222.9,,,1.1,1.66,2.08,interpolated,,,no boring within 250 m,H; t; soil type,3,
+KM040014,Weerdsingel O.Z. kademuur 01,Kademuur,Kademuur,1900,1980,108.8,,,3.0,1.73,2.22,weakly supported,soft_clay_peat,138.0,nearby,H; t,2,
+KM050001,Tolsteegsingelkademuur 01,Kademuur,Kademuur,1875,1955,28.9,,,0.5,2.08,2.27,weakly supported,soft_clay_peat,175.0,far,H; t,2,
+KM050009,Tolsteegsingelkademuur 01WWW1,Kademuur,Kademuur,1875,1955,30.6,,,3.6,2.08,2.28,weakly supported,soft_clay_peat,174.0,far,H; t,2,
+KM060030,Van Asch van Wijckskadedademuur 01www1,Kademuur,Kademuur,1450,1530,16.1,,,3.2,1.93,2.42,weakly supported,soft_clay_peat,84.0,nearby,H; t; foundation age,3,Aanlegjaar 1450 is the original wall
+KM070006,Heuveloordkademuur 04,Kademuur,Kademuur,1920,2000,14.0,,,0.75,1.38,1.71,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KMM04003,F.C. Donderstraatkademuur 02,Kademuur,Kademuur,1895,1975,45.8,,,0.9,1.18,1.51,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KW010005,Robert Schumannstraatkeerwand 01www3,Muur,Keerwand,1923,2003,14.9,,,,1.78,1.98,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW010007,Robert Schumannstraatkeerwand 01www6,Muur,Keerwand,1936,2016,6.5,,,,1.83,2.03,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW010016,Robert Schumannstraatkeerwand 01www8,Muur,Keerwand,1935,2015,33.1,,,,1.8,2.01,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW010017,Robert Schumannstraatkeerwand 01www7,Muur,Keerwand,1935,2015,12.2,,,,1.82,2.02,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW010018,Robert Schumannstraatkeerwand 01www5,Muur,Keerwand,1933,2013,118.6,,,,1.85,2.05,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW010019,Robert Schumannstraatkeerwand 01www4,Muur,Keerwand,1938,2018,5.8,,,,1.83,2.03,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW010020,H.J. Schimmelpleinkeerwand 01,Muur,Keerwand,1928,2008,8.4,,0.21,,1.88,2.17,interpolated,,,no boring within 250 m,H; canal level; soil type,3,
+KW040006,Zwartewaterkeerwand 01,Muur,Keerwand,1904,1984,33.8,,,,1.62,2.01,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040007,Zwartewaterkeerwand 01www1,Muur,Keerwand,1904,1984,32.1,,,,1.62,2.02,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040011,Biltstraatkeerwand 170,Muur,Keerwand,1821,1901,24.0,,,,1.26,1.7,weakly supported,,,no boring within 250 m,H; t; canal level; soil type; foundation age,5,Aanlegjaar 1821 is the original wall
+KW040013,Griftparkkeerwand 04,Muur,Keerwand,1929,2009,20.0,,,,1.57,2.02,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040014,Griftparkkeerwand 04www1,Muur,Keerwand,1929,2009,20.0,,,,1.61,2.01,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040015,Hooghiemstrapleinkeerwand 01,Muur,Keerwand,1912,1992,36.0,,,,1.68,2.11,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040017,Copijnlaankeerwand 01,Muur,Keerwand,1931,2011,145.0,,,,1.09,1.43,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040018,Copijnlaankeerwand 01www1,Muur,Keerwand,1931,2011,24.2,,,,1.16,1.47,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040019,Copijnlaankeerwand 01www2,Muur,Keerwand,1931,2011,24.1,,,,1.1,1.44,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW040024,Raiffeisenlaankeerwand 01,Muur,Keerwand,1931,2011,14.8,,,,1.14,1.46,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+KW050002,Albatrosstraatkeerwand 01,Muur,Keerwand,1913,1993,27.8,,0.32,,1.51,1.81,weakly supported,,,no boring within 250 m,H; canal level; soil type,3,
+KW050003,Albatrosstraatkeerwand 01www1,Muur,Keerwand,1913,1993,13.0,,0.32,,1.51,1.81,weakly supported,,,no boring within 250 m,H; canal level; soil type,3,
+KW050004,Albatrosstraatkeerwand 01www2,Muur,Keerwand,1913,1993,13.7,,0.32,,1.51,1.81,weakly supported,,,no boring within 250 m,H; canal level; soil type,3,
+KW050005,Albatrosstraatkeerwand 01www3,Muur,Keerwand,1913,1993,12.1,,0.32,,1.51,1.81,weakly supported,,,no boring within 250 m,H; canal level; soil type,3,
+KW050006,Albatrosstraatkeerwand 01www4,Muur,Keerwand,1913,1993,22.9,,0.32,,1.51,1.81,weakly supported,,,no boring within 250 m,H; canal level; soil type,3,
+KW050012,Wulpstraatkeerwand 02,Muur,Keerwand,1938,2018,52.0,,,0.5,1.79,2.04,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KW050013,Wulpstraatkeerwand 02www1,Muur,Keerwand,1938,2018,26.5,,,0.4,1.78,2.03,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KW050014,Wulpstraatkeerwand 02www2,Muur,Keerwand,1938,2018,4.6,,,0.4,1.79,2.03,weakly supported,,,no boring within 250 m,H; t; soil type,3,
+KW060007,Maria Majorpleinkeerwand 01,Muur,Keerwand,1653,1733,21.3,,,,2.92,3.24,interpolated,soft_clay_peat,39.0,close,H; t; canal level; foundation age,4,Aanlegjaar 1653 is the original wall
+KW060013,Ganzenmarktkeerwand,Muur,Keerwand,1250,1330,30.0,,,,2.94,3.44,interpolated,mixed,18.0,close,H; t; canal level; foundation age,4,Aanlegjaar 1250 is the original wall
+KWM01012-01,H.J. Schimmelpleinkeerwand 01WWW1,Muur,Keerwand,1928,2008,8.4,,,,1.88,2.17,interpolated,,,no boring within 250 m,H; t; canal level; soil type,4,
+KWMZ02001-03,Spoorlijn Amersfoort - Utrecht keerwand 01www3,Muur,Keerwand,1922,2002,27.0,,,,1.62,1.93,interpolated,,,no boring within 250 m,H; t; canal level; soil type,4,
+WF060216,Drift 03 - RAK 23 oneven,Muur,Kluismuur,1900,1980,11.3,3.36,0.34,,2.89,3.39,interpolated,soft_clay_peat,16.0,close,canal level,1,
+WF060217,Drift 05a - RAK 23 oneven,Muur,Kluismuur,1900,1980,10.6,3.21,0.35,,2.86,3.32,interpolated,soft_clay_peat,7.0,close,canal level,1,
+WF060218,Drift 05b - RAK 23 oneven,Muur,Kluismuur,1913,1993,6.5,3.15,0.41,,2.84,3.29,interpolated,soft_clay_peat,4.0,close,canal level,1,
+WF060219,Drift 09a - RAK 24 oneven,Muur,Kluismuur,1904,1984,2.6,2.95,0.34,,2.79,3.28,interpolated,soft_clay_peat,30.0,close,canal level,1,
+WF060220,Drift 09b - RAK 24 oneven,Muur,Kluismuur,1904,1984,7.3,2.95,0.33,,2.78,3.26,weakly supported,soft_clay_peat,35.0,close,canal level,1,
+WF060221,Drift 11 - RAK 24 oneven,Muur,Kluismuur,1900,1980,14.5,2.96,0.32,,2.74,3.23,weakly supported,soft_clay_peat,46.0,close,canal level,1,
+WF060222,Drift 13a - RAK 24 oneven,Muur,Kluismuur,1900,1980,5.2,2.88,0.34,,2.71,3.19,weakly supported,soft_clay_peat,56.0,nearby,canal level,1,
+WF060223,Drift 13b - RAK 24 oneven,Muur,Kluismuur,1900,1980,8.3,2.88,0.34,,2.69,3.17,weakly supported,soft_clay_peat,63.0,nearby,canal level,1,
+WF060224,Drift 15 - RAK 24 oneven,Muur,Kluismuur,1900,1980,4.0,2.92,0.41,,2.67,3.15,weakly supported,soft_clay_peat,68.0,nearby,canal level,1,
+WF060225,Drift 17b - RAK 25 oneven,Muur,Kluismuur,1450,1530,9.0,3.03,0.4,,2.6,3.07,weakly supported,soft_clay_peat,91.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060226,Drift 19b - RAK 25 oneven,Muur,Kluismuur,1450,1530,7.2,3.04,0.4,,2.54,3.02,weakly supported,soft_clay_peat,109.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060227,Drift 21b - RAK 25 oneven,Muur,Kluismuur,1917,1997,10.0,3.14,0.39,,2.49,2.96,weakly supported,soft_clay_peat,127.0,nearby,canal level; foundation age,2,Aanlegjaar 1917 possibly a default
+WF060228,Drift 25c - RAK 25 oneven,Muur,Kluismuur,1450,1530,2.7,3.18,0.42,,2.36,2.83,weakly supported,soft_clay_peat,145.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060229,Drift 29a - RAK 25 oneven,Muur,Kluismuur,1650,1730,7.2,3.12,0.4,,2.28,2.74,weakly supported,soft_clay_peat,112.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060230,Drift 29b - RAK 25 oneven,Muur,Kluismuur,1450,1530,3.7,3.1,0.4,,2.26,2.72,weakly supported,soft_clay_peat,106.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060239,Kromme nieuwe gracht 24 - RAK 21 even,Muur,Kluismuur,1450,1530,8.4,2.98,0.43,,2.78,3.24,interpolated,soft_clay_peat,65.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060240,Kromme nieuwe gracht 26 - RAK 21 even,Muur,Kluismuur,1700,1780,8.7,2.98,0.4,,2.75,3.2,interpolated,soft_clay_peat,62.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060241,Kromme nieuwe gracht 28 - RAK 21 even,Muur,Kluismuur,1700,1710,11.1,3.55,0.4,,2.7,3.15,interpolated,soft_clay_peat,60.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060242,Kromme nieuwe gracht 30 - RAK 21 even,Muur,Kluismuur,1909,1989,6.6,3.02,0.3,,2.66,3.09,interpolated,soft_clay_peat,59.0,nearby,canal level,1,
+WF060243,Kromme nieuwe gracht 32 - RAK 21 even,Muur,Kluismuur,1909,1989,4.6,3.01,0.3,,2.63,3.06,interpolated,soft_clay_peat,58.0,nearby,canal level,1,
+WF060244,Kromme nieuwe gracht 34 - RAK 21 even,Muur,Kluismuur,1450,1530,3.8,3.02,0.3,,2.62,3.05,interpolated,soft_clay_peat,58.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060245,Kromme nieuwe gracht 36 - RAK 21 even,Muur,Kluismuur,1900,1980,9.8,2.98,0.3,,2.6,3.02,interpolated,soft_clay_peat,57.0,nearby,canal level,1,
+WF060246,Kromme nieuwe gracht 38a - RAK 21 even,Muur,Kluismuur,1900,1980,5.2,2.97,0.3,,2.58,3.0,interpolated,soft_clay_peat,57.0,nearby,canal level,1,
+WF060247,Kromme nieuwe gracht 38b - RAK 21 even,Muur,Kluismuur,1900,1980,4.1,2.97,0.31,,2.56,2.98,interpolated,soft_clay_peat,57.0,nearby,canal level,1,
+WF060248,Kromme nieuwe gracht 4 - RAK 22 even,Muur,Kluismuur,1697,1777,5.1,3.34,0.39,,2.97,3.45,interpolated,soft_clay_peat,52.0,nearby,canal level; foundation age,2,Aanlegjaar 1697 is the original wall
+WF060249,Kromme nieuwe gracht 40 - RAK 21 even,Muur,Kluismuur,1900,1980,5.1,2.99,0.33,,2.55,2.97,interpolated,soft_clay_peat,57.0,nearby,canal level,1,
+WF060250,Kromme nieuwe gracht 44 - RAK 21 even,Muur,Kluismuur,1450,1530,4.6,2.97,0.34,,2.54,2.95,interpolated,soft_clay_peat,57.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060251,Kromme nieuwe gracht 46 - RAK 21 even,Muur,Kluismuur,1450,1530,14.4,2.98,0.34,,2.52,2.92,interpolated,soft_clay_peat,58.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060252,Kromme nieuwe gracht 48 - RAK 21 even,Muur,Kluismuur,1900,1980,16.0,3.07,0.28,,2.49,2.89,weakly supported,soft_clay_peat,62.0,nearby,canal level,1,
+WF060253,Kromme nieuwe gracht 50a - RAK 21 even,Muur,Kluismuur,1935,2015,2.6,3.1,0.28,,2.46,2.86,interpolated,soft_clay_peat,67.0,nearby,canal level,1,
+WF060254,Kromme nieuwe gracht 50b - RAK 21 even,Muur,Kluismuur,1935,2015,4.9,2.97,0.31,,2.46,2.86,interpolated,soft_clay_peat,69.0,nearby,canal level,1,
+WF060255,Kromme nieuwe gracht 52a - RAK 21 even,Muur,Kluismuur,1913,1993,11.7,3.12,0.34,,2.44,2.84,interpolated,soft_clay_peat,74.0,nearby,canal level,1,
+WF060256,Kromme nieuwe gracht 52b - RAK 21 even,Muur,Kluismuur,1450,1530,3.9,3.13,0.34,,2.43,2.82,interpolated,soft_clay_peat,78.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060257,Kromme nieuwe gracht 56a - RAK 21 even,Muur,Kluismuur,1920,2000,3.1,3.16,0.34,,2.4,2.79,interpolated,soft_clay_peat,86.0,nearby,canal level,1,
+WF060258,Kromme nieuwe gracht 56b - RAK 21 even,Muur,Kluismuur,1920,2000,13.4,3.13,0.34,,2.39,2.78,interpolated,soft_clay_peat,87.0,nearby,canal level,1,
+WF060262,Kromme nieuwe gracht 6 - RAK 22 even,Muur,Kluismuur,1697,1777,11.8,3.22,0.37,,2.96,3.47,interpolated,soft_clay_peat,57.0,nearby,canal level; foundation age,2,Aanlegjaar 1697 is the original wall
+WF060274,Kromme nieuwe gracht 8a - RAK 22 even,Muur,Kluismuur,1450,1530,5.4,3.11,0.34,,2.96,3.44,interpolated,soft_clay_peat,67.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060390,Oude Gracht (Stadhuisbrug 2) - RAK 6 even,Muur,Kluismuur,1900,1980,11.2,4.58,0.46,,2.97,3.47,interpolated,mixed,36.0,close,canal level,1,
+WF060404,Oude Gracht (Vismarkt 01b) - RAK 7 even,Muur,Kluismuur,1920,2000,3.7,3.91,0.32,,3.1,3.61,interpolated,mixed,82.0,nearby,canal level,1,
+WF060405,Oude Gracht (Vismarkt 02) - RAK 7 even,Muur,Kluismuur,1900,1980,4.0,3.55,0.32,,3.1,3.61,interpolated,mixed,84.0,nearby,canal level,1,
+WF060406,Oude Gracht (Vismarkt 03) - RAK 7 even,Muur,Kluismuur,1900,1980,6.2,3.4,0.32,,3.11,3.62,interpolated,mixed,82.0,nearby,canal level,1,
+WF060407,Oude Gracht (Vismarkt 04-05) - RAK 7 even,Muur,Kluismuur,1900,1980,7.3,3.31,0.32,,3.11,3.62,interpolated,mixed,79.0,nearby,canal level,1,
+WF060408,Oude Gracht (Vismarkt 06) - RAK 7 even,Muur,Kluismuur,1450,1530,6.2,3.37,0.32,,3.12,3.63,interpolated,mixed,76.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060409,Oude Gracht (Vismarkt 08) - RAK 7 even,Muur,Kluismuur,1900,1980,3.5,3.44,0.32,,3.12,3.63,interpolated,mixed,75.0,nearby,canal level,1,
+WF060410,OG Vismarkt 9 - RAK 7 even,Muur,Kluismuur,1917,1997,5.2,,0.32,,3.13,3.64,interpolated,mixed,73.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1917 possibly a default
+WF060420,Oude gracht (Zoutmarkt 12) - RAK 8 oneven,Muur,Kluismuur,1900,1980,7.8,3.73,0.33,,3.12,3.62,interpolated,mixed,51.0,nearby,canal level,1,
+WF060421,Oude gracht (Zoutmarkt 14) - RAK 8 oneven,Muur,Kluismuur,1900,1980,5.5,3.83,0.16,,3.12,3.62,interpolated,mixed,51.0,nearby,canal level,1,
+WF060422,Oude gracht (Zoutmarkt 2) - RAK 8 oneven,Muur,Kluismuur,1900,1980,4.2,4.04,0.33,,3.11,3.61,interpolated,mixed,62.0,nearby,canal level,1,
+WF060423,Oude gracht (Zoutmarkt 4) - RAK 8 oneven,Muur,Kluismuur,1600,1680,11.2,3.92,0.33,,3.11,3.62,interpolated,mixed,57.0,nearby,canal level; foundation age,2,Aanlegjaar 1600 is the original wall
+WF060424,Oude gracht (Zoutmarkt 6) - RAK 8 oneven,Muur,Kluismuur,1917,1997,5.6,3.76,0.33,,3.12,3.62,interpolated,mixed,54.0,nearby,canal level; foundation age,2,Aanlegjaar 1917 possibly a default
+WF060425,Oude gracht (Zoutmarkt 8) - RAK 8 oneven,Muur,Kluismuur,1917,1997,4.5,3.72,0.33,,3.12,3.62,interpolated,mixed,53.0,nearby,canal level; foundation age,2,Aanlegjaar 1917 possibly a default
+WF060688,Plompetorengracht 10 - RAK 26 even,Muur,Kluismuur,1883,1963,8.7,2.64,0.47,,2.08,2.53,weakly supported,soft_clay_peat,32.0,close,canal level,1,
+WF060689,Plompetorengracht 11 - RAK 26 oneven,Muur,Kluismuur,1900,1980,10.4,2.59,0.46,,2.03,2.43,weakly supported,soft_clay_peat,27.0,close,canal level,1,
+WF060690,Plompetorengracht 12 - RAK 26 even,Muur,Kluismuur,1920,2000,8.9,2.65,0.46,,2.06,2.52,weakly supported,soft_clay_peat,30.0,close,canal level,1,
+WF060691,Plompetorengracht 13a - RAK 26 oneven,Muur,Kluismuur,1900,1980,3.2,2.64,0.46,,1.69,2.15,weakly supported,soft_clay_peat,31.0,close,canal level,1,
+WF060692,Plompetorengracht 13b - RAK 26 oneven,Muur,Kluismuur,1900,1980,3.7,2.59,0.46,,1.69,2.15,weakly supported,soft_clay_peat,33.0,close,canal level,1,
+WF060693,Plompetorengracht 14 - RAK 26 even,Muur,Kluismuur,1920,2000,10.2,2.56,0.46,,2.04,2.5,weakly supported,soft_clay_peat,30.0,close,canal level,1,
+WF060694,Plompetorengracht 16 - RAK 26 even,Muur,Kluismuur,1920,2000,4.4,2.54,0.46,,1.69,2.15,weakly supported,soft_clay_peat,32.0,close,canal level,1,
+WF060695,Plompetorengracht 17 - RAK 26 oneven,Muur,Kluismuur,1450,1530,7.9,2.79,0.46,,1.69,2.14,weakly supported,soft_clay_peat,68.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060696,Plompetorengracht 18a - RAK 26 even,Muur,Kluismuur,1900,1980,6.3,2.48,0.46,,1.69,2.15,weakly supported,soft_clay_peat,34.0,close,canal level,1,
+WF060697,Plompetorengracht 19a - RAK 26 oneven,Muur,Kluismuur,1450,1530,9.9,2.79,0.47,,1.94,2.35,weakly supported,soft_clay_peat,76.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060698,Plompetorengracht 19b - RAK 26 oneven,Muur,Kluismuur,1900,1980,4.8,2.89,0.46,,1.69,2.14,weakly supported,soft_clay_peat,83.0,nearby,canal level,1,
+WF060699,Plompetorengracht 1a - RAK 26 oneven,Muur,Kluismuur,1780,1860,5.6,3.21,0.46,,2.18,2.65,weakly supported,soft_clay_peat,71.0,nearby,canal level; foundation age,2,Aanlegjaar 1780 is the original wall
+WF060700,Plompetorengracht 1b - RAK 26 oneven,Muur,Kluismuur,1780,1860,3.5,3.18,0.46,,2.17,2.64,weakly supported,soft_clay_peat,67.0,nearby,canal level; foundation age,2,Aanlegjaar 1780 is the original wall
+WF060701,Plompetorengracht 1c - RAK 26 oneven,Muur,Kluismuur,1780,1860,5.5,3.1,0.46,,2.16,2.62,weakly supported,soft_clay_peat,62.0,nearby,canal level; foundation age,2,Aanlegjaar 1780 is the original wall
+WF060702,Plompetorengracht 21 - RAK 26 oneven,Muur,Kluismuur,1900,1980,5.8,2.86,0.41,,1.92,2.33,weakly supported,soft_clay_peat,89.0,nearby,canal level,1,
+WF060703,Plompetorengracht 22 - RAK 26 even,Muur,Kluismuur,1837,1917,9.3,2.3,0.46,,1.95,2.35,weakly supported,soft_clay_peat,77.0,nearby,canal level; foundation age,2,Aanlegjaar 1837 is the original wall
+WF060704,Plompetorengracht 23 - RAK 26 oneven,Muur,Kluismuur,1900,1980,5.5,2.83,0.4,,1.92,2.33,weakly supported,soft_clay_peat,94.0,nearby,canal level,1,
+WF060705,Plompetorengracht 24a - RAK 26 even,Muur,Kluismuur,1837,1917,7.3,2.41,0.46,,1.94,2.34,weakly supported,soft_clay_peat,85.0,nearby,canal level; foundation age,2,Aanlegjaar 1837 is the original wall
+WF060706,Plompetorengracht 24b - RAK 26 even,Muur,Kluismuur,1830,1910,3.9,2.53,0.46,,1.93,2.34,weakly supported,soft_clay_peat,89.0,nearby,canal level; foundation age,2,Aanlegjaar 1830 is the original wall
+WF060707,Plompetorengracht 25 - RAK 26 oneven,Muur,Kluismuur,1920,2000,11.4,2.76,0.46,,1.69,2.14,weakly supported,soft_clay_peat,104.0,nearby,canal level,1,
+WF060708,Plompetorengracht 27 - RAK 26 oneven,Muur,Kluismuur,1840,1920,6.3,2.7,0.43,,1.69,2.14,weakly supported,soft_clay_peat,110.0,nearby,canal level; foundation age,2,Aanlegjaar 1840 is the original wall
+WF060709,Plompetorengracht 3a - RAK 26 oneven,Muur,Kluismuur,1900,1980,10.7,3.12,0.46,,2.14,2.61,weakly supported,soft_clay_peat,55.0,nearby,canal level,1,
+WF060710,Plompetorengracht 3b - RAK 26 oneven,Muur,Kluismuur,1900,1980,8.8,3.02,0.47,,2.12,2.59,weakly supported,soft_clay_peat,47.0,close,canal level,1,
+WF060711,Plompetorengracht 3c - RAK 26 oneven,Muur,Kluismuur,1900,1980,3.1,2.92,0.46,,2.11,2.57,weakly supported,soft_clay_peat,42.0,close,canal level,1,
+WF060712,Plompetorengracht 4 - RAK 26 even,Muur,Kluismuur,1800,1880,8.5,3.16,0.48,,2.15,2.61,weakly supported,soft_clay_peat,57.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060713,Plompetorengracht 5 - RAK 26 oneven,Muur,Kluismuur,1900,1980,15.4,2.72,0.46,,2.09,2.55,weakly supported,soft_clay_peat,34.0,close,canal level,1,
+WF060714,Plompetorengracht 6 - RAK 26 even,Muur,Kluismuur,1800,1880,7.8,3.1,0.46,,2.13,2.59,weakly supported,soft_clay_peat,50.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060715,Plompetorengracht 7 - RAK 26 oneven,Muur,Kluismuur,1900,1980,7.5,2.74,0.46,,2.07,2.53,weakly supported,soft_clay_peat,26.0,close,canal level,1,
+WF060716,Plompetorengracht 9a - RAK 26 oneven,Muur,Kluismuur,1450,1530,4.7,2.67,0.46,,2.06,2.52,weakly supported,soft_clay_peat,23.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060717,Plompetorengracht 9b - RAK 26 oneven,Muur,Kluismuur,1900,1980,16.4,2.57,0.46,,2.04,2.49,weakly supported,soft_clay_peat,22.0,close,canal level,1,
+OOM02001,Larixstraatmuur 01,Muur,Muur,1930,2010,75.0,,,,1.44,1.9,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,
+POM05001,Gansstraatpoort 01,Muur,Muur,1920,2000,4.4,,5.0,,1.83,2.05,weakly supported,,,no boring within 250 m,H; t; canal level; soil type,4,Breedte 5 m is no wall thickness
+KM060010,Oude Gracht - Rak 11 WZ,Kademuur,Walmuur,1650,1730,119.5,,,,2.83,3.22,weakly supported,soft_clay_peat,97.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1650 is the original wall
+KM060018,Kromme Nieuwe Gracht 001,Kademuur,Walmuur,1917,1997,8.7,,,,2.96,3.43,interpolated,soft_clay_peat,75.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060020,Kromme Nieuwe Gracht 002,Kademuur,Walmuur,1917,1997,16.2,,,,2.95,3.42,interpolated,soft_clay_peat,90.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060021,Kromme Nieuwe Gracht 003,Kademuur,Walmuur,1917,1997,10.0,,,,2.93,3.4,interpolated,mixed,101.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060022,Kromme Nieuwe Gracht 004 (thv nr 018),Kademuur,Walmuur,1917,1997,11.1,,,,2.89,3.37,interpolated,mixed,89.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060024,Kromme Nieuwe Gracht 006,Kademuur,Walmuur,1917,1997,4.1,,,,2.79,3.25,interpolated,soft_clay_peat,75.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060025,Kromme Nieuwe Gracht 007,Kademuur,Walmuur,1917,1997,10.3,,,,2.82,3.29,interpolated,soft_clay_peat,78.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060026,Kromme Nieuwe Gracht 008,Kademuur,Walmuur,1917,1997,42.1,,,,2.91,3.39,interpolated,soft_clay_peat,94.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060027,Kromme Nieuwe Gracht 009,Kademuur,Walmuur,1917,1997,18.3,,,,2.99,3.48,interpolated,sand,73.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060034,Nieuwe Gracht - Rak 16 NOZ,Kademuur,Walmuur,1900,1980,45.6,,2.0,,2.19,2.55,weakly supported,soft_clay_peat,106.0,nearby,H; t; canal level,3,Breedte 2 m is no wall thickness
+KM060035,Nieuwe Gracht - Rak 16 WZ,Kademuur,Walmuur,1904,1984,233.0,,3.0,,2.25,2.55,weakly supported,mixed,38.0,close,H; t; canal level,3,Breedte 3 m is no wall thickness
+KM060036,Nieuwe Gracht - Rak 16 ZOZ,Kademuur,Walmuur,1900,1980,44.7,,2.0,,2.2,2.54,weakly supported,soft_clay_peat,90.0,nearby,H; t; canal level,3,Breedte 2 m is no wall thickness
+KM060039,Nieuwe Gracht - Rak 18 OZ,Kademuur,Walmuur,1450,1530,87.7,,3.0,,2.44,2.84,weakly supported,soft_clay_peat,128.0,nearby,H; t; canal level; foundation age,4,Breedte 3 m is no wall thickness; Aanlegjaar 1450 is the original wall
+KM060040,Nieuwe Gracht - Rak 18 WZ,Kademuur,Walmuur,1450,1530,87.8,,3.0,,2.46,2.85,weakly supported,sand,124.0,nearby,H; t; canal level; foundation age,4,Breedte 3 m is no wall thickness; Aanlegjaar 1450 is the original wall
+KM060042,Nieuwe Gracht - Rak 19 WZ,Kademuur,Walmuur,1900,1980,94.0,,3.0,,2.66,3.07,weakly supported,mixed,121.0,nearby,H; t; canal level,3,Breedte 3 m is no wall thickness
+KM060044,Nieuwe Gracht - Rak 20 WZ,Kademuur,Walmuur,1650,1730,116.9,,3.0,,2.94,3.41,interpolated,sand,32.0,close,H; t; canal level; foundation age,4,Breedte 3 m is no wall thickness; Aanlegjaar 1650 is the original wall
+KM060049,Oude Gracht - Rak 01 WZ,Kademuur,Walmuur,1917,1997,139.2,,,,1.96,2.48,weakly supported,mixed,40.0,close,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060050,Oude Gracht - Rak 02 OZ,Kademuur,Walmuur,1880,1960,147.7,,0.41,,2.11,2.64,weakly supported,soft_clay_peat,140.0,nearby,H; canal level,2,
+KM060051,Oude Gracht - Rak 02 WZ,Kademuur,Walmuur,1913,1993,151.4,,,,2.07,2.61,interpolated,soft_clay_peat,144.0,nearby,H; t; canal level,3,
+KM060052,Oude Gracht - Rak 03 OZ,Kademuur,Walmuur,1905,1985,101.1,,,,2.33,2.86,weakly supported,soft_clay_peat,39.0,close,H; t; canal level,3,
+KM060054,Oude Gracht - Rak 04 OZ,Kademuur,Walmuur,1917,1997,67.4,,,,2.52,3.03,weakly supported,sand,70.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060057,Oude Gracht - Rak 05 NZ,Kademuur,Walmuur,1900,1980,72.1,,,,2.78,3.28,weakly supported,sand,49.0,close,H; t; canal level,3,
+KM060059,Oude Gracht - Rak 06 NZ,Kademuur,Walmuur,1900,1980,43.7,,,,2.91,3.4,weakly supported,sand,36.0,close,H; t; canal level,3,
+KM060060,Oude Gracht - Rak 06 ZZ,Kademuur,Walmuur,1870,1950,57.1,,,,2.94,3.43,interpolated,sand,55.0,nearby,H; t; canal level,3,
+KM060061,Oude Gracht - Rak 07 OZ,Kademuur,Walmuur,1917,1997,11.3,,,,3.13,3.64,interpolated,mixed,69.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060062,Oude Gracht - Rak 08 OZ,Kademuur,Walmuur,1917,1997,32.7,,,,3.13,3.64,interpolated,mixed,64.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060064,Oude Gracht - Rak 09 WZ,Kademuur,Walmuur,1917,1997,53.4,,,,3.08,3.56,interpolated,soft_clay_peat,58.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+KM060065,Oude Gracht - Rak 09 ZOZ,Kademuur,Walmuur,1800,1880,54.5,,,,3.05,3.53,interpolated,soft_clay_peat,36.0,close,H; t; canal level; foundation age,4,Aanlegjaar 1800 is the original wall
+KM060067,Oude Gracht - Rak 09 WZ 01,Kademuur,Walmuur,1917,1997,3.4,,,,3.05,3.53,interpolated,soft_clay_peat,34.0,close,H; t; canal level; foundation age,4,Aanlegjaar 1917 possibly a default
+WF060108,Oude gracht 10 - RAK 1 even,Muur,Werfmuur,1900,1980,5.2,,0.36,,1.95,2.45,weakly supported,soft_clay_peat,54.0,nearby,H; canal level,2,
+WF060109,Oude gracht 12-14 - RAK 1 even,Muur,Werfmuur,1900,1980,7.9,,0.36,,1.95,2.46,weakly supported,soft_clay_peat,52.0,nearby,H; canal level,2,
+WF060110,Oude gracht 16 - RAK 1 even,Muur,Werfmuur,1450,1530,4.0,,0.36,,1.96,2.47,weakly supported,soft_clay_peat,51.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060111,Oude gracht 18 - RAK 1 even,Muur,Werfmuur,1625,1705,3.7,,0.36,,1.96,2.47,weakly supported,soft_clay_peat,52.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1625 is the original wall
+WF060112,Oude gracht 20a - RAK 1 even,Muur,Werfmuur,1625,1705,9.0,,0.36,,1.96,2.47,weakly supported,soft_clay_peat,53.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1625 is the original wall
+WF060113,Oude gracht 20b - RAK 1 even,Muur,Werfmuur,1450,1530,1.7,,0.36,,1.97,2.48,weakly supported,soft_clay_peat,54.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060114,Oude gracht 22 - RAK 1 even,Muur,Werfmuur,1450,1530,7.0,,0.36,,1.97,2.48,weakly supported,soft_clay_peat,54.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060115,Oude gracht 24 - RAK 1 even,Muur,Werfmuur,1450,1530,3.4,,0.36,,1.97,2.49,weakly supported,soft_clay_peat,56.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060116,Oude gracht 26 - RAK 1 even,Muur,Werfmuur,1900,1980,3.0,,0.36,,1.97,2.49,weakly supported,soft_clay_peat,57.0,nearby,H; canal level,2,
+WF060117,Oude gracht 28 - RAK 1 even,Muur,Werfmuur,1900,1980,7.4,,0.41,,1.98,2.49,weakly supported,soft_clay_peat,59.0,nearby,H; canal level,2,
+WF060118,Oude gracht 2b - RAK 1 even,Muur,Werfmuur,1450,1530,2.9,,0.36,,1.94,2.44,weakly supported,soft_clay_peat,64.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060119,Oude gracht 30 - RAK 1 even,Muur,Werfmuur,1900,1980,6.4,,0.41,,1.98,2.5,weakly supported,soft_clay_peat,62.0,nearby,H; canal level,2,
+WF060120,Oude gracht 32 - RAK 1 even,Muur,Werfmuur,1450,1530,7.5,,0.41,,1.98,2.5,weakly supported,soft_clay_peat,64.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060121,Oude gracht 34 - RAK 1 even,Muur,Werfmuur,1900,1980,4.8,,0.41,,1.99,2.51,weakly supported,soft_clay_peat,68.0,nearby,H; canal level,2,
+WF060122,Oude gracht 36 - RAK 1 even,Muur,Werfmuur,1905,1985,6.3,,0.41,,1.99,2.51,weakly supported,soft_clay_peat,71.0,nearby,H; canal level,2,
+WF060123,Oude gracht 38 - RAK 1 even,Muur,Werfmuur,1880,1960,4.0,,0.41,,1.99,2.52,weakly supported,soft_clay_peat,75.0,nearby,H; canal level,2,
+WF060124,Oude gracht 4 - RAK 1 even,Muur,Werfmuur,1450,1530,7.7,,0.36,,1.94,2.44,weakly supported,soft_clay_peat,61.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060125,Oude gracht 40 - RAK 1 even,Muur,Werfmuur,1880,1960,3.6,,0.41,,1.99,2.52,weakly supported,soft_clay_peat,77.0,nearby,H; canal level,2,
+WF060126,Oude gracht 42 - RAK 1 even,Muur,Werfmuur,1880,1960,5.2,,0.41,,2.0,2.52,weakly supported,soft_clay_peat,80.0,nearby,H; canal level,2,
+WF060127,Oude gracht 44 - RAK 1 even,Muur,Werfmuur,1880,1960,4.6,,0.41,,2.0,2.52,weakly supported,soft_clay_peat,83.0,nearby,H; canal level,2,
+WF060128,Oude gracht 46 - RAK 1 even,Muur,Werfmuur,1880,1960,7.2,,0.4,,2.0,2.53,weakly supported,soft_clay_peat,88.0,nearby,H; canal level,2,
+WF060129,Oude gracht 48 - RAK 1 even,Muur,Werfmuur,1900,1980,4.4,,0.41,,2.0,2.53,weakly supported,soft_clay_peat,92.0,nearby,H; canal level,2,
+WF060130,Oude gracht 50 - RAK 1 even,Muur,Werfmuur,1850,1930,10.9,,0.41,,2.01,2.54,weakly supported,soft_clay_peat,99.0,nearby,H; canal level,2,
+WF060131,Oude gracht 6 - RAK 1 even,Muur,Werfmuur,1900,1980,4.1,,0.37,,1.94,2.45,weakly supported,soft_clay_peat,58.0,nearby,H; canal level,2,
+WF060132,Oude gracht 8 - RAK 1 even,Muur,Werfmuur,1900,1980,5.7,,0.36,,1.95,2.45,weakly supported,soft_clay_peat,56.0,nearby,H; canal level,2,
+WF060133,Oude gracht (Waterstraat 2) - RAK 1 oneven,Muur,Werfmuur,1900,1980,8.4,2.99,0.41,,1.96,2.48,weakly supported,soft_clay_peat,43.0,close,canal level,1,
+WF060136,Oude gracht 19 - RAK 1 oneven,Muur,Werfmuur,1900,1980,5.4,2.87,0.36,,1.94,2.45,weakly supported,soft_clay_peat,39.0,close,canal level,1,
+WF060137,Oude gracht 21 - RAK 1 oneven,Muur,Werfmuur,1900,1980,4.5,2.84,0.36,,1.94,2.45,weakly supported,soft_clay_peat,37.0,close,canal level,1,
+WF060138,Oude gracht 23 - RAK 1 oneven,Muur,Werfmuur,1900,1980,7.3,2.94,0.36,,1.94,2.46,weakly supported,soft_clay_peat,35.0,close,canal level,1,
+WF060139,Oude gracht 25 - RAK 1 oneven,Muur,Werfmuur,1900,1980,6.4,2.99,0.36,,1.95,2.46,weakly supported,soft_clay_peat,34.0,close,canal level,1,
+WF060140,Oude gracht 27 - RAK 1 oneven,Muur,Werfmuur,1900,1980,7.3,2.97,0.36,,1.95,2.46,weakly supported,soft_clay_peat,34.0,close,canal level,1,
+WF060141,Oude gracht 29 - RAK 1 oneven,Muur,Werfmuur,1900,1980,5.2,2.97,0.36,,1.95,2.47,weakly supported,soft_clay_peat,35.0,close,canal level,1,
+WF060143,Oude gracht 31 (t.o. Waterstraat) - RAK 1 oneven,Muur,Werfmuur,1900,1980,10.4,3.13,0.37,,1.95,2.47,weakly supported,soft_clay_peat,38.0,close,canal level,1,
+WF060144,Oude gracht 33 - RAK 1 oneven,Muur,Werfmuur,1908,1988,13.5,3.33,0.41,,1.96,2.49,weakly supported,soft_clay_peat,51.0,nearby,canal level,1,
+WF060145,Oude gracht 35 - RAK 1 oneven,Muur,Werfmuur,1650,1730,13.5,,0.41,,1.97,2.49,weakly supported,soft_clay_peat,62.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1650 is the original wall
+WF060146,Oude gracht 37 - RAK 1 oneven,Muur,Werfmuur,1650,1730,4.0,,0.43,,1.97,2.5,weakly supported,soft_clay_peat,67.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1650 is the original wall
+WF060147,Oude gracht 39 - RAK 1 oneven,Muur,Werfmuur,1870,1950,4.3,,0.41,,1.97,2.5,weakly supported,soft_clay_peat,71.0,nearby,H; canal level,2,
+WF060148,Oude gracht 41 - RAK 1 oneven,Muur,Werfmuur,1450,1530,6.9,,0.41,,1.97,2.5,weakly supported,soft_clay_peat,76.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060149,Oude gracht 43 - RAK 1 oneven,Muur,Werfmuur,1450,1530,6.4,,0.41,,1.97,2.5,weakly supported,soft_clay_peat,81.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060150,Oude gracht 45 - RAK 1 oneven,Muur,Werfmuur,1450,1530,6.2,,0.41,,1.97,2.51,weakly supported,soft_clay_peat,85.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060151,Oude gracht 47 - RAK 1 oneven,Muur,Werfmuur,1450,1530,3.7,,0.59,,1.97,2.51,weakly supported,soft_clay_peat,90.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060153,Oude gracht (Potterstraat 2a) - RAK 2 even,Muur,Werfmuur,1865,1945,6.0,,0.35,,2.17,2.71,weakly supported,sand,85.0,nearby,H; canal level,2,
+WF060154,Oude gracht (Potterstraat 2b) - RAK 2 even,Muur,Werfmuur,1865,1945,5.7,,0.38,,2.18,2.72,weakly supported,sand,81.0,nearby,H; canal level,2,
+WF060155,Oude gracht (Potterstraat c) - RAK 2 even,Muur,Werfmuur,1913,1993,1.9,,0.38,,2.19,2.72,weakly supported,sand,77.0,nearby,H; canal level,2,
+WF060156,Oude gracht (Potterstraat d) - RAK 2 even,Muur,Werfmuur,1913,1993,8.2,,0.38,,2.19,2.73,weakly supported,sand,73.0,nearby,H; canal level,2,
+WF060157,Oude gracht 54 - RAK 2 even,Muur,Werfmuur,1250,1330,5.3,,0.59,,2.01,2.54,weakly supported,soft_clay_peat,110.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1250 is the original wall
+WF060158,Oude gracht 58 - RAK 2 even,Muur,Werfmuur,1250,1330,6.0,,0.35,,2.01,2.55,weakly supported,soft_clay_peat,117.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1250 is the original wall
+WF060159,Oude gracht 60 - RAK 2 even,Muur,Werfmuur,1880,1960,4.0,,0.35,,2.01,2.55,weakly supported,soft_clay_peat,122.0,nearby,H; canal level,2,
+WF060160,Oude gracht 64 - RAK 2 even,Muur,Werfmuur,1880,1960,6.9,,0.35,,2.1,2.63,weakly supported,soft_clay_peat,133.0,nearby,H; canal level,2,
+WF060161,Oude gracht 66 - RAK 2 even,Muur,Werfmuur,1900,1980,6.0,,0.35,,2.1,2.64,weakly supported,soft_clay_peat,138.0,nearby,H; canal level,2,
+WF060162,Oude gracht 68 - RAK 2 even,Muur,Werfmuur,1450,1530,3.3,,0.35,,2.11,2.64,weakly supported,soft_clay_peat,142.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060163,Oude gracht 70 - RAK 2 even,Muur,Werfmuur,1450,1530,7.2,,0.35,,2.11,2.64,weakly supported,soft_clay_peat,147.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060164,Oude gracht 72 - RAK 2 even,Muur,Werfmuur,1450,1530,3.4,,0.35,,2.11,2.64,weakly supported,soft_clay_peat,152.0,far,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060165,Oude gracht 74 - RAK 2 even,Muur,Werfmuur,1450,1530,4.7,,0.35,,2.11,2.64,weakly supported,sand,149.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060166,Oude gracht 76 - RAK 2 even,Muur,Werfmuur,1450,1530,6.9,,0.35,,2.11,2.65,weakly supported,sand,144.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060167,Oude gracht 78 - RAK 2 even,Muur,Werfmuur,1900,1980,5.8,,0.35,,2.11,2.65,weakly supported,sand,138.0,nearby,H; canal level,2,
+WF060168,Oude gracht 80 - RAK 2 even,Muur,Werfmuur,1900,1980,5.2,,0.35,,2.12,2.65,weakly supported,sand,133.0,nearby,H; canal level,2,
+WF060169,Oude gracht 82 - RAK 2 even,Muur,Werfmuur,1900,1980,7.3,,0.35,,2.12,2.66,weakly supported,sand,126.0,nearby,H; canal level,2,
+WF060170,Oude gracht 84-86 - RAK 2 even,Muur,Werfmuur,1898,1978,13.3,,0.35,,2.13,2.67,weakly supported,sand,117.0,nearby,H; canal level,2,
+WF060171,Oude gracht 88 - RAK 2 even,Muur,Werfmuur,1900,1980,11.6,,0.35,,2.14,2.68,weakly supported,sand,107.0,nearby,H; canal level,2,
+WF060172,Oude gracht 90 - RAK 2 even,Muur,Werfmuur,1865,1945,3.6,,0.35,,2.15,2.69,weakly supported,sand,99.0,nearby,H; canal level,2,
+WF060173,Oude gracht 92 - RAK 2 even,Muur,Werfmuur,1865,1945,9.3,,0.35,,2.16,2.7,weakly supported,sand,93.0,nearby,H; canal level,2,
+WF060174,Oude gracht (Viestraat 1a) - RAK 2 oneven,Muur,Werfmuur,1550,1630,4.8,,0.36,,2.12,2.66,interpolated,sand,85.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1550 is the original wall
+WF060175,Oude gracht (Viestraat 1b) - RAK 2 oneven,Muur,Werfmuur,1550,1630,7.1,,0.36,,2.13,2.68,interpolated,sand,80.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1550 is the original wall
+WF060176,Oude gracht 49 - RAK 2 oneven,Muur,Werfmuur,1450,1530,7.0,,0.45,,1.97,2.51,weakly supported,soft_clay_peat,101.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060177,Oude gracht 51 - RAK 2 oneven,Muur,Werfmuur,1600,1680,7.4,,0.36,,1.97,2.52,weakly supported,soft_clay_peat,106.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1600 is the original wall
+WF060178,Oude gracht 53-55 - RAK 2 oneven,Muur,Werfmuur,1600,1680,13.1,,0.36,,2.05,2.59,weakly supported,soft_clay_peat,116.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1600 is the original wall
+WF060179,Oude gracht 57 - RAK 2 oneven,Muur,Werfmuur,1600,1680,6.1,,0.36,,2.05,2.59,weakly supported,soft_clay_peat,125.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1600 is the original wall
+WF060180,Oude gracht 59 - RAK 2 oneven,Muur,Werfmuur,1913,1993,8.6,,0.36,,2.05,2.59,interpolated,soft_clay_peat,132.0,nearby,H; canal level,2,
+WF060181,Oude gracht 61a - RAK 2 oneven,Muur,Werfmuur,1913,1993,6.4,3.78,0.36,,2.05,2.59,interpolated,soft_clay_peat,134.0,nearby,canal level,1,
+WF060182,Oude gracht 61b - RAK 2 oneven,Muur,Werfmuur,1913,1993,4.2,3.79,0.36,,2.05,2.59,interpolated,soft_clay_peat,135.0,nearby,canal level,1,
+WF060183,Oude gracht 63 - RAK 2 oneven,Muur,Werfmuur,1913,1993,6.8,3.85,0.36,,2.05,2.59,interpolated,soft_clay_peat,137.0,nearby,canal level,1,
+WF060184,Oude gracht 65 - RAK 2 oneven,Muur,Werfmuur,1900,1980,6.3,3.67,0.36,,2.05,2.59,interpolated,soft_clay_peat,140.0,nearby,canal level,1,
+WF060185,Oude gracht 67 - RAK 2 oneven,Muur,Werfmuur,1450,1530,4.9,3.64,0.36,,2.05,2.59,interpolated,soft_clay_peat,143.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060186,Oude gracht 69a - RAK 2 oneven,Muur,Werfmuur,1450,1530,5.1,,0.36,,2.05,2.59,interpolated,sand,143.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060187,Oude gracht 69b - RAK 2 oneven,Muur,Werfmuur,1450,1530,5.6,,0.35,,2.05,2.6,interpolated,sand,138.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1450 is the original wall
+WF060189,Oude gracht 71 - RAK 2 oneven,Muur,Werfmuur,1850,1930,8.8,,0.31,,2.06,2.61,interpolated,sand,123.0,nearby,H; canal level,2,
+WF060190,Oude gracht 73a - RAK 2 oneven,Muur,Werfmuur,1850,1930,7.3,,0.31,,2.07,2.62,interpolated,sand,115.0,nearby,H; canal level,2,
+WF060191,Oude gracht 73b - RAK 2 oneven,Muur,Werfmuur,1850,1930,5.8,,0.31,,2.08,2.62,interpolated,sand,111.0,nearby,H; canal level,2,
+WF060192,Oude gracht 75 - RAK 2 oneven,Muur,Werfmuur,1850,1930,5.5,,0.31,,2.08,2.63,interpolated,sand,106.0,nearby,H; canal level,2,
+WF060193,Oude gracht 79 - RAK 2 oneven,Muur,Werfmuur,1550,1630,6.9,,0.36,,2.1,2.65,interpolated,sand,93.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1550 is the original wall
+WF060194,Oude gracht 81 - RAK 2 oneven,Muur,Werfmuur,1550,1630,4.8,,0.36,,2.11,2.66,interpolated,sand,89.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1550 is the original wall
+WF060195,Oude gracht (t.o. Oude postkantoor a) - RAK 3 even,Muur,Werfmuur,1905,1985,6.1,3.65,0.3,,2.27,2.8,weakly supported,mixed,42.0,close,canal level,1,
+WF060196,Oude gracht 112a - RAK 3 even,Muur,Werfmuur,1905,1985,3.3,3.77,0.32,,2.34,2.87,weakly supported,mixed,33.0,close,canal level,1,
+WF060197,Oude gracht 112b - RAK 3 even,Muur,Werfmuur,1905,1985,4.3,3.71,0.31,,2.35,2.88,weakly supported,mixed,34.0,close,canal level,1,
+WF060198,Oude gracht 112c - RAK 3 even,Muur,Werfmuur,1905,1985,12.8,3.47,0.33,,2.37,2.89,weakly supported,mixed,36.0,close,canal level,1,
+WF060199,Oude gracht 112d - RAK 3 even,Muur,Werfmuur,1905,1985,7.2,3.58,0.33,,2.38,2.9,weakly supported,mixed,42.0,close,canal level,1,
+WF060200,Oude gracht 112e - RAK 3 even,Muur,Werfmuur,1913,1993,6.0,3.58,0.29,,2.39,2.91,weakly supported,mixed,48.0,close,canal level,1,
+WF060201,Oude gracht 112f - RAK 3 even,Muur,Werfmuur,1450,1530,5.2,3.43,0.25,,2.4,2.92,weakly supported,mixed,52.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060202,Oude gracht 112g - RAK 3 even,Muur,Werfmuur,1450,1530,3.4,3.45,0.31,,2.41,2.93,weakly supported,mixed,56.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060203,Oude gracht 114 - RAK 3 even,Muur,Werfmuur,1450,1530,8.1,4.04,0.33,,2.42,2.94,weakly supported,mixed,60.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060204,Oude gracht 116 - RAK 3 even,Muur,Werfmuur,1900,1980,5.0,3.45,0.34,,2.43,2.95,weakly supported,mixed,67.0,nearby,canal level,1,
+WF060205,Oude gracht 118a - RAK 3 even,Muur,Werfmuur,1900,1980,4.1,3.38,0.36,,2.44,2.96,weakly supported,mixed,70.0,nearby,canal level,1,
+WF060206,Oude gracht 118b - RAK 3 even,Muur,Werfmuur,1900,1980,4.2,3.45,0.33,,2.44,2.96,weakly supported,mixed,68.0,nearby,canal level,1,
+WF060207,Oude gracht 118c - RAK 3 even,Muur,Werfmuur,1900,1980,6.0,3.64,0.34,,2.45,2.96,weakly supported,mixed,66.0,nearby,canal level,1,
+WF060208,Oude gracht (t.o. Zakkendragersteeg) - RAK 3 oneven,Muur,Werfmuur,1895,1975,1.8,3.69,0.33,,2.36,2.88,weakly supported,mixed,49.0,close,canal level,1,
+WF060209,Oude gracht 101-103 - RAK 3 oneven,Muur,Werfmuur,1895,1975,14.5,3.69,0.32,,2.35,2.87,weakly supported,mixed,53.0,nearby,canal level,1,
+WF060210,Oude gracht 105 - RAK 3 oneven,Muur,Werfmuur,1895,1975,5.6,380.0,0.34,,2.37,2.89,weakly supported,mixed,48.0,close,H; canal level,2,Hoogte 380 m out of range
+WF060211,Oude gracht 95 - RAK 3 oneven,Muur,Werfmuur,1900,1980,4.9,,0.29,,2.27,2.81,weakly supported,sand,55.0,nearby,H; canal level,2,
+WF060212,Oude gracht 97 - RAK 3 oneven,Muur,Werfmuur,1900,1980,7.5,,0.34,,2.29,2.82,weakly supported,sand,57.0,nearby,H; canal level,2,
+WF060213,Oude gracht 99 - RAK 3 oneven,Muur,Werfmuur,1900,1980,21.2,3.58,0.31,,2.31,2.84,weakly supported,mixed,63.0,nearby,canal level,1,
+WF060231,Janskerkhofwerfmuur 01 (nr. 13-13A),Muur,Werfmuur,1650,1730,31.0,,,,2.66,3.14,weakly supported,soft_clay_peat,85.0,nearby,H; t; canal level; foundation age,4,Aanlegjaar 1650 is the original wall
+WF060232,Janskerkhofwerfmuur 02 (nr. 15),Muur,Werfmuur,1900,1980,18.0,,,,2.69,3.18,weakly supported,sand,53.0,nearby,H; t; canal level,3,
+WF060233,Janskerkhofwerfmuur 03 (nr. 15A-16BS),Muur,Werfmuur,1650,1730,38.6,,,,2.68,3.19,weakly supported,sand,28.0,close,H; t; canal level; foundation age,4,Aanlegjaar 1650 is the original wall
+WF060237,Kromme nieuwe gracht 14 - RAK 22 even,Muur,Werfmuur,1450,1530,6.2,2.65,0.33,,2.92,3.39,interpolated,soft_clay_peat,102.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060238,Kromme nieuwe gracht 16 - RAK 22 even,Muur,Werfmuur,1450,1530,3.2,2.54,0.33,,2.91,3.38,interpolated,soft_clay_peat,100.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060273,Kromme nieuwe gracht 86 - RAK 21 even,Muur,Werfmuur,1450,1530,3.1,3.0,0.28,,2.95,3.44,interpolated,soft_clay_peat,82.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060276,Kromme nieuwe gracht 90 - RAK 21 even,Muur,Werfmuur,1450,1530,5.4,2.9,0.34,,2.99,3.47,interpolated,soft_clay_peat,66.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060277,Kromme nieuwe gracht 92 - RAK 21 even,Muur,Werfmuur,1900,1980,4.1,3.01,0.33,,2.99,3.48,interpolated,soft_clay_peat,63.0,nearby,canal level,1,
+WF060281,Nieuwe gracht (t.o. Hofpoort) - RAK 20 oneven,Muur,Werfmuur,1650,1730,4.2,2.96,0.33,,2.98,3.45,interpolated,soft_clay_peat,20.0,close,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060282,Nieuwe gracht (Trans 19c) - RAK 20 oneven,Muur,Werfmuur,1650,1730,6.6,3.05,0.33,,2.99,3.48,interpolated,soft_clay_peat,20.0,close,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060284,Nieuwe Gracht 092a - RAK 16 even,Muur,Werfmuur,1900,1980,9.9,1.99,0.33,,2.19,2.56,weakly supported,soft_clay_peat,120.0,nearby,canal level,1,
+WF060285,Nieuwe Gracht 092b - RAK 16 even,Muur,Werfmuur,1900,1980,6.2,2.02,0.32,,2.19,2.55,weakly supported,soft_clay_peat,114.0,nearby,canal level,1,
+WF060287,Nieuwe Gracht 094a - RAK 16 even,Muur,Werfmuur,1900,1980,7.8,2.01,0.32,,2.19,2.54,weakly supported,soft_clay_peat,100.0,nearby,canal level,1,
+WF060288,Nieuwe Gracht 094b - RAK 16 even,Muur,Werfmuur,1900,1980,3.5,2.14,0.32,,2.19,2.54,weakly supported,soft_clay_peat,96.0,nearby,canal level,1,
+WF060289,Nieuwe gracht 1 - RAK 20 oneven,Muur,Werfmuur,1900,1980,7.7,3.06,0.34,,3.01,3.49,interpolated,soft_clay_peat,16.0,close,canal level,1,
+WF060290,Nieuwe gracht 10 - RAK 20 even,Muur,Werfmuur,1250,1330,5.4,2.83,0.31,,2.95,3.42,interpolated,soft_clay_peat,30.0,close,canal level; foundation age,2,Aanlegjaar 1250 is the original wall
+WF060291,Nieuwe gracht 11 - RAK 20 oneven,Muur,Werfmuur,1900,1980,7.3,2.94,0.33,,2.97,3.44,interpolated,soft_clay_peat,24.0,close,canal level,1,
+WF060293,Nieuwe gracht 12 - RAK 20 even,Muur,Werfmuur,1700,1780,7.6,2.84,0.33,,2.94,3.41,interpolated,soft_clay_peat,35.0,close,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060294,Nieuwe gracht 121 - RAK 17 oneven,Muur,Werfmuur,1650,1730,5.6,2.37,0.33,,2.21,2.59,weakly supported,soft_clay_peat,147.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060295,Nieuwe Gracht 125 - RAK 16 oneven,Muur,Werfmuur,1450,1530,7.8,2.09,0.3,,2.21,2.57,weakly supported,soft_clay_peat,130.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060296,Nieuwe gracht 13 - RAK 20 oneven,Muur,Werfmuur,1900,1980,6.7,2.94,0.33,,2.95,3.42,interpolated,soft_clay_peat,30.0,close,canal level,1,
+WF060297,Nieuwe gracht 131-133 - RAK 16 oneven,Muur,Werfmuur,1904,1984,10.0,2.07,0.32,,2.21,2.57,weakly supported,soft_clay_peat,122.0,nearby,canal level,1,
+WF060298,Nieuwe gracht 139 - RAK 16 oneven,Muur,Werfmuur,1904,1984,5.7,2.05,0.33,,2.21,2.56,weakly supported,soft_clay_peat,102.0,nearby,canal level,1,
+WF060299,Nieuwe gracht 14 - RAK 20 even,Muur,Werfmuur,1450,1530,12.6,2.93,0.41,,2.92,3.38,interpolated,soft_clay_peat,42.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060300,Nieuwe Gracht 141 - RAK 16 oneven,Muur,Werfmuur,1904,1984,4.1,1.93,0.32,,2.21,2.55,weakly supported,soft_clay_peat,99.0,nearby,canal level,1,
+WF060302,Nieuwe gracht 15 - RAK 20 oneven,Muur,Werfmuur,1760,1840,6.2,2.96,0.33,,2.94,3.41,interpolated,soft_clay_peat,35.0,close,canal level; foundation age,2,Aanlegjaar 1760 is the original wall
+WF060303,Nieuwe Gracht 159 - RAK 16 oneven,Muur,Werfmuur,1450,1530,6.5,2.19,0.32,,2.24,2.55,weakly supported,soft_clay_peat,55.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060304,Nieuwe gracht 16 - RAK 20 even,Muur,Werfmuur,1450,1530,3.9,2.86,0.33,,2.9,3.36,interpolated,soft_clay_peat,50.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060305,Nieuwe Gracht 163 - RAK 16 oneven,Muur,Werfmuur,1450,1530,10.1,2.16,0.32,,2.25,2.55,weakly supported,soft_clay_peat,42.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060306,Nieuwe Gracht 165 - RAK 16 oneven,Muur,Werfmuur,1450,1530,5.8,2.14,0.32,,2.25,2.55,weakly supported,soft_clay_peat,38.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060307,Nieuwe gracht 17 - RAK 20 oneven,Muur,Werfmuur,1650,1730,7.5,3.04,0.33,,2.93,3.39,interpolated,soft_clay_peat,42.0,close,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060308,Nieuwe Gracht 181-183 - RAK 16 oneven,Muur,Werfmuur,1450,1530,12.0,2.16,0.32,,2.26,2.55,weakly supported,soft_clay_peat,35.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060309,Nieuwe Gracht 185 - RAK 16 oneven,Muur,Werfmuur,1450,1530,9.7,2.16,0.32,,2.27,2.56,weakly supported,soft_clay_peat,33.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060310,Nieuwe Gracht 189 - RAK 16 oneven,Muur,Werfmuur,1450,1530,7.5,2.21,0.32,,2.29,2.56,interpolated,soft_clay_peat,48.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060311,Nieuwe gracht 19 - RAK 20 oneven,Muur,Werfmuur,1650,1730,13.2,3.03,0.33,,2.9,3.36,interpolated,soft_clay_peat,52.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060312,Nieuwe Gracht 191 - RAK 16 oneven,Muur,Werfmuur,1450,1530,8.1,2.2,0.32,,2.29,2.56,interpolated,soft_clay_peat,54.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060313,Nieuwe Gracht 193 - RAK 16 oneven,Muur,Werfmuur,1450,1530,9.1,2.22,0.32,,2.13,2.39,interpolated,soft_clay_peat,62.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060314,Nieuwe Gracht 195 - RAK 16 oneven,Muur,Werfmuur,1913,1993,9.8,2.28,0.32,,2.14,2.39,interpolated,soft_clay_peat,64.0,nearby,canal level,1,
+WF060315,Nieuwe gracht 2 - RAK 20 even,Muur,Werfmuur,1900,1980,7.1,2.73,0.33,,2.98,3.47,interpolated,soft_clay_peat,33.0,close,canal level,1,
+WF060316,Nieuwe gracht 20a - RAK 20 even,Muur,Werfmuur,1450,1530,10.8,2.87,0.33,,2.87,3.32,interpolated,soft_clay_peat,63.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060317,Nieuwe gracht 21 - RAK 20 oneven,Muur,Werfmuur,1650,1730,7.2,2.95,0.33,,2.88,3.33,interpolated,soft_clay_peat,62.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060318,Nieuwe gracht 22a - RAK 20 even,Muur,Werfmuur,1900,1980,6.7,2.98,0.33,,2.83,3.28,weakly supported,soft_clay_peat,79.0,nearby,canal level,1,
+WF060319,Nieuwe gracht 22b - RAK 20 even,Muur,Werfmuur,1900,1980,5.6,3.08,0.33,,2.81,3.26,weakly supported,soft_clay_peat,85.0,nearby,canal level,1,
+WF060320,Nieuwe gracht 23 - RAK 20 oneven,Muur,Werfmuur,1700,1780,7.4,2.93,0.33,,2.87,3.32,weakly supported,soft_clay_peat,69.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060321,Nieuwe gracht 24a - RAK 20 even,Muur,Werfmuur,1900,1980,2.6,3.1,0.33,,2.8,3.24,weakly supported,soft_clay_peat,90.0,nearby,canal level,1,
+WF060323,Nieuwe gracht 24c - RAK 19 even,Muur,Werfmuur,1860,1940,4.1,3.21,0.32,,2.77,3.21,weakly supported,soft_clay_peat,104.0,nearby,canal level,1,
+WF060324,Nieuwe gracht 25 - RAK 20 oneven,Muur,Werfmuur,1900,1980,3.8,2.95,0.33,,2.85,3.3,weakly supported,soft_clay_peat,75.0,nearby,canal level,1,
+WF060325,Nieuwe gracht 26 - RAK 19 even,Muur,Werfmuur,1860,1940,6.2,3.26,0.32,,2.75,3.18,weakly supported,mixed,106.0,nearby,canal level,1,
+WF060327,Nieuwe gracht 29 - RAK 19 oneven,Muur,Werfmuur,1450,1530,4.7,3.27,0.37,,2.79,3.23,weakly supported,soft_clay_peat,100.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060328,Nieuwe gracht 3 - RAK 20 oneven,Muur,Werfmuur,1900,1980,6.3,3.05,0.33,,3.0,3.48,interpolated,soft_clay_peat,15.0,close,canal level,1,
+WF060329,Nieuwe gracht 30 - RAK 19 even,Muur,Werfmuur,1898,1978,6.0,3.11,0.31,,2.72,3.15,weakly supported,mixed,106.0,nearby,canal level,1,
+WF060330,Nieuwe gracht 31 - RAK 19 oneven,Muur,Werfmuur,1450,1530,4.4,3.27,0.33,,2.78,3.22,weakly supported,soft_clay_peat,105.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060331,Nieuwe gracht 33 - RAK 19 oneven,Muur,Werfmuur,1450,1530,4.8,3.31,0.33,,2.77,3.21,weakly supported,soft_clay_peat,109.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060332,Nieuwe gracht 34 - RAK 19 even,Muur,Werfmuur,1450,1530,8.5,3.19,0.32,,2.66,3.08,weakly supported,mixed,110.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060333,Nieuwe gracht 35 - RAK 19 oneven,Muur,Werfmuur,1450,1530,4.3,3.27,0.33,,2.76,3.19,weakly supported,soft_clay_peat,114.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060334,Nieuwe gracht 36 - RAK 19 even,Muur,Werfmuur,1900,1980,18.2,3.18,0.32,,2.62,3.04,weakly supported,mixed,114.0,nearby,canal level,1,
+WF060335,Nieuwe gracht 37 - RAK 19 oneven,Muur,Werfmuur,1450,1530,6.1,3.31,0.34,,2.75,3.18,weakly supported,soft_clay_peat,118.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060336,Nieuwe gracht 38 - RAK 19 even,Muur,Werfmuur,1450,1530,9.8,3.06,0.32,,2.6,3.01,weakly supported,mixed,118.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060337,Nieuwe gracht 39 - RAK 19 oneven,Muur,Werfmuur,1450,1530,7.8,3.41,0.35,,2.73,3.16,weakly supported,mixed,120.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060338,Nieuwe gracht 4 - RAK 20 even,Muur,Werfmuur,1450,1530,5.2,2.72,0.33,,2.97,3.46,interpolated,soft_clay_peat,29.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060339,Nieuwe gracht 40 - RAK 19 even,Muur,Werfmuur,1920,2000,4.1,3.05,0.32,,2.58,2.99,weakly supported,mixed,121.0,nearby,canal level,1,
+WF060340,Nieuwe gracht 41a - RAK 19 oneven,Muur,Werfmuur,1450,1530,16.2,3.48,0.34,,2.71,3.14,weakly supported,mixed,119.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060341,Nieuwe gracht 41b - RAK 19 oneven,Muur,Werfmuur,1450,1530,8.1,3.45,0.35,,2.68,3.1,weakly supported,mixed,121.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060342,Nieuwe gracht 42a - RAK 19 even,Muur,Werfmuur,1920,2000,8.0,3.1,0.32,,2.56,2.97,weakly supported,mixed,125.0,nearby,canal level,1,
+WF060343,Nieuwe gracht 43 - RAK 19 oneven,Muur,Werfmuur,1450,1530,4.3,3.25,0.31,,2.67,3.09,weakly supported,mixed,124.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060344,Nieuwe gracht 44-46 - RAK 18 even,Muur,Werfmuur,1900,1980,10.7,2.91,0.35,,2.52,2.92,weakly supported,mixed,136.0,nearby,canal level,1,
+WF060345,Nieuwe gracht 45 - RAK 19 oneven,Muur,Werfmuur,1900,1980,7.7,3.47,0.29,,2.66,3.07,weakly supported,mixed,125.0,nearby,canal level,1,
+WF060346,Nieuwe gracht 47 - RAK 19 oneven,Muur,Werfmuur,1900,1980,4.0,3.34,0.3,,2.64,3.06,weakly supported,mixed,127.0,nearby,canal level,1,
+WF060347,Nieuwe gracht 48 - RAK 18 even,Muur,Werfmuur,1900,1980,6.7,2.99,0.35,,2.5,2.9,weakly supported,sand,137.0,nearby,canal level,1,
+WF060348,Nieuwe gracht 49 - RAK 19 oneven,Muur,Werfmuur,1900,1980,5.0,3.22,0.31,,2.63,3.05,weakly supported,mixed,129.0,nearby,canal level,1,
+WF060349,Nieuwe gracht 5 - RAK 20 oneven,Muur,Werfmuur,1650,1730,6.8,2.92,0.33,,2.99,3.46,interpolated,soft_clay_peat,17.0,close,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060350,Nieuwe gracht 50a - RAK 18 even,Muur,Werfmuur,1900,1980,5.4,3.03,0.35,,2.49,2.89,weakly supported,sand,136.0,nearby,canal level,1,
+WF060351,Nieuwe gracht 50b - RAK 18 even,Muur,Werfmuur,1450,1530,4.0,2.96,0.35,,2.48,2.87,weakly supported,soft_clay_peat,135.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060352,Nieuwe gracht 51a - RAK 19 oneven,Muur,Werfmuur,1900,1980,10.0,3.35,0.32,,2.62,3.03,weakly supported,mixed,131.0,nearby,canal level,1,
+WF060353,Nieuwe gracht 51b - RAK 19 oneven,Muur,Werfmuur,1450,1530,5.2,3.23,0.32,,2.6,3.01,weakly supported,mixed,135.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060354,Nieuwe gracht 52 - RAK 18 even,Muur,Werfmuur,1450,1530,7.6,2.89,0.35,,2.47,2.86,weakly supported,soft_clay_peat,132.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060356,Nieuwe gracht 54 - RAK 18 even,Muur,Werfmuur,1650,1730,8.7,2.87,0.35,,2.45,2.84,weakly supported,soft_clay_peat,128.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060357,Nieuwe gracht 59 - RAK 18 oneven,Muur,Werfmuur,1450,1530,3.8,3.55,0.34,,2.55,2.95,weakly supported,sand,127.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060358,Nieuwe gracht 6 - RAK 20 even,Muur,Werfmuur,1450,1530,17.4,2.71,0.35,,2.99,3.46,interpolated,soft_clay_peat,26.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060359,Nieuwe gracht 60 - RAK 18 even,Muur,Werfmuur,1650,1730,12.0,2.73,0.35,,2.38,2.76,weakly supported,soft_clay_peat,113.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060360,Nieuwe gracht 61 - RAK 18 oneven,Muur,Werfmuur,1450,1530,16.5,3.36,0.31,,2.53,2.93,weakly supported,sand,125.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060361,Nieuwe gracht 63 - RAK 18 oneven,Muur,Werfmuur,1900,1980,20.0,3.34,0.32,,2.49,2.88,weakly supported,sand,121.0,nearby,canal level,1,
+WF060362,Nieuwe gracht 64 - RAK 17 even,Muur,Werfmuur,1650,1730,10.6,2.71,0.46,,2.34,2.72,weakly supported,soft_clay_peat,113.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060363,Nieuwe gracht 65a - RAK 18 oneven,Muur,Werfmuur,1900,1980,5.5,3.3,0.32,,2.46,2.85,weakly supported,sand,120.0,nearby,canal level,1,
+WF060364,Nieuwe gracht 65b - RAK 18 oneven,Muur,Werfmuur,1900,1980,4.4,3.3,0.32,,2.45,2.84,weakly supported,sand,121.0,nearby,canal level,1,
+WF060365,Nieuwe gracht 65c - RAK 18 oneven,Muur,Werfmuur,1900,1980,8.8,3.29,0.32,,2.44,2.83,weakly supported,sand,121.0,nearby,canal level,1,
+WF060366,Nieuwe gracht 66 - RAK 17 even,Muur,Werfmuur,1650,1730,5.2,2.63,0.31,,2.33,2.71,weakly supported,soft_clay_peat,115.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060367,Nieuwe gracht 68a - RAK 17 even,Muur,Werfmuur,1450,1530,5.1,2.7,0.32,,2.33,2.7,weakly supported,soft_clay_peat,116.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060368,Nieuwe gracht 68b - RAK 17 even,Muur,Werfmuur,1450,1530,3.8,2.58,0.32,,2.32,2.7,weakly supported,soft_clay_peat,118.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060369,Nieuwe gracht 69 - RAK 18 oneven,Muur,Werfmuur,1900,1980,15.8,3.21,0.39,,2.41,2.79,weakly supported,sand,125.0,nearby,canal level,1,
+WF060370,Nieuwe gracht 70 - RAK 17 even,Muur,Werfmuur,1450,1530,5.3,2.51,0.32,,2.32,2.69,weakly supported,soft_clay_peat,119.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060373,Nieuwe gracht 75 - RAK 17 oneven,Muur,Werfmuur,1450,1530,5.6,2.74,0.32,,2.36,2.73,weakly supported,soft_clay_peat,129.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060374,Nieuwe gracht 77 - RAK 17 oneven,Muur,Werfmuur,1450,1530,5.1,2.67,0.34,,2.35,2.72,weakly supported,soft_clay_peat,131.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060375,Nieuwe gracht 79 - RAK 17 oneven,Muur,Werfmuur,1450,1530,10.4,2.54,0.33,,2.34,2.71,weakly supported,soft_clay_peat,133.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060376,Nieuwe gracht 8 - RAK 20 even,Muur,Werfmuur,1450,1530,6.4,2.83,0.32,,2.97,3.44,interpolated,soft_clay_peat,27.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060377,Nieuwe gracht 84-86-88-90 - RAK 17 even,Muur,Werfmuur,1900,1980,28.0,1.97,0.32,,2.19,2.57,weakly supported,soft_clay_peat,138.0,nearby,canal level,1,
+WF060378,Nieuwe gracht 81 - RAK 17 oneven,Muur,Werfmuur,1450,1530,4.5,2.53,0.34,,2.34,2.7,weakly supported,soft_clay_peat,136.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060379,Nieuwe gracht 83 - RAK 17 oneven,Muur,Werfmuur,1920,2000,8.5,2.45,0.39,,2.33,2.7,weakly supported,soft_clay_peat,138.0,nearby,canal level,1,
+WF060380,Nieuwe gracht 85 - RAK 17 oneven,Muur,Werfmuur,1920,2000,7.0,2.33,0.34,,2.22,2.6,weakly supported,soft_clay_peat,141.0,nearby,canal level,1,
+WF060381,Nieuwe gracht 87 - RAK 17 oneven,Muur,Werfmuur,1800,1880,4.8,2.31,0.35,,2.22,2.6,weakly supported,soft_clay_peat,144.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060382,Oude gracht (Lichte gaard 3) - RAK 9 even,Muur,Werfmuur,1731,1811,3.8,2.44,0.51,,3.12,3.63,interpolated,mixed,85.0,nearby,canal level; foundation age,2,Aanlegjaar 1731 is the original wall
+WF060383,Oude gracht (Lichte gaard 4) - RAK 9 even,Muur,Werfmuur,1900,1980,3.1,3.04,0.5,,3.12,3.62,interpolated,mixed,88.0,nearby,canal level,1,
+WF060384,Oude gracht (Lichte gaard 5) - RAK 9 even,Muur,Werfmuur,1900,1980,3.5,3.04,0.49,,3.12,3.62,interpolated,mixed,90.0,nearby,canal level,1,
+WF060385,Oude gracht (Lichte gaard 6) - RAK 9 even,Muur,Werfmuur,1900,1980,4.9,3.03,0.49,,3.12,3.62,interpolated,mixed,92.0,nearby,canal level,1,
+WF060386,Oude gracht (Lichte gaard 7) - RAK 9 even,Muur,Werfmuur,1900,1980,4.8,2.85,0.48,,3.12,3.62,interpolated,mixed,90.0,nearby,canal level,1,
+WF060387,Oude gracht (Lichte gaard 8) - RAK 9 even,Muur,Werfmuur,1900,1980,7.2,2.84,0.32,,3.11,3.61,interpolated,mixed,89.0,nearby,canal level,1,
+WF060389,Oude gracht (Lichte gaard 9b) - RAK 9 even,Muur,Werfmuur,1800,1880,7.2,2.93,0.32,,3.11,3.61,interpolated,mixed,84.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060391,Oude Gracht (Stadhuisbrug 5a) - RAK 6 oneven,Muur,Werfmuur,1870,1950,6.5,3.98,0.3,,2.98,3.47,interpolated,mixed,56.0,nearby,canal level,1,
+WF060392,Oude gracht (t.o. Drieharingenstraat) - RAK 4 oneven,Muur,Werfmuur,1450,1530,2.2,3.25,0.34,,2.45,2.96,weakly supported,mixed,52.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060393,Oude Gracht (t.o. Hamburgerstraat) - RAK 11 even,Muur,Werfmuur,1900,1980,7.1,3.3,0.56,,2.91,3.33,weakly supported,soft_clay_peat,114.0,nearby,canal level,1,
+WF060394,Oude Gracht (t.o. Hekelsteeg) - RAK 6 oneven,Muur,Werfmuur,1900,1980,1.4,4.01,0.3,,2.91,3.4,weakly supported,mixed,77.0,nearby,canal level,1,
+WF060395,Oude Gracht (t.o. Massegast) - RAK 6 oneven,Muur,Werfmuur,1800,1880,2.9,3.93,0.3,,2.94,3.43,interpolated,mixed,69.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060396,Oude Gracht (t.o. Wed) - RAK 9 even,Muur,Werfmuur,1800,1880,4.5,3.39,0.33,,3.08,3.57,interpolated,soft_clay_peat,52.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060397,Oude Gracht (tussen 221 en 223) - RAK 11 oneven,Muur,Werfmuur,1900,1980,1.9,3.8,0.33,,2.82,3.21,weakly supported,soft_clay_peat,92.0,nearby,canal level,1,
+WF060398,Oude Gracht (tussen 235 en237) - RAK 11 oneven,Muur,Werfmuur,1450,1530,0.9,3.69,0.32,,2.77,3.15,weakly supported,soft_clay_peat,97.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060399,Oude gracht (tussen 263-265) - RAK 12 oneven,Muur,Werfmuur,1250,1330,1.6,3.06,0.32,,2.65,3.0,weakly supported,mixed,98.0,nearby,canal level; foundation age,2,Aanlegjaar 1250 is the original wall
+WF060400,Oude gracht (tussen 264-266) - RAK 12 even,Muur,Werfmuur,1930,2010,2.4,3.44,0.35,,2.71,3.08,weakly supported,sand,124.0,nearby,canal level,1,
+WF060401,Oude Gracht (tussen 301 en 303) - RAK 13 oneven,Muur,Werfmuur,1850,1930,1.1,2.97,0.29,,2.51,2.81,weakly supported,mixed,34.0,close,canal level,1,
+WF060402,Oude Gracht (tussen 395 en 397) - RAK 15 oneven,Muur,Werfmuur,1700,1780,1.5,2.6,0.32,,2.31,2.5,interpolated,mixed,104.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060403,Oude Gracht (tussen 423 en 425) - RAK 15 oneven,Muur,Werfmuur,1937,2017,6.9,2.94,0.28,,2.14,2.34,interpolated,soft_clay_peat,140.0,nearby,canal level,1,
+WF060411,Oude Gracht (Vismarkt 10) - RAK 7 even,Muur,Werfmuur,1900,1980,4.2,3.45,0.32,,3.13,3.64,interpolated,mixed,72.0,nearby,canal level,1,
+WF060412,Oude Gracht (Vismarkt 11) - RAK 7 even,Muur,Werfmuur,1900,1980,5.0,3.14,0.32,,3.13,3.64,interpolated,mixed,70.0,nearby,canal level,1,
+WF060413,Oude Gracht (Vismarkt 13) - RAK 7 even,Muur,Werfmuur,1880,1960,4.0,3.18,0.41,,3.13,3.64,interpolated,mixed,68.0,nearby,canal level,1,
+WF060414,Oude gracht (Vismarkt 18) - RAK 8 even,Muur,Werfmuur,1450,1530,5.2,2.95,0.15,,3.13,3.64,interpolated,mixed,63.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060415,Oude gracht (Vismarkt 19) - RAK 8 even,Muur,Werfmuur,1450,1530,3.4,2.81,0.33,,3.13,3.64,interpolated,mixed,63.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060416,Oude gracht (Vismarkt 20) - RAK 8 even,Muur,Werfmuur,1450,1530,6.7,2.78,0.33,,3.13,3.64,interpolated,mixed,64.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060417,Oude gracht (Vismarkt 21) - RAK 8 even,Muur,Werfmuur,1450,1530,5.0,2.76,0.33,,3.13,3.64,interpolated,mixed,65.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060418,Oude gracht (Vismarkt 21-22) - RAK 8 even,Muur,Werfmuur,1450,1530,6.9,2.87,0.33,,3.13,3.64,interpolated,mixed,67.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060419,Oude gracht (Vismarkt 22) - RAK 8 even,Muur,Werfmuur,1450,1530,3.2,3.0,0.33,,3.13,3.64,interpolated,mixed,69.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060426,Oude gracht 107-109 - RAK 4 oneven,Muur,Werfmuur,1450,1530,10.8,3.69,0.37,,2.39,2.9,weakly supported,mixed,42.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060427,Oude gracht 111 - RAK 4 oneven,Muur,Werfmuur,1450,1530,6.3,3.71,0.37,,2.4,2.92,weakly supported,mixed,41.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060428,Oude gracht 113 - RAK 4 oneven,Muur,Werfmuur,1858,1938,11.7,3.81,0.32,,2.41,2.93,weakly supported,mixed,44.0,close,canal level,1,
+WF060429,Oude gracht 115 - RAK 4 oneven,Muur,Werfmuur,1858,1938,4.6,3.92,0.35,,2.43,2.94,weakly supported,mixed,47.0,close,canal level,1,
+WF060430,Oude gracht 117 - RAK 4 oneven,Muur,Werfmuur,1450,1530,4.5,3.92,0.35,,2.44,2.95,weakly supported,mixed,50.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060431,Oude gracht 119 - RAK 4 oneven,Muur,Werfmuur,1450,1530,6.3,3.89,0.35,,2.45,2.97,weakly supported,mixed,55.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060432,Oude gracht 121 - RAK 4 oneven,Muur,Werfmuur,1860,1940,7.6,4.0,0.35,,2.47,2.98,weakly supported,mixed,61.0,nearby,canal level,1,
+WF060433,Oude gracht 123 - RAK 4 oneven,Muur,Werfmuur,1900,1980,5.0,4.55,0.36,,2.49,3.0,weakly supported,mixed,66.0,nearby,canal level,1,
+WF060434,Oude gracht 125 - RAK 4 oneven,Muur,Werfmuur,1900,1980,5.5,4.5,0.36,,2.51,3.01,weakly supported,mixed,71.0,nearby,canal level,1,
+WF060435,Oude gracht 126 - RAK 4 even,Muur,Werfmuur,1450,1530,4.6,3.64,0.34,,2.47,2.98,weakly supported,mixed,63.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060436,Oude gracht 127 - RAK 4 oneven,Muur,Werfmuur,1900,1980,7.4,3.89,0.36,,2.53,3.04,weakly supported,mixed,78.0,nearby,canal level,1,
+WF060437,Oude gracht 128 - RAK 4 even,Muur,Werfmuur,1450,1530,4.1,3.61,0.34,,2.48,2.99,weakly supported,mixed,63.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060438,Oude gracht 129a - RAK 4 oneven,Muur,Werfmuur,1882,1962,4.7,3.72,0.36,,2.55,3.06,weakly supported,mixed,84.0,nearby,canal level,1,
+WF060439,Oude gracht 129b - RAK 4 oneven,Muur,Werfmuur,1882,1962,4.8,3.7,0.36,,2.57,3.07,weakly supported,mixed,88.0,nearby,canal level,1,
+WF060440,Oude gracht 129c - RAK 4 oneven,Muur,Werfmuur,1882,1962,5.9,3.81,0.36,,2.59,3.09,weakly supported,mixed,94.0,nearby,canal level,1,
+WF060441,Oude gracht 130 - RAK 4 even,Muur,Werfmuur,1450,1530,5.4,6.63,0.35,,2.49,3.0,weakly supported,mixed,64.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060442,Oude gracht 132 - RAK 4 even,Muur,Werfmuur,1450,1530,7.4,3.54,0.35,,2.5,3.01,weakly supported,mixed,66.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060443,Oude gracht 134 - RAK 4 even,Muur,Werfmuur,1450,1530,5.2,3.51,0.34,,2.52,3.02,weakly supported,mixed,69.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060444,Oude gracht 136a - RAK 4 even,Muur,Werfmuur,1450,1530,7.3,3.48,0.35,,2.54,3.05,weakly supported,mixed,74.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060445,Oude gracht 136b - RAK 4 even,Muur,Werfmuur,1890,1970,5.6,3.56,0.34,,2.56,3.07,weakly supported,mixed,80.0,nearby,canal level,1,
+WF060446,Oude gracht 136c - RAK 4 even,Muur,Werfmuur,1890,1970,4.6,3.74,0.28,,2.58,3.08,weakly supported,mixed,85.0,nearby,canal level,1,
+WF060447,Oude gracht 136d - RAK 4 even,Muur,Werfmuur,1890,1970,5.1,3.98,0.25,,2.59,3.1,weakly supported,mixed,89.0,nearby,canal level,1,
+WF060448,Oude gracht 136e - RAK 4 even,Muur,Werfmuur,1890,1970,4.0,3.95,0.54,,2.61,3.11,weakly supported,mixed,94.0,nearby,canal level,1,
+WF060449,Oude gracht 137a - RAK 5 oneven,Muur,Werfmuur,1800,1880,1.7,2.98,0.54,,2.66,3.16,weakly supported,mixed,114.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060450,Oude gracht 137b - RAK 5 oneven,Muur,Werfmuur,1800,1880,5.8,3.66,0.44,,2.67,3.17,weakly supported,mixed,117.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060452,Oude gracht 140 - RAK 5 even,Muur,Werfmuur,1900,1980,7.4,3.82,0.35,,2.69,3.19,weakly supported,mixed,99.0,nearby,canal level,1,
+WF060453,Oude gracht 141 - RAK 5 oneven,Muur,Werfmuur,1900,1980,5.8,3.8,0.32,,2.75,3.24,weakly supported,mixed,119.0,nearby,canal level,1,
+WF060454,Oude gracht 142 - RAK 5 even,Muur,Werfmuur,1900,1980,6.6,3.82,0.36,,2.71,3.21,weakly supported,mixed,99.0,nearby,canal level,1,
+WF060455,Oude gracht 143 - RAK 5 oneven,Muur,Werfmuur,1900,1980,6.9,3.8,0.35,,2.77,3.26,weakly supported,mixed,118.0,nearby,canal level,1,
+WF060456,Oude gracht 144 - RAK 5 even,Muur,Werfmuur,1900,1980,7.5,3.85,0.35,,2.74,3.23,weakly supported,mixed,98.0,nearby,canal level,1,
+WF060457,Oude gracht 145 - RAK 5 oneven,Muur,Werfmuur,1700,1780,5.9,3.83,0.33,,2.78,3.28,weakly supported,mixed,118.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060458,Oude gracht 146 - RAK 5 even,Muur,Werfmuur,1900,1980,7.0,3.91,0.36,,2.76,3.26,weakly supported,mixed,98.0,nearby,canal level,1,
+WF060459,Oude gracht 147a - RAK 5 oneven,Muur,Werfmuur,1700,1780,5.8,3.91,0.31,,2.8,3.3,weakly supported,mixed,117.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060460,Oude gracht 147b - RAK 5 oneven,Muur,Werfmuur,1700,1780,6.6,3.81,0.3,,2.82,3.31,weakly supported,mixed,111.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060461,Oude gracht 148 - RAK 5 even,Muur,Werfmuur,1900,1980,7.5,3.95,0.36,,2.78,3.28,weakly supported,mixed,97.0,nearby,canal level,1,
+WF060462,Oude gracht 149 - RAK 5 oneven,Muur,Werfmuur,1900,1980,8.4,3.88,0.3,,2.83,3.32,weakly supported,mixed,106.0,nearby,canal level,1,
+WF060463,Oude gracht 150 - RAK 5 even,Muur,Werfmuur,1800,1880,10.4,4.0,0.35,,2.8,3.3,weakly supported,mixed,96.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060464,Oude gracht 151 - RAK 5 oneven,Muur,Werfmuur,1900,1980,7.4,3.95,0.3,,2.85,3.34,weakly supported,mixed,99.0,nearby,canal level,1,
+WF060465,Oude gracht 153 - RAK 5 oneven,Muur,Werfmuur,1900,1980,2.4,4.03,0.3,,2.87,3.35,weakly supported,mixed,95.0,nearby,canal level,1,
+WF060466,Oude Gracht 154b - RAK 6 even,Muur,Werfmuur,1900,1980,8.5,4.18,0.51,,2.88,3.37,weakly supported,mixed,71.0,nearby,canal level,1,
+WF060467,Oude gracht 155 - RAK 5 oneven,Muur,Werfmuur,1900,1980,3.2,3.26,0.3,,2.87,3.36,weakly supported,mixed,92.0,nearby,canal level,1,
+WF060468,Oude Gracht 159a - RAK 6 oneven,Muur,Werfmuur,1900,1980,3.2,2.22,0.54,,2.9,3.38,weakly supported,soft_clay_peat,83.0,nearby,canal level,1,
+WF060469,Oude Gracht 159b - RAK 6 oneven,Muur,Werfmuur,1900,1980,5.5,,0.36,,2.91,3.39,weakly supported,mixed,80.0,nearby,H; canal level,2,
+WF060470,Oude Gracht 161b - RAK 6 oneven,Muur,Werfmuur,1800,1880,4.8,4.05,0.3,,2.93,3.42,weakly supported,mixed,72.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060471,Oude Gracht 163a - RAK 6 oneven,Muur,Werfmuur,1870,1950,6.2,3.97,0.3,,2.95,3.44,interpolated,mixed,65.0,nearby,canal level,1,
+WF060472,Oude Gracht 163b - RAK 6 oneven,Muur,Werfmuur,1870,1950,4.4,3.95,0.3,,2.96,3.45,interpolated,mixed,62.0,nearby,canal level,1,
+WF060473,Oude Gracht 165 - RAK 6 oneven,Muur,Werfmuur,1870,1950,5.3,3.95,0.3,,2.97,3.46,interpolated,mixed,59.0,nearby,canal level,1,
+WF060474,Oude Gracht 166 - RAK 9 even,Muur,Werfmuur,1800,1880,6.7,3.3,0.33,,3.07,3.56,interpolated,soft_clay_peat,48.0,close,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060475,Oude Gracht 168 - RAK 9 even,Muur,Werfmuur,1900,1980,6.0,3.13,0.31,,3.07,3.55,interpolated,soft_clay_peat,47.0,close,canal level,1,
+WF060476,Oude Gracht 170 - RAK 9 even,Muur,Werfmuur,1900,1980,4.2,3.82,0.33,,3.07,3.55,interpolated,soft_clay_peat,44.0,close,canal level,1,
+WF060477,Oude Gracht 172 - RAK 9 even,Muur,Werfmuur,1900,1980,5.8,3.18,0.33,,3.06,3.54,interpolated,soft_clay_peat,41.0,close,canal level,1,
+WF060479,Oude Gracht 174 - RAK 9 even,Muur,Werfmuur,1900,1980,3.9,3.2,0.33,,3.05,3.53,interpolated,soft_clay_peat,39.0,close,canal level,1,
+WF060480,Oude gracht 175 - RAK 10 oneven,Muur,Werfmuur,1450,1530,5.8,3.38,0.33,,2.99,3.44,interpolated,soft_clay_peat,26.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060481,Oude Gracht 176 - RAK 9 even,Muur,Werfmuur,1900,1980,5.3,3.29,0.33,,3.05,3.53,interpolated,soft_clay_peat,37.0,close,canal level,1,
+WF060482,Oude gracht 177 - RAK 10 oneven,Muur,Werfmuur,1450,1530,4.5,3.39,0.33,,2.98,3.43,interpolated,soft_clay_peat,31.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060483,Oude Gracht 178 - RAK 9 even,Muur,Werfmuur,1900,1980,6.2,3.29,0.33,,3.04,3.52,interpolated,soft_clay_peat,36.0,close,canal level,1,
+WF060484,Oude gracht 179 - RAK 10 oneven,Muur,Werfmuur,1450,1530,5.1,3.43,0.33,,2.97,3.42,weakly supported,soft_clay_peat,35.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060485,Oude Gracht 180 - RAK 9 even,Muur,Werfmuur,1900,1980,3.2,3.3,0.33,,3.03,3.51,interpolated,soft_clay_peat,35.0,close,canal level,1,
+WF060486,Oude gracht 181 - RAK 10 oneven,Muur,Werfmuur,1450,1530,7.8,3.46,0.33,,2.97,3.42,weakly supported,soft_clay_peat,41.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060487,Oude gracht 183 - RAK 10 oneven,Muur,Werfmuur,1450,1530,5.1,3.45,0.33,,2.96,3.41,weakly supported,soft_clay_peat,45.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060488,Oude gracht 185 - RAK 10 oneven,Muur,Werfmuur,1450,1530,5.3,3.44,0.34,,2.99,3.43,weakly supported,soft_clay_peat,50.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060489,Oude Gracht 186 - RAK 9 even,Muur,Werfmuur,1450,1530,3.8,3.4,0.33,,3.02,3.49,interpolated,soft_clay_peat,36.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060490,Oude gracht 187 - RAK 10 oneven,Muur,Werfmuur,1800,1880,7.7,3.52,0.41,,2.98,3.42,weakly supported,soft_clay_peat,57.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060491,Oude gracht 189 - RAK 10 oneven,Muur,Werfmuur,1900,1980,8.8,3.59,0.33,,2.97,3.41,weakly supported,soft_clay_peat,63.0,nearby,canal level,1,
+WF060492,Oude gracht 190-192 - RAK 10 even,Muur,Werfmuur,1900,1980,7.1,3.27,0.33,,3.0,3.46,interpolated,soft_clay_peat,42.0,close,canal level,1,
+WF060493,Oude gracht 191 - RAK 10 oneven,Muur,Werfmuur,1900,1980,4.9,3.57,0.33,,2.96,3.39,weakly supported,soft_clay_peat,71.0,nearby,canal level,1,
+WF060494,Oude gracht 193 - RAK 10 oneven,Muur,Werfmuur,1800,1880,6.8,3.57,0.33,,2.95,3.38,weakly supported,soft_clay_peat,77.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060495,Oude gracht 194 - RAK 10 even,Muur,Werfmuur,1900,1980,5.5,3.17,0.33,,2.99,3.45,interpolated,soft_clay_peat,45.0,close,canal level,1,
+WF060496,Oude gracht 195 - RAK 10 oneven,Muur,Werfmuur,1800,1880,5.2,3.57,0.33,,2.95,3.37,weakly supported,soft_clay_peat,82.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060497,Oude gracht 197 - RAK 10 oneven,Muur,Werfmuur,1800,1880,6.2,3.62,0.33,,2.94,3.36,weakly supported,soft_clay_peat,89.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060498,Oude gracht 198 - RAK 10 even,Muur,Werfmuur,1900,1980,4.1,3.2,0.33,,2.97,3.43,interpolated,soft_clay_peat,52.0,nearby,canal level,1,
+WF060499,Oude gracht 199a - RAK 10 oneven,Muur,Werfmuur,1800,1880,1.1,3.27,0.34,,2.93,3.35,weakly supported,soft_clay_peat,91.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060500,Oude gracht 200 - RAK 10 even,Muur,Werfmuur,1900,1980,3.9,3.26,0.33,,2.96,3.42,weakly supported,soft_clay_peat,56.0,nearby,canal level,1,
+WF060501,Oude gracht 202 - RAK 10 even,Muur,Werfmuur,1900,1980,4.2,3.33,0.33,,2.96,3.41,weakly supported,soft_clay_peat,59.0,nearby,canal level,1,
+WF060502,Oude Gracht 203b - RAK 11 oneven,Muur,Werfmuur,1380,1460,5.9,2.89,0.58,,2.9,3.32,weakly supported,mixed,110.0,nearby,canal level; foundation age,2,Aanlegjaar 1380 is the original wall
+WF060503,Oude gracht 204 - RAK 10 even,Muur,Werfmuur,1900,1980,4.1,3.35,0.33,,2.95,3.4,weakly supported,soft_clay_peat,62.0,nearby,canal level,1,
+WF060504,Oude Gracht 205 - RAK 11 oneven,Muur,Werfmuur,1380,1460,5.2,3.44,0.32,,2.9,3.3,weakly supported,soft_clay_peat,107.0,nearby,canal level; foundation age,2,Aanlegjaar 1380 is the original wall
+WF060505,Oude gracht 206 - RAK 10 even,Muur,Werfmuur,1900,1980,7.7,3.43,0.33,,2.95,3.39,weakly supported,soft_clay_peat,66.0,nearby,canal level,1,
+WF060506,Oude Gracht 207 - RAK 11 oneven,Muur,Werfmuur,1380,1460,6.3,3.77,0.49,,2.89,3.29,weakly supported,soft_clay_peat,104.0,nearby,canal level; foundation age,2,Aanlegjaar 1380 is the original wall
+WF060507,Oude gracht 208 - RAK 10 even,Muur,Werfmuur,1900,1980,2.7,3.38,0.33,,2.97,3.42,weakly supported,soft_clay_peat,72.0,nearby,canal level,1,
+WF060508,Oude Gracht 209 - RAK 11 oneven,Muur,Werfmuur,1900,1980,6.5,3.83,0.33,,2.88,3.28,weakly supported,soft_clay_peat,101.0,nearby,canal level,1,
+WF060509,Oude gracht 210 - RAK 10 even,Muur,Werfmuur,1900,1980,4.1,3.36,0.33,,2.97,3.41,weakly supported,soft_clay_peat,74.0,nearby,canal level,1,
+WF060510,Oude Gracht 211 - RAK 11 oneven,Muur,Werfmuur,1900,1980,5.2,3.78,0.33,,2.87,3.27,weakly supported,soft_clay_peat,98.0,nearby,canal level,1,
+WF060511,Oude gracht 212 - RAK 10 even,Muur,Werfmuur,1900,1980,4.4,3.35,0.33,,2.96,3.4,weakly supported,soft_clay_peat,78.0,nearby,canal level,1,
+WF060512,Oude Gracht 213 - RAK 11 oneven,Muur,Werfmuur,1450,1530,5.9,3.75,0.33,,2.86,3.26,weakly supported,soft_clay_peat,97.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060513,Oude gracht 214a - RAK 10 even,Muur,Werfmuur,1450,1530,6.2,3.39,0.33,,2.96,3.39,weakly supported,soft_clay_peat,84.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060514,Oude gracht 214b - RAK 10 even,Muur,Werfmuur,1450,1530,3.8,3.36,0.33,,2.95,3.38,weakly supported,soft_clay_peat,88.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060518,Oude Gracht 219 - RAK 11 oneven,Muur,Werfmuur,1450,1530,7.7,3.82,0.33,,2.83,3.23,weakly supported,soft_clay_peat,93.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060519,Oude Gracht 220 - RAK 11 even,Muur,Werfmuur,1900,1980,4.2,3.69,0.32,,2.9,3.32,weakly supported,soft_clay_peat,118.0,nearby,canal level,1,
+WF060520,Oude Gracht 221 - RAK 11 oneven,Muur,Werfmuur,1900,1980,4.9,3.8,0.33,,2.83,3.22,weakly supported,soft_clay_peat,92.0,nearby,canal level,1,
+WF060521,Oude Gracht 222 - RAK 11 even,Muur,Werfmuur,1900,1980,3.5,3.57,0.33,,2.89,3.31,weakly supported,soft_clay_peat,122.0,nearby,canal level,1,
+WF060522,Oude Gracht 223 - RAK 11 oneven,Muur,Werfmuur,1450,1530,6.5,3.84,0.33,,2.81,3.2,weakly supported,soft_clay_peat,92.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060523,Oude Gracht 224 - RAK 11 even,Muur,Werfmuur,1450,1530,3.3,3.49,0.33,,2.89,3.3,weakly supported,soft_clay_peat,124.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060524,Oude Gracht 225 - RAK 11 oneven,Muur,Werfmuur,1450,1530,4.4,3.87,0.33,,2.81,3.19,weakly supported,soft_clay_peat,92.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060525,Oude Gracht 226 - RAK 11 even,Muur,Werfmuur,1450,1530,7.0,3.37,0.33,,2.88,3.3,weakly supported,soft_clay_peat,122.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060527,Oude Gracht 228 - RAK 11 even,Muur,Werfmuur,1900,1980,4.3,3.3,0.33,,2.87,3.28,weakly supported,mixed,120.0,nearby,canal level,1,
+WF060528,Oude Gracht 230a - RAK 11 even,Muur,Werfmuur,1900,1980,4.2,3.29,0.33,,2.87,3.28,weakly supported,mixed,118.0,nearby,canal level,1,
+WF060529,Oudegracht 230b - RAK 11 even,Muur,Werfmuur,1917,1997,2.7,,0.33,,2.86,3.27,weakly supported,mixed,117.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1917 possibly a default
+WF060530,Oude Gracht 230c - RAK 11 even,Muur,Werfmuur,1900,1980,3.6,3.34,0.33,,2.85,3.26,weakly supported,soft_clay_peat,116.0,nearby,canal level,1,
+WF060531,Oude Gracht 231 - RAK 11 oneven,Muur,Werfmuur,1450,1530,6.1,3.65,0.31,,2.79,3.17,weakly supported,soft_clay_peat,94.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060532,Oude Gracht 232 - RAK 11 even,Muur,Werfmuur,1900,1980,6.8,3.29,0.33,,2.85,3.25,weakly supported,mixed,116.0,nearby,canal level,1,
+WF060533,Oude Gracht 233 - RAK 11 oneven,Muur,Werfmuur,1900,1980,4.1,3.64,0.33,,2.78,3.16,weakly supported,soft_clay_peat,95.0,nearby,canal level,1,
+WF060534,Oude Gracht 234 - RAK 11 even,Muur,Werfmuur,1900,1980,7.1,3.19,0.33,,2.84,3.24,weakly supported,mixed,116.0,nearby,canal level,1,
+WF060535,Oude Gracht 235 - RAK 11 oneven,Muur,Werfmuur,1450,1530,5.4,3.72,0.33,,2.77,3.15,weakly supported,soft_clay_peat,96.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060536,Oude Gracht 236 - RAK 11 even,Muur,Werfmuur,1900,1980,7.5,3.04,0.33,,2.83,3.23,weakly supported,mixed,115.0,nearby,canal level,1,
+WF060537,Oude Gracht 237 - RAK 11 oneven,Muur,Werfmuur,1450,1530,5.4,3.69,0.33,,2.76,3.14,weakly supported,soft_clay_peat,97.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060538,Oude Gracht 238 - RAK 11 even,Muur,Werfmuur,1900,1980,6.8,3.0,0.33,,2.82,3.21,weakly supported,mixed,113.0,nearby,canal level,1,
+WF060539,Oude Gracht 239 - RAK 11 oneven,Muur,Werfmuur,1450,1530,3.4,3.65,0.33,,2.76,3.13,weakly supported,soft_clay_peat,99.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060540,Oude Gracht 241 - RAK 11 oneven,Muur,Werfmuur,1450,1530,5.3,3.65,0.33,,2.75,3.13,weakly supported,soft_clay_peat,101.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060541,Oude Gracht 242 - RAK 11 even,Muur,Werfmuur,1450,1530,4.2,2.85,0.33,,2.8,3.19,weakly supported,mixed,115.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060542,Oude Gracht 243 - RAK 11 oneven,Muur,Werfmuur,1450,1530,6.4,3.7,0.33,,2.74,3.12,weakly supported,soft_clay_peat,103.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060543,Oude Gracht 244 - RAK 11 even,Muur,Werfmuur,1450,1530,6.2,2.89,0.33,,2.79,3.18,weakly supported,mixed,115.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060544,Oude Gracht 245 (onder Weesbrug) - RAK 11 oneven,Muur,Werfmuur,1650,1730,6.4,3.73,0.33,,2.73,3.1,weakly supported,soft_clay_peat,106.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060545,Oude Gracht 246 - RAK 11 even,Muur,Werfmuur,1450,1530,4.6,2.96,0.33,,2.79,3.18,weakly supported,mixed,115.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060546,Oude gracht 247 - RAK 12 oneven,Muur,Werfmuur,1650,1730,6.8,3.55,0.3,,2.71,3.08,weakly supported,soft_clay_peat,113.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060547,Oude Gracht 248 - RAK 11 even,Muur,Werfmuur,1450,1530,4.1,2.99,0.33,,2.78,3.17,weakly supported,mixed,115.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060548,Oude gracht 249 - RAK 12 oneven,Muur,Werfmuur,1650,1730,4.5,3.44,0.33,,2.71,3.07,weakly supported,soft_clay_peat,115.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060549,Oude Gracht 250 - RAK 11 even,Muur,Werfmuur,1450,1530,5.5,3.0,0.33,,2.77,3.16,weakly supported,mixed,116.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060550,Oude gracht 251 - RAK 12 oneven,Muur,Werfmuur,1900,1980,5.0,3.25,0.33,,2.7,3.06,weakly supported,mixed,118.0,nearby,canal level,1,
+WF060551,Oude Gracht 252 - RAK 11 even,Muur,Werfmuur,1900,1980,3.3,2.92,0.34,,2.77,3.15,weakly supported,mixed,117.0,nearby,canal level,1,
+WF060552,Oude gracht 253 - RAK 12 oneven,Muur,Werfmuur,1900,1980,4.1,3.18,0.33,,2.69,3.05,weakly supported,mixed,121.0,nearby,canal level,1,
+WF060553,Oude Gracht 254 - RAK 11 even,Muur,Werfmuur,1900,1980,7.8,3.01,0.33,,2.76,3.14,weakly supported,mixed,119.0,nearby,canal level,1,
+WF060554,Oude gracht 255 - RAK 12 oneven,Muur,Werfmuur,1900,1980,8.2,3.22,0.32,,2.68,3.04,weakly supported,mixed,122.0,nearby,canal level,1,
+WF060555,Oude gracht 257 - RAK 12 oneven,Muur,Werfmuur,1900,1980,3.6,3.2,0.35,,2.68,3.03,weakly supported,mixed,117.0,nearby,canal level,1,
+WF060556,Oude Gracht 258 - RAK 11 even,Muur,Werfmuur,1930,2010,6.2,3.24,0.33,,2.74,3.11,weakly supported,mixed,124.0,nearby,canal level,1,
+WF060557,Oude gracht 259 - RAK 12 oneven,Muur,Werfmuur,1800,1880,5.0,3.3,0.37,,2.67,3.03,weakly supported,mixed,112.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WF060558,Oude Gracht 260 - RAK 11 even,Muur,Werfmuur,1930,2010,5.8,3.42,0.33,,2.73,3.1,weakly supported,soft_clay_peat,126.0,nearby,canal level,1,
+WF060559,Oude gracht 261 - RAK 12 oneven,Muur,Werfmuur,1905,1985,5.8,3.25,0.34,,2.66,3.02,weakly supported,mixed,107.0,nearby,canal level,1,
+WF060560,Oude gracht 263 - RAK 12 oneven,Muur,Werfmuur,1250,1330,6.4,3.1,0.33,,2.65,3.01,weakly supported,mixed,101.0,nearby,canal level; foundation age,2,Aanlegjaar 1250 is the original wall
+WF060561,Oude gracht 264 - RAK 12 even,Muur,Werfmuur,1930,2010,3.6,3.44,0.34,,2.71,3.08,weakly supported,sand,124.0,nearby,canal level,1,
+WF060562,Oude gracht 265a - RAK 12 oneven,Muur,Werfmuur,1250,1330,5.8,3.05,0.33,,2.64,3.0,weakly supported,mixed,94.0,nearby,canal level; foundation age,2,Aanlegjaar 1250 is the original wall
+WF060563,Oude gracht 265b - RAK 12 oneven,Muur,Werfmuur,1911,1991,6.4,3.03,0.34,,2.64,2.99,weakly supported,mixed,89.0,nearby,canal level,1,
+WF060564,Oude gracht 267 - RAK 12 oneven,Muur,Werfmuur,1900,1980,7.4,3.04,0.34,,2.63,2.97,weakly supported,mixed,81.0,nearby,canal level,1,
+WF060565,Oude gracht 269 - RAK 12 oneven,Muur,Werfmuur,1900,1980,6.1,3.02,0.34,,2.62,2.97,weakly supported,mixed,75.0,nearby,canal level,1,
+WF060566,Oude gracht 271 - RAK 12 oneven,Muur,Werfmuur,1450,1530,7.4,3.09,0.32,,2.61,2.96,weakly supported,mixed,69.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060567,Oude gracht 273 - RAK 12 oneven,Muur,Werfmuur,1450,1530,4.7,3.08,0.31,,2.6,2.95,weakly supported,mixed,64.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060568,Oude gracht 274-276 - RAK 12 even,Muur,Werfmuur,1450,1530,10.8,3.16,0.33,,2.67,3.03,weakly supported,mixed,116.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060569,Oude gracht 275 - RAK 12 oneven,Muur,Werfmuur,1450,1530,8.2,3.23,0.33,,2.6,2.94,weakly supported,mixed,57.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060570,Oude gracht 278 - RAK 12 even,Muur,Werfmuur,1450,1530,3.7,3.1,0.3,,2.65,3.01,weakly supported,mixed,108.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060571,Oude Gracht 279 - RAK 13 oneven,Muur,Werfmuur,1850,1930,6.1,3.6,0.32,,2.57,2.9,weakly supported,mixed,34.0,close,canal level,1,
+WF060572,Oude gracht 280 - RAK 12 even,Muur,Werfmuur,1900,1980,3.5,3.8,0.33,,2.65,3.01,weakly supported,mixed,104.0,nearby,canal level,1,
+WF060573,Oude Gracht 281 - RAK 13 oneven,Muur,Werfmuur,1850,1930,7.4,3.41,0.31,,2.56,2.89,weakly supported,mixed,25.0,close,canal level,1,
+WF060574,Oude gracht 282 - RAK 12 even,Muur,Werfmuur,1900,1980,3.6,3.12,0.33,,2.64,3.0,weakly supported,mixed,100.0,nearby,canal level,1,
+WF060575,Oude Gracht 283 - RAK 13 oneven,Muur,Werfmuur,1250,1330,5.9,3.37,0.33,,2.55,2.88,weakly supported,mixed,19.0,close,canal level; foundation age,2,Aanlegjaar 1250 is the original wall
+WF060576,Oude gracht 284 - RAK 12 even,Muur,Werfmuur,1900,1980,4.7,3.15,0.33,,2.64,2.99,weakly supported,mixed,96.0,nearby,canal level,1,
+WF060577,Oude Gracht 285 - RAK 13 oneven,Muur,Werfmuur,1886,1966,5.0,3.37,0.33,,2.55,2.87,weakly supported,mixed,14.0,close,canal level,1,
+WF060578,Oude gracht 286 - RAK 12 even,Muur,Werfmuur,1900,1980,4.1,3.21,0.31,,2.63,2.99,weakly supported,mixed,92.0,nearby,canal level,1,
+WF060579,Oude Gracht 287 - RAK 13 oneven,Muur,Werfmuur,1886,1966,6.5,3.3,0.28,,2.54,2.87,weakly supported,mixed,8.0,close,canal level,1,
+WF060580,Oude gracht 288 - RAK 12 even,Muur,Werfmuur,1450,1530,6.8,3.2,0.29,,2.63,2.98,weakly supported,mixed,87.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060581,Oude Gracht 289 - RAK 13 oneven,Muur,Werfmuur,1450,1530,6.5,3.2,0.33,,2.54,2.86,weakly supported,mixed,3.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060582,Oude Gracht 291 - RAK 13 oneven,Muur,Werfmuur,1450,1530,5.4,3.13,0.33,,2.53,2.85,weakly supported,mixed,4.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060583,Oude gracht 292 - RAK 12 even,Muur,Werfmuur,1900,1980,3.8,3.3,0.34,,2.61,2.96,weakly supported,mixed,75.0,nearby,canal level,1,
+WF060584,Oude Gracht 293 - RAK 13 oneven,Muur,Werfmuur,1450,1530,5.8,3.02,0.33,,2.53,2.85,weakly supported,mixed,8.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060585,Oude gracht 294 - RAK 12 even,Muur,Werfmuur,1900,1980,2.7,2.65,0.32,,2.61,2.95,weakly supported,mixed,72.0,nearby,canal level,1,
+WF060586,Oude Gracht 295 - RAK 13 oneven,Muur,Werfmuur,1450,1530,4.6,3.07,0.33,,2.52,2.84,weakly supported,mixed,14.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060587,Oude gracht 296 - RAK 12 even,Muur,Werfmuur,1900,1980,7.2,3.39,0.31,,2.6,2.95,weakly supported,mixed,68.0,nearby,canal level,1,
+WF060588,Oude Gracht 297 - RAK 13 oneven,Muur,Werfmuur,1900,1980,4.2,3.06,0.33,,2.52,2.83,weakly supported,mixed,18.0,close,canal level,1,
+WF060589,Oude gracht 298 - RAK 12 even,Muur,Werfmuur,1900,1980,4.9,3.64,0.31,,2.59,2.93,weakly supported,mixed,61.0,nearby,canal level,1,
+WF060590,Oude Gracht 299 - RAK 13 oneven,Muur,Werfmuur,1450,1530,7.6,3.24,0.33,,2.52,2.83,weakly supported,mixed,23.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060591,Oude Gracht 301 - RAK 13 oneven,Muur,Werfmuur,1450,1530,5.8,3.23,0.33,,2.51,2.82,weakly supported,mixed,30.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060592,Oude Gracht 307 - RAK 13 oneven,Muur,Werfmuur,1900,1980,6.4,3.0,0.33,,2.5,2.8,weakly supported,mixed,46.0,close,canal level,1,
+WF060593,Oude Gracht 308 - RAK 13 even,Muur,Werfmuur,1880,1960,5.4,3.37,0.33,,2.56,2.89,weakly supported,mixed,35.0,close,canal level,1,
+WF060594,Oude Gracht 309 - RAK 13 oneven,Muur,Werfmuur,1900,1980,7.8,2.95,0.33,,2.49,2.79,weakly supported,mixed,54.0,nearby,canal level,1,
+WF060595,Oude Gracht 310 - RAK 13 even,Muur,Werfmuur,1450,1530,5.2,3.29,0.33,,2.55,2.88,weakly supported,mixed,32.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060596,Oude gracht 311 - RAK 13 oneven,Muur,Werfmuur,1900,1980,6.6,2.8,0.33,,2.49,2.79,weakly supported,mixed,60.0,nearby,canal level,1,
+WF060599,Oude gracht 313 - RAK 13 oneven,Muur,Werfmuur,1876,1956,5.1,2.77,0.33,,2.49,2.78,weakly supported,mixed,67.0,nearby,canal level,1,
+WF060601,Oude gracht 315 - RAK 13 oneven,Muur,Werfmuur,1876,1956,6.7,2.94,0.33,,2.48,2.77,weakly supported,mixed,73.0,nearby,canal level,1,
+WF060603,Oude gracht 317 - RAK 13 oneven,Muur,Werfmuur,1450,1530,8.0,3.02,0.33,,2.48,2.76,weakly supported,mixed,82.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060604,Oude Gracht 318 - RAK 13 even,Muur,Werfmuur,1450,1530,5.5,3.06,0.33,,2.52,2.84,weakly supported,mixed,30.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060605,Oude Gracht 318-320 - RAK 13 even,Muur,Werfmuur,1909,1989,2.5,3.06,0.33,,2.52,2.83,weakly supported,mixed,32.0,close,canal level,1,
+WF060606,Oude Gracht 319-321 - RAK 13 oneven,Muur,Werfmuur,1450,1530,11.0,3.09,0.33,,2.48,2.75,weakly supported,mixed,92.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060607,Oude Gracht 320 - RAK 13 even,Muur,Werfmuur,1900,1980,19.1,3.26,0.33,,2.51,2.82,weakly supported,mixed,39.0,close,canal level,1,
+WF060608,Oude Gracht 322 - RAK 13 even,Muur,Werfmuur,1900,1980,6.7,3.15,0.38,,2.51,2.81,weakly supported,mixed,48.0,close,canal level,1,
+WF060609,Oude Gracht 324 - RAK 13 even,Muur,Werfmuur,1913,1993,9.4,3.12,0.38,,2.5,2.79,weakly supported,mixed,56.0,nearby,canal level,1,
+WF060610,Oude Gracht 326 - RAK 13 even,Muur,Werfmuur,1913,1993,7.2,3.15,0.38,,2.5,2.79,weakly supported,mixed,63.0,nearby,canal level,1,
+WF060611,Oude gracht 327 - RAK 14 oneven,Muur,Werfmuur,1450,1530,6.4,3.22,0.33,,2.47,2.74,interpolated,soft_clay_peat,104.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060612,Oude Gracht 328 - RAK 13 even,Muur,Werfmuur,1450,1530,8.3,3.32,0.38,,2.49,2.78,weakly supported,mixed,69.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060613,Oude gracht 329 - RAK 14 oneven,Muur,Werfmuur,1900,1980,4.2,3.17,0.33,,2.47,2.73,interpolated,soft_clay_peat,103.0,nearby,canal level,1,
+WF060614,Oude Gracht 330 - RAK 13 even,Muur,Werfmuur,1450,1530,3.3,3.31,0.38,,2.49,2.77,weakly supported,mixed,74.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060615,Oude gracht 331 - RAK 14 oneven,Muur,Werfmuur,1900,1980,7.0,3.18,0.33,,2.47,2.73,interpolated,soft_clay_peat,102.0,nearby,canal level,1,
+WF060616,Oude Gracht 332 - RAK 13 even,Muur,Werfmuur,1450,1530,5.2,3.28,0.36,,2.49,2.77,weakly supported,mixed,78.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060617,Oude gracht 333 - RAK 14 oneven,Muur,Werfmuur,1450,1530,6.5,3.05,0.33,,2.47,2.72,interpolated,soft_clay_peat,102.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060618,Oude Gracht 334 - RAK 13 even,Muur,Werfmuur,1450,1530,8.0,3.13,0.38,,2.49,2.76,weakly supported,mixed,84.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060619,Oude gracht 335 - RAK 14 oneven,Muur,Werfmuur,1450,1530,5.1,3.01,0.33,,2.47,2.72,interpolated,soft_clay_peat,102.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060620,Oude Gracht 336 - RAK 13 even,Muur,Werfmuur,1450,1530,3.7,3.27,0.33,,2.48,2.76,interpolated,mixed,89.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060621,Oude gracht 337 - RAK 14 oneven,Muur,Werfmuur,1450,1530,5.7,3.0,0.33,,2.47,2.71,interpolated,soft_clay_peat,102.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060622,Oude Gracht 338 - RAK 13 even,Muur,Werfmuur,1450,1530,7.3,3.39,0.33,,2.48,2.75,interpolated,mixed,94.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060623,Oude gracht 339 - RAK 14 oneven,Muur,Werfmuur,1450,1530,7.0,3.04,0.34,,2.46,2.71,interpolated,soft_clay_peat,103.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060624,Oude gracht 341 - RAK 14 oneven,Muur,Werfmuur,1920,2000,9.6,3.1,0.33,,2.46,2.7,interpolated,soft_clay_peat,105.0,nearby,canal level,1,
+WF060625,Oude gracht 342 - RAK 14 even,Muur,Werfmuur,1888,1968,5.7,3.16,0.33,,2.48,2.73,interpolated,mixed,112.0,nearby,canal level,1,
+WF060626,Oude gracht 343 - RAK 14 oneven,Muur,Werfmuur,1920,2000,4.8,3.13,0.33,,2.46,2.7,interpolated,soft_clay_peat,107.0,nearby,canal level,1,
+WF060627,Oude gracht 344-346 - RAK 14 even,Muur,Werfmuur,1888,1968,6.2,2.94,0.33,,2.48,2.73,interpolated,mixed,118.0,nearby,canal level,1,
+WF060628,Oude Gracht 345 - RAK 14 oneven,Muur,Werfmuur,1920,2000,7.7,3.05,0.33,,2.3,2.54,interpolated,soft_clay_peat,109.0,nearby,canal level,1,
+WF060629,Oude gracht 347 - RAK 14 oneven,Muur,Werfmuur,1890,1970,5.6,3.11,0.33,,2.31,2.54,interpolated,soft_clay_peat,111.0,nearby,canal level,1,
+WF060630,Oude gracht 348 - RAK 14 even,Muur,Werfmuur,1888,1968,5.2,,0.33,,2.47,2.72,interpolated,mixed,123.0,nearby,H; canal level,2,
+WF060631,Oude gracht 349 - RAK 14 oneven,Muur,Werfmuur,1890,1970,7.1,3.13,0.32,,2.31,2.55,interpolated,soft_clay_peat,114.0,nearby,canal level,1,
+WF060632,Oude gracht 350 - RAK 14 even,Muur,Werfmuur,1450,1530,8.8,2.8,0.33,,2.47,2.72,interpolated,soft_clay_peat,129.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060633,Oude gracht 351 - RAK 14 oneven,Muur,Werfmuur,1890,1970,8.7,3.2,0.34,,2.44,2.65,interpolated,soft_clay_peat,116.0,nearby,canal level,1,
+WF060634,Oude gracht 352 - RAK 14 even,Muur,Werfmuur,1900,1980,5.3,2.94,0.33,,2.47,2.71,interpolated,soft_clay_peat,129.0,nearby,canal level,1,
+WF060635,Oude gracht 353 - RAK 14 oneven,Muur,Werfmuur,1900,1980,6.7,3.31,0.33,,2.44,2.64,interpolated,soft_clay_peat,120.0,nearby,canal level,1,
+WF060636,Oude gracht 354 - RAK 14 even,Muur,Werfmuur,1870,1950,6.5,2.9,0.33,,2.47,2.71,interpolated,soft_clay_peat,130.0,nearby,canal level,1,
+WF060637,Oude gracht 355 - RAK 14 oneven,Muur,Werfmuur,1450,1530,7.0,3.26,0.35,,2.44,2.64,interpolated,soft_clay_peat,123.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060638,Oude gracht 356 - RAK 14 even,Muur,Werfmuur,1450,1530,4.0,2.87,0.33,,2.47,2.7,interpolated,soft_clay_peat,130.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060639,Oude gracht 357 - RAK 14 oneven,Muur,Werfmuur,1450,1530,6.9,3.12,0.33,,2.33,2.54,interpolated,soft_clay_peat,126.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060640,Oude gracht 358 - RAK 14 even,Muur,Werfmuur,1900,1980,4.8,2.88,0.33,,2.47,2.7,interpolated,soft_clay_peat,131.0,nearby,canal level,1,
+WF060641,Oude gracht 359 - RAK 14 oneven,Muur,Werfmuur,1450,1530,4.2,3.02,0.33,,2.34,2.54,interpolated,soft_clay_peat,129.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060642,Oude gracht 360 - RAK 14 even,Muur,Werfmuur,1910,1990,5.8,2.94,0.33,,2.47,2.7,interpolated,soft_clay_peat,132.0,nearby,canal level,1,
+WF060643,Oude gracht 361 - RAK 14 oneven,Muur,Werfmuur,1450,1530,4.5,3.02,0.33,,2.34,2.54,interpolated,soft_clay_peat,131.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060644,Oude gracht 362 - RAK 14 even,Muur,Werfmuur,1908,1988,5.5,2.87,0.33,,2.47,2.69,interpolated,soft_clay_peat,133.0,nearby,canal level,1,
+WF060645,Oude gracht 363 - RAK 14 oneven,Muur,Werfmuur,1450,1530,6.0,3.04,0.33,,2.34,2.54,interpolated,soft_clay_peat,135.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060646,Oude gracht 364a - RAK 14 even,Muur,Werfmuur,1908,1988,2.0,2.85,0.33,,2.47,2.69,interpolated,soft_clay_peat,134.0,nearby,canal level,1,
+WF060647,Oude gracht 364b - RAK 14 even,Muur,Werfmuur,1908,1988,5.4,2.91,0.33,,2.47,2.69,interpolated,soft_clay_peat,135.0,nearby,canal level,1,
+WF060648,Oude gracht 364c - RAK 14 even,Muur,Werfmuur,1908,1988,5.4,2.94,0.33,,2.47,2.68,interpolated,soft_clay_peat,136.0,nearby,canal level,1,
+WF060649,Oude gracht 364d - RAK 14 even,Muur,Werfmuur,1908,1988,6.1,2.88,0.33,,2.47,2.68,interpolated,soft_clay_peat,136.0,nearby,canal level,1,
+WF060650,Oude gracht 364e - RAK 14 even,Muur,Werfmuur,1908,1988,5.9,2.99,0.33,,2.47,2.68,interpolated,soft_clay_peat,134.0,nearby,canal level,1,
+WF060651,Oude gracht 365 (Gedeeltelijk onder Vollersbrug) - RAK 14 oneven,Muur,Werfmuur,1450,1530,5.9,3.05,0.31,,2.35,2.54,interpolated,soft_clay_peat,139.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060652,Oude gracht 366 - RAK 14 even,Muur,Werfmuur,1575,1655,5.5,3.0,0.35,,2.35,2.56,interpolated,soft_clay_peat,132.0,nearby,canal level; foundation age,2,Aanlegjaar 1575 is the original wall
+WF060653,Oude Gracht 367 - RAK 15 oneven,Muur,Werfmuur,1450,1530,4.8,3.35,0.43,,2.34,2.54,interpolated,mixed,133.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060654,Oude gracht 368 - RAK 14 even,Muur,Werfmuur,1575,1655,6.3,2.94,0.33,,2.36,2.56,interpolated,soft_clay_peat,130.0,nearby,canal level; foundation age,2,Aanlegjaar 1575 is the original wall
+WF060655,Oude gracht 370 - RAK 14 even,Muur,Werfmuur,1575,1655,4.7,2.92,0.33,,2.36,2.56,interpolated,soft_clay_peat,128.0,nearby,canal level; foundation age,2,Aanlegjaar 1575 is the original wall
+WF060656,Oude gracht 372 - RAK 14 even,Muur,Werfmuur,1575,1655,4.5,2.97,0.33,,2.37,2.57,interpolated,soft_clay_peat,127.0,nearby,canal level; foundation age,2,Aanlegjaar 1575 is the original wall
+WF060657,Oude gracht 374 - RAK 14 even,Muur,Werfmuur,1475,1555,7.2,3.11,0.33,,2.46,2.64,interpolated,soft_clay_peat,127.0,nearby,canal level; foundation age,2,Aanlegjaar 1475 is the original wall
+WF060658,Oude gracht 376 - RAK 14 even,Muur,Werfmuur,1475,1555,6.2,3.17,0.33,,2.38,2.55,interpolated,soft_clay_peat,126.0,nearby,canal level; foundation age,2,Aanlegjaar 1475 is the original wall
+WF060659,Oude gracht 378 - RAK 14 even,Muur,Werfmuur,1650,1730,5.5,3.12,0.33,,2.38,2.56,interpolated,soft_clay_peat,126.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060660,Oude gracht 380 - 382 - RAK 14 even,Muur,Werfmuur,1650,1730,6.8,3.27,0.33,,2.38,2.56,interpolated,soft_clay_peat,125.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WF060661,Oude Gracht 383 - RAK 15 oneven,Muur,Werfmuur,1450,1530,5.5,2.97,0.32,,2.34,2.52,interpolated,mixed,110.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060662,Oude Gracht 385 - RAK 15 oneven,Muur,Werfmuur,1913,1993,6.0,2.93,0.32,,2.33,2.52,interpolated,mixed,108.0,nearby,canal level,1,
+WF060663,Oude Gracht 387a - RAK 15 oneven,Muur,Werfmuur,1913,1993,5.3,3.07,0.32,,2.33,2.52,interpolated,mixed,107.0,nearby,canal level,1,
+WF060664,Oude Gracht 387b - RAK 15 oneven,Muur,Werfmuur,1913,1993,5.5,2.76,0.32,,2.33,2.51,interpolated,mixed,105.0,nearby,canal level,1,
+WF060665,Oude Gracht 389 - RAK 15 oneven,Muur,Werfmuur,1913,1993,4.9,2.7,0.32,,2.32,2.51,interpolated,mixed,105.0,nearby,canal level,1,
+WF060666,Oude Gracht 391-393 - RAK 15 oneven,Muur,Werfmuur,1900,1980,6.3,2.61,0.32,,2.32,2.51,interpolated,mixed,104.0,nearby,canal level,1,
+WF060667,Oude Gracht 395 - RAK 15 oneven,Muur,Werfmuur,1450,1530,4.6,2.63,0.32,,2.31,2.5,interpolated,mixed,104.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060668,Oude Gracht 397-399 - RAK 15 oneven,Muur,Werfmuur,1700,1780,12.4,2.75,0.32,,2.3,2.5,interpolated,mixed,104.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060669,Oude Gracht 401 - RAK 15 oneven,Muur,Werfmuur,1700,1780,14.1,2.83,0.32,,2.29,2.49,interpolated,mixed,106.0,nearby,canal level; foundation age,2,Aanlegjaar 1700 is the original wall
+WF060670,Oude Gracht 403a - RAK 15 oneven,Muur,Werfmuur,1901,1981,6.3,2.97,0.32,,2.28,2.48,interpolated,mixed,109.0,nearby,canal level,1,
+WF060671,Oude Gracht 403b - RAK 15 oneven,Muur,Werfmuur,1901,1981,2.7,2.98,0.32,,2.28,2.48,interpolated,mixed,111.0,nearby,canal level,1,
+WF060672,Oude Gracht 403c - RAK 15 oneven,Muur,Werfmuur,1450,1530,3.4,2.98,0.32,,2.27,2.47,interpolated,mixed,112.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060673,Oude Gracht 405 - RAK 15 oneven,Muur,Werfmuur,1450,1530,7.4,2.87,0.31,,2.27,2.47,interpolated,mixed,115.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WF060674,Oude Gracht 407 - RAK 15 oneven,Muur,Werfmuur,1930,2010,6.8,2.87,0.31,,2.26,2.46,interpolated,mixed,119.0,nearby,canal level,1,
+WF060675,Oude Gracht 409a - RAK 15 oneven,Muur,Werfmuur,1930,2010,4.1,2.81,0.32,,2.26,2.46,interpolated,mixed,121.0,nearby,canal level,1,
+WF060676,Oude Gracht 409b - RAK 15 oneven,Muur,Werfmuur,1930,2010,7.5,2.86,0.31,,2.25,2.45,interpolated,mixed,125.0,nearby,canal level,1,
+WF060677,Oude Gracht 409c - RAK 15 oneven,Muur,Werfmuur,1930,2010,4.4,2.83,0.31,,2.24,2.45,interpolated,mixed,129.0,nearby,canal level,1,
+WF060678,Oude Gracht 409d - RAK 15 oneven,Muur,Werfmuur,1930,2010,5.2,2.83,0.3,,2.24,2.44,interpolated,mixed,132.0,nearby,canal level,1,
+WF060679,Oude Gracht 409e - RAK 15 oneven,Muur,Werfmuur,1930,2010,5.3,2.79,0.3,,2.16,2.36,interpolated,mixed,136.0,nearby,canal level,1,
+WF060680,Oude Gracht 411 ( t.o. Diaconessestraat) - RAK 15 oneven,Muur,Werfmuur,1930,2010,1.7,2.75,0.29,,2.16,2.35,interpolated,mixed,139.0,nearby,canal level,1,
+WF060681,Oude Gracht 411-413 - RAK 15 oneven,Muur,Werfmuur,1937,2017,10.4,2.8,0.29,,2.15,2.35,interpolated,soft_clay_peat,139.0,nearby,canal level,1,
+WF060682,Oude Gracht 415 - RAK 15 oneven,Muur,Werfmuur,1937,2017,6.4,2.8,0.29,,2.15,2.35,interpolated,soft_clay_peat,139.0,nearby,canal level,1,
+WF060683,Oude Gracht 417-419 - RAK 15 oneven,Muur,Werfmuur,1937,2017,16.6,2.8,0.29,,2.14,2.34,interpolated,soft_clay_peat,140.0,nearby,canal level,1,
+WF060684,Oude gracht 421 - RAK 15 oneven,Muur,Werfmuur,1917,1997,4.1,,0.28,,2.14,2.34,interpolated,soft_clay_peat,140.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1917 possibly a default
+WF060685,Oude Gracht 423 - RAK 15 oneven,Muur,Werfmuur,1937,2017,8.4,2.91,0.28,,2.14,2.34,interpolated,soft_clay_peat,140.0,nearby,canal level,1,
+WF060686,Oude Gracht 425 - RAK 15 oneven,Muur,Werfmuur,1937,2017,7.8,3.04,0.28,,2.14,2.34,interpolated,soft_clay_peat,140.0,nearby,canal level,1,
+WF060687,Oude Gracht 427a - RAK 15 oneven,Muur,Werfmuur,1937,2017,4.5,3.06,0.27,,2.14,2.34,interpolated,soft_clay_peat,140.0,nearby,canal level,1,
+WFM06038-X,Oude gracht 77 - RAK 2 oneven,Muur,Werfmuur,1917,1997,5.2,,0.32,,2.09,2.63,interpolated,sand,101.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1917 possibly a default
+WFM06070,Oude gracht 56 - RAK 2 even,Muur,Werfmuur,1250,1330,4.3,,0.35,,2.01,2.55,weakly supported,soft_clay_peat,113.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1250 is the original wall
+WFM06073-X,Oude gracht 62 - RAK 2 even,Muur,Werfmuur,1880,1960,8.2,,0.35,,2.01,2.55,weakly supported,soft_clay_peat,126.0,nearby,H; canal level,2,
+WFM06093-X,Oude gracht (t.o. Oude postkantoor b) - RAK 3 even,Muur,Werfmuur,1905,1985,9.4,3.85,0.32,,2.28,2.81,weakly supported,mixed,38.0,close,canal level,1,
+WFM06107-X,Plompetorengracht 13c - RAK 26 oneven,Muur,Werfmuur,1900,1980,11.6,4.3,0.46,,1.69,2.15,weakly supported,mixed,41.0,close,canal level,1,
+WFM06108-X,Plompetorengracht 15 - RAK 26 oneven,Muur,Werfmuur,1450,1530,21.9,2.83,0.46,,1.69,2.14,weakly supported,soft_clay_peat,55.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06117-X,Plompetorengracht 2 - RAK 26 even,Muur,Werfmuur,1920,2000,11.2,3.16,0.46,,2.18,2.64,weakly supported,soft_clay_peat,69.0,nearby,canal level,1,
+WFM06120-X,Plompetorengracht 8 - RAK 26 even,Muur,Werfmuur,1883,1963,19.4,2.83,0.46,,2.1,2.56,weakly supported,soft_clay_peat,40.0,close,canal level,1,
+WFM06126-X,Plompetorengracht 18b - RAK 26 even,Muur,Werfmuur,1820,1900,32.4,2.17,0.46,,2.0,2.4,weakly supported,soft_clay_peat,47.0,close,canal level; foundation age,2,Aanlegjaar 1820 is the original wall
+WFM06127-X,Plompetorengracht 20 - RAK 26 even,Muur,Werfmuur,1937,2017,15.6,2.18,0.46,,1.97,2.37,weakly supported,soft_clay_peat,64.0,nearby,canal level,1,
+WFM06131-X,Plompetorengracht 26 - RAK 26 even,Muur,Werfmuur,1730,1810,21.8,2.83,0.47,,1.92,2.33,weakly supported,soft_clay_peat,103.0,nearby,canal level; foundation age,2,Aanlegjaar 1730 is the original wall
+WFM06132-X,Oude gracht 85-87-89-91-93 - RAK 3 oneven,Muur,Werfmuur,1900,1980,19.2,3.87,0.31,,2.23,2.76,interpolated,mixed,56.0,nearby,canal level,1,
+WFM06172-X,Oude Gracht 161a - RAK 6 oneven,Muur,Werfmuur,1800,1880,4.8,4.05,0.3,,2.92,3.41,weakly supported,mixed,76.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WFM06179-X,Oude Gracht (Stadhuisbrug 5b) - RAK 6 oneven,Muur,Werfmuur,1917,1997,10.7,4.18,0.32,,2.99,3.49,interpolated,mixed,51.0,nearby,canal level; foundation age,2,Aanlegjaar 1917 possibly a default
+WFM06221-X,Drift (onder Janskerkhof) - RAK 24 oneven,Muur,Werfmuur,1900,1980,11.1,2.7,0.35,,2.79,3.28,interpolated,soft_clay_peat,34.0,close,canal level,1,
+WFM06284-X,Oude gracht 124 - RAK 4 even,Muur,Werfmuur,1731,1811,5.2,4.07,0.34,,2.46,2.98,weakly supported,mixed,63.0,nearby,canal level; foundation age,2,Aanlegjaar 1731 is the original wall
+WFM06295-X,Oude gracht 138 - RAK 5 even,Muur,Werfmuur,1864,1944,1.1,4.0,0.36,,2.67,3.17,weakly supported,mixed,102.0,nearby,canal level,1,
+WFM06302-X,Oude gracht 152 - RAK 5 even,Muur,Werfmuur,1900,1980,8.9,,0.35,,2.85,3.33,weakly supported,mixed,85.0,nearby,H; canal level,2,
+WFM06304-X,Oude Gracht 156 - RAK 6 even,Muur,Werfmuur,1900,1980,19.6,4.11,0.31,,2.9,3.4,weakly supported,mixed,55.0,nearby,canal level,1,
+WFM06305-X,Oude Gracht 158 - RAK 6 even,Muur,Werfmuur,1900,1980,2.7,4.05,0.42,,2.96,3.45,interpolated,mixed,37.0,close,canal level,1,
+WFM06307-X,Oude Gracht (Stadhuisbrug 3) - RAK 6 even,Muur,Werfmuur,1933,2013,4.9,4.6,0.46,,2.99,3.49,interpolated,mixed,36.0,close,canal level,1,
+WFM06313-X,Oude Gracht (Vismarkt 01a) - RAK 7 even,Muur,Werfmuur,1920,2000,3.0,3.91,0.32,,3.09,3.6,interpolated,mixed,78.0,nearby,canal level,1,
+WFM06331-X,Oude gracht (Vismarkt 23) - RAK 8 even,Muur,Werfmuur,1450,1530,2.6,3.62,0.33,,3.13,3.63,interpolated,mixed,72.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06340,Oude gracht (Lichte gaard 9a) - RAK 9 even,Muur,Werfmuur,1800,1880,9.4,2.9,0.32,,3.11,3.61,interpolated,mixed,87.0,nearby,canal level; foundation age,2,Aanlegjaar 1800 is the original wall
+WFM06362-X,Drift 17a - RAK 25 oneven,Muur,Werfmuur,1450,1530,5.8,3.09,0.4,,2.62,3.1,weakly supported,soft_clay_peat,83.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06364-X,Drift 19a - RAK 25 oneven,Muur,Werfmuur,1450,1530,9.5,3.03,0.41,,2.57,3.04,weakly supported,soft_clay_peat,100.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06366-X,Drift 21a - RAK 25 oneven,Muur,Werfmuur,1450,1530,6.7,3.04,0.4,,2.52,2.99,weakly supported,soft_clay_peat,116.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06368-X,Drift 23a - RAK 25 oneven,Muur,Werfmuur,1450,1530,4.0,3.06,0.41,,2.46,2.93,weakly supported,soft_clay_peat,135.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06369-X,Drift 23b - RAK 25 oneven,Muur,Werfmuur,1870,1950,7.1,3.07,0.41,,2.43,2.9,weakly supported,soft_clay_peat,147.0,nearby,canal level,1,
+WFM06370-X,Drift 25a - RAK 25 oneven,Muur,Werfmuur,1900,1980,12.9,3.14,0.42,,2.39,2.86,weakly supported,sand,151.0,far,canal level,1,
+WFM06373-X,Drift 27a - RAK 25 oneven,Muur,Werfmuur,1450,1530,13.2,3.08,0.42,,2.34,2.8,weakly supported,soft_clay_peat,136.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06374-X,Drift 27b - RAK 25 oneven,Muur,Werfmuur,1650,1730,13.8,3.08,0.39,,2.31,2.77,weakly supported,soft_clay_peat,124.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WFM06377-X,Drift 29c - RAK 25 oneven,Muur,Werfmuur,1450,1530,9.8,3.14,0.4,,2.24,2.7,weakly supported,soft_clay_peat,97.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06378-X,Drift 31 - RAK 25 oneven,Muur,Werfmuur,1900,1980,6.6,3.1,0.45,,2.22,2.69,weakly supported,soft_clay_peat,88.0,nearby,canal level,1,
+WFM06389-X,Kromme nieuwe gracht 18 - RAK 22 even,Muur,Werfmuur,1450,1530,11.0,2.3,0.33,,2.88,3.36,interpolated,soft_clay_peat,91.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06390-X,Kromme nieuwe gracht 20 - RAK 22 even,Muur,Werfmuur,1900,1980,3.4,2.77,0.37,,2.87,3.34,interpolated,soft_clay_peat,81.0,nearby,canal level,1,
+WFM06391-X,Kromme nieuwe gracht 22 - RAK 22 even,Muur,Werfmuur,1900,1980,13.3,3.1,0.37,,2.84,3.3,interpolated,soft_clay_peat,73.0,nearby,canal level,1,
+WFM06410-X,Kromme nieuwe gracht 54 - RAK 21 even,Muur,Werfmuur,1450,1530,5.7,3.17,0.34,,2.41,2.81,interpolated,soft_clay_peat,83.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06437-X,Oude Gracht 215-217 - RAK 11 oneven,Muur,Werfmuur,1450,1530,5.5,3.75,0.33,,2.85,3.25,weakly supported,soft_clay_peat,95.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06485-X,Oude Gracht 303-305 - RAK 13 oneven,Muur,Werfmuur,1900,1980,4.1,3.01,0.33,,2.5,2.81,weakly supported,mixed,42.0,close,canal level,1,
+WFM06515-X,Oude Gracht 377-381 - RAK 15 oneven,Muur,Werfmuur,1450,1530,5.7,3.03,0.32,,2.34,2.52,interpolated,mixed,112.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06545-X,Oude gracht 427b - RAK 15 oneven,Muur,Werfmuur,1937,2017,2.4,3.15,0.26,,2.13,2.34,interpolated,soft_clay_peat,139.0,nearby,canal level,1,
+WFM06561-X,Nieuwe gracht 27 - RAK 20 oneven,Muur,Werfmuur,1900,1980,13.7,3.01,0.33,,2.84,3.28,weakly supported,soft_clay_peat,81.0,nearby,canal level,1,
+WFM06585-X,Nieuwe gracht 67 - RAK 18 oneven,Muur,Werfmuur,1900,1980,7.1,3.36,0.32,,2.43,2.81,weakly supported,sand,122.0,nearby,canal level,1,
+WFM06599-X,Nieuwe gracht 123 - RAK 17 oneven,Muur,Werfmuur,1650,1730,6.2,2.4,0.34,,2.21,2.58,weakly supported,soft_clay_peat,143.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WFM06602-X,Nieuwe Gracht 135-137 - RAK 16 oneven,Muur,Werfmuur,1904,1984,28.2,1.96,0.32,,2.21,2.56,weakly supported,soft_clay_peat,112.0,nearby,canal level,1,
+WFM06609-X,Nieuwe Gracht 147-149-151 - RAK 16 oneven,Muur,Werfmuur,1450,1530,14.5,2.0,0.32,,2.23,2.55,weakly supported,soft_clay_peat,75.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06610-X,Nieuwe Gracht 155-157 - RAK 16 oneven,Muur,Werfmuur,1450,1530,13.4,2.04,0.32,,2.23,2.55,weakly supported,soft_clay_peat,61.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06612-X,Nieuwe Gracht 161 - RAK 16 oneven,Muur,Werfmuur,1450,1530,8.3,2.12,0.32,,2.24,2.55,weakly supported,soft_clay_peat,48.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06617-X,Nieuwe Gracht 187 - RAK 16 oneven,Muur,Werfmuur,1450,1530,23.3,2.19,0.32,,2.28,2.56,interpolated,soft_clay_peat,38.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06622-X,Nieuwe Gracht 197-199 - RAK 16 oneven,Muur,Werfmuur,1900,1980,11.0,2.2,0.32,,2.15,2.4,interpolated,soft_clay_peat,69.0,nearby,canal level,1,
+WFM06623-X,Nieuwe Gracht 201 - RAK 16 oneven,Muur,Werfmuur,1900,1980,5.0,2.31,0.33,,2.16,2.41,interpolated,soft_clay_peat,75.0,nearby,canal level,1,
+WFM06624-X,Nieuwe gracht 141 - RAK 16 oneven,Muur,Werfmuur,1900,1980,6.1,2.84,0.31,,3.0,3.49,interpolated,soft_clay_peat,37.0,close,canal level,1,
+WFM06633-X,Oude Gracht 184 - RAK 9 even,Muur,Werfmuur,1450,1530,8.0,3.31,0.33,,3.03,3.5,interpolated,soft_clay_peat,35.0,close,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06639-X,Oude gracht 196 - RAK 10 even,Muur,Werfmuur,1900,1980,6.0,3.81,0.43,,2.98,3.44,interpolated,soft_clay_peat,49.0,close,canal level,1,
+WFM06666-X,Oude Gracht 240 - RAK 11 even,Muur,Werfmuur,1900,1980,6.8,2.92,0.32,,2.81,3.21,weakly supported,mixed,114.0,nearby,canal level,1,
+WFM06674-X,Oude Gracht 256 - RAK 11 even,Muur,Werfmuur,1900,1980,6.4,3.16,0.33,,2.75,3.13,weakly supported,mixed,121.0,nearby,canal level,1,
+WFM06679-X,Oude gracht 266-268-270-272 - RAK 12 even,Muur,Werfmuur,1450,1530,24.2,3.28,0.34,,2.69,3.06,weakly supported,sand,122.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06687-X,Oude gracht 290 - RAK 12 even,Muur,Werfmuur,1900,1980,7.6,3.23,0.34,,2.62,2.97,weakly supported,mixed,80.0,nearby,canal level,1,
+WFM06739-X,Oude Gracht (Twijnstraat 2) - RAK 15 even,Muur,Werfmuur,1900,1980,6.5,3.37,0.44,,2.39,2.56,interpolated,soft_clay_peat,116.0,nearby,canal level,1,
+WFM06750-X,Kromme nieuwe gracht 70 - RAK 21 even,Muur,Werfmuur,1450,1530,11.8,3.14,0.36,,2.75,3.2,interpolated,soft_clay_peat,74.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06751-X,Kromme nieuwe gracht 72 - RAK 21 even,Muur,Werfmuur,1450,1530,4.1,3.15,0.36,,2.78,3.24,interpolated,soft_clay_peat,76.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06753-X,Kromme nieuwe gracht 76 - RAK 21 even,Muur,Werfmuur,1450,1530,7.2,3.1,0.37,,2.82,3.29,interpolated,soft_clay_peat,80.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06754-X,Kromme nieuwe gracht 80a - RAK 21 even,Muur,Werfmuur,1450,1530,6.1,3.05,0.32,,2.86,3.33,interpolated,soft_clay_peat,85.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06759-X,Kromme nieuwe gracht 88a - RAK 21 even,Muur,Werfmuur,1450,1530,3.1,2.28,0.37,,2.97,3.46,interpolated,soft_clay_peat,73.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06774-X,Nieuwe gracht 20b - RAK 20 even,Muur,Werfmuur,1900,1980,7.3,2.85,0.33,,2.84,3.29,weakly supported,soft_clay_peat,73.0,nearby,canal level,1,
+WFM06783-X,Nieuwe gracht 32 - RAK 19 even,Muur,Werfmuur,1450,1530,14.1,3.11,0.32,,2.69,3.12,weakly supported,mixed,107.0,nearby,canal level; foundation age,2,Aanlegjaar 1450 is the original wall
+WFM06796-X,Nieuwe gracht 56 - RAK 18 even,Muur,Werfmuur,1900,1980,16.4,2.87,0.36,,2.43,2.82,weakly supported,soft_clay_peat,122.0,nearby,canal level,1,
+WFM06797-X,Nieuwe gracht 58 - RAK 18 even,Muur,Werfmuur,1650,1730,12.6,2.7,0.35,,2.4,2.79,weakly supported,soft_clay_peat,117.0,nearby,canal level; foundation age,2,Aanlegjaar 1650 is the original wall
+WFM06799-X,Nieuwe gracht 62 - RAK 17 even,Muur,Werfmuur,1917,1997,3.0,,0.31,,2.35,2.73,weakly supported,soft_clay_peat,112.0,nearby,H; canal level; foundation age,3,Aanlegjaar 1917 possibly a default
+WFM06805-X,Nieuwe gracht 72-74-76-78 - RAK 17 even,Muur,Werfmuur,1900,1980,22.3,2.23,0.32,,2.31,2.68,weakly supported,soft_clay_peat,125.0,nearby,canal level,1,
+WFM06812-X,Nieuwe Gracht 096 - RAK 16 even,Muur,Werfmuur,1900,1980,9.5,1.89,0.32,,2.19,2.54,weakly supported,soft_clay_peat,92.0,nearby,canal level,1,
+WFM06813-X,Nieuwe Gracht 098a - RAK 16 even,Muur,Werfmuur,1868,1948,9.5,1.83,0.33,,2.19,2.54,weakly supported,soft_clay_peat,87.0,nearby,canal level,1,
+WFM06814-X,Nieuwe Gracht 098b - RAK 16 even,Muur,Werfmuur,1868,1948,24.8,1.8,0.31,,2.2,2.54,weakly supported,soft_clay_peat,81.0,nearby,canal level,1,

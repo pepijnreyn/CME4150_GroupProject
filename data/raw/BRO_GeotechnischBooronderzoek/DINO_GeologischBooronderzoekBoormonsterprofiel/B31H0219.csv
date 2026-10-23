@@ -1,0 +1,21 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H0219","137030","455910","RD2000","31H","Onbekend","Utrecht","Utrecht","2.3","Onbekend","","29.51","01-01-1940","Onbekend","Schuppen, J.H. van, Utrecht","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Rijks Geologische Dienst","Onbekend","Onbekend","","C","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","1.5","onbekend","leem","","","","","","zwak siltig","","zandig","","","","","","","",""
+"1.5","7.1","donker--grijs","leem","","","","","","","","sterk zandig","","","","","","","",""
+"7.1","10.2","donker--grijs","zand","","","fijne categorie (O)","","","matig siltig","","","","","","","","","",""
+"10.2","13.5","licht--grijs-bruin-","zand","","","matig grof (O)","","","","","","","matig grindig","","","","","",""
+"13.5","16.0","licht--grijs-bruin-","zand","","","matig grof (O)","","","","","","","matig grindig","","","","","",""
+"16.0","18.0","licht--grijs-bruin-","zand","","","grove  categorie (O)","","","","","","","matig grindig","","","","","",""
+"18.0","21.5","licht--grijs-bruin-","zand","","","zeer grof (O)","","","","","","","sterk grindig","","","","","",""
+"21.5","23.0","licht--grijs-bruin-","zand","","","zeer grof (O)","","","","","","","sterk grindig","","","","","",""
+"23.0","28.0","grijs","zand","","","matig grof (O)","","","","","","","matig grindig","","","","","",""
+"28.0","29.5","grijs","zand","","","matig grof (O)","","","","","","","matig grindig","","","","","",""
+"29.5","29.51","grijs","zand","","","matig grof (O)","","","","","","","matig grindig","","humeus","","","",""

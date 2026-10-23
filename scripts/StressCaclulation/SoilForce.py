@@ -2,6 +2,8 @@
 
 import numpy as np
 
+from WaterLoad import GAMMA_W, water_height
+
 # K is lognormal, gamma_s is normal, both given as (mean, CoV).
 # kappa_f0 is deterministic, one value for shallow foundations and one for piles.
 SOIL_TYPES = {
@@ -23,19 +25,31 @@ SOIL_TYPES = {
 }
 
 
-def soil_stress(K, gamma_soil, H):
+def soil_stress(K, gamma_soil, H, d_w=np.inf):
     """
     K          : earth pressure coefficient [-]
     gamma_soil : unit weight of the soil [kN/m3]
     H          : retained soil height [m]
+    d_w        : groundwater depth below ground [m], default no groundwater
+
+    Below the groundwater the soil weighs gamma_soil - gamma_w (effective
+    stress, with gamma_sat taken equal to gamma_soil), so the load drops by
+    K gamma_w h_w^3 / 6. The water pressure itself is in WaterLoad.
     """
-    return K * gamma_soil * H**3 / 6
+    h_w = water_height(H, d_w)
+    return K * (gamma_soil * H**3 - GAMMA_W * h_w**3) / 6
 
 
-def soil_stress_mean(soil_type, H):
+def soil_force(K, gamma_soil, H, d_w=np.inf):
+    """Horizontal force of the soil [kN/m], with the same effective stress as soil_stress."""
+    h_w = water_height(H, d_w)
+    return K * (gamma_soil * H**2 - GAMMA_W * h_w**2) / 2
+
+
+def soil_stress_mean(soil_type, H, d_w=np.inf):
     """S for a soil type in SOIL_TYPES, using the mean K and gamma_s."""
     soil = SOIL_TYPES[soil_type]
-    return soil_stress(soil["K_mean"], soil["gamma_mean"], H)
+    return soil_stress(soil["K_mean"], soil["gamma_mean"], H, d_w)
 
 
 def sample_soil(soil_type, n, rng):
@@ -49,7 +63,7 @@ def sample_soil(soil_type, n, rng):
 
 
 if __name__ == "__main__":
-    H = 3.0  # [m]
+    H = 1.22  # retained soil height, werf to canal bed [m]
     rng = np.random.default_rng(1)
     for soil_type in SOIL_TYPES:
         K, gamma = sample_soil(soil_type, 100_000, rng)

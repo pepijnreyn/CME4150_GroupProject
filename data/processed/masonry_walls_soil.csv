@@ -1,0 +1,749 @@
+Nummer,Naam,Kunstwerktype,retained_soil,H_used_m,soil_type,boring,boring_dist_m,boring_ground_nap,clay_share,sand_share,other_share,support,n_nearby_borings,n_agree
+WFM06305-X,Oude Gracht 158 - RAK 6 even,Werfmuur,under the street,4.05,mixed,B31H0616,37.0,3.0,0.49,0.51,0.0,close,5.0,4.0
+WF060390,Oude Gracht (Stadhuisbrug 2) - RAK 6 even,Kluismuur,under the street,4.58,mixed,B31H0616,36.0,3.0,0.44,0.56,0.0,close,5.0,4.0
+WF060520,Oude Gracht 221 - RAK 11 oneven,Werfmuur,under the street,3.8,soft_clay_peat,B31H2748,92.0,4.49,0.74,0.24,0.02,nearby,2.0,1.0
+WF060592,Oude Gracht 307 - RAK 13 oneven,Werfmuur,under the street,3.0,mixed,B31H0348,46.0,3.6,0.0,0.3,0.7,close,3.0,1.0
+WF060638,Oude gracht 356 - RAK 14 even,Werfmuur,under the street,2.87,soft_clay_peat,B31H0188,130.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060391,Oude Gracht (Stadhuisbrug 5a) - RAK 6 oneven,Werfmuur,under the street,3.98,mixed,B31H0616,56.0,3.0,0.5,0.5,0.0,nearby,6.0,4.0
+WF060327,Nieuwe gracht 29 - RAK 19 oneven,Werfmuur,under the street,3.27,soft_clay_peat,B31H3159,100.0,4.05,0.76,0.2,0.03,nearby,2.0,1.0
+WF060683,Oude Gracht 417-419 - RAK 15 oneven,Werfmuur,under the street,2.8,soft_clay_peat,B31H0182,140.0,3.23,1.0,0.0,0.0,nearby,1.0,1.0
+WF060677,Oude Gracht 409c - RAK 15 oneven,Werfmuur,under the street,2.83,mixed,B31H2731,129.0,3.63,0.54,0.43,0.03,nearby,2.0,1.0
+WF060409,Oude Gracht (Vismarkt 08) - RAK 7 even,Kluismuur,under the street,3.44,mixed,B31H0461,75.0,4.3,0.0,0.0,1.0,nearby,11.0,5.0
+WFM06117-X,Plompetorengracht 2 - RAK 26 even,Werfmuur,under the street,3.16,soft_clay_peat,B31H0179,69.0,3.01,0.79,0.21,0.0,nearby,1.0,1.0
+WF060473,Oude Gracht 165 - RAK 6 oneven,Werfmuur,under the street,3.95,mixed,B31H0616,59.0,3.0,0.51,0.49,0.0,nearby,6.0,4.0
+KM060062,Oude Gracht - Rak 08 OZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0461,64.0,4.3,0.32,0.0,0.68,nearby,9.0,3.0
+WF060458,Oude gracht 146 - RAK 5 even,Werfmuur,under the street,3.91,mixed,B31H2806,98.0,4.012,0.49,0.49,0.03,nearby,3.0,3.0
+WF060426,Oude gracht 107-109 - RAK 4 oneven,Werfmuur,under the street,3.69,mixed,B31H0730,42.0,4.8,0.57,0.13,0.3,close,4.0,4.0
+WF060342,Nieuwe gracht 42a - RAK 19 even,Werfmuur,under the street,3.1,mixed,B31H2750,125.0,3.36,0.48,0.49,0.03,nearby,2.0,1.0
+WF060198,Oude gracht 112c - RAK 3 even,Werfmuur,under the street,3.47,mixed,B31H0539,36.0,3.75,0.39,0.61,0.0,close,4.0,3.0
+WF060603,Oude gracht 317 - RAK 13 oneven,Werfmuur,under the street,3.02,mixed,B31H0348,82.0,3.6,0.0,0.3,0.7,nearby,3.0,1.0
+WF060684,Oude gracht 421 - RAK 15 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0182,140.0,3.23,1.0,0.0,0.0,nearby,1.0,1.0
+WF060622,Oude Gracht 338 - RAK 13 even,Werfmuur,under the street,3.39,mixed,B31H0348,94.0,3.6,0.0,0.38,0.62,nearby,3.0,1.0
+WF060695,Plompetorengracht 17 - RAK 26 oneven,Kluismuur,under the street,2.79,soft_clay_peat,B31H0179,68.0,3.01,0.9,0.1,0.0,nearby,1.0,1.0
+WF060444,Oude gracht 136a - RAK 4 even,Werfmuur,under the street,3.48,mixed,B31H0730,74.0,4.8,0.6,0.08,0.32,nearby,4.0,4.0
+WF060584,Oude Gracht 293 - RAK 13 oneven,Werfmuur,under the street,3.02,mixed,B31H0348,8.0,3.6,0.0,0.3,0.7,close,2.0,1.0
+WF060213,Oude gracht 99 - RAK 3 oneven,Werfmuur,under the street,3.58,mixed,B31H0539,63.0,3.75,0.41,0.59,0.0,nearby,5.0,3.0
+KM060027,Kromme Nieuwe Gracht 009,Walmuur,under the werf,1.1800000000000002,sand,B31H3159,73.0,4.05,0.04,0.96,0.0,nearby,3.0,1.0
+WFM06739-X,Oude Gracht (Twijnstraat 2) - RAK 15 even,Werfmuur,under the street,3.37,soft_clay_peat,B31H2732,116.0,3.07,0.85,0.12,0.03,nearby,7.0,5.0
+WF060509,Oude gracht 210 - RAK 10 even,Werfmuur,under the street,3.36,soft_clay_peat,B31H1673,74.0,4.16,1.0,0.0,0.0,nearby,1.0,1.0
+WF060346,Nieuwe gracht 47 - RAK 19 oneven,Werfmuur,under the street,3.34,mixed,B31H2750,127.0,3.36,0.45,0.53,0.02,nearby,2.0,1.0
+WF060167,Oude gracht 78 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,138.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WF060706,Plompetorengracht 24b - RAK 26 even,Kluismuur,under the street,2.53,soft_clay_peat,B31H0179,89.0,3.01,0.99,0.01,0.0,nearby,1.0,1.0
+WFM06814-X,Nieuwe Gracht 098b - RAK 16 even,Werfmuur,under the street,1.8,soft_clay_peat,B31H0257,81.0,3.0,1.0,0.0,0.0,nearby,5.0,4.0
+WF060338,Nieuwe gracht 4 - RAK 20 even,Werfmuur,under the street,2.72,soft_clay_peat,B31H3159,29.0,4.05,0.82,0.15,0.04,close,3.0,1.0
+WF060531,Oude Gracht 231 - RAK 11 oneven,Werfmuur,under the street,3.65,soft_clay_peat,B31H2748,94.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+WF060532,Oude Gracht 232 - RAK 11 even,Werfmuur,under the street,3.29,mixed,B31H2748,116.0,4.49,0.7,0.28,0.02,nearby,1.0,1.0
+WF060256,Kromme nieuwe gracht 52b - RAK 21 even,Kluismuur,under the street,3.13,soft_clay_peat,B31H0187,78.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060196,Oude gracht 112a - RAK 3 even,Werfmuur,under the street,3.77,mixed,B31H0539,33.0,3.75,0.44,0.56,0.0,close,4.0,3.0
+BS050179,Wilhelminaparkbeschoeiing 01www2,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060575,Oude Gracht 283 - RAK 13 oneven,Werfmuur,under the street,3.37,mixed,B31H0348,19.0,3.6,0.0,0.38,0.62,close,1.0,1.0
+WF060328,Nieuwe gracht 3 - RAK 20 oneven,Werfmuur,under the street,3.05,soft_clay_peat,B31H3159,15.0,4.05,0.82,0.15,0.03,close,3.0,1.0
+WF060145,Oude gracht 35 - RAK 1 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,62.0,3.33,1.0,0.0,0.0,nearby,4.0,3.0
+WFM06585-X,Nieuwe gracht 67 - RAK 18 oneven,Werfmuur,under the street,3.36,sand,B31H2749,122.0,4.09,0.0,0.97,0.03,nearby,2.0,1.0
+KM060054,Oude Gracht - Rak 04 OZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0730,70.0,4.8,0.0,1.0,0.0,nearby,6.0,2.0
+WF060233,Janskerkhofwerfmuur 03 (nr. 15A-16BS),Werfmuur,under the street,3.0,sand,B31H2761,28.0,2.77,0.17,0.8,0.03,close,2.0,1.0
+WFM06639-X,Oude gracht 196 - RAK 10 even,Werfmuur,under the street,3.81,soft_clay_peat,B31H1673,49.0,4.16,1.0,0.0,0.0,close,2.0,1.0
+BS020010,Vechtbeschoeiing 22A,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060293,Nieuwe gracht 12 - RAK 20 even,Werfmuur,under the street,2.84,soft_clay_peat,B31H3159,35.0,4.05,0.82,0.14,0.04,close,2.0,1.0
+WF060151,Oude gracht 47 - RAK 1 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,90.0,3.33,1.0,0.0,0.0,nearby,3.0,3.0
+WF060130,Oude gracht 50 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,99.0,3.33,1.0,0.0,0.0,nearby,4.0,2.0
+WF060660,Oude gracht 380 - 382 - RAK 14 even,Werfmuur,under the street,3.27,soft_clay_peat,B31H0176,125.0,3.35,0.87,0.13,0.0,nearby,6.0,4.0
+WF060166,Oude gracht 76 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,144.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WF060340,Nieuwe gracht 41a - RAK 19 oneven,Werfmuur,under the street,3.48,mixed,B31H2750,119.0,3.36,0.43,0.55,0.02,nearby,2.0,1.0
+BS040101,Vechtbeschoeiing 16www1,Kademuur,under the street,3.0,sand,B31H2765,246.0,3.01,0.27,0.71,0.03,far,0.0,0.0
+WF060335,Nieuwe gracht 37 - RAK 19 oneven,Werfmuur,under the street,3.31,soft_clay_peat,B31H3159,118.0,4.05,0.76,0.21,0.03,nearby,2.0,1.0
+WF060179,Oude gracht 57 - RAK 2 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,125.0,3.33,1.0,0.0,0.0,nearby,3.0,3.0
+WF060679,Oude Gracht 409e - RAK 15 oneven,Werfmuur,under the street,2.79,mixed,B31H2731,136.0,3.63,0.53,0.44,0.03,nearby,2.0,1.0
+WF060364,Nieuwe gracht 65b - RAK 18 oneven,Werfmuur,under the street,3.3,sand,B31H2749,121.0,4.09,0.0,0.97,0.03,nearby,2.0,1.0
+WF060316,Nieuwe gracht 20a - RAK 20 even,Werfmuur,under the street,2.87,soft_clay_peat,B31H3159,63.0,4.05,0.83,0.14,0.03,nearby,2.0,1.0
+WFM06602-X,Nieuwe Gracht 135-137 - RAK 16 oneven,Werfmuur,under the street,1.96,soft_clay_peat,B31H0257,112.0,3.0,1.0,0.0,0.0,nearby,4.0,3.0
+WF060586,Oude Gracht 295 - RAK 13 oneven,Werfmuur,under the street,3.07,mixed,B31H0348,14.0,3.6,0.0,0.32,0.68,close,2.0,1.0
+WF060579,Oude Gracht 287 - RAK 13 oneven,Werfmuur,under the street,3.3,mixed,B31H0348,8.0,3.6,0.0,0.36,0.64,close,2.0,1.0
+KW050002,Albatrosstraatkeerwand 01,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060153,Oude gracht (Potterstraat 2a) - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,85.0,3.75,0.3,0.7,0.0,nearby,2.0,2.0
+WF060611,Oude gracht 327 - RAK 14 oneven,Werfmuur,under the street,3.22,soft_clay_peat,B31H0188,104.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060547,Oude Gracht 248 - RAK 11 even,Werfmuur,under the street,2.99,mixed,B31H2748,115.0,4.49,0.67,0.31,0.03,nearby,2.0,1.0
+WF060400,Oude gracht (tussen 264-266) - RAK 12 even,Werfmuur,under the street,3.44,sand,B31H2749,124.0,4.09,0.0,0.97,0.03,nearby,3.0,1.0
+WF060501,Oude gracht 202 - RAK 10 even,Werfmuur,under the street,3.33,soft_clay_peat,B31H1673,59.0,4.16,1.0,0.0,0.0,nearby,1.0,1.0
+WF060144,Oude gracht 33 - RAK 1 oneven,Werfmuur,under the street,3.33,soft_clay_peat,B31H0186,51.0,3.33,0.91,0.09,0.0,nearby,4.0,3.0
+WF060631,Oude gracht 349 - RAK 14 oneven,Werfmuur,under the street,3.13,soft_clay_peat,B31H0188,114.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WF060505,Oude gracht 206 - RAK 10 even,Werfmuur,under the street,3.43,soft_clay_peat,B31H1673,66.0,4.16,1.0,0.0,0.0,nearby,1.0,1.0
+WF060628,Oude Gracht 345 - RAK 14 oneven,Werfmuur,under the street,3.05,soft_clay_peat,B31H0188,109.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WF060635,Oude gracht 353 - RAK 14 oneven,Werfmuur,under the street,3.31,soft_clay_peat,B31H0188,120.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WFM06127-X,Plompetorengracht 20 - RAK 26 even,Werfmuur,under the street,2.18,soft_clay_peat,B31H0179,64.0,3.01,1.0,0.0,0.0,nearby,1.0,1.0
+BS020028,Vechtbeschoeiing 21B,Kademuur,under the street,1.0,,,,,,,,no boring within 250 m,,
+WF060310,Nieuwe Gracht 189 - RAK 16 oneven,Werfmuur,under the street,2.21,soft_clay_peat,B31H0185,48.0,3.26,1.0,0.0,0.0,close,4.0,4.0
+WF060416,Oude gracht (Vismarkt 20) - RAK 8 even,Werfmuur,under the street,2.78,mixed,B31H0461,64.0,4.3,0.0,0.0,1.0,nearby,10.0,5.0
+WFM06599-X,Nieuwe gracht 123 - RAK 17 oneven,Werfmuur,under the street,2.4,soft_clay_peat,B31H0257,143.0,3.0,1.0,0.0,0.0,nearby,2.0,2.0
+WF060300,Nieuwe Gracht 141 - RAK 16 oneven,Werfmuur,under the street,1.93,soft_clay_peat,B31H0257,99.0,3.0,1.0,0.0,0.0,nearby,4.0,3.0
+WF060344,Nieuwe gracht 44-46 - RAK 18 even,Werfmuur,under the street,2.91,mixed,B31H2750,136.0,3.36,0.48,0.49,0.03,nearby,3.0,1.0
+WF060111,Oude gracht 18 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,52.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060173,Oude gracht 92 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,93.0,3.75,0.3,0.7,0.0,nearby,2.0,2.0
+WF060366,Nieuwe gracht 66 - RAK 17 even,Werfmuur,under the street,2.63,soft_clay_peat,B31H0297,115.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060119,Oude gracht 30 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,62.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+KM020006,Weerdsingel W.Z. kademuur 01,Kademuur,under the street,3.0,sand,B31H2765,155.0,3.01,0.27,0.71,0.03,far,0.0,0.0
+KW010016,Robert Schumannstraatkeerwand 01www8,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+KM050001,Tolsteegsingelkademuur 01,Kademuur,under the street,3.0,soft_clay_peat,B31H0182,175.0,3.23,1.0,0.0,0.0,far,0.0,0.0
+WF060643,Oude gracht 361 - RAK 14 oneven,Werfmuur,under the street,3.02,soft_clay_peat,B31H0188,131.0,3.44,1.0,0.0,0.0,nearby,2.0,1.0
+WF060453,Oude gracht 141 - RAK 5 oneven,Werfmuur,under the street,3.8,mixed,B31H2806,119.0,4.012,0.47,0.5,0.03,nearby,3.0,3.0
+WF060613,Oude gracht 329 - RAK 14 oneven,Werfmuur,under the street,3.17,soft_clay_peat,B31H0188,103.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060176,Oude gracht 49 - RAK 2 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,101.0,3.33,1.0,0.0,0.0,nearby,3.0,3.0
+WF060324,Nieuwe gracht 25 - RAK 20 oneven,Werfmuur,under the street,2.95,soft_clay_peat,B31H3159,75.0,4.05,0.83,0.14,0.03,nearby,2.0,1.0
+WF060230,Drift 29b - RAK 25 oneven,Kluismuur,under the street,3.1,soft_clay_peat,B31H0179,106.0,3.01,0.81,0.19,0.0,nearby,1.0,1.0
+WF060262,Kromme nieuwe gracht 6 - RAK 22 even,Kluismuur,under the street,3.22,soft_clay_peat,B31H0184,57.0,4.04,1.0,0.0,0.0,nearby,1.0,1.0
+WF060570,Oude gracht 278 - RAK 12 even,Werfmuur,under the street,3.1,mixed,B31H0348,108.0,3.6,0.0,0.32,0.68,nearby,2.0,1.0
+KW050004,Albatrosstraatkeerwand 01www2,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060709,Plompetorengracht 3a - RAK 26 oneven,Kluismuur,under the street,3.12,soft_clay_peat,B31H0179,55.0,3.01,0.8,0.2,0.0,nearby,1.0,1.0
+KW010020,H.J. Schimmelpleinkeerwand 01,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060413,Oude Gracht (Vismarkt 13) - RAK 7 even,Werfmuur,under the street,3.18,mixed,B31H0461,68.0,4.3,0.0,0.0,1.0,nearby,12.0,6.0
+WF060291,Nieuwe gracht 11 - RAK 20 oneven,Werfmuur,under the street,2.94,soft_clay_peat,B31H3159,24.0,4.05,0.83,0.14,0.03,close,2.0,1.0
+WF060508,Oude Gracht 209 - RAK 11 oneven,Werfmuur,under the street,3.83,soft_clay_peat,B31H2748,101.0,4.49,0.74,0.24,0.02,nearby,3.0,2.0
+WF060690,Plompetorengracht 12 - RAK 26 even,Kluismuur,under the street,2.65,soft_clay_peat,B31H0179,30.0,3.01,0.95,0.05,0.0,close,1.0,1.0
+WF060257,Kromme nieuwe gracht 56a - RAK 21 even,Kluismuur,under the street,3.16,soft_clay_peat,B31H0219,86.0,2.3,1.0,0.0,0.0,nearby,3.0,3.0
+WFM06624-X,Nieuwe gracht 141 - RAK 16 oneven,Werfmuur,under the street,2.84,soft_clay_peat,B31H3159,37.0,4.05,0.82,0.14,0.04,close,2.0,1.0
+WF060712,Plompetorengracht 4 - RAK 26 even,Kluismuur,under the street,3.16,soft_clay_peat,B31H0179,57.0,3.01,0.79,0.21,0.0,nearby,1.0,1.0
+WF060616,Oude Gracht 332 - RAK 13 even,Werfmuur,under the street,3.28,mixed,B31H0348,78.0,3.6,0.0,0.36,0.64,nearby,3.0,1.0
+WF060306,Nieuwe Gracht 165 - RAK 16 oneven,Werfmuur,under the street,2.14,soft_clay_peat,B31H0185,38.0,3.26,1.0,0.0,0.0,close,5.0,4.0
+WF060368,Nieuwe gracht 68b - RAK 17 even,Werfmuur,under the street,2.58,soft_clay_peat,B31H0297,118.0,3.06,1.0,0.0,0.0,nearby,1.0,1.0
+WF060404,Oude Gracht (Vismarkt 01b) - RAK 7 even,Kluismuur,under the street,3.91,mixed,B31H0616,82.0,3.0,0.51,0.49,0.0,nearby,5.0,3.0
+WF060191,Oude gracht 73b - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,111.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WF060536,Oude Gracht 236 - RAK 11 even,Werfmuur,under the street,3.04,mixed,B31H2748,115.0,4.49,0.67,0.3,0.03,nearby,1.0,1.0
+WF060246,Kromme nieuwe gracht 38a - RAK 21 even,Kluismuur,under the street,2.97,soft_clay_peat,B31H0187,57.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060250,Kromme nieuwe gracht 44 - RAK 21 even,Kluismuur,under the street,2.97,soft_clay_peat,B31H0187,57.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060202,Oude gracht 112g - RAK 3 even,Werfmuur,under the street,3.45,mixed,B31H0539,56.0,3.75,0.39,0.61,0.0,nearby,4.0,3.0
+WF060449,Oude gracht 137a - RAK 5 oneven,Werfmuur,under the street,2.98,mixed,B31H0730,114.0,4.8,0.63,0.0,0.37,nearby,3.0,3.0
+KW010007,Robert Schumannstraatkeerwand 01www6,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WFM06132-X,Oude gracht 85-87-89-91-93 - RAK 3 oneven,Werfmuur,under the street,3.87,mixed,B31H0539,56.0,3.75,0.46,0.54,0.0,nearby,5.0,3.0
+WF060493,Oude gracht 191 - RAK 10 oneven,Werfmuur,under the street,3.57,soft_clay_peat,B31H1673,71.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060644,Oude gracht 362 - RAK 14 even,Werfmuur,under the street,2.87,soft_clay_peat,B31H0188,133.0,3.44,1.0,0.0,0.0,nearby,5.0,5.0
+WF060686,Oude Gracht 425 - RAK 15 oneven,Werfmuur,under the street,3.04,soft_clay_peat,B31H0182,140.0,3.23,1.0,0.0,0.0,nearby,1.0,1.0
+WF060307,Nieuwe gracht 17 - RAK 20 oneven,Werfmuur,under the street,3.04,soft_clay_peat,B31H3159,42.0,4.05,0.82,0.14,0.03,close,2.0,1.0
+WF060405,Oude Gracht (Vismarkt 02) - RAK 7 even,Kluismuur,under the street,3.55,mixed,B31H0461,84.0,4.3,0.0,0.0,1.0,nearby,5.0,3.0
+WF060136,Oude gracht 19 - RAK 1 oneven,Werfmuur,under the street,2.87,soft_clay_peat,B31H0186,39.0,3.33,1.0,0.0,0.0,close,3.0,2.0
+WF060443,Oude gracht 134 - RAK 4 even,Werfmuur,under the street,3.51,mixed,B31H0730,69.0,4.8,0.6,0.09,0.31,nearby,4.0,4.0
+KM060044,Nieuwe Gracht - Rak 20 WZ,Walmuur,under the werf,1.1800000000000002,sand,B31H3159,32.0,4.05,0.04,0.96,0.0,close,2.0,1.0
+WF060168,Oude gracht 80 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,133.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WFM06126-X,Plompetorengracht 18b - RAK 26 even,Werfmuur,under the street,2.17,soft_clay_peat,B31H0179,47.0,3.01,1.0,0.0,0.0,close,1.0,1.0
+KM050008,Kromme Rijnkademuur 01,,under the street,3.0,soft_clay_peat,B31H0182,217.0,3.23,1.0,0.0,0.0,far,0.0,0.0
+WF060436,Oude gracht 127 - RAK 4 oneven,Werfmuur,under the street,3.89,mixed,B31H0730,78.0,4.8,0.54,0.18,0.28,nearby,3.0,3.0
+WF060239,Kromme nieuwe gracht 24 - RAK 21 even,Kluismuur,under the street,2.98,soft_clay_peat,B31H0187,65.0,3.78,1.0,0.0,0.0,nearby,4.0,4.0
+WF060619,Oude gracht 335 - RAK 14 oneven,Werfmuur,under the street,3.01,soft_clay_peat,B31H0188,102.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WFM06172-X,Oude Gracht 161a - RAK 6 oneven,Werfmuur,under the street,4.05,mixed,B31H0616,76.0,3.0,0.49,0.51,0.0,nearby,5.0,4.0
+WF060566,Oude gracht 271 - RAK 12 oneven,Werfmuur,under the street,3.09,mixed,B31H0348,69.0,3.6,0.0,0.32,0.68,nearby,1.0,1.0
+WF060479,Oude Gracht 174 - RAK 9 even,Werfmuur,under the street,3.2,soft_clay_peat,B31H1673,39.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WFM06687-X,Oude gracht 290 - RAK 12 even,Werfmuur,under the street,3.23,mixed,B31H0348,80.0,3.6,0.0,0.35,0.65,nearby,2.0,1.0
+WF060147,Oude gracht 39 - RAK 1 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,71.0,3.33,1.0,0.0,0.0,nearby,4.0,3.0
+WF060428,Oude gracht 113 - RAK 4 oneven,Werfmuur,under the street,3.81,mixed,B31H0730,44.0,4.8,0.55,0.16,0.29,close,4.0,4.0
+WFM06070,Oude gracht 56 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,113.0,3.33,1.0,0.0,0.0,nearby,3.0,2.0
+WF060585,Oude gracht 294 - RAK 12 even,Werfmuur,under the street,2.65,mixed,B31H0348,72.0,3.6,0.0,0.21,0.79,nearby,2.0,1.0
+WF060216,Drift 03 - RAK 23 oneven,Kluismuur,under the street,3.36,soft_clay_peat,B31H0184,16.0,4.04,1.0,0.0,0.0,close,1.0,1.0
+WF060231,Janskerkhofwerfmuur 01 (nr. 13-13A),Werfmuur,under the street,3.0,soft_clay_peat,B31H0184,85.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06617-X,Nieuwe Gracht 187 - RAK 16 oneven,Werfmuur,under the street,2.19,soft_clay_peat,B31H0185,38.0,3.26,1.0,0.0,0.0,close,4.0,4.0
+WF060715,Plompetorengracht 7 - RAK 26 oneven,Kluismuur,under the street,2.74,soft_clay_peat,B31H0179,26.0,3.01,0.92,0.08,0.0,close,1.0,1.0
+WF060675,Oude Gracht 409a - RAK 15 oneven,Werfmuur,under the street,2.81,mixed,B31H2731,121.0,3.63,0.54,0.43,0.03,nearby,2.0,1.0
+WF060362,Nieuwe gracht 64 - RAK 17 even,Werfmuur,under the street,2.71,soft_clay_peat,B31H0297,113.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06759-X,Kromme nieuwe gracht 88a - RAK 21 even,Werfmuur,under the street,2.28,soft_clay_peat,B31H3159,73.0,4.05,0.78,0.18,0.04,nearby,4.0,3.0
+WFM06666-X,Oude Gracht 240 - RAK 11 even,Werfmuur,under the street,2.92,mixed,B31H2748,114.0,4.49,0.66,0.32,0.03,nearby,1.0,1.0
+WF060238,Kromme nieuwe gracht 16 - RAK 22 even,Werfmuur,under the street,2.54,soft_clay_peat,B31H0187,100.0,3.78,1.0,0.0,0.0,nearby,4.0,4.0
+WFM06364-X,Drift 19a - RAK 25 oneven,Werfmuur,under the street,3.03,soft_clay_peat,B31H0184,100.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06179-X,Oude Gracht (Stadhuisbrug 5b) - RAK 6 oneven,Werfmuur,under the street,4.18,mixed,B31H0616,51.0,3.0,0.48,0.52,0.0,nearby,6.0,4.0
+KW050003,Albatrosstraatkeerwand 01www1,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060417,Oude gracht (Vismarkt 21) - RAK 8 even,Werfmuur,under the street,2.76,mixed,B31H0461,65.0,4.3,0.0,0.0,1.0,nearby,10.0,5.0
+WF060669,Oude Gracht 401 - RAK 15 oneven,Werfmuur,under the street,2.83,mixed,B31H2731,106.0,3.63,0.54,0.43,0.03,nearby,2.0,1.0
+WF060648,Oude gracht 364c - RAK 14 even,Werfmuur,under the street,2.94,soft_clay_peat,B31H0188,136.0,3.44,1.0,0.0,0.0,nearby,4.0,4.0
+WF060288,Nieuwe Gracht 094b - RAK 16 even,Werfmuur,under the street,2.14,soft_clay_peat,B31H0257,96.0,3.0,1.0,0.0,0.0,nearby,4.0,3.0
+WF060534,Oude Gracht 234 - RAK 11 even,Werfmuur,under the street,3.19,mixed,B31H2748,116.0,4.49,0.69,0.29,0.03,nearby,1.0,1.0
+WFM06377-X,Drift 29c - RAK 25 oneven,Werfmuur,under the street,3.14,soft_clay_peat,B31H0179,97.0,3.01,0.8,0.2,0.0,nearby,1.0,1.0
+WF060184,Oude gracht 65 - RAK 2 oneven,Werfmuur,under the street,3.67,soft_clay_peat,B31H0226,140.0,3.5,1.0,0.0,0.0,nearby,1.0,1.0
+WF060380,Nieuwe gracht 85 - RAK 17 oneven,Werfmuur,under the street,2.33,soft_clay_peat,B31H0297,141.0,3.06,1.0,0.0,0.0,nearby,1.0,1.0
+WF060681,Oude Gracht 411-413 - RAK 15 oneven,Werfmuur,under the street,2.8,soft_clay_peat,B31H0182,139.0,3.23,1.0,0.0,0.0,nearby,2.0,1.0
+WF060494,Oude gracht 193 - RAK 10 oneven,Werfmuur,under the street,3.57,soft_clay_peat,B31H1673,77.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060429,Oude gracht 115 - RAK 4 oneven,Werfmuur,under the street,3.92,mixed,B31H0730,47.0,4.8,0.54,0.18,0.28,close,4.0,4.0
+WF060639,Oude gracht 357 - RAK 14 oneven,Werfmuur,under the street,3.12,soft_clay_peat,B31H0188,126.0,3.44,1.0,0.0,0.0,nearby,1.0,1.0
+WF060374,Nieuwe gracht 77 - RAK 17 oneven,Werfmuur,under the street,2.67,soft_clay_peat,B31H0297,131.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060704,Plompetorengracht 23 - RAK 26 oneven,Kluismuur,under the street,2.83,soft_clay_peat,B31H0179,94.0,3.01,0.89,0.11,0.0,nearby,1.0,1.0
+WFM06390-X,Kromme nieuwe gracht 20 - RAK 22 even,Werfmuur,under the street,2.77,soft_clay_peat,B31H0187,81.0,3.78,1.0,0.0,0.0,nearby,4.0,4.0
+WF060277,Kromme nieuwe gracht 92 - RAK 21 even,Werfmuur,under the street,3.01,soft_clay_peat,B31H3159,63.0,4.05,0.83,0.14,0.03,nearby,3.0,3.0
+WF060192,Oude gracht 75 - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,106.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WF060593,Oude Gracht 308 - RAK 13 even,Werfmuur,under the street,3.37,mixed,B31H0348,35.0,3.6,0.0,0.38,0.62,close,2.0,1.0
+WF060717,Plompetorengracht 9b - RAK 26 oneven,Kluismuur,under the street,2.57,soft_clay_peat,B31H0179,22.0,3.01,0.98,0.02,0.0,close,1.0,1.0
+KM070006,Heuveloordkademuur 04,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060410,OG Vismarkt 9 - RAK 7 even,Kluismuur,under the street,3.0,mixed,B31H0461,73.0,4.3,0.0,0.0,1.0,nearby,11.0,5.0
+WF060127,Oude gracht 44 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,83.0,3.33,1.0,0.0,0.0,nearby,5.0,3.0
+WF060495,Oude gracht 194 - RAK 10 even,Werfmuur,under the street,3.17,soft_clay_peat,B31H1673,45.0,4.16,1.0,0.0,0.0,close,2.0,1.0
+BS030151,Vechtbeschoeiing 04A,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060652,Oude gracht 366 - RAK 14 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0176,132.0,3.35,0.95,0.05,0.0,nearby,5.0,4.0
+WF060178,Oude gracht 53-55 - RAK 2 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,116.0,3.33,1.0,0.0,0.0,nearby,3.0,3.0
+WF060663,Oude Gracht 387a - RAK 15 oneven,Werfmuur,under the street,3.07,mixed,B31H2731,107.0,3.63,0.58,0.4,0.03,nearby,3.0,1.0
+WF060487,Oude gracht 183 - RAK 10 oneven,Werfmuur,under the street,3.45,soft_clay_peat,B31H1673,45.0,4.16,1.0,0.0,0.0,close,1.0,1.0
+WF060513,Oude gracht 214a - RAK 10 even,Werfmuur,under the street,3.39,soft_clay_peat,B31H1673,84.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+KW040006,Zwartewaterkeerwand 01,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060446,Oude gracht 136c - RAK 4 even,Werfmuur,under the street,3.74,mixed,B31H0730,85.0,4.8,0.56,0.14,0.29,nearby,4.0,4.0
+WF060637,Oude gracht 355 - RAK 14 oneven,Werfmuur,under the street,3.26,soft_clay_peat,B31H0188,123.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WF060195,Oude gracht (t.o. Oude postkantoor a) - RAK 3 even,Werfmuur,under the street,3.65,mixed,B31H0539,42.0,3.75,0.42,0.58,0.0,close,4.0,3.0
+WF060251,Kromme nieuwe gracht 46 - RAK 21 even,Kluismuur,under the street,2.98,soft_clay_peat,B31H0187,58.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060624,Oude gracht 341 - RAK 14 oneven,Werfmuur,under the street,3.1,soft_clay_peat,B31H0188,105.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WF060427,Oude gracht 111 - RAK 4 oneven,Werfmuur,under the street,3.71,mixed,B31H0730,41.0,4.8,0.57,0.14,0.3,close,4.0,4.0
+WF060199,Oude gracht 112d - RAK 3 even,Werfmuur,under the street,3.58,mixed,B31H0539,42.0,3.75,0.41,0.59,0.0,close,4.0,3.0
+WF060376,Nieuwe gracht 8 - RAK 20 even,Werfmuur,under the street,2.83,soft_clay_peat,B31H3159,27.0,4.05,0.82,0.14,0.04,close,2.0,1.0
+WF060694,Plompetorengracht 16 - RAK 26 even,Kluismuur,under the street,2.54,soft_clay_peat,B31H0179,32.0,3.01,0.99,0.01,0.0,close,1.0,1.0
+WF060656,Oude gracht 372 - RAK 14 even,Werfmuur,under the street,2.97,soft_clay_peat,B31H0176,127.0,3.35,0.96,0.04,0.0,nearby,6.0,5.0
+WF060710,Plompetorengracht 3b - RAK 26 oneven,Kluismuur,under the street,3.02,soft_clay_peat,B31H0179,47.0,3.01,0.83,0.17,0.0,close,1.0,1.0
+WF060356,Nieuwe gracht 54 - RAK 18 even,Werfmuur,under the street,2.87,soft_clay_peat,B31H0297,128.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06304-X,Oude Gracht 156 - RAK 6 even,Werfmuur,under the street,4.11,mixed,B31H0616,55.0,3.0,0.49,0.51,0.0,nearby,4.0,4.0
+WF060138,Oude gracht 23 - RAK 1 oneven,Werfmuur,under the street,2.94,soft_clay_peat,B31H0186,35.0,3.33,1.0,0.0,0.0,close,4.0,3.0
+WFM06633-X,Oude Gracht 184 - RAK 9 even,Werfmuur,under the street,3.31,soft_clay_peat,B31H1673,35.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WF060442,Oude gracht 132 - RAK 4 even,Werfmuur,under the street,3.54,mixed,B31H0730,66.0,4.8,0.59,0.1,0.31,nearby,4.0,4.0
+WF060481,Oude Gracht 176 - RAK 9 even,Werfmuur,under the street,3.29,soft_clay_peat,B31H1673,37.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WF060237,Kromme nieuwe gracht 14 - RAK 22 even,Werfmuur,under the street,2.65,soft_clay_peat,B31H0184,102.0,4.04,1.0,0.0,0.0,nearby,4.0,4.0
+WF060524,Oude Gracht 225 - RAK 11 oneven,Werfmuur,under the street,3.87,soft_clay_peat,B31H2748,92.0,4.49,0.74,0.24,0.02,nearby,2.0,1.0
+WF060511,Oude gracht 212 - RAK 10 even,Werfmuur,under the street,3.35,soft_clay_peat,B31H1673,78.0,4.16,1.0,0.0,0.0,nearby,1.0,1.0
+KM060039,Nieuwe Gracht - Rak 18 OZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0297,128.0,3.06,0.85,0.15,0.0,nearby,2.0,1.0
+KM040011,Gruttersdijkbeschoeiing 02,Damwand,under the street,3.0,sand,B31H2766,98.0,3.93,0.13,0.84,0.03,nearby,1.0,1.0
+WF060311,Nieuwe gracht 19 - RAK 20 oneven,Werfmuur,under the street,3.03,soft_clay_peat,B31H3159,52.0,4.05,0.83,0.14,0.03,nearby,2.0,1.0
+WF060483,Oude Gracht 178 - RAK 9 even,Werfmuur,under the street,3.29,soft_clay_peat,B31H1673,36.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WF060276,Kromme nieuwe gracht 90 - RAK 21 even,Werfmuur,under the street,2.9,soft_clay_peat,B31H3159,66.0,4.05,0.83,0.14,0.03,nearby,3.0,3.0
+WF060646,Oude gracht 364a - RAK 14 even,Werfmuur,under the street,2.85,soft_clay_peat,B31H0188,134.0,3.44,1.0,0.0,0.0,nearby,4.0,4.0
+WF060705,Plompetorengracht 24a - RAK 26 even,Kluismuur,under the street,2.41,soft_clay_peat,B31H0179,85.0,3.01,1.0,0.0,0.0,nearby,1.0,1.0
+WF060474,Oude Gracht 166 - RAK 9 even,Werfmuur,under the street,3.3,soft_clay_peat,B31H1673,48.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WFM06373-X,Drift 27a - RAK 25 oneven,Werfmuur,under the street,3.08,soft_clay_peat,B31H0179,136.0,3.01,0.81,0.19,0.0,nearby,1.0,1.0
+WF060582,Oude Gracht 291 - RAK 13 oneven,Werfmuur,under the street,3.13,mixed,B31H0348,4.0,3.6,0.0,0.33,0.67,close,2.0,1.0
+WF060521,Oude Gracht 222 - RAK 11 even,Werfmuur,under the street,3.57,soft_clay_peat,B31H1673,122.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060353,Nieuwe gracht 51b - RAK 19 oneven,Werfmuur,under the street,3.23,mixed,B31H2750,135.0,3.36,0.46,0.51,0.02,nearby,2.0,1.0
+WF060457,Oude gracht 145 - RAK 5 oneven,Werfmuur,under the street,3.83,mixed,B31H2806,118.0,4.012,0.48,0.5,0.03,nearby,4.0,4.0
+WF060332,Nieuwe gracht 34 - RAK 19 even,Werfmuur,under the street,3.19,mixed,B31H2750,110.0,3.36,0.47,0.5,0.03,nearby,2.0,1.0
+WF060159,Oude gracht 60 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,122.0,3.33,1.0,0.0,0.0,nearby,3.0,2.0
+WF060667,Oude Gracht 395 - RAK 15 oneven,Werfmuur,under the street,2.63,mixed,B31H2731,104.0,3.63,0.51,0.46,0.03,nearby,3.0,1.0
+KM060049,Oude Gracht - Rak 01 WZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0186,40.0,3.33,0.68,0.32,0.0,close,4.0,2.0
+WF060430,Oude gracht 117 - RAK 4 oneven,Werfmuur,under the street,3.92,mixed,B31H0730,50.0,4.8,0.54,0.18,0.28,close,4.0,4.0
+WF060323,Nieuwe gracht 24c - RAK 19 even,Werfmuur,under the street,3.21,soft_clay_peat,B31H3159,104.0,4.05,0.78,0.19,0.03,nearby,2.0,1.0
+WF060347,Nieuwe gracht 48 - RAK 18 even,Werfmuur,under the street,2.99,sand,B31H2749,137.0,4.09,0.0,0.97,0.03,nearby,3.0,1.0
+WFM06799-X,Nieuwe gracht 62 - RAK 17 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0297,112.0,3.06,0.99,0.01,0.0,nearby,2.0,1.0
+WF060420,Oude gracht (Zoutmarkt 12) - RAK 8 oneven,Kluismuur,under the street,3.73,mixed,B31H0461,51.0,4.3,0.0,0.0,1.0,nearby,8.0,2.0
+WF060150,Oude gracht 45 - RAK 1 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,85.0,3.33,1.0,0.0,0.0,nearby,3.0,3.0
+KW040017,Copijnlaankeerwand 01,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060543,Oude Gracht 244 - RAK 11 even,Werfmuur,under the street,2.89,mixed,B31H2748,115.0,4.49,0.65,0.32,0.03,nearby,2.0,1.0
+WF060358,Nieuwe gracht 6 - RAK 20 even,Werfmuur,under the street,2.71,soft_clay_peat,B31H3159,26.0,4.05,0.82,0.15,0.04,close,2.0,1.0
+KW040024,Raiffeisenlaankeerwand 01,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060659,Oude gracht 378 - RAK 14 even,Werfmuur,under the street,3.12,soft_clay_peat,B31H0176,126.0,3.35,0.91,0.09,0.0,nearby,6.0,4.0
+WF060558,Oude Gracht 260 - RAK 11 even,Werfmuur,under the street,3.42,soft_clay_peat,B31H2748,126.0,4.49,0.71,0.27,0.02,nearby,2.0,1.0
+WF060241,Kromme nieuwe gracht 28 - RAK 21 even,Kluismuur,under the street,3.55,soft_clay_peat,B31H0187,60.0,3.78,0.98,0.02,0.0,nearby,3.0,3.0
+WF060217,Drift 05a - RAK 23 oneven,Kluismuur,under the street,3.21,soft_clay_peat,B31H0184,7.0,4.04,1.0,0.0,0.0,close,1.0,1.0
+WF060476,Oude Gracht 170 - RAK 9 even,Werfmuur,under the street,3.82,soft_clay_peat,B31H1673,44.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WFM06370-X,Drift 25a - RAK 25 oneven,Werfmuur,under the street,3.14,sand,B31H0454,151.0,3.2,0.0,1.0,0.0,far,0.0,0.0
+WF060448,Oude gracht 136e - RAK 4 even,Werfmuur,under the street,3.95,mixed,B31H0730,94.0,4.8,0.53,0.19,0.28,nearby,4.0,4.0
+WF060661,Oude Gracht 383 - RAK 15 oneven,Werfmuur,under the street,2.97,mixed,B31H2731,110.0,3.63,0.56,0.41,0.03,nearby,3.0,1.0
+WF060396,Oude Gracht (t.o. Wed) - RAK 9 even,Werfmuur,under the street,3.39,soft_clay_peat,B31H1673,52.0,4.16,1.0,0.0,0.0,nearby,5.0,3.0
+WF060254,Kromme nieuwe gracht 50b - RAK 21 even,Kluismuur,under the street,2.97,soft_clay_peat,B31H0187,69.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060507,Oude gracht 208 - RAK 10 even,Werfmuur,under the street,3.38,soft_clay_peat,B31H1673,72.0,4.16,1.0,0.0,0.0,nearby,1.0,1.0
+WF060225,Drift 17b - RAK 25 oneven,Kluismuur,under the street,3.03,soft_clay_peat,B31H0184,91.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+BS040100,Vechtbeschoeiing 16,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060560,Oude gracht 263 - RAK 12 oneven,Werfmuur,under the street,3.1,mixed,B31H0348,101.0,3.6,0.0,0.32,0.68,nearby,3.0,2.0
+WF060692,Plompetorengracht 13b - RAK 26 oneven,Kluismuur,under the street,2.59,soft_clay_peat,B31H0179,33.0,3.01,0.97,0.03,0.0,close,1.0,1.0
+WF060456,Oude gracht 144 - RAK 5 even,Werfmuur,under the street,3.85,mixed,B31H2806,98.0,4.012,0.48,0.49,0.03,nearby,3.0,3.0
+WF060321,Nieuwe gracht 24a - RAK 20 even,Werfmuur,under the street,3.1,soft_clay_peat,B31H3159,90.0,4.05,0.81,0.16,0.03,nearby,2.0,1.0
+WF060697,Plompetorengracht 19a - RAK 26 oneven,Kluismuur,under the street,2.79,soft_clay_peat,B31H0179,76.0,3.01,0.9,0.1,0.0,nearby,1.0,1.0
+WF060462,Oude gracht 149 - RAK 5 oneven,Werfmuur,under the street,3.88,mixed,B31H0616,106.0,3.0,0.52,0.48,0.0,nearby,4.0,4.0
+WF060369,Nieuwe gracht 69 - RAK 18 oneven,Werfmuur,under the street,3.21,sand,B31H2749,125.0,4.09,0.0,0.97,0.03,nearby,2.0,1.0
+WF060573,Oude Gracht 281 - RAK 13 oneven,Werfmuur,under the street,3.41,mixed,B31H0348,25.0,3.6,0.0,0.38,0.62,close,1.0,1.0
+KM020002,Zeedijkkademuur 01www1,Kademuur,under the street,3.0,sand,B31H2765,227.0,3.01,0.27,0.71,0.03,far,0.0,0.0
+WF060187,Oude gracht 69b - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,138.0,3.75,0.3,0.7,0.0,nearby,2.0,1.0
+WF060117,Oude gracht 28 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,59.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060232,Janskerkhofwerfmuur 02 (nr. 15),Werfmuur,under the street,3.0,sand,B31H2761,53.0,2.77,0.17,0.8,0.03,nearby,2.0,1.0
+KW060007,Maria Majorpleinkeerwand 01,Keerwand,under the street,3.0,soft_clay_peat,B31H0174,39.0,4.94,1.0,0.0,0.0,close,3.0,2.0
+WF060518,Oude Gracht 219 - RAK 11 oneven,Werfmuur,under the street,3.82,soft_clay_peat,B31H2748,93.0,4.49,0.74,0.24,0.02,nearby,2.0,1.0
+KM060034,Nieuwe Gracht - Rak 16 NOZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0257,106.0,3.0,1.0,0.0,0.0,nearby,3.0,2.0
+WF060550,Oude gracht 251 - RAK 12 oneven,Werfmuur,under the street,3.25,mixed,B31H2748,118.0,4.49,0.69,0.28,0.02,nearby,3.0,2.0
+WF060490,Oude gracht 187 - RAK 10 oneven,Werfmuur,under the street,3.52,soft_clay_peat,B31H1673,57.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WFM06221-X,Drift (onder Janskerkhof) - RAK 24 oneven,Werfmuur,under the street,2.7,soft_clay_peat,B31H0184,34.0,4.04,1.0,0.0,0.0,close,2.0,1.0
+WF060688,Plompetorengracht 10 - RAK 26 even,Kluismuur,under the street,2.64,soft_clay_peat,B31H0179,32.0,3.01,0.95,0.05,0.0,close,1.0,1.0
+WF060378,Nieuwe gracht 81 - RAK 17 oneven,Werfmuur,under the street,2.53,soft_clay_peat,B31H0297,136.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060314,Nieuwe Gracht 195 - RAK 16 oneven,Werfmuur,under the street,2.28,soft_clay_peat,B31H2919,64.0,3.581,1.0,0.0,0.0,nearby,4.0,4.0
+WF060425,Oude gracht (Zoutmarkt 8) - RAK 8 oneven,Kluismuur,under the street,3.72,mixed,B31H0461,53.0,4.3,0.0,0.0,1.0,nearby,8.0,2.0
+BS040157,Stadsbuitengrachtbeschoeiing 05,Kademuur,under the street,3.0,sand,B31H0454,155.0,3.2,0.0,1.0,0.0,far,0.0,0.0
+WF060441,Oude gracht 130 - RAK 4 even,Werfmuur,under the street,6.63,mixed,B31H0730,64.0,4.8,0.32,0.52,0.17,nearby,4.0,4.0
+WF060397,Oude Gracht (tussen 221 en 223) - RAK 11 oneven,Werfmuur,under the street,3.8,soft_clay_peat,B31H2748,92.0,4.49,0.74,0.24,0.02,nearby,2.0,1.0
+WF060482,Oude gracht 177 - RAK 10 oneven,Werfmuur,under the street,3.39,soft_clay_peat,B31H1673,31.0,4.16,1.0,0.0,0.0,close,2.0,1.0
+WF060641,Oude gracht 359 - RAK 14 oneven,Werfmuur,under the street,3.02,soft_clay_peat,B31H0188,129.0,3.44,1.0,0.0,0.0,nearby,2.0,1.0
+WF060224,Drift 15 - RAK 24 oneven,Kluismuur,under the street,2.92,soft_clay_peat,B31H0184,68.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WF060304,Nieuwe gracht 16 - RAK 20 even,Werfmuur,under the street,2.86,soft_clay_peat,B31H3159,50.0,4.05,0.83,0.14,0.03,close,2.0,1.0
+WFM06753-X,Kromme nieuwe gracht 76 - RAK 21 even,Werfmuur,under the street,3.1,soft_clay_peat,B31H0219,80.0,2.3,1.0,0.0,0.0,nearby,5.0,4.0
+WF060607,Oude Gracht 320 - RAK 13 even,Werfmuur,under the street,3.26,mixed,B31H0348,39.0,3.6,0.0,0.36,0.64,close,2.0,1.0
+WF060673,Oude Gracht 405 - RAK 15 oneven,Werfmuur,under the street,2.87,mixed,B31H2731,115.0,3.63,0.55,0.43,0.03,nearby,2.0,1.0
+WF060645,Oude gracht 363 - RAK 14 oneven,Werfmuur,under the street,3.04,soft_clay_peat,B31H0188,135.0,3.44,1.0,0.0,0.0,nearby,2.0,1.0
+BS050180,Wilhelminaparkbeschoeiing 01www3,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060163,Oude gracht 70 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,147.0,3.33,1.0,0.0,0.0,nearby,1.0,1.0
+WF060555,Oude gracht 257 - RAK 12 oneven,Werfmuur,under the street,3.2,mixed,B31H0348,117.0,3.6,0.0,0.34,0.66,nearby,3.0,2.0
+WF060689,Plompetorengracht 11 - RAK 26 oneven,Kluismuur,under the street,2.59,soft_clay_peat,B31H0179,27.0,3.01,0.97,0.03,0.0,close,1.0,1.0
+WF060228,Drift 25c - RAK 25 oneven,Kluismuur,under the street,3.18,soft_clay_peat,B31H0179,145.0,3.01,0.79,0.21,0.0,nearby,1.0,1.0
+WF060146,Oude gracht 37 - RAK 1 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,67.0,3.33,1.0,0.0,0.0,nearby,4.0,3.0
+WF060408,Oude Gracht (Vismarkt 06) - RAK 7 even,Kluismuur,under the street,3.37,mixed,B31H0461,76.0,4.3,0.0,0.0,1.0,nearby,11.0,5.0
+WF060273,Kromme nieuwe gracht 86 - RAK 21 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H3159,82.0,4.05,0.83,0.13,0.03,nearby,4.0,3.0
+WFM06389-X,Kromme nieuwe gracht 18 - RAK 22 even,Werfmuur,under the street,2.3,soft_clay_peat,B31H0187,91.0,3.78,1.0,0.0,0.0,nearby,4.0,4.0
+WF060407,Oude Gracht (Vismarkt 04-05) - RAK 7 even,Kluismuur,under the street,3.31,mixed,B31H0461,79.0,4.3,0.0,0.0,1.0,nearby,6.0,3.0
+WFM06131-X,Plompetorengracht 26 - RAK 26 even,Werfmuur,under the street,2.83,soft_clay_peat,B31H0179,103.0,3.01,0.89,0.11,0.0,nearby,1.0,1.0
+WF060546,Oude gracht 247 - RAK 12 oneven,Werfmuur,under the street,3.55,soft_clay_peat,B31H2748,113.0,4.49,0.72,0.26,0.02,nearby,4.0,1.0
+WFM06623-X,Nieuwe Gracht 201 - RAK 16 oneven,Werfmuur,under the street,2.31,soft_clay_peat,B31H2919,75.0,3.581,1.0,0.0,0.0,nearby,2.0,2.0
+WF060553,Oude Gracht 254 - RAK 11 even,Werfmuur,under the street,3.01,mixed,B31H2748,119.0,4.49,0.67,0.31,0.03,nearby,2.0,1.0
+WF060587,Oude gracht 296 - RAK 12 even,Werfmuur,under the street,3.39,mixed,B31H0348,68.0,3.6,0.0,0.38,0.62,nearby,2.0,1.0
+WF060115,Oude gracht 24 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,56.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060577,Oude Gracht 285 - RAK 13 oneven,Werfmuur,under the street,3.37,mixed,B31H0348,14.0,3.6,0.0,0.38,0.62,close,1.0,1.0
+KW050006,Albatrosstraatkeerwand 01www4,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WFM06107-X,Plompetorengracht 13c - RAK 26 oneven,Werfmuur,under the street,4.3,mixed,B31H0179,41.0,3.01,0.58,0.42,0.0,close,1.0,1.0
+KM060040,Nieuwe Gracht - Rak 18 WZ,Walmuur,under the werf,1.1800000000000002,sand,B31H2749,124.0,4.09,0.0,1.0,0.0,nearby,2.0,1.0
+KM060052,Oude Gracht - Rak 03 OZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0539,39.0,3.75,1.0,0.0,0.0,close,6.0,3.0
+WF060411,Oude Gracht (Vismarkt 10) - RAK 7 even,Werfmuur,under the street,3.45,mixed,B31H0461,72.0,4.3,0.0,0.0,1.0,nearby,12.0,5.0
+WFM06622-X,Nieuwe Gracht 197-199 - RAK 16 oneven,Werfmuur,under the street,2.2,soft_clay_peat,B31H2919,69.0,3.581,1.0,0.0,0.0,nearby,2.0,2.0
+WF060305,Nieuwe Gracht 163 - RAK 16 oneven,Werfmuur,under the street,2.16,soft_clay_peat,B31H0185,42.0,3.26,1.0,0.0,0.0,close,5.0,4.0
+WFM06674-X,Oude Gracht 256 - RAK 11 even,Werfmuur,under the street,3.16,mixed,B31H2748,121.0,4.49,0.68,0.29,0.03,nearby,2.0,1.0
+KW040019,Copijnlaankeerwand 01www2,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060601,Oude gracht 315 - RAK 13 oneven,Werfmuur,under the street,2.94,mixed,B31H0348,73.0,3.6,0.0,0.29,0.71,nearby,3.0,1.0
+WF060467,Oude gracht 155 - RAK 5 oneven,Werfmuur,under the street,3.26,mixed,B31H0616,92.0,3.0,0.61,0.39,0.0,nearby,5.0,4.0
+WF060398,Oude Gracht (tussen 235 en237) - RAK 11 oneven,Werfmuur,under the street,3.69,soft_clay_peat,B31H2748,97.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+WF060339,Nieuwe gracht 40 - RAK 19 even,Werfmuur,under the street,3.05,mixed,B31H2750,121.0,3.36,0.49,0.48,0.03,nearby,2.0,1.0
+WF060676,Oude Gracht 409b - RAK 15 oneven,Werfmuur,under the street,2.86,mixed,B31H2731,125.0,3.63,0.55,0.43,0.03,nearby,2.0,1.0
+WF060203,Oude gracht 114 - RAK 3 even,Werfmuur,under the street,4.04,mixed,B31H0539,60.0,3.75,0.48,0.52,0.0,nearby,4.0,3.0
+WF060244,Kromme nieuwe gracht 34 - RAK 21 even,Kluismuur,under the street,3.02,soft_clay_peat,B31H0187,58.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060542,Oude Gracht 243 - RAK 11 oneven,Werfmuur,under the street,3.7,soft_clay_peat,B31H2748,103.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+WF060668,Oude Gracht 397-399 - RAK 15 oneven,Werfmuur,under the street,2.75,mixed,B31H2731,104.0,3.63,0.53,0.44,0.03,nearby,3.0,1.0
+WF060571,Oude Gracht 279 - RAK 13 oneven,Werfmuur,under the street,3.6,mixed,B31H0348,34.0,3.6,0.0,0.42,0.58,close,1.0,1.0
+KM060026,Kromme Nieuwe Gracht 008,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0219,94.0,2.3,1.0,0.0,0.0,nearby,5.0,2.0
+WF060623,Oude gracht 339 - RAK 14 oneven,Werfmuur,under the street,3.04,soft_clay_peat,B31H0188,103.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060415,Oude gracht (Vismarkt 19) - RAK 8 even,Werfmuur,under the street,2.81,mixed,B31H0461,63.0,4.3,0.0,0.0,1.0,nearby,10.0,5.0
+KM060065,Oude Gracht - Rak 09 ZOZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H1673,36.0,4.16,0.93,0.07,0.0,close,6.0,3.0
+WF060122,Oude gracht 36 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,71.0,3.33,1.0,0.0,0.0,nearby,4.0,2.0
+WFM06378-X,Drift 31 - RAK 25 oneven,Werfmuur,under the street,3.1,soft_clay_peat,B31H0179,88.0,3.01,0.81,0.19,0.0,nearby,1.0,1.0
+WF060317,Nieuwe gracht 21 - RAK 20 oneven,Werfmuur,under the street,2.95,soft_clay_peat,B31H3159,62.0,4.05,0.83,0.14,0.03,nearby,2.0,1.0
+WF060393,Oude Gracht (t.o. Hamburgerstraat) - RAK 11 even,Werfmuur,under the street,3.3,soft_clay_peat,B31H1673,114.0,4.16,1.0,0.0,0.0,nearby,2.0,1.0
+WF060421,Oude gracht (Zoutmarkt 14) - RAK 8 oneven,Kluismuur,under the street,3.83,mixed,B31H0461,51.0,4.3,0.0,0.0,1.0,nearby,8.0,2.0
+WF060545,Oude Gracht 246 - RAK 11 even,Werfmuur,under the street,2.96,mixed,B31H2748,115.0,4.49,0.66,0.31,0.03,nearby,2.0,1.0
+WF060303,Nieuwe Gracht 159 - RAK 16 oneven,Werfmuur,under the street,2.19,soft_clay_peat,B31H0185,55.0,3.26,1.0,0.0,0.0,nearby,5.0,4.0
+WF060498,Oude gracht 198 - RAK 10 even,Werfmuur,under the street,3.2,soft_clay_peat,B31H1673,52.0,4.16,1.0,0.0,0.0,nearby,2.0,1.0
+WF060229,Drift 29a - RAK 25 oneven,Kluismuur,under the street,3.12,soft_clay_peat,B31H0179,112.0,3.01,0.8,0.2,0.0,nearby,1.0,1.0
+WF060423,Oude gracht (Zoutmarkt 4) - RAK 8 oneven,Kluismuur,under the street,3.92,mixed,B31H0461,57.0,4.3,0.0,0.0,1.0,nearby,8.0,2.0
+WF060491,Oude gracht 189 - RAK 10 oneven,Werfmuur,under the street,3.59,soft_clay_peat,B31H1673,63.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060424,Oude gracht (Zoutmarkt 6) - RAK 8 oneven,Kluismuur,under the street,3.76,mixed,B31H0461,54.0,4.3,0.0,0.0,1.0,nearby,8.0,2.0
+WF060385,Oude gracht (Lichte gaard 6) - RAK 9 even,Werfmuur,under the street,3.03,mixed,B31H2751,92.0,4.66,0.3,0.68,0.02,nearby,9.0,3.0
+WF060497,Oude gracht 197 - RAK 10 oneven,Werfmuur,under the street,3.62,soft_clay_peat,B31H1673,89.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060219,Drift 09a - RAK 24 oneven,Kluismuur,under the street,2.95,soft_clay_peat,B31H0184,30.0,4.04,1.0,0.0,0.0,close,2.0,1.0
+WF060691,Plompetorengracht 13a - RAK 26 oneven,Kluismuur,under the street,2.64,soft_clay_peat,B31H0179,31.0,3.01,0.95,0.05,0.0,close,1.0,1.0
+KM040013,Gruttersdijkbeschoeiing 04www1,Damwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060651,Oude gracht 365 (Gedeeltelijk onder Vollersbrug) - RAK 14 oneven,Werfmuur,under the street,3.05,soft_clay_peat,B31H0188,139.0,3.44,1.0,0.0,0.0,nearby,2.0,1.0
+WF060182,Oude gracht 61b - RAK 2 oneven,Werfmuur,under the street,3.79,soft_clay_peat,B31H0226,135.0,3.5,1.0,0.0,0.0,nearby,3.0,3.0
+WF060309,Nieuwe Gracht 185 - RAK 16 oneven,Werfmuur,under the street,2.16,soft_clay_peat,B31H0185,33.0,3.26,1.0,0.0,0.0,close,5.0,4.0
+WFM06391-X,Kromme nieuwe gracht 22 - RAK 22 even,Werfmuur,under the street,3.1,soft_clay_peat,B31H0187,73.0,3.78,1.0,0.0,0.0,nearby,4.0,4.0
+WF060258,Kromme nieuwe gracht 56b - RAK 21 even,Kluismuur,under the street,3.13,soft_clay_peat,B31H0219,87.0,2.3,1.0,0.0,0.0,nearby,3.0,3.0
+WF060285,Nieuwe Gracht 092b - RAK 16 even,Werfmuur,under the street,2.02,soft_clay_peat,B31H0257,114.0,3.0,1.0,0.0,0.0,nearby,3.0,3.0
+WF060333,Nieuwe gracht 35 - RAK 19 oneven,Werfmuur,under the street,3.27,soft_clay_peat,B31H3159,114.0,4.05,0.76,0.2,0.03,nearby,2.0,1.0
+WF060185,Oude gracht 67 - RAK 2 oneven,Werfmuur,under the street,3.64,soft_clay_peat,B31H0226,143.0,3.5,1.0,0.0,0.0,nearby,2.0,1.0
+WF060658,Oude gracht 376 - RAK 14 even,Werfmuur,under the street,3.17,soft_clay_peat,B31H0176,126.0,3.35,0.9,0.1,0.0,nearby,6.0,4.0
+WF060477,Oude Gracht 172 - RAK 9 even,Werfmuur,under the street,3.18,soft_clay_peat,B31H1673,41.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WF060312,Nieuwe Gracht 191 - RAK 16 oneven,Werfmuur,under the street,2.2,soft_clay_peat,B31H0185,54.0,3.26,1.0,0.0,0.0,nearby,4.0,4.0
+WF060336,Nieuwe gracht 38 - RAK 19 even,Werfmuur,under the street,3.06,mixed,B31H2750,118.0,3.36,0.49,0.48,0.03,nearby,1.0,1.0
+WF060414,Oude gracht (Vismarkt 18) - RAK 8 even,Werfmuur,under the street,2.95,mixed,B31H0461,63.0,4.3,0.0,0.0,1.0,nearby,10.0,5.0
+KW040018,Copijnlaankeerwand 01www1,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060422,Oude gracht (Zoutmarkt 2) - RAK 8 oneven,Kluismuur,under the street,4.04,mixed,B31H0461,62.0,4.3,0.01,0.0,0.99,nearby,8.0,2.0
+WF060463,Oude gracht 150 - RAK 5 even,Werfmuur,under the street,4.0,mixed,B31H2806,96.0,4.012,0.5,0.47,0.03,nearby,2.0,2.0
+WF060158,Oude gracht 58 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,117.0,3.33,1.0,0.0,0.0,nearby,3.0,2.0
+WF060386,Oude gracht (Lichte gaard 7) - RAK 9 even,Werfmuur,under the street,2.85,mixed,B31H2751,90.0,4.66,0.32,0.66,0.02,nearby,8.0,3.0
+WF060299,Nieuwe gracht 14 - RAK 20 even,Werfmuur,under the street,2.93,soft_clay_peat,B31H3159,42.0,4.05,0.83,0.14,0.03,close,2.0,1.0
+WF060204,Oude gracht 116 - RAK 3 even,Werfmuur,under the street,3.45,mixed,B31H0539,67.0,3.75,0.39,0.61,0.0,nearby,4.0,3.0
+WF060653,Oude Gracht 367 - RAK 15 oneven,Werfmuur,under the street,3.35,mixed,B31H2731,133.0,3.63,0.61,0.36,0.02,nearby,3.0,1.0
+KW040015,Hooghiemstrapleinkeerwand 01,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060296,Nieuwe gracht 13 - RAK 20 oneven,Werfmuur,under the street,2.94,soft_clay_peat,B31H3159,30.0,4.05,0.83,0.14,0.03,close,2.0,1.0
+WFM06340,Oude gracht (Lichte gaard 9a) - RAK 9 even,Werfmuur,under the street,2.9,mixed,B31H2751,87.0,4.66,0.31,0.67,0.02,nearby,8.0,3.0
+WF060180,Oude gracht 59 - RAK 2 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0226,132.0,3.5,1.0,0.0,0.0,nearby,3.0,3.0
+WF060567,Oude gracht 273 - RAK 12 oneven,Werfmuur,under the street,3.08,mixed,B31H0348,64.0,3.6,0.0,0.32,0.68,nearby,1.0,1.0
+WF060502,Oude Gracht 203b - RAK 11 oneven,Werfmuur,under the street,2.89,mixed,B31H2748,110.0,4.49,0.65,0.32,0.03,nearby,3.0,1.0
+WF060687,Oude Gracht 427a - RAK 15 oneven,Werfmuur,under the street,3.06,soft_clay_peat,B31H0182,140.0,3.23,0.99,0.01,0.0,nearby,1.0,1.0
+WF060252,Kromme nieuwe gracht 48 - RAK 21 even,Kluismuur,under the street,3.07,soft_clay_peat,B31H0187,62.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+KMM04003,F.C. Donderstraatkademuur 02,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WFM06295-X,Oude gracht 138 - RAK 5 even,Werfmuur,under the street,4.0,mixed,B31H2806,102.0,4.012,0.5,0.47,0.03,nearby,4.0,4.0
+WF060438,Oude gracht 129a - RAK 4 oneven,Werfmuur,under the street,3.72,mixed,B31H0730,84.0,4.8,0.56,0.14,0.3,nearby,3.0,3.0
+WF060131,Oude gracht 6 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,58.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060221,Drift 11 - RAK 24 oneven,Kluismuur,under the street,2.96,soft_clay_peat,B31H0184,46.0,4.04,1.0,0.0,0.0,close,2.0,1.0
+WF060707,Plompetorengracht 25 - RAK 26 oneven,Kluismuur,under the street,2.76,soft_clay_peat,B31H0179,104.0,3.01,0.91,0.09,0.0,nearby,1.0,1.0
+WFM06754-X,Kromme nieuwe gracht 80a - RAK 21 even,Werfmuur,under the street,3.05,soft_clay_peat,B31H0219,85.0,2.3,1.0,0.0,0.0,nearby,5.0,4.0
+WF060297,Nieuwe gracht 131-133 - RAK 16 oneven,Werfmuur,under the street,2.07,soft_clay_peat,B31H0257,122.0,3.0,1.0,0.0,0.0,nearby,3.0,3.0
+KW040007,Zwartewaterkeerwand 01www1,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WFM06331-X,Oude gracht (Vismarkt 23) - RAK 8 even,Werfmuur,under the street,3.62,mixed,B31H0461,72.0,4.3,0.0,0.0,1.0,nearby,11.0,4.0
+WF060243,Kromme nieuwe gracht 32 - RAK 21 even,Kluismuur,under the street,3.01,soft_clay_peat,B31H0187,58.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060431,Oude gracht 119 - RAK 4 oneven,Werfmuur,under the street,3.89,mixed,B31H0730,55.0,4.8,0.54,0.18,0.28,nearby,4.0,4.0
+WF060170,Oude gracht 84-86 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,117.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WF060394,Oude Gracht (t.o. Hekelsteeg) - RAK 6 oneven,Werfmuur,under the street,4.01,mixed,B31H0616,77.0,3.0,0.5,0.5,0.0,nearby,5.0,4.0
+WF060538,Oude Gracht 238 - RAK 11 even,Werfmuur,under the street,3.0,mixed,B31H2748,113.0,4.49,0.67,0.31,0.03,nearby,1.0,1.0
+WF060345,Nieuwe gracht 45 - RAK 19 oneven,Werfmuur,under the street,3.47,mixed,B31H2750,125.0,3.36,0.43,0.54,0.02,nearby,2.0,1.0
+WF060124,Oude gracht 4 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,61.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060433,Oude gracht 123 - RAK 4 oneven,Werfmuur,under the street,4.55,mixed,B31H0730,66.0,4.8,0.46,0.3,0.24,nearby,4.0,4.0
+WF060454,Oude gracht 142 - RAK 5 even,Werfmuur,under the street,3.82,mixed,B31H2806,99.0,4.012,0.48,0.5,0.03,nearby,4.0,4.0
+KW050014,Wulpstraatkeerwand 02www2,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060139,Oude gracht 25 - RAK 1 oneven,Werfmuur,under the street,2.99,soft_clay_peat,B31H0186,34.0,3.33,1.0,0.0,0.0,close,4.0,3.0
+WF060552,Oude gracht 253 - RAK 12 oneven,Werfmuur,under the street,3.18,mixed,B31H2748,121.0,4.49,0.69,0.29,0.03,nearby,3.0,2.0
+KW010019,Robert Schumannstraatkeerwand 01www4,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060351,Nieuwe gracht 50b - RAK 18 even,Werfmuur,under the street,2.96,soft_clay_peat,B31H0297,135.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060469,Oude Gracht 159b - RAK 6 oneven,Werfmuur,under the street,3.0,mixed,B31H0616,80.0,3.0,0.67,0.33,0.0,nearby,5.0,4.0
+KW040013,Griftparkkeerwand 04,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060206,Oude gracht 118b - RAK 3 even,Werfmuur,under the street,3.45,mixed,B31H0730,68.0,4.8,0.61,0.07,0.32,nearby,4.0,3.0
+WF060315,Nieuwe gracht 2 - RAK 20 even,Werfmuur,under the street,2.73,soft_clay_peat,B31H3159,33.0,4.05,0.82,0.15,0.04,close,3.0,1.0
+WF060395,Oude Gracht (t.o. Massegast) - RAK 6 oneven,Werfmuur,under the street,3.93,mixed,B31H0616,69.0,3.0,0.51,0.49,0.0,nearby,5.0,4.0
+KM060018,Kromme Nieuwe Gracht 001,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0184,75.0,4.04,0.93,0.07,0.0,nearby,3.0,2.0
+WF060114,Oude gracht 22 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,54.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060354,Nieuwe gracht 52 - RAK 18 even,Werfmuur,under the street,2.89,soft_clay_peat,B31H0297,132.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060126,Oude gracht 42 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,80.0,3.33,1.0,0.0,0.0,nearby,5.0,3.0
+WF060200,Oude gracht 112e - RAK 3 even,Werfmuur,under the street,3.58,mixed,B31H0539,48.0,3.75,0.41,0.59,0.0,close,4.0,3.0
+KM040005,Wittevrouwensingelbeschoeiing 01,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060618,Oude Gracht 334 - RAK 13 even,Werfmuur,under the street,3.13,mixed,B31H0348,84.0,3.6,0.0,0.33,0.67,nearby,3.0,1.0
+WF060471,Oude Gracht 163a - RAK 6 oneven,Werfmuur,under the street,3.97,mixed,B31H0616,65.0,3.0,0.5,0.5,0.0,nearby,5.0,4.0
+WF060596,Oude gracht 311 - RAK 13 oneven,Werfmuur,under the street,2.8,mixed,B31H0348,60.0,3.6,0.0,0.25,0.75,nearby,3.0,1.0
+WF060625,Oude gracht 342 - RAK 14 even,Werfmuur,under the street,3.16,mixed,B31H0348,112.0,3.6,0.0,0.34,0.66,nearby,3.0,1.0
+WF060465,Oude gracht 153 - RAK 5 oneven,Werfmuur,under the street,4.03,mixed,B31H0616,95.0,3.0,0.5,0.5,0.0,nearby,5.0,4.0
+WF060412,Oude Gracht (Vismarkt 11) - RAK 7 even,Werfmuur,under the street,3.14,mixed,B31H0461,70.0,4.3,0.0,0.0,1.0,nearby,12.0,6.0
+WF060480,Oude gracht 175 - RAK 10 oneven,Werfmuur,under the street,3.38,soft_clay_peat,B31H1673,26.0,4.16,1.0,0.0,0.0,close,2.0,1.0
+WF060559,Oude gracht 261 - RAK 12 oneven,Werfmuur,under the street,3.25,mixed,B31H0348,107.0,3.6,0.0,0.35,0.65,nearby,3.0,2.0
+WF060460,Oude gracht 147b - RAK 5 oneven,Werfmuur,under the street,3.81,mixed,B31H0616,111.0,3.0,0.52,0.48,0.0,nearby,4.0,4.0
+WF060562,Oude gracht 265a - RAK 12 oneven,Werfmuur,under the street,3.05,mixed,B31H0348,94.0,3.6,0.0,0.31,0.69,nearby,3.0,2.0
+WF060308,Nieuwe Gracht 181-183 - RAK 16 oneven,Werfmuur,under the street,2.16,soft_clay_peat,B31H0185,35.0,3.26,1.0,0.0,0.0,close,5.0,4.0
+WF060564,Oude gracht 267 - RAK 12 oneven,Werfmuur,under the street,3.04,mixed,B31H0348,81.0,3.6,0.0,0.31,0.69,nearby,2.0,1.0
+WF060384,Oude gracht (Lichte gaard 5) - RAK 9 even,Werfmuur,under the street,3.04,mixed,B31H0461,90.0,4.3,0.0,0.0,1.0,nearby,9.0,3.0
+WF060528,Oude Gracht 230a - RAK 11 even,Werfmuur,under the street,3.29,mixed,B31H2748,118.0,4.49,0.7,0.28,0.02,nearby,2.0,1.0
+WF060375,Nieuwe gracht 79 - RAK 17 oneven,Werfmuur,under the street,2.54,soft_clay_peat,B31H0297,133.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060325,Nieuwe gracht 26 - RAK 19 even,Werfmuur,under the street,3.26,mixed,B31H2750,106.0,3.36,0.46,0.52,0.02,nearby,2.0,1.0
+WF060455,Oude gracht 143 - RAK 5 oneven,Werfmuur,under the street,3.8,mixed,B31H2806,118.0,4.012,0.47,0.5,0.03,nearby,3.0,3.0
+WF060595,Oude Gracht 310 - RAK 13 even,Werfmuur,under the street,3.29,mixed,B31H0348,32.0,3.6,0.0,0.36,0.64,close,1.0,1.0
+KM060064,Oude Gracht - Rak 09 WZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H1673,58.0,4.16,0.93,0.07,0.0,nearby,9.0,5.0
+KM060051,Oude Gracht - Rak 02 WZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0539,144.0,3.75,1.0,0.0,0.0,nearby,1.0,1.0
+WFM06437-X,Oude Gracht 215-217 - RAK 11 oneven,Werfmuur,under the street,3.75,soft_clay_peat,B31H2748,95.0,4.49,0.73,0.25,0.02,nearby,3.0,2.0
+WF060294,Nieuwe gracht 121 - RAK 17 oneven,Werfmuur,under the street,2.37,soft_clay_peat,B31H0257,147.0,3.0,1.0,0.0,0.0,nearby,2.0,2.0
+WF060470,Oude Gracht 161b - RAK 6 oneven,Werfmuur,under the street,4.05,mixed,B31H0616,72.0,3.0,0.49,0.51,0.0,nearby,5.0,4.0
+WF060537,Oude Gracht 237 - RAK 11 oneven,Werfmuur,under the street,3.69,soft_clay_peat,B31H2748,97.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+KW050013,Wulpstraatkeerwand 02www1,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060606,Oude Gracht 319-321 - RAK 13 oneven,Werfmuur,under the street,3.09,mixed,B31H0348,92.0,3.6,0.0,0.32,0.68,nearby,3.0,1.0
+WFM06561-X,Nieuwe gracht 27 - RAK 20 oneven,Werfmuur,under the street,3.01,soft_clay_peat,B31H3159,81.0,4.05,0.83,0.14,0.03,nearby,2.0,1.0
+WF060121,Oude gracht 34 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,68.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060693,Plompetorengracht 14 - RAK 26 even,Kluismuur,under the street,2.56,soft_clay_peat,B31H0179,30.0,3.01,0.98,0.02,0.0,close,1.0,1.0
+WF060662,Oude Gracht 385 - RAK 15 oneven,Werfmuur,under the street,2.93,mixed,B31H2731,108.0,3.63,0.56,0.42,0.03,nearby,3.0,1.0
+WF060248,Kromme nieuwe gracht 4 - RAK 22 even,Kluismuur,under the street,3.34,soft_clay_peat,B31H0184,52.0,4.04,1.0,0.0,0.0,nearby,1.0,1.0
+WF060500,Oude gracht 200 - RAK 10 even,Werfmuur,under the street,3.26,soft_clay_peat,B31H1673,56.0,4.16,1.0,0.0,0.0,nearby,2.0,1.0
+WF060128,Oude gracht 46 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,88.0,3.33,1.0,0.0,0.0,nearby,4.0,2.0
+WF060580,Oude gracht 288 - RAK 12 even,Werfmuur,under the street,3.2,mixed,B31H0348,87.0,3.6,0.0,0.34,0.66,nearby,2.0,1.0
+WFM06610-X,Nieuwe Gracht 155-157 - RAK 16 oneven,Werfmuur,under the street,2.04,soft_clay_peat,B31H0185,61.0,3.26,1.0,0.0,0.0,nearby,5.0,4.0
+WF060143,Oude gracht 31 (t.o. Waterstraat) - RAK 1 oneven,Werfmuur,under the street,3.13,soft_clay_peat,B31H0186,38.0,3.33,0.97,0.03,0.0,close,4.0,3.0
+WF060302,Nieuwe gracht 15 - RAK 20 oneven,Werfmuur,under the street,2.96,soft_clay_peat,B31H3159,35.0,4.05,0.83,0.14,0.03,close,2.0,1.0
+WF060529,Oudegracht 230b - RAK 11 even,Werfmuur,under the street,3.0,mixed,B31H2748,117.0,4.49,0.67,0.31,0.03,nearby,2.0,1.0
+WFM06368-X,Drift 23a - RAK 25 oneven,Werfmuur,under the street,3.06,soft_clay_peat,B31H0184,135.0,4.04,1.0,0.0,0.0,nearby,3.0,1.0
+WF060614,Oude Gracht 330 - RAK 13 even,Werfmuur,under the street,3.31,mixed,B31H0348,74.0,3.6,0.0,0.37,0.63,nearby,3.0,1.0
+WF060713,Plompetorengracht 5 - RAK 26 oneven,Kluismuur,under the street,2.72,soft_clay_peat,B31H0179,34.0,3.01,0.92,0.08,0.0,close,1.0,1.0
+WF060186,Oude gracht 69a - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,143.0,3.75,0.3,0.7,0.0,nearby,2.0,1.0
+WF060522,Oude Gracht 223 - RAK 11 oneven,Werfmuur,under the street,3.84,soft_clay_peat,B31H2748,92.0,4.49,0.74,0.24,0.02,nearby,2.0,1.0
+KM060059,Oude Gracht - Rak 06 NZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0224,36.0,1.1,0.0,1.0,0.0,close,6.0,2.0
+WF060172,Oude gracht 90 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,99.0,3.75,0.3,0.7,0.0,nearby,2.0,2.0
+WF060341,Nieuwe gracht 41b - RAK 19 oneven,Werfmuur,under the street,3.45,mixed,B31H2750,121.0,3.36,0.43,0.54,0.02,nearby,2.0,1.0
+WF060174,Oude gracht (Viestraat 1a) - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,85.0,3.75,0.3,0.7,0.0,nearby,4.0,3.0
+BS050177,Wilhelminaparkbeschoeiing 01,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060334,Nieuwe gracht 36 - RAK 19 even,Werfmuur,under the street,3.18,mixed,B31H2750,114.0,3.36,0.47,0.5,0.03,nearby,1.0,1.0
+KM040014,Weerdsingel O.Z. kademuur 01,Kademuur,under the street,3.0,soft_clay_peat,B31H0186,138.0,3.33,1.0,0.0,0.0,nearby,1.0,1.0
+WFM06374-X,Drift 27b - RAK 25 oneven,Werfmuur,under the street,3.08,soft_clay_peat,B31H0179,124.0,3.01,0.81,0.19,0.0,nearby,1.0,1.0
+WF060539,Oude Gracht 239 - RAK 11 oneven,Werfmuur,under the street,3.65,soft_clay_peat,B31H2748,99.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+WF060205,Oude gracht 118a - RAK 3 even,Werfmuur,under the street,3.38,mixed,B31H0730,70.0,4.8,0.62,0.05,0.33,nearby,4.0,3.0
+KWM01012-01,H.J. Schimmelpleinkeerwand 01WWW1,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060632,Oude gracht 350 - RAK 14 even,Werfmuur,under the street,2.8,soft_clay_peat,B31H0188,129.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060161,Oude gracht 66 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,138.0,3.33,1.0,0.0,0.0,nearby,1.0,1.0
+WF060137,Oude gracht 21 - RAK 1 oneven,Werfmuur,under the street,2.84,soft_clay_peat,B31H0186,37.0,3.33,1.0,0.0,0.0,close,4.0,3.0
+WF060541,Oude Gracht 242 - RAK 11 even,Werfmuur,under the street,2.85,mixed,B31H2748,115.0,4.49,0.65,0.32,0.03,nearby,1.0,1.0
+KM060035,Nieuwe Gracht - Rak 16 WZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0185,38.0,3.26,0.68,0.32,0.0,close,5.0,1.0
+WF060506,Oude Gracht 207 - RAK 11 oneven,Werfmuur,under the street,3.77,soft_clay_peat,B31H2748,104.0,4.49,0.73,0.24,0.02,nearby,3.0,2.0
+WF060576,Oude gracht 284 - RAK 12 even,Werfmuur,under the street,3.15,mixed,B31H0348,96.0,3.6,0.0,0.33,0.67,nearby,2.0,1.0
+WF060437,Oude gracht 128 - RAK 4 even,Werfmuur,under the street,3.61,mixed,B31H0730,63.0,4.8,0.58,0.11,0.3,nearby,4.0,4.0
+WF060289,Nieuwe gracht 1 - RAK 20 oneven,Werfmuur,under the street,3.06,soft_clay_peat,B31H3159,16.0,4.05,0.82,0.15,0.03,close,2.0,1.0
+WF060599,Oude gracht 313 - RAK 13 oneven,Werfmuur,under the street,2.77,mixed,B31H0348,67.0,3.6,0.0,0.24,0.76,nearby,3.0,1.0
+BS020009,Vechtbeschoeiing 22B,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060331,Nieuwe gracht 33 - RAK 19 oneven,Werfmuur,under the street,3.31,soft_clay_peat,B31H3159,109.0,4.05,0.76,0.21,0.03,nearby,2.0,1.0
+WF060512,Oude Gracht 213 - RAK 11 oneven,Werfmuur,under the street,3.75,soft_clay_peat,B31H2748,97.0,4.49,0.73,0.25,0.02,nearby,3.0,2.0
+WF060319,Nieuwe gracht 22b - RAK 20 even,Werfmuur,under the street,3.08,soft_clay_peat,B31H3159,85.0,4.05,0.81,0.16,0.03,nearby,2.0,1.0
+WFM06750-X,Kromme nieuwe gracht 70 - RAK 21 even,Werfmuur,under the street,3.14,soft_clay_peat,B31H0219,74.0,2.3,1.0,0.0,0.0,nearby,4.0,3.0
+WF060361,Nieuwe gracht 63 - RAK 18 oneven,Werfmuur,under the street,3.34,sand,B31H2749,121.0,4.09,0.0,0.97,0.03,nearby,2.0,1.0
+WF060551,Oude Gracht 252 - RAK 11 even,Werfmuur,under the street,2.92,mixed,B31H2748,117.0,4.49,0.66,0.32,0.03,nearby,2.0,1.0
+WF060154,Oude gracht (Potterstraat 2b) - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,81.0,3.75,0.3,0.7,0.0,nearby,2.0,2.0
+WF060123,Oude gracht 38 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,75.0,3.33,1.0,0.0,0.0,nearby,5.0,3.0
+WF060318,Nieuwe gracht 22a - RAK 20 even,Werfmuur,under the street,2.98,soft_clay_peat,B31H3159,79.0,4.05,0.83,0.13,0.03,nearby,2.0,1.0
+KW050005,Albatrosstraatkeerwand 01www3,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060655,Oude gracht 370 - RAK 14 even,Werfmuur,under the street,2.92,soft_clay_peat,B31H0176,128.0,3.35,0.98,0.02,0.0,nearby,5.0,4.0
+BS050163,Weg Naar Rhijnauwenbeschoeiing 01,,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060450,Oude gracht 137b - RAK 5 oneven,Werfmuur,under the street,3.66,mixed,B31H0730,117.0,4.8,0.57,0.13,0.3,nearby,2.0,2.0
+WF060148,Oude gracht 41 - RAK 1 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,76.0,3.33,1.0,0.0,0.0,nearby,4.0,3.0
+WF060155,Oude gracht (Potterstraat c) - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,77.0,3.75,0.3,0.7,0.0,nearby,3.0,2.0
+WFM06751-X,Kromme nieuwe gracht 72 - RAK 21 even,Werfmuur,under the street,3.15,soft_clay_peat,B31H0219,76.0,2.3,1.0,0.0,0.0,nearby,5.0,4.0
+WF060406,Oude Gracht (Vismarkt 03) - RAK 7 even,Kluismuur,under the street,3.4,mixed,B31H0461,82.0,4.3,0.0,0.0,1.0,nearby,6.0,3.0
+WF060459,Oude gracht 147a - RAK 5 oneven,Werfmuur,under the street,3.91,mixed,B31H2806,117.0,4.012,0.49,0.49,0.03,nearby,4.0,4.0
+WF060197,Oude gracht 112b - RAK 3 even,Werfmuur,under the street,3.71,mixed,B31H0539,34.0,3.75,0.43,0.57,0.0,close,4.0,3.0
+KW010005,Robert Schumannstraatkeerwand 01www3,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+KM060030,Van Asch van Wijckskadedademuur 01www1,Kademuur,under the street,3.0,soft_clay_peat,B31H0186,84.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060125,Oude gracht 40 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,77.0,3.33,1.0,0.0,0.0,nearby,5.0,3.0
+WF060654,Oude gracht 368 - RAK 14 even,Werfmuur,under the street,2.94,soft_clay_peat,B31H0176,130.0,3.35,0.97,0.03,0.0,nearby,5.0,4.0
+WF060680,Oude Gracht 411 ( t.o. Diaconessestraat) - RAK 15 oneven,Werfmuur,under the street,2.75,mixed,B31H2731,139.0,3.63,0.53,0.44,0.03,nearby,2.0,1.0
+WF060164,Oude gracht 72 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,152.0,3.33,1.0,0.0,0.0,far,0.0,0.0
+WF060116,Oude gracht 26 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,57.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060245,Kromme nieuwe gracht 36 - RAK 21 even,Kluismuur,under the street,2.98,soft_clay_peat,B31H0187,57.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060530,Oude Gracht 230c - RAK 11 even,Werfmuur,under the street,3.34,soft_clay_peat,B31H2748,116.0,4.49,0.7,0.28,0.02,nearby,2.0,2.0
+WF060633,Oude gracht 351 - RAK 14 oneven,Werfmuur,under the street,3.2,soft_clay_peat,B31H0188,116.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WF060636,Oude gracht 354 - RAK 14 even,Werfmuur,under the street,2.9,soft_clay_peat,B31H0188,130.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060171,Oude gracht 88 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,107.0,3.75,0.3,0.7,0.0,nearby,2.0,2.0
+KWMZ02001-03,Spoorlijn Amersfoort - Utrecht keerwand 01www3,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+BS050178,Wilhelminaparkbeschoeiing 01www1,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060629,Oude gracht 347 - RAK 14 oneven,Werfmuur,under the street,3.11,soft_clay_peat,B31H0188,111.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WFM06410-X,Kromme nieuwe gracht 54 - RAK 21 even,Werfmuur,under the street,3.17,soft_clay_peat,B31H0187,83.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WFM06093-X,Oude gracht (t.o. Oude postkantoor b) - RAK 3 even,Werfmuur,under the street,3.85,mixed,B31H0539,38.0,3.75,0.45,0.55,0.0,close,4.0,3.0
+WF060678,Oude Gracht 409d - RAK 15 oneven,Werfmuur,under the street,2.83,mixed,B31H2731,132.0,3.63,0.54,0.43,0.03,nearby,2.0,1.0
+KM040007,Gruttersdijkbeschoeiing 01www1,Damwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+KM060057,Oude Gracht - Rak 05 NZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0224,49.0,1.1,0.0,1.0,0.0,close,5.0,3.0
+WF060674,Oude Gracht 407 - RAK 15 oneven,Werfmuur,under the street,2.87,mixed,B31H2731,119.0,3.63,0.55,0.43,0.03,nearby,2.0,1.0
+WF060240,Kromme nieuwe gracht 26 - RAK 21 even,Kluismuur,under the street,2.98,soft_clay_peat,B31H0187,62.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060290,Nieuwe gracht 10 - RAK 20 even,Werfmuur,under the street,2.83,soft_clay_peat,B31H3159,30.0,4.05,0.82,0.14,0.04,close,2.0,1.0
+KM060067,Oude Gracht - Rak 09 WZ 01,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H1673,34.0,4.16,0.93,0.07,0.0,close,6.0,3.0
+WF060591,Oude Gracht 301 - RAK 13 oneven,Werfmuur,under the street,3.23,mixed,B31H0348,30.0,3.6,0.0,0.35,0.65,close,3.0,1.0
+WF060149,Oude gracht 43 - RAK 1 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,81.0,3.33,1.0,0.0,0.0,nearby,3.0,3.0
+WF060156,Oude gracht (Potterstraat d) - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,73.0,3.75,0.3,0.7,0.0,nearby,4.0,2.0
+KM060010,Oude Gracht - Rak 11 WZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H2748,97.0,4.49,0.94,0.06,0.0,nearby,3.0,1.0
+KM060021,Kromme Nieuwe Gracht 003,Walmuur,under the werf,1.1800000000000002,mixed,B31H0187,101.0,3.78,0.68,0.32,0.0,nearby,4.0,1.0
+WF060484,Oude gracht 179 - RAK 10 oneven,Werfmuur,under the street,3.43,soft_clay_peat,B31H1673,35.0,4.16,1.0,0.0,0.0,close,1.0,1.0
+KW050012,Wulpstraatkeerwand 02,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060578,Oude gracht 286 - RAK 12 even,Werfmuur,under the street,3.21,mixed,B31H0348,92.0,3.6,0.0,0.35,0.65,nearby,2.0,1.0
+KM060022,Kromme Nieuwe Gracht 004 (thv nr 018),Walmuur,under the werf,1.1800000000000002,mixed,B31H0187,89.0,3.78,0.68,0.32,0.0,nearby,4.0,1.0
+KM060061,Oude Gracht - Rak 07 OZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0461,69.0,4.3,0.32,0.0,0.68,nearby,11.0,3.0
+WF060402,Oude Gracht (tussen 395 en 397) - RAK 15 oneven,Werfmuur,under the street,2.6,mixed,B31H2731,104.0,3.63,0.5,0.47,0.03,nearby,3.0,1.0
+WF060165,Oude gracht 74 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,149.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+KW060013,Ganzenmarktkeerwand,Keerwand,under the street,3.0,mixed,B31H0616,18.0,3.0,0.67,0.33,0.0,close,4.0,2.0
+WF060682,Oude Gracht 415 - RAK 15 oneven,Werfmuur,under the street,2.8,soft_clay_peat,B31H0182,139.0,3.23,1.0,0.0,0.0,nearby,1.0,1.0
+WFM06369-X,Drift 23b - RAK 25 oneven,Werfmuur,under the street,3.07,soft_clay_peat,B31H0184,147.0,4.04,1.0,0.0,0.0,nearby,3.0,1.0
+WFM06362-X,Drift 17a - RAK 25 oneven,Werfmuur,under the street,3.09,soft_clay_peat,B31H0184,83.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WF060620,Oude Gracht 336 - RAK 13 even,Werfmuur,under the street,3.27,mixed,B31H0348,89.0,3.6,0.0,0.36,0.64,nearby,3.0,1.0
+WF060169,Oude gracht 82 - RAK 2 even,Werfmuur,under the street,3.0,sand,B31H0539,126.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WF060287,Nieuwe Gracht 094a - RAK 16 even,Werfmuur,under the street,2.01,soft_clay_peat,B31H0257,100.0,3.0,1.0,0.0,0.0,nearby,3.0,3.0
+WF060589,Oude gracht 298 - RAK 12 even,Werfmuur,under the street,3.64,mixed,B31H0348,61.0,3.6,0.0,0.42,0.58,nearby,2.0,1.0
+WF060419,Oude gracht (Vismarkt 22) - RAK 8 even,Werfmuur,under the street,3.0,mixed,B31H0461,69.0,4.3,0.0,0.0,1.0,nearby,11.0,5.0
+WF060485,Oude Gracht 180 - RAK 9 even,Werfmuur,under the street,3.3,soft_clay_peat,B31H1673,35.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WFM06609-X,Nieuwe Gracht 147-149-151 - RAK 16 oneven,Werfmuur,under the street,2.0,soft_clay_peat,B31H0185,75.0,3.26,1.0,0.0,0.0,nearby,5.0,4.0
+WF060350,Nieuwe gracht 50a - RAK 18 even,Werfmuur,under the street,3.03,sand,B31H2749,136.0,4.09,0.0,0.97,0.03,nearby,3.0,1.0
+WF060544,Oude Gracht 245 (onder Weesbrug) - RAK 11 oneven,Werfmuur,under the street,3.73,soft_clay_peat,B31H2748,106.0,4.49,0.73,0.25,0.02,nearby,3.0,1.0
+WF060348,Nieuwe gracht 49 - RAK 19 oneven,Werfmuur,under the street,3.22,mixed,B31H2750,129.0,3.36,0.47,0.51,0.02,nearby,2.0,1.0
+WF060671,Oude Gracht 403b - RAK 15 oneven,Werfmuur,under the street,2.98,mixed,B31H2731,111.0,3.63,0.56,0.41,0.03,nearby,2.0,1.0
+WF060447,Oude gracht 136d - RAK 4 even,Werfmuur,under the street,3.98,mixed,B31H0730,89.0,4.8,0.53,0.2,0.28,nearby,4.0,4.0
+WF060177,Oude gracht 51 - RAK 2 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,106.0,3.33,1.0,0.0,0.0,nearby,3.0,3.0
+WF060609,Oude Gracht 324 - RAK 13 even,Werfmuur,under the street,3.12,mixed,B31H0348,56.0,3.6,0.0,0.33,0.67,nearby,3.0,1.0
+OOM02001,Larixstraatmuur 01,Muur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060604,Oude Gracht 318 - RAK 13 even,Werfmuur,under the street,3.06,mixed,B31H0348,30.0,3.6,0.0,0.31,0.69,close,1.0,1.0
+WF060468,Oude Gracht 159a - RAK 6 oneven,Werfmuur,under the street,2.22,soft_clay_peat,B31H0616,83.0,3.0,0.9,0.1,0.0,nearby,5.0,2.0
+WFM06612-X,Nieuwe Gracht 161 - RAK 16 oneven,Werfmuur,under the street,2.12,soft_clay_peat,B31H0185,48.0,3.26,1.0,0.0,0.0,close,5.0,4.0
+WF060605,Oude Gracht 318-320 - RAK 13 even,Werfmuur,under the street,3.06,mixed,B31H0348,32.0,3.6,0.0,0.31,0.69,close,1.0,1.0
+WF060698,Plompetorengracht 19b - RAK 26 oneven,Kluismuur,under the street,2.89,soft_clay_peat,B31H0179,83.0,3.01,0.87,0.13,0.0,nearby,1.0,1.0
+KW010018,Robert Schumannstraatkeerwand 01www5,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060226,Drift 19b - RAK 25 oneven,Kluismuur,under the street,3.04,soft_clay_peat,B31H0184,109.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WF060701,Plompetorengracht 1c - RAK 26 oneven,Kluismuur,under the street,3.1,soft_clay_peat,B31H0179,62.0,3.01,0.81,0.19,0.0,nearby,1.0,1.0
+WF060392,Oude gracht (t.o. Drieharingenstraat) - RAK 4 oneven,Werfmuur,under the street,3.25,mixed,B31H0730,52.0,4.8,0.65,0.02,0.34,nearby,4.0,4.0
+WF060399,Oude gracht (tussen 263-265) - RAK 12 oneven,Werfmuur,under the street,3.06,mixed,B31H0348,98.0,3.6,0.0,0.31,0.69,nearby,3.0,2.0
+WF060401,Oude Gracht (tussen 301 en 303) - RAK 13 oneven,Werfmuur,under the street,2.97,mixed,B31H0348,34.0,3.6,0.0,0.29,0.71,close,3.0,1.0
+WF060708,Plompetorengracht 27 - RAK 26 oneven,Kluismuur,under the street,2.7,soft_clay_peat,B31H0179,110.0,3.01,0.93,0.07,0.0,nearby,1.0,1.0
+WFM06284-X,Oude gracht 124 - RAK 4 even,Werfmuur,under the street,4.07,mixed,B31H0730,63.0,4.8,0.52,0.21,0.27,nearby,4.0,4.0
+WF060666,Oude Gracht 391-393 - RAK 15 oneven,Werfmuur,under the street,2.61,mixed,B31H2731,104.0,3.63,0.5,0.47,0.03,nearby,3.0,1.0
+WF060492,Oude gracht 190-192 - RAK 10 even,Werfmuur,under the street,3.27,soft_clay_peat,B31H1673,42.0,4.16,1.0,0.0,0.0,close,2.0,1.0
+KM060060,Oude Gracht - Rak 06 ZZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0224,55.0,1.1,0.0,1.0,0.0,nearby,7.0,2.0
+WF060634,Oude gracht 352 - RAK 14 even,Werfmuur,under the street,2.94,soft_clay_peat,B31H0188,129.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060472,Oude Gracht 163b - RAK 6 oneven,Werfmuur,under the street,3.95,mixed,B31H0616,62.0,3.0,0.51,0.49,0.0,nearby,6.0,4.0
+WF060439,Oude gracht 129b - RAK 4 oneven,Werfmuur,under the street,3.7,mixed,B31H0730,88.0,4.8,0.57,0.14,0.3,nearby,3.0,3.0
+WF060157,Oude gracht 54 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,110.0,3.33,1.0,0.0,0.0,nearby,3.0,2.0
+WFM06120-X,Plompetorengracht 8 - RAK 26 even,Werfmuur,under the street,2.83,soft_clay_peat,B31H0179,40.0,3.01,0.89,0.11,0.0,close,1.0,1.0
+WF060189,Oude gracht 71 - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,123.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WFM06813-X,Nieuwe Gracht 098a - RAK 16 even,Werfmuur,under the street,1.83,soft_clay_peat,B31H0257,87.0,3.0,1.0,0.0,0.0,nearby,5.0,4.0
+WF060696,Plompetorengracht 18a - RAK 26 even,Kluismuur,under the street,2.48,soft_clay_peat,B31H0179,34.0,3.01,1.0,0.0,0.0,close,1.0,1.0
+WFM06485-X,Oude Gracht 303-305 - RAK 13 oneven,Werfmuur,under the street,3.01,mixed,B31H0348,42.0,3.6,0.0,0.3,0.7,close,3.0,1.0
+WF060714,Plompetorengracht 6 - RAK 26 even,Kluismuur,under the street,3.1,soft_clay_peat,B31H0179,50.0,3.01,0.81,0.19,0.0,nearby,1.0,1.0
+WF060112,Oude gracht 20a - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,53.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060561,Oude gracht 264 - RAK 12 even,Werfmuur,under the street,3.44,sand,B31H2749,124.0,4.09,0.0,0.97,0.03,nearby,3.0,1.0
+WF060383,Oude gracht (Lichte gaard 4) - RAK 9 even,Werfmuur,under the street,3.04,mixed,B31H0461,88.0,4.3,0.0,0.0,1.0,nearby,9.0,3.0
+WF060672,Oude Gracht 403c - RAK 15 oneven,Werfmuur,under the street,2.98,mixed,B31H2731,112.0,3.63,0.56,0.41,0.03,nearby,2.0,1.0
+WF060610,Oude Gracht 326 - RAK 13 even,Werfmuur,under the street,3.15,mixed,B31H0348,63.0,3.6,0.0,0.33,0.67,nearby,3.0,1.0
+WF060141,Oude gracht 29 - RAK 1 oneven,Werfmuur,under the street,2.97,soft_clay_peat,B31H0186,35.0,3.33,1.0,0.0,0.0,close,4.0,3.0
+WF060313,Nieuwe Gracht 193 - RAK 16 oneven,Werfmuur,under the street,2.22,soft_clay_peat,B31H2919,62.0,3.581,1.0,0.0,0.0,nearby,4.0,4.0
+WF060617,Oude gracht 333 - RAK 14 oneven,Werfmuur,under the street,3.05,soft_clay_peat,B31H0188,102.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060381,Nieuwe gracht 87 - RAK 17 oneven,Werfmuur,under the street,2.31,soft_clay_peat,B31H0297,144.0,3.06,1.0,0.0,0.0,nearby,1.0,1.0
+WF060274,Kromme nieuwe gracht 8a - RAK 22 even,Kluismuur,under the street,3.11,soft_clay_peat,B31H0184,67.0,4.04,1.0,0.0,0.0,nearby,3.0,3.0
+WF060630,Oude gracht 348 - RAK 14 even,Werfmuur,under the street,3.0,mixed,B31H0348,123.0,3.6,0.0,0.3,0.7,nearby,3.0,1.0
+WF060253,Kromme nieuwe gracht 50a - RAK 21 even,Kluismuur,under the street,3.1,soft_clay_peat,B31H0187,67.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WFM06545-X,Oude gracht 427b - RAK 15 oneven,Werfmuur,under the street,3.15,soft_clay_peat,B31H0182,139.0,3.23,0.96,0.04,0.0,nearby,1.0,1.0
+WFM06783-X,Nieuwe gracht 32 - RAK 19 even,Werfmuur,under the street,3.11,mixed,B31H2750,107.0,3.36,0.48,0.49,0.03,nearby,2.0,1.0
+WFM06812-X,Nieuwe Gracht 096 - RAK 16 even,Werfmuur,under the street,1.89,soft_clay_peat,B31H0257,92.0,3.0,1.0,0.0,0.0,nearby,4.0,3.0
+WF060510,Oude Gracht 211 - RAK 11 oneven,Werfmuur,under the street,3.78,soft_clay_peat,B31H2748,98.0,4.49,0.74,0.24,0.02,nearby,3.0,2.0
+WF060183,Oude gracht 63 - RAK 2 oneven,Werfmuur,under the street,3.85,soft_clay_peat,B31H0226,137.0,3.5,1.0,0.0,0.0,nearby,3.0,3.0
+WF060352,Nieuwe gracht 51a - RAK 19 oneven,Werfmuur,under the street,3.35,mixed,B31H2750,131.0,3.36,0.45,0.53,0.02,nearby,2.0,1.0
+WF060525,Oude Gracht 226 - RAK 11 even,Werfmuur,under the street,3.37,soft_clay_peat,B31H2748,122.0,4.49,0.7,0.27,0.02,nearby,2.0,2.0
+WFM06774-X,Nieuwe gracht 20b - RAK 20 even,Werfmuur,under the street,2.85,soft_clay_peat,B31H3159,73.0,4.05,0.82,0.14,0.04,nearby,2.0,1.0
+WF060581,Oude Gracht 289 - RAK 13 oneven,Werfmuur,under the street,3.2,mixed,B31H0348,3.0,3.6,0.0,0.34,0.66,close,2.0,1.0
+WF060664,Oude Gracht 387b - RAK 15 oneven,Werfmuur,under the street,2.76,mixed,B31H2731,105.0,3.63,0.53,0.44,0.03,nearby,3.0,1.0
+WF060212,Oude gracht 97 - RAK 3 oneven,Werfmuur,under the street,3.0,sand,B31H0539,57.0,3.75,0.3,0.7,0.0,nearby,5.0,3.0
+WF060445,Oude gracht 136b - RAK 4 even,Werfmuur,under the street,3.56,mixed,B31H0730,80.0,4.8,0.59,0.1,0.31,nearby,4.0,4.0
+WF060284,Nieuwe Gracht 092a - RAK 16 even,Werfmuur,under the street,1.99,soft_clay_peat,B31H0257,120.0,3.0,1.0,0.0,0.0,nearby,3.0,3.0
+WF060540,Oude Gracht 241 - RAK 11 oneven,Werfmuur,under the street,3.65,soft_clay_peat,B31H2748,101.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+WF060377,Nieuwe gracht 84-86-88-90 - RAK 17 even,Werfmuur,under the street,1.97,soft_clay_peat,B31H0297,138.0,3.06,1.0,0.0,0.0,nearby,4.0,3.0
+BS030152,Vechtbeschoeiing 04B,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+BS010045,Leidsewegbeschoeiing 06,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WFM06038-X,Oude gracht 77 - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,101.0,3.75,0.3,0.7,0.0,nearby,2.0,2.0
+WF060615,Oude gracht 331 - RAK 14 oneven,Werfmuur,under the street,3.18,soft_clay_peat,B31H0188,102.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WFM06796-X,Nieuwe gracht 56 - RAK 18 even,Werfmuur,under the street,2.87,soft_clay_peat,B31H0297,122.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060370,Nieuwe gracht 70 - RAK 17 even,Werfmuur,under the street,2.51,soft_clay_peat,B31H0297,119.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060568,Oude gracht 274-276 - RAK 12 even,Werfmuur,under the street,3.16,mixed,B31H0348,116.0,3.6,0.0,0.34,0.66,nearby,3.0,2.0
+WF060209,Oude gracht 101-103 - RAK 3 oneven,Werfmuur,under the street,3.69,mixed,B31H0730,53.0,4.8,0.57,0.13,0.3,nearby,5.0,4.0
+KM060050,Oude Gracht - Rak 02 OZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0539,140.0,3.75,1.0,0.0,0.0,nearby,1.0,1.0
+WF060670,Oude Gracht 403a - RAK 15 oneven,Werfmuur,under the street,2.97,mixed,B31H2731,109.0,3.63,0.56,0.41,0.03,nearby,2.0,1.0
+WF060657,Oude gracht 374 - RAK 14 even,Werfmuur,under the street,3.11,soft_clay_peat,B31H0176,127.0,3.35,0.92,0.08,0.0,nearby,6.0,4.0
+WF060367,Nieuwe gracht 68a - RAK 17 even,Werfmuur,under the street,2.7,soft_clay_peat,B31H0297,116.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06313-X,Oude Gracht (Vismarkt 01a) - RAK 7 even,Werfmuur,under the street,3.91,mixed,B31H0616,78.0,3.0,0.51,0.49,0.0,nearby,5.0,3.0
+WF060650,Oude gracht 364e - RAK 14 even,Werfmuur,under the street,2.99,soft_clay_peat,B31H0176,134.0,3.35,0.95,0.05,0.0,nearby,4.0,4.0
+WF060227,Drift 21b - RAK 25 oneven,Kluismuur,under the street,3.14,soft_clay_peat,B31H0184,127.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06366-X,Drift 21a - RAK 25 oneven,Werfmuur,under the street,3.04,soft_clay_peat,B31H0184,116.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WF060110,Oude gracht 16 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,51.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060583,Oude gracht 292 - RAK 12 even,Werfmuur,under the street,3.3,mixed,B31H0348,75.0,3.6,0.0,0.36,0.64,nearby,2.0,1.0
+WF060140,Oude gracht 27 - RAK 1 oneven,Werfmuur,under the street,2.97,soft_clay_peat,B31H0186,34.0,3.33,1.0,0.0,0.0,close,4.0,3.0
+WF060533,Oude Gracht 233 - RAK 11 oneven,Werfmuur,under the street,3.64,soft_clay_peat,B31H2748,95.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+WF060535,Oude Gracht 235 - RAK 11 oneven,Werfmuur,under the street,3.72,soft_clay_peat,B31H2748,96.0,4.49,0.73,0.25,0.02,nearby,2.0,1.0
+WF060640,Oude gracht 358 - RAK 14 even,Werfmuur,under the street,2.88,soft_clay_peat,B31H0188,131.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WF060349,Nieuwe gracht 5 - RAK 20 oneven,Werfmuur,under the street,2.92,soft_clay_peat,B31H3159,17.0,4.05,0.83,0.14,0.03,close,3.0,1.0
+WF060120,Oude gracht 32 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,64.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060129,Oude gracht 48 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,92.0,3.33,1.0,0.0,0.0,nearby,4.0,2.0
+WF060255,Kromme nieuwe gracht 52a - RAK 21 even,Kluismuur,under the street,3.12,soft_clay_peat,B31H0187,74.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060181,Oude gracht 61a - RAK 2 oneven,Werfmuur,under the street,3.78,soft_clay_peat,B31H0226,134.0,3.5,1.0,0.0,0.0,nearby,3.0,3.0
+WF060461,Oude gracht 148 - RAK 5 even,Werfmuur,under the street,3.95,mixed,B31H2806,97.0,4.012,0.49,0.48,0.03,nearby,3.0,3.0
+KM060020,Kromme Nieuwe Gracht 002,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0184,90.0,4.04,0.93,0.07,0.0,nearby,3.0,2.0
+POM05001,Gansstraatpoort 01,Muur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WFM06307-X,Oude Gracht (Stadhuisbrug 3) - RAK 6 even,Werfmuur,under the street,4.6,mixed,B31H0616,36.0,3.0,0.43,0.57,0.0,close,5.0,4.0
+WF060563,Oude gracht 265b - RAK 12 oneven,Werfmuur,under the street,3.03,mixed,B31H0348,89.0,3.6,0.0,0.31,0.69,nearby,3.0,2.0
+WFM06797-X,Nieuwe gracht 58 - RAK 18 even,Werfmuur,under the street,2.7,soft_clay_peat,B31H0297,117.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060703,Plompetorengracht 22 - RAK 26 even,Kluismuur,under the street,2.3,soft_clay_peat,B31H0179,77.0,3.01,1.0,0.0,0.0,nearby,1.0,1.0
+WF060208,Oude gracht (t.o. Zakkendragersteeg) - RAK 3 oneven,Werfmuur,under the street,3.69,mixed,B31H0730,49.0,4.8,0.57,0.13,0.3,close,4.0,4.0
+KW010017,Robert Schumannstraatkeerwand 01www7,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060389,Oude gracht (Lichte gaard 9b) - RAK 9 even,Werfmuur,under the street,2.93,mixed,B31H2751,84.0,4.66,0.31,0.67,0.02,nearby,8.0,3.0
+WF060222,Drift 13a - RAK 24 oneven,Kluismuur,under the street,2.88,soft_clay_peat,B31H0184,56.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06073-X,Oude gracht 62 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,126.0,3.33,1.0,0.0,0.0,nearby,2.0,2.0
+WF060612,Oude Gracht 328 - RAK 13 even,Werfmuur,under the street,3.32,mixed,B31H0348,69.0,3.6,0.0,0.37,0.63,nearby,3.0,1.0
+WF060699,Plompetorengracht 1a - RAK 26 oneven,Kluismuur,under the street,3.21,soft_clay_peat,B31H0179,71.0,3.01,0.78,0.22,0.0,nearby,1.0,1.0
+WF060113,Oude gracht 20b - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,54.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060281,Nieuwe gracht (t.o. Hofpoort) - RAK 20 oneven,Werfmuur,under the street,2.96,soft_clay_peat,B31H3159,20.0,4.05,0.83,0.14,0.03,close,2.0,1.0
+WF060295,Nieuwe Gracht 125 - RAK 16 oneven,Werfmuur,under the street,2.09,soft_clay_peat,B31H0257,130.0,3.0,1.0,0.0,0.0,nearby,3.0,3.0
+WF060466,Oude Gracht 154b - RAK 6 even,Werfmuur,under the street,4.18,mixed,B31H0616,71.0,3.0,0.48,0.52,0.0,nearby,4.0,4.0
+KM060024,Kromme Nieuwe Gracht 006,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0219,75.0,2.3,1.0,0.0,0.0,nearby,5.0,2.0
+WF060504,Oude Gracht 205 - RAK 11 oneven,Werfmuur,under the street,3.44,soft_clay_peat,B31H2748,107.0,4.49,0.71,0.27,0.02,nearby,3.0,3.0
+WF060621,Oude gracht 337 - RAK 14 oneven,Werfmuur,under the street,3.0,soft_clay_peat,B31H0188,102.0,3.44,1.0,0.0,0.0,nearby,3.0,2.0
+WF060452,Oude gracht 140 - RAK 5 even,Werfmuur,under the street,3.82,mixed,B31H2806,99.0,4.012,0.48,0.5,0.03,nearby,4.0,4.0
+WF060201,Oude gracht 112f - RAK 3 even,Werfmuur,under the street,3.43,mixed,B31H0539,52.0,3.75,0.39,0.61,0.0,nearby,4.0,3.0
+WF060519,Oude Gracht 220 - RAK 11 even,Werfmuur,under the street,3.69,soft_clay_peat,B31H1673,118.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060210,Oude gracht 105 - RAK 3 oneven,Werfmuur,under the street,3.0,mixed,B31H0730,48.0,4.8,0.63,0.0,0.37,close,4.0,3.0
+WF060700,Plompetorengracht 1b - RAK 26 oneven,Kluismuur,under the street,3.18,soft_clay_peat,B31H0179,67.0,3.01,0.79,0.21,0.0,nearby,1.0,1.0
+WF060503,Oude gracht 204 - RAK 10 even,Werfmuur,under the street,3.35,soft_clay_peat,B31H1673,62.0,4.16,1.0,0.0,0.0,nearby,1.0,1.0
+WF060330,Nieuwe gracht 31 - RAK 19 oneven,Werfmuur,under the street,3.27,soft_clay_peat,B31H3159,105.0,4.05,0.76,0.2,0.03,nearby,2.0,1.0
+WF060343,Nieuwe gracht 43 - RAK 19 oneven,Werfmuur,under the street,3.25,mixed,B31H2750,124.0,3.36,0.46,0.51,0.02,nearby,1.0,1.0
+WF060432,Oude gracht 121 - RAK 4 oneven,Werfmuur,under the street,4.0,mixed,B31H0730,61.0,4.8,0.53,0.2,0.28,nearby,4.0,4.0
+WF060359,Nieuwe gracht 60 - RAK 18 even,Werfmuur,under the street,2.73,soft_clay_peat,B31H0297,113.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060488,Oude gracht 185 - RAK 10 oneven,Werfmuur,under the street,3.44,soft_clay_peat,B31H1673,50.0,4.16,1.0,0.0,0.0,close,1.0,1.0
+WF060434,Oude gracht 125 - RAK 4 oneven,Werfmuur,under the street,4.5,mixed,B31H0730,71.0,4.8,0.47,0.29,0.24,nearby,4.0,4.0
+WF060194,Oude gracht 81 - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,89.0,3.75,0.3,0.7,0.0,nearby,4.0,3.0
+WF060590,Oude Gracht 299 - RAK 13 oneven,Werfmuur,under the street,3.24,mixed,B31H0348,23.0,3.6,0.0,0.35,0.65,close,3.0,1.0
+WF060527,Oude Gracht 228 - RAK 11 even,Werfmuur,under the street,3.3,mixed,B31H2748,120.0,4.49,0.7,0.28,0.02,nearby,2.0,1.0
+KM060042,Nieuwe Gracht - Rak 19 WZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H2750,121.0,3.36,0.63,0.37,0.0,nearby,1.0,1.0
+WF060499,Oude gracht 199a - RAK 10 oneven,Werfmuur,under the street,3.27,soft_clay_peat,B31H1673,91.0,4.16,1.0,0.0,0.0,nearby,2.0,1.0
+WF060133,Oude gracht (Waterstraat 2) - RAK 1 oneven,Werfmuur,under the street,2.99,soft_clay_peat,B31H0186,43.0,3.33,1.0,0.0,0.0,close,4.0,3.0
+KM060025,Kromme Nieuwe Gracht 007,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0219,78.0,2.3,1.0,0.0,0.0,nearby,5.0,2.0
+WF060403,Oude Gracht (tussen 423 en 425) - RAK 15 oneven,Werfmuur,under the street,2.94,soft_clay_peat,B31H0182,140.0,3.23,1.0,0.0,0.0,nearby,1.0,1.0
+WF060162,Oude gracht 68 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,142.0,3.33,1.0,0.0,0.0,nearby,1.0,1.0
+WF060242,Kromme nieuwe gracht 30 - RAK 21 even,Kluismuur,under the street,3.02,soft_clay_peat,B31H0187,59.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060554,Oude gracht 255 - RAK 12 oneven,Werfmuur,under the street,3.22,mixed,B31H0348,122.0,3.6,0.0,0.35,0.65,nearby,3.0,2.0
+WF060588,Oude Gracht 297 - RAK 13 oneven,Werfmuur,under the street,3.06,mixed,B31H0348,18.0,3.6,0.0,0.31,0.69,close,2.0,1.0
+WF060565,Oude gracht 269 - RAK 12 oneven,Werfmuur,under the street,3.02,mixed,B31H0348,75.0,3.6,0.0,0.3,0.7,nearby,1.0,1.0
+KM050009,Tolsteegsingelkademuur 01WWW1,Kademuur,under the street,3.0,soft_clay_peat,B31H0182,174.0,3.23,1.0,0.0,0.0,far,0.0,0.0
+WF060108,Oude gracht 10 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,54.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060489,Oude Gracht 186 - RAK 9 even,Werfmuur,under the street,3.4,soft_clay_peat,B31H1673,36.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WF060702,Plompetorengracht 21 - RAK 26 oneven,Kluismuur,under the street,2.86,soft_clay_peat,B31H0179,89.0,3.01,0.88,0.12,0.0,nearby,1.0,1.0
+BS010044,Leidsewegbeschoeiing 06,Kademuur,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060475,Oude Gracht 168 - RAK 9 even,Werfmuur,under the street,3.13,soft_clay_peat,B31H1673,47.0,4.16,1.0,0.0,0.0,close,5.0,3.0
+WF060193,Oude gracht 79 - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,93.0,3.75,0.3,0.7,0.0,nearby,4.0,3.0
+WF060249,Kromme nieuwe gracht 40 - RAK 21 even,Kluismuur,under the street,2.99,soft_clay_peat,B31H0187,57.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WFM06805-X,Nieuwe gracht 72-74-76-78 - RAK 17 even,Werfmuur,under the street,2.23,soft_clay_peat,B31H0297,125.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06515-X,Oude Gracht 377-381 - RAK 15 oneven,Werfmuur,under the street,3.03,mixed,B31H2731,112.0,3.63,0.57,0.4,0.03,nearby,3.0,1.0
+WF060363,Nieuwe gracht 65a - RAK 18 oneven,Werfmuur,under the street,3.3,sand,B31H2749,120.0,4.09,0.0,0.97,0.03,nearby,2.0,1.0
+KW040011,Biltstraatkeerwand 170,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060357,Nieuwe gracht 59 - RAK 18 oneven,Werfmuur,under the street,3.55,sand,B31H2749,127.0,4.09,0.0,0.97,0.03,nearby,2.0,1.0
+WF060549,Oude Gracht 250 - RAK 11 even,Werfmuur,under the street,3.0,mixed,B31H2748,116.0,4.49,0.67,0.31,0.03,nearby,2.0,1.0
+WF060320,Nieuwe gracht 23 - RAK 20 oneven,Werfmuur,under the street,2.93,soft_clay_peat,B31H3159,69.0,4.05,0.83,0.14,0.03,nearby,2.0,1.0
+WF060626,Oude gracht 343 - RAK 14 oneven,Werfmuur,under the street,3.13,soft_clay_peat,B31H0188,107.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+WF060557,Oude gracht 259 - RAK 12 oneven,Werfmuur,under the street,3.3,mixed,B31H0348,112.0,3.6,0.0,0.36,0.64,nearby,3.0,2.0
+WF060642,Oude gracht 360 - RAK 14 even,Werfmuur,under the street,2.94,soft_clay_peat,B31H0188,132.0,3.44,1.0,0.0,0.0,nearby,5.0,5.0
+WF060379,Nieuwe gracht 83 - RAK 17 oneven,Werfmuur,under the street,2.45,soft_clay_peat,B31H0297,138.0,3.06,1.0,0.0,0.0,nearby,1.0,1.0
+WF060627,Oude gracht 344-346 - RAK 14 even,Werfmuur,under the street,2.94,mixed,B31H0348,118.0,3.6,0.0,0.29,0.71,nearby,3.0,1.0
+WF060464,Oude gracht 151 - RAK 5 oneven,Werfmuur,under the street,3.95,mixed,B31H0616,99.0,3.0,0.51,0.49,0.0,nearby,5.0,4.0
+WF060298,Nieuwe gracht 139 - RAK 16 oneven,Werfmuur,under the street,2.05,soft_clay_peat,B31H0257,102.0,3.0,1.0,0.0,0.0,nearby,4.0,3.0
+WF060569,Oude gracht 275 - RAK 12 oneven,Werfmuur,under the street,3.23,mixed,B31H0348,57.0,3.6,0.0,0.35,0.65,nearby,1.0,1.0
+WF060594,Oude Gracht 309 - RAK 13 oneven,Werfmuur,under the street,2.95,mixed,B31H0348,54.0,3.6,0.0,0.29,0.71,nearby,3.0,1.0
+WF060373,Nieuwe gracht 75 - RAK 17 oneven,Werfmuur,under the street,2.74,soft_clay_peat,B31H0297,129.0,3.06,1.0,0.0,0.0,nearby,2.0,1.0
+WF060647,Oude gracht 364b - RAK 14 even,Werfmuur,under the street,2.91,soft_clay_peat,B31H0188,135.0,3.44,1.0,0.0,0.0,nearby,4.0,4.0
+WF060337,Nieuwe gracht 39 - RAK 19 oneven,Werfmuur,under the street,3.41,mixed,B31H2750,120.0,3.36,0.44,0.54,0.02,nearby,2.0,1.0
+WF060160,Oude gracht 64 - RAK 2 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,133.0,3.33,1.0,0.0,0.0,nearby,1.0,1.0
+WF060685,Oude Gracht 423 - RAK 15 oneven,Werfmuur,under the street,2.91,soft_clay_peat,B31H0182,140.0,3.23,1.0,0.0,0.0,nearby,1.0,1.0
+WF060486,Oude gracht 181 - RAK 10 oneven,Werfmuur,under the street,3.46,soft_clay_peat,B31H1673,41.0,4.16,1.0,0.0,0.0,close,1.0,1.0
+WF060716,Plompetorengracht 9a - RAK 26 oneven,Kluismuur,under the street,2.67,soft_clay_peat,B31H0179,23.0,3.01,0.94,0.06,0.0,close,1.0,1.0
+WF060496,Oude gracht 195 - RAK 10 oneven,Werfmuur,under the street,3.57,soft_clay_peat,B31H1673,82.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060190,Oude gracht 73a - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,115.0,3.75,0.3,0.7,0.0,nearby,1.0,1.0
+WF060435,Oude gracht 126 - RAK 4 even,Werfmuur,under the street,3.64,mixed,B31H0730,63.0,4.8,0.58,0.12,0.3,nearby,4.0,4.0
+WF060387,Oude gracht (Lichte gaard 8) - RAK 9 even,Werfmuur,under the street,2.84,mixed,B31H2751,89.0,4.66,0.32,0.66,0.02,nearby,8.0,3.0
+WFM06302-X,Oude gracht 152 - RAK 5 even,Werfmuur,under the street,3.0,mixed,B31H0616,85.0,3.0,0.67,0.33,0.0,nearby,4.0,4.0
+WF060360,Nieuwe gracht 61 - RAK 18 oneven,Werfmuur,under the street,3.36,sand,B31H2749,125.0,4.09,0.0,0.97,0.03,nearby,1.0,1.0
+WF060365,Nieuwe gracht 65c - RAK 18 oneven,Werfmuur,under the street,3.29,sand,B31H2749,121.0,4.09,0.0,0.97,0.03,nearby,2.0,1.0
+WF060382,Oude gracht (Lichte gaard 3) - RAK 9 even,Werfmuur,under the street,2.44,mixed,B31H0461,85.0,4.3,0.0,0.0,1.0,nearby,9.0,3.0
+WF060649,Oude gracht 364d - RAK 14 even,Werfmuur,under the street,2.88,soft_clay_peat,B31H0176,136.0,3.35,0.99,0.01,0.0,nearby,4.0,4.0
+WF060572,Oude gracht 280 - RAK 12 even,Werfmuur,under the street,3.8,mixed,B31H0348,104.0,3.6,0.0,0.45,0.55,nearby,2.0,1.0
+WF060665,Oude Gracht 389 - RAK 15 oneven,Werfmuur,under the street,2.7,mixed,B31H2731,105.0,3.63,0.52,0.45,0.03,nearby,3.0,1.0
+WF060132,Oude gracht 8 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,56.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WFM06679-X,Oude gracht 266-268-270-272 - RAK 12 even,Werfmuur,under the street,3.28,sand,B31H2749,122.0,4.09,0.0,0.97,0.03,nearby,3.0,1.0
+WF060118,Oude gracht 2b - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,64.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060711,Plompetorengracht 3c - RAK 26 oneven,Kluismuur,under the street,2.92,soft_clay_peat,B31H0179,42.0,3.01,0.86,0.14,0.0,close,1.0,1.0
+WF060556,Oude Gracht 258 - RAK 11 even,Werfmuur,under the street,3.24,mixed,B31H2748,124.0,4.49,0.69,0.28,0.02,nearby,2.0,1.0
+WF060548,Oude gracht 249 - RAK 12 oneven,Werfmuur,under the street,3.44,soft_clay_peat,B31H2748,115.0,4.49,0.71,0.27,0.02,nearby,3.0,1.0
+WF060109,Oude gracht 12-14 - RAK 1 even,Werfmuur,under the street,3.0,soft_clay_peat,B31H0186,52.0,3.33,1.0,0.0,0.0,nearby,2.0,1.0
+WF060247,Kromme nieuwe gracht 38b - RAK 21 even,Kluismuur,under the street,2.97,soft_clay_peat,B31H0187,57.0,3.78,1.0,0.0,0.0,nearby,3.0,3.0
+WF060175,Oude gracht (Viestraat 1b) - RAK 2 oneven,Werfmuur,under the street,3.0,sand,B31H0539,80.0,3.75,0.3,0.7,0.0,nearby,5.0,3.0
+WF060223,Drift 13b - RAK 24 oneven,Kluismuur,under the street,2.88,soft_clay_peat,B31H0184,63.0,4.04,1.0,0.0,0.0,nearby,2.0,1.0
+BS010043,Park Oog In Al-beschoeiing 03,Glooiing steen,under the street,3.0,,,,,,,,no boring within 250 m,,
+KM060036,Nieuwe Gracht - Rak 16 ZOZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0257,90.0,3.0,1.0,0.0,0.0,nearby,5.0,2.0
+WF060211,Oude gracht 95 - RAK 3 oneven,Werfmuur,under the street,3.0,sand,B31H0539,55.0,3.75,0.3,0.7,0.0,nearby,5.0,3.0
+KW040014,Griftparkkeerwand 04www1,Keerwand,under the street,3.0,,,,,,,,no boring within 250 m,,
+WF060207,Oude gracht 118c - RAK 3 even,Werfmuur,under the street,3.64,mixed,B31H0730,66.0,4.8,0.58,0.12,0.3,nearby,5.0,4.0
+WF060329,Nieuwe gracht 30 - RAK 19 even,Werfmuur,under the street,3.11,mixed,B31H2750,106.0,3.36,0.48,0.49,0.03,nearby,2.0,1.0
+WF060608,Oude Gracht 322 - RAK 13 even,Werfmuur,under the street,3.15,mixed,B31H0348,48.0,3.6,0.0,0.33,0.67,close,2.0,1.0
+WF060523,Oude Gracht 224 - RAK 11 even,Werfmuur,under the street,3.49,soft_clay_peat,B31H2748,124.0,4.49,0.71,0.26,0.02,nearby,2.0,2.0
+WF060514,Oude gracht 214b - RAK 10 even,Werfmuur,under the street,3.36,soft_clay_peat,B31H1673,88.0,4.16,1.0,0.0,0.0,nearby,2.0,2.0
+WF060418,Oude gracht (Vismarkt 21-22) - RAK 8 even,Werfmuur,under the street,2.87,mixed,B31H0461,67.0,4.3,0.0,0.0,1.0,nearby,10.0,5.0
+WF060574,Oude gracht 282 - RAK 12 even,Werfmuur,under the street,3.12,mixed,B31H0348,100.0,3.6,0.0,0.33,0.67,nearby,2.0,1.0
+WF060440,Oude gracht 129c - RAK 4 oneven,Werfmuur,under the street,3.81,mixed,B31H0730,94.0,4.8,0.55,0.16,0.29,nearby,3.0,3.0
+WF060218,Drift 05b - RAK 23 oneven,Kluismuur,under the street,3.15,soft_clay_peat,B31H0184,4.0,4.04,1.0,0.0,0.0,close,1.0,1.0
+WFM06108-X,Plompetorengracht 15 - RAK 26 oneven,Werfmuur,under the street,2.83,soft_clay_peat,B31H0179,55.0,3.01,0.89,0.11,0.0,nearby,1.0,1.0
+WF060220,Drift 09b - RAK 24 oneven,Kluismuur,under the street,2.95,soft_clay_peat,B31H0184,35.0,4.04,1.0,0.0,0.0,close,2.0,1.0
+WF060282,Nieuwe gracht (Trans 19c) - RAK 20 oneven,Werfmuur,under the street,3.05,soft_clay_peat,B31H3159,20.0,4.05,0.82,0.15,0.03,close,2.0,1.0
+KM060041,Nieuwe Gracht - Rak 19 OZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H2750,115.0,3.36,0.63,0.37,0.0,nearby,1.0,1.0
+KM060058,Oude Gracht - Rak 05 ZZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0224,66.0,1.1,0.0,1.0,0.0,nearby,5.0,3.0
+KM060013,Oude Gracht - Rak 13 OZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0348,36.0,3.6,0.0,1.0,0.0,close,3.0,1.0
+KM060012,Oude Gracht - Rak 12 WZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0348,101.0,3.6,0.0,1.0,0.0,nearby,3.0,2.0
+KM060015,Oude Gracht - Rak 14 OZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0188,130.0,3.44,1.0,0.0,0.0,nearby,5.0,3.0
+KM060037,Nieuwe Gracht - Rak 17 OZ ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0297,129.0,3.06,0.85,0.15,0.0,nearby,2.0,1.0
+KM060009,Oude Gracht - Rak 11 OZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0713,95.0,1.7,0.24,0.0,0.76,nearby,3.0,1.0
+KM060056,Oude Gracht - Rak 04 ZZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0730,96.0,4.8,0.0,1.0,0.0,nearby,5.0,2.0
+KM060043,Nieuwe Gracht - Rak 20 OZ,Walmuur,under the werf,1.1800000000000002,sand,B31H3159,30.0,4.05,0.04,0.96,0.0,close,2.0,1.0
+KM060063,Oude Gracht - Rak 09 NOZ,Walmuur,under the werf,1.1800000000000002,sand,B31H2751,91.0,4.66,0.0,1.0,0.0,nearby,8.0,1.0
+KM060008,Oude Gracht - Rak 10 WZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0713,20.0,1.7,0.24,0.0,0.76,close,3.0,1.0
+KM060048,Oude Gracht - Rak 01 OZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0186,53.0,3.33,0.68,0.32,0.0,nearby,4.0,2.0
+KM060011,Oude Gracht - Rak 12 OZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0348,106.0,3.6,0.0,1.0,0.0,nearby,2.0,2.0
+KM060023,Kromme Nieuwe Gracht 005,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0219,72.0,2.3,1.0,0.0,0.0,nearby,4.0,2.0
+KM060066,Oude Gracht - Rak 10 OZ,Walmuur,under the werf,1.1800000000000002,mixed,B31H0713,33.0,1.7,0.24,0.0,0.76,close,2.0,1.0
+KM060038,Nieuwe Gracht - Rak 17 WZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0297,137.0,3.06,0.85,0.15,0.0,nearby,1.0,1.0
+KM060017,Oude Gracht - Rak 15 OZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0182,112.0,3.23,0.76,0.24,0.0,nearby,3.0,3.0
+KM060016,Oude Gracht - Rak 14 WZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0188,113.0,3.44,1.0,0.0,0.0,nearby,2.0,2.0
+KM060053,Oude Gracht - Rak 03 WZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0539,56.0,3.75,1.0,0.0,0.0,nearby,6.0,3.0
+KM060028,Oude Gracht - Rak 15 WZ,Walmuur,under the werf,1.1800000000000002,soft_clay_peat,B31H0182,113.0,3.23,0.76,0.24,0.0,nearby,3.0,3.0
+KM060014,Oude Gracht - Rak 13 WZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0348,36.0,3.6,0.0,1.0,0.0,close,3.0,1.0
+KM060055,Oude Gracht - Rak 04 WZ,Walmuur,under the werf,1.1800000000000002,sand,B31H0730,61.0,4.8,0.0,1.0,0.0,nearby,6.0,2.0

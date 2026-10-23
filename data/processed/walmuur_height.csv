@@ -1,0 +1,52 @@
+Nummer,Naam,canal,rak,n_points,werf_nap,ground_min_nap,ground_max_nap,n_points_above_1_6,werf,H_bed_at_wall_m
+KM060018,Kromme Nieuwe Gracht 001,Kromme Nieuwegracht,,5,3.5,1.86,3.6,5,no werf? check map,3.58
+KM060020,Kromme Nieuwe Gracht 002,Kromme Nieuwegracht,,6,1.57,1.08,3.59,3,yes,1.65
+KM060021,Kromme Nieuwe Gracht 003,Kromme Nieuwegracht,,6,1.16,1.07,1.43,0,yes,1.24
+KM060022,Kromme Nieuwe Gracht 004 (thv nr 018),Kromme Nieuwegracht,,6,1.31,1.3,3.13,1,yes,1.39
+KM060023,Kromme Nieuwe Gracht 005,Kromme Nieuwegracht,,5,3.34,2.94,4.0,5,no werf? check map,3.42
+KM060024,Kromme Nieuwe Gracht 006,Kromme Nieuwegracht,,6,3.98,3.96,4.01,6,no werf? check map,4.06
+KM060025,Kromme Nieuwe Gracht 007,Kromme Nieuwegracht,,5,4.02,4.01,4.06,5,no werf? check map,4.1
+KM060026,Kromme Nieuwe Gracht 008,Kromme Nieuwegracht,,6,3.97,0.99,4.04,4,no werf? check map,4.05
+KM060027,Kromme Nieuwe Gracht 009,Kromme Nieuwegracht,,5,1.53,0.94,4.01,2,yes,1.61
+KM060034,Nieuwe Gracht - Rak 16 NOZ,Nieuwegracht,16.0,6,3.07,3.01,3.15,6,no werf? check map,3.15
+KM060035,Nieuwe Gracht - Rak 16 WZ,Nieuwegracht,16.0,6,1.13,1.02,2.98,1,yes,1.21
+KM060036,Nieuwe Gracht - Rak 16 ZOZ,Nieuwegracht,16.0,6,1.19,1.14,1.27,0,yes,1.27
+KM060037,Nieuwe Gracht - Rak 17 OZ ,Nieuwegracht,17.0,5,2.98,1.08,3.38,3,no werf? check map,3.06
+KM060038,Nieuwe Gracht - Rak 17 WZ,Nieuwegracht,17.0,6,1.06,1.04,1.11,0,yes,1.14
+KM060039,Nieuwe Gracht - Rak 18 OZ,Nieuwegracht,18.0,6,1.14,1.09,1.21,0,yes,1.22
+KM060040,Nieuwe Gracht - Rak 18 WZ,Nieuwegracht,18.0,6,1.29,1.07,1.32,0,yes,1.37
+KM060041,Nieuwe Gracht - Rak 19 OZ,Nieuwegracht,19.0,6,1.4,1.32,1.47,0,yes,1.48
+KM060042,Nieuwe Gracht - Rak 19 WZ,Nieuwegracht,19.0,6,1.36,1.13,2.82,1,yes,1.44
+KM060043,Nieuwe Gracht - Rak 20 OZ,Nieuwegracht,20.0,6,3.97,1.3,4.19,4,no werf? check map,4.05
+KM060044,Nieuwe Gracht - Rak 20 WZ,Nieuwegracht,20.0,6,1.12,1.09,4.0,2,yes,1.2
+KM060048,Oude Gracht - Rak 01 OZ,Oudegracht,1.0,6,1.04,0.95,3.74,1,yes,1.12
+KM060049,Oude Gracht - Rak 01 WZ,Oudegracht,1.0,6,0.99,0.97,1.05,0,yes,1.07
+KM060050,Oude Gracht - Rak 02 OZ,Oudegracht,2.0,6,1.06,0.95,3.04,1,yes,1.14
+KM060051,Oude Gracht - Rak 02 WZ,Oudegracht,2.0,6,1.06,1.03,1.19,0,yes,1.14
+KM060052,Oude Gracht - Rak 03 OZ,Oudegracht,3.0,6,1.48,1.05,4.46,3,yes,1.56
+KM060053,Oude Gracht - Rak 03 WZ,Oudegracht,3.0,6,1.07,1.05,1.14,0,yes,1.15
+KM060054,Oude Gracht - Rak 04 OZ,Oudegracht,4.0,6,1.22,1.1,1.37,0,yes,1.3
+KM060055,Oude Gracht - Rak 04 WZ,Oudegracht,4.0,6,1.06,1.02,1.26,0,yes,1.14
+KM060056,Oude Gracht - Rak 04 ZZ,Oudegracht,4.0,6,1.05,0.73,2.15,1,yes,1.13
+KM060057,Oude Gracht - Rak 05 NZ,Oudegracht,5.0,6,1.22,1.12,5.1,1,yes,1.3
+KM060058,Oude Gracht - Rak 05 ZZ,Oudegracht,5.0,6,1.31,1.17,1.47,0,yes,1.39
+KM060059,Oude Gracht - Rak 06 NZ,Oudegracht,6.0,6,2.64,0.99,5.18,3,no werf? check map,2.72
+KM060060,Oude Gracht - Rak 06 ZZ,Oudegracht,6.0,6,5.1,1.21,5.2,4,no werf? check map,5.18
+KM060061,Oude Gracht - Rak 07 OZ,Oudegracht,7.0,4,4.09,3.97,4.14,4,no werf? check map,4.17
+KM060062,Oude Gracht - Rak 08 OZ,Oudegracht,8.0,6,3.73,1.04,3.83,5,no werf? check map,3.81
+KM060063,Oude Gracht - Rak 09 NOZ,Oudegracht,9.0,6,3.93,3.85,4.09,6,no werf? check map,4.01
+KM060064,Oude Gracht - Rak 09 WZ,Oudegracht,9.0,6,1.28,1.23,1.34,0,yes,1.36
+KM060067,Oude Gracht - Rak 09 WZ 01,Oudegracht,9.0,4,1.13,1.11,1.14,0,yes,1.21
+KM060065,Oude Gracht - Rak 09 ZOZ,Oudegracht,9.0,6,1.23,1.1,4.29,1,yes,1.31
+KM060066,Oude Gracht - Rak 10 OZ,Oudegracht,10.0,6,1.19,1.07,4.56,2,yes,1.27
+KM060008,Oude Gracht - Rak 10 WZ,Oudegracht,10.0,6,1.13,1.02,2.46,1,yes,1.21
+KM060009,Oude Gracht - Rak 11 OZ,Oudegracht,11.0,6,1.14,0.97,4.47,2,yes,1.22
+KM060010,Oude Gracht - Rak 11 WZ,Oudegracht,11.0,6,1.13,1.08,1.19,0,yes,1.21
+KM060011,Oude Gracht - Rak 12 OZ,Oudegracht,12.0,6,1.13,1.04,1.33,0,yes,1.21
+KM060012,Oude Gracht - Rak 12 WZ,Oudegracht,12.0,6,1.16,1.11,1.19,0,yes,1.24
+KM060013,Oude Gracht - Rak 13 OZ,Oudegracht,13.0,6,1.07,0.95,4.43,2,yes,1.15
+KM060014,Oude Gracht - Rak 13 WZ,Oudegracht,13.0,6,1.08,1.02,1.35,0,yes,1.16
+KM060015,Oude Gracht - Rak 14 OZ,Oudegracht,14.0,6,1.14,1.08,1.25,0,yes,1.22
+KM060016,Oude Gracht - Rak 14 WZ,Oudegracht,14.0,6,1.14,1.08,1.35,0,yes,1.22
+KM060017,Oude Gracht - Rak 15 OZ,Oudegracht,15.0,6,1.07,1.03,1.14,0,yes,1.15
+KM060028,Oude Gracht - Rak 15 WZ,Oudegracht,15.0,5,1.11,1.05,1.21,0,yes,1.19

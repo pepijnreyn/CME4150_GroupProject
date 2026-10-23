@@ -1,0 +1,16 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H0715","136525","455750","RD2000","31H","Onbekend","Mariaplaats","Utrecht","","","","40","01-01-1976","Onbekend","Onbekend","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Onbekend","Onbekend","","","E","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","2.5","","zand","","","","kleiig ","","","","","","","","","","","",""
+"2.5","5.4","","klei","","","","","","","","zandig","","","","","","","",""
+"5.4","8.0","","zand","","","midden categorie (O)","","","","","","","","","","","","",""
+"8.0","14.0","","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"14.0","22.0","","zand","","","midden categorie (O)","","","","","","","","","","","","",""
+"22.0","40.0","","zand","","","fijne categorie (O)","","","","","","","","","","","","",""

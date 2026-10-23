@@ -1,0 +1,30 @@
+% Standalone preview of sections 1.2 and 2.1 and their appendices.
+% Compile: tectonic preview.tex  (or pdflatex + bibtex)
+% Each section starts on a new page, so its length can be checked.
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{url}
+
+\begin{document}
+% Number the sections as in the report: 1.2, then 2.1.
+\renewcommand{\thesection}{1.\arabic{section}}
+\setcounter{section}{1}
+\input{sec_1_2_data}
+\clearpage
+\renewcommand{\thesection}{2.\arabic{section}}
+\setcounter{section}{0}
+\input{sec_2_1_prob}
+\clearpage
+\appendix
+\input{app_data}
+\clearpage
+\input{app_prob}
+\clearpage
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

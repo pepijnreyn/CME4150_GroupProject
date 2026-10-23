@@ -1,0 +1,23 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H0176","137030","455130","RD2000","31H","Onbekend","Utrecht","Utrecht","3.35","Onbekend","","22.05","01-01-1867","Onbekend","Onbekend","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Onbekend","Onbekend","Onbekend","","D","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","0.95","onbekend","klei","","","","","","","","zandig","","","","","","","",""
+"0.95","2.85","blauw","klei","","","","","","","","zandig","","","","","","","",""
+"2.85","4.85","onbekend","zand","","","","kleiig ","","","","","","","","","","","",""
+"4.85","5.85","blauw","zand","","","","kleiig ","","","","","","","","","","","",""
+"5.85","11.45","onbekend","zand","","","fijne categorie (O)","","","","","","","","","","","","",""
+"11.45","13.35","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"13.35","14.35","bruin","zand","","","grove  categorie (O)","","","siltig","","","","","","humeus","","","",""
+"14.35","15.35","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"15.35","16.25","onbekend","zand","","","","","","","","","","","","humeus","","","",""
+"16.25","17.25","onbekend","zand","","","grove  categorie (O)","","","","","","","grindig","","","","","",""
+"17.25","18.15","onbekend","zand","","","grove  categorie (O)","","","","","","","sterk grindig","","","","","",""
+"18.15","21.05","onbekend","zand","","","","","","","","","","","","","","","",""
+"21.05","22.05","onbekend","zand","","","","","","","","","","grindig","","","","","",""

@@ -1,0 +1,28 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H2752","136520","455748","RD2000","31H","Onbekend","Onbekend","Utrecht","4.05","Onbekend","","51","07-06-2010","Onbekend","Onbekend","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Onbekend","Onbekend","Onbekend","","C","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","0.08","","niet benoemd","","","","","","","","","","","","","","","",""
+"0.08","1.6","licht-","zand","","","matig grof","","","zwak siltig","","","","zwak grindig","","","","","",""
+"1.6","2.1","donker--bruin-grijs-","klei","","","","","","","","matig zandig","","","","zwak humeus","","","",""
+"2.1","3.4","licht-","klei","","","","","","","","matig zandig","","","","","","","",""
+"3.4","6.7","licht-","zand","","","matig fijn","","","matig siltig","","","","","","","","","",""
+"6.7","7.1","licht-","zand","","","matig grof","","","zwak siltig","","","","zwak grindig","","","","","",""
+"7.1","21.2","bruin-","zand","","","matig grof","","","zwak siltig","","","","zwak grindig","","zwak humeus","","","",""
+"21.2","25.5","licht--grijs-grijs-","zand","","","matig grof","","","zwak siltig","","","","matig grindig","","","","","",""
+"25.5","27.8","grijs-","zand","","","matig fijn","","","matig siltig","","","","","","","","","",""
+"27.8","29.5","grijs-","zand","","","matig fijn","","","matig siltig","","","","","","","","","",""
+"29.5","32.0","grijs-","zand","","","matig grof","","","matig siltig","","","","","","","","","",""
+"32.0","34.0","licht--grijs-grijs-","zand","","","matig grof","","","zwak siltig","","","","zwak grindig","","","","","",""
+"34.0","36.0","donker--grijs-grijs-","zand","","","matig fijn","","","matig siltig","","","","","","","","","",""
+"36.0","43.5","licht--grijs-grijs-","zand","","","matig fijn","","","matig siltig","","","","","","","","","",""
+"43.5","44.0","licht--grijs-grijs-","zand","","","matig grof","","","zwak siltig","","","","zwak grindig","","","","","",""
+"44.0","46.3","licht--grijs-grijs-","zand","","","matig fijn","","","matig siltig","","","","","","","","","",""
+"46.3","47.0","licht--grijs-grijs-","zand","","","matig fijn","","","matig siltig","","","","zwak grindig","","","","","",""
+"47.0","51.0","bruin-","zand","","","matig fijn","","","matig siltig","","","","","","zwak humeus","","","",""

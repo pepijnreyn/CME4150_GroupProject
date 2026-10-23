@@ -1,0 +1,23 @@
+"ALGEMENE GEGEVENS BORING",,,,,,,,,,,,,,,,,,,
+"NITG-nr","X-coordinaat","Y-coordinaat","CRS","Kaartblad","Bepaling locatie","Plaatsnaam","Provincie","Maaiveldhoogte (m tov NAP)","Bepaling maaiveldhoogte","Boormethode","Einddiepte (m beneden maaiveld)","Datum boring","Eigenaar","Uitvoerder","","","","",""
+"B31H2633","136848","455909","RD2000","31H","Onbekend","Meetnet Utrecht","Utrecht","5.6","Onbekend","","7","21-08-1998","Gemeente Utrecht","Onbekend","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"ALGEMENE GEGEVENS LITHOLOGIE",,,,,,,,,,,,,,,,,,,
+"Organisatie Beschrijver","Beschrijvingsmethode","Nat/Droog beschreven","Datum boring","Kwaliteit beschrijving lithologie","","","","","","","","","","","","","","",""
+"Onbekend","Onbekend","Onbekend","","C","","","","","","","","","","","","","","",""
+,,,,,,,,,,,,,,,,,,,
+"LITHOLOGIE LAGEN",,,,,,,,,,,,,,,,,,,
+"Bovenkant laag (m beneden maaiveld)","Onderkant laag (m beneden maaiveld)","Kleur","Hoofdgrondsoort","Sublaag","Zandmediaan M63","Zandmediaanklasse","Bijmenging kei","Lutum %","Bijmenging silt","Silt %","Bijmenging zand","Zand %","Bijmenging grind","Grind %","Bijmenging humus","Organische stof %","Kalkgehalte","",""
+"0.0","0.1","","niet benoemd","","","","","","","","","","","","","","","",""
+"0.1","0.3","grijs-bruin-","zand","","","matig fijn","","","zwak siltig","","","","","","","","","",""
+"0.3","0.9","licht--bruin","zand","","","matig fijn","","","zwak siltig","","","","","","zwak humeus","","","",""
+"0.9","1.1","licht--bruin","zand","","","matig fijn","","","zwak siltig","","","","","","","","","",""
+"1.1","1.8","bruin-grijs-","klei","","","","","","","","sterk zandig","","","","zwak humeus","","","",""
+"1.8","2.3","bruin-grijs-","klei","","","","","","","","matig zandig","","","","zwak humeus","","","",""
+"2.3","3.1","donker--bruin","klei","","","","","","","","matig zandig","","","","sterk humeus","","","",""
+"3.1","3.7","grijs","klei","","","","","","","","matig zandig","","","","zwak humeus","","","",""
+"3.7","4.2","grijs","klei","","","","","","uiterst siltig","","","","","","","","","",""
+"4.2","4.5","grijs","zand","","","matig fijn","","","matig siltig","","","","","","","","","",""
+"4.5","4.9","grijs","klei","","","","","","","","matig zandig","","","","","","","",""
+"4.9","6.5","licht--bruin","zand","","","matig fijn","","","zwak siltig","","","","","","","","","",""
+"6.5","7.0","licht--bruin","zand","","","matig fijn","","","zwak siltig","","","","","","","","","",""
