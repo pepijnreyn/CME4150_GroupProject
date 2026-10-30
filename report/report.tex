@@ -9,8 +9,10 @@
 \usepackage{adjustbox}
 \usetikzlibrary{positioning,arrows.meta,calc,shapes.geometric}
 %% Set up the bibliography
-\usepackage{biblatex}
+\usepackage[style=apa]{biblatex}
 \addbibresource{report.bib}
+%% APA citations (Author, year); \cite is printed in parentheses, like \parencite
+\let\cite\parencite
 
 %% Additional packages and commands
 \usepackage{parskip}

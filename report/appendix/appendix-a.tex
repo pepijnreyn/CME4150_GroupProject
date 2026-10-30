@@ -1,5 +1,6 @@
-\chapter{Source Code Example}
-%\label{chapter:title}
+\chapter{Data: supporting information}
+\label{app:data-chapter}
+
 
 \section{Data, data generation and assumptions}\label{app:data}
 
@@ -17,6 +18,9 @@ download date in \texttt{data/raw/SOURCES.md}. Files downloaded from an API
 script download it again. The Python packages are in
 \texttt{requirements.txt}. The Monte Carlo uses a fixed seed (1) and
 400{,}000 draws per wall and wall type; a full run takes about two minutes.
+The two sensitivity scripts (Appendix~\ref{app:prob-sensitivity}) rerun the
+same model with 200{,}000 and 100{,}000 draws per variant and take about
+10 and 15 minutes.
 
 \begin{table}[htbp]
 \centering
@@ -35,6 +39,8 @@ Step & Script (in \texttt{scripts/}) & Output (in \texttt{data/processed/}) \\
 6 & \texttt{build\_masonry\_data\_gaps.py} & \texttt{masonry\_walls\_data\_gaps.csv}: missing fields \\
 7 & \texttt{table\_wervengebied\_data.py} & \texttt{figures/wervengebied\_data\_table.md}: data table \\
 8 & \texttt{StressCaclulation/FailureProbability.py} & \texttt{walmuur\_failure\_probability.csv}, \texttt{\_draws.json}, \texttt{\_inputs.csv} \\
+9 & \texttt{StressCaclulation/SensitivityDependence.py} & \texttt{walmuur\_sensitivity.csv}: correlations, groundwater and soil class \\
+10 & \texttt{StressCaclulation/SensitivityTornado.py} & \texttt{walmuur\_tornado.csv}: one input fixed at a time \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -43,23 +49,27 @@ Step & Script (in \texttt{scripts/}) & Output (in \texttt{data/processed/}) \\
 
 The register holds 51 named walmuren (4{,}062\,m). Its own design life is
 80 years for each of them. A wall past its design life ($\text{Aanlegjaar} + 80
-< 2026$) and made of masonry needs a failure probability: 29 walls (1{,}885\,m).
-The register year is often not updated after a foundation renewal, so we
-selected on the foundation instead (Table~\ref{tab:selection}).
+< 2026$) and made of masonry needs a failure probability. The register year is
+often not updated after a foundation renewal: 11 walls renewed on steel in
+2016--2026 still carry the year of the old wall. Counted from the renewal
+year, 18 walls (617\,m) are past their design life, against 29 (1{,}885\,m) on
+the register year alone. The $P_f$ calculation then selects on the
+foundation (Table~\ref{tab:selection}).
 
 \begin{table}[htbp]
 \centering
 \small
 \caption{Selection of the walls for the $P_f$ calculation.}
 \label{tab:selection}
-\begin{tabularx}{\textwidth}{@{}X r r@{}}
+\begin{tabularx}{\textwidth}{@{}X r r r@{}}
 \toprule
-Step & Walls & Of which past design life \\
+& & \multicolumn{2}{c}{Past design life, from} \\
+Step & Walls & register year & renewal year \\
 \midrule
-Named walmuren in the register & 51 & 29 \\
-\quad Renewed on steel sheet or tube piles (not modelled) & $-32$ & $-11$ \\
-\quad On timber, but no werf: the street runs to the water (not modelled) & $-2$ & $-2$ \\
-Modelled: on timber piles (or status unclear) with a werf, 611\,m & 17 & 16 \\
+Named walmuren in the register & 51 & 29 & 18 \\
+\quad Renewed on steel sheet or tube piles (not modelled) & $-32$ & $-11$ & 0 \\
+\quad On timber, but no werf: the street runs to the water (not modelled) & $-2$ & $-2$ & $-2$ \\
+Modelled: on timber piles (or status unclear) with a werf, 611\,m & 17 & 16 & 16 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -86,23 +96,23 @@ could be read (a). Status: not renewed, in progress or unclear.}
 \toprule
 Wall & Number & Length [m] & Werf [m NAP] & Soil class & Status & $P(\text{type 2})$ \\
 \midrule
-OG Rak 03 OZ  & KM060052 & 101.1 & 1.48     & clay/peat & unclear     & 0.2 \\
+OG Rak 03 OZ  & KM060052 & 101.1 & 1.14     & clay/peat & unclear     & 0.2 \\
 OG Rak 04 OZ  & KM060054 &  67.4 & 1.22     & sand      & not renewed & 0.2 \\
-OG Rak 05 NZ  & KM060057 &  72.1 & 1.22     & sand      & not renewed & 0.2 \\
+OG Rak 05 NZ  & KM060057 &  72.1 & 1.21     & sand      & not renewed & 0.2 \\
 OG Rak 06 NZ  & KM060059 &  43.7 & 0.99 (m) & sand      & in progress & 0.2 \\
 OG Rak 06 ZZ  & KM060060 &  57.1 & 1.21 (m) & sand      & unclear     & 0.2 \\
 OG Rak 08 OZ  & KM060062 &  32.7 & 1.04 (m) & mixed     & not renewed & 0.8 \\
-OG Rak 09 ZOZ & KM060065 &  54.5 & 1.23     & clay/peat & unclear     & 0.8 \\
+OG Rak 09 ZOZ & KM060065 &  54.5 & 1.20     & clay/peat & unclear     & 0.8 \\
 OG Rak 09 WZ  & KM060064 &  53.4 & 1.28     & clay/peat & not renewed & 0.8 \\
 OG Rak 09 WZ 01 & KM060067 & 3.4 & 1.13     & clay/peat & not renewed & 0.8 \\
-KNG 002       & KM060020 &  16.2 & 1.57     & clay/peat & not renewed & 0.9 \\
+KNG 002       & KM060020 &  16.2 & 1.11     & clay/peat & not renewed & 0.9 \\
 KNG 003       & KM060021 &   9.9 & 1.16     & mixed     & not renewed & 0.9 \\
-KNG 004       & KM060022 &  11.1 & 1.31     & mixed     & not renewed & 0.9 \\
+KNG 004       & KM060022 &  11.1 & 1.30     & mixed     & not renewed & 0.9 \\
 KNG 005       & KM060023 &  13.3 & (a)      & clay/peat & unclear     & 0.5 \\
 KNG 006       & KM060024 &   4.1 & (a)      & clay/peat & unclear     & 0.5 \\
 KNG 007       & KM060025 &  10.3 & (a)      & clay/peat & unclear     & 0.5 \\
 KNG 008       & KM060026 &  42.1 & 0.99 (m) & clay/peat & unclear     & 0.5 \\
-KNG 009       & KM060027 &  18.3 & 1.53     & sand      & unclear     & 0.5 \\
+KNG 009       & KM060027 &  18.3 & 0.98     & sand      & unclear     & 0.5 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -130,10 +140,10 @@ Input & Value or distribution & Source \\
 \multicolumn{3}{@{}l}{\emph{Geometry}} \\
 Werf level* & $N(\text{AHN median}, 0.05\,\text{m})$ & AHN \cite{ahn} \\
 Werf level, no level read* & $U(1.0, 1.6)$\,m NAP & Range of the measured werven \\
-Cross-section, type 1 and 2 & Measured polygons & \cite{ibu2010} Afb.~2.1.1a; \cite{erfgoed156} Afb.~3.1 \\
+Cross-section, type 1 and 2 & Measured polygons & \textcite{ibu2010} Afb.~2.1.1a; \textcite{erfgoed156} Afb.~3.1 \\
 Foundation level & Drawing $+ U(-0.15, 0.15)$\,m & Guess; wall underside $-0.08$\,m NAP \cite{erfgoed158} \\
 Model factor on $M_R$ & $LN(1, \text{CoV } 0.15)$ & Guess (schematic drawings) \\
-Wall type* & $P(\text{type 2})$ per rak & \cite{tno2009} Bijlage G; \cite{ibu2010,erfgoed156} \\
+Wall type* & $P(\text{type 2})$ per rak & \textcite{tno2009} Bijlage G; \textcite{ibu2010,erfgoed156} \\
 \multicolumn{3}{@{}l}{\emph{Materials}} \\
 Masonry & $N(19\,\text{kN/m}^3, 0.05)$ & Typical value \\
 Tamped concrete & $N(23\,\text{kN/m}^3, 0.05)$ & Typical value \\
@@ -142,23 +152,23 @@ Timber floor & 10\,kN/m$^3$ & Waterlogged pine \\
 \multicolumn{3}{@{}l}{\emph{Soil, water and loads}} \\
 Soil class* & $K$, $\gamma$ per class (Table~\ref{tab:soil}) & DINO \cite{dino}; group report Tab.~C.5 \\
 Wall friction & $\delta = \tfrac{2}{3}\varphi$, $\varphi$ from $K$ & Rankine; common practice \\
-Canal level & +0.6\,m NAP & \cite{erfgoed158} \\
+Canal level & +0.6\,m NAP & \textcite{erfgoed158} \\
 Groundwater under the werf & $U(+0.5, +0.9)$\,m NAP & Guess around the canal level \\
-Surcharge $q$ & $N(7\,\text{kPa}, 0.20)$ & \cite{hemel2024} \\
+Surcharge $q$ & $N(7\,\text{kPa}, 0.20)$ & \textcite{hemel2024} \\
 Distance $a$ of the surcharge & $U(0, 3)$\,m & Guess \\
 \multicolumn{3}{@{}l}{\emph{Timber piles}} \\
-Diameter $D_0$ & $N(180\,\text{mm}, 0.10)$ & \cite{ibu2010} p.~4; CoV \cite{hemel2023} Tab.~7.1 \\
-Spacing along the wall & $U(0.8, 1.2)$\,m & \cite{ibu2010} p.~4, ``ca.\ 1 meter'' \\
-Soft shell today & $U(0, 45)$\,mm & \cite{hemel2023} ch.~3: mean 21\,mm, max.\ 45\,mm \\
-Shell growth after 2026 & $U(0.10, 0.25)$\,mm/yr & \cite{hemel2023} \S7.3.2: 0.17\,mm/yr \\
-Bending strength MOR & $N(22\,\text{MPa}, 0.10)$ & \cite{hemel2023} Tab.~7.1 \\
-Modulus of elasticity $E$ & $N(9\,\text{GPa}, 0.20)$ & \cite{hemel2023} Tab.~7.1 \\
-Subgrade modulus $k$ & $U(4{,}300, 10{,}000)$\,kN/m$^3$ & \cite{hemel2023} Tab.~7.1, clay and peat \\
-Model factor on pile moment & $LN(1, \text{CoV } 0.10)$ & JCSS, as \cite{hemel2023} \\
+Diameter $D_0$ & $N(180\,\text{mm}, 0.10)$ & \textcite{ibu2010} p.~4; CoV \textcite{hemel2023} Tab.~7.1 \\
+Spacing along the wall & $U(0.8, 1.2)$\,m & \textcite{ibu2010} p.~4, ``ca.\ 1 meter'' \\
+Soft shell today & $U(0, 45)$\,mm & \textcite{hemel2023} ch.~3: mean 21\,mm, max.\ 45\,mm \\
+Shell growth after 2026 & $U(0.10, 0.25)$\,mm/yr & \textcite{hemel2023} \S7.3.2: 0.17\,mm/yr \\
+Bending strength MOR & $N(22\,\text{MPa}, 0.10)$ & \textcite{hemel2023} Tab.~7.1 \\
+Modulus of elasticity $E$ & $N(9\,\text{GPa}, 0.20)$ & \textcite{hemel2023} Tab.~7.1 \\
+Subgrade modulus $k$ & $U(4{,}300, 10{,}000)$\,kN/m$^3$ & \textcite{hemel2023} Tab.~7.1, clay and peat \\
+Model factor on pile moment & $LN(1, \text{CoV } 0.10)$ & JCSS, as \textcite{hemel2023} \\
 \multicolumn{3}{@{}l}{\emph{Method}} \\
 Proven strength & Wall stands today, no surcharge &  \cite{hemel2024} eq.~12 \\
 Years & 2026 and 2041 & 15-year reference period \cite{nen8700} \\
-Target $\beta$ & 1.8, 2.5, 3.3 (CC1, CC2, CC3) & \cite{nen8700} Tab.~B.2, rejection level \\
+Target $\beta$ & 1.8, 2.5, 3.3 (CC1, CC2, CC3) & \textcite{nen8700} Tab.~B.2, rejection level \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -184,17 +194,20 @@ Sand             & 0.35 (0.20) & 18.0 (0.05) & 6.3 & 16 \\
 
 \paragraph{Werf level and $H$.} The AHN ground level is read at six places
 along each wall, 2.5\,m to either side. AHN has no value over water, so the
-side with values is the werf. The werf level is the median there. Where the
+side with values is the werf. The werf level is the median there of the points
+at or below +1.6\,m NAP; higher points fall on a stair, a bridge or the street.
+With all points, the werf of Rak 03 OZ and Kromme Nieuwe Gracht 002 and 009
+came out 0.3--0.6\,m too high. Where most of the
 ground was above +1.6\,m NAP (possibly no werf), the wall was checked by hand
 on a map and Street View; the lowest AHN point below +1.6\,m NAP is then used.
 The canal bed is not measured anywhere, so $H$ (werf level minus the wall
-underside at $-0.08$\,m NAP) is a lower bound. The median of 1.13\,m NAP on
+underside at $-0.08$\,m NAP) is a lower bound. The median of 1.12\,m NAP on
 the Oudegracht matches the +0.95 to +1.15\,m NAP in
-\cite{erfgoed156,erfgoed158}.
+\textcite{erfgoed156,erfgoed158}.
 
 \paragraph{Soil class.} Of the 76 DINO borings, the 71 with a known ground
 level are used. For each wall the nearest boring within 250\,m that covers
-+1.10 to $-0.08$\,m NAP (werf to wall underside, \cite{erfgoed158}) is taken.
++1.10 to $-0.08$\,m NAP (werf to wall underside according to \textcite{erfgoed158}) is taken.
 Clay-like soil is klei, veen, leem and mergel; sand-like is zand, grind and
 schelpen; fill and undescribed layers count as neither. The boring is
 20--144\,m from the wall (median 75\,m). For only 9 of the 51 walls do all
@@ -202,7 +215,7 @@ borings within 150\,m give the same class.
 
 \paragraph{Foundation status.} The register has no foundation data. We
 compiled the renewal status, method and year per rak and bank from progress
-reports, \cite{antea2019}, \cite{gu2025up}, the archaeology reports, city news
+reports \parencite{antea2019,gu2025up}, the archaeology reports, city news
 and neighbourhood letters (\texttt{data/raw/walmuur\_foundation\_sources.csv},
 every row with its sources). The city's \emph{Werfmuren} layer links each
 register wall to its rak and bank. The renewed walls add up to about 3.36\,km
@@ -216,7 +229,7 @@ Type 2 (after 1945 until the 1970s) is a brick facing with tamped concrete on
 a 1.37\,m reinforced concrete floor, with the front pile row raked 10:1. The
 2008 dive notes \cite{tno2009} record a watersloof in rak 3--6 and a concrete
 floor in rak 22; rak 21 had both. Rak 7--9 have no note; there, 0.8 follows
-from \cite{erfgoed156}, which calls the usual 1960s walls largely concrete.
+from \textcite{erfgoed156}, which calls the usual 1960s walls largely concrete.
 TNO does not say which bank a segment is on, so these are chances.
 
 \paragraph{Groundwater and traffic.} GHG and GLG per wall are a
@@ -238,7 +251,7 @@ terraces, so $q \sim N(7\,\text{kPa}, 0.20)$ is on the safe side.
   \item \textbf{TNO Pilodyn classes} \cite{tno2009} were measured on the
     screen planks and the watersloof, not on the piles. The pile values
     (Bijlagen A and B) are blank in the public copy.
-  \item \textbf{Piles S13--S19} in \cite{erfgoed156} belong to an earlier
+  \item \textbf{Piles S13--S19} in \textcite{erfgoed156} belong to an earlier
     stair, not to the walmuur.
   \item \textbf{A masonry-block resistance} ($\gamma_m H t^2/2$, with $t$ the wall
     thickness) gave $P_f \approx 1$ for walls that
