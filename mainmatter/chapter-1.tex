@@ -70,460 +70,402 @@ Many of these walls are masonry on timber piles. The city restores about 100~m o
 
 Inspection can reduce the uncertainty about the wall and the bed level. Traffic, trees, rain and mooring cannot be influenced. Cables, heritage permits and the budget limit the options.
 
-\definecolor{catgreen}{HTML}{4CAF50}
-\definecolor{catorange}{HTML}{F59E0B}
-\definecolor{catred}{HTML}{DC2626}
-
-\begin{tikzpicture}[
-    node distance=12mm and 10mm,
-    font=\small\sffamily,
-    decision/.style={diamond, aspect=2.2, draw, thick, fill=gray!8,
-                     align=center, inner sep=1pt, text width=28mm},
-    process/.style={rectangle, rounded corners=2pt, draw, thick, fill=gray!8,
-                    align=center, minimum height=9mm, text width=32mm},
-    start/.style={rectangle, rounded corners=6pt, draw, thick, fill=gray!20,
-                  align=center, minimum height=8mm, text width=30mm},
-    category/.style={rectangle, rounded corners=4pt, draw=#1!70!black, thick,
-                     fill=#1, text=white, font=\small\sffamily\bfseries,
-                     align=center, minimum height=9mm, text width=24mm},
-    arrow/.style={-{Stealth[length=2.5mm]}, thick},
-    lbl/.style={font=\footnotesize\sffamily, fill=white, inner sep=1.5pt}
-]
-
-% Nodes
-\node[start] (start) {Quay wall\\ (section)};
-\node[decision, below=8mm of start] (life) {Past design\\ life?};
-\node[category=catgreen, right=18mm of life] (green) {GREEN};
-\node[decision, below=14mm of life] (mas) {Masonry\\ wall?};
-\node[category=catorange, right=18mm of mas] (orange1) {ORANGE};
-\node[process, below=12mm of mas] (pf) {Calculate failure\\ probability $P_f$};
-\node[decision, below=12mm of pf] (thr) {$P_f > P_{f,\mathrm{target}}$?};
-\node[category=catred, below left=14mm and 2mm of thr] (red) {RED};
-\node[category=catorange, below right=14mm and 2mm of thr] (orange2) {ORANGE};
-
-% Edges
-\draw[arrow] (start) -- (life);
-\draw[arrow] (life) -- node[lbl] {No} (green);
-\draw[arrow] (life) -- node[lbl] {Yes} (mas);
-\draw[arrow] (mas) -- node[lbl] {No} (orange1);
-\draw[arrow] (mas) -- node[lbl] {Yes} (pf);
-\draw[arrow] (pf) -- (thr);
-\draw[arrow] (thr.west) -| node[lbl, pos=0.25] {Yes} (red.north);
-\draw[arrow] (thr.east) -| node[lbl, pos=0.25] {No} (orange2.north);
-
-\end{tikzpicture}
-
-\newpage
+\clearpage
 \section{Assumptions, Data Collection and Generation}
-\label{sec:assumptions}
+\label{sec:assumptions}\label{sec:data}
 
+%% ----------------------------------------------------------------------
+%%  MAX 2 PAGES  |  RUBRIC WEIGHT 10%
+%%  Task: describe the needed data and their relevance (Section 1.1);
+%%  generate the data you need and explain the process for
+%%  reproducibility; state sound assumptions where data are missing; link
+%%  to Section 4.2 and reflect on how data accuracy and assumptions affect
+%%  the results; discuss and validate the assumptions. Use the appendices
+%%  for supporting information.
+%% ----------------------------------------------------------------------
 
+This study estimates, for every walmuur in the Wervengebied that still stands
+on its original timber piles, the probability that it fails within the
+15-year reference period of NEN~8700 (Section~\ref{sec:prob}). A walmuur is
+the low wall between the werf, the wharf along the canal, and the water. The
+failure model needs, per wall, the foundation status, the geometry of wall and
+foundation, the level of the werf, the soil and water behind the wall, the
+load on the werf and the condition of the piles. Only the municipal asset
+register covers every wall: it lists 51 walmuren, 4{,}062\,m in total, with
+their construction year and material, but no height, foundation or condition
+data \parencite{gu2025register}. The team therefore combined it with open
+geodata, archive reports and the literature, and filled the remaining gaps
+with stated assumptions. The one data request that the assignment allows was
+not used, as an answer could not be awaited within the project.
 
+\subsection{Data collected and generated}\label{sec:data-collected}\label{sec:data-generated}
 
-
-
-The analysis gives a probability of failure $P_f$ and a reliability index
-$\beta$ for each walmuur (the low wall between the werf and the canal) that
-still stands on its original timber pile foundation. This needs, per wall:
-whether the foundation has been renewed, the geometry of wall and foundation,
-the retained height, the soil and water behind the wall, the load on the werf
-and the condition of the timber piles. The municipal asset register lists the
-walls, their length and age, but none of the structural data. We therefore
-collected open data and project documents, derived the missing values with
-scripts, and filled the remaining gaps with stated assumptions. Within the
-time of the project, no data were requested from the municipality.
-
-\subsection{Data collected}\label{sec:data-collected}
-
-Table~\ref{tab:data-sources} lists the data, what each source provides and its
-main weakness.
+Table~\ref{tab:data-sources} records the contribution, coverage and known
+errors of each source. The register and the terrain model cover every wall,
+whereas the structural information comes from a few archive documents about
+the Oudegracht and the timber properties from research in Amsterdam. The data
+are therefore most reliable for the werf level and least reliable for the
+wall type and the pile condition, which Section~\ref{sec:dimension-reduction}
+identifies as the inputs that matter most. Street-level imagery, groundwater
+wells and traffic signs served as proxies; satellite subsidence data, which
+could reveal settlement from pile rot, were not processed.
 
 \begin{table}[htbp]
 \centering
 \small
-\caption{Data used for the walmuren, with source and main limitation.}
+\caption{Data used for the 51 walmuren: contribution, coverage and known
+errors of each source.}
 \label{tab:data-sources}
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.5cm}
-  >{\raggedright\arraybackslash}p{4.3cm}
-  >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.9cm}
+  >{\raggedright\arraybackslash}p{2.6cm}
+  >{\raggedright\arraybackslash}p{2.9cm} >{\raggedright\arraybackslash}X@{}}
 \toprule
-Data need & Source & Used for & Limitation \\
+Source & Used for & Coverage & Known errors and gaps \\
 \midrule
-Walls, length, age & Asset register \cite{gu2025register} & 51 walmuren; screening & No height or foundation data \\
-Werf level & AHN 0.5\,m \cite{ahn} & Retained height $H$ & Canal bed not measured \\
-Soil & 71 DINO borings \cite{dino} & Soil class, sets $K$ and $\gamma$ & 20--144\,m away; often disagree \\
-Groundwater & BRO wells \cite{bro_gmw} & GHG and GLG & Nearest well 143--418\,m \\
-Traffic & BGT, NDW \cite{bgt,ndw} & Road distance, axle limit & Road is not on the werf \\
-Foundation & Programme reports \cite{antea2019,gu2025up} & Renewed or timber & 8 walls unclear \\
-Wall type & TNO dive notes \cite{tno2009} & $P(\text{type 2})$ per rak & Not known per wall \\
-Section, piles & \cite{erfgoed156,erfgoed158,ibu2010} & Shapes, levels, piles & Schematic; Oudegracht \\
-Timber, method & Hemel \cite{hemel2023,hemel2024} & Pile strength, decay, load & Amsterdam piles \\
-Target $\beta$ & NEN 8700 \cite{nen8700} & 1.8 / 2.5 / 3.3 & Class not chosen \\
+Asset register \parencite{gu2025register} & Selection, year & 51 walls, 4{,}062\,m & Year kept after renewal \\
+Programme reports \parencite{antea2019,gu2025up} & Foundation status & 32 renewed, 19 not & Hand-compiled; 8 unclear \\
+AHN terrain model \parencite{ahn} & Werf level & 38 walls with a werf & Stairs, streets; no canal bed \\
+DINO borings \parencite{dino} & Soil class & 71 borings, 20--144\,m & Agree for only 9 walls \\
+BRO wells \parencite{bro_gmw} & Water level (check) & Nearest 143--418\,m & Under raised streets \\
+BGT and NDW \parencite{bgt,ndw} & Surcharge (check) & All walls & No traffic counts \\
+TNO dive notes \parencite{tno2009} & Wall type per rak & Rak 3--6, 21, 22 & Bank not stated \\
+Archive reports \parencite{erfgoed156,erfgoed158,ibu2010} & Sections, piles & Two drawings & Schematic; Oudegracht only \\
+Literature \parencite{hemel2023,hemel2024} & Timber, decay, load & Amsterdam piles & No Utrecht measurements \\
+NEN~8700 and 8707 \parencite{nen8700,nen8707} & Target $\beta$ & 1.8, 2.5, 3.3 & Class not chosen \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-The foundation data decide which walls are modelled at all. Of the 51
-walmuren, 32 are already renewed on steel, including 11 of the 29 that the
-register marks as past their design life. Of the 19 on timber, 2 have no werf:
-the street runs to the water, which is a different structure. This leaves 17
-walls (611\,m) for the $P_f$ calculation (Appendix~\ref{app:data}).
+The foundation data decide which walls are modelled. The register keeps the
+year of the original wall after a renewal, so 11 walls renewed on steel piles
+in 2016--2026 still appear past their design life: counted from the renewal
+year, 18 walls (617\,m) are past it, against 29 (1{,}885\,m) on the register
+year alone. Of the 19 walls not renewed or of unclear status, two have no
+werf because the street runs down to the water, a different structure. This
+leaves 17 walls, 611\,m in total (Table~\ref{tab:selection}).
 
-\subsection{Data generation}\label{sec:data-generated}
-
-Eight scripts turn the raw data into one input row per wall. They run in a
-fixed order, each reading the output of the one before
-(Appendix~\ref{app:data}). The main generated values are:
-\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-  \item \textbf{Werf level and $H$:} the median of six AHN points on the werf
-    side of the wall (+0.99 to +1.57\,m NAP). $H$ is the werf level minus the
-    wall underside at $-0.08$\,m NAP \cite{erfgoed158}; median 1.22\,m.
-  \item \textbf{Soil class:} the share of clay-like and sand-like soil between
-    werf and wall underside in the nearest boring within 250\,m. At least
-    70\,\% of one kind gives that class, otherwise ``mixed''. Of the 51 walls,
-    23 are clay/peat, 16 sand and 12 mixed.
-  \item \textbf{Foundation status:} a hand-compiled table of renewals per rak
-    and bank, linked to the register through the city's \emph{Werfmuren} map.
-  \item \textbf{Wall type:} divers found a timber beam (\emph{watersloof}, only
-    in type 1) or a concrete floor (only in type 2) in some rakken
-    \cite{tno2009}, which gives a chance of type 2 per rak.
-  \item \textbf{Monte Carlo samples:} 400{,}000 draws per wall and wall type,
-    with a fixed seed, for 2026 and 2041 (end of the 15-year reference period
-    of NEN 8700).
-\end{itemize}
-Every raw file is listed with its source and download date, so all results
-can be regenerated from the raw data.
+Seven scripts turn the raw files into one input row per wall. They run in a
+fixed order, and every raw file is listed with its source and download date,
+so that all results can be regenerated (Appendix~\ref{app:data}). The werf
+level is the median of the AHN points on the land side of the wall at or
+below +1.6\,m NAP, as higher points fall on stairs or streets; for the 38
+walls with a werf this gives +0.91 to +1.40\,m NAP, and the walls without a
+clear werf were checked on maps and street-level imagery. The soil class
+follows from the share of clay-like and sand-like layers between +1.10 and
+\textminus0.08\,m NAP, the werf and the wall underside according to
+\textcite{erfgoed158}, in the nearest boring within 250\,m: 70\,\% of one kind
+gives that class, otherwise it is mixed. This yields 23 walls in clay or peat,
+16 in sand and 12 mixed. Finally, the Monte Carlo simulation generates
+400{,}000 draws per wall and wall type from a fixed seed.
 
 \subsection{Assumptions}\label{sec:data-assumptions}
-Where no data exist we use the assumptions in Table~\ref{tab:assumptions}.
-Uncertain values get a distribution, not a single value. All 27 inputs are
-listed in Appendix~\ref{app:data}.
+
+Where no data exist, the team made the assumptions in
+Table~\ref{tab:assumptions}, each with a distribution rather than a single
+value, so that the lack of knowledge is carried into the failure probability
+instead of being hidden in a safety factor. The last column gives the
+expected bias in $\beta$ and, where tested, its size.
 
 \begin{table}[htbp]
 \centering
 \small
-\caption{Main assumptions where data are missing.}
+\caption{Main assumptions where data are missing, with their basis and their
+effect on $\beta$ (best estimate, 2026, unless stated).}
 \label{tab:assumptions}
-\begin{tabularx}{\textwidth}{@{}l X l@{}}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{3.8cm}@{}}
 \toprule
-Quantity & Assumption & Basis \\
+ & Assumption & Basis & Effect on $\beta$ \\
 \midrule
-Canal bed & At the wall underside ($-0.08$\,m NAP), so $H$ is a lower bound & \cite{erfgoed158} \\
-Wall type & $P(\text{type 2})$: 0.2 (rak 3--6), 0.5 (rak 21), 0.9 (rak 22), 0.8 (rest) & \cite{tno2009,erfgoed156} \\
-Cross-section & Two measured drawings for all walls; floor level $\pm0.15$\,m & \cite{erfgoed156,ibu2010} \\
-Pile condition & Soft shell $U(0,45)$\,mm, all walls; grows 0.10--0.25\,mm/yr & \cite{hemel2023} \\
-Piles & Diameter $N(180\,\text{mm}, 0.10)$; spacing $U(0.8, 1.2)$\,m & \cite{ibu2010,hemel2023} \\
-Soil & $K$ lognormal and $\gamma$ normal per class, independent & Group report, Tab.~C.5 \\
-Water & Canal +0.6\,m NAP; groundwater $U(+0.5, +0.9)$\,m NAP & \cite{erfgoed158} \\
-Surcharge & $q \sim N(7\,\text{kPa}, 0.20)$ at a distance $U(0,3)$\,m & \cite{hemel2024} \\
-Proven strength & Keep only the draws in which the wall stands today & \cite{hemel2024} \\
+A1 & The timber screen holds the soil below the floor, so the unmeasured canal bed does not load the wall & \textcite{ibu2010} & Optimistic where the screen has failed \\
+A2 & $P(\text{type 2})$ is 0.2 in rak 3--6, 0.5 in rak 21, 0.9 in rak 22 and 0.8 elsewhere & \textcite{tno2009,erfgoed156} & Type 1 is 1.4 to 2.4 lower \\
+A3 & Two measured cross-sections represent all walls & \textcite{ibu2010,erfgoed156} & Unknown for the Kromme Nieuwegracht \\
+A4 & Soft shell $U(0, 45)$\,mm for every wall, growing 0.10--0.25\,mm/yr & \textcite{hemel2023} & Type 2: \textminus1.50 over the range \\
+A5 & $K$ lognormal and $\gamma$ normal per soil class, independent & Team & Class uncertain: \textminus0.70 to +0.56 \\
+A6 & Canal +0.6\,m NAP; groundwater $U(+0.5, +0.9)$\,m NAP & \textcite{erfgoed158}; judgement & 0.1\,m higher: \textminus0.38 to +0.08 \\
+A7 & Surcharge $N(7\,\text{kPa}, 0.20)$ at a distance $U(0, 3)$\,m & \textcite{hemel2024} & Conservative for a werf \\
+A8 & Every modelled wall stands today under soil and water & Observation; \textcite{hemel2024} & Raises $\beta$ by 0.07 to 0.69 \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \subsection{Effect on the results and validation}\label{sec:data-effect}
 
-The assumptions do not affect the results equally. In order of effect on
-$\beta$ (interpreted further in Section~4.2):
-\begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-  \item \textbf{Wall type.} For the same wall, type 1 gives a $\beta$ that is
-    1.4--2.4 lower than type 2. With the chance per rak, $\beta$ is 0.1--1.5,
-    so all 17 walls are below 1.8. If all were type 2, 7 of the 17 would pass
-    1.8. Whether a wall passes therefore depends mostly on its type, which the
-    original drawings or a dive inspection can settle.
-  \item \textbf{Pile condition.} For type 2 the piles fail far more often than
-    the wall overturns (median $P_f$ 0.075 against 0.004). The same broad
-    shell is used for every wall, so it shifts all $P_f$ but not the ranking.
-  \item \textbf{Retained height and soil.} The soil moment grows with $H^3$:
-    0.1\,m more height adds about 25\,\%. As $H$ is a lower bound, this
-    assumption makes $P_f$ too low. Clay/peat gives 43\,\% more soil load than
-    sand, and nearby borings agree for only 9 of the 51 walls.
-  \item \textbf{Surcharge.} 7\,kPa is heavy for a pedestrian werf, so this
-    assumption makes $P_f$ too high.
-\end{enumerate}
+The assumptions do not affect the results equally
+(Section~\ref{sec:dimension-reduction}). The wall type (A2) dominates: for the
+same wall, type~1 gives a $\beta$ that is 1.4 to 2.4 lower than type~2, so the
+type alone can decide whether a wall meets the lowest NEN~8700 level of 1.8.
+The pile condition (A4) matters most for walls that are probably type~2, and
+because the same range is used for every wall, it moves all walls in the same
+direction. The surcharge (A7) is less certain than its source suggests, as
+its assumed position alone changes $\beta$ by 0.7 to 1.5. Two assumptions have
+a known direction: a surcharge of 7\,kPa (A7) is heavy for a werf used by
+pedestrians and terraces, where every nearby sign limits axle loads to 2\,t,
+and an intact screen (A1) is optimistic, as divers found it in a very poor
+state or missing in 2007 and 2008 \parencite{ibu2010}.
 
-We checked the data and assumptions where possible. The median AHN werf level
-on the Oudegracht (+1.13\,m NAP) matches the +0.95 to +1.15\,m NAP measured in
-\cite{erfgoed156,erfgoed158}. The renewed length in our foundation table
-(about 3.36\,km) matches the city's 3{,}356\,m. The strongest check is that all
-17 walls stand today. A first model that treated the wall as a masonry block
-gave $P_f \approx 1$ and was rejected. With the measured sections, a type-2
-wall stands in 87--100\,\% of the draws, a type-1 wall in only 10--98\,\%.
-Either the type-1 model is conservative or many of these walls are type 2; the
-proven-strength update accounts for this.
+The data and assumptions were checked wherever an independent value exists.
+The median AHN werf level on the Oudegracht, +1.12\,m NAP, lies within the
++0.95 to +1.15\,m NAP measured in excavations \parencite{erfgoed156,erfgoed158},
+and the renewed length in the foundation table, about 3.36\,km, matches the
+3{,}356\,m reported by the municipality \parencite{gu2025up}. The most
+informative check is the service history: all 17 walls stand. A first
+assessment that treated each wall as a block of masonry, as a simple
+deterministic check would, gave a mean resisting moment of 2.08\,kNm/m against
+a mean load of 2.74 (sand) to 3.94\,kNm/m (clay or peat) at the median
+retained height of 1.21\,m, and so predicted failure of walls that have stood
+for decades. A model without the floor, the soil on it and the piles thus
+understates the capacity of every wall of this kind, which is why the measured
+cross-sections are used. Even then, a type-1
+wall stands in only 33 to 98\,\% of the draws, against 95 to 100\,\% for
+type~2, and the proven-strength update (A8) uses this evidence. Settlement
+from pile rot, the damage actually observed \parencite{erfgoed156}, is not
+modelled, so the results give a ranking and an order of magnitude rather than
+exact values; Section~\ref{sec:results-recommendations} interprets them with
+the biases of Table~\ref{tab:assumptions} in mind.
 
-Settlement from pile rot, the damage actually seen on these walls
-\cite{erfgoed156}, and failure of the timber screen are not modelled. The
-$\beta$ values should therefore be read as an indicative ranking and order of
-magnitude, not as exact values. The data that would improve them most are the
-wall type per wall, the measured pile condition and canal soundings.
-
-
-%% ----------------------------------------------------------------------
-%%  MAX 2 PAGES  |  RUBRIC WEIGHT 10%
-%%
-%%  TASK DESCRIPTION
-%%  Describe and represent the needed data and how it is relevant to the
-%%  problem identified in Section \ref{sec:problem-synthesis}. You may
-%%  consider references in data records, literature, or stakeholder
-%%  elicitation.
-%%  Generate other data that you need. Explain the process and the input
-%%  data to guarantee reproducibility of your results.
-%%  Indicate sound assumptions to support the problem analysis when data
-%%  is not available.
-%%  Link to the interpretation of the results in Section
-%%  \ref{sec:results-recommendations} and reflect on to what extent the
-%%  lack of data accuracy or the uncertainty associated with the data
-%%  assumptions may impact your analysis and results. Discuss and validate
-%%  the use of the assumptions in the analysis.
-%%  This section provides an overview. Use the appendices for supporting
-%%  information.
-%%
-%%  CHECKLIST (challenge task 2: assemble the evidence and confront theory
-%%  with observed performance)
-%%   - Build a small structured dataset of the assets in your scope from
-%%     public sources, and document its provenance, completeness and known
-%%     errors. A data quality table is often more informative than the
-%%     data itself.
-%%   - Exploit proxy data: satellite-based deformation from the
-%%     bodemdalingskaart, groundwater levels from the BRO, tree registers,
-%%     traffic counts, dredging and water-level records, street-level
-%%     imagery over time.
-%%   - Take one asset and contrast its code-based assessment outcome with
-%%     its observed service history; state what the discrepancy implies
-%%     for the rest of the portfolio.
-%%   - Consider inspection and monitoring records, field and proof
-%%     testing, documented failures elsewhere, and the 'proven strength'
-%%     implied by decades of survival under load.
-%%   - Reflect on how the gaps in this evidence limit what you can
-%%     conclude.
-%%
-%%  NOTE: the team may submit ONE concrete and justified data request to
-%%  the Municipality of Utrecht through the teaching team. Provision is
-%%  not guaranteed, so the analysis must also work without it.
-%% ----------------------------------------------------------------------
-
-
+\clearpage
 \section{Problem Exploration and Dimension Reduction}
-
 \label{sec:dimension-reduction}
 
 %% ----------------------------------------------------------------------
 %%  MAX 1.5 PAGES  |  RUBRIC WEIGHT 5%
-%%
-%%  TASK DESCRIPTION
-%%  Identify the variables playing a role in your problem and analyse how
-%%  their levels of variability and uncertainty might affect the final
-%%  result.
-%%  Reflect on the results. For example: to what extent does a specific
-%%  variable really change the results? Do the results correspond to your   
-%%  beliefs? How does the lack of accuracy of the data you use affect the
-%%  results? Which datasets require more attention, and which estimations
-%%  can be made without a significant loss of credibility in the
-%%  conclusion?
-%%  Decide which variables deserve more effort to reduce their variability
-%%  and indicate those whose variability can be neglected.
-%%  Justify the process and the use of specific tools for the analysis.
-%%
-%%  CHECKLIST (challenge task 3: establish which variables drive the
-%%  outcome)
-%%   - Run a sensitivity analysis and be clear about what your chosen
-%%     method can tell you.
-%%   - Reduce the problem deliberately: fix variables at defensible
-%%     values, aggregate assets into homogeneous classes, or represent a
-%%     stretch by a few characteristic cross-sections. Justify each
-%%     reduction and estimate what accuracy it costs.
-%%   - Turn the result into an inspection strategy: which measurement
-%%     would most reduce the variance of your output, and on which assets?
-%%     This is the municipality's own question, given more than 60 km of
-%%     structures and a limited inspection budget.
+%%  Task: identify the variables and analyse how their variability and
+%%  uncertainty affect the result; reflect on the results; decide which
+%%  variables deserve effort to reduce their variability and which can be
+%%  neglected; justify the process and the tools.
 %% ----------------------------------------------------------------------
 
+Three groups of variables determine the outcome of this study, the
+reliability index $\beta$ of each walmuur in 2026 and 2041
+(Section~\ref{sec:prob}). Screening variables, which are the construction or
+renewal year, the material, the foundation status and the presence of a werf,
+decide whether a wall needs a failure probability at all. Two knowledge
+variables are fixed for a wall but unknown: the wall type, which sets the
+cross-section and the piles, and the soil class. Finally, 18 random inputs
+describe the load, the resistance and the decay of the piles
+(Table~\ref{tab:prob-variables}).
 
-We screen inputs on three outputs: Pf, P(red) and the rank of the 27 reaches Pf is continuous and suited to variance-based indices; the class and rank are discrete, so there we test how many reaches change class when an assumption (A2,A4,A6) is varied. Variables with a total-order index below x are fixed at a defensible value; the remaining n variables are carried as random variables in chapter 2.
+The team reduced the problem in four deliberate steps. The screening of
+Section~\ref{sec:approach-selection} limits the analysis to the 17 walls that
+still stand on timber piles with a werf, 611\,m of the 4{,}062\,m of walmuur.
+Two characteristic cross-sections from archive drawings represent all walls
+\parencite{ibu2010,erfgoed156}, which replaces 17 unknown geometries by one
+binary variable, the wall type. The soil is aggregated into three classes, each
+with its own distributions of $K$ and $\gamma$, and one distribution of the
+pile condition is used for all walls, as no measurement per wall exists. The
+accuracy that these reductions cost is quantified below, except for the
+cross-sections: no drawing was found of the walls of the Kromme Nieuwegracht,
+which are partly concrete sheet piles.
 
+The effect of each variable was determined with a one-at-a-time sensitivity
+analysis. Each random input was fixed at its 5th and 95th percentile while the
+others kept their distributions, and the updated $\beta$ was recomputed for
+all 17 walls with 100{,}000 draws per run. All runs share the random numbers of
+the inputs that are not fixed, so the differences are not Monte Carlo noise.
+The swing between the two values shows how much knowing an input could change
+$\beta$, which is what a decision on measurements needs. FORM influence
+coefficients were not an option, because threshold functions and the
+rejection step make the limit state non-smooth, and variance-based indices of
+a failure indicator do not translate directly into the effect of a
+measurement on $\beta$. The price of the one-at-a-time method is that it
+ignores interactions and that its swing depends on the chosen percentiles.
 
-Screening variables (determine green/orange): 
+\begin{table}[htbp]
+\centering
+\small
+\caption{One-at-a-time sensitivity of $\beta$ (updated, 2026): change in
+$\beta$ when an input moves from its 5th to its 95th percentile, median over
+the walls. Best estimate: both types weighted by $P(T \mid E)$. Ranges per
+wall: Table~\ref{tab:tornado-full}.}
+\label{tab:tornado}
+\begin{tabular}{@{}l l r r r@{}}
+\toprule
+Input & 5th to 95th percentile & Type 1 & Type 2 & Best estimate \\
+\midrule
+Wall type & Type 1 to type 2 & \multicolumn{3}{r}{+2.06 (+1.36 to +2.41)} \\
+Earth pressure coefficient $K$ & Per soil class & \textminus2.38 & \textminus0.97 & \textminus0.38 \\
+Distance $a$ of the surcharge & 0.15 to 2.85\,m & +1.45 & +1.01 & +0.74 \\
+Soft shell of the piles $s_0$ & 2 to 43\,mm & \textminus0.04 & \textminus1.50 & \textminus0.54 \\
+Pile diameter $D_0$ & 150 to 210\,mm & +0.04 & +1.49 & +0.40 \\
+Model factor $\theta_R$ & 0.77 to 1.26 & +0.84 & +0.12 & \textminus0.03 \\
+Groundwater level & +0.52 to +0.88\,m NAP & \textminus0.82 & \textminus0.18 & +0.05 \\
+Foundation level & \textminus0.135 to +0.135\,m & +0.66 & +0.49 & +0.20 \\
+Surcharge $q$ & 4.7 to 9.3\,kPa & \textminus0.60 & \textminus0.49 & \textminus0.36 \\
+Werf level, assumed (3 walls) & +1.03 to +1.57\,m NAP & \textminus0.75 & \textminus1.04 & +0.04 \\
+Soil class & Lowest to highest of three & & & 0.49 \\
+Pile spacing $s$ & 0.82 to 1.18\,m & \textminus0.01 & \textminus0.41 & \textminus0.12 \\
+Bending strength MOR & 18.4 to 25.6\,MPa & +0.01 & +0.37 & +0.12 \\
+Werf level, measured (14 walls) & AHN $\pm$0.08\,m & \textminus0.26 & \textminus0.32 & \textminus0.16 \\
+Model factor $\theta_M$ & 0.84 to 1.17 & \textminus0.01 & \textminus0.32 & \textminus0.10 \\
+Unit weight of masonry & 17.4 to 20.6\,kN/m$^3$ & +0.20 & 0.00 & \textminus0.01 \\
+Five other inputs\textsuperscript{a} & & $\le$\,0.13 & $\le$\,0.18 & $\le$\,0.06 \\
+\bottomrule
+\multicolumn{5}{@{}p{0.97\textwidth}@{}}{\footnotesize\textsuperscript{a}
+Unit weights of soil and tamped concrete, modulus of elasticity, subgrade
+modulus and growth rate of the soft shell (absolute values).}
+\end{tabular}
+\end{table}
 
-- year of construction or last restoration, hence age - asset inventory, available
+Table~\ref{tab:tornado} shows that the wall type dominates: type~2 gives a
+$\beta$ that is 2.06 higher than type~1 (median; 1.36 to 2.41), more than any
+random input. For type~1, which fails mostly by overturning, $K$, the
+position of the surcharge, the model factor on the resisting moment and the
+groundwater level follow; for type~2, which fails mostly in the piles, the
+soft shell and the pile diameter matter as much as $K$ and the surcharge
+position. The three soil classes span 0.49 in $\beta$ (0.37 to 1.19). The
+importance of $K$ and of the surcharge was expected, as both scale the earth
+pressure directly. Less expected is that the surcharge position, a judgement
+without a source, ranks among the four largest effects: on a wall of about
+1.5\,m, a load at the edge acts almost fully on the wall, whereas a load 3\,m
+behind it adds little. The best-estimate swings of the load inputs are
+smaller than those per type and change sign for some walls. A high $K$ or
+groundwater level makes a standing type-1 wall unlikely, so the update raises
+$P(T{=}2 \mid E)$ and the best estimate shifts towards the stronger type. A
+one-at-a-time analysis cannot separate this interaction, which is why
+Table~\ref{tab:tornado} gives the swings per type.
 
-- design life (100 year, A2) - assumption
+The results also show where inaccurate data matter. The werf level, the only
+input measured per wall, changes $\beta$ by about 0.3 within its measurement
+error of 0.05\,m, but by 0.75 to 1.04 for the three walls of the Kromme
+Nieuwegracht whose level could not be read, which a simple levelling would
+settle. The least accurate data, on the wall type and the pile condition, have
+the largest effect, so the archive drawings and dive records need more
+attention than the terrain data. Three decisions follow. The measured werf
+level and the inputs of the last row of Table~\ref{tab:tornado} can be fixed
+at their medians: fixing all six at once changes $\beta$ by at most 0.03, and
+the correlations between inputs change it by at most 0.03 as well
+(Section~\ref{sec:prob-dependence}).
+The model factors, the bending strength and the groundwater level stay
+random, as no affordable measurement would narrow them. Effort should go to
+the inputs that are both important and measurable.
 
-- wall type / material (masonry or not) - asset inventory
+The measurement that would most reduce the uncertainty of the result is
+therefore the wall type, which old construction drawings or a diver at the
+front of the floor can settle. It is worth most where the updated probability
+of type~2 is far from 0 and 1 and the types differ much: Oude Gracht Rak~03 OZ
+($P(T{=}2 \mid E) = 0.34$, 2.3 in $\beta$, 101\,m) and Kromme Nieuwe Gracht 005
+to 008 (0.60 to 0.74). On the three sand walls of rak~4 to 6 that are not
+being renewed (197\,m, 0.21), finding type~2 would raise $\beta$ from about 0.8
+to 2.0, above the lowest NEN~8700 level. For the walls that are probably
+type~2, in rak~8 and 9 and Kromme Nieuwe Gracht 002 to 004 (0.82 to 0.94), the
+next measurement is the soft shell and diameter of a sample of piles per rak,
+by micro-drilling during a dive. A survey of where terraces and vehicles stand
+on the werf would narrow the surcharge position at little cost.
 
-- foundation type (timber piles, A4) - assumption
-
-
-Variables for the failure probability Pf (only masonry beyond design life):
-
-- pile diameter - literature value
-
-- decay rate - literature value
-
-- timber strength - literature value
-
-- load (traffic/surface) - literature and traffic data
-
-- groundwater level - nearest BRO well
-
--soil and surface characteristics - PDOK, BRO
-
-
-tornado method 
-
-
-The performance of quay walls and other retaining structures are largely influenced by a number of structural, environmental and demand. This section breaks down the key variables determining the life of quay walls in Utrecht and thus governing the programming of their maintenance. It outlines the influence of the variables on the decisions about the inspection and scheduling of the required intervention, based on their levels of uncertainty in data availability and reasonable assumptions as described in section 1.2.
-The aim is to reduce complex asset management programming into a set of measurable variables whose weights and probabilistic projections inform risk of failure by extension aid in scheduling of intervention works. The outlined variables therefore form the basis for the probability calculations and subsequent risk analysis to quantify the likelihood and consequences of potential failure and used to prioritise appropriate maintenance interventions.
-The variables were selected based on their theoretical relevance to the structural performance of quay walls, evidence from previous studies and expected influence on failure. The selection was also constrained by the availability of existing data as well as the monetary and time requirements associated with obtaining additional information through testing.
-
-\subsubsection{Design loads}
-
-For comprehensive asset management, it is imperative to identify the loads the structure was designed to bear so as to provide a reference for determining the capacity and subsequently safety in use and assess potential failure. In the analysis of Utrecht quay walls, the design loads are a key demand variable against which current and projected loads up to 2050 are compared.
-The design load establishes the range of demand that the structure was intended to accommodate within its theoretical design life. A key uncertainty is the factor of safety incorporated in the original design and its relationship with the safety requirements related to actual loading. Rather than assuming that the historical factor of safety remains directly applicable, sensitivity analysis can examine how reducing or varying the original safety margin affects the assessed structural capacity. The historical design demand can therefore be compared with the corresponding resistance under different safety factors. The factors of safety used in the original design, where available or reasonably estimated, are used to determine the relationship between the specified design demand and the theoretical load-bearing capacity. The resulting range between the original design load and the theoretical maximum at the end of life provides the basis for assessing how changes in demand may influence the probability and timing of failure.
-
-
-\subsubsection{Traffic Loading}
-
-The loads applied to quay walls over their service life include permanent loads from the self-weight of the structure and earth pressure from retained soil, together with variable loads such as wind, water-current and traffic loads. Traffic loading is associated with relatively high uncertainty because it varies with traffic volume, vehicle composition and changes in demand over time. For uniform analysis, traffic demand is characterised using annual average daily traffic (AADT), while national vehicle-weight data are used to estimate peak traffic loading.
-Traffic loading is not treated as the total loading condition of the quay wall and is therefore not directly assessed against the total design load as an isolated variable. Instead, its uncertainty and relationship with the overall structural capacity are modelled to determine its contribution to the probability of failure. Sensitivity analysis assesses how changes in traffic loading influence this probability. Future traffic demand is projected to 2050 and beyond using both annual and local traffic-growth rates, allowing the relationship between increasing traffic demand and available structural capacity to be examined over time. This provides a basis for assessing whether traffic access restrictions could reduce the probability of structural failure in future.
-
-
-\subsubsection{Soil Type}
-
-The type of soil influences quay-wall behaviour through its geotechnical properties that can influence deformation and structural behaviour such as differential settlement due to variations in ground behaviour. The analysis considers soil type with reference to expansive behaviour that informs consolidation and wetting and drying effects on strength. These are best estimated based on the relation with measurable soil properties of density, cohesion and friction angle.
-Expansive soils undergo volume changes with variations in moisture which alter soil properties. Consolidation can result in progressive settlement under sustained loading, potentially contributing to differential movement. These ground responses are to assess how changes in soil behaviour affect the response of the quay wall.
-For dimension reduction, sensitivity analysis is used to determine the extent to which uncertainty in soil characteristics and behaviour influences the predicted structural response and failure probability. 
-
-
-\subsubsection{Structural Material}
-
-Material type is a key variable because the quay-wall portfolio comprises different structural materials, principally timber, steel, concrete and masonry, each with different deterioration mechanisms and rates. Material therefore influences the expected development of structural condition and the remaining capacity of the asset over its service life.
-
-The deterioration rate of each material is considered in relation to the environmental conditions to which it is exposed. In particular, wetting and drying and groundwater conditions may influence the rate and nature of material deterioration. The deterioration process is treated as an uncertain variable because the actual condition and rate of deterioration are not readily measurable across the entire portfolio and may vary between structures and exposure conditions.
-For dimension reduction, material type is used to establish the expected deterioration behaviour, while the uncertainty in deterioration rate and current condition is incorporated into the assessment. Sensitivity analysis can determine whether differences in deterioration assumptions materially affect the predicted structural performance and failure probability, thereby identifying where further inspection or material-condition data would have the greatest value for maintenance programming.
-
-
-\subsubsection{Type of Foundation}
-
-The type of foundation is a significant variable in the assessment because it determines the mechanism through which structural loads are transferred to the ground and therefore influences stability. Shallow foundations are more dependent on near-surface soil and groundwater characteristics, while deep foundations can provide greater stability where shallow conditions are unsuitable, although their condition and behaviour are harder to verify.
-In the probabilistic model, uncertain properties of condition and settlement response are represented through probability distributions and their dependence on soil and groundwater conditions. Sensitivity analysis can then establish whether foundation-related uncertainty materially affects predicted stability and failure probability and consequently maintenance decisions. Where sensitivity is high, geotechnical investigation should be prioritised else the variable can be simplified without reducing the credibility of the model.
-
-
-\subsubsection{Previous Maintenance Records}
-
-Previous maintenance records are an important variable because they provide evidence of how a structure has performed, deteriorated and been repaired over time. Historical records can therefore contribute to estimating remaining service life, deterioration rates and the probability that maintenance will be required within a given planning period. In a probabilistic programming model, this information is used to update the probability of failure rather than just using age of the structure to determine remaining structural life, contributing to the confidence of the intervention timelines and procedures.
-
-
-\subsubsection{Significance of variables}
-
-Not all variables identified above contribute equaly in the final failure probability. Chapter~\ref{chapter:probabilistic-modelling} shows that pile diameter has the greatest influence in the model, with an influence coefficient $\alpha^2$ of 0.73, against 0.14 for soil and 0.06 for surface load (Appendix~\ref{app:pm-calibration}). Thus, pile geometry is the dominant physical variable, while soil uncertainty remains relevant and surface load has a smaller direct influence. Assumption A1 and foundation type are also important at the portfolio level, although foundation type is not quantified directly in the current timber-pile model.
-
-\textbf{Soil Type} and groundwater conditions are significant mainly through their effect on deterioration rather than through the load directly: Section~\ref{sec:probabilistic-models} shows that a dry groundwater regime lowers the reliability index $\beta$ from 1.41 (moderate) to 0.93, and to 0.81 under the KNMI'23 climate shift, because fungal decay becomes active in a much larger share of samples. \textbf{Structural Material} is significant at the scope level rather than within the current model: the timber-pile mechanism analysed here does not apply to the steel and concrete sections elsewhere in the portfolio (Assumption~A12), so material type determines which model applies before it can influence any single failure probability.
-
-\textbf{Previous Maintenance Records} are significant less for the base failure probability and more for how much that probability can be revised: Section~\ref{sec:probabilistic-models} shows that survival of a known load raises $\beta$ at the moderate location from 1.41 to 2.22, a larger shift than most of the modelling assumptions produce on their own. Variables with little direct influence on the ranking, are fixed at a defensible value rather than treated as a full random variable, since this does not materially change the result.
-
-
-%\subsubsection{Sensitivity Analysis}Two complementary tools are used: a tornado analysis first screens the candidate variables to remove those with negligible influence, so that computational effort is spent on the ones that matter. The influence coefficients reported in Appendix C.1 are estimated from the standardised input values in the simulated failure samples.This analysis is applied at two levels. At the level of a single section, it identifies which physical variable a measurement should target first: since pile diameter carries by far the largest share of the variance, Section~\ref{sec:probabilistic-models} concludes that a direct diameter measurement is worth more than a refined soil model. At the level of the assumptions themselves, the same logic is applied to A1, A2 and A5 (Section~\ref{sec:data-quality}): each is varied within its stated range, and the resulting change in $\beta$ and in the section ranking is compared against the change produced by the physical variables. Where an assumption shifts the ranking by as much as, or more than, a genuine physical variable, it is flagged as a priority for the municipality's data request rather than left as a fixed input.The three groundwater scenarios in Figure~\ref{fig:pm-results}a are a direct product of this analysis: they were selected because groundwater level drives both the load path (through $k_w$) and the deterioration path (through fungal decay), so its effect could not be adequately summarised by a single sensitivity coefficient and is instead shown as a full scenario comparison.\subsubsection{Justification of Analysis Tools}
-
-
-
+\clearpage
 \section{Approach Selection}
 \label{sec:approach-selection}
 
-
-The approach is a coarse-to-fine screening of the quay-wall sections, shown in \hyperlink{figure.caption.5}{Figure~1.2}. It is based on the Amsterdam ARK method~\cite{ark2023}. Cheap rules based on the asset register sort the whole portfolio first. The expensive probabilistic analysis is used only where it can change a decision. This suits the problem in \hyperlink{section.1.1}{Section~1.1}. Utrecht holds basic asset data for every section, such as construction year, restoration year and wall type. It does not hold foundation data, pile dimensions or design calculations for the Wervengebied (\hyperlink{section.1.2}{Section~1.2}). Running a detailed deterministic recalculation of all 27 reaches is therefore not possible with the data we have. A purely qualitative ARK score would also fall short, because it does not quantify uncertainty.
-
-\paragraph{Step 1 -- Rule-based screening.}
-The theoretical end of life of each section is the year of construction or last full restoration plus a design life of 100 years (A2). If this falls after 2030, the section is classified green and goes into regular maintenance (A3). We chose 2030 because that is when the municipal inspection programme ends~\cite{utrecht_teamchallenge2026}. Sections that reach their end of life by 2030 are then screened on material. Non-masonry walls are classified orange: their deterioration (corrosion, concrete degradation) needs a different model and further inspection. Masonry walls on timber piles (A4) go on to Step~2. This is the most common typology in the scope, and its capacity is the most variable and the least well documented.
-
-\paragraph{Step 2 -- Probabilistic failure model.}
-For masonry walls, the failure probability $P_f$ of lateral foundation failure is calculated over the 15-year reference period of NEN~8700~\cite{nen8700} (\hyperlink{chapter.2}{Chapter~2}). We use crude Monte Carlo simulation ($n = 10^6$) instead of FORM, for four reasons:
-\begin{itemize}
-    \item the limit state is strongly non-linear in the pile diameter;
-    \item fungal decay enters through yearly indicator functions of the groundwater level;
-    \item dependence between adjacent sections can be imposed directly with a Gaussian copula;
-    \item updating with past performance (proven strength) only requires filtering the surviving samples~\cite{hemel2024}.
-\end{itemize}
-At the $P_f$ levels we are interested in ($10^{-2}$--$10^{-1}$), the computational cost is small. Influence coefficients are estimated from the Monte Carlo design point. We do not have the original pile-group model, so a response function calibrated to Hemel et al.~\cite{hemel2024} replaces it. Because of this, $P_f$ is used to compare sections and scenarios, not as an absolute value.
-
-\paragraph{Step 3 -- Sensitivity analysis and dimension reduction.}
-Before the model is applied to all reaches, we screen the inputs (\hyperlink{section.1.3}{Section~1.3}). For the continuous output $P_f$, influence coefficients and scenario runs show which variables matter. Pile diameter dominates, with $\alpha^2 = 0.73$; groundwater acts through decay. For the discrete outputs (class and rank), we use a tornado-type analysis on the assumptions A2, A4 and A6, and count how many reaches change class. Variables with little influence are fixed. Variables with high influence become priorities for inspection, which also informs our data request.
-
-\paragraph{Step 4 -- Consequences and risk classification.}
-Consequence indicators are scored from 1 to 4 on the ARK scales (A7)~\cite{ark2023}: traffic function, trees, adjacent buildings and cellars, and quay use. These scores are combined into a consequence score $C$ with explicit weights. Where municipal priorities are unknown, the weights are treated as value judgements and varied in the sensitivity analysis. The consequence level sets the NEN~8700 consequence class. A section is red when $P_f$ exceeds the limit for its class (A6), and orange otherwise. Within each class, sections are ordered by the relative risk $R = P_f \cdot C$.
-
-\paragraph{Step 5 -- Uncertainty in the ranking.}
-The uncertain inputs and weights are propagated through the whole procedure, with the same rules applied to every section in each run. The output is therefore a distribution, not a single list: the probability that a reach is red, $P(\text{red})$, its rank distribution, and the probability that one reach outranks another. Assumptions that apply equally to all walls shift every $P_f$ in the same direction, so the ordering is more robust than the absolute values.
-
-\paragraph{Link to the following chapters.}
-The red and orange sections feed into the fault tree (\hyperlink{section.3.1}{Section~3.1}). There, structural failure is one causal path next to human and organisational causes of programme failure. The decision tree (\hyperlink{section.3.2}{Section~3.2}) compares interventions for these sections: monitoring, restricting use, strengthening and replacement. Regression (\hyperlink{section.4.1}{Section~4.1}) extrapolates the backlog and risk exposure towards 2050 for different production rates.
-
-% --- Hieronder jullie bestaande figuurcode voor Figure 1.2 laten staan ---
-
-
-Red: the condition looks so poor that the probability or consequence of failure is too high. This means intensive monitoring and fast follow-up.
-
-Orange: the condition is still unknown and more investigation is needed.
-
-Green: the structure can carry its current use, so regular maintenance is enough.
-
-The steps are:
-
-\begin{enumerate}
-    \item Beheerdersoordeel (the asset manager's judgement): a first classification based on limited data.
-    \item ARK (Amsterdamse Risicobeoordeling Kademuren): a qualitative risk assessment for orange walls, based on inspections, archives and diver reports. It is done in Excel, and external experts give second opinions.
-    \item Herberekening (recalculation) under TAK: for orange walls, the city first decides whether a recalculation is worth it, because it costs a lot of time, money and capacity.
-    \item Verfijnd toetsen (refined assessment) under TAK: a more detailed analysis of specific elements.
-    \item Integrated management advice for red walls: technical advice is combined with the impact on the surroundings to choose a measure.
-    \item Green walls: these go into regular maintenance planning.
-\end{enumerate}
-
-
-
-
-The objective is to categorise Utrecht’s quay walls according to their risk of failure, supporting the prioritisation of inspections and maintenance under limited resources. A coarse-to-fine screening approach is adopted, combining rule-based screening with probabilistic analysis. This is suitable because the available asset records and historical inspections provide useful initial information, but incomplete design loads, foundation records and material properties limit the feasibility of detailed deterministic assessment of every structure.
-
-For the initial screening, the theoretical end-of-life year is considered first. Structures with an end-of-life year after 2030 are classified as green, based on the assumption that they are relatively safe and less critical within the study horizon. Structures reaching their theoretical end of life by 2030 proceed to material screening. Masonry structures proceed to detailed analysis while non-masonry structures, including concrete and steel structures, are classified as orange for further inspection. Concrete generally offers higher compressive strength than unreinforced masonry, whose resistance depends on unit and mortar properties (NEN-EN 1996-1-1:2025), while steel has high tensile strength. However, structural capacity depends on capacity and deterioration can lead to loss of strength thus causing uncertainty in materials properties. Masonry structures require immediate in-depth analysis due to their lower and more variable capacity, combined with deterioration-driven loss of strength, creates the greatest uncertainty in structural performance (Materials and Structures,2022).
-
-
-A probabilistic multi-criteria prioritisation model is selected to rank quay-wall sections by relative risk and assessment urgency.This approach suits the incomplete, heterogeneous information available and provides a reproducible basis for comparing additional sections. An assumption that you apply in the same way to every wall shifts all failure probabilities in the same direction and largely preserves the ordering. That's why the ordering is a robus approach
-
-The technical variables identified in the preceding sections provide inputs to the probabilistic failure model described in Chapter~3. Their effects are represented through the relationships between loading, deterioration and structural resistance, with uncertain inputs described by probability distributions where appropriate. Input assumptions, sources and dependencies will be documented. Consequence indicators will be defined to represent the potential impacts of failure and normalised to a common scale using explicit, justified reference values.
-
-The normalised consequence indicators will be combined using an explicit weighting scheme to obtain a consequence score \(C\). This score will be combined with the model-based failure probability \(P_f\) to calculate a relative risk score, \(R = P_f \times C\), for prioritising quay-wall sections. Literature and relevant guidance will inform the selection and scaling of consequence indicators. The weights will reflect municipal priorities where these can be established; otherwise, they will be documented as value judgements and varied in sensitivity analysis to assess their influence on the ranking.
-
-Monte Carlo simulation propagates uncertainty in inputs and weights through the ranking procedure while preserving specified dependencies. Each run applies common scoring rules and weights to all compared sections. Outputs include score uncertainty, rank distributions and the probability that one section outranks another, conditional on the adopted assumptions.
-
-Global sensitivity analysis will identify which inputs influence the ranking. The results will guide the identification of less influential variables and indicate where additional inspection or data collection could improve confidence in the prioritisation. Assessment of loading variables will also inform the operational interventions considered in the subsequent trade-off analysis.
-
-
-
-
-\begin{figure}[htp]
-    \centering
-    \includegraphics[width=0.75\linewidth]{figures/screening_sankey_register.png}
-    \caption{Scoping of the selected area}
-    \label{fig:placeholder}
-\end{figure}
-
-
 %% ----------------------------------------------------------------------
 %%  MAX 1 PAGE
-%%
-%%  TASK DESCRIPTION
-%%  Explain or represent the approach you will follow to achieve your
-%%  goal. You can use a flowchart or graphical representation to convey
-%%  the main idea. You can provide both the general picture and a detailed
-%%  description of the tools and methods, avoiding definitions of the
-%%  methods or other trivial information.
-
-%%  Motivate what modelling tools and uncertainty quantification methods
-%%  you choose for the analysis and why. You may compare relevant tools
-%%  learned in the course and choose the adequate ones considering the
-%%  defined problem and the available data.
-%%
-%%  NOTE: the challenge tasks are examples, not requirements. If the team
-%%  addresses only some of them or takes a different route, that choice
-%%  must be justified here.
+%%  Task: explain or represent the approach (a flowchart may help), with
+%%  the general picture and the tools and methods, without defining the
+%%  methods. Motivate the choice of modelling tools and uncertainty
+%%  quantification methods, compared with other tools from the course.
+%%  If the team addresses only some challenge tasks or takes a different
+%%  route, justify that choice here.
 %% ----------------------------------------------------------------------
 
+\definecolor{catgreen}{HTML}{4CAF50}
+\definecolor{catorange}{HTML}{F59E0B}
+\definecolor{catred}{HTML}{DC2626}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    font=\footnotesize\sffamily,
+    node distance=4mm and 5mm,
+    box/.style={rectangle, rounded corners=2pt, draw, thick, fill=gray!8,
+                align=center, minimum height=11mm, text width=21mm, inner sep=2pt},
+    cls/.style={box, draw=#1!70!black, fill=#1!22},
+    arrow/.style={-{Stealth[length=2mm]}, thick},
+    lbl/.style={font=\scriptsize\sffamily, inner sep=1pt}
+]
+\node[box, fill=gray!22] (reg) {Asset register:\\51 walmuren};
+\node[box, right=of reg] (life) {Past design life in 2026?};
+\node[box, right=of life] (mas) {Masonry wall?};
+\node[box, right=of mas] (old) {Original timber piles and a werf?};
+\node[box, right=of old] (mc) {Monte Carlo $P_f$ with proven strength (2.1)};
+\node[box, right=of mc, left color=catred!30, right color=catorange!30] (beta)
+    {$\beta$ against NEN~8700: red below, orange above};
+\node[cls=catgreen, below=of life] (green) {Green: regular maintenance};
+\node[cls=catorange, below=of mas] (orange) {Orange: other model};
+\node[box, below=of old] (out) {Not modelled: renewed or no werf};
+\node[box, below=of mc, dashed] (sens) {Sensitivity: what to measure (1.3)};
+\node[box, below=of beta] (ft) {Fault tree with human and organisational causes (3.1)};
+\node[box, below=of ft] (dt) {Decision tree of interventions (3.2)};
+\node[box, left=of dt] (rec) {Regression and advice (4)};
+\draw[arrow] (reg) -- (life);
+\draw[arrow] (life) -- node[lbl, above] {yes} (mas);
+\draw[arrow] (mas) -- node[lbl, above] {yes} (old);
+\draw[arrow] (old) -- node[lbl, above] {yes} (mc);
+\draw[arrow] (mc) -- (beta);
+\draw[arrow] (life) -- node[lbl, right] {no} (green);
+\draw[arrow] (mas) -- node[lbl, right] {no} (orange);
+\draw[arrow] (old) -- node[lbl, right] {no} (out);
+\draw[arrow, dashed] (mc) -- (sens);
+\draw[arrow] (beta) -- (ft);
+\draw[arrow] (ft) -- (dt);
+\draw[arrow] (dt) -- (rec);
+\end{tikzpicture}
+\caption{Approach of this study, from the screening of the asset register to
+the recommendations. Numbers in brackets refer to the sections of this
+report. The NEN~8700 levels are 1.8, 2.5 and 3.3 for consequence classes
+CC1b, CC2 and CC3.}
+\label{fig:approach}
+\end{figure}
+
+Figure~\ref{fig:approach} shows the approach. It works from coarse to fine, so
+that the costly probabilistic analysis is spent only on walls where it can
+change a decision. Its structure follows the Amsterdam risk assessment of
+quay walls (ARK), which sorts walls into green, orange and red
+\parencite{ark2023}. ARK, however, scores condition and consequences
+qualitatively, whereas the question of the municipality is how uncertain the
+evidence is and what that means for the order of the work. The team
+therefore kept the three classes and replaced the qualitative score of a
+masonry wall by a failure probability.
+
+The screening uses only the asset register and the foundation data of
+Section~\ref{sec:data}. A wall within its design life, which is the
+construction or renewal year plus the 80 years that the register assigns to
+a walmuur, is green and stays in regular maintenance. A wall past its design
+life that is not masonry is orange, because its deterioration, such as
+corrosion or concrete damage, needs a different model. Walls renewed on steel
+piles and walls without a werf leave the model, as the timber-pile mechanism
+does not describe them. For each remaining wall, the failure probability over
+the 15-year reference period is computed (Section~\ref{sec:prob}) and $\beta$
+is compared with the rejection levels of NEN~8700 and NEN~8707
+\parencite{nen8700,nen8707}. A wall below the level of its consequence class
+is red and a wall above it is orange. Because the consequence class of a
+walmuur has not been established, all three levels are reported, and a wall
+below 1.8 is red in any class.
+
+Crude Monte Carlo simulation was chosen to compute the failure probability,
+rather than FORM or numerical integration, for three reasons. The limit
+states are not smooth, since for example a sound pile core thinner than 20\,mm
+counts as broken; the wall type enters as a discrete mixture; and the update
+with proven strength reduces to keeping the draws that pass the survival
+check \parencite{hemel2024}, with both limit states and the check evaluated on
+the same draws so that their dependence is kept. For the failure
+probabilities found here, 0.007 and higher, 400{,}000 draws give a
+coefficient of variation below 2\,\%, so the computational cost is small. A
+deterministic recalculation with partial factors was not possible without
+design data and would carry the margins for new structures that the
+assignment questions, while ARK alone would not quantify the uncertainty. A
+one-at-a-time sensitivity analysis then shows which inputs drive $\beta$ and
+therefore what the municipality should measure
+(Section~\ref{sec:dimension-reduction}).
+
+The structural failure probability is only one cause of the undesired event
+for the programme, which is that the programme does not prevent the failure
+of a wall. A fault tree (Section~\ref{sec:fault-tree}) therefore combines it
+with human and organisational causes, such as a missed inspection or a
+delayed repair, and propagates it over the 17 walls by Monte Carlo
+simulation with common causes. A decision tree (Section~\ref{sec:tradeoff})
+compares interventions on expected cost and with risk-averse criteria, and
+Chapter~\ref{chapter:prediction-recommendations} estimates replacement costs
+by regression and turns the results into recommendations. Of the tasks in the
+assignment, the extrapolation towards 2050 is covered only in part, because
+the failure model is limited to the 15-year reference period and the
+condition of the piles is too uncertain to extrapolate further.

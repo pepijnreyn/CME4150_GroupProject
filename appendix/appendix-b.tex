@@ -90,6 +90,51 @@ P(T = 2 \mid E) = \frac{p\,P(E \mid T=2)}{p\,P(E \mid T=2) + (1-p)\,P(E \mid T=1
 P_f = \sum_{T} P(T \mid E)\,P_f(T \mid E).
 \end{equation}
 
+\subsection{Results per wall}\label{app:prob-results}
+
+Table~\ref{tab:prob-results} gives the result of the run of 30 October 2026
+(400{,}000 draws per wall and type) for every modelled wall. The prior
+$P(T{=}2)$ is the chance of type~2 for the rak; the updated value follows from
+Equation~(\ref{eq:mixture}). All $\beta$ values are updated with proven
+strength. Kromme Nieuwe Gracht 005 to 007 get the same result, because nothing
+in the data tells them apart.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Reliability index $\beta$ per modelled wall, updated with proven
+strength. OG = Oude Gracht, KNG = Kromme Nieuwe Gracht. Type 1 and type 2:
+$\beta$ in 2026 if the wall is of that type. Best estimate: both types
+weighted by $P(T \mid E)$.}
+\label{tab:prob-results}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}l r l c r r r r@{}}
+\toprule
+ & & & $P(T{=}2)$ & \multicolumn{2}{c}{$\beta$ 2026, per type} & \multicolumn{2}{c}{$\beta$ best estimate} \\
+\cmidrule(lr){5-6}\cmidrule(l){7-8}
+Wall & Length [m] & Soil class & prior $\rightarrow$ updated & Type 1 & Type 2 & 2026 & 2041 \\
+\midrule
+OG Rak 03 OZ    & 101.1 & clay/peat & 0.2 $\rightarrow$ 0.34 & $-0.70$ & 1.62 & $-0.06$ & $-0.08$ \\
+OG Rak 04 OZ    &  67.4 & sand      & 0.2 $\rightarrow$ 0.21 & 0.64    & 2.04 & 0.81    & 0.76 \\
+OG Rak 05 NZ    &  72.1 & sand      & 0.2 $\rightarrow$ 0.21 & 0.66    & 2.05 & 0.82    & 0.78 \\
+OG Rak 06 NZ    &  43.7 & sand      & 0.2 $\rightarrow$ 0.20 & 1.05    & 2.45 & 1.18    & 1.14 \\
+OG Rak 06 ZZ    &  57.1 & sand      & 0.2 $\rightarrow$ 0.21 & 0.66    & 2.06 & 0.83    & 0.78 \\
+OG Rak 08 OZ    &  32.7 & mixed     & 0.8 $\rightarrow$ 0.82 & 0.27    & 2.11 & 1.38    & 1.31 \\
+OG Rak 09 ZOZ   &  54.5 & clay/peat & 0.8 $\rightarrow$ 0.90 & $-0.79$ & 1.50 & 1.10    & 1.00 \\
+OG Rak 09 WZ    &  53.4 & clay/peat & 0.8 $\rightarrow$ 0.92 & $-0.91$ & 1.35 & 1.05    & 0.93 \\
+OG Rak 09 WZ 01 &   3.4 & clay/peat & 0.8 $\rightarrow$ 0.89 & $-0.69$ & 1.65 & 1.13    & 1.04 \\
+KNG 002         &  16.2 & clay/peat & 0.9 $\rightarrow$ 0.94 & $-0.65$ & 1.68 & 1.37    & 1.26 \\
+KNG 003         &   9.9 & mixed     & 0.9 $\rightarrow$ 0.92 & 0.10    & 1.89 & 1.52    & 1.40 \\
+KNG 004         &  11.1 & mixed     & 0.9 $\rightarrow$ 0.93 & $-0.09$ & 1.66 & 1.39    & 1.24 \\
+KNG 005         &  13.3 & clay/peat & 0.5 $\rightarrow$ 0.74 & $-0.79$ & 1.27 & 0.59    & 0.52 \\
+KNG 006         &   4.1 & clay/peat & 0.5 $\rightarrow$ 0.74 & $-0.79$ & 1.27 & 0.59    & 0.52 \\
+KNG 007         &  10.3 & clay/peat & 0.5 $\rightarrow$ 0.74 & $-0.79$ & 1.27 & 0.59    & 0.52 \\
+KNG 008         &  42.1 & clay/peat & 0.5 $\rightarrow$ 0.60 & $-0.47$ & 1.95 & 0.56    & 0.53 \\
+KNG 009         &  18.3 & sand      & 0.5 $\rightarrow$ 0.51 & 1.07    & 2.46 & 1.45    & 1.40 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Sensitivity to dependence and inputs}\label{app:prob-sensitivity}
 
 The script \texttt{SensitivityDependence.py} (in
@@ -114,10 +159,10 @@ $\beta$ (updated, 2026); Table~\ref{tab:sens-walls} gives every wall.
 \toprule
 Change & Best estimate & Type 1 & Type 2 \\
 \midrule
-$\rho(K,\gamma) = -0.5$ & $0.00$ [$-0.01$, $+0.01$] & $+0.01$ [$-0.01$, $+0.02$] & $0.00$ [$-0.01$, $+0.01$] \\
-$\rho(\text{MOR},E) = +0.8$ & $0.00$ [$-0.01$, $+0.01$] & $0.00$ [$-0.03$, $+0.01$] & $+0.01$ [$0.00$, $+0.03$] \\
-Groundwater +0.6 to +1.0\,m NAP & $-0.02$ [$-0.38$, $+0.14$] & $-0.20$ [$-0.43$, $-0.12$] & $-0.06$ [$-0.09$, $-0.04$] \\
-Soil class uncertain & $+0.06$ [$-0.70$, $+0.29$] & -- & -- \\
+$\rho(K,\gamma) = -0.5$ & $0.00$ [$-0.01$, $0.00$] & $+0.01$ [$-0.01$, $+0.01$] & $0.00$ [$-0.01$, $+0.01$] \\
+$\rho(\text{MOR},E) = +0.8$ & $0.00$ [$0.00$, $+0.01$] & $0.00$ [$-0.01$, $+0.01$] & $+0.01$ [$0.00$, $+0.03$] \\
+Groundwater +0.6 to +1.0\,m NAP & $+0.02$ [$-0.38$, $+0.08$] & $-0.22$ [$-0.43$, $-0.18$] & $-0.06$ [$-0.10$, $-0.05$] \\
+Soil class uncertain & $+0.06$ [$-0.70$, $+0.56$] & -- & -- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -134,23 +179,23 @@ OG = Oude Gracht, KNG = Kromme Nieuwe Gracht.}
 \toprule
 Wall & Class & Shares c/s/m & Base & $\rho(K,\gamma)$ & $\rho(\text{MOR},E)$ & Groundw. & Soil unc. \\
 \midrule
-OG Rak 03 OZ & clay/peat & 0.50 / 0.50 / 0.00 & 0.13 & 0.14 & 0.12 & 0.27 & 0.34 \\
+OG Rak 03 OZ & clay/peat & 0.50 / 0.50 / 0.00 & $-0.05$ & $-0.05$ & $-0.05$ & 0.00 & 0.51 \\
 OG Rak 04 OZ & sand & 0.50 / 0.33 / 0.17 & 0.81 & 0.81 & 0.81 & 0.55 & 0.38 \\
-OG Rak 05 NZ & sand & 0.40 / 0.60 / 0.00 & 0.81 & 0.81 & 0.81 & 0.55 & 0.55 \\
+OG Rak 05 NZ & sand & 0.40 / 0.60 / 0.00 & 0.83 & 0.82 & 0.83 & 0.56 & 0.56 \\
 OG Rak 06 NZ & sand & 0.50 / 0.33 / 0.17 & 1.18 & 1.17 & 1.18 & 0.80 & 0.48 \\
 OG Rak 06 ZZ & sand & 0.57 / 0.29 / 0.14 & 0.82 & 0.82 & 0.82 & 0.57 & 0.33 \\
 OG Rak 08 OZ & mixed & 0.56 / 0.11 / 0.33 & 1.38 & 1.38 & 1.38 & 1.30 & 1.28 \\
-OG Rak 09 ZOZ & clay/peat & 0.50 / 0.17 / 0.33 & 1.08 & 1.08 & 1.09 & 1.12 & 1.19 \\
+OG Rak 09 ZOZ & clay/peat & 0.50 / 0.17 / 0.33 & 1.10 & 1.10 & 1.10 & 1.14 & 1.21 \\
 OG Rak 09 WZ & clay/peat & 0.56 / 0.11 / 0.33 & 1.05 & 1.05 & 1.05 & 1.08 & 1.14 \\
 OG Rak 09 WZ 01 & clay/peat & 0.50 / 0.17 / 0.33 & 1.13 & 1.13 & 1.14 & 1.19 & 1.26 \\
-KNG 002 & clay/peat & 0.67 / 0.00 / 0.33 & 0.79 & 0.78 & 0.80 & 0.75 & 0.90 \\
+KNG 002 & clay/peat & 0.67 / 0.00 / 0.33 & 1.37 & 1.37 & 1.38 & 1.39 & 1.43 \\
 KNG 003 & mixed & 0.75 / 0.00 / 0.25 & 1.52 & 1.52 & 1.53 & 1.48 & 1.37 \\
-KNG 004 & mixed & 0.75 / 0.00 / 0.25 & 1.38 & 1.38 & 1.39 & 1.36 & 1.22 \\
+KNG 004 & mixed & 0.75 / 0.00 / 0.25 & 1.39 & 1.39 & 1.40 & 1.37 & 1.23 \\
 KNG 005 & clay/peat & 0.50 / 0.00 / 0.50 & 0.59 & 0.59 & 0.59 & 0.67 & 0.65 \\
 KNG 006 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.60 & 0.60 & 0.67 & 0.73 \\
 KNG 007 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.59 & 0.59 & 0.67 & 0.73 \\
 KNG 008 & clay/peat & 0.40 / 0.20 / 0.40 & 0.56 & 0.56 & 0.56 & 0.60 & 0.85 \\
-KNG 009 & sand & 0.67 / 0.33 / 0.00 & 0.72 & 0.72 & 0.73 & 0.66 & 0.66 \\
+KNG 009 & sand & 0.67 / 0.33 / 0.00 & 1.44 & 1.44 & 1.45 & 1.12 & 0.81 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -170,12 +215,69 @@ update moves $P(T{=}2)$ up. Walls in sand, where type 1 is likely, lose most.
 \paragraph{Soil class.} Most walls have borings of all three classes within
 150\,m. Walls classed as sand lose up to 0.7 in $\beta$, because half of their
 nearby borings find clay or peat. Walls classed as clay or peat gain up to
-0.3.
+0.6 (Rak 03 OZ, where half of the nearby borings find sand).
 
 \paragraph{The two limit states.} For type 2, overturning and pile failure
-occur together 3.4 times as often (median) as if they were independent: both
+occur together 4.4 times as often (median) as if they were independent: both
 grow with the soil load. Because overturning is rare for type 2, the series
-$P_f$ differs by at most 8\,\% from the value for independent limit states.
+$P_f$ differs by less than 8\,\% from the value for independent limit states.
+
+\subsection{One-at-a-time sensitivity}\label{app:prob-tornado}
+
+The script \texttt{SensitivityTornado.py} (in
+\texttt{scripts/StressCaclulation/}) supports Section~\ref{sec:dimension-reduction}.
+For each of the 17 walls it reruns the model once as it is, twice for each of
+the 18 random inputs, fixed at its 5th and at its 95th percentile, once for
+each soil class, and once with six minor inputs fixed together at their
+medians, with 100{,}000 draws per wall, type and run. A fixed input still uses
+up its random numbers, so all other inputs get the same draws in every run and
+the differences are not Monte Carlo noise. It writes
+\texttt{walmuur\_tornado.csv} in \texttt{data/processed/}.
+Table~\ref{tab:tornado-full} gives the change in $\beta$ (updated, 2026, for
+the shell growth 2041) from the 5th to the 95th percentile. For Kromme Nieuwe
+Gracht 005 to 007 the werf level is an assumed range, not a measurement error,
+so it is shown separately and is not fixed in the last row. Between the wall
+types, $\beta$ differs by 2.06 (median; 1.36 to 2.41), and between the
+highest and lowest soil class by 0.49 (0.37 to 1.19, best estimate).
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Change in $\beta$ when one input moves from its 5th to its 95th
+percentile: median [range] over the walls. Best estimate: both types weighted
+by $P(T \mid E)$.}
+\label{tab:tornado-full}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}l l r r r@{}}
+\toprule
+Input & 5th to 95th percentile & Type 1 & Type 2 & Best estimate \\
+\midrule
+Earth pressure coefficient $K$ & Per class\textsuperscript{a} & \textminus2.38 [\textminus3.18, \textminus1.71] & \textminus0.97 [\textminus1.23, \textminus0.68] & \textminus0.38 [\textminus2.07, +0.57] \\
+Distance $a$ of the surcharge & 0.15--2.85\,m & +1.45 [+1.08, +1.57] & +1.01 [+0.73, +1.12] & +0.74 [+0.69, +1.08] \\
+Soft shell $s_0$ & 2--43\,mm & \textminus0.04 [\textminus0.17, \textminus0.02] & \textminus1.50 [\textminus2.84, \textminus1.17] & \textminus0.54 [\textminus0.95, \textminus0.18] \\
+Pile diameter $D_0$ & 150--210\,mm & +0.04 [+0.01, +0.18] & +1.49 [+0.92, +2.72] & +0.40 [+0.15, +0.81] \\
+Werf level, assumed (KNG 005--007) & 1.03--1.57\,m NAP & \textminus0.75 [\textminus0.77, \textminus0.73] & \textminus1.04 [\textminus1.05, \textminus1.04] & +0.04 [+0.04, +0.05] \\
+Model factor $\theta_R$ & 0.77--1.26 & +0.84 [+0.67, +1.22] & +0.12 [\textminus0.02, +0.34] & \textminus0.03 [\textminus0.25, +1.10] \\
+Groundwater level & +0.52 to +0.88\,m NAP & \textminus0.82 [\textminus1.46, \textminus0.63] & \textminus0.18 [\textminus0.36, \textminus0.17] & +0.05 [\textminus1.32, +0.28] \\
+Foundation level & \textminus0.135 to +0.135\,m & +0.66 [+0.55, +0.91] & +0.49 [+0.37, +0.52] & +0.20 [\textminus0.04, +0.85] \\
+Surcharge $q$ & 4.7--9.3\,kPa & \textminus0.60 [\textminus0.70, \textminus0.56] & \textminus0.49 [\textminus0.53, \textminus0.34] & \textminus0.36 [\textminus0.55, \textminus0.31] \\
+Pile spacing $s$ & 0.82--1.18\,m & \textminus0.01 [\textminus0.04, 0.00] & \textminus0.41 [\textminus0.46, \textminus0.28] & \textminus0.12 [\textminus0.25, \textminus0.04] \\
+Bending strength MOR & 18.4--25.6\,MPa & +0.01 [0.00, +0.04] & +0.37 [+0.26, +0.41] & +0.12 [+0.04, +0.23] \\
+Werf level, measured (14 walls) & AHN $\pm$0.08\,m & \textminus0.26 [\textminus0.31, \textminus0.22] & \textminus0.32 [\textminus0.39, \textminus0.25] & \textminus0.16 [\textminus0.28, 0.00] \\
+Model factor $\theta_M$ & 0.84--1.17 & \textminus0.01 [\textminus0.03, 0.00] & \textminus0.32 [\textminus0.34, \textminus0.22] & \textminus0.10 [\textminus0.20, \textminus0.03] \\
+Unit weight of masonry & 17.4--20.6\,kN/m$^3$ & +0.20 [+0.15, +0.27] & 0.00 [0.00, 0.00] & \textminus0.01 [\textminus0.10, +0.25] \\
+Subgrade modulus $k$ & 4{,}585--9{,}715\,kN/m$^3$ & 0.00 [0.00, +0.02] & +0.18 [+0.13, +0.20] & +0.06 [+0.02, +0.12] \\
+Modulus of elasticity $E$ & 6.0--12.0\,GPa & 0.00 [\textminus0.01, 0.00] & \textminus0.16 [\textminus0.19, \textminus0.11] & \textminus0.05 [\textminus0.10, \textminus0.02] \\
+Unit weight of soil $\gamma$ & Per class & +0.13 [+0.12, +0.20] & \textminus0.11 [\textminus0.14, \textminus0.03] & +0.05 [\textminus0.05, +0.18] \\
+Unit weight tamped concrete & 21.1--24.9\,kN/m$^3$ & 0.00 [0.00, 0.00] & +0.02 [0.00, +0.03] & 0.00 [0.00, +0.02] \\
+Shell growth $r$ (2041) & 0.11--0.24\,mm/yr & \textminus0.01 [\textminus0.03, \textminus0.01] & \textminus0.14 [\textminus0.18, \textminus0.12] & \textminus0.06 [\textminus0.11, \textminus0.02] \\
+Six minor inputs at their medians\textsuperscript{b} & -- & 0.00 [\textminus0.01, +0.01] & +0.01 [0.00, +0.03] & 0.00 [\textminus0.01, +0.01] \\
+\bottomrule
+\multicolumn{5}{@{}p{0.97\textwidth}@{}}{\textsuperscript{a} Sand 0.25--0.48,
+mixed 0.29--0.65, clay or peat 0.42--0.81. \textsuperscript{b} Measured werf
+level, unit weights of soil and tamped concrete, $E$, $k$ and shell growth.}
+\end{tabular}
+\end{table}
 
 \subsection{Checks against data}\label{app:prob-data}
 
@@ -193,8 +295,8 @@ checked with the data available for the 17 walls.
 Input & Model & Data & Verdict \\
 \midrule
 Werf level & $N(\text{median}, 0.05\,\text{m})$ &
-  AHN points below +1.6\,m NAP: SD 0.08\,m (0.01--0.33) per wall; standard error of the mean about 0.04\,m &
-  Fits the wall average; three walls biased by stair or street points \\
+  AHN points below +1.6\,m NAP: SD 0.07\,m (0.01--0.33) per wall; standard error of the mean about 0.04\,m &
+  Fits the wall average once points on stairs or the street are left out \\
 Groundwater & $U(+0.5, +0.9)$\,m NAP &
   BRO, $1/d^2$ over 6 wells, nearest 146--309\,m away: GLG +0.90 to +1.64, GHG +1.43 to +2.15\,m NAP &
   Data not representative of the werf; physical bound used \\
@@ -218,12 +320,10 @@ estimate is
 \begin{equation}
 \text{CoV}(\hat P_f) = \sqrt{\frac{1 - \hat P_f}{n \hat P_f}}.
 \end{equation}
-The worst case is Rak 06 NZ, type 2, with $\hat P_f = 0.007$ and
-$n = 398{,}840$: a CoV of 1.9\,\%. The standard error of $\beta$ is at most
+The worst case is Kromme Nieuwe Gracht 009, type 2, with $\hat P_f = 0.007$
+and $n = 398{,}880$: a CoV of 1.9\,\%. The standard error of $\beta$ is at most
 0.01 for every wall and type.
 
 \section{Source code}
 \label{app:pm-code}
-
- 
 
