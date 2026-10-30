@@ -1,0 +1,119 @@
+\chapter{Prediction and Recommendations}
+\label{chapter:prediction-recommendations}
+
+\section{Regression Analysis}
+\label{sec:regression}
+
+\begin{comment}
+    • Reliability over time (notebook 03, figures/reliability_sensitivity.png): β falls from 3.46 now to 3.24 at 15 years and 2.80 at 50 years. It drops below CC3 (3.3) within about 10 years and stays above CC2 (2.5) for 50 years. This is a model extrapolation through D(t) = D0 − 0.34 t, not a fit to data.
+• Groundwater trend per well (wells_groundwater.csv, column trend_mm_per_year): a least-squares slope through yearly means, for the 492 of 721 wells with at least 5 years. Records are short (median 4 hydrological years), so any extrapolation to 2050 needs confidence intervals.
+• Design-life end years by material (plot_design_life_by_material.py): the share of quay objects past Eindjaar in 2026 is 79% for masonry, 69% plastic, 58% timber, 27% concrete and 26% steel. Eindjaar is a fixed term per material, so a backlog curve built on it tracks the bookkeeping rule, not condition.
+• Programme rate: 3,356 of 4,136 m of walmuur restored by April 2026, with renewals since 2013 (sources in figures/wervengebied_data_table_README.md). Renewal years per wall, 2015–2026, are in walmuur_foundation.csv: the raw material for a production-rate fit.
+• Not in the code: any fitted regression, hypothesis test or confidence interval.
+
+\end{comment}
+
+\subsection{Linear Regression for Quay Wall Maintenance Costs}
+\textbf{Estimating quay wall maintenance costs under uncertainty}
+
+Central question: How can maintenance cost estimates based on wall length, heritage constraints and construction disruption support maintenance programming for quay walls with similar structural risk profiles, and how uncertain are these estimates?
+
+The case:
+The Municipality of Utrecht must strategically programme quay wall maintenance, strengthening and replacement within limited budgets and time constraints. Although Monte Carlo simulations have established failure probabilities and risk profiles, quay walls with similar risk levels may require further comparison to determine financially and operationally feasible intervention schedules.
+
+Multiple regression analysis is used to investigate the relationship between estimated replacement cost and three explanatory variables: wall length, heritage constraints and construction disruption. The analysis draws on published financial figures for completed, ongoing and planned replacement or reconstruction projects across the Netherlands. A baseline model relates cost to length, followed by the introduction of heritage and disruption scores to assess their additional explanatory contribution.
+
+The resulting model provides exploratory replacement cost estimates for selected Utrecht quay wall sections using their lengths and assessed heritage and disruption scores. These estimates, together with prediction uncertainty, support budget allocation and maintenance programming towards 2050. Structural risk remains the basis for intervention urgency.
+
+%% ----------------------------------------------------------------------
+%%  MAX 1.5 PAGES
+%%
+%%  TASK DESCRIPTION
+%%  Make educated guesses to predict other outcomes and future trends, to
+%%  investigate future scenarios, or to inform the Municipality of Utrecht
+%%  about alternative outcomes if specific actions are taken.
+%%  Validate the assumed hypothesis. You may also estimate the confidence
+%%  intervals.
+%%  You may include graphs to support statements, and use the appendices
+%%  for other supporting information.
+%%
+%%  CHECKLIST (challenge task 7: extrapolate towards 2050)
+%%   - Predict outcomes under alternative futures, or under alternative
+%%     municipal actions.
+%%   - For instance: how measurable indicators relate to condition and
+%%     remaining service life, or how annual budget and production rate
+%%     translate into backlog and risk exposure over time.
+%%   - Useful reference points: the Wervengebied recovery programme runs
+%%     until 2050 at roughly 100 m of wall and 35 cellars per year, a pace
+%%     set by budget, execution capacity and tolerable disruption rather
+%%     than by the condition of the structures; the inspection programme
+%%     for all quay walls and sheet pile walls completes in 2030.
+%% ----------------------------------------------------------------------
+
+
+\section{Results Interpretation and Proposed Recommendations}
+\label{sec:results-recommendations}
+
+```latex
+\begin{table}[htbp]
+\centering
+\caption{Splitting the orange class.}
+\label{tab:orange_split}
+\small
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{1.8cm}}
+\toprule
+\textbf{ARK critique} & \textbf{What we already have} & \textbf{What to do} & \textbf{Section} \\
+\midrule
+Orange mixes ``unknown'' and ``moderate risk'' &
+Section~1.3 already lists $P(\text{red})$ as an output &
+Split orange into \textit{orange-unknown} (non-masonry, not calculated) and \textit{orange-calculated} ($P_f$ below the limit). Use $P(\text{red})$ as a second axis: a reach with $P(\text{red}) \approx 0.5$ is where inspection yields the most. &
+1.4 (flowchart), 3.2 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+
+\begin{comment}
+    The code supports three findings: the register's design life is a weak guide to which walls need work, the simple overturning model cannot separate walls, and measuring H and foundation status is worth more than refining the models.
+• The register overstates the backlog. 11 of the 29 walmuren past design life are already renewed on steel (1,267 of 1,885 m), yet screening on Aanlegjaar puts them back in the queue. A foundation-status field per wall is the first fix; the Wervenkadaster would settle the 8 unclear walls.
+• The block model is too conservative to rank walls. Mean load 2.78–4.22 kNm/m against mean resistance 2.09 kNm/m: it fails walls that stand. This fits the brief's point that code-based models understate capacity. The missing pieces are the floor, the soil on a heel and the piles.
+• The pile model supports relative statements only. Its β of 3.24 at 15 years rests on Amsterdam inputs, and it does not reproduce its own benchmark (β 1.5).
+• The safety level is a choice that changes the answer. The same β of 3.24 passes CC2 and fails CC3.
+• What to measure next, in order of effect on the model:
+    1. Canal bottom per rak (soundings): sets H, and the soil load grows with H³.
+    2. The load case on the werf: where people, terraces and vehicles stand (a).
+    3. K near the walls: borings within 150 m agree for only 9 of the 51 walls.
+    4. Wall-thickness profile and pile diameter: the resistance side.
+• Candidates for the one data request. The code names three: canal-bottom soundings per rak, the foundation renewal year per rak, and the Wervenkadaster.
+• Not in the code: costs, a programming direction, and synergies with other works.
+\end{comment}
+```
+
+% This needs `\usepackage{booktabs, tabularx, array, amsmath}` in your preamble.
+%% ----------------------------------------------------------------------
+%%  MAX 1.5 PAGES
+%%
+%%  TASK DESCRIPTION
+%%  Discuss the obtained solution by linking the results to the level of
+%%  abstraction of the selected models, the data uncertainty, and the
+%%  assumptions made in Section \ref{sec:assumptions-data}. Discuss and
+%%  justify the soundness of the results.
+%%  You may include graphs to support statements, and use the appendices
+%%  for other supporting information.
+%%  Based on the interpretation of the results, what is the recommendation
+%%  you give to the Municipality of Utrecht? Communicate the results to
+%%  non-experts in data and uncertainty management. You may suggest
+%%  feasible interventions, expected benefits, associated costs,
+%%  uncertainties and risks, as well as potential synergies with other
+%%  transport and spatial planning initiatives.
+%%
+%%  CHECKLIST (challenge task 8: prepare actionable recommendations)
+%%   - Integrate the analyses into a substantiated recommendation stating
+%%     what is known, what is assumed, which programming direction you
+%%     propose, and what the municipality should measure next in order to
+%%     reduce the uncertainty that currently dominates the decision.
+%%   - Flag which recommendations need an institutional or regulatory
+%%     change rather than money.
+%% ----------------------------------------------------------------------
+

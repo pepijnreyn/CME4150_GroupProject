@@ -1,0 +1,186 @@
+\chapter{Probabilistic Modelling}
+\section{Probabilistic models}\label{sec:prob}
+
+The risk analysis (Sections~3.1 and~3.2) needs the probability of failure of
+each of the 17 walmuren that still stand on timber piles
+(Section~\ref{sec:data}). We model it with two limit states, evaluated by
+Monte Carlo simulation, and check the model against data and observations.
+The full equations are in Appendix~\ref{app:prob}.
+
+\subsection{Limit states}\label{sec:prob-ls}
+
+A wall fails when its body (wall, floor and the soil on it) overturns about
+the front pile row, or when a timber pile breaks in bending
+\cite{hemel2023,hemel2024}:
+\begin{align}
+g_1 &= \theta_R M_R + M_\delta - S, \label{eq:g1}\\
+g_2 &= \text{MOR} - \left(\theta_M \frac{32 M}{\pi d^3} + \frac{4N}{\pi d^2}\right),
+\qquad d = D_0 - 2\bigl(s_0 + r\,(t - 2026)\bigr). \label{eq:g2}
+\end{align}
+$S$ is the moment of soil, water and surcharge, $M_R$ that of the weight of
+the body and $M_\delta$ that of wall friction. $M$ and $N$ act in a pile whose
+sound core $d$ shrinks as the rotted shell $s_0$ grows at rate $r$. The wall
+fails if either limit state is violated (series system):
+$P_f = P(g_1 < 0 \cup g_2 < 0)$ and $\beta = -\Phi^{-1}(P_f)$, estimated as
+the fraction of failed draws (400{,}000 per wall and type; 2026 and 2041).
+
+\subsection{Random variables and distributions}\label{sec:prob-variables}
+
+Table~\ref{tab:prob-variables} lists the random variables. Each type of
+distribution follows from what is known: a \emph{lognormal} for positive
+quantities with a multiplicative error, such as $K$ and the model factors
+$\theta$ \cite{jcss2001}; a \emph{normal} for unit weights and timber
+properties, where a CoV of at most 0.20 makes negative values negligible; a
+\emph{uniform} where only a range is known, as it adds nothing beyond the
+bounds; and a \emph{Bernoulli} for the wall type.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Random variables of the model. Per wall: values differ between
+walls. CoV = coefficient of variation.}
+\label{tab:prob-variables}
+\begin{tabularx}{\textwidth}{@{}l l l >{\raggedright\arraybackslash}X@{}}
+\toprule
+Variable & Distribution & Parameters & Estimation \\
+\midrule
+Werf level (per wall) & Normal & AHN median; $\sigma = 0.05$\,m & AHN data \\
+Wall type $T$ (per wall) & Bernoulli & $P(T{=}2)$ = 0.2--0.9 per rak & Dive notes \cite{tno2009} \\
+Earth pressure $K$ & Lognormal & 0.35--0.60; CoV 0.20--0.25 & Moments per soil class \\
+Soil unit weight $\gamma$ & Normal & 15--18\,kN/m$^3$; CoV 0.05--0.06 & Moments per soil class \\
+Surcharge $q$; distance $a$ & Normal; uniform & 7\,kPa, CoV 0.20; 0--3\,m & \cite{hemel2024}; range \\
+Groundwater & Uniform & +0.5 to +0.9\,m NAP & Range around canal level \\
+Unit weights wall & Normal & 19 / 23\,kN/m$^3$; CoV 0.05 & Typical values \\
+Floor level $\Delta z$ & Uniform & $\pm 0.15$\,m & Drawing accuracy \\
+Model factors $\theta_R$, $\theta_M$ & Lognormal & mean 1; CoV 0.15, 0.10 & Judgement; JCSS \cite{jcss2001} \\
+Pile diameter $D_0$ & Normal & 180\,mm; CoV 0.10 & \cite{ibu2010,hemel2023} \\
+Pile spacing $s$ & Uniform & 0.8--1.2\,m & \cite{ibu2010} \\
+Soft shell $s_0$; growth $r$ & Uniform & 0--45\,mm; 0.10--0.25\,mm/yr & Measured range \cite{hemel2023} \\
+MOR; $E$ & Normal & 22\,MPa, CoV 0.10; 9\,GPa, 0.20 & \cite{hemel2023} \\
+Subgrade modulus $k$ & Uniform & 4{,}300--10{,}000\,kN/m$^3$ & \cite{hemel2023} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The parameters are estimated in three ways: from a literature mean and CoV
+(method of moments), from our own data (werf level, wall-type prior), and by
+Bayesian updating with the observation that every wall still stands (proven
+strength \cite{hemel2024}). Draws in which the wall would already fail today
+under soil and water alone are rejected; the same evidence updates
+$P(T{=}2)$ (Appendix~\ref{app:prob}).
+
+\subsection{Dependence between the variables}\label{sec:prob-dependence}
+
+The dependence is modelled explicitly in four ways:
+\begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+  \item \textbf{Common cause.} The wall type sets the geometry, the floor
+    level, the rake of the piles and the head fixity together. The soil class
+    sets the means of $K$ and $\gamma$. $P_f$ is a mixture:
+    $P_f = \sum_T P(T \mid E)\,P_f(T \mid E)$.
+  \item \textbf{Shared variables.} One draw of $K$ enters the soil pressure,
+    the surcharge pressure and the wall friction ($\delta = \tfrac23\varphi$,
+    with $\varphi$ from $K$). One groundwater level enters the soil weight,
+    the water pressure and the buoyancy of the body.
+  \item \textbf{Same draws.} Both limit states use the same draws, so their
+    correlation is kept: for type 2, overturning and pile failure occur
+    together 3.4 times as often as if they were independent. The years 2026
+    and 2041 share the piles; only the shell grows.
+  \item \textbf{Proven strength.} The check ``stands today'' shares all
+    resistance and soil variables with the future load case, but has its own
+    groundwater and no surcharge.
+\end{enumerate}
+Other variables are independent, as no data on their correlation exist. We
+tested the two most likely correlations (Appendix~\ref{app:prob}): denser
+soil is heavier with a lower $K$, $\rho(K,\gamma) = -0.5$, and stronger timber
+is stiffer, $\rho(\text{MOR}, E) = 0.8$ \cite{jcss2001}. Each changes $\beta$
+by at most 0.03, mostly upwards, so independence is acceptable and slightly
+conservative. The walls are simulated independently, although in reality
+they share the uncertain pile condition, surcharge and model factors; this
+matters when walls are combined in Section~3.1.
+
+\subsection{Model quality and validity}\label{sec:prob-validity}
+
+Few inputs can be tested against data, but where they can:
+\begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+  \item \textbf{Werf level.} AHN points on a werf scatter by about 0.08\,m,
+    so the wall average is known to about 0.04\,m, close to $\sigma =
+    0.05$\,m. For three walls (Rak 03 OZ, Kromme Nieuwe Gracht 002 and 009)
+    the median includes points on stairs or the street, which makes their
+    werf 0.3--0.5\,m too high and their $\beta$ too low.
+  \item \textbf{Groundwater.} The BRO wells, interpolated to the walls, give
+    +0.9 to +2.1\,m NAP, mostly above the werf itself: they stand under the
+    raised streets and do not describe the werf, which drains to the canal.
+    The range is therefore a physical bound, not a fit. Raising it to
+    $U(+0.6, +1.0)$\,m NAP lowers $\beta$ by 0.04--0.09 (type 2) and 0.1--0.4
+    (type 1).
+  \item \textbf{Soil class.} Only 25--67\,\% of the borings within 150\,m
+    give the class of the nearest boring. Treating the class as uncertain,
+    with weights from these borings, changes $\beta$ by $-0.7$ to $+0.3$. Walls
+    classed as sand lose most, as half of their nearby borings find clay or
+    peat. This is the weakest part of the input model.
+  \item \textbf{Pile shell.} $U(0, 45)$\,mm has a mean of 22.5\,mm, close to
+    the 21\,mm measured in Amsterdam \cite{hemel2023}; no Utrecht data exist.
+\end{itemize}
+
+The strongest test is that all 17 walls stand, so a valid model must let
+them stand in most draws. A first model that treated the wall as a masonry
+block failed in almost every draw and was rejected. With the measured
+sections, type 2 stands in 87--100\,\% of the draws and type 1 in only
+10--98\,\%: the type-1 model is conservative, or many walls are type 2, and
+the update shifts $P(T{=}2)$ accordingly. The Monte Carlo error is small
+(CoV of $\hat P_f$ below 2\,\%, $\beta$ within $\pm 0.01$).
+
+The model is valid for low walmuren with a werf on their old timber piles,
+for the two Oudegracht cross-sections. It does not cover settlement, sliding
+or failure of the timber screen. Because the main inputs are literature
+values and ranges, not fits to Utrecht data, the results show the ranking and
+order of magnitude of $P_f$ rather than exact values (Section~4.2).
+
+\newpage
+%% ----------------------------------------------------------------------
+%%  MAX 2 PAGES
+%%
+%%  TASK DESCRIPTION
+%%  To perform the risk analysis in Sections \ref{sec:fault-tree} and
+%%  \ref{sec:trade-off}, you need probabilistic models. Identify the
+%%  relevant variables and clarify the (in)dependence between them.
+
+
+
+%%  Construct adequate probabilistic models with explicit consideration of
+%%  the dependence between the variables. You may use uni- or
+%%  multivariate probability distributions to describe or quantify the
+%%  randomness in the data. You may apply different parameter estimation
+%%  techniques.
+
+
+%%  Justify the selection of the model(s) and evaluate model quality or
+%%  validity. For example: does the model fit the data well? To what
+%%  extent is the model valid to represent the data?
+%%  Use the appendices to add supporting information.
+%%
+
+
+
+
+%%  CHECKLIST (challenge task 4: build probabilistic models of
+%%  deterioration and demand)
+
+
+%%   - Represent the relevant degradation processes and their drivers:
+%%     groundwater fluctuation and drought acting on timber pile
+%%     foundations, bacterial and fungal decay, corrosion, masonry
+%%     degradation, scour, and pressure from tree roots.
+%%   - Represent the future demands placed on the assets: urban
+%%     densification, heavier vehicles and construction traffic, vessel
+%%     impact and mooring, and a changing climate (KNMI'23 scenarios
+%%     project drier summers, wetter winters and more extreme rainfall).
+%%   - Treat dependence between assets and between drivers explicitly
+%%     rather than assuming it away.
+%%   - Consider that the assessment rules themselves are a source of
+%%     uncertainty: they embed safety margins calibrated for new design,
+%%     and the margin between calculated and actual capacity is itself an
+%%     uncertain quantity worth estimating.
+%% ----------------------------------------------------------------------
+
+
