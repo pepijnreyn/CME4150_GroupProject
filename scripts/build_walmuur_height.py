@@ -6,7 +6,9 @@ both levels are estimated:
   werf level    Measured, per wall. The AHN ground level (dtm_05m) is read
                 at 6 places along the wall, 2.5 m to the left and right of
                 it. Over the water AHN has no value, so the side with values
-                is the werf. The werf level is the median of those values.
+                is the werf. The werf level is the median of the values at
+                or below +1.6 m NAP: a point above that hits the street, a
+                stair or a bridge, not the werf.
   canal bottom  Not measured; soundings per rak would give it. Taken at
                 the underside of the wall, -0.08 m NAP (Erfgoed Utrecht
                 report 158, rak 3 west), the same for every wall. The bed
@@ -167,13 +169,15 @@ def height_for_wall(wall: pd.Series, points: pd.DataFrame) -> dict:
         result["werf"] = "no AHN values"
         return result
 
-    werf = ground.median()
+    has_werf = ground.median() <= NO_WERF_ABOVE
+    # On a wall with a werf, leave out the points on the street, a stair or a bridge.
+    werf = ground[ground <= NO_WERF_ABOVE].median() if has_werf else ground.median()
     result.update({
         "werf_nap": round(werf, 2),
         "ground_min_nap": round(ground.min(), 2),
         "ground_max_nap": round(ground.max(), 2),
         "n_points_above_1_6": int((ground > NO_WERF_ABOVE).sum()),
-        "werf": "yes" if werf <= NO_WERF_ABOVE else "no werf? check map",
+        "werf": "yes" if has_werf else "no werf? check map",
         "H_bed_at_wall_m": round(werf - BED_AT_WALL_NAP, 2),
     })
     return result

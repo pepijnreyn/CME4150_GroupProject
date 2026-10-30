@@ -46,8 +46,9 @@ Target $\beta$ & NEN 8700 \cite{nen8700} & 1.8 / 2.5 / 3.3 & Class not chosen \\
 \end{table}
 
 The foundation data decide which walls are modelled at all. Of the 51
-walmuren, 32 are already renewed on steel, including 11 of the 29 that the
-register marks as past their design life. Of the 19 on timber, 2 have no werf:
+walmuren, 32 are already renewed on steel. The register still gives 11 of
+them the year of the old wall; counted from the renewal year, 18 walls instead
+of 29 are past their design life. Of the 19 on timber, 2 have no werf:
 the street runs to the water, which is a different structure. This leaves 17
 walls (611\,m) for the $P_f$ calculation (Appendix~\ref{app:data}).
 
@@ -57,9 +58,10 @@ Eight scripts turn the raw data into one input row per wall. They run in a
 fixed order, each reading the output of the one before
 (Appendix~\ref{app:data}). The main generated values are:
 \begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-  \item \textbf{Werf level and $H$:} the median of six AHN points on the werf
-    side of the wall (+0.99 to +1.57\,m NAP). $H$ is the werf level minus the
-    wall underside at $-0.08$\,m NAP \cite{erfgoed158}; median 1.22\,m.
+  \item \textbf{Werf level and $H$:} the median of the AHN points on the werf
+    side of the wall, leaving out points above +1.6\,m NAP on stairs or the
+    street (+0.91 to +1.40\,m NAP). $H$ is the werf level minus the wall
+    underside at $-0.08$\,m NAP \cite{erfgoed158}; median 1.21\,m.
   \item \textbf{Soil class:} the share of clay-like and sand-like soil between
     werf and wall underside in the nearest boring within 250\,m. At least
     70\,\% of one kind gives that class, otherwise ``mixed''. Of the 51 walls,
@@ -110,12 +112,12 @@ The assumptions do not affect the results equally. In order of effect on
 $\beta$ (interpreted further in Section~4.2):
 \begin{enumerate}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
   \item \textbf{Wall type.} For the same wall, type 1 gives a $\beta$ that is
-    1.4--2.4 lower than type 2. With the chance per rak, $\beta$ is 0.1--1.5,
-    so all 17 walls are below 1.8. If all were type 2, 7 of the 17 would pass
-    1.8. Whether a wall passes therefore depends mostly on its type, which the
+    1.4--2.4 lower than type 2. With the chance per rak, $\beta$ is
+    $-0.1$ to 1.5, so all 17 walls are below 1.8. If all were type 2, 8 of
+    the 17 would pass 1.8. Whether a wall passes therefore depends mostly on its type, which the
     original drawings or a dive inspection can settle.
   \item \textbf{Pile condition.} For type 2 the piles fail far more often than
-    the wall overturns (median $P_f$ 0.075 against 0.004). The same broad
+    the wall overturns (median $P_f$ 0.054 against 0.004). The same broad
     shell is used for every wall, so it shifts all $P_f$ but not the ranking.
   \item \textbf{Retained height and soil.} The soil moment grows with $H^3$:
     0.1\,m more height adds about 25\,\%. As $H$ is a lower bound, this
@@ -126,12 +128,12 @@ $\beta$ (interpreted further in Section~4.2):
 \end{enumerate}
 
 We checked the data and assumptions where possible. The median AHN werf level
-on the Oudegracht (+1.13\,m NAP) matches the +0.95 to +1.15\,m NAP measured in
+on the Oudegracht (+1.12\,m NAP) matches the +0.95 to +1.15\,m NAP measured in
 \cite{erfgoed156,erfgoed158}. The renewed length in our foundation table
 (about 3.36\,km) matches the city's 3{,}356\,m. The strongest check is that all
 17 walls stand today. A first model that treated the wall as a masonry block
 gave $P_f \approx 1$ and was rejected. With the measured sections, a type-2
-wall stands in 87--100\,\% of the draws, a type-1 wall in only 10--98\,\%.
+wall stands in 95--100\,\% of the draws, a type-1 wall in only 33--98\,\%.
 Either the type-1 model is conservative or many of these walls are type 2; the
 proven-strength update accounts for this.
 

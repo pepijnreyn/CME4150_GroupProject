@@ -206,7 +206,7 @@ def section_resistance(section, werf, dz, z_water, gammas, n_grid=(15, 7, 7)):
 
 
 if __name__ == "__main__":
-    H = 1.22  # wall height, werf to wall underside, median in walmuur_height.csv [m]
+    H = 1.21  # wall height, werf to wall underside, median in walmuur_height.csv [m]
     rng = np.random.default_rng(1)
     gamma_m, t = sample_wall(100_000, rng)
     M_R = resistance_moment(gamma_m, H, t)

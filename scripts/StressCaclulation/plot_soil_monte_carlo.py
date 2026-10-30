@@ -18,7 +18,7 @@ from SoilForce import SOIL_TYPES, sample_soil, soil_stress
 ROOT = Path(__file__).resolve().parents[2]
 FIGURES = ROOT / "figures"
 
-H = 1.22           # retained soil height, werf to canal bed [m]
+H = 1.21           # retained soil height, werf to canal bed [m]
 N_MC = 100_000     # draws per soil type
 N_PLOT = 2_000     # draws per soil type shown, for legibility
 

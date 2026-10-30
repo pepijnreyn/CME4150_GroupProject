@@ -27,7 +27,7 @@ from build_masonry_data_gaps import DEFAULT_YEAR, ORIGINAL_BEFORE, T_MAX, ground
 from build_soil_type import WHARF_LEVEL_NAP
 from build_walmuur_height import BED_AT_WALL_NAP, NO_WERF_ABOVE
 from build_walmuur_traffic import MAX_A_M, SIGN_RADIUS_M
-from plot_screening_sankey import CANALS, YEAR_FIXES, load, to_num, walmuren
+from plot_screening_sankey import CANALS, YEAR_FIXES, load, to_num, walmuren, with_renewals
 
 ROOT = Path(__file__).resolve().parents[1]
 HEIGHT = ROOT / "data" / "processed" / "walmuur_height.csv"
@@ -46,8 +46,8 @@ COLUMNS = [
     ("Nummer", "register ID", "`Nummer`"),
     ("Name", "", "`Naam`"),
     ("Screening", "green if `Eindjaar` (Aanlegjaar + 80) ≥ 2026, else red/orange (Pf needed) "
-     "for masonry",
-     "`Aanlegjaar`, `Eindjaar`, `Bouwmateriaal`"),
+     "for masonry; a wall renewed on steel counts from its renewal year",
+     "`Aanlegjaar`, `Eindjaar`, `Bouwmateriaal`; renewal year (`walmuur_foundation.csv`)"),
     ("Material", "screening: masonry or not", "`Bouwmateriaal`"),
     ("Built", "design life (screening) and foundation age t (timber decay)", "`Aanlegjaar`"),
     ("Length [m]", "length of the wall, for reporting per metre", "`Lengte`"),
@@ -194,7 +194,8 @@ def road_distance(row: pd.Series) -> str:
 
 
 def table() -> pd.DataFrame:
-    w = (walmuren(load()).join(groundwater(), on="Nummer").join(soil(), on="Nummer")
+    w = (with_renewals(walmuren(load()))
+         .join(groundwater(), on="Nummer").join(soil(), on="Nummer")
          .join(heights(), on="Nummer").join(traffic(), on="Nummer")
          .join(foundations(), on="Nummer"))
     for col in ("Hoogte", "Breedte", "Valhoogte"):
@@ -315,7 +316,8 @@ def markdown(t: pd.DataFrame) -> str:
         "sheet piles: old wall dug free and replaced on a sheet pile (until mid-2015 the only "
         "method). Steel tube piles: piles screwed through the old wall. A ? means the method "
         "is inferred, not stated for that rak. A renewed wall no longer stands on timber "
-        "piles, so a timber decay model does not apply to it, whatever its screening says. "
+        "piles, so a timber decay model does not apply to it, and the screening counts its "
+        "design life from the renewal year. "
         "Sources per wall: "
         "`walmuur_foundation.csv`; made by `scripts/build_walmuur_foundation.py`.",
         "",

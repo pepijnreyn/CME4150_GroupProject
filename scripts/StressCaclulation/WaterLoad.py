@@ -26,19 +26,23 @@ taken into account in soil_stress in SoilForce. The surcharge load is not
 affected by water.
 
 The canal level is fixed: the water board keeps it at a target level. The
-groundwater depth is uniform between the mean highest (GHG) and mean lowest
-(GLG) groundwater level.
+groundwater depth is uniform between a high (D_GHG) and a low (D_GLG) level.
+Both are levels on the werf, below the street: the BRO wells stand under the
+streets and give groundwater above the werf, so they do not describe it.
 """
 
 import numpy as np
 
 GAMMA_W = 9.81   # unit weight of water [kN/m3]
 
-# Medians over the 158 quay walls in data/processed/objects_groundwater.csv.
-# For one wall: GLG depth = glg_depth_below_ground_m, GHG depth = that minus swing_m.
-D_GHG, D_GLG = 1.73, 2.13   # groundwater depth below ground [m]
-# Drop height (Valhoogte) of Van Asch van Wijckskade (KM060031), taken as the canal level.
-D_C = 2.0                   # canal water depth below ground [m]
+# Water levels on the werf, also used per wall by FailureProbability.py.
+CANAL_NAP = 0.60                # canal level [m NAP], fixed (Erfgoed Utrecht report 158)
+GROUNDWATER_NAP = (0.50, 0.90)  # groundwater under the werf [m NAP], uniform; guess
+# The same levels as depths below ground, for a wall with the median werf level of
+# the 38 walmuren with a werf (data/processed/walmuur_height.csv).
+WERF_NAP = 1.13                 # werf level [m NAP]
+D_GHG, D_GLG = WERF_NAP - GROUNDWATER_NAP[1], WERF_NAP - GROUNDWATER_NAP[0]  # groundwater depth [m]
+D_C = WERF_NAP - CANAL_NAP      # canal water depth below ground [m]
 
 
 def water_height(H, d):
@@ -66,6 +70,6 @@ def sample_groundwater(n, rng, d_ghg=D_GHG, d_glg=D_GLG):
 
 
 if __name__ == "__main__":
-    H = 1.22  # retained soil height, werf to canal bed [m]
+    H = 1.21  # retained soil height, werf to canal bed [m]
     for label, d_w in [("GLG", D_GLG), ("canal level", D_C), ("GHG", D_GHG)]:
         print(f"groundwater at {label:11s} ({d_w:.2f} m): S_water = {water_stress(H, d_w, D_C):6.2f} kNm/m")

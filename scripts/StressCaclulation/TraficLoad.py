@@ -53,7 +53,7 @@ def sample_surcharge(n, rng, q_mean=Q_MEAN, q_cov=Q_COV, a_min=A_MIN, a_max=A_MA
 
 
 if __name__ == "__main__":
-    H = 1.22  # retained soil height, werf to canal bed [m]
+    H = 1.21  # retained soil height, werf to canal bed [m]
     rng = np.random.default_rng(1)
     q, a = sample_surcharge(100_000, rng)
     a_mean = (A_MIN + A_MAX) / 2

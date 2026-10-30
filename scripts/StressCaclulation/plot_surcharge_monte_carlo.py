@@ -22,7 +22,7 @@ from TraficLoad import A_MAX, A_MIN, Q_MEAN, sample_surcharge, surcharge_moment
 ROOT = Path(__file__).resolve().parents[2]
 FIGURES = ROOT / "figures"
 
-H = 1.22           # retained soil height, werf to canal bed [m]
+H = 1.21           # retained soil height, werf to canal bed [m]
 N_MC = 100_000     # draws
 N_PLOT = 2_000     # draws shown, for legibility
 

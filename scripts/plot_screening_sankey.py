@@ -24,7 +24,11 @@ Choices, all set as constants below:
   * `Eindjaar` missing, or at or before `Aanlegjaar` (entry errors), ends in
     "not classified", because the tree has no rule for it,
   * an object with no material recorded counts as not masonry,
-  * KM060028 has Aanlegjaar 2118, a year in the future, read as 2018.
+  * KM060028 has Aanlegjaar 2118, a year in the future, read as 2018,
+  * a walmuur renewed on steel is screened from its renewal year
+    (walmuur_foundation.csv, with_renewals), since the register keeps the
+    year of the old wall. Only the walmuren have foundation data, so the
+    register figure keeps the register years.
 
 Writes two figures: the quay wall study population of the register (Muur,
 Kademuur, Beschoeiing, Damwand) and the 51 walmuren of the Wervengebied that
@@ -45,6 +49,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 AREAAL = ROOT / "data" / "raw" / "Output areaal GU TU Delft 26-08.json"
+FOUNDATION = ROOT / "data" / "processed" / "walmuur_foundation.csv"
 FIGURES = ROOT / "figures"
 
 REFERENCE_YEAR = 2026
@@ -141,6 +146,22 @@ def walmuren(df: pd.DataFrame) -> pd.DataFrame:
         raise SystemExit("Walmuren on an unknown canal: "
                          + ", ".join(w.loc[w["group"].isna(), "Naam"]))
     return w
+
+
+def with_renewals(w: pd.DataFrame) -> pd.DataFrame:
+    """The walmuren screened from the year their foundation was renewed.
+
+    The register does not update `Aanlegjaar` after a wall is renewed on steel,
+    so a renewed wall can look past its design life. For the walls with status
+    "renewed" in walmuur_foundation.csv (build_walmuur_foundation.py), the
+    design life runs from the renewal year instead; `Aanlegjaar` and
+    `Eindjaar` themselves keep the register's values.
+    """
+    f = pd.read_csv(FOUNDATION)
+    year = w["Nummer"].map(f[f["status"] == "renewed"].set_index("Nummer")["year"])
+    shift = (year - w["Aanlegjaar"]).fillna(0)
+    c = classify(w.assign(Aanlegjaar=w["Aanlegjaar"] + shift, Eindjaar=w["Eindjaar"] + shift))
+    return w.assign(life=c["life"], cls=c["cls"], renewed=year)
 
 
 def links(c: pd.DataFrame) -> pd.DataFrame:
@@ -284,6 +305,7 @@ def summary(c: pd.DataFrame) -> str:
 
 def main() -> None:
     df = load()
+    w = with_renewals(walmuren(df))
     width = "length" if WEIGHT == "length" else "number of objects"
     populations = {
         "register": (
@@ -298,11 +320,12 @@ def main() -> None:
             GROUP_NOTES,
         ),
         "walmuren": (
-            walmuren(df),
+            w,
             "Walmuren of the Wervengebied through the screening",
-            "The 51 named walmuren of the asset register (Kunstwerktype Walmuur).\n"
-            f"Band width is {width}. All 29 walls past design life are masonry, "
-            "so none is orange on material alone.",
+            "The 51 named walmuren of the asset register (Kunstwerktype Walmuur); the "
+            f"{w['renewed'].notna().sum()} renewed on steel count from their renewal year.\n"
+            f"Band width is {width}. All {(w['life'] == 'past').sum()} walls past design "
+            "life are masonry, so none is orange on material alone.",
             "Canal",
             lambda m, n: f"{m:,.0f} m  ·  {n} walls",
             {},

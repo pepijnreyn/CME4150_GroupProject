@@ -66,11 +66,11 @@ from TraficLoad import A_MAX, A_MIN, Q_COV, Q_MEAN, sample_surcharge, surcharge_
 from WallResistance import (GAMMA_C_COV, GAMMA_C_MEAN, GAMMA_M_COV, GAMMA_M_MEAN, GAMMA_RC,
                             GAMMA_TIMBER, SECTIONS, friction_tan, sample_wall,
                             section_resistance)
-from WaterLoad import water_force
+from WaterLoad import CANAL_NAP, GROUNDWATER_NAP, water_force
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from plot_screening_sankey import load, walmuren  # noqa: E402
+from plot_screening_sankey import load, walmuren, with_renewals  # noqa: E402
 
 PROCESSED = ROOT / "data" / "processed"
 TNO_TYPE = ROOT / "data" / "raw" / "walmuur_tno2009_type.csv"
@@ -80,8 +80,7 @@ OUT_DRAWS = PROCESSED / "walmuur_failure_draws.json"
 OUT_INPUTS = PROCESSED / "walmuur_failure_inputs.csv"
 
 # ---- Inputs ----------------------------------------------------------------
-CANAL_NAP = 0.60                # canal level [m NAP], fixed (report 158)
-GROUNDWATER_NAP = (0.50, 0.90)  # groundwater under the werf [m NAP], uniform; guess
+# The canal level and the groundwater under the werf are set in WaterLoad.py.
 WERF_SD = 0.05                  # werf level ~ N(AHN median, 0.05) [m]
 NO_WERF = (1.0, 1.6)            # werf assumed for walls marked "no werf? check map" [m NAP]
 DZ = (-0.15, 0.15)              # foundation level against the drawing [m], uniform
@@ -160,7 +159,7 @@ def beta(pf):
 
 def wall_table() -> pd.DataFrame:
     """The 51 walmuren with screening, foundation, werf level, soil and chance of type 2."""
-    w = walmuren(load())[["Nummer", "group", "cls", "Lengte"]]
+    w = with_renewals(walmuren(load()))[["Nummer", "group", "cls", "Lengte"]]
     f = pd.read_csv(PROCESSED / "walmuur_foundation.csv")[["Nummer", "Naam", "rak", "side", "status"]]
     h = pd.read_csv(PROCESSED / "walmuur_height.csv")[["Nummer", "werf_nap", "werf"]]
     s = pd.read_csv(PROCESSED / "masonry_walls_soil.csv")[["Nummer", "soil_type"]]

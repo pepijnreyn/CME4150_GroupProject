@@ -22,3 +22,4 @@ data/raw/APIDatacollection/series/GLD*.csv
 Icon?
 *.gdoc
 *.gsheet
+.env

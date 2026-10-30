@@ -4,7 +4,8 @@ This file explains every column of
 [`wervengebied_data_table.md`](wervengebied_data_table.md): where each value
 comes from, which rules or assumptions are applied, and how far it can be
 trusted. Counts and ranges quoted here are from the run of 20 October 2026
-(the traffic, foundation, soil type and H columns: 21 October 2026).
+(the traffic, foundation and soil type columns: 21 October 2026; the werf
+level, H and screening columns: 30 October 2026).
 The table itself is always generated from the data, so rerun the scripts after
 the data changes. This file is written by hand.
 
@@ -47,7 +48,9 @@ These columns are copied from `Output areaal GU TU Delft 26-08.json`.
 
 This column is computed in `scripts/plot_screening_sankey.py`. The design
 life is the register's own: `Eindjaar` − `Aanlegjaar` is 80 years for all 51
-walmuren.
+walmuren. For the 32 walls renewed on steel (see Foundation) it runs from the
+renewal year instead (`with_renewals`), because the register keeps the year of
+the old wall for 11 of them.
 
 | Result | Rule |
 |---|---|
@@ -56,7 +59,8 @@ walmuren.
 | orange | Past design life and not masonry. |
 | not classified | `Eindjaar` is missing, or at or before `Aanlegjaar`. |
 
-The result is 22 green (2,177 m) and 29 red/orange (1,885 m).
+The result is 33 green (3,445 m) and 18 red/orange (617 m). On the register
+years alone it would be 22 green (2,177 m) and 29 red/orange (1,885 m).
 
 ## Built
 
@@ -88,15 +92,22 @@ bottom. `Hoogte` is empty for all 51 walmuren, so H is estimated in
 2. Over the water AHN has no value, so the side with values is the werf. If
    both sides have values, it takes the side with more values, or if that is
    equal, the lower side.
-3. The werf level is the median of those values.
+3. The werf level is the median of the values at or below +1.6 m NAP. A point
+   above that is on the street, a stair or a bridge, not on the werf.
 
 The AHN values are saved in `data/raw/AHN/walmuur_ahn_points.csv`. Delete
 that file to download them again.
 
-Result: 38 walls have a werf at +0.99 to +1.57 m NAP. The median is +1.13 on
-the Oudegracht, +1.16 on the Nieuwegracht and +1.42 on the Kromme
+Result: 38 walls have a werf at +0.91 to +1.40 m NAP. The median is +1.12 on
+the Oudegracht, +1.16 on the Nieuwegracht and +1.14 on the Kromme
 Nieuwegracht. This matches +0.95 to +1.15 m NAP in Erfgoed Utrecht reports
 156 and 158.
+
+Until 30 October 2026 the median was taken over all points on the werf side.
+For 15 walls that included points on a stair or the street, which raised
+their werf level by up to 0.55 m: Rak 03 OZ (+1.48, now +1.14), Kromme Nieuwe
+Gracht 002 (+1.57, now +1.11) and 009 (+1.53, now +0.98), and 0.01–0.14 m for
+the other 12.
 
 **Canal bottom (assumed):** it isn't measured anywhere. It is taken at the
 underside of the wall, −0.08 m NAP (report 158, rak 3 west), for every wall:
@@ -104,9 +115,9 @@ a quay wall is normally founded at about the level of the canal bed. The bed
 may be deeper, so this H is a lower bound. The table shows it marked [g]; it
 is counted as an estimate, not as data.
 
-Result: H is 1.07 to 1.65 m, with a median of 1.22 m (1.21 m on the
-Oudegracht, 1.25 m on the Nieuwegracht, 1.50 m on the Kromme Nieuwegracht).
-The scripts in `scripts/StressCaclulation/` use the median, 1.22 m.
+Result: H is 0.99 to 1.48 m, with a median of 1.21 m (1.20 m on the
+Oudegracht, 1.25 m on the Nieuwegracht, 1.21 m on the Kromme Nieuwegracht).
+The scripts in `scripts/StressCaclulation/` use the median, 1.21 m.
 
 **Suggested distribution for the Monte Carlo:** werf level ~ N(werf level of
 the wall, 0.05 m), because AHN's height accuracy is about 5 cm, with the
@@ -166,9 +177,13 @@ is needed for the water load and for uplift. It is empty for all walmuren.
 
 ## Groundwater [m]
 
-The value is a range from GHG to GLG, as depth below ground. It feeds the
-water load in `WaterLoad.py`. It is computed in
-`scripts/build_groundwater_layer.py`.
+The value is a range from GHG to GLG, as depth below ground. It is computed in
+`scripts/build_groundwater_layer.py`. The water load does not use it: the
+wells stand under the streets and give groundwater above the werf itself, so
+`WaterLoad.py` uses a range on the werf instead, Uniform(+0.5, +0.9) m NAP
+around the canal level of +0.6 m NAP (report 158). Until 30 October 2026
+`WaterLoad.py` and `TotalStress.py` used the median well depths (1.73–2.13 m)
+and put the canal 2.0 m below the street; at H ≈ 1.2 m that left the wall dry.
 
 1. **Data:** BRO head series fetched from the PDOK API. Only series from
    phreatic filters (screen top within 8 m of the surface) that were still
@@ -413,11 +428,11 @@ already renewed on steel, 1,267 m of their 1,885 m:
 - Rak 16 NOZ, WZ and ZOZ
 - Rak 18 OZ and WZ, 19 WZ and 20 WZ
 
-Their old `Aanlegjaar` puts them in the screening, but the timber decay model
+Their old `Aanlegjaar` put them in the screening, but the timber decay model
 doesn't describe their foundation. Only 11 red/orange walls (331 m) are on
 timber piles, 8 of them by assumption. The status of 7 more (287 m) is
-unclear. The screening itself is unchanged: it applies its rule to the
-register as it is.
+unclear. Since 30 October 2026 the screening counts the renewed walls from
+their renewal year, so these 11 are green there.
 
 **How far to trust it:**
 - **Unclear walls:** rak 3 oost started in 2022 and rak 6 west was planned
@@ -648,16 +663,19 @@ not the piles, and the broad range above covers them.
 | Shell growth after 2026 | Uniform(0.10, 0.25) mm/yr | around [HEMEL23] 7.3.2 |
 | MOR, E, subgrade modulus k | Normal(22 MPa, 0.10), Normal(9 GPa, 0.20), Uniform(4,300, 10,000) kN/m³ | [HEMEL23] Table 7.1 (Amsterdam pine, clay and peat) |
 
-**Results** (run of 21 October 2026, updated Pf, 2026): the best estimate,
-with the chance of each type per rak, runs from β 0.1 (Rak 03 OZ: high werf,
-soft clay, likely type 1) to 1.5 (Kromme Nieuwe Gracht 003). For type 2 alone
-β runs from 0.8 to 2.0, for type 1 alone it is below 0.7 for every wall. For
-type 2 the piles fail more often than the wall tips over (median Pf 0.09
-against 0.01). By 2041 β drops another 0.05 to 0.15. Walls with the same
-soil, rak and no werf measurement (Kromme Nieuwe Gracht 005–007) get the same
-result, as nothing in the data tells them apart. The map check below left the
-range unchanged; with their own werf level Rak 06 NZ rose from 0.7 to 1.2 and
-Rak 08 OZ from 1.2 to 1.4.
+**Results** (run of 30 October 2026, updated Pf, 2026): the best estimate,
+with the chance of each type per rak, runs from β −0.06 (Rak 03 OZ: soft clay,
+likely type 1) to 1.52 (Kromme Nieuwe Gracht 003); all 17 are below 1.8. For
+type 2 alone β runs from 1.27 to 2.46 (9 of 17 below 1.8), for type 1 alone
+from −0.91 to 1.07. For type 2 the piles fail more often than the wall tips
+over (median Pf 0.054 against 0.004). By 2041 β drops another 0.02 to 0.15.
+Walls with the same soil, rak and no werf measurement (Kromme Nieuwe Gracht
+005–007) get the same result, as nothing in the data tells them apart. The
+werf correction of 30 October 2026 (see the section on H) raised Kromme Nieuwe
+Gracht 002 from 0.79 to 1.37 and 009 from 0.73 to 1.45. Rak 03 OZ went from
+0.12 to −0.06: both types do better with the lower werf, but more type-1 draws
+now stand today, so the proven-strength check moves its chance of type 2 less
+(0.20 → 0.34 instead of 0.60).
 
 **Checking the [h] walls on a map.** For 9 walls AHN found street-level ground
 (+1.6 m NAP or more) beside the wall, so the model now assumes a werf level.
@@ -689,7 +707,7 @@ AHN point is at street level, so their level stays assumed.
 
 | Missing | Used now | Effect |
 |---|---|---|
-| Wall type per wall | chance per rak from TNO's dive notes | largest: type 1 gives a β 1.4 to 2.1 lower |
+| Wall type per wall | chance per rak from TNO's dive notes | largest: type 1 gives a β 1.4 to 2.4 lower |
 | Pile condition | not available; a shell of 0–45 mm for every wall | the pile part of Pf, the larger part for type 2 |
 | Werf level of Kromme Nieuwe Gracht 005–007 | Uniform(1.0, 1.6) m NAP (werf seen on the map, level not read) | those three walls get identical results |
 | A model for walls without a werf (Kromme Nieuwe Gracht 001, Rak 07 OZ) | not computed | two walls on timber have no Pf |

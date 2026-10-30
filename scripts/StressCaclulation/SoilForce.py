@@ -63,7 +63,7 @@ def sample_soil(soil_type, n, rng):
 
 
 if __name__ == "__main__":
-    H = 1.22  # retained soil height, werf to canal bed [m]
+    H = 1.21  # retained soil height, werf to canal bed [m]
     rng = np.random.default_rng(1)
     for soil_type in SOIL_TYPES:
         K, gamma = sample_soil(soil_type, 100_000, rng)

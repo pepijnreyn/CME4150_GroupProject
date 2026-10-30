@@ -43,23 +43,27 @@ Step & Script (in \texttt{scripts/}) & Output (in \texttt{data/processed/}) \\
 
 The register holds 51 named walmuren (4{,}062\,m). Its own design life is
 80 years for each of them. A wall past its design life ($\text{Aanlegjaar} + 80
-< 2026$) and made of masonry needs a failure probability: 29 walls (1{,}885\,m).
-The register year is often not updated after a foundation renewal, so we
-selected on the foundation instead (Table~\ref{tab:selection}).
+< 2026$) and made of masonry needs a failure probability. The register year is
+often not updated after a foundation renewal: 11 walls renewed on steel in
+2016--2026 still carry the year of the old wall. Counted from the renewal
+year, 18 walls (617\,m) are past their design life, against 29 (1{,}885\,m) on
+the register year alone. The $P_f$ calculation then selects on the
+foundation (Table~\ref{tab:selection}).
 
 \begin{table}[htbp]
 \centering
 \small
 \caption{Selection of the walls for the $P_f$ calculation.}
 \label{tab:selection}
-\begin{tabularx}{\textwidth}{@{}X r r@{}}
+\begin{tabularx}{\textwidth}{@{}X r r r@{}}
 \toprule
-Step & Walls & Of which past design life \\
+& & \multicolumn{2}{c}{Past design life, from} \\
+Step & Walls & register year & renewal year \\
 \midrule
-Named walmuren in the register & 51 & 29 \\
-\quad Renewed on steel sheet or tube piles (not modelled) & $-32$ & $-11$ \\
-\quad On timber, but no werf: the street runs to the water (not modelled) & $-2$ & $-2$ \\
-Modelled: on timber piles (or status unclear) with a werf, 611\,m & 17 & 16 \\
+Named walmuren in the register & 51 & 29 & 18 \\
+\quad Renewed on steel sheet or tube piles (not modelled) & $-32$ & $-11$ & 0 \\
+\quad On timber, but no werf: the street runs to the water (not modelled) & $-2$ & $-2$ & $-2$ \\
+Modelled: on timber piles (or status unclear) with a werf, 611\,m & 17 & 16 & 16 \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -86,23 +90,23 @@ could be read (a). Status: not renewed, in progress or unclear.}
 \toprule
 Wall & Number & Length [m] & Werf [m NAP] & Soil class & Status & $P(\text{type 2})$ \\
 \midrule
-OG Rak 03 OZ  & KM060052 & 101.1 & 1.48     & clay/peat & unclear     & 0.2 \\
+OG Rak 03 OZ  & KM060052 & 101.1 & 1.14     & clay/peat & unclear     & 0.2 \\
 OG Rak 04 OZ  & KM060054 &  67.4 & 1.22     & sand      & not renewed & 0.2 \\
-OG Rak 05 NZ  & KM060057 &  72.1 & 1.22     & sand      & not renewed & 0.2 \\
+OG Rak 05 NZ  & KM060057 &  72.1 & 1.21     & sand      & not renewed & 0.2 \\
 OG Rak 06 NZ  & KM060059 &  43.7 & 0.99 (m) & sand      & in progress & 0.2 \\
 OG Rak 06 ZZ  & KM060060 &  57.1 & 1.21 (m) & sand      & unclear     & 0.2 \\
 OG Rak 08 OZ  & KM060062 &  32.7 & 1.04 (m) & mixed     & not renewed & 0.8 \\
-OG Rak 09 ZOZ & KM060065 &  54.5 & 1.23     & clay/peat & unclear     & 0.8 \\
+OG Rak 09 ZOZ & KM060065 &  54.5 & 1.20     & clay/peat & unclear     & 0.8 \\
 OG Rak 09 WZ  & KM060064 &  53.4 & 1.28     & clay/peat & not renewed & 0.8 \\
 OG Rak 09 WZ 01 & KM060067 & 3.4 & 1.13     & clay/peat & not renewed & 0.8 \\
-KNG 002       & KM060020 &  16.2 & 1.57     & clay/peat & not renewed & 0.9 \\
+KNG 002       & KM060020 &  16.2 & 1.11     & clay/peat & not renewed & 0.9 \\
 KNG 003       & KM060021 &   9.9 & 1.16     & mixed     & not renewed & 0.9 \\
-KNG 004       & KM060022 &  11.1 & 1.31     & mixed     & not renewed & 0.9 \\
+KNG 004       & KM060022 &  11.1 & 1.30     & mixed     & not renewed & 0.9 \\
 KNG 005       & KM060023 &  13.3 & (a)      & clay/peat & unclear     & 0.5 \\
 KNG 006       & KM060024 &   4.1 & (a)      & clay/peat & unclear     & 0.5 \\
 KNG 007       & KM060025 &  10.3 & (a)      & clay/peat & unclear     & 0.5 \\
 KNG 008       & KM060026 &  42.1 & 0.99 (m) & clay/peat & unclear     & 0.5 \\
-KNG 009       & KM060027 &  18.3 & 1.53     & sand      & unclear     & 0.5 \\
+KNG 009       & KM060027 &  18.3 & 0.98     & sand      & unclear     & 0.5 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -184,11 +188,14 @@ Sand             & 0.35 (0.20) & 18.0 (0.05) & 6.3 & 16 \\
 
 \paragraph{Werf level and $H$.} The AHN ground level is read at six places
 along each wall, 2.5\,m to either side. AHN has no value over water, so the
-side with values is the werf. The werf level is the median there. Where the
+side with values is the werf. The werf level is the median there of the points
+at or below +1.6\,m NAP; higher points fall on a stair, a bridge or the street.
+With all points, the werf of Rak 03 OZ and Kromme Nieuwe Gracht 002 and 009
+came out 0.3--0.6\,m too high. Where most of the
 ground was above +1.6\,m NAP (possibly no werf), the wall was checked by hand
 on a map and Street View; the lowest AHN point below +1.6\,m NAP is then used.
 The canal bed is not measured anywhere, so $H$ (werf level minus the wall
-underside at $-0.08$\,m NAP) is a lower bound. The median of 1.13\,m NAP on
+underside at $-0.08$\,m NAP) is a lower bound. The median of 1.12\,m NAP on
 the Oudegracht matches the +0.95 to +1.15\,m NAP in
 \cite{erfgoed156,erfgoed158}.
 

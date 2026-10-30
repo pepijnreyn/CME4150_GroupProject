@@ -86,7 +86,7 @@ The dependence is modelled explicitly in four ways:
     the water pressure and the buoyancy of the body.
   \item \textbf{Same draws.} Both limit states use the same draws, so their
     correlation is kept: for type 2, overturning and pile failure occur
-    together 3.4 times as often as if they were independent. The years 2026
+    together 4.4 times as often as if they were independent. The years 2026
     and 2041 share the piles; only the shell grows.
   \item \textbf{Proven strength.} The check ``stands today'' shares all
     resistance and soil variables with the future load case, but has its own
@@ -105,20 +105,20 @@ matters when walls are combined in Section~3.1.
 
 Few inputs can be tested against data, but where they can:
 \begin{itemize}\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
-  \item \textbf{Werf level.} AHN points on a werf scatter by about 0.08\,m,
+  \item \textbf{Werf level.} AHN points on a werf scatter by about 0.07\,m,
     so the wall average is known to about 0.04\,m, close to $\sigma =
-    0.05$\,m. For three walls (Rak 03 OZ, Kromme Nieuwe Gracht 002 and 009)
-    the median includes points on stairs or the street, which makes their
-    werf 0.3--0.5\,m too high and their $\beta$ too low.
+    0.05$\,m. Points above +1.6\,m NAP fall on stairs or the street and are
+    left out; with them, the werf of three walls (Rak 03 OZ, Kromme Nieuwe
+    Gracht 002 and 009) came out 0.3--0.6\,m too high.
   \item \textbf{Groundwater.} The BRO wells, interpolated to the walls, give
     +0.9 to +2.1\,m NAP, mostly above the werf itself: they stand under the
     raised streets and do not describe the werf, which drains to the canal.
     The range is therefore a physical bound, not a fit. Raising it to
-    $U(+0.6, +1.0)$\,m NAP lowers $\beta$ by 0.04--0.09 (type 2) and 0.1--0.4
+    $U(+0.6, +1.0)$\,m NAP lowers $\beta$ by 0.05--0.10 (type 2) and 0.2--0.4
     (type 1).
   \item \textbf{Soil class.} Only 25--67\,\% of the borings within 150\,m
     give the class of the nearest boring. Treating the class as uncertain,
-    with weights from these borings, changes $\beta$ by $-0.7$ to $+0.3$. Walls
+    with weights from these borings, changes $\beta$ by $-0.7$ to $+0.6$. Walls
     classed as sand lose most, as half of their nearby borings find clay or
     peat. This is the weakest part of the input model.
   \item \textbf{Pile shell.} $U(0, 45)$\,mm has a mean of 22.5\,mm, close to
@@ -128,8 +128,8 @@ Few inputs can be tested against data, but where they can:
 The strongest test is that all 17 walls stand, so a valid model must let
 them stand in most draws. A first model that treated the wall as a masonry
 block failed in almost every draw and was rejected. With the measured
-sections, type 2 stands in 87--100\,\% of the draws and type 1 in only
-10--98\,\%: the type-1 model is conservative, or many walls are type 2, and
+sections, type 2 stands in 95--100\,\% of the draws and type 1 in only
+33--98\,\%: the type-1 model is conservative, or many walls are type 2, and
 the update shifts $P(T{=}2)$ accordingly. The Monte Carlo error is small
 (CoV of $\hat P_f$ below 2\,\%, $\beta$ within $\pm 0.01$).
 

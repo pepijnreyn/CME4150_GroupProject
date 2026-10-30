@@ -21,19 +21,18 @@ import numpy as np
 
 from SoilForce import SOIL_TYPES, sample_soil, soil_stress
 from TraficLoad import sample_surcharge, surcharge_moment
-from WaterLoad import sample_groundwater, water_stress
+from WaterLoad import D_C, D_GHG, D_GLG, sample_groundwater, water_stress
 
 # ---- Inputs ----------------------------------------------------------------
 # K and gamma_s per soil type are set in SOIL_TYPES in SoilForce.py.
+# The groundwater (D_GHG, D_GLG) and canal (D_C) depths below the werf are set in WaterLoad.py.
 # H is the median for the 38 walmuren with a werf in data/processed/walmuur_height.csv
-# (1.07 to 1.65 m): werf level (AHN) to the canal bed, taken at the wall underside
+# (0.99 to 1.48 m): werf level (AHN) to the canal bed, taken at the wall underside
 # (-0.08 m NAP, Erfgoed Utrecht report 158). The bed may be deeper.
-H = 1.22                    # retained soil height, werf to canal bed [m]
+H = 1.21                    # retained soil height, werf to canal bed [m]
 Q_MEAN, Q_COV = 7.0, 0.20   # surcharge q, normal [kPa]; Q_COV = 0 fixes q
 A_MIN, A_MAX = 0.0, 3.0     # distance wall to load a, uniform [m]; A_MIN = A_MAX fixes a
 WATER = True                # False = no groundwater and no canal water (dry soil)
-D_GHG, D_GLG = 1.73, 2.13   # groundwater depth below ground, uniform [m]; equal values fix it
-D_C = 2.0                   # canal water depth below ground, fixed [m]
 N_MC = 100_000              # Monte Carlo draws per soil type
 SEED = 1                    # same seed gives the same draws
 # ----------------------------------------------------------------------------
