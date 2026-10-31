@@ -63,33 +63,31 @@
 The Municipality of Utrecht manages more than 60\,km of quay walls and sheet
 pile walls and plans most of their maintenance on a theoretical end of life,
 which can differ from the real condition \parencite{utrecht_teamchallenge2026}.
-Renewing too early wastes public money and renewing too late leaves unsafe
-walls in use.
+The goal of the team is a method for the whole portfolio that ranks walls by
+risk on incomplete evidence: it screens the register, computes a failure
+probability where a structural model exists and uses indicators where it does
+not, adds the consequences of failure, and shows which measurement or monitoring
+would change the ranking most. The decision variables are where to inspect and
+intervene first and which interim measure to take until renewal.
 
-This study addresses the problem for the walmuren of the Wervengebied, the
-low walls between the canal and the werf, the wharf along the Oudegracht,
-Nieuwegracht and Kromme Nieuwegracht (Figure~\ref{fig:wervengebied}). The
-asset register lists 51 walmuren, 4{,}062\,m in 27 reaches (raks): masonry
-walls on timber piles from the late nineteenth century to the 1970s, part of a
-national monument \parencite{utrecht_teamchallenge2026}. The system
-is the wall with its floor and timber piles; the private wharf cellars, the
-werf and kluis walls, the bridges and the street with its cables lie outside
-it but shape the consequences of failure and the constraints on
-the works. The municipality renews about 100\,m of wall per year until 2050,
-a pace set by budget and capacity rather than by condition
-\parencite{utrecht_herstelwerven}, so the order of the work is a real choice,
-on which residents, businesses, cellar owners and the heritage authority have
-conflicting views that this study informs but does not resolve.
-
-The goal of the team is a method that estimates, for each wall still on its
-original foundation, the probability of failure within the 15-year reference
-period of NEN~8700, ranks the walls, and shows which measurements would change
-that ranking most. The decision variable is the order in which walls are
-inspected and renewed. The dominant uncertainties are a lack of knowledge
-that inspection can reduce: the wall type, the condition of the piles, the
-soil and the canal bed. Loads, groundwater fluctuations and organisational
-factors such as permits have to be carried and are treated in
-Chapter~\ref{chapter:risk-analysis}.
+The method is tested on the walmuren of the Wervengebied, the low walls between
+the canal and the werf, the wharf along the Oudegracht, Nieuwegracht and Kromme
+Nieuwegracht (Figure~\ref{fig:wervengebied}): 51 walls, 4{,}062\,m in 27 raks,
+masonry on timber piles from the late nineteenth century to the 1970s, part of
+a national monument. An existing programme renews them at about 100\,m per year
+until 2050 \parencite{utrecht_herstelwerven}, and the municipality does not
+want an analysis that prioritises individual Oudegracht sections
+\parencite{utrecht_qa2026}. The team uses the area as a test case nevertheless,
+because only here drawings, dive records and renewal data exist to build and
+check a failure model; Section~\ref{sec:approach-selection} shows how the
+method covers the rest of the portfolio. The system is the wall with its floor
+and piles; the private wharf cellars, the street with its cables and the
+bridges lie outside it but set the consequences of failure and the constraints
+on the works, over which residents, businesses, cellar owners and the heritage
+authority disagree. The dominant uncertainties are a lack of knowledge that
+inspection and monitoring can reduce: the wall type, the pile condition, the
+soil and the canal bed. Loads, groundwater and organisational factors such as
+permits have to be carried (Chapter~\ref{chapter:risk-analysis}).
 
 \clearpage
 \section{Assumptions, Data Collection and Generation}
@@ -116,8 +114,9 @@ register covers every wall: it lists 51 walmuren, 4{,}062\,m in total, with
 their construction year and material, but no height, foundation or condition
 data \parencite{gu2025register}. The team therefore combined it with open
 geodata, archive reports and the literature, and filled the remaining gaps
-with stated assumptions. The one data request that the assignment allows was
-not used, as an answer could not be awaited within the project.
+with stated assumptions. The team chose not to use the one data request that
+the assignment allows; Section~\ref{sec:results-recommendations} names the
+municipal records it should have asked for.
 
 \subsection{Data collected and generated}\label{sec:data-collected}\label{sec:data-generated}
 
@@ -128,8 +127,9 @@ the Oudegracht and the timber properties from research in Amsterdam. The data
 are therefore most reliable for the werf level and least reliable for the
 wall type and the pile condition, which Section~\ref{sec:dimension-reduction}
 identifies as the inputs that matter most. Street-level imagery, groundwater
-wells and traffic signs served as proxies; satellite subsidence data, which
-could reveal settlement from pile rot, were not processed.
+wells and traffic signs served as proxies. Satellite subsidence data were not
+processed for the walmuren; the method uses them as a movement indicator for
+the wider portfolio (Section~\ref{sec:approach-selection}).
 
 \begin{table}[htbp]
 \centering
@@ -152,7 +152,7 @@ BGT and NDW \parencite{bgt,ndw} & Surcharge (check) & All walls & No traffic cou
 TNO dive notes \parencite{tno2009} & Wall type per rak & Rak 3--6, 21, 22 & Bank not stated \\
 Archive reports \parencite{erfgoed156,erfgoed158,ibu2010} & Sections, piles & Two drawings & Schematic; Oudegracht only \\
 Literature \parencite{hemel2023,hemel2024} & Timber, decay, load & Amsterdam piles & No Utrecht measurements \\
-NEN~8700 and 8707 \parencite{nen8700,nen8707} & Target $\beta$ & 1.8, 2.5, 3.3 & Class not chosen \\
+NEN~8700 and 8707 \parencite{nen8700,nen8707} & Reference $\beta$ & 1.8, 2.5, 3.3 & Class not chosen \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -198,14 +198,14 @@ effect on $\beta$ (best estimate, 2026, unless stated).}
 \toprule
  & Assumption & Basis & Effect on $\beta$ \\
 \midrule
-A1 & The timber screen holds the soil below the floor, so the unmeasured canal bed does not load the wall & \textcite{ibu2010} & Optimistic where the screen has failed \\
+A1 & The timber screen holds the soil below the floor, so the unmeasured canal bed does not load the wall & \textcite{ibu2010} & Optimistic: without it \textminus0.08 to \textminus0.39 \\
 A2 & $P(\text{type 2})$ is 0.2 in rak 3--6, 0.5 in rak 21, 0.9 in rak 22 and 0.8 elsewhere & \textcite{tno2009,erfgoed156} & Type 1 is 1.4 to 2.4 lower \\
 A3 & Two measured cross-sections represent all walls & \textcite{ibu2010,erfgoed156} & Unknown for the Kromme Nieuwegracht \\
 A4 & Soft shell $U(0, 45)$\,mm for every wall, growing 0.10--0.25\,mm/yr & \textcite{hemel2023} & Type 2: \textminus1.50 over the range \\
 A5 & $K$ lognormal and $\gamma$ normal per soil class, independent & Team & Class uncertain: \textminus0.70 to +0.56 \\
 A6 & Canal +0.6\,m NAP; groundwater $U(+0.5, +0.9)$\,m NAP & \textcite{erfgoed158}; judgement & 0.1\,m higher: \textminus0.38 to +0.08 \\
 A7 & Surcharge $N(7\,\text{kPa}, 0.20)$ at a distance $U(0, 3)$\,m & \textcite{hemel2024} & Conservative for a werf \\
-A8 & Every modelled wall stands today under soil and water & Observation; \textcite{hemel2024} & Raises $\beta$ by 0.07 to 0.69 \\
+A8 & Every modelled wall stands today under soil and water & Observation; \textcite{hemel2024} & Raises $\beta$ by 0.07 to 0.69; weak evidence \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -215,7 +215,7 @@ A8 & Every modelled wall stands today under soil and water & Observation; \textc
 The assumptions do not affect the results equally
 (Section~\ref{sec:dimension-reduction}). The wall type (A2) dominates: for the
 same wall, type~1 gives a $\beta$ that is 1.4 to 2.4 lower than type~2, so the
-type alone can decide whether a wall meets the lowest NEN~8700 level of 1.8.
+type alone can move a wall from the bottom to the top of the ranking.
 The pile condition (A4) matters most for walls that are probably type~2, and
 because the same range is used for every wall, it moves all walls in the same
 direction. The surcharge (A7) is less certain than its source suggests, as
@@ -338,12 +338,13 @@ importance of $K$ and of the surcharge was expected, as both scale the earth
 pressure directly. Less expected is that the surcharge position, a judgement
 without a source, ranks among the four largest effects: on a wall of about
 1.5\,m, a load at the edge acts almost fully on the wall, whereas a load 3\,m
-behind it adds little. The best-estimate swings of the load inputs are
-smaller than those per type and change sign for some walls. A high $K$ or
-groundwater level makes a standing type-1 wall unlikely, so the update raises
-$P(T{=}2 \mid E)$ and the best estimate shifts towards the stronger type. A
-one-at-a-time analysis cannot separate this interaction, which is why
-Table~\ref{tab:tornado} gives the swings per type.
+behind it adds little. In the best estimate, a higher $K$ or groundwater level
+even raises $\beta$ for some walls. This is an artefact, not physics: the
+type-1 model cannot explain why most walls stand
+(Section~\ref{sec:prob-validity}), so any input that makes a standing type-1
+wall less likely raises $P(T{=}2 \mid E)$ and shifts the best estimate towards
+the stronger type. Only the swings per type should therefore be read as
+effects of the inputs.
 
 The results also show where inaccurate data matter. The werf level, the only
 input measured per wall, changes $\beta$ by about 0.3 within its measurement
@@ -361,13 +362,15 @@ random, as no affordable measurement would narrow them. Effort should go to
 the inputs that are both important and measurable.
 
 The measurement that would most reduce the uncertainty of the result is
-therefore the wall type, which old construction drawings or a diver at the
-front of the floor can settle. It is worth most where the updated probability
+therefore the wall type, which old construction drawings, a diver at the front
+of the floor or a survey of the horizontal displacement of the wall can settle:
+the model expects about 2 to 3\,mm for type~2 and 6 to 9\,mm for type~1
+(Section~\ref{sec:tradeoff}). It is worth most where the updated probability
 of type~2 is far from 0 and 1 and the types differ much: Oude Gracht Rak~03 OZ
 ($P(T{=}2 \mid E) = 0.34$, 2.3 in $\beta$, 101\,m) and Kromme Nieuwe Gracht 005
 to 008 (0.60 to 0.74). On the three sand walls of rak~4 to 6 that are not
 being renewed (197\,m, 0.21), finding type~2 would raise $\beta$ from about 0.8
-to 2.0, above the lowest NEN~8700 level. For the walls that are probably
+to 2.0, from the weakest third of the walls to the strongest. For the walls that are probably
 type~2, in rak~8 and 9 and Kromme Nieuwe Gracht 002 to 004 (0.82 to 0.94), the
 next measurement is the soft shell and diameter of a sample of piles per rak,
 by micro-drilling during a dive. A survey of where terraces and vehicles stand
@@ -395,97 +398,90 @@ on the werf would narrow the surcharge position at little cost.
 \centering
 \begin{tikzpicture}[
     font=\footnotesize\sffamily,
-    node distance=4mm and 4.2mm,
+    node distance=3.5mm and 5mm,
     box/.style={rectangle, rounded corners=2pt, draw, thick, fill=gray!8,
-                align=center, minimum height=11mm, text width=21mm, inner sep=2pt},
+                align=center, minimum height=10mm, text width=20.5mm, inner sep=2pt},
     cls/.style={box, draw=#1!70!black, fill=#1!22},
     arrow/.style={-{Stealth[length=2mm]}, thick},
     lbl/.style={font=\scriptsize\sffamily, inner sep=1pt}
 ]
-\node[box, fill=gray!22] (reg) {Asset register:\\51 walmuren};
-\node[box, right=of reg] (life) {Past design life in 2026?};
-\node[box, right=of life] (mas) {Masonry wall?};
-\node[box, right=of mas] (old) {Original timber piles and a werf?};
-\node[box, right=of old] (mc) {Monte Carlo $P_f$ with proven strength (2.1)};
-\node[box, right=of mc, left color=catred!30, right color=catorange!30] (beta)
-    {$\beta$ against NEN~8700: red below, orange above};
-\node[cls=catgreen, below=of life] (green) {Green: regular maintenance};
-\node[cls=catorange, below=of mas] (orange) {Orange: other model};
-\node[box, below=of old] (out) {Not modelled: renewed or no werf};
-\node[box, below=of mc, dashed] (sens) {Sensitivity: what to measure (1.3)};
-\node[box, below=of beta] (ft) {Fault tree with human and organisational causes (3.1)};
-\node[box, below=of ft] (dt) {Decision tree of interventions (3.2)};
-\node[box, left=of dt] (rec) {Regression and advice (4)};
-\draw[arrow] (reg) -- (life);
-\draw[arrow] (life) -- node[lbl, above] {yes} (mas);
-\draw[arrow] (mas) -- node[lbl, above] {yes} (old);
-\draw[arrow] (old) -- node[lbl, above] {yes} (mc);
-\draw[arrow] (mc) -- (beta);
-\draw[arrow] (life) -- node[lbl, right] {no} (green);
-\draw[arrow] (mas) -- node[lbl, right] {no} (orange);
-\draw[arrow] (old) -- node[lbl, right] {no} (out);
+\node[box, fill=gray!22] (reg) {Asset register: all quay walls};
+\node[box, right=of reg] (chk) {Data check: years, widths, renewals};
+\node[box, right=of chk] (orig) {On its original structure?};
+\node[box, right=of orig] (mod) {Masonry on timber piles, with a werf?};
+\node[box, right=of mod] (mc) {Monte Carlo $P_f$ with proven strength (2.1)};
+\node[box, right=of mc, dashed] (sens) {Sensitivity: what to measure (1.3)};
+\node[cls=catgreen, below=of orig] (green) {Green: regular inspection};
+\node[box, below=of mod] (ind) {Indicators: movement, condition, age, data};
+\node[box, below=of mc] (risk) {Relative $P$ class\\$\times$ consequence\\class};
+\node[box, below=of sens, left color=catred!30, right color=catorange!30] (meas)
+    {Red, orange, green, with measures};
+\node[box, below=of meas] (ft) {Fault tree and decision tree (3.1, 3.2)};
+\node[box, left=of ft] (rec) {Regression and advice (4)};
+\draw[arrow] (reg) -- (chk);
+\draw[arrow] (chk) -- (orig);
+\draw[arrow] (orig) -- node[lbl, above] {yes} (mod);
+\draw[arrow] (mod) -- node[lbl, above] {yes} (mc);
 \draw[arrow, dashed] (mc) -- (sens);
-\draw[arrow] (beta) -- (ft);
-\draw[arrow] (ft) -- (dt);
-\draw[arrow] (dt) -- (rec);
+\draw[arrow] (orig) -- node[lbl, right] {no} (green);
+\draw[arrow] (mod) -- node[lbl, right] {no} (ind);
+\draw[arrow] (mc) -- (risk);
+\draw[arrow] (ind) -- (risk);
+\draw[arrow] (risk) -- (meas);
+\draw[arrow] (meas) -- (ft);
+\draw[arrow] (ft) -- (rec);
 \end{tikzpicture}
-\caption{Approach of this study, from the screening of the asset register to
-the recommendations. Numbers in brackets refer to the sections of this
-report. The NEN~8700 levels are 1.8, 2.5 and 3.3 for consequence classes
-CC1b, CC2 and CC3.}
+\caption{Approach of this study for the whole portfolio; the walmuren of the
+Wervengebied test the upper path. Numbers in brackets refer to the sections of
+this report.}
 \label{fig:approach}
 \end{figure}
 
 Figure~\ref{fig:approach} shows the approach. It works from coarse to fine, so
-that the costly probabilistic analysis is spent only on walls where it can
-change a decision. Its structure follows the Amsterdam risk assessment of
-quay walls (ARK), which sorts walls into green, orange and red
-\parencite{ark2023}. ARK, however, scores condition and consequences
-qualitatively, whereas the question of the municipality is how uncertain the
-evidence is and what that means for the order of the work. The team
-therefore kept the three classes and replaced the qualitative score of a
-masonry wall by a failure probability.
+that the costly probabilistic analysis is spent only where it can change a
+decision, and it keeps the green, orange and red classes of the Amsterdam risk
+assessment of quay walls (ARK), which scores condition and consequences
+\parencite{ark2023}. Where a structural model exists, the team replaces the
+qualitative condition score by a failure probability.
 
-The screening uses only the asset register and the foundation data of
-Section~\ref{sec:data}. A wall within its design life, which is the
-construction or renewal year plus the 80 years that the register assigns to
-a walmuur, is green and stays in regular maintenance. A wall past its design
-life that is not masonry is orange, because its deterioration, such as
-corrosion or concrete damage, needs a different model. Walls renewed on steel
-piles and walls without a werf leave the model, as the timber-pile mechanism
-does not describe them. For each remaining wall, the failure probability over
-the 15-year reference period is computed (Section~\ref{sec:prob}) and $\beta$
-is compared with the rejection levels of NEN~8700 and NEN~8707
-\parencite{nen8700,nen8707}. A wall below the level of its consequence class
-is red and a wall above it is orange. Because the consequence class of a
-walmuur has not been established, all three levels are reported, and a wall
-below 1.8 is red in any class.
+The screening starts with the register, because its errors decide which walls
+are looked at: one year of 2118, a collective year 1917 for 23 objects, 418
+objects with the rounded years 1450 or 1900, a width field that means
+thickness for some types and strip width for others, and years that are not
+updated after a renewal (Appendix~\ref{app:data-quality}). Renewed or recent
+structures are green and stay in regular inspection. The theoretical end of
+life is not used as a gate, as it is the rule the municipality wants to move
+away from; age enters only as one indicator. For a wall on its original
+structure, the probability side comes from the failure model of
+Section~\ref{sec:prob} where it applies, masonry on timber piles with a werf,
+and otherwise from an indicator score: movement on the bodemdalingskaart, the
+NEN~2767 condition score, age against the governing mechanism, and data quality
+\parencite{bodemdalingskaart,nen2767}. This ranks the sheet pile and concrete
+walls and the 158 kademuren, which have almost no height data, within their
+group (Appendix~\ref{app:portfolio}).
 
-Crude Monte Carlo simulation was chosen to compute the failure probability,
-rather than FORM or numerical integration, for three reasons. The limit
-states are not smooth, since for example a sound pile core thinner than 20\,mm
-counts as broken; the wall type enters as a discrete mixture; and the update
-with proven strength reduces to keeping the draws that pass the survival
-check \parencite{hemel2024}, with both limit states and the check evaluated on
-the same draws so that their dependence is kept. For the failure
-probabilities found here, 0.007 and higher, 400{,}000 draws give a
-coefficient of variation below 2\,\%, so the computational cost is small. A
-deterministic recalculation with partial factors was not possible without
-design data and would carry the margins for new structures that the
-assignment questions, while ARK alone would not quantify the uncertainty. A
-one-at-a-time sensitivity analysis then shows which inputs drive $\beta$ and
-therefore what the municipality should measure
-(Section~\ref{sec:dimension-reduction}).
+The failure model is not calibrated (Section~\ref{sec:prob-validity}), so its
+$\beta$ is used only relatively: a wall's probability class is high if its
+$P_f$ exceeds 1.5 times the median of the modelled walls and low if it is below
+the median divided by 1.5. A consequence class from people on the werf, cellars
+behind the wall and the distance to the street completes a $3\times3$ risk
+matrix. Each class has its measure: red walls get restricted use and a survey
+of the wall type and come first in the renewal order, orange walls get the
+survey and follow, green walls stay in regular inspection until renewal
+(Section~\ref{sec:tradeoff}). Once the wall type and the pile condition are
+measured and the model is calibrated, the three bands
+of NEN~8700 can replace the relative classes: red below the rejection level,
+orange up to the renovation level, green above it \parencite{nen8700}.
 
-The structural failure probability is only one cause of the undesired event
-for the programme, which is that the programme does not prevent the failure
-of a wall. A fault tree (Section~\ref{sec:fault-tree}) therefore combines it
-with human and organisational causes, such as a missed inspection or a
-delayed repair, and propagates it over the 17 walls by Monte Carlo
-simulation with common causes. A decision tree (Section~\ref{sec:tradeoff})
-compares interventions on expected cost and with risk-averse criteria.
-Chapter~\ref{chapter:prediction-recommendations} extrapolates the pace of
-renewal towards 2050 by regression on the programme's own production and turns
-the results into recommendations. That extrapolation covers the backlog and
-the risk carried until renewal, not the condition of the walls after 2041,
-because the failure model is limited to the 15-year reference period.
+Crude Monte Carlo simulation computes the failure probability, rather than
+FORM, because the limit states are not smooth, the wall type enters as a
+discrete mixture, and the proven-strength update reduces to keeping the draws
+that pass the survival check \parencite{hemel2024}. A deterministic check with
+partial factors would carry the margins for new structures that the
+assignment questions, and ARK alone would not quantify the uncertainty. A
+one-at-a-time sensitivity analysis shows what to measure
+(Section~\ref{sec:dimension-reduction}). A fault tree
+(Section~\ref{sec:fault-tree}) adds human and organisational causes, a decision
+tree (Section~\ref{sec:tradeoff}) compares interventions, including
+restricting use and monitoring, and Chapter~\ref{chapter:prediction-recommendations}
+extrapolates the pace of renewal by regression and gives recommendations.

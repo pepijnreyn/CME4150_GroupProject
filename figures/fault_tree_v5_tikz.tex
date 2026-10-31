@@ -66,16 +66,16 @@
 \node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-5.4) {Excavation or pipe burst next to the wall};
 \draw[ftHb,fill=ftH,line width=0.5pt,rounded corners=0.6pt] (20.75,-8.31) rectangle (25.05,-7.89);
 \node[anchor=west,font=\fontsize{6}{6}\selectfont\bfseries,ftHb] at (20.8,-8.1) {S1};
-\node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-8.1) {Wrong build year in the register};
+\node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-8.1) {Wrong year or foundation status in the register};
 \draw[ftOb,fill=ftO,line width=0.5pt,rounded corners=0.6pt] (20.75,-8.85) rectangle (25.05,-8.43);
 \node[anchor=west,font=\fontsize{6}{6}\selectfont\bfseries,ftOb] at (20.8,-8.64) {S2};
-\node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-8.64) {Design-life rule (100 yr, 2030) does not flag the wall};
+\node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-8.64) {Screening rule (foundation, werf) does not flag the wall};
 \draw[ftOb,fill=ftO,line width=0.5pt,rounded corners=0.6pt] (20.75,-9.39) rectangle (25.05,-8.97);
 \node[anchor=west,font=\fontsize{6}{6}\selectfont\bfseries,ftOb] at (20.8,-9.18) {S3};
 \node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-9.18) {Model misses the risk (unmeasured inputs)};
 \draw[ftOb,fill=ftO,line width=0.5pt,rounded corners=0.6pt] (20.75,-9.93) rectangle (25.05,-9.51);
 \node[anchor=west,font=\fontsize{6}{6}\selectfont\bfseries,ftOb] at (20.8,-9.72) {I1};
-\node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-9.72) {Inspection not carried out (programme ends 2030)};
+\node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-9.72) {Inspection not carried out before renewal};
 \draw[ftHb,fill=ftH,line width=0.5pt,rounded corners=0.6pt] (20.75,-10.47) rectangle (25.05,-10.05);
 \node[anchor=west,font=\fontsize{6}{6}\selectfont\bfseries,ftHb] at (20.8,-10.26) {I2};
 \node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-10.26) {Damage under water missed or misread};
@@ -96,7 +96,7 @@
 \node[anchor=west,text width=3.7cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (21.33,-12.96) {Unexpected ground or wall condition delays the repair};
 \draw[ftR,fill=ftR!12, line width=1pt,rounded corners=1pt] (0.1,-6.806) rectangle (2.6,-5.816);
 \node[text=ftR,align=center,font=\fontsize{8.5}{9}\selectfont\bfseries] at (1.35,-6.111) {FAILURE};
-\node[text=ftR,align=center,font=\fontsize{4.6}{5.2}\selectfont] at (1.35,-6.451) {Programme does not\\prevent a wall failure};
+\node[text=ftR,align=center,font=\fontsize{4.6}{5.2}\selectfont] at (1.35,-6.451) {Programme does not prevent\\a wall failure before renewal};
 \ftor{2.66}{-6.311}
 \draw[ftline] (3.16,-6.311) -- (3.28,-6.311);
 \draw[ftline] (3.28,-10.395) -- (3.28,-2.228);
@@ -155,6 +155,10 @@
 \draw[ftline] (17.53,-10.26) -- (17.53,-9.72);
 \draw[ftline] (17.53,-9.72) -- (20.75,-9.72);
 \draw[ftline] (17.53,-10.26) -- (20.75,-10.26);
+\draw[ftline] (11.63,-10.6) -- (11.9,-10.6);
+\draw[ftTb,fill=ftT,line width=0.5pt,rounded corners=0.6pt] (11.9,-10.81) rectangle (14.4,-10.39);
+\node[anchor=west,font=\fontsize{6}{6}\selectfont\bfseries,ftTb] at (11.95,-10.6) {D};
+\node[anchor=west,text width=1.95cm,font=\fontsize{4.8}{5.2}\selectfont,ftG] at (12.3,-10.6) {No visible warning before failure};
 \draw[ftG,fill=white, line width=0.5pt,rounded corners=1pt] (11.9,-12.186) rectangle (13.9,-11.574);
 \node[anchor=west,text width=1.9cm,font=\fontsize{5}{5.6}\selectfont,ftG] at (11.95,-11.88) {Recognised, but repair too late};
 \ftor{13.96}{-11.88}
@@ -205,7 +209,7 @@
 \draw[ftline] (8.68,-1.08) -- (20.75,-1.08);
 \draw[ftline] (8.68,-1.62) -- (20.75,-1.62);
 \draw[ftG,fill=white, line width=0.5pt,rounded corners=1pt] (6.0,-3.006) rectangle (8.0,-2.394);
-\node[anchor=west,text width=1.9cm,font=\fontsize{5}{5.6}\selectfont,ftG] at (6.05,-2.7) {Surcharge load (traffic, parked vehicles)};
+\node[anchor=west,text width=1.9cm,font=\fontsize{5}{5.6}\selectfont,ftG] at (6.05,-2.7) {Surcharge load (vehicles, terraces, goods)};
 \ftor{8.06}{-2.7}
 \draw[ftline] (8.56,-2.7) -- (8.68,-2.7);
 \draw[ftline] (8.68,-3.24) -- (8.68,-2.16);
