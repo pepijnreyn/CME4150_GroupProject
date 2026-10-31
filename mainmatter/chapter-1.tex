@@ -63,19 +63,14 @@
 The Municipality of Utrecht manages more than 60\,km of quay and sheet pile
 walls and plans most of their maintenance on a theoretical end of life
 rather than the real condition \parencite{utrecht_teamchallenge2026}.
-The goal of the team is a method for the whole portfolio that ranks walls by
-risk on incomplete evidence: it screens the register, computes a failure
+The team's goal is a method that ranks all walls by risk on incomplete evidence: it screens the register, computes a failure
 probability where a structural model exists and scores indicators elsewhere,
 adds the consequences, and shows which measurement would change the ranking
 most. Its output is a red, orange or green class per wall until its renewal,
 by 2050 at the latest; the decision variables are where to inspect
 and intervene first and which interim measure to take until then.
 
-The method is tested on the walmuren of the Wervengebied, the low walls between
-the canal and the werf, the wharf along the Oudegracht, Nieuwegracht and Kromme
-Nieuwegracht (Figure~\ref{fig:wervengebied}): 51 walls, 4{,}062\,m in 27 raks,
-masonry on timber piles from about 1880 to the 1970s, part of a national
-monument. An existing programme renews them at about 100\,m per year
+The method is tested on the walmuren of the Wervengebied (Figure~\ref{fig:wervengebied}): the low walls between the water and the werf, the wharf along the Oudegracht, Nieuwegracht and Kromme Nieuwegracht. There are 51 walls, 4{,}062\,m in 27 raks, of masonry on timber piles from about 1880 to the 1970s and part of a national monument. An existing programme renews them at about 100\,m per year
 until 2050 \parencite{utrecht_herstelwerven}, and the municipality does not
 want an analysis that prioritises individual Oudegracht sections
 \parencite{utrecht_qa2026}. The team uses the area only to test the method,
@@ -86,13 +81,12 @@ cables and the bridges lie outside it but set the consequences and
 constraints, over which residents, businesses, cellar owners and the heritage
 authority disagree. Two processes decide failure: bacteria thin the timber
 piles, and soil, water and surcharge push the wall over or bend the weakened
-piles; the wall type decides which. The dominant
+piles; the wall type decides which governs. The dominant
 uncertainties are a lack of knowledge that measurement can reduce: the werf
 level is measured to 0.05\,m, but the soil class fits only 25--67\,\% of nearby
 borings, and the wall type, the pile condition and the canal bed are not
 measured. Loads and groundwater vary in time, and organisational factors such
-as a late permit or owner's consent depend on others; these are carried
-(Chapter~\ref{chapter:risk-analysis}).
+as a late permit or owner's consent depend on others; these are carried as uncertainty (Chapter~\ref{chapter:risk-analysis}).
 
 \clearpage
 \section{Assumptions, Data Collection and Generation}
@@ -130,8 +124,7 @@ whereas the structural information comes from a few archive documents about
 the Oudegracht and the timber properties from research in Amsterdam. The data
 are therefore most reliable for the werf level and least reliable for the
 wall type and the pile condition, which Section~\ref{sec:dimension-reduction}
-identifies as the inputs that matter most. Street-level imagery, groundwater
-wells and traffic signs served as proxies. Chapter~\ref{chapter:risk-analysis}
+identifies as the inputs that matter most. Street-level imagery, groundwater wells and traffic signs served only as checks. Chapter~\ref{chapter:risk-analysis}
 also needs costs and human error rates, from budgets and generic values.
 
 \begin{table}[htbp]
@@ -163,16 +156,14 @@ Budgets \parencite{utrecht_programmaplan,amsterdam_tender} & Costs, $C_f$ & \tex
 
 The foundation data decide which walls are modelled. The register keeps the
 year of the original wall after a renewal, so 11 walls renewed on steel piles
-in 2016--2026 still appear past their design life. The register is no better
-for the rest of the portfolio: of its 1{,}844 quay wall objects, one has the
+in 2016--2026 still appear past their design life. The rest of the register is no better: of its 1{,}844 quay wall objects, one has the
 year 2118, 23 the collective year 1917 and 418 a rounded year, and the width
 field has two meanings (Appendix~\ref{app:data-quality}), so any screening
 must correct these first. Of the 19 walls not renewed
 or of unclear status, two have no werf, which leaves 17 walls, 611\,m
 (Table~\ref{tab:selection}).
 
-Seven scripts turn the raw files into one input row per wall, in a fixed order
-from listed raw files, so that all results can be regenerated
+Seven scripts, run in a fixed order on listed raw files, turn the data into one input row per wall, so that every result can be regenerated
 (Appendix~\ref{app:data}). The werf
 level is the median of the AHN points on the land side of the wall at or
 below +1.6\,m NAP, as higher points fall on stairs or streets; for the 38
@@ -243,7 +234,7 @@ level on the Oudegracht, +1.12\,m NAP, lies within the
 and the renewed length in the foundation table, about 3.36\,km, matches the
 3{,}356\,m reported by the municipality \parencite{gu2025up}. The most
 informative check is the service history: all 17 walls stand. Oude Gracht Rak~09 WZ~01, a wall in clay
-or peat with exactly the median retained height of 1.21\,m, shows the gap. A
+or peat with exactly the median retained height of 1.21\,m, shows why a simple check is not enough. A
 deterministic check that treats it as a block of masonry predicts failure even
 without partial factors (2.08 against 3.94\,kNm/m), yet the wall stands; with
 its measured cross-section, piles and proven strength the model gives
@@ -273,7 +264,7 @@ which sets the cross-section and the piles, and the soil class, are fixed for a
 wall but unknown; and 18 random inputs describe the load, the resistance and
 the decay of the piles (Table~\ref{tab:prob-variables}).
 
-The team reduced the problem in four deliberate steps. The screening of
+The team reduced the problem in four steps. The screening of
 Section~\ref{sec:approach-selection} limits the analysis to the 17 walls that
 still stand on timber piles with a werf, 611\,m of the 4{,}062\,m of walmuur.
 Two characteristic cross-sections from archive drawings represent all walls
@@ -298,10 +289,7 @@ $\beta$, and the number of walls whose risk class then changes shows whether it
 would change a decision. FORM influence coefficients were not an option,
 because threshold functions and the rejection step make the limit state
 non-smooth, and variance-based indices of a failure indicator do not
-translate directly into the effect of a measurement on $\beta$. The price of
-the one-at-a-time method is that it ignores interactions, of which the
-strongest, between the wall type and the other inputs, is shown by giving the
-swings per type, and that its swing depends on the chosen percentiles.
+translate directly into the effect of a measurement on $\beta$. The one-at-a-time method ignores interactions; the strongest, between the wall type and the other inputs, shows in the swings per type. Its swings also depend on the chosen percentiles.
 
 \begin{table}[htbp]
 \centering
@@ -363,20 +351,13 @@ within its measurement error, but by 0.75 to 1.04 per type for the three walls
 of the Kromme Nieuwegracht whose level could not be read, which a simple
 levelling would settle. The least accurate data, on the wall type and the pile condition, have
 the largest effect, so the archive drawings and dive records need more
-attention than the terrain data. Three decisions follow. The measured werf
-level and the inputs of the last row of Table~\ref{tab:tornado} can be fixed
-at their medians: fixing all six at once changes $\beta$ by at most 0.03, and
+attention than the terrain data. Three decisions follow. First, the measured werf level and the inputs of the last row of Table~\ref{tab:tornado} are fixed at their medians: fixing all six at once changes $\beta$ by at most 0.03, and
 the correlations between inputs change it by at most 0.03 as well
 (Section~\ref{sec:prob-dependence}).
-The model factors and the bending strength stay random, as no affordable
-measurement would narrow them, whereas the groundwater under the werf can be
-measured in a few wells and changes eight classes
-(Section~\ref{sec:prob-validity}).
+Second, the model factors and the bending strength stay random, as no affordable measurement would narrow them. Third, measurements go to inputs that are both important and measurable: the groundwater under the werf, which a few wells can settle and which changes eight classes (Section~\ref{sec:prob-validity}), and above all the wall type.
 
-The measurement that would most reduce the uncertainty is therefore the wall
-type, which old drawings, a diver at the front of the floor or a survey of the
-horizontal displacement can settle (about 1 to 3\,mm for type~2, 6 to 9\,mm
-for type~1; Section~\ref{sec:tradeoff}). It is worth most where the updated probability
+Old drawings, a diver at the front of the floor or a survey of the horizontal displacement can settle the wall type (about 1 to 3\,mm for type~2, 6 to 9\,mm
+for type~1; Section~\ref{sec:tradeoff}). Settling it is worth most where the updated probability
 of type~2 is far from 0 and 1 and the types differ much: Oude Gracht Rak~03 OZ
 ($P(T{=}2 \mid \mathcal{E}) = 0.34$, 2.3 in $\beta$, 101\,m) and Kromme Nieuwe Gracht 005
 to 008 (0.60 to 0.74). On the three sand walls of rak~4 to 6 that are not
@@ -449,11 +430,7 @@ refer to the sections of this report.}
 \label{fig:approach}
 \end{figure}
 
-Figure~\ref{fig:approach} shows the approach. It works from coarse to fine, so
-that the costly probabilistic analysis is spent only where it can change a
-decision, as the Amsterdam risk assessment of quay walls (ARK) does, which
-scores condition and consequences on four levels; this study uses three classes
-\parencite{ark2023}. Where a structural model exists, the team replaces the
+Figure~\ref{fig:approach} shows the approach. Like the Amsterdam risk assessment of quay walls \parencite[ARK;][]{ark2023}, it works from coarse to fine, so that the costly probabilistic analysis is spent only where it can change a decision; ARK scores condition and consequences on four levels, this study uses three classes. Where a structural model exists, the team replaces the
 qualitative condition score by a failure probability. Only that model is
 specific to the walmuren, the one group where it could be built and checked
 (Section~\ref{sec:problem-synthesis}); the register check, the relative
@@ -497,8 +474,7 @@ Crude Monte Carlo simulation computes the failure probability, rather than
 FORM, because the limit states are not smooth, the wall type enters as a
 discrete mixture, and the proven-strength update reduces to keeping the draws
 that pass the survival check \parencite{hemel2024}. A deterministic check with
-partial factors would carry the margins for new structures that the
-assignment questions, and ARK alone would not quantify the uncertainty. A
+partial factors would build in the safety margins for new structures, which the assignment asks to question, and ARK alone would not quantify the uncertainty. A
 Markov model on NEN~2767 scores needs inspection histories, and a Bayesian
 network or a multi-criteria analysis needs data or weights that do not exist. A
 one-at-a-time sensitivity analysis shows what to measure

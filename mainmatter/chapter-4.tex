@@ -46,8 +46,7 @@ model has a step in 2019, $L_y = a + c\,[y \ge 2019] + \varepsilon_y$: 607\,m
 per year before, a step of \textminus482\,m per year (95\,\% confidence
 interval \textminus798 to \textminus166, $p = 0.007$), $R^2 = 0.54$, a lower
 AIC than the line (132.5 against 136.2) and normal residuals (Shapiro--Wilk
-$p = 0.43$). As 2019 was chosen after looking at the data, this $p$ is too
-low: a test for a break in an unknown year (sup-$F$ against 20{,}000
+$p = 0.43$). As 2019 was chosen after looking at the data, this $p$-value is too optimistic: a test for a break in an unknown year (sup-$F$ against 20{,}000
 permutations of the years) finds the largest break in 2019, but with
 $p = 0.07$. The step model is therefore exploratory. It makes the forecast
 because it describes the recent years: 125\,m per year (95\,\% confidence
@@ -55,7 +54,7 @@ interval of the recent mean 22 to 228\,m; 2026 counts the walls completed by
 October). The hypothesis that the recent pace equals the 100\,m per year of
 the plan is not rejected ($p = 0.58$), but the interval is too wide to confirm
 it. The permutation test and the bootstrap below assume nothing about the
-distribution of the yearly lengths, which matters as three years have none.
+distribution of the yearly lengths, which matters because three years had no completed wall.
 
 To predict the backlog, the team resampled the yearly production after the
 step, 2019 to 2026 (bootstrap, 20{,}000 runs, the same draws for both orders) and renewed the 17 modelled walls one after
@@ -183,8 +182,7 @@ weaker in the model than the post-war type on a concrete floor, and for most
 walls nobody has recorded which type it is.
 
 These are relative results, not a safety verdict under NEN~8700, the Dutch
-standard for existing structures: the model of
-the older type is too pessimistic, the evidence ignores the terraces, and the
+standard for existing structures: the model of the older type is too pessimistic, the evidence that every wall stands ignores the terraces it has carried, and the
 damage actually observed, settlement from pile rot and loss of the screen, is
 not modelled (Section~\ref{sec:prob-validity}). Known are which walls are
 renewed, the werf level and that every wall stands; assumed are the wall type,
@@ -199,10 +197,7 @@ edge free on three walls about \euro65k, which falls on terrace owners. If
 failures are spread over time, the pace of renewal (R8) matters more than the
 order; if the weakness is present today, neither helps much. For the rest of
 the 60\,km (R2 to R4) the case-study phase must supply the inspection,
-foundation and incident records (Appendix~\ref{app:portfolio}). R1, R9 and R10
-need an institutional change rather than money: whether a wall must be
-rejected depends on its consequence class and on accepting its history as
-evidence, not on new data \parencite{utrecht_qa2026}.
+foundation and incident records (Appendix~\ref{app:portfolio}). R1, R9 and R10 need decisions rather than money: the register has to record renewals, the municipal records have to be used, and whether a wall must be rejected depends on its consequence class and on accepting its history as evidence, not on new data \parencite{utrecht_qa2026}.
 
 \begin{center}
 \begin{minipage}{\textwidth}
