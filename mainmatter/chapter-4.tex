@@ -57,18 +57,22 @@ the recent pace equals the 100\,m per year of the plan, is not rejected
 
 To predict the backlog, the team resampled the yearly production of 2019 to
 2026 (bootstrap, 20{,}000 runs) and renewed the 17 modelled walls one after
-the other from 2027. The risk that a wall carries until its renewal year $T_i$
+the other from 2027. The risk that a wall carries until its renewal year $Y_i$
 follows from its best-estimate failure probability $P_{f,i}(t)$ over the
 15-year reference period (Section~\ref{sec:prob}), taken linear between 2026
 and 2041:
 \begin{equation}
-E[N] = \sum_{i} \left[1 - \exp\!\left(-\sum_{t=2026}^{T_i} h_i(t)\right)\right],
+E[N] = \sum_{i} \left[1 - \exp\!\left(-\sum_{t=2026}^{Y_i} h_i(t)\right)\right],
 \qquad h_i(t) = -\frac{\ln\bigl(1 - P_{f,i}(t)\bigr)}{15}, \label{eq:exposure}
 \end{equation}
 where $E[N]$ [--] is the expected number of walls that reach a limit state
 before they are renewed and $h_i(t)$ [1/yr] the yearly hazard of wall $i$,
 which assumes that failures occur at a constant rate within a reference
-period. The years until renewal and the risk per wall also give the exposure of
+period. This is an assumption: the wall type and the pile condition are a
+present state that is unknown, not random events in time. If a weak wall meets
+its critical load within a few years, $E[N]$ approaches the sum of the 15-year
+$P_f$, 3.2 walls, whatever the pace or order, so the effect of the pace below is
+an upper bound. The years until renewal and the risk per wall also give the exposure of
 the fault tree (Section~\ref{sec:fault-tree}). Table~\ref{tab:backlog} compares
 three production paces and two orders of work: the walls with the lowest
 $\beta$ first, or a random order that ignores risk.
@@ -96,9 +100,9 @@ Fast pace, 2015--2018 & Lowest $\beta$ first & 2028 (2027--2029) & 0.56 (0.49--0
 
 Table~\ref{tab:backlog} shows that at the recent pace the modelled walls are
 renewed around 2031, well before 2050, and that about one of the 17 walls is
-expected to reach a limit state before its renewal. The pace matters more
-than the order: renewing the walls with the lowest $\beta$ first lowers $E[N]$
-by about 10\,\%, whereas a return to the pace of 2016 to 2018 would lower it by
+expected to reach a limit state before its renewal. With a constant rate, the
+pace matters more than the order: renewing the walls with the lowest $\beta$ first lowers $E[N]$
+by about 10\,\%, whereas a return to the pace of 2015 to 2018 would lower it by
 about 45\,\%. For the 780\,m of walmuur that the municipality still has to
 restore \parencite{gu2025up}, the recent mean pace gives completion around
 2033, but the lower bound of its interval, 22\,m per year, would push
@@ -117,22 +121,9 @@ the scenarios is therefore more reliable than the absolute numbers;
 Section~\ref{sec:results-recommendations} uses it to rank the options of the
 municipality.
 
-\subsection{Replacement Cost Regression Analysis}
-Multiple linear regression relates replacement cost to wall length, heritage and disruption scores, retaining all three predictors across six quay wall replacement projects. The purpose is to supplement structural risk assessment with cost estimates that help schedule yearly works. Among critical walls with comparable urgency, estimates support comparison of replacement packages and allocation of limited municipal funding. Heritage and disruption scores are treated as equally spaced numerical ratings.
-
-Length has the strongest adjusted association with cost: approximately €13,806 per additional metre, holding the other factors constant. Standardised coefficients are 0.817 for length, −0.477 for heritage and 0.305 for disruption. The model explains 63.7\% of cost variation (adjusted R² = 0.094). Length is not significant at 5\% (p = 0.218); neither are heritage (p = 0.429) nor disruption (p = 0.606). Thus, the results identify exploratory associations rather than established causal effects.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/Full model fit and pearson correlation matrix.png}
-    \caption{Full model fit and correlation}
-    \label{fig:unique_label}
-\end{figure}
-
-Forward and backward AIC selection favoured the simpler length-only model (R² = 0.457), producing an estimated replacement cost of €2.711 million for KM060065 (54.52 m). Its 95\% confidence interval for the mean cost was −€1.801 million to €7.223 million, while the 95\% prediction interval for an individual replacement was −€5.374 million to €10.796 million. The negative bounds are financially unrealistic and demonstrate the model's limitations.
-%Reference graph in appendix
-
-Consequently, the results provide exploratory cost associations rather than reliable standalone project budgets. Therefore, to construct the annual schedule from established intervention deadlines from structural risk, estimates will be made for package costs and select works whose combined annual expenditure plus justified contingency fits the available budget. Price escalation towards 2050 will then be applied as outlined at the beginning of \autoref{chapter:prediction-recommendations} 
+A regression of the replacement cost of six projects on length, heritage and
+disruption finds no significant predictor (Appendix~\ref{app:cost}), so
+Section~\ref{sec:tradeoff} keeps the budget-based cost per metre.
 
 \clearpage
 \section{Results Interpretation and Proposed Recommendations}
@@ -148,24 +139,25 @@ Consequently, the results provide exploratory cost associations rather than reli
 %%  recommendations need an institutional change rather than money.
 %% ----------------------------------------------------------------------
 
-The analysis gives the municipality three results. First, the asset register
+The test case gives three results about the method. First, the asset register
 overstates the backlog of walmuren: 11 of the 29 walls that it shows as past
 their design life have already been renewed on steel piles, and only 17 walls,
 611\,m in total, still stand on their original timber piles with a werf
 (Section~\ref{sec:data}). Second, the failure model ranks these 17 walls, and
 with the consequence score (Appendix~\ref{app:portfolio}) nine of them, 398\,m,
-are red: Oude Gracht Rak~03 OZ, Kromme Nieuwe Gracht 005 to 008 and four walls
-lined with terraces in rak~5, 6 and 9 (Figure~\ref{fig:results-map}). Third, at
+are red: Oude Gracht Rak~03 OZ, four walls lined with terraces in rak~5, 6 and
+9, and Kromme Nieuwe Gracht 005 to 008, whose class rests on missing data rather
+than on evidence of a weak wall (Figure~\ref{fig:results-map}). Third, at
 the pace of the last eight years the 17 walls are renewed around 2031; until
 then about one of them is expected to reach a limit state
-(Section~\ref{sec:regression}), and for the median wall the programme fails to
-prevent this with a probability of 0.06 (Section~\ref{sec:fault-tree}).
+(Section~\ref{sec:regression}).
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/results_map.png}
 \caption{Risk class and $\beta$ of the 17 modelled walmuren, in the north of the
-Wervengebied. The numbers give the order of risk. Right: best estimate of
+Wervengebied. The numbers give the order: by risk class, then by $P_f$.
+*: no dive note on the wall type (prior 0.5); the class rests on missing data. Right: best estimate of
 $\beta$ (dot) and the range from type~1 to type~2 (bar), with the updated
 probability of type~2. Sources: asset register, Werfmuren layer
 \parencite{gu2025register,utrecht_werfmuren}, model results.}
@@ -179,10 +171,10 @@ the terraces that the werven carry, and the damage actually observed,
 settlement from pile rot and loss of the screen, is not modelled
 (Section~\ref{sec:prob-validity}). Known are which walls are renewed, the werf
 level and that every wall stands; assumed are the wall type, the pile
-condition, the soil and the load. The model's 0.21 failures per year for the 17
-walls has the same order of magnitude as the roughly 0.5 incidents per year
-observed in the whole Wervengebied, so the results are sound as a ranking of
-walls and measures, not as absolute safety levels.
+condition, the soil and the load. Per kilometre, the model's 0.21 failures per year are about three
+times the incidents observed in the Wervengebied, which fits its conservative
+bias; the results rank walls rather than give safety levels, and the choice of
+measure holds only within the tested range of $P_f$ (Section~\ref{sec:tradeoff}).
 
 \begin{table}[htbp]
 \centering
@@ -195,12 +187,12 @@ estimates (Section~\ref{sec:tradeoff}).}
 \toprule
  & Recommendation & What it resolves & Needs \\
 \midrule
-R1 & Establish the wall type of the red and orange walls: old drawings, one dive per rak or a displacement survey & Largest uncertainty ($\Delta\beta \approx 2$) & Little money \\
+R1 & Establish the wall type of the red and orange walls, first on the Kromme Nieuwegracht: old drawings, one dive per rak or a displacement survey & Largest uncertainty ($\Delta\beta \approx 2$) & Little money \\
 R2 & Measure the soft shell of sample piles; then calibrate the model and use the NEN~8700 bands & Pile condition; absolute safety level & Money: micro-drilling \\
 R3 & Restrict use on red walls until renewal: nothing within 1.5\,m of the edge & $\beta$ +0.2 to +0.4 for \euro25k per wall & Institutional: terrace permits \\
 R4 & Keep renewal at 100\,m per year or more, red walls first; close one rak per canal stretch at a time, combined with street and sewer works & Risk until renewal; reachability & Budget, capacity, coordination \\
 R5 & Rank the rest of the portfolio with indicators; monitor walls far from renewal & The other 60\,km & Data; little money \\
-R6 & Request unit costs, inspection and incident records; record renewals, foundation and wall type in the register & Costs and events of Chapter~\ref{chapter:risk-analysis}; overstated backlog & Institutional: data management \\
+R6 & Use the municipal unit costs, inspection and incident records in the case-study phase; record renewals, foundation and wall type in the register & Costs and events of Chapter~\ref{chapter:risk-analysis}; overstated backlog & Institutional: data management \\
 R7 & Decide the consequence class of a walmuur and whether proven strength, including survived service loads, is accepted & Which target applies & Institutional and regulatory \\
 \bottomrule
 \end{tabularx}
@@ -210,25 +202,24 @@ Table~\ref{tab:recommendations} turns this into recommendations. The first two
 are measurements, because the dominant uncertainties are cheap to reduce
 compared with a renewal of about \euro1.3 million per wall: finding type~2 on
 the three sand walls of rak~4 to 6 would raise their $\beta$ from about 0.8 to
-2.0, whereas finding type~1 on Oude Gracht Rak~03 OZ would confirm it as the
-most urgent wall. Restricting use (R3) is the cheapest interim measure and the
-best under a pessimistic view (Section~\ref{sec:tradeoff}), but its cost falls on
-terrace owners, a conflict the municipality has to weigh. The pace (R4) matters
+2.0. Restricting use (R3) is the cheapest interim measure, but its cost
+falls on terrace owners. If failures are spread over time, the pace (R4) matters
 more than the order: the expected number of walls that reach a limit state
-before renewal is about 1.0 at the recent pace and 0.6 at the pace of 2016 to
-2018, while ordering by $\beta$ saves 10\,\%. Keeping the city reachable limits
-the pace: a renewal closes the werf and often the street above it for months,
-so renewals should be spread over the canal stretches and combined with
-planned street and sewer works, a schedule this study does not optimise. For the rest of the
+before renewal is about 1.0 at the recent pace and 0.6 at the pace of 2015 to
+2018, while ordering by $\beta$ saves 10\,\%; if the weakness is present today,
+neither helps much. A renewal closes the werf and often the
+street for months, so renewals should be spread over the canal stretches and
+combined with street and sewer works. For the rest of the
 portfolio (R5), satellite movement and NEN~2767 condition scores rank the walls
 without a model, and monitoring pays where renewal is far away.
 
 The last two recommendations need an institutional change rather than money. A
 register that keeps the year of the original wall makes the design-life rule
 flag walls renewed ten years ago. The municipal unit costs, which the
-municipality offered to share \parencite{utrecht_qa2026}, and its inspection
-and incident records would replace most assumptions of Chapter~\ref{chapter:risk-analysis}; they should have been
-the team's data request. The municipality also has to decide which consequence
+municipality can share, and its inspection and incident records, which it holds
+for parts of the portfolio and will provide in the case-study phase
+\parencite{utrecht_qa2026}, would replace most assumptions of
+Chapter~\ref{chapter:risk-analysis}. The municipality also has to decide which consequence
 class applies to a walmuur and whether proven strength, including a history of
 survived service loads, is accepted, because these choices, not new data,
 decide whether a wall with a $\beta$ of 1.5 must be rejected.

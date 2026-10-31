@@ -77,10 +77,10 @@ masonry on timber piles from the late nineteenth century to the 1970s, part of
 a national monument. An existing programme renews them at about 100\,m per year
 until 2050 \parencite{utrecht_herstelwerven}, and the municipality does not
 want an analysis that prioritises individual Oudegracht sections
-\parencite{utrecht_qa2026}. The team uses the area as a test case nevertheless,
+\parencite{utrecht_qa2026}. The team uses the area only to test the method,
 because only here drawings, dive records and renewal data exist to build and
-check a failure model; Section~\ref{sec:approach-selection} shows how the
-method covers the rest of the portfolio. The system is the wall with its floor
+check a failure model; its ranking illustrates the method and does not reorder
+the programme. Section~\ref{sec:approach-selection} extends it to the portfolio. The system is the wall with its floor
 and piles; the private wharf cellars, the street with its cables and the
 bridges lie outside it but set the consequences of failure and the constraints
 on the works, over which residents, businesses, cellar owners and the heritage
@@ -114,9 +114,10 @@ register covers every wall: it lists 51 walmuren, 4{,}062\,m in total, with
 their construction year and material, but no height, foundation or condition
 data \parencite{gu2025register}. The team therefore combined it with open
 geodata, archive reports and the literature, and filled the remaining gaps
-with stated assumptions. The team chose not to use the one data request that
-the assignment allows; Section~\ref{sec:results-recommendations} names the
-municipal records it should have asked for.
+with stated assumptions. The municipality does not provide inspection,
+foundation or incident records in this phase \parencite{utrecht_qa2026};
+Section~\ref{sec:results-recommendations} names the records the method needs
+when it is applied to a case.
 
 \subsection{Data collected and generated}\label{sec:data-collected}\label{sec:data-generated}
 
@@ -205,7 +206,7 @@ A4 & Soft shell $U(0, 45)$\,mm for every wall, growing 0.10--0.25\,mm/yr & \text
 A5 & $K$ lognormal and $\gamma$ normal per soil class, independent & Team & Class uncertain: \textminus0.70 to +0.56 \\
 A6 & Canal +0.6\,m NAP; groundwater $U(+0.5, +0.9)$\,m NAP & \textcite{erfgoed158}; judgement & 0.1\,m higher: \textminus0.38 to +0.08 \\
 A7 & Surcharge $N(7\,\text{kPa}, 0.20)$ at a distance $U(0, 3)$\,m & \textcite{hemel2024} & Conservative for a werf \\
-A8 & Every modelled wall stands today under soil and water & Observation; \textcite{hemel2024} & Raises $\beta$ by 0.07 to 0.69; weak evidence \\
+A8 & Every modelled wall stands today under soil and water & Observation; \textcite{hemel2024} & The whole update raises $\beta$ by 0.07 to 0.69; weak evidence \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -296,7 +297,7 @@ ignores interactions and that its swing depends on the chosen percentiles.
 \small
 \caption{One-at-a-time sensitivity of $\beta$ (updated, 2026): change in
 $\beta$ when an input moves from its 5th to its 95th percentile, median over
-the walls. Best estimate: both types weighted by $P(T \mid E)$. Ranges per
+the walls. Best estimate: both types weighted by $P(T \mid \mathcal{E})$. Ranges per
 wall: Table~\ref{tab:tornado-full}.}
 \label{tab:tornado}
 \begin{tabular}{@{}l l r r r@{}}
@@ -342,7 +343,7 @@ behind it adds little. In the best estimate, a higher $K$ or groundwater level
 even raises $\beta$ for some walls. This is an artefact, not physics: the
 type-1 model cannot explain why most walls stand
 (Section~\ref{sec:prob-validity}), so any input that makes a standing type-1
-wall less likely raises $P(T{=}2 \mid E)$ and shifts the best estimate towards
+wall less likely raises $P(T{=}2 \mid \mathcal{E})$ and shifts the best estimate towards
 the stronger type. Only the swings per type should therefore be read as
 effects of the inputs.
 
@@ -357,17 +358,18 @@ level and the inputs of the last row of Table~\ref{tab:tornado} can be fixed
 at their medians: fixing all six at once changes $\beta$ by at most 0.03, and
 the correlations between inputs change it by at most 0.03 as well
 (Section~\ref{sec:prob-dependence}).
-The model factors, the bending strength and the groundwater level stay
-random, as no affordable measurement would narrow them. Effort should go to
+The model factors and the bending strength stay random, as no affordable
+measurement would narrow them; the groundwater under the werf can be measured
+in a few wells and changes the classes (Section~\ref{sec:prob-validity}). Effort should go to
 the inputs that are both important and measurable.
 
 The measurement that would most reduce the uncertainty of the result is
 therefore the wall type, which old construction drawings, a diver at the front
 of the floor or a survey of the horizontal displacement of the wall can settle:
-the model expects about 2 to 3\,mm for type~2 and 6 to 9\,mm for type~1
+the model expects about 1 to 3\,mm for type~2 and 6 to 9\,mm for type~1
 (Section~\ref{sec:tradeoff}). It is worth most where the updated probability
 of type~2 is far from 0 and 1 and the types differ much: Oude Gracht Rak~03 OZ
-($P(T{=}2 \mid E) = 0.34$, 2.3 in $\beta$, 101\,m) and Kromme Nieuwe Gracht 005
+($P(T{=}2 \mid \mathcal{E}) = 0.34$, 2.3 in $\beta$, 101\,m) and Kromme Nieuwe Gracht 005
 to 008 (0.60 to 0.74). On the three sand walls of rak~4 to 6 that are not
 being renewed (197\,m, 0.21), finding type~2 would raise $\beta$ from about 0.8
 to 2.0, from the weakest third of the walls to the strongest. For the walls that are probably
@@ -463,7 +465,9 @@ group (Appendix~\ref{app:portfolio}).
 The failure model is not calibrated (Section~\ref{sec:prob-validity}), so its
 $\beta$ is used only relatively: a wall's probability class is high if its
 $P_f$ exceeds 1.5 times the median of the modelled walls and low if it is below
-the median divided by 1.5. A consequence class from people on the werf, cellars
+the median divided by 1.5. Such a class always marks some walls red and
+depends on the set of walls, and the factor 1.5 is a choice: 1.25 gives ten red
+walls, 2.0 six (Appendix~\ref{app:portfolio}). A consequence class from people on the werf, cellars
 behind the wall and the distance to the street completes a $3\times3$ risk
 matrix. Each class has its measure: red walls get restricted use and a survey
 of the wall type and come first in the renewal order, orange walls get the

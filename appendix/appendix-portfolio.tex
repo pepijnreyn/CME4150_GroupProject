@@ -185,8 +185,18 @@ of the 17 modelled walls (Table~\ref{tab:risk-classes},
 Figure~\ref{fig:results-map}). The probability class is relative: high if
 $P_f$ exceeds 1.5 times the median of the modelled walls (0.146, $\beta$ 1.05),
 low if it is below the median divided by 1.5. The sum of the two class scores
-gives the risk class: 5 or 6 red, 4 orange, 2 or 3 green. The order within the
-list is by $P_f$ times the consequence score.
+gives the risk class: 5 or 6 red, 4 orange, 2 or 3 green. The list is ordered
+by risk class and, within a class, by $P_f$.
+
+The relative class always marks some walls high, whatever their absolute
+safety, and adding or removing walls can change the class of others. The
+factor 1.5 is a choice: with 1.25, ten walls (466\,m) are red, two orange and
+five green; with 2.0, six (361\,m) are red, nine orange and two green. Walls
+whose prior chance of type~2 is 0.5, Kromme Nieuwe Gracht 005 to 009, have no
+dive note on the wall type, and Appendix~\ref{app:prob-checks} shows that
+their $\beta$ rests partly on the miscalibrated type-1 model; for them the class
+signals missing data, and establishing the wall type comes before any other
+measure.
 
 Nearly every walmuur has cellars behind it, so that indicator separates
 little; the walls differ mainly in the people on the werf, high on the
@@ -202,7 +212,8 @@ with restricted use and a survey of the wall type.
 \caption{Risk class of the 17 modelled walmuren. Hosp.: restaurants, cafes,
 bars and outdoor seating per 100\,m; cellar: share of the wall with a cellar
 front within 15\,m; road: distance to the street; scores for people, cellars
-and reachability. OG = Oude Gracht, KNG = Kromme Nieuwe Gracht.}
+and reachability. OG = Oude Gracht, KNG = Kromme Nieuwe Gracht. *: no dive note
+on the wall type; the class rests on missing data.}
 \label{tab:risk-classes}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}r l r l r r r c l l@{}}
@@ -210,22 +221,22 @@ and reachability. OG = Oude Gracht, KNG = Kromme Nieuwe Gracht.}
  & Wall & $\beta$ & $P$ class & Hosp. & Cellar & Road [m] & Scores & Consequence & Risk \\
 \midrule
 1 & OG Rak 03 OZ & \textminus0.06 & high & 4.2 & 1.00 & 4.5 & 3/3/2 & high & red \\
-2 & KNG 008 & 0.56 & high & 0.0 & 1.00 & 1.6 & 1/3/3 & medium & red \\
-3 & KNG 007 & 0.59 & high & 0.0 & 1.00 & 1.7 & 1/3/3 & medium & red \\
-4 & KNG 006 & 0.59 & high & 0.0 & 1.00 & 1.6 & 1/3/3 & medium & red \\
-5 & KNG 005 & 0.59 & high & 0.0 & 1.00 & 2.8 & 1/3/3 & medium & red \\
+2 & KNG 008* & 0.56 & high & 0.0 & 1.00 & 1.6 & 1/3/3 & medium & red \\
+3 & KNG 007* & 0.59 & high & 0.0 & 1.00 & 1.7 & 1/3/3 & medium & red \\
+4 & KNG 006* & 0.59 & high & 0.0 & 1.00 & 1.6 & 1/3/3 & medium & red \\
+5 & KNG 005* & 0.59 & high & 0.0 & 1.00 & 2.8 & 1/3/3 & medium & red \\
 6 & OG Rak 05 NZ & 0.82 & medium & 10.7 & 1.00 & 4.0 & 3/3/2 & high & red \\
 7 & OG Rak 06 ZZ & 0.83 & medium & 4.1 & 1.00 & 3.6 & 3/3/2 & high & red \\
-8 & OG Rak 04 OZ & 0.81 & medium & 10.2 & 1.00 & 6.7 & 3/3/1 & medium & orange \\
-9 & OG Rak 09 ZOZ & 1.10 & medium & 8.5 & 1.00 & 4.3 & 3/3/2 & high & red \\
-10 & OG Rak 06 NZ & 1.18 & medium & 4.8 & 1.00 & 3.1 & 3/3/2 & high & red \\
+8 & OG Rak 09 ZOZ & 1.10 & medium & 8.5 & 1.00 & 4.3 & 3/3/2 & high & red \\
+9 & OG Rak 06 NZ & 1.18 & medium & 4.8 & 1.00 & 3.1 & 3/3/2 & high & red \\
+10 & OG Rak 04 OZ & 0.81 & medium & 10.2 & 1.00 & 6.7 & 3/3/1 & medium & orange \\
 11 & OG Rak 09 WZ & 1.05 & medium & 6.4 & 0.39 & 13.2 & 3/2/1 & medium & orange \\
 12 & OG Rak 08 OZ & 1.38 & low & 9.6 & 1.00 & 2.8 & 3/3/3 & high & orange \\
-13 & KNG 002 & 1.37 & low & 0.0 & 1.00 & 2.6 & 1/3/3 & medium & green \\
-14 & KNG 004 & 1.39 & low & 2.0 & 1.00 & 3.2 & 2/3/2 & medium & green \\
-15 & KNG 003 & 1.52 & low & 2.0 & 1.00 & 4.6 & 2/3/2 & medium & green \\
-16 & KNG 009 & 1.45 & low & 0.0 & 1.00 & 5.5 & 1/3/2 & medium & green \\
-17 & OG Rak 09 WZ 01 & 1.13 & medium & 0.0 & 0.00 & 15.2 & 1/1/1 & low & green \\
+13 & OG Rak 09 WZ 01 & 1.13 & medium & 0.0 & 0.00 & 15.2 & 1/1/1 & low & green \\
+14 & KNG 002 & 1.37 & low & 0.0 & 1.00 & 2.6 & 1/3/3 & medium & green \\
+15 & KNG 004 & 1.39 & low & 2.0 & 1.00 & 3.2 & 2/3/2 & medium & green \\
+16 & KNG 009* & 1.45 & low & 0.0 & 1.00 & 5.5 & 1/3/2 & medium & green \\
+17 & KNG 003 & 1.52 & low & 2.0 & 1.00 & 4.6 & 2/3/2 & medium & green \\
 \bottomrule
 \end{tabular}
 \end{table}
