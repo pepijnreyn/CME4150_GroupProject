@@ -114,66 +114,88 @@ municipality.
 \section{Results Interpretation and Proposed Recommendations}
 \label{sec:results-recommendations}
 
-```latex
+%% ----------------------------------------------------------------------
+%%  MAX 1.5 PAGES
+%%  Task: discuss the results against the abstraction of the models, the
+%%  data uncertainty and the assumptions; justify their soundness; give
+%%  recommendations for non-experts (interventions, benefits, costs,
+%%  uncertainties, risks, synergies); state what is known and assumed,
+%%  the programming direction, what to measure next, and which
+%%  recommendations need an institutional change rather than money.
+%% ----------------------------------------------------------------------
+
+The analysis gives the municipality three results. First, the asset register
+overstates the backlog of walmuren: 11 of the 29 walls that it shows as past
+their design life have already been renewed on steel piles, and only 17
+walls, 611\,m in total, still stand on their original timber piles with a
+werf (Section~\ref{sec:data}). Second, all 17 have a best-estimate
+reliability index below 1.8, the lowest rejection level of NEN~8700, both now
+and in 2041 (Section~\ref{sec:prob}), so under the current rules each would be
+red in any consequence class. Third, at the pace of the last eight years
+these walls will all be renewed around 2031, and until then about one of
+them is expected to reach a limit state (Section~\ref{sec:regression}); per
+wall, the programme fails to prevent this with a probability of 0.13 over 15
+years (Section~\ref{sec:fault-tree}).
+
+These numbers are less certain than their precision suggests, and the
+uncertainty is not evenly spread. Known are which walls are renewed, the werf
+level of 14 walls and the fact that every wall stands. Assumed are the wall
+type, the condition of the piles, the soil class and the load on the werf,
+together with two schematic cross-sections drawn for the Oudegracht. The wall
+type alone changes $\beta$ by about 2, more than any other input
+(Section~\ref{sec:dimension-reduction}), and the type-1 model lets standing
+walls fail in up to two thirds of the draws, which suggests that it is
+conservative. The model also leaves out settlement from pile rot, the damage
+actually observed, and a limit state in the model calls for an emergency
+measure rather than meaning collapse. The model's 0.17 failing walls per year
+has the same order of magnitude as the roughly 0.5 incidents per year
+observed in the whole Wervengebied (Section~\ref{sec:fault-tree}). The
+results are therefore sound as a ranking of walls and measures and as an
+order of magnitude, but not as absolute safety levels.
+
 \begin{table}[htbp]
 \centering
-\caption{Splitting the orange class.}
-\label{tab:orange_split}
 \small
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm} >{\raggedright\arraybackslash}p{3.0cm} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{1.8cm}}
+\caption{Recommendations to the Municipality of Utrecht. Costs are team
+estimates (Section~\ref{sec:tradeoff}).}
+\label{tab:recommendations}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{3.6cm} >{\raggedright\arraybackslash}p{2.9cm}@{}}
 \toprule
-\textbf{ARK critique} & \textbf{What we already have} & \textbf{What to do} & \textbf{Section} \\
+ & Recommendation & What it resolves & Needs \\
 \midrule
-Orange mixes ``unknown'' and ``moderate risk'' &
-Section~1.3 already lists $P(\text{red})$ as an output &
-Split orange into \textit{orange-unknown} (non-masonry, not calculated) and \textit{orange-calculated} ($P_f$ below the limit). Use $P(\text{red})$ as a second axis: a reach with $P(\text{red}) \approx 0.5$ is where inspection yields the most. &
-1.4 (flowchart), 3.2 \\
+R1 & Establish the wall type of the 17 walls from old construction drawings and one dive per rak & Largest uncertainty ($\Delta\beta \approx 2$) & Little money \\
+R2 & Measure the soft shell and diameter of sample piles on the walls that are probably type~2 & Pile condition ($\Delta\beta \approx 1.5$ for type~2) & Money: micro-drilling during the dives \\
+R3 & Keep renewal at 100\,m per year or more, in order of $\beta$ once the types are known & Risk until renewal (Table~\ref{tab:backlog}) & Budget and capacity; ring-fenced budget \\
+R4 & Sound the canal bed; protect against scour where needed (A1) & Scour, the canal bed and the timber screen & About \euro120k per wall \\
+R5 & Record renewal year, foundation and wall type in the asset register & Backlog overstated by 11 walls & Institutional: data management \\
+R6 & Decide the consequence class of a walmuur and whether proven strength is accepted & Which target applies (1.8, 2.5 or 3.3) & Institutional and regulatory \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
+Table~\ref{tab:recommendations} turns this into recommendations. The first two
+are measurements, because the dominant uncertainties are cheap to reduce
+compared with a renewal of about \euro1.3 million per wall, and they decide
+which walls are red. Finding type~2 on the three sand walls of rak~4 to 6
+(197\,m) would raise their $\beta$ from about 0.8 to 2.0, above the lowest
+level, whereas finding type~1 on Oude Gracht Rak~03 OZ would confirm it as the
+most urgent wall ($\beta$ \textminus0.70). The third concerns the pace, which
+matters more than the order of work: the expected number of walls that reach a
+limit state before renewal is about 1.0 at the recent pace and 0.6 at the pace
+of 2016 to 2018, whereas ordering by $\beta$ saves 10\,\% at no cost. The fourth, the cheapest technical measure of Section~\ref{sec:tradeoff},
+does not pay for itself in expected value at a failure cost of \euro1.5
+million, but it lowers the failure probability of a wall by about a quarter for
+less than 10\,\% of the cost of renewal, which a risk-averse owner of heritage
+walls may prefer.
 
-
-\begin{comment}
-    The code supports three findings: the register's design life is a weak guide to which walls need work, the simple overturning model cannot separate walls, and measuring H and foundation status is worth more than refining the models.
-• The register overstates the backlog. 11 of the 29 walmuren past design life are already renewed on steel (1,267 of 1,885 m), yet screening on Aanlegjaar puts them back in the queue. A foundation-status field per wall is the first fix; the Wervenkadaster would settle the 8 unclear walls.
-• The block model is too conservative to rank walls. Mean load 2.78–4.22 kNm/m against mean resistance 2.09 kNm/m: it fails walls that stand. This fits the brief's point that code-based models understate capacity. The missing pieces are the floor, the soil on a heel and the piles.
-• The pile model supports relative statements only. Its β of 3.24 at 15 years rests on Amsterdam inputs, and it does not reproduce its own benchmark (β 1.5).
-• The safety level is a choice that changes the answer. The same β of 3.24 passes CC2 and fails CC3.
-• What to measure next, in order of effect on the model:
-    1. Canal bottom per rak (soundings): sets H, and the soil load grows with H³.
-    2. The load case on the werf: where people, terraces and vehicles stand (a).
-    3. K near the walls: borings within 150 m agree for only 9 of the 51 walls.
-    4. Wall-thickness profile and pile diameter: the resistance side.
-• Candidates for the one data request. The code names three: canal-bottom soundings per rak, the foundation renewal year per rak, and the Wervenkadaster.
-• Not in the code: costs, a programming direction, and synergies with other works.
-\end{comment}
-```
-
-% This needs `\usepackage{booktabs, tabularx, array, amsmath}` in your preamble.
-%% ----------------------------------------------------------------------
-%%  MAX 1.5 PAGES
-%%
-%%  TASK DESCRIPTION
-%%  Discuss the obtained solution by linking the results to the level of
-%%  abstraction of the selected models, the data uncertainty, and the
-%%  assumptions made in Section \ref{sec:assumptions-data}. Discuss and
-%%  justify the soundness of the results.
-%%  You may include graphs to support statements, and use the appendices
-%%  for other supporting information.
-%%  Based on the interpretation of the results, what is the recommendation
-%%  you give to the Municipality of Utrecht? Communicate the results to
-%%  non-experts in data and uncertainty management. You may suggest
-%%  feasible interventions, expected benefits, associated costs,
-%%  uncertainties and risks, as well as potential synergies with other
-%%  transport and spatial planning initiatives.
-%%
-%%  CHECKLIST (challenge task 8: prepare actionable recommendations)
-%%   - Integrate the analyses into a substantiated recommendation stating
-%%     what is known, what is assumed, which programming direction you
-%%     propose, and what the municipality should measure next in order to
-%%     reduce the uncertainty that currently dominates the decision.
-%%   - Flag which recommendations need an institutional or regulatory
-%%     change rather than money.
-%% ----------------------------------------------------------------------
-
+The last two recommendations need an institutional change rather than money.
+A register that keeps the year of the original wall makes the design-life rule
+flag walls renewed ten years ago, so renewals, foundation and wall type should
+be recorded where the screening reads them. The municipality also has to
+decide which consequence class applies to a walmuur and whether a
+probabilistic assessment with proven strength is accepted, because these
+choices, not new data, decide whether a wall with a $\beta$ of 1.5 is red.
+Finally, combining the dives with the inspections of the wharf cellars, and
+the renewals with planned street and sewer works, would disrupt each rak only
+once.
