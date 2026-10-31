@@ -413,6 +413,10 @@ updated best-estimate $\beta$ (2026) for each variant:
   \item \emph{No friction}: $\delta = 0$ on the back of the body.
   \item \emph{Restricted use}: no surcharge within 1.5\,m of the edge, the
     alternative A6 of Section~\ref{sec:tradeoff}.
+  \item \emph{Type~1 recalibrated}: $\theta_R$ of type~1 times 2.09, the
+    smallest factor at which every wall of type~1 stands today in at least
+    90\,\% of the draws (bisection with 20{,}000 draws per wall); type~2 as in
+    the base model.
   \item \emph{Survey}: the horizontal displacement of the pile heads under
     today's soil and water (Het\'enyi: $y = P\lambda/(kD_0)$ for a fixed head,
     twice that for a pinned head) is measured with an error of 2\,mm. Shown are
@@ -424,32 +428,32 @@ updated best-estimate $\beta$ (2026) for each variant:
 \centering
 \footnotesize
 \caption{Updated best-estimate $\beta$ (2026) per wall for the model checks.
-Survey: chance of a displacement below 5\,mm, and $\beta$ if it is below or
-above. $y$: median displacement of the pile heads of type~1 and type~2 under
-soil and water [mm].}
+Calib.: type~1 recalibrated. Survey: chance of a displacement below 5\,mm, and
+$\beta$ if it is below or above. $y$: median displacement of the pile heads of
+type~1 and type~2 under soil and water [mm].}
 \label{tab:model-checks}
-\setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{@{}l r r r r r r r r r r@{}}
+\setlength{\tabcolsep}{3.1pt}
+\begin{tabular}{@{}l r r r r r r r r r r r@{}}
 \toprule
- & & Service & Prior & No & No & Restr. & \multicolumn{3}{c}{Survey} & \\
-\cmidrule(lr){8-10}
-Wall & Base & load & type & screen & friction & use & $P(<5)$ & below & above & $y$ type 1/2 \\
+ & & Service & Prior & No & No & Restr. & & \multicolumn{3}{c}{Survey} & \\
+\cmidrule(lr){9-11}
+Wall & Base & load & type & screen & friction & use & Calib. & $P(<5)$ & below & above & $y$ type 1/2 \\
 \midrule
-OG Rak 03 OZ    & \textminus0.06 & 0.59 & \textminus0.31 & \textminus0.16 & 0.08 & 0.18 & 0.40 & 0.76 & \textminus0.61 & 7.9 / 2.4 \\
-OG Rak 04 OZ    & 0.81 & 1.01 & 0.80 & 0.72 & 0.06 & 1.14 & 0.34 & 1.45 & 0.58 & 7.9 / 2.0 \\
-OG Rak 05 NZ    & 0.82 & 1.02 & 0.82 & 0.74 & 0.07 & 1.16 & 0.34 & 1.45 & 0.60 & 7.8 / 1.9 \\
-OG Rak 06 NZ    & 1.17 & 1.29 & 1.17 & 1.08 & 0.32 & 1.55 & 0.50 & 1.53 & 0.92 & 5.7 / 1.3 \\
-OG Rak 06 ZZ    & 0.82 & 1.02 & 0.82 & 0.74 & 0.06 & 1.16 & 0.34 & 1.45 & 0.60 & 7.8 / 1.9 \\
-OG Rak 08 OZ    & 1.38 & 1.64 & 1.33 & 1.12 & 1.23 & 1.64 & 0.81 & 1.89 & 0.48 & 6.5 / 1.6 \\
-OG Rak 09 ZOZ   & 1.10 & 1.52 & 0.80 & 0.78 & 1.16 & 1.34 & 0.75 & 1.61 & 0.30 & 8.5 / 2.6 \\
-OG Rak 09 WZ    & 1.05 & 1.45 & 0.72 & 0.72 & 1.05 & 1.31 & 0.72 & 1.54 & 0.36 & 9.2 / 3.0 \\
-OG Rak 09 WZ 01 & 1.13 & 1.55 & 0.87 & 0.81 & 1.21 & 1.36 & 0.78 & 1.65 & 0.22 & 7.8 / 2.3 \\
-KNG 002         & 1.37 & 1.71 & 1.19 & 0.98 & 1.39 & 1.64 & 0.83 & 1.76 & 0.49 & 7.6 / 2.2 \\
-KNG 003         & 1.52 & 1.78 & 1.46 & 1.15 & 1.47 & 1.77 & 0.82 & 1.98 & 0.67 & 7.6 / 2.1 \\
-KNG 004         & 1.38 & 1.67 & 1.29 & 1.02 & 1.37 & 1.62 & 0.77 & 1.87 & 0.65 & 8.9 / 2.6 \\
-KNG 005--007    & 0.59 & 1.14 & 0.14 & 0.38 & 0.69 & 0.80 & 0.59 & 1.30 & \textminus0.11 & 8.5 / 3.0 \\
-KNG 008         & 0.56 & 1.07 & 0.38 & 0.42 & 0.58 & 0.79 & 0.67 & 1.15 & \textminus0.31 & 6.4 / 1.7 \\
-KNG 009         & 1.45 & 1.56 & 1.44 & 1.28 & 0.76 & 1.80 & 0.67 & 1.86 & 0.99 & 5.6 / 1.3 \\
+OG Rak 03 OZ    & \textminus0.06 & 0.59 & \textminus0.31 & \textminus0.16 & 0.08 & 0.18 & 0.82 & 0.40 & 0.76 & \textminus0.61 & 7.9 / 2.4 \\
+OG Rak 04 OZ    & 0.81 & 1.01 & 0.80 & 0.72 & 0.06 & 1.14 & 1.94 & 0.34 & 1.45 & 0.58 & 7.9 / 2.0 \\
+OG Rak 05 NZ    & 0.82 & 1.02 & 0.82 & 0.74 & 0.07 & 1.16 & 1.95 & 0.34 & 1.45 & 0.60 & 7.8 / 1.9 \\
+OG Rak 06 NZ    & 1.17 & 1.29 & 1.17 & 1.08 & 0.32 & 1.55 & 2.31 & 0.50 & 1.53 & 0.92 & 5.7 / 1.3 \\
+OG Rak 06 ZZ    & 0.82 & 1.02 & 0.82 & 0.74 & 0.06 & 1.16 & 1.96 & 0.34 & 1.45 & 0.60 & 7.8 / 1.9 \\
+OG Rak 08 OZ    & 1.38 & 1.64 & 1.33 & 1.12 & 1.23 & 1.64 & 1.99 & 0.81 & 1.89 & 0.48 & 6.5 / 1.6 \\
+OG Rak 09 ZOZ   & 1.10 & 1.52 & 0.80 & 0.78 & 1.16 & 1.34 & 1.23 & 0.75 & 1.61 & 0.30 & 8.5 / 2.6 \\
+OG Rak 09 WZ    & 1.05 & 1.45 & 0.72 & 0.72 & 1.05 & 1.31 & 1.09 & 0.72 & 1.54 & 0.36 & 9.2 / 3.0 \\
+OG Rak 09 WZ 01 & 1.13 & 1.55 & 0.87 & 0.81 & 1.21 & 1.36 & 1.35 & 0.78 & 1.65 & 0.22 & 7.8 / 2.3 \\
+KNG 002         & 1.37 & 1.71 & 1.19 & 0.98 & 1.39 & 1.64 & 1.52 & 0.83 & 1.76 & 0.49 & 7.6 / 2.2 \\
+KNG 003         & 1.52 & 1.78 & 1.46 & 1.15 & 1.47 & 1.77 & 1.82 & 0.82 & 1.98 & 0.67 & 7.6 / 2.1 \\
+KNG 004         & 1.38 & 1.67 & 1.29 & 1.02 & 1.37 & 1.62 & 1.59 & 0.77 & 1.87 & 0.65 & 8.9 / 2.6 \\
+KNG 005--007    & 0.59 & 1.14 & 0.14 & 0.38 & 0.69 & 0.80 & 0.77 & 0.59 & 1.30 & \textminus0.11 & 8.5 / 3.0 \\
+KNG 008         & 0.56 & 1.07 & 0.38 & 0.42 & 0.58 & 0.79 & 1.33 & 0.67 & 1.15 & \textminus0.31 & 6.4 / 1.7 \\
+KNG 009         & 1.45 & 1.56 & 1.44 & 1.28 & 0.76 & 1.80 & 2.38 & 0.67 & 1.86 & 0.99 & 5.6 / 1.3 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -463,8 +467,9 @@ ranking of these walls rests partly on the miscalibrated type-1 model. Third,
 type~1 is the type the survey detects: the model expects three times as much
 displacement for it, so a survey mainly settles the wall type.
 Figure~\ref{fig:app-variants} puts the checks side by side: the walls in sand
-in rak~4 to 6 are the most sensitive to the groundwater and the wall friction,
-and no variant lifts any wall above the NEN~8700 rejection level of 1.8.
+in rak~4 to 6 are the most sensitive to the groundwater and the wall friction.
+Only the recalibrated type~1 lifts walls above the NEN~8700 rejection level of
+1.8, seven of them, and none above 2.5.
 
 \begin{figure}[htbp]
 \centering
@@ -473,8 +478,62 @@ and no variant lifts any wall above the NEN~8700 rejection level of 1.8.
 \label{fig:app-variants}
 \end{figure}
 
+\subsection{Robustness of the ranking}\label{app:prob-robustness}
 
-\section{Risk analysis and regression: figures}\label{app:risk-figures}
+The model is used to rank the walls (Section~\ref{sec:prob-validity}), so the
+script \texttt{ranking\_robustness.py} tests the ranking itself against every
+variant of Tables~\ref{tab:sens-walls} and \ref{tab:model-checks}
+(Table~\ref{tab:robustness}). For each variant it gives the Spearman rank
+correlation $\rho_s$ of the best-estimate $\beta$ with the base run of the same
+script, the number of walls whose risk class changes and how many of the nine
+red walls stay red. In a variant every wall changes, so the classes are set
+relative to the median $P_f$ of that variant, as the method would do.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Robustness of the ranking: change in the best-estimate $\beta$ (2026),
+Spearman rank correlation with the base ranking, walls that change risk class
+and base red walls that stay red, for each variant.}
+\label{tab:robustness}
+\begin{tabular}{@{}l r r r r@{}}
+\toprule
+Variant & Change in $\beta$ & $\rho_s$ & Class changes & Red stays red \\
+\midrule
+$\rho(K,\gamma) = -0.5$ & \textminus0.01 to 0.00 & 1.00 & 0 & 9 of 9 \\
+$\rho(\text{MOR},E) = +0.8$ & 0.00 to +0.01 & 1.00 & 0 & 9 of 9 \\
+Groundwater +0.6 to +1.0\,m NAP & \textminus0.38 to +0.08 & 0.83 & 6 & 4 of 9 \\
+Groundwater up to the werf & \textminus0.68 to +0.13 & 0.72 & 8 & 4 of 9 \\
+Soil class uncertain & \textminus0.70 to +0.56 & 0.59 & 8 & 4 of 9 \\
+Survived service load & +0.11 to +0.65 & 0.86 & 6 & 4 of 9 \\
+No update of the type & \textminus0.45 to 0.00 & 0.96 & 1 & 8 of 9 \\
+No screen & \textminus0.39 to \textminus0.08 & 0.96 & 3 & 7 of 9 \\
+No wall friction & \textminus0.86 to +0.14 & 0.68 & 8 & 4 of 9 \\
+Restricted use (A6) & +0.21 to +0.38 & 0.99 & 1 & 8 of 9 \\
+Type~1 recalibrated & +0.04 to +1.14 & 0.65 & 8 & 5 of 9 \\
+\midrule
+2041 instead of 2026 & \textminus0.15 to \textminus0.02 & 0.98 & 0 & 9 of 9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ranking survives the dependence assumptions, the screen, the type update
+and restricted use ($\rho_s \ge 0.96$), but not the variants that change what
+differs between walls: the soil class, the groundwater, the wall friction and
+the calibration of type~1 ($\rho_s$ 0.59 to 0.72). Oude Gracht Rak~03 OZ is red
+in all eleven variants, Rak~05 NZ and Rak~06 ZZ in ten, Rak~06 NZ in seven and
+the other red walls in four to six. Recalibrating type~1 raises
+$P(\mathcal{E} \mid T{=}1)$ from 0.32--0.98 to 0.90--1.00 and $\beta$ of
+type~1 by 1.18 to 1.47, so the evidence says less about the type and the gap
+between the types falls from 2.06 to 0.87 (median). The walls in sand of rak~4
+to 6, mostly type~1, then move from red to orange (Rak~04 OZ from orange to
+green), and the walls that are probably type~2 move up. Other ways to
+calibrate, such as a lower $K$ for type~1, were not tested; which is right can
+only be settled by establishing the type and the displacement of a few walls
+(Section~\ref{sec:dimension-reduction}).
+
+
+\section{Risk analysis and regression: supporting information}\label{app:risk-figures}
 
 Figure~\ref{fig:app-fault-tree} supports Sections~\ref{sec:ft-results} and
 \ref{sec:to-results}. Common cause hardly changes the number of walls where the
@@ -490,15 +549,45 @@ are renewed spreads from 2028 to about 2040 (90\,\% interval 2029 to 2036).
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/app_fault_tree.png}
-\caption{Left: number of walls among the 17 where the programme fails to prevent a failure before renewal (Monte Carlo, $4\times10^5$ runs), with independent causes and with the shared screening, programme and inspection events. Right: expected cost $E[C]$ of each alternative for the median wall against the failure cost $C_f$ (Table~\ref{tab:results}).}
+\caption{Left: number of walls among the 17 where the programme fails to prevent a failure before renewal (Monte Carlo, $4\times10^5$ runs), with independent causes and with the shared screening, programme and inspection events. Right: expected cost $E[C]$ of each alternative for the median wall against the failure cost $C_f$ (Figure~\ref{fig:dtree}).}
 \label{fig:app-fault-tree}
 \end{figure}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/app_production.png}
-\caption{Left: renewed length of walmuur per year (Table~\ref{tab:production}) with the linear trend, the mean of the fast years and of the recent years, and the 100\,m per year of the plan. Right: year in which all 17 modelled walls are renewed in 20{,}000 bootstrap runs, lowest $\beta$ first, with the expected number of walls that reach a limit state before renewal.}
+\caption{Left: renewed length of walmuur per year (Figure~\ref{fig:production}) with the linear trend, the mean of the fast years and of the recent years, and the 100\,m per year of the plan. Right: year in which all 17 modelled walls are renewed in 20{,}000 bootstrap runs, lowest $\beta$ first, with the expected number of walls that reach a limit state before renewal.}
 \label{fig:app-production}
 \end{figure}
+
+\subsection{Human error probabilities}\label{app:heart}
+
+HEART gives a human error probability as a nominal value for a generic task
+type, multiplied for each error-producing condition (EPC) by
+$(\text{EPC} - 1) \times \text{APOA} + 1$, with APOA the assessed proportion of
+affect between 0 and 1 \parencite{williams1986heart,heart_table_plos2021}.
+Section~\ref{sec:ft-probabilities} uses the nominal values without EPCs, as the
+conditions of a dive inspection and of the follow-up in Utrecht are not known.
+Table~\ref{tab:heart} shows the EPCs that plausibly apply, with proportions
+chosen by the team. They raise the top event of the median wall from 0.049 to
+0.052; the cheapest alternative (A0) and the risk-averse choice (A4) of
+Section~\ref{sec:tradeoff} stay the same.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{HEART values of I2 and I3: nominal value of the generic task type
+(5th--95th percentile) and the value with the EPCs that plausibly apply.}
+\label{tab:heart}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.4cm}
+  >{\raggedright\arraybackslash}p{2.6cm} l >{\raggedright\arraybackslash}X r@{}}
+\toprule
+Event & Generic task type & Nominal & EPCs (multiplier, APOA) & With EPCs \\
+\midrule
+I2 Damage under water missed & C: complex task needing skill and understanding & 0.16 (0.12--0.28) & Low signal-to-noise ratio under water ($\times$10, 0.1); little independent checking ($\times$3, 0.2) & 0.43 \\
+I3 Warning not acted on & M: miscellaneous task & 0.03 (0.008--0.11) & Mismatch between perceived and real risk ($\times$4, 0.2); conflict between immediate and long-term objectives ($\times$2.5, 0.2) & 0.06 \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \clearpage
 \section{Source code}
@@ -507,19 +596,23 @@ are renewed spreads from 2028 to about 2040 (90\,\% interval 2029 to 2036).
 The code is in the folder \texttt{scripts/} of the team repository,
 \url{https://github.com/pepijnreyn/CME4150_GroupProject}; Table~\ref{tab:run-order} gives the run order of the data
 and model scripts. The analyses of Chapters~\ref{chapter:risk-analysis} and
-\ref{chapter:prediction-recommendations} and the portfolio scoring use six
+\ref{chapter:prediction-recommendations} and the portfolio scoring use eight
 more scripts:
 \begin{itemize}
   \item \texttt{StressCaclulation/ModelChecks.py}: the model checks above;
+  \item \texttt{ranking\_robustness.py}: the robustness of the ranking and the
+    class changes of Table~\ref{tab:tornado};
   \item \texttt{regression\_production\_rate.py}: the regression, the bootstrap
     of the backlog and, per wall, the years until renewal and the chance of a
     limit state before it (Section~\ref{sec:regression});
   \item \texttt{fault\_tree.py}: the fault tree and the decision tree
     (Sections~\ref{sec:fault-tree} and \ref{sec:tradeoff});
+  \item \texttt{fault\_tree\_figure.py}: Figure~\ref{fig:faulttree};
   \item \texttt{build\_walmuur\_consequence.py}: the consequence score
     (Appendix~\ref{app:portfolio});
   \item \texttt{plot\_results\_map.py}: the risk classes and
     Figure~\ref{fig:results-map};
-  \item \texttt{plot\_appendix\_figures.py}: the figures of this appendix.
+  \item \texttt{plot\_appendix\_figures.py}: the figures of this appendix and
+    Figure~\ref{fig:production}.
 \end{itemize}
 

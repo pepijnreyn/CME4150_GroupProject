@@ -6,12 +6,10 @@
 Chapter~\ref{chapter:risk-analysis} needs, for each of the 17 walmuren on
 their original timber piles (Section~\ref{sec:data}), the probability that it
 fails under the loads of the 15-year reference period of NEN~8700
-\parencite{nen8700}, given that it stands today. As in \textcite{hemel2024}, the
-surcharge is the load that occurs in that period; there is no integration over
-time, which enters only through the soft shell (2026 and 2041). Spreading this
-probability evenly over the years (Sections~\ref{sec:fault-tree} and
-\ref{sec:regression}) is therefore an assumption.
-The team modelled it with the lateral failure mechanism that
+\parencite{nen8700}, given that it stands today. As in \textcite{hemel2024},
+time enters only through the soft shell (2026 and 2041), so spreading this
+probability over the years (Sections~\ref{sec:fault-tree} and
+\ref{sec:regression}) is an assumption. The team modelled it with the lateral failure mechanism that
 \textcite{hemel2023,hemel2024} studied for Amsterdam quay walls, adapted to the
 two cross-section types of the Utrecht walmuren \parencite{ibu2010,erfgoed156}
 (Figure~\ref{fig:app-sections}).
@@ -33,7 +31,7 @@ from the werf to the underside of the floor. Pile failure is described by
 g_2 = \mathrm{MOR} - \left(\theta_M \frac{32\,M}{\pi d^3} + \frac{4N}{\pi d^2}\right),
 \qquad d = D_0 - 2\bigl(s_0 + r\,(t - 2026)\bigr), \label{eq:g2}
 \end{equation}
-where MOR [kPa] is the bending strength of the timber (22\,MPa on average), $M$ [kNm] and $N$ [kN]
+where MOR [kPa] is the bending strength of the timber (mean 22{,}000\,kPa), $M$ [kNm] and $N$ [kN]
 the moment and the axial force in the most loaded pile, $\theta_M$ [--] a
 model factor, $d$ [m] the diameter of the sound core, $D_0$ [m] the original
 diameter, $s_0$ [m] the soft shell in 2026, $r$ [m/yr] its growth rate and $t$
@@ -57,15 +55,6 @@ where $i$ numbers the Monte Carlo draws, $\mathbf{1}[\cdot]$ [--] is 1 if the
 event occurs in a draw and 0 otherwise, and $\Phi$ is the standard normal
 distribution function. The model uses 400{,}000 draws per wall and type, for 2026
 and for 2041 (Appendix~\ref{app:prob}).
-
-Table~\ref{tab:prob-variables} lists the random variables: lognormal for
-positive quantities with a multiplicative error, such as $K$ and the model
-factors \parencite{jcss2001}; normal for unit weights and timber properties;
-uniform where only bounds are known; Bernoulli for the wall type. The normal
-surcharge follows \textcite{hemel2024}, although an extreme-value distribution
-would suit a maximum load better. Only the groundwater and the surcharge vary
-in time (aleatory, A); the others are fixed for a wall but unknown (epistemic,
-E), so measuring them narrows $P_f$.
 
 \begin{table}[htbp]
 \centering
@@ -101,6 +90,16 @@ NAP for the three walls whose werf level could not be read.
 \end{tabularx}
 \end{table}
 
+Table~\ref{tab:prob-variables} lists the random variables: lognormal for
+positive quantities with a multiplicative error, such as $K$ and the model
+factors \parencite{jcss2001}; normal for unit weights and timber properties;
+uniform where only bounds are known; Bernoulli for the wall type. The normal
+surcharge follows \textcite{hemel2024}, although an extreme-value distribution
+would suit a maximum load better. Only the groundwater and the surcharge vary
+in time (aleatory, A); the others are fixed for a wall but unknown (epistemic,
+E), so measuring them narrows $P_f$.
+
+
 The parameters were estimated in three ways: from a literature mean and
 coefficient of variation by the method of moments, from the data of
 Section~\ref{sec:data} for the werf level and the prior probability of each
@@ -113,7 +112,7 @@ P(T{=}2 \mid \mathcal{E}) = \frac{p\,P(\mathcal{E} \mid T{=}2)}{p\,P(\mathcal{E}
 \label{eq:mixture}
 \end{equation}
 where $P(\mathcal{E} \mid T)$ [--] is the fraction of the draws of type $T$ in which the
-wall stands today; no variable could be fitted to local data.
+wall stands today; only the werf level could be fitted to local data.
 
 \subsection{Dependence between the variables}\label{sec:prob-dependence}
 
@@ -136,36 +135,37 @@ walls.
 Few inputs can be compared with data (Table~\ref{tab:prob-data}). The AHN
 points on a werf are heavy-tailed, so the median is used; its error, 0.04\,m,
 agrees with $\sigma = 0.05$\,m (Figure~\ref{fig:app-werf-fit}). The
-BRO wells stand under the raised streets and give levels above the werf
-itself, so the model uses a physical bound around the canal level instead;
-raising it by 0.1\,m changes $\beta$ by \textminus0.38 to +0.08, and letting it
-rise to the werf by \textminus0.68 to +0.13, which changes the class of eight
-walls (Figure~\ref{fig:app-variants}). The soil class agrees with only 25 to 67\,\% of the
-borings within 150\,m, the weakest input; treated as uncertain, it changes
-$\beta$ by \textminus0.70 to +0.56. The soft-shell range has a mean of
-22.5\,mm, close to the 21\,mm measured in Amsterdam \parencite{hemel2023}, but
-no Utrecht data exist.
+BRO wells stand under the raised streets, so the model bounds the groundwater
+around the canal level instead.
+The soil class agrees with only 25 to 67\,\% of the borings within 150\,m, the
+weakest input. The soft-shell range has a mean of 22.5\,mm, close to the
+21\,mm measured in Amsterdam \parencite{hemel2023}, but no Utrecht data exist.
 
-The strongest test of validity is that all 17 walls stand. With the measured cross-sections, type~2
-stands in 95 to 100\,\% of the draws, but type~1 in only 33 to 98\,\%: the
-type-1 model is miscalibrated, as it lets walls that have stood for a century
-fail. The ranking, however, agrees with the incidents on walls still on timber:
-both walls of rak~6, red in every variant, were widened in 2021 to prevent collapse and stabilised in 2024
-\parencite{gu2023vgr,wijkbericht2024walmuur}; the other incidents could not be
-placed on a modelled wall. Without the type update, which mainly reflects
-this error, $\beta$ is 0 to 0.45 lower. The proven-strength evidence is also
-weak, as it ignores terraces and crowds, and a survived load
-of 2.5\,kPa at 0.5\,m from the edge \parencite{en1991} would raise $\beta$ by
-0.11 to 0.65. Wall friction ($\delta = \tfrac23\varphi$)
-is optimistic where $K$ is near at rest; without it, type~1 loses 0.55
-to 1.02. The Monte Carlo error is 0.01 in $\beta$ (Appendix~\ref{app:prob-checks}).
+The strongest test is that all 17 walls stand. Type~2 stands in 95
+to 100\,\% of the draws, but type~1 in only 33 to 98\,\%: the type-1 model is
+miscalibrated. As the model is used to rank, the ranking is what must hold
+(Table~\ref{tab:robustness}). Over the eleven variants of
+Appendix~\ref{app:prob}, the Spearman rank correlation with the base ranking
+has a median of 0.86. It is 0.96 or more for the correlations, the screen, the
+type update and restricted use, but 0.59 to 0.72 for variants that change what
+differs between walls: an uncertain soil class, no wall friction, groundwater
+up to the werf, and type~1 recalibrated so that every wall stands in at least
+90\,\% of the draws. This takes $\theta_R$ times 2.1,
+raises $\beta$ of type~1 by 1.2 to 1.5 and shrinks the gap between the types
+from 2.1 to 0.9. Only Rak~03 OZ is red in all eleven variants, Rak~05 NZ and
+06 ZZ in ten. The base ranking agrees with the one incident on a modelled wall:
+both walls of rak~6 were widened in 2021 to prevent collapse
+\parencite{gu2023vgr,wijkbericht2024walmuur}. $P_f$ describes one
+cross-section, whereas a long wall has more sections that can fail, so the
+ranking understates long walls against short ones (3 to 101\,m). The Monte Carlo error is 0.01 in $\beta$
+(Appendix~\ref{app:prob-mc}).
 
 The best estimates of $\beta$ are \textminus0.06 to 1.52 in 2026 (median
-1.05; Table~\ref{tab:prob-results}). In 2041 they are at most 0.12 lower. The observed
-damage, settlement from pile rot \parencite{erfgoed156} and loss of the screen,
-is outside the limit states; without the screen, $\beta$ falls by 0.08 to 0.39. The model therefore
-supports a ranking and an order of magnitude, not a verdict against
-NEN~8700, which needs calibration first
+1.05; Table~\ref{tab:prob-results}), and at most 0.12 lower in 2041. The
+observed damage, pile-rot settlement and loss of the screen, is not modelled
+\parencite{erfgoed156}. The model thus supports an order of
+magnitude and a ranking firm only for the weakest walls until the type, soil
+and groundwater are measured; a NEN~8700 verdict needs calibration first
 (Section~\ref{sec:approach-selection}).
 
 %% ----------------------------------------------------------------------
