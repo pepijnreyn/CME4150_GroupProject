@@ -145,6 +145,17 @@ def main() -> None:
                   f" ({row['done_p05']}-{row['done_p95']}), expected walls reaching a limit state"
                   f" before renewal {row['expected_failures_mean']:.2f}"
                   f" ({row['expected_failures_p05']:.2f}-{row['expected_failures_p95']:.2f})")
+    # L1 of the fault tree (section 3.1): share of the modelled length not renewed by the end
+    # of the reference period, at the recent pace and at the lower 95% bound of its mean.
+    years_left = 2041 - START + 1
+    total = sum(w["length"] for w in walls)
+    made = rng.choice(recent, (N_BOOT, years_left)).sum(axis=1)
+    share = np.clip(total - made, 0, None) / total
+    low_pace = m - tr * se
+    print(f"L1, share of {total:.0f} m not renewed by 2041: recent pace mean {share.mean():.4f}"
+          f" (P(share > 0) = {(share > 0).mean():.4f}); at {low_pace:.0f} m/yr"
+          f" {max(0.0, total - years_left * low_pace) / total:.2f}; at {PLAN_RATE:.0f} m/yr"
+          f" {max(0.0, total - years_left * PLAN_RATE) / total:.2f}")
     with OUT.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()

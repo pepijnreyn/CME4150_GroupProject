@@ -35,19 +35,24 @@ ROOT = Path(__file__).resolve().parents[1]
 SENS = ROOT / "data" / "processed" / "walmuur_sensitivity.csv"
 
 # ---- Inputs ----------------------------------------------------------------
+# L1: share of the modelled walls not renewed by 2041, at the recent pace and at the lower
+# 95% bound of that pace (scripts/regression_production_rate.py). The earlier report
+# derived 0.20 (0-0.37) from a backlog of 1.88 km; --check uses that.
+L1 = (0.0, 0.0, 0.45) if "--check" not in sys.argv else (0.20, 0.0, 0.37)
 EVENTS = {  # id: (base, low, high), Table 3.1 without M
     "W2": (0.001, 0.0002, 0.005), "Q1": (0.005, 0.001, 0.02), "Q2": (0.001, 0.0002, 0.005),
     "Q3": (0.001, 0.0002, 0.005), "E1": (0.001, 0.0002, 0.005), "E2": (0.005, 0.001, 0.02),
     "E3": (0.05, 0.02, 0.15), "E4": (0.001, 0.0002, 0.005), "S1": (0.10, 0.05, 0.20),
     "S2": (0.0, 0.0, 0.0), "S3": (0.10, 0.05, 0.20), "I1": (0.30, 0.10, 0.73),
-    "I2": (0.16, 0.12, 0.28), "I3": (0.03, 0.008, 0.11), "L1": (0.20, 0.0, 0.37),
+    "I2": (0.16, 0.12, 0.28), "I3": (0.03, 0.008, 0.11), "L1": L1,
     "L2": (0.10, 0.05, 0.20), "L3": (0.10, 0.05, 0.20), "L4": (0.10, 0.05, 0.20),
 }
 ALTERNATIVES = {  # name: (cost [k EUR], changed events)
     "A0 Current programme": (0, {}),
     "A1 Scour/load control": (120, {"E3": 0.02, "Q1": 0.001, "E2": 0.001}),
     "A2 Inspection": (70, {"I1": 0.10, "I2": 0.12, "I3": 0.008, "S3": 0.05}),
-    "A3 Organisation": (100, {"L1": 0.05, "L2": 0.05, "L3": 0.05, "L4": 0.05}),
+    "A3 Organisation": (100, {"L1": 0.05 if "--check" in sys.argv else 0.0,
+                               "L2": 0.05, "L3": 0.05, "L4": 0.05}),
     "A4 Strengthen now": (1300, {"M": 0.01, "E3": 0.02, "W2": 0.0002}),
 }
 ALTERNATIVES["A5 Package"] = (290, {**ALTERNATIVES["A1 Scour/load control"][1],
@@ -152,6 +157,14 @@ def main() -> None:
     for name in ("A3 Organisation", "A5 Package", "A4 Strengthen now"):
         c, p = res[name]
         print(f"break-even C_f for {name} against A0: {(c - c0) / (p0 - p) / 1000:.1f} M EUR")
+    best, switches = None, []
+    for cf in np.arange(100, 30_001, 50):
+        name = min(res, key=lambda k: res[k][0] + res[k][1] * cf)
+        if name != best:
+            switches.append(f"{name.split()[0]} from {cf / 1000:.2f} M")
+            best = name
+    print("cheapest alternative as C_f rises: " + ", ".join(switches))
+    print("Pf: " + ", ".join(f"{k.split()[0]} {v[1]:.4f}" for k, v in res.items()))
     c3, p3 = res["A3 Organisation"]
     c5, p5_ = res["A5 Package"]
     print(f"break-even C_f A5 against A3: {(c5 - c3) / (p3 - p5_) / 1000:.1f} M EUR")
