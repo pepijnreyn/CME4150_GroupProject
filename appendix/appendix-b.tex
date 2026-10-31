@@ -362,6 +362,27 @@ Surcharge & $N(7\,\text{kPa}, 0.20)$ &
 \end{tabularx}
 \end{table}
 
+Figure~\ref{fig:app-werf-fit} tests the one input with enough data for a fit.
+The AHN points on the werf of the 38 walls with a werf deviate from their wall
+median in a heavy-tailed way (Shapiro--Wilk $p < 0.001$): most lie within a
+normal spread of 0.058\,m, but some fall on steps or terraces. The model
+therefore uses the median, not the mean, and its error is what $\sigma$ must
+cover. The bootstrap standard error of the median is 0.038\,m for the typical
+wall and below 0.05\,m for 63\,\% of the walls; for the others the werf level is
+less certain than the model assumes, which Table~\ref{tab:tornado-full} shows
+to matter little ($\pm$0.08\,m changes $\beta$ by about 0.2).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/app_werf_fit.png}
+\caption{Werf level: fit of the AHN points to a normal distribution. Left:
+normal probability plot of each point minus its wall median, with the normal
+distribution of the robust standard deviation. Right: bootstrap standard error
+of the werf median per wall, against the $\sigma = 0.05$\,m of the model
+(Table~\ref{tab:prob-variables}).}
+\label{fig:app-werf-fit}
+\end{figure}
+
 \subsection{Monte Carlo accuracy}\label{app:prob-mc}
 
 With $n$ draws that stand today, the coefficient of variation of the updated
