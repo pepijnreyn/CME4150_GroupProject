@@ -1,0 +1,52 @@
+Nummer,Naam,length_m,hospitality_within_20m,hospitality_per_100m,cellar_share,road_distance_m,score_people,score_cellars,score_reachability,consequence_score,consequence_class
+KM060041,Nieuwe Gracht - Rak 19 OZ,92.7,0,0.0,1.0,3.1,1,3,2,2.0,medium
+KM060062,Oude Gracht - Rak 08 OZ,32.7,7,9.62,1.0,2.8,3,3,3,3.0,high
+KM060027,Kromme Nieuwe Gracht 009,18.3,0,0.0,1.0,5.5,1,3,2,2.0,medium
+KM060058,Oude Gracht - Rak 05 ZZ,78.4,9,7.6,1.0,6.2,3,3,1,2.33,medium
+KM060054,Oude Gracht - Rak 04 OZ,67.4,11,10.24,1.0,6.7,3,3,1,2.33,medium
+KM060013,Oude Gracht - Rak 13 OZ,132.8,1,0.58,1.0,3.3,2,3,2,2.33,medium
+KM060012,Oude Gracht - Rak 12 WZ,96.3,4,2.93,1.0,7.0,2,3,1,2.0,medium
+KM060015,Oude Gracht - Rak 14 OZ,134.5,0,0.0,1.0,4.0,1,3,2,2.0,medium
+KM060037,Nieuwe Gracht - Rak 17 OZ ,85.6,0,0.0,1.0,1.7,1,3,3,2.33,medium
+KM060044,Nieuwe Gracht - Rak 20 WZ,116.9,0,0.0,1.0,3.0,1,3,2,2.0,medium
+KM060009,Oude Gracht - Rak 11 OZ,76.5,1,0.86,1.0,2.5,2,3,3,2.67,high
+KM060056,Oude Gracht - Rak 04 ZZ,5.8,3,6.56,1.0,5.5,3,3,2,2.67,high
+KM060039,Nieuwe Gracht - Rak 18 OZ,87.7,0,0.0,1.0,3.5,1,3,2,2.0,medium
+KM060049,Oude Gracht - Rak 01 WZ,139.2,2,1.12,1.0,5.7,2,3,2,2.33,medium
+KM060043,Nieuwe Gracht - Rak 20 OZ,115.7,0,0.0,1.0,2.3,1,3,3,2.33,medium
+KM060034,Nieuwe Gracht - Rak 16 NOZ,45.6,0,0.0,1.0,2.2,1,3,3,2.33,medium
+KM060063,Oude Gracht - Rak 09 NOZ,39.6,4,5.03,1.0,2.9,3,3,3,3.0,high
+KM060040,Nieuwe Gracht - Rak 18 WZ,87.8,0,0.0,1.0,3.6,1,3,2,2.0,medium
+KM060052,Oude Gracht - Rak 03 OZ,101.1,6,4.25,1.0,4.5,3,3,2,2.67,high
+KM060026,Kromme Nieuwe Gracht 008,42.1,0,0.0,1.0,1.6,1,3,3,2.33,medium
+KM060065,Oude Gracht - Rak 09 ZOZ,54.5,8,8.46,1.0,4.3,3,3,2,2.67,high
+KM060008,Oude Gracht - Rak 10 WZ,81.3,4,3.3,1.0,6.5,3,3,1,2.33,medium
+KM060048,Oude Gracht - Rak 01 OZ,139.3,5,2.79,1.0,2.6,2,3,3,2.67,high
+KM060018,Kromme Nieuwe Gracht 001,8.7,0,0.0,1.0,0.9,1,3,3,2.33,medium
+KM060064,Oude Gracht - Rak 09 WZ,53.4,6,6.42,0.39,13.2,3,2,1,2.0,medium
+KM060051,Oude Gracht - Rak 02 WZ,151.4,6,3.14,1.0,6.4,3,3,1,2.33,medium
+KM060059,Oude Gracht - Rak 06 NZ,43.7,4,4.78,1.0,3.1,3,3,2,2.67,high
+KM060011,Oude Gracht - Rak 12 OZ,95.0,2,1.48,1.0,3.3,2,3,2,2.33,medium
+KM060035,Nieuwe Gracht - Rak 16 WZ,233.0,1,0.37,1.0,2.4,1,3,3,2.33,medium
+KM060023,Kromme Nieuwe Gracht 005,13.3,0,0.0,1.0,2.8,1,3,3,2.33,medium
+KM060057,Oude Gracht - Rak 05 NZ,72.1,12,10.7,1.0,4.0,3,3,2,2.67,high
+KM060067,Oude Gracht - Rak 09 WZ 01,3.4,0,0.0,0.0,15.2,1,1,1,1.0,low
+KM060010,Oude Gracht - Rak 11 WZ,119.5,5,3.13,1.0,3.8,3,3,2,2.67,high
+KM060021,Kromme Nieuwe Gracht 003,9.9,1,2.0,1.0,4.6,2,3,2,2.33,medium
+KM060022,Kromme Nieuwe Gracht 004 (thv nr 018),11.1,1,1.96,1.0,3.2,2,3,2,2.33,medium
+KM060061,Oude Gracht - Rak 07 OZ,11.3,4,7.79,1.0,3.4,3,3,2,2.67,high
+KM060066,Oude Gracht - Rak 10 OZ,83.5,7,5.67,1.0,3.3,3,3,2,2.67,high
+KM060038,Nieuwe Gracht - Rak 17 WZ,84.8,0,0.0,1.0,3.6,1,3,2,2.0,medium
+KM060017,Oude Gracht - Rak 15 OZ,149.2,3,1.59,0.25,,2,2,2,2.0,medium
+KM060060,Oude Gracht - Rak 06 ZZ,57.1,4,4.12,1.0,3.6,3,3,2,2.67,high
+KM060016,Oude Gracht - Rak 14 WZ,130.2,1,0.59,1.0,8.2,2,3,1,2.0,medium
+KM060050,Oude Gracht - Rak 02 OZ,147.7,7,3.73,1.0,4.6,3,3,2,2.67,high
+KM060020,Kromme Nieuwe Gracht 002,16.2,0,0.0,1.0,2.6,1,3,3,2.33,medium
+KM060024,Kromme Nieuwe Gracht 006,4.1,0,0.0,1.0,1.6,1,3,3,2.33,medium
+KM060053,Oude Gracht - Rak 03 WZ,90.9,8,6.11,1.0,6.8,3,3,1,2.33,medium
+KM060042,Nieuwe Gracht - Rak 19 WZ,94.0,1,0.75,1.0,3.0,2,3,2,2.33,medium
+KM060025,Kromme Nieuwe Gracht 007,10.3,0,0.0,1.0,1.7,1,3,3,2.33,medium
+KM060028,Oude Gracht - Rak 15 WZ,241.1,1,0.36,0.94,4.7,1,3,2,2.0,medium
+KM060014,Oude Gracht - Rak 13 WZ,131.4,3,1.75,1.0,9.9,2,3,1,2.0,medium
+KM060055,Oude Gracht - Rak 04 WZ,79.5,11,9.2,1.0,6.7,3,3,1,2.33,medium
+KM060036,Nieuwe Gracht - Rak 16 ZOZ,44.7,0,0.0,1.0,3.1,1,3,2,2.0,medium

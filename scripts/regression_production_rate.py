@@ -19,7 +19,14 @@ Report section 4.1. Uses the renewal year of every renewed walmuur
    before renewal is the sum over the walls of 1 - exp(-sum of h over the years
    it waits). Two orders: lowest beta first, and a random order.
 
-Writes data/processed/production_rate_risk.csv.
+5. Per wall, at the recent pace and lowest beta first: the mean number of years it
+   waits (2026 up to and including its renewal year) and its chance to reach a
+   limit state before renewal. The fault tree of section 3.1 uses these.
+6. Order check: the bootstrap assumes the 17 walls are next in line, but 780 m is
+   still to do (gu2025up), so 169 m of other walls may come first, and the raks
+   with many cellar owners (3-6) may come last on purpose.
+
+Writes data/processed/production_rate_risk.csv and production_rate_walls.csv.
 Run: python3 scripts/regression_production_rate.py
 """
 
@@ -36,6 +43,7 @@ FOUNDATION = ROOT / "data" / "processed" / "walmuur_foundation.csv"
 RESULTS = ROOT / "data" / "processed" / "walmuur_failure_probability.csv"
 AREAAL = ROOT / "data" / "raw" / "Output areaal GU TU Delft 26-08.json"
 OUT = ROOT / "data" / "processed" / "production_rate_risk.csv"
+OUT_WALLS = ROOT / "data" / "processed" / "production_rate_walls.csv"
 
 # ---- Inputs ----------------------------------------------------------------
 YEARS = range(2015, 2027)       # years of the trend fit; 2015 is the first renewal
@@ -46,6 +54,8 @@ START = 2027                    # first year of future production
 HORIZON = 2100                  # last year simulated
 REFERENCE = 15                  # NEN 8700 reference period [yr]
 PF_MAX = 0.95
+REMAINING = 780.0               # [m] walmuur still to restore (gu2025up)
+LAST_RAKS = (3, 4, 5, 6)        # raks with many cellar owners, possibly done last
 N_BOOT = 20_000
 SEED = 1
 # ----------------------------------------------------------------------------
@@ -73,6 +83,8 @@ def modelled_walls():
             walls[r["Nummer"]]["length"] = float(r["length_m"])
             walls[r["Nummer"]][int(r["year"])] = float(r["pf_updated"])
             walls[r["Nummer"]]["name"] = r["Naam"]
+            walls[r["Nummer"]]["Nummer"] = r["Nummer"]
+            walls[r["Nummer"]]["rak"] = int(float(r["rak"]))
     return list(walls.values())
 
 
@@ -86,14 +98,18 @@ def cumulative_hazard(walls):
     return np.array(out)
 
 
-def simulate(walls, cumhaz, order, production):
-    """Year all walls are renewed and expected number of walls failing before renewal."""
-    cum_needed = np.cumsum([walls[i]["length"] for i in order])
+def simulate(walls, cumhaz, order, production, offset=0.0, per_wall=False):
+    """Year all walls are renewed and expected number of walls failing before renewal.
+
+    offset [m] is renewed before the first of these walls."""
+    cum_needed = offset + np.cumsum([walls[i]["length"] for i in order])
     cum_made = np.cumsum(production)
     years = np.arange(START, START + len(production))
     done = years[np.minimum(np.searchsorted(cum_made, cum_needed - 1e-9), len(years) - 1)]
-    expected = np.sum(1 - np.exp(-cumhaz[np.asarray(order), done - 2026]))
-    return done[-1], expected
+    p_wall = 1 - np.exp(-cumhaz[np.asarray(order), done - 2026])
+    if per_wall:
+        return done, p_wall
+    return done[-1], np.sum(p_wall)
 
 
 def main() -> None:
@@ -145,6 +161,34 @@ def main() -> None:
                   f" ({row['done_p05']}-{row['done_p95']}), expected walls reaching a limit state"
                   f" before renewal {row['expected_failures_mean']:.2f}"
                   f" ({row['expected_failures_p05']:.2f}-{row['expected_failures_p95']:.2f})")
+    # Per wall, recent pace, lowest beta first (used by the fault tree, section 3.1).
+    done_w = np.zeros((N_BOOT, len(walls)))
+    p_w = np.zeros((N_BOOT, len(walls)))
+    for b in range(N_BOOT):
+        d, pw = simulate(walls, cumhaz, by_beta, rng.choice(recent, n_years), per_wall=True)
+        done_w[b, by_beta], p_w[b, by_beta] = d, pw
+    wall_rows = [{"Nummer": w["Nummer"], "Naam": w["name"], "length_m": w["length"],
+                  "pf_2026": w[2026], "pf_2041": w[2041],
+                  "years_until_renewal": round((done_w[:, i] - 2026 + 1).mean(), 2),
+                  "renewal_year_median": int(np.median(done_w[:, i])),
+                  "p_before_renewal": round(p_w[:, i].mean(), 4)} for i, w in enumerate(walls)]
+    with OUT_WALLS.open("w", newline="") as f:
+        wr = csv.DictWriter(f, fieldnames=list(wall_rows[0]))
+        wr.writeheader()
+        wr.writerows(wall_rows)
+    print("Per wall (recent pace, lowest beta first): years until renewal "
+          + ", ".join(f"{r['Naam'].replace('Oude Gracht - ', '').replace('Kromme Nieuwe Gracht', 'KNG')}"
+                      f" {r['years_until_renewal']:.1f}" for r in wall_rows))
+    # Order check: other remaining walls first; raks 3-6 last.
+    offset = REMAINING - sum(w["length"] for w in walls)
+    late = sorted(by_beta, key=lambda i: walls[i]["rak"] in LAST_RAKS)
+    for label, order, off in (("other walls first", by_beta, offset),
+                              (f"other walls first, raks {LAST_RAKS[0]}-{LAST_RAKS[-1]} last", late, offset)):
+        res = [simulate(walls, cumhaz, order, rng.choice(recent, n_years), off) for _ in range(N_BOOT)]
+        done, risk = np.array([r[0] for r in res]), np.array([r[1] for r in res])
+        print(f"recent pace, {label} ({off:.0f} m first): all renewed {int(np.median(done))}"
+              f" ({int(np.percentile(done, 5))}-{int(np.percentile(done, 95))}), E[N] {risk.mean():.2f}"
+              f" ({np.percentile(risk, 5):.2f}-{np.percentile(risk, 95):.2f})")
     # L1 of the fault tree (section 3.1): share of the modelled length not renewed by the end
     # of the reference period, at the recent pace and at the lower 95% bound of its mean.
     years_left = 2041 - START + 1
