@@ -51,10 +51,10 @@
 %% ----------------------------------------------------------------------
 
 
-\begin{wrapfigure}{r}{7.0cm}
+\begin{wrapfigure}{r}{5.8cm}
     \vspace{-8pt}
     \centering
-    \includegraphics[height=5.0cm]{figures/scope_wervengebiedi83195432-e12f-4974-98be-aaff3c72b58c.jpg}\hspace{2mm}\includegraphics[height=5.0cm]{figures/Plattegrond-wervengebied@2x-scaled-1-636x1024.jpg}
+    \includegraphics[height=4.1cm]{figures/scope_wervengebiedi83195432-e12f-4974-98be-aaff3c72b58c.jpg}\hspace{2mm}\includegraphics[height=4.1cm]{figures/Plattegrond-wervengebied@2x-scaled-1-636x1024.jpg}
     \captionof{figure}{The Wervengebied: boundary (left) and reaches (\textit{raks}) 1--27 (right). Sources: Gemeente Utrecht (2023); Werk aan de Werf (2021).}
     \label{fig:wervengebied}
     \vspace{-8pt}
@@ -63,20 +63,23 @@
 The Municipality of Utrecht manages more than 60\,km of quay walls and sheet
 pile walls and plans most of their maintenance on a theoretical end of life,
 which can differ from the real condition \parencite{utrecht_teamchallenge2026}.
-Renewing a wall too early wastes public money and renewing it too late leaves
-an unsafe wall in use, while budget, capacity and accessibility limit the
-work per year.
+Renewing too early wastes public money and renewing too late leaves unsafe
+walls in use.
 
 This study addresses the problem for the walmuren of the Wervengebied, the
 low walls between the canal and the werf, the wharf along the Oudegracht,
 Nieuwegracht and Kromme Nieuwegracht (Figure~\ref{fig:wervengebied}). The
-asset register lists 51 walmuren, 4{,}062\,m in 27 reaches (raks). The system
+asset register lists 51 walmuren, 4{,}062\,m in 27 reaches (raks): masonry
+walls on timber piles from the late nineteenth century to the 1970s, part of a
+national monument \parencite{utrecht_teamchallenge2026}. The system
 is the wall with its floor and timber piles; the private wharf cellars, the
 werf and kluis walls, the bridges and the street with its cables lie outside
-it, although they shape the consequences of failure and the constraints on
+it but shape the consequences of failure and the constraints on
 the works. The municipality renews about 100\,m of wall per year until 2050,
 a pace set by budget and capacity rather than by condition
-\parencite{utrecht_herstelwerven}, so the order of the work is a real choice.
+\parencite{utrecht_herstelwerven}, so the order of the work is a real choice,
+on which residents, businesses, cellar owners and the heritage authority have
+conflicting views that this study informs but does not resolve.
 
 The goal of the team is a method that estimates, for each wall still on its
 original foundation, the probability of failure within the 15-year reference
@@ -227,16 +230,15 @@ The median AHN werf level on the Oudegracht, +1.12\,m NAP, lies within the
 +0.95 to +1.15\,m NAP measured in excavations \parencite{erfgoed156,erfgoed158},
 and the renewed length in the foundation table, about 3.36\,km, matches the
 3{,}356\,m reported by the municipality \parencite{gu2025up}. The most
-informative check is the service history: all 17 walls stand. A first
-assessment that treated each wall as a block of masonry, as a simple
-deterministic check would, gave a mean resisting moment of 2.08\,kNm/m against
-a mean load of 2.74 (sand) to 3.94\,kNm/m (clay or peat) at the median
-retained height of 1.21\,m, and so predicted failure of walls that have stood
-for decades. A model without the floor, the soil on it and the piles thus
-understates the capacity of every wall of this kind, which is why the measured
-cross-sections are used. Even then, a type-1
-wall stands in only 33 to 98\,\% of the draws, against 95 to 100\,\% for
-type~2, and the proven-strength update (A8) uses this evidence. Settlement
+informative check is the service history: all 17 walls stand. Oude Gracht Rak~09 WZ~01, a wall in clay
+or peat with exactly the median retained height of 1.21\,m, shows the gap. A
+deterministic check that treats it as a block of masonry gives a resisting
+moment of 2.08\,kNm/m against a mean load of 3.94\,kNm/m, so it predicts
+failure even before partial factors are applied, yet the wall stands; with its
+measured cross-section, piles and proven strength the model gives
+$\beta = 1.13$. A model without the floor, the soil on it and the piles thus
+understates the capacity of every wall of this kind, which is why the
+measured cross-sections are used. Settlement
 from pile rot, the damage actually observed \parencite{erfgoed156}, is not
 modelled, so the results give a ranking and an order of magnitude rather than
 exact values; Section~\ref{sec:results-recommendations} interprets them with
@@ -481,9 +483,9 @@ of a wall. A fault tree (Section~\ref{sec:fault-tree}) therefore combines it
 with human and organisational causes, such as a missed inspection or a
 delayed repair, and propagates it over the 17 walls by Monte Carlo
 simulation with common causes. A decision tree (Section~\ref{sec:tradeoff})
-compares interventions on expected cost and with risk-averse criteria, and
-Chapter~\ref{chapter:prediction-recommendations} estimates replacement costs
-by regression and turns the results into recommendations. Of the tasks in the
-assignment, the extrapolation towards 2050 is covered only in part, because
-the failure model is limited to the 15-year reference period and the
-condition of the piles is too uncertain to extrapolate further.
+compares interventions on expected cost and with risk-averse criteria.
+Chapter~\ref{chapter:prediction-recommendations} extrapolates the pace of
+renewal towards 2050 by regression on the programme's own production and turns
+the results into recommendations. That extrapolation covers the backlog and
+the risk carried until renewal, not the condition of the walls after 2041,
+because the failure model is limited to the 15-year reference period.

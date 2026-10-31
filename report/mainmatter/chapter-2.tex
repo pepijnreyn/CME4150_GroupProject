@@ -49,9 +49,8 @@ P_f = P\left(g_1 < 0 \cup g_2 < 0 \mid E\right) \approx
 \end{equation}
 where $i$ numbers the Monte Carlo draws, $\mathbf{1}[\cdot]$ [--] is 1 if the
 event occurs in a draw and 0 otherwise, and $\Phi$ is the standard normal
-distribution function. The model uses 400{,}000 draws per wall and wall type,
-for 2026 and for 2041, the end of the reference period
-(Appendix~\ref{app:prob}).
+distribution function. The model uses 400{,}000 draws per wall and type, for 2026
+and for 2041 (Appendix~\ref{app:prob}).
 
 Table~\ref{tab:prob-variables} lists the random variables. Lognormal
 distributions describe positive quantities with a multiplicative error, such
@@ -60,7 +59,8 @@ unit weights and timber properties, whose coefficients of variation of at most
 0.20 make negative values negligible; uniform distributions the variables of
 which only bounds are known; and a Bernoulli distribution the wall type. The
 normal surcharge follows \textcite{hemel2024}, although an extreme-value
-distribution would suit a maximum load better.
+distribution would suit a maximum load better; it has no trend, as a 2\,t
+axle limit applies.
 
 \begin{table}[htbp]
 \centering
