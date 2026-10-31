@@ -8,7 +8,8 @@ their original timber piles (Section~\ref{sec:data}), the probability of
 failure within the 15-year reference period of NEN~8700 \parencite{nen8700}.
 The team modelled it with the lateral failure mechanism that
 \textcite{hemel2023,hemel2024} studied for Amsterdam quay walls, adapted to the
-two cross-section types of the Utrecht walmuren \parencite{ibu2010,erfgoed156}.
+two cross-section types of the Utrecht walmuren \parencite{ibu2010,erfgoed156}
+(Figure~\ref{fig:app-sections}).
 
 \subsection{Limit states and random variables}\label{sec:prob-ls}
 
@@ -41,7 +42,7 @@ KNMI'23 scenarios \parencite{knmi2023}.
 The wall fails if either limit state is reached (series system). Every
 modelled wall stands today, and this evidence $\mathcal{E}$ of proven strength
 \parencite{hemel2024} rejects the draws in which the wall would already fail
-under its own soil and water, so that
+under its own soil and water (Figure~\ref{fig:app-proven}), so that
 \begin{equation}
 P_f = P\left(g_1 < 0 \cup g_2 < 0 \mid \mathcal{E}\right) \approx
 \frac{\sum_i \mathbf{1}[\mathrm{fail}_i]\,\mathbf{1}[\mathcal{E}_i]}{\sum_i \mathbf{1}[\mathcal{E}_i]},
@@ -137,7 +138,7 @@ BRO wells stand under the raised streets and give levels above the werf
 itself, so the model uses a physical bound around the canal level instead;
 raising it by 0.1\,m changes $\beta$ by \textminus0.38 to +0.08, and letting it
 rise to the werf by \textminus0.68 to +0.13, which changes the class of eight
-walls (Appendix~\ref{app:prob-sensitivity}). The soil class agrees with only 25 to 67\,\% of the
+walls (Figure~\ref{fig:app-variants}). The soil class agrees with only 25 to 67\,\% of the
 borings within 150\,m, the weakest input; treated as uncertain, it changes
 $\beta$ by \textminus0.70 to +0.56. The soft-shell range has a mean of
 22.5\,mm, close to the 21\,mm measured in Amsterdam \parencite{hemel2023}, but

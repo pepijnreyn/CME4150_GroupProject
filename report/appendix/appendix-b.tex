@@ -39,6 +39,14 @@ effect (Table~\ref{tab:tornado}) is probably overstated, not understated.
 
 \subsection{Resistance against overturning}\label{app:prob-resistance}
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/app_cross_sections.png}
+\caption{The two walmuur types as modelled, measured from \textcite{ibu2010} and \textcite{erfgoed156}: the body that tips (wall, floor and soil on the floor), the piles, the loads and the pivot at the front pile row. Water levels and the surcharge position are drawn at typical values; $H$ is the loaded height of the drawing.}
+\label{fig:app-sections}
+\end{figure}
+
+Figure~\ref{fig:app-sections} shows the two cross-sections and the loads.
 The body that tips is the wall, its floor and the soil on the floor. Its
 weight $V$ and moment $M_W$ about the front pile row follow from the areas of the
 parts in the measured cross-section (masonry, tamped concrete, reinforced
@@ -95,6 +103,19 @@ estimated by rejection:
 \begin{equation}
 \hat P_{f\mid \mathcal{E}} = \frac{\sum_i \mathbf{1}[\text{fail}_i]\,\mathbf{1}[\mathcal{E}_i]}{\sum_i \mathbf{1}[\mathcal{E}_i]}.
 \end{equation}
+
+Figure~\ref{fig:app-proven} shows the update for the median wall. For type~1,
+two thirds of the draws would already fail today and are rejected, and most of
+the draws that remain fail once the surcharge is added: the type-1 model is
+miscalibrated (Section~\ref{sec:prob-validity}). For type~2, nearly every draw
+stands today and the failures come mostly from pile bending.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/app_proven_strength.png}
+\caption{Proven strength for the median wall, Oude Gracht Rak~09 WZ (4{,}000 of 400{,}000 draws per type). Grey: draws in which the wall would fail today under soil and water, rejected by the evidence $\mathcal{E}$. Blue and red: draws that stand today and survive or fail with the surcharge. Dashed lines: the two limit states; a draw fails if it lies left of the vertical or above the horizontal line.}
+\label{fig:app-proven}
+\end{figure}
 
 \paragraph{Wall type.} With prior $p = P(T = 2)$ per rak, the same evidence
 updates the type, and the best estimate weighs the two types:
@@ -254,7 +275,7 @@ medians, with 100{,}000 draws per wall, type and run. A fixed input still uses
 up its random numbers, so all other inputs get the same draws in every run and
 the differences are not Monte Carlo noise. It writes
 \texttt{walmuur\_tornado.csv} in \texttt{data/processed/}.
-Table~\ref{tab:tornado-full} gives the change in $\beta$ (updated, 2026, for
+Table~\ref{tab:tornado-full} and Figure~\ref{fig:app-tornado} give the change in $\beta$ (updated, 2026, for
 the shell growth 2041) from the 5th to the 95th percentile. For Kromme Nieuwe
 Gracht 005 to 007 the werf level is an assumed range, not a measurement error,
 so it is shown separately and is not fixed in the last row. Between the wall
@@ -299,6 +320,13 @@ mixed 0.29--0.65, clay or peat 0.42--0.81. \textsuperscript{b} Measured werf
 level, unit weights of soil and tamped concrete, $E$, $k$ and shell growth.}
 \end{tabular}
 \end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/app_tornado.png}
+\caption{One-at-a-time sensitivity: change in $\beta$ when one input moves from its 5th to its 95th percentile, median over the 17 walls, for each wall type and for the best estimate (Table~\ref{tab:tornado-full}). Type~1 is governed by overturning ($K$, surcharge position, $\theta_R$, groundwater), type~2 by the piles (soft shell, diameter).}
+\label{fig:app-tornado}
+\end{figure}
 
 \subsection{Checks against data}\label{app:prob-data}
 
@@ -413,14 +441,52 @@ prior is uncertain (Kromme Nieuwe Gracht 005 to 007: 0.59 to 0.14), so the
 ranking of these walls rests partly on the miscalibrated type-1 model. Third,
 type~1 is the type the survey detects: the model expects three times as much
 displacement for it, so a survey mainly settles the wall type.
+Figure~\ref{fig:app-variants} puts the checks side by side: the walls in sand
+in rak~4 to 6 are the most sensitive to the groundwater and the wall friction,
+and no variant lifts any wall above the NEN~8700 rejection level of 1.8.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/app_beta_variants.png}
+\caption{Best-estimate $\beta$ per wall in the base model (2026) and in the model checks of Table~\ref{tab:model-checks}, the groundwater variant of Table~\ref{tab:sens-walls} and 2041. The bar spans the variants; dashed lines: NEN~8700 rejection levels for CC1b and CC2 \parencite{nen8700}.}
+\label{fig:app-variants}
+\end{figure}
+
+
+\section{Risk analysis and regression: figures}\label{app:risk-figures}
+
+Figure~\ref{fig:app-fault-tree} supports Sections~\ref{sec:ft-results} and
+\ref{sec:to-results}. Common cause hardly changes the number of walls where the
+programme fails, because the shared events act through the repair chain, which
+matters only when a weakness gives warning. The expected costs cross where the
+text says: restricting use (A6) becomes the cheapest from \euro1.8 million,
+monitoring (A7) from \euro3.6 million and renewing now (A4) from \euro4.65 million.
+Figure~\ref{fig:app-production} supports Section~\ref{sec:regression}: the
+negative trend comes from the fast years 2015 to 2018 followed by a break, not
+from a gradual decline, and at the recent pace the year in which the 17 walls
+are renewed spreads from 2028 to about 2040 (90\,\% interval 2029 to 2036).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/app_fault_tree.png}
+\caption{Left: number of walls among the 17 where the programme fails to prevent a failure before renewal (Monte Carlo, $4\times10^5$ runs), with independent causes and with the shared screening, programme and inspection events. Right: expected cost $E[C]$ of each alternative for the median wall against the failure cost $C_f$ (Table~\ref{tab:results}).}
+\label{fig:app-fault-tree}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/app_production.png}
+\caption{Left: renewed length of walmuur per year (Table~\ref{tab:production}) with the linear trend, the mean of the fast years and of the recent years, and the 100\,m per year of the plan. Right: year in which all 17 modelled walls are renewed in 20{,}000 bootstrap runs, lowest $\beta$ first, with the expected number of walls that reach a limit state before renewal.}
+\label{fig:app-production}
+\end{figure}
+
+\clearpage
 \section{Source code}
 \label{app:pm-code}
 
 The code is in the folder \texttt{scripts/} of the team repository,
 \url{https://github.com/pepijnreyn/CME4150_GroupProject}; Table~\ref{tab:run-order} gives the run order of the data
 and model scripts. The analyses of Chapters~\ref{chapter:risk-analysis} and
-\ref{chapter:prediction-recommendations} and the portfolio scoring use five
+\ref{chapter:prediction-recommendations} and the portfolio scoring use six
 more scripts:
 \begin{itemize}
   \item \texttt{StressCaclulation/ModelChecks.py}: the model checks above;
@@ -432,6 +498,7 @@ more scripts:
   \item \texttt{build\_walmuur\_consequence.py}: the consequence score
     (Appendix~\ref{app:portfolio});
   \item \texttt{plot\_results\_map.py}: the risk classes and
-    Figure~\ref{fig:results-map}.
+    Figure~\ref{fig:results-map};
+  \item \texttt{plot\_appendix\_figures.py}: the figures of this appendix.
 \end{itemize}
 
