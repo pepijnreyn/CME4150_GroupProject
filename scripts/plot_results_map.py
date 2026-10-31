@@ -14,7 +14,8 @@ The consequence class comes from build_walmuur_consequence.py. Both are scored
 within a class, by Pf. A wall whose prior chance of type 2 is 0.5 (no dive note
 on the wall type) is flagged: its class rests on missing data rather than on
 evidence of a weak wall. The script also prints the classes for P_FACTOR 1.25
-and 2.0.
+and 2.0, with groundwater up to the werf (walmuur_sensitivity.csv), and the
+walls that are red in every variant.
 
 Figure: left, the walmuren of the Wervengebied, the 17 modelled walls coloured
 by risk class; right, beta per wall (best estimate) with the range from type 1
@@ -90,10 +91,21 @@ def main() -> None:
           .to_string())
     print(d.groupby("risk_class")["length_m"].agg(["count", "sum"]))
     print("flagged (prior P(type 2) 0.5):", ", ".join(short(n) for n in d.loc[d["data_flag"], "Naam"]))
-    for f in (1.25, 2.0):
-        alt = risk_table(f)[0].groupby("risk_class")["length_m"].agg(["count", "sum"])
-        print(f"P_FACTOR {f}: " + ", ".join(f"{k} {int(v['count'])} ({v['sum']:.0f} m)"
-                                            for k, v in alt.iterrows()))
+    variants = {f"P_FACTOR {f}": risk_table(f)[0]["risk_class"] for f in (1.25, P_FACTOR, 2.0)}
+    for name, cls in variants.items():
+        print(f"{name}: " + ", ".join(f"{k} {(cls == k).sum()} ({d.loc[cls[cls == k].index, 'length_m'].sum():.0f} m)"
+                                      for k in ("red", "orange", "green")))
+    sens = pd.read_csv(ROOT / "data" / "processed" / "walmuur_sensitivity.csv").set_index("Nummer")
+    pf = pd.Series(norm.cdf(-sens.loc[d.index, "beta_groundwater_werf"]), index=d.index)
+    p_class = np.where(pf > P_FACTOR * pf.median(), 3, np.where(pf < pf.median() / P_FACTOR, 1, 2))
+    score = p_class + d["consequence_class"].map(CLASS_SCORE)
+    variants["groundwater to werf"] = pd.Series(np.where(score >= 5, "red", np.where(score == 4, "orange", "green")),
+                                                index=d.index)
+    print("groundwater to werf: " + ", ".join(f"{k} {(variants['groundwater to werf'] == k).sum()}"
+                                              for k in ("red", "orange", "green")))
+    always = pd.concat(variants, axis=1).eq("red").all(axis=1)
+    print(f"red in every variant: {', '.join(short(n) for n in d.loc[always, 'Naam'])}"
+          f" ({d.loc[always, 'length_m'].sum():.0f} m)")
 
     features = json.loads((ROOT / "data" / "raw" / "Output areaal GU TU Delft 26-08.json")
                           .read_text())["features"]
