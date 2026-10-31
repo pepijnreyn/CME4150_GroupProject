@@ -84,7 +84,7 @@ Werf level, per wall & $N$(AHN median, $\sigma = 0.05$\,m)\textsuperscript{a} & 
 Wall type $T$, per wall & Bernoulli, $P(T{=}2)$ = 0.2--0.9 per rak & E & \textcite{tno2009} \\
 Foundation level & Drawing + $U$(\textminus0.15, +0.15)\,m & E & Judgement \\
 Model factor $\theta_R$ & $LN$(1, 0.15) & E & Judgement \\
-Unit weight masonry; tamped concrete & $N$(19, 0.05); $N$(23, 0.05)\,kN/m$^3$ & E & Typical values \\
+Unit weight masonry; concrete & $N$(19, 0.05); $N$(23, 0.05)\,kN/m$^3$ & E & Typical values \\
 Earth pressure coefficient $K$ & $LN$(0.35--0.60, 0.20--0.25)\textsuperscript{b} & E & Team (Table~\ref{tab:soil}) \\
 Unit weight of soil $\gamma$ & $N$(15--18\,kN/m$^3$, 0.05--0.06)\textsuperscript{b} & E & Team (Table~\ref{tab:soil}) \\
 Groundwater under the werf & $U$(+0.5, +0.9)\,m NAP & A & Bounds around the canal \\
@@ -134,7 +134,8 @@ walls.
 \subsection{Model quality and validity}\label{sec:prob-validity}
 
 Few inputs can be compared with data (Table~\ref{tab:prob-data}). The AHN
-points on a werf scatter by 0.07\,m, which agrees with $\sigma = 0.05$\,m. The
+points on a werf are heavy-tailed, so the median is used; its error, 0.04\,m,
+agrees with $\sigma = 0.05$\,m (Figure~\ref{fig:app-werf-fit}). The
 BRO wells stand under the raised streets and give levels above the werf
 itself, so the model uses a physical bound around the canal level instead;
 raising it by 0.1\,m changes $\beta$ by \textminus0.38 to +0.08, and letting it
