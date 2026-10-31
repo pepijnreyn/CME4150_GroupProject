@@ -2,11 +2,16 @@
 
 The tree, for one wall over the years until it is renewed:
 
-  top            = load OR (M AND not_repaired)
+  top            = load OR (LS AND not_repaired)
   load           = W2 OR Q1 OR Q2 OR Q3 OR E1 OR E2 OR E3 OR E4
-  not_repaired   = D OR not_recognised OR I3 OR repair_late
-  not_recognised = (S1 OR S2 OR S3) AND (I1 OR I2)
+  not_repaired   = not_recognised OR I3 OR repair_late
+  not_recognised = (S1 OR S2 OR S3 OR I1 OR I2) AND NW
   repair_late    = L1 OR L2 OR L3 OR L4
+
+A weakness stays unrecognised only if the targeted route misses it (the
+screening does not send the wall to a dive, or the dive is not done or misses
+the damage) AND it gives no visible warning that a regular inspection could see.
+In the code the event M is LS of the report and D is NW.
 
 Exposure. The walls are renewed around 2031 (section 4.1), so a wall is exposed
 only until its renewal, not for the 15-year reference period of NEN 8700.
@@ -17,10 +22,12 @@ Table 3.1 and are scaled to T as 1 - (1 - p)^(T / 15). The human and
 organisational events are chances per weakness or per programme, so they are
 not scaled.
 
-D is the chance that a weakness gives no warning that an inspection could see
-before the limit state is reached: pile bending and overturning of a low wall
-give little warning. Without D the AND gate would let the repair chain stop
-every failure that the model predicts.
+D (NW) is the chance that a weakness gives no warning that a regular inspection
+could see before the limit state is reached: pile bending and overturning of a
+low wall give little warning.
+
+Range of M: from the wall being type 2 (low) to type 1 (high), the largest
+uncertainty in the model (report section 1.3), with the same exposure.
 
 The median wall (median beta) is Oude Gracht Rak 09 WZ. For the 17 walls
 together, a Monte Carlo links the M events of the walls with a Gaussian copula
@@ -48,7 +55,7 @@ from scipy.stats import norm
 ROOT = Path(__file__).resolve().parents[1]
 WALLS = ROOT / "data" / "processed" / "production_rate_walls.csv"
 CHECKS = ROOT / "data" / "processed" / "walmuur_model_checks.csv"
-SENS = ROOT / "data" / "processed" / "walmuur_sensitivity.csv"
+RESULTS = ROOT / "data" / "processed" / "walmuur_failure_probability.csv"
 MEDIAN_WALL = "Oude Gracht - Rak 09 WZ"
 
 # ---- Inputs ----------------------------------------------------------------
@@ -109,8 +116,8 @@ def discount(T):
 def tree(p):
     """Top event and the two main branches for a dict of event probabilities."""
     load = p_or(*(p[e] for e in LOAD))
-    not_recognised = p_or(p["S1"], p["S2"], p["S3"]) * p_or(p["I1"], p["I2"])
-    not_repaired = p_or(p["D"], not_recognised, p["I3"], p_or(p["L1"], p["L2"], p["L3"], p["L4"]))
+    not_recognised = p_or(p["S1"], p["S2"], p["S3"], p["I1"], p["I2"]) * p["D"]
+    not_repaired = p_or(not_recognised, p["I3"], p_or(p["L1"], p["L2"], p["L3"], p["L4"]))
     return p_or(load, p["M"] * not_repaired), load, not_repaired
 
 
@@ -157,8 +164,8 @@ def monte_carlo(p_walls, rng):
             own = rng.random((N_MC, n)) < (pe - share * pe) / np.maximum(1 - share * pe, 1e-12)
             o[e] = shared | own
         load = np.logical_or.reduce([o[e] for e in LOAD])
-        not_recognised = (o["S1"] | o["S2"] | o["S3"]) & (o["I1"] | o["I2"])
-        not_repaired = o["D"] | not_recognised | o["I3"] | o["L1"] | o["L2"] | o["L3"] | o["L4"]
+        not_recognised = (o["S1"] | o["S2"] | o["S3"] | o["I1"] | o["I2"]) & o["D"]
+        not_repaired = not_recognised | o["I3"] | o["L1"] | o["L2"] | o["L3"] | o["L4"]
         count = (load | (o["M"] & not_repaired)).sum(axis=1)
         out.append((count.mean(), count.std(), (count >= 5).mean(), count))
     return out
@@ -169,9 +176,9 @@ def main() -> dict:
     walls = read_walls()
     checks = {r["Naam"]: r for r in csv.DictReader(CHECKS.open())}[MEDIAN_WALL]
     T, M, pf15 = walls[MEDIAN_WALL]
-    sens = {r["Naam"]: r for r in csv.DictReader(SENS.open())}[MEDIAN_WALL]
-    cols = ["beta_base", "beta_kgamma", "beta_more", "beta_groundwater", "beta_soil_mixed"]
-    m_range = [1 - (1 - M)**(np.log(1 - norm.cdf(-float(sens[c]))) / np.log(1 - pf15)) for c in cols]
+    types = {r["type"]: float(r["pf_updated"]) for r in csv.DictReader(RESULTS.open())
+             if r["Naam"] == MEDIAN_WALL and r["year"] == "2026" and r["type"] in ("type 1", "type 2")}
+    m_range = [1 - (1 - M)**(np.log(1 - types[t]) / np.log(1 - pf15)) for t in ("type 2", "type 1")]
     base = events("base", T, M)
     low = events("low", T, min(m_range))
     high = events("high", T, max(m_range))
@@ -179,7 +186,7 @@ def main() -> dict:
     print(f"{MEDIAN_WALL}: T = {T:.2f} yr until renewal, M = {M:.4f} ({min(m_range):.4f}-{max(m_range):.4f});"
           f" over 15 years M would be {pf15:.3f}")
     print(f"load {load:.4f}, not repaired in time {not_repaired:.3f}, top {top:.4f};"
-          f" without repair {tree(base | {'D': 1.0})[0]:.4f}; without D {tree(base | {'D': 0.0})[0]:.4f}")
+          f" without repair {tree(base | {'I3': 1.0})[0]:.4f}; without D {tree(base | {'D': 0.0})[0]:.4f}")
     print(f"all low {tree(low)[0]:.4f}, all high {tree(high)[0]:.4f}")
     p_walls = [events("base", t, m) for (t, m, _) in walls.values()]
     per_wall = np.array([tree(p)[0] for p in p_walls])
