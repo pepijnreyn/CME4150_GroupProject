@@ -63,15 +63,9 @@ rather than the 15-year reference period of NEN~8700 \parencite{nen8700}.
 \subsection{Structure of the tree}\label{sec:ft-structure}
 
 Figure~\ref{fig:faulttree} shows the tree as it is computed. The top event is
-an OR gate with two branches. The first holds the load events that the failure
-model does not contain, surcharge beyond its range, impact, scour and works,
-which the programme cannot prevent. The second is an AND gate: a wall fails
+an OR gate with two branches. The first holds the load events that the failure model does not contain (surcharge beyond its range, impact, scour and works), which the programme cannot prevent. The second is an AND gate: a wall fails
 only if it reaches a limit state of the model (event LS) and the weakness is
-not repaired before the load that breaks it arrives. LS holds the eight causes
-that the model of Section~\ref{sec:prob} contains, soil (G1), canal bed (G2),
-groundwater (GW), pile decay (P1, P3), wall type (WT) and masonry (M1, M2),
-combined through its two limit states, pile bending and overturning; drawn as
-separate events, they would be counted twice. The weakness is a
+not repaired before the load that breaks it arrives. LS holds the eight causes that the model of Section~\ref{sec:prob} contains: soil (G1), canal bed (G2), groundwater (GW), pile decay (P1, P3), wall type (WT) and masonry (M1, M2). The model combines them through its two limit states, pile bending and overturning; drawn as separate events, they would be counted twice. The weakness is a
 present state rather than a slow precursor: the wall type and the soft shell
 already decide whether the wall can carry its load, as $\beta$ falls by at most
 0.12 in 15 years (Section~\ref{sec:prob-validity}). It can be found in two
@@ -91,13 +85,7 @@ recognised weakness is not acted on or the repair comes too late.
 \subsection{Probabilities of the basic events}\label{sec:ft-probabilities}
 
 Each basic event has a probability for one wall, a range and a basis
-(Table~\ref{tab:ftprob}). Five events are inside the failure model of
-Section~\ref{sec:prob} \parencite{hemel2023,hemel2024}: G1, P1, P3, WT and GW;
-G2 (canal bed), M1 (masonry decay) and M2 (cross-section) are covered only
-through the screen assumption and the model factor $\theta_R$, and are not
-quantified separately. To avoid counting them twice, all eight are combined into one event LS,
-``wall reaches a limit state in the model before renewal'': 0.055 for the median
-wall (0.15 over 15 years), with a range of 0.033 to 0.46 from the wall being
+(Table~\ref{tab:ftprob}). Of the eight causes inside LS, five are variables of the failure model \parencite{hemel2023,hemel2024}: G1, P1, P3, WT and GW; G2, M1 and M2 enter only through the screen assumption and the model factor $\theta_R$. LS, ``wall reaches a limit state in the model before renewal'', is 0.055 for the median wall (0.15 over 15 years), with a range of 0.033 to 0.46 from the wall being
 type~2 or type~1, the largest uncertainty of Section~\ref{sec:dimension-reduction}. The model gives this probability without any
 repair and supports only a ranking and an order of magnitude
 (Section~\ref{sec:prob-validity}), so using it as a probability is an
@@ -230,9 +218,7 @@ a model event on the safe side: the type-1 model is
 conservative (Section~\ref{sec:prob-validity}) and 7\,kPa is a heavy load for a
 werf (Section~\ref{sec:data-effect}).
 
-The technical part of the tree is best supported, by the failure model of
-Section~\ref{sec:prob}, although its timber properties come from one Amsterdam
-case; the human part uses generic values and the organisational part mostly
+The failure model of Section~\ref{sec:prob} gives the technical part of the tree the best support, although its timber properties come from one Amsterdam case; the human part uses generic values and the organisational part mostly
 assumptions. A further difficulty was that pile condition is not a yes/no event,
 while a missed inspection is; the team used the failure probability of the model
 as one event and added NW for the warning it may or may not give. The repair
@@ -290,12 +276,9 @@ it gives the displacement that a survey would see
 of replacement \parencite{utrecht_qa2026}; they were not used here, so the
 costs below are estimates from published budgets and team judgement in 2026
 prices, to be replaced by the municipal figures; cost escalation above
-inflation is not modelled and would favour renewing now. Renewing a wall of
-36\,m costs about \euro1.3 million: the programme plan reserves about \euro110
-million for the some 3\,km of wal- and kluismuren still to be restored, or
+inflation is not modelled and would favour renewing now. Renewing a wall of average length, 36\,m, costs about \euro1.3 million: the programme plan reserves about \euro110 million for the roughly 3\,km of wal- and kluismuren still to be restored, or
 \euro35k per metre \parencite{utrecht_programmaplan}. As the wall is renewed
-within about five years anyway, renewing now (A4) costs only the bringing
-forward of that renewal, \euro156k in present value, provided extra capacity is
+within about five years anyway, renewing now (A4) costs only the present value of bringing that renewal forward, \euro156k, provided extra capacity is
 hired; within the same capacity it would delay another wall, which is the order
 question of Section~\ref{sec:regression}. The failure cost $C_f = $ \euro1.5
 million combines a temporary safety structure of about \euro0.25 million per
@@ -306,7 +289,7 @@ it is uncertain, it is varied from \euro0.1 to \euro30 million.
 
 \begin{table}[htbp]
 \centering
-\caption{Decision alternatives for the median wall (36\,m) until its renewal.
+\caption{Decision alternatives for the median wall until its renewal, costed for a wall of average length (36\,m).
 T = technical, H = human, O = organisational. New values are lower bounds from
 Table~\ref{tab:ftprob}, except those marked *. Costs: one-off plus yearly.}
 \label{tab:interventions}
@@ -411,8 +394,7 @@ stays the cheapest; with LS three times higher, or without spreading the
 \euro116k against \euro140k and \euro127k for A0). A4 keeps the lowest
 certainty equivalent in every case.
 
-The median wall is orange. Table~\ref{tab:walls-decision} repeats the decision
-with the same costs for a red wall that is probably type~1, Oude Gracht Rak~03
+The median wall is orange, so Table~\ref{tab:walls-decision} repeats the decision, with the same costs, for a red wall that is probably type~1, Oude Gracht Rak~03
 OZ, and for the green wall with the lowest $P_f$, Kromme Nieuwe Gracht 003. For
 the red wall, renewed in about 2.6 years, restricting use is already the
 cheapest at the base $C_f$ and renewing now is the risk-averse choice; for the
@@ -514,8 +496,7 @@ The largest lever is the pace of the programme
 renewal of the 17 walls forward, which costs \euro1.2 million in present value
 at \euro35k per metre, and avoids 0.42 expected limit states, worth
 \euro0.6 million at $C_f = $ \euro1.5 million: it pays only from $C_f \approx$
-\euro3 million. At the base failure cost, the pace should be set by budget and
-reachability rather than by this risk.
+\euro3 million. At the base failure cost, budget and the accessibility of the city centre, rather than this risk, should set the pace.
 
 
 
