@@ -43,6 +43,11 @@ directly (walmuur_model_checks.csv): A6 restricts use until renewal, and A7
 first measures the displacement of the wall (preposterior): if it is below
 5 mm the wall stays in the programme as it is, otherwise use is restricted.
 
+The script also prints the cost at which each measure would match A0, the choice
+with the costs of the measures halved or doubled and the renewal cost 30 % lower
+or higher, and the same decision for a red wall that is probably type 1 and for
+the green wall with the lowest Pf (OTHER_WALLS), with the costs of the median wall.
+
 Run: python3 scripts/fault_tree.py
 """
 
@@ -57,6 +62,9 @@ WALLS = ROOT / "data" / "processed" / "production_rate_walls.csv"
 CHECKS = ROOT / "data" / "processed" / "walmuur_model_checks.csv"
 RESULTS = ROOT / "data" / "processed" / "walmuur_failure_probability.csv"
 MEDIAN_WALL = "Oude Gracht - Rak 09 WZ"
+# The decision is also run for a red wall that is probably type 1 and for the green wall
+# with the lowest Pf (report section 3.2)
+OTHER_WALLS = ("Oude Gracht - Rak 03 OZ", "Kromme Nieuwe Gracht 003")
 
 # ---- Inputs ----------------------------------------------------------------
 REF = 15.0                      # years over which Table 3.1 gives the load events
@@ -146,6 +154,69 @@ def model_factor(checks, col):
     """Ratio of the cumulative hazard of a model variant to that of the base model (median wall)."""
     pf = lambda c: norm.cdf(-float(checks[c]))
     return np.log(1 - pf(col)) / np.log(1 - pf("beta_base"))
+
+
+def survey(T, M, checks):
+    """A7 for a wall exposed T years with model event M: a7(cf) gives E[C], Pf and the best
+    response (A0, A6 or A4) after each outcome of the survey (preposterior analysis)."""
+    df, annuity = discount(T)
+    p_fav = float(checks["monitor_p_fav"])
+    m_obs = {"fav": 1 - (1 - M)**model_factor(checks, "beta_monitor_fav"),
+             "unf": 1 - (1 - M)**model_factor(checks, "beta_monitor_unf")}
+    m_obs_r = {"fav": 1 - (1 - m_obs["fav"])**model_factor(checks, "beta_restrict_use"),
+               "unf": 1 - (1 - M)**model_factor(checks, "beta_monitor_unf_restrict")}
+    once6, yearly6, ch6 = ALTERNATIVES["A6 Restrict use"]
+    ch6 = {k: v for k, v in ch6.items() if k != "M"}
+    c6 = once6 + yearly6 * annuity
+    c4 = C_RENEW * (np.exp(-RHO * 0.5) - np.exp(-RHO * T))
+    df1 = discount(1.0)[0]
+    responses = {}
+    for out in ("fav", "unf"):
+        responses[out] = {
+            "A0": (0.0, tree(events("base", T, m_obs[out]))[0], df),
+            "A6": (c6, tree(events("base", T, m_obs_r[out], ch6))[0], df),
+            "A4": (c4, tree(events("base", 1.0, 1 - (1 - m_obs[out])**(1 / T),
+                                   {"E3": 0.02, "W2": 0.0002}))[0], df1)}
+
+    def a7(cf):
+        """E[C] of A7 at failure cost cf, Pf, and the best response per outcome."""
+        best = {out: min(r.items(), key=lambda kv: kv[1][0] + kv[1][1] * cf * kv[1][2])
+                for out, r in responses.items()}
+        ec = C_SURVEY + sum(pw * (c + p * cf * d) for pw, (_, (c, p, d)) in
+                            zip((p_fav, 1 - p_fav), (best["fav"], best["unf"])))
+        pf = p_fav * best["fav"][1][1] + (1 - p_fav) * best["unf"][1][1]
+        return ec, pf, best["fav"][0], best["unf"][0]
+    return a7, p_fav, m_obs, responses
+
+
+def wall_decision(T, M, checks, cost_factor=1.0, c_renew=C_RENEW):
+    """Cost, Pf and discount factor of A0-A6 for one wall, with the costs of Table 3.2
+    (times cost_factor for the measures A1-A3 and A6; A4 is the cost of advancing the renewal)."""
+    df, annuity = discount(T)
+    res = {}
+    for name, (once, yearly, change) in ALTERNATIVES.items():
+        change = dict(change)
+        fac = model_factor(checks, "beta_restrict_use") if change.pop("M", None) else None
+        if name.startswith("A4"):
+            cost, change["T_base"], d = c_renew * (np.exp(-RHO * 0.5) - np.exp(-RHO * T)), T, discount(1.0)[0]
+        else:
+            cost, d = cost_factor * (once + yearly * annuity), df
+        mm = 1 - (1 - M)**fac if fac else M
+        res[name] = (cost, tree(events("base", T, mm, change))[0], d)
+    return res
+
+
+def cheapest_by_cf(res, a7):
+    """The cheapest alternative as C_f rises from 0.1 to 30 million EUR."""
+    best, switches = None, []
+    for cf in np.arange(100, 30_001, 50):
+        costs = {k: c + p * cf * d for k, (c, p, d) in res.items()}
+        costs["A7 Monitor, then decide"] = a7(cf)[0]
+        name = min(costs, key=costs.get)
+        if name != best:
+            switches.append(f"{name.split()[0]} from {cf / 1000:.2f} M")
+            best = name
+    return switches
 
 
 def monte_carlo(p_walls, rng):
@@ -243,33 +314,7 @@ def main() -> dict:
 
     # A7: survey first (preposterior). After the survey the best response is chosen:
     # A0, A6 (restrict use) or A4 (renew now), with M updated by the outcome.
-    p_fav = float(checks["monitor_p_fav"])
-    m_obs = {"fav": 1 - (1 - M)**model_factor(checks, "beta_monitor_fav"),
-             "unf": 1 - (1 - M)**model_factor(checks, "beta_monitor_unf")}
-    m_obs_r = {"fav": m_obs["fav"] * 0 + 1 - (1 - m_obs["fav"])**model_factor(checks, "beta_restrict_use"),
-               "unf": 1 - (1 - M)**model_factor(checks, "beta_monitor_unf_restrict")}
-    once6, yearly6, ch6 = ALTERNATIVES["A6 Restrict use"]
-    ch6 = {k: v for k, v in ch6.items() if k != "M"}
-    c6 = once6 + yearly6 * annuity
-    c4 = C_RENEW * (np.exp(-RHO * 0.5) - np.exp(-RHO * T))
-    df1 = discount(1.0)[0]
-    responses = {}
-    for out in ("fav", "unf"):
-        responses[out] = {
-            "A0": (0.0, tree(events("base", T, m_obs[out]))[0], df),
-            "A6": (c6, tree(events("base", T, m_obs_r[out], ch6))[0], df),
-            "A4": (c4, tree(events("base", 1.0, 1 - (1 - m_obs[out])**(1 / T),
-                                   {"E3": 0.02, "W2": 0.0002}))[0], df1)}
-
-    def a7(cf):
-        """E[C] of A7 at failure cost cf, the best response per outcome, and Pf."""
-        best = {out: min(r.items(), key=lambda kv: kv[1][0] + kv[1][1] * cf * kv[1][2])
-                for out, r in responses.items()}
-        ec = C_SURVEY + sum(pw * (c + p * cf * d) for pw, (_, (c, p, d)) in
-                            zip((p_fav, 1 - p_fav), (best["fav"], best["unf"])))
-        pf = p_fav * best["fav"][1][1] + (1 - p_fav) * best["unf"][1][1]
-        return ec, pf, best["fav"][0], best["unf"][0]
-
+    a7, p_fav, m_obs, responses = survey(T, M, checks)
     ec7, pf7, r_fav, r_unf = a7(C_F)
     print(f"A7 Monitor, then decide: P(below 5 mm) {p_fav:.2f}; M fav {m_obs['fav']:.4f}, unf {m_obs['unf']:.4f};"
           f" responses: " + "; ".join(f"{out} " + ", ".join(f"{k} Pf {v[1]:.4f} E[C] {v[0] + v[1] * C_F * v[2]:.0f}"
@@ -278,15 +323,7 @@ def main() -> dict:
     ec_best = min(c + p * C_F * d for (c, p, d) in res.values())
     print(f"value of the survey (before its cost) at C_f {C_F:.0f}: {ec_best - (ec7 - C_SURVEY):.0f} k EUR")
 
-    best, switches = None, []
-    for cf in np.arange(100, 30_001, 50):
-        costs = {k: c + p * cf * d for k, (c, p, d) in res.items()}
-        costs["A7 Monitor, then decide"] = a7(cf)[0]
-        name = min(costs, key=costs.get)
-        if name != best:
-            switches.append(f"{name.split()[0]} from {cf / 1000:.2f} M")
-            best = name
-    print("cheapest alternative as C_f rises: " + ", ".join(switches))
+    print("cheapest alternative as C_f rises: " + ", ".join(cheapest_by_cf(res, a7)))
     for cf in (3000.0, 5000.0):
         e, pf_, rf, ru = a7(cf)
         others = {k: c + p * cf * d for k, (c, p, d) in res.items()}
@@ -343,6 +380,40 @@ def main() -> dict:
         half[name] = cost + pf * C_F * d
         print(f"  {name:28s} Pf {pf:.4f} E[C] {half[name]:.0f}")
     print(f"  cheapest: {min(half, key=half.get)}")
+
+    # Costs of the measures: the cost at which each would match A0, and the choice with
+    # the costs of A1-A3 and A6 halved or doubled and the renewal cost 30 % lower or higher.
+    ec0 = res["A0 Current programme"][1] * C_F * df
+    print("\nCost at which a measure would match A0 (median wall, C_f = 1.5 M EUR): " + ", ".join(
+        f"{k.split()[0]} {ec0 - p * C_F * d:.0f} (estimate {c:.0f})" for k, (c, p, d) in res.items()
+        if not k.startswith("A0")))
+    for factor in (0.5, 2.0):
+        r = wall_decision(T, M, checks, cost_factor=factor)
+        print(f"  costs of the measures x{factor}: cheapest {min(r, key=lambda k: r[k][0] + r[k][1] * C_F * r[k][2])}")
+    for factor in (0.7, 1.3):
+        r = wall_decision(T, M, checks, c_renew=C_RENEW * factor)
+        ce = {k: c + R * np.log(1 - p + p * np.exp(C_F * d / R)) for k, (c, p, d) in r.items()}
+        c4, p4, d4 = r["A4 Renew now"]
+        print(f"  renewal cost x{factor}: A4 E[C] {c4 + p4 * C_F * d4:.0f}, CE {ce['A4 Renew now']:.0f},"
+              f" lowest CE {min(ce, key=ce.get)}")
+
+    # The same decision for a red and a green wall (costs as for the median wall)
+    checks_all = {r["Naam"]: r for r in csv.DictReader(CHECKS.open())}
+    print("\nDecision per wall, C_f = 1.5 M EUR, R = 0.5 M EUR:")
+    for name in (MEDIAN_WALL,) + OTHER_WALLS:
+        t, m, _ = walls[name]
+        r = wall_decision(t, m, checks_all[name])
+        a7w = survey(t, m, checks_all[name])[0]
+        ec = {k: c + p * C_F * d for k, (c, p, d) in r.items()}
+        ec["A7 Monitor, then decide"] = a7w(C_F)[0]
+        ce = {k: c + R * np.log(1 - p + p * np.exp(C_F * d / R)) for k, (c, p, d) in r.items()}
+        print(f"  {name}: T {t:.2f} yr, M {m:.4f}, Pf A0 {r['A0 Current programme'][1]:.4f},"
+              f" A6 {r['A6 Restrict use'][1]:.4f}, A4 {r['A4 Renew now'][1]:.4f}")
+        print("    E[C]: " + ", ".join(f"{k.split()[0]} {v:.0f}" for k, v in ec.items())
+              + f"; cheapest {min(ec, key=ec.get).split()[0]}")
+        print("    CE:   " + ", ".join(f"{k.split()[0]} {v:.0f}" for k, v in ce.items())
+              + f"; lowest {min(ce, key=ce.get).split()[0]}")
+        print("    cheapest as C_f rises: " + ", ".join(cheapest_by_cf(r, a7w)))
     return {"res": res, "a7": a7, "counts": counts, "C_F": C_F}
 
 

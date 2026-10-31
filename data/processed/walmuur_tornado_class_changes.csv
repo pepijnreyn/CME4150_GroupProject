@@ -1,0 +1,22 @@
+,walls_class_change
+wall type,17
+soil class,10
+K,10
+a,15
+shell,9
+D0,9
+theta_R,6
+groundwater,8
+dz,6
+q,7
+werf assumed,0
+werf measured,3
+s,2
+MOR,2
+theta_M,2
+gamma_m,2
+gamma_s,1
+gamma_c,0
+E,0
+k,0
+rate,0

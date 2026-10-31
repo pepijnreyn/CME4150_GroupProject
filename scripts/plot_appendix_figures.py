@@ -6,6 +6,8 @@
   app_tornado.png          one-at-a-time sensitivity, median over the walls (App. B.8)
   app_production.png       renewed length per year with the trend, and the year all 17
                            modelled walls are renewed (App. B, Section 4.1)
+  fig_production_step.png  renewed length per year with the straight line, the step model
+                           and the plan (Section 4.1)
   app_fault_tree.png       failing walls among the 17 and E[C] against C_f (Sections 3.1, 3.2)
   app_beta_variants.png    beta per wall in the base model and the model checks (App. B.10)
   app_werf_fit.png         AHN werf points against a normal distribution, and the error of
@@ -253,6 +255,32 @@ def production():
     save(fig, "app_production.png")
 
 
+def production_step():
+    """Renewed length per year with the straight line, the step model and the plan (report 4.1)."""
+    per_year = RP.renewed_per_year(RP.lengths())
+    years = np.array(list(RP.YEARS))
+    fit = stats.linregress(years, per_year)
+    before = per_year[years < RP.RECENT[0]].mean()
+    after = per_year[years >= RP.RECENT[0]].mean()
+    fig, ax = plt.subplots(figsize=(3.4, 2.15))
+    ax.bar(years, per_year, color=GREY, width=0.75)
+    for y, v in zip(years, per_year):
+        ax.text(y, v + 15, f"{v:.0f}", ha="center", va="bottom", fontsize=5.4, color=INK_2)
+    ax.plot(years, fit.intercept + fit.slope * years, color=INK, lw=0.8,
+            label=f"Straight line, {fit.slope:.0f} m/yr per yr".replace("-", "\u2212"))
+    ax.hlines(before, years[0] - 0.4, RP.RECENT[0] - 0.5, color=ORANGE, lw=1.6,
+              label=f"Step model: {before:.0f}, then {after:.0f} m/yr")
+    ax.hlines(after, RP.RECENT[0] - 0.5, years[-1] + 0.4, color=ORANGE, lw=1.6)
+    ax.axhline(RP.PLAN_RATE, color=MUTED, lw=0.7, ls="--", label=f"Plan, {RP.PLAN_RATE:.0f} m/yr")
+    ax.set_ylabel("Renewed walmuur [m]", fontsize=6.5)
+    ax.set_xticks(years[::2])
+    ax.tick_params(labelsize=6)
+    ax.set_ylim(0, 1050)
+    ax.legend(frameon=False, fontsize=5.8, loc="upper right", handlelength=1.6)
+    fig.tight_layout(pad=0.2)
+    save(fig, "fig_production_step.png")
+
+
 def fault_tree_results():
     r = FT.main()
     fig, (ax, bx) = plt.subplots(1, 2, figsize=(6.4, 2.6))
@@ -296,10 +324,11 @@ def beta_variants():
                 "No timber screen": (checks["beta_screen_failed"], RED, "v"),
                 "No wall friction": (checks["beta_no_friction"], ORANGE, "<"),
                 "Groundwater up to werf": (sens["beta_groundwater_werf"], BLUE, "s"),
-                "Restricted use (A6)": (checks["beta_restrict_use"], INK_2, ">")}
+                "Restricted use (A6)": (checks["beta_restrict_use"], INK_2, ">"),
+                "Type 1 recalibrated": (checks["beta_calibrated"], "#7c3aed", "D")}
     d = d.sort_values("beta_base")
     y = np.arange(len(d))
-    fig, ax = plt.subplots(figsize=(6.4, 3.7))
+    fig, ax = plt.subplots(figsize=(6.4, 4.1))
     lo = pd.concat([v[0] for v in variants.values()] + [d["beta_base"]], axis=1).loc[d.index].min(axis=1)
     hi = pd.concat([v[0] for v in variants.values()] + [d["beta_base"]], axis=1).loc[d.index].max(axis=1)
     ax.hlines(y, lo, hi, color="#e2e1da", lw=3, zorder=0)
@@ -313,7 +342,7 @@ def beta_variants():
     names = d["Naam"].str.replace("Oude Gracht - Rak ", "OG ").str.replace("Kromme Nieuwe Gracht ", "KNG ")
     ax.set_yticks(y, names.str.replace(" (thv nr 018)", "", regex=False))
     ax.set_xlabel("Best-estimate $\\beta$ (updated)")
-    ax.legend(frameon=False, fontsize=6.2, loc="lower right")
+    ax.legend(frameon=False, fontsize=6.2, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=4)
     ax.grid(axis="x", color="#e8e7e1", lw=0.5)
     fig.tight_layout()
     save(fig, "app_beta_variants.png")
@@ -361,6 +390,7 @@ def main() -> None:
     proven_strength()
     tornado()
     production()
+    production_step()
     fault_tree_results()
     beta_variants()
 

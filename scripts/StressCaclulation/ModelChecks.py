@@ -19,6 +19,10 @@ walls with one change at a time and reports beta (updated, 2026):
                  K of clay and peat is near K0, where little friction is mobilised
   restrict_use   use restricted until renewal: no terraces, goods or vehicles
                  within A_RESTRICT of the edge (a ~ U(A_RESTRICT, 3) m)
+  calibrated     the type-1 model recalibrated: theta_R of type 1 times the
+                 smallest factor at which every wall of type 1 stands today in
+                 at least P_STANDS_CAL of the draws (found by calibrate() with
+                 N_CAL draws); type 2 as in the base model
 
 and one monitoring example, a preposterior analysis: the horizontal
 displacement of the pile heads under today's soil and water load (Hetenyi,
@@ -28,7 +32,7 @@ Y_LIM, the draws with a larger displacement become less likely; the script
 gives the chance of that outcome and beta after each outcome.
 
 Writes data/processed/walmuur_model_checks.csv.
-Run: python3 scripts/StressCaclulation/ModelChecks.py   (about 6 minutes)
+Run: python3 scripts/StressCaclulation/ModelChecks.py   (about 9 minutes)
 """
 
 import sys
@@ -58,10 +62,13 @@ H_SCREEN = (0.3, 1.0)           # depth of the canal bed below the floor if the 
 A_RESTRICT = 1.5                # no load closer to the edge than this under restricted use [m]
 SIGMA_OBS = 0.002               # error of a displacement measurement [m]
 Y_LIM = 0.005                   # threshold of the monitoring example [m]
+P_STANDS_CAL = 0.90             # recalibrated type 1: every wall stands today in this share of the draws
+N_CAL = 20_000                  # draws per wall in the search for the calibration factor
 SEED = 7
 # ----------------------------------------------------------------------------
 TYPES = ("type 1", "type 2")
-VARIANTS = ("base", "service_load", "screen_failed", "no_friction", "restrict_use")
+VARIANTS = ("base", "service_load", "screen_failed", "no_friction", "restrict_use", "calibrated")
+THETA_R_CAL = 1.0               # set by calibrate()
 
 
 def beta(pf):
@@ -80,6 +87,8 @@ def simulate(wall, section, rng, variant):
     gammas = {"masonry": gamma_m, "rc": FP.GAMMA_RC, "timber": FP.GAMMA_TIMBER, "soil": gamma_s,
               "concrete": rng.normal(FP.GAMMA_C_MEAN, FP.GAMMA_C_COV * FP.GAMMA_C_MEAN, n)}
     theta_R = FP.lognormal(rng, FP.THETA_R_COV, n)
+    if variant == "calibrated" and section == "type 1":
+        theta_R = theta_R * THETA_R_CAL
     p = FP.sample_piles(n, rng)
     H = werf - (s["base"] + dz)
     x_front, x_rear = s["piles"]
@@ -132,6 +141,20 @@ def simulate(wall, section, rng, variant):
     return {"stands": stands, "fail": fail, "y": y_today}
 
 
+def calibrate(walls) -> float:
+    """Smallest factor on theta_R of type 1 at which every wall stands in P_STANDS_CAL of the draws."""
+    global N_MC, THETA_R_CAL
+    n_full, N_MC = N_MC, N_CAL
+    lo, hi = 1.0, 4.0
+    for _ in range(12):
+        THETA_R_CAL = (lo + hi) / 2
+        worst = min(simulate(wall, "type 1", np.random.default_rng(SEED + 100 * i), "calibrated")["stands"].mean()
+                    for i, (_, wall) in enumerate(walls.iterrows()))
+        lo, hi = (lo, THETA_R_CAL) if worst >= P_STANDS_CAL else (THETA_R_CAL, hi)
+    N_MC, THETA_R_CAL = n_full, round(hi, 2)
+    return THETA_R_CAL
+
+
 def mixture(res, p2, weight=None):
     """Updated Pf of the two types, weighted by prior x P(evidence | type)."""
     w = {t: (1 - p2 if t == "type 1" else p2) * (res[t]["stands"] if weight is None else weight[t])
@@ -143,6 +166,8 @@ def mixture(res, p2, weight=None):
 def main() -> None:
     walls = FP.wall_table()
     walls = walls[(walls["status"] != "renewed") & walls["has_werf"].ne("no")]
+    print(f"recalibrated type 1: theta_R x {calibrate(walls):.2f}"
+          f" (every wall stands in at least {P_STANDS_CAL:.0%} of the draws)", flush=True)
     rows = []
     for i, (_, wall) in enumerate(walls.iterrows()):
         p2 = wall["p_type2_prior"]
@@ -156,6 +181,8 @@ def main() -> None:
                 res[t] = {"stands": st.mean(), "pf": (x["fail"] & st).sum() / max(st.sum(), 1)}
                 draws[t] = x
                 row[f"beta_{variant}_{t.replace(' ', '')}"] = round(beta(res[t]["pf"]), 3)
+                if variant in ("base", "calibrated"):
+                    row[f"p_stands_{variant}_{t.replace(' ', '')}"] = round(res[t]["stands"], 3)
             pf, post2 = mixture(res, p2)
             row[f"beta_{variant}"] = round(beta(pf), 3)
             row[f"p_type2_{variant}"] = round(post2, 3)
@@ -189,13 +216,14 @@ def main() -> None:
         print(f"{wall['Naam']:30s} base {row['beta_base']:5.2f} service {row['beta_service_load']:5.2f}"
               f" prior-type {row['beta_prior_type']:5.2f} screen {row['beta_screen_failed']:5.2f}"
               f" no-friction {row['beta_no_friction']:5.2f} restrict {row['beta_restrict_use']:5.2f}"
+              f" calibrated {row['beta_calibrated']:5.2f}"
               f" | monitor P(<{Y_LIM * 1000:.0f} mm) {row['monitor_p_fav']:.2f}:"
               f" {row['beta_monitor_fav']:5.2f} / {row['beta_monitor_unf']:5.2f}", flush=True)
     d = pd.DataFrame(rows)
     d.to_csv(OUT, index=False)
     print()
     for col in ["service_load", "prior_type", "screen_failed", "no_friction", "restrict_use",
-                "monitor_fav", "monitor_unf", "monitor_unf_restrict"]:
+                "calibrated", "monitor_fav", "monitor_unf", "monitor_unf_restrict"]:
         for suffix in ("", "_type1", "_type2"):
             c = f"beta_{col}{suffix}"
             if c in d:
