@@ -137,8 +137,7 @@ KNG 009         &  18.3 & sand      & 0.5 $\rightarrow$ 0.51 & 1.07    & 2.46 & 
 
 \subsection{Sensitivity to dependence and inputs}\label{app:prob-sensitivity}
 
-The script \texttt{SensitivityDependence.py} (in
-\texttt{scripts/StressCaclulation/}) reruns the model with one change at a
+The script \texttt{SensitivityDependence.py} reruns the model with one change at a
 time, with 200{,}000 draws per wall, type and variant and the same seeds. It
 writes \texttt{walmuur\_sensitivity.csv} in \texttt{data/processed/}. The
 correlations use a Gaussian copula: the two variables are drawn from
@@ -224,8 +223,7 @@ $P_f$ differs by less than 8\,\% from the value for independent limit states.
 
 \subsection{One-at-a-time sensitivity}\label{app:prob-tornado}
 
-The script \texttt{SensitivityTornado.py} (in
-\texttt{scripts/StressCaclulation/}) supports Section~\ref{sec:dimension-reduction}.
+The script \texttt{SensitivityTornado.py} supports Section~\ref{sec:dimension-reduction}.
 For each of the 17 walls it reruns the model once as it is, twice for each of
 the 18 random inputs, fixed at its 5th and at its 95th percentile, once for
 each soil class, and once with six minor inputs fixed together at their
