@@ -324,6 +324,25 @@ def main() -> dict:
               f" N17 {n17:.2f}; E[C] A0 {costs['A0 Current programme'][0]:.0f},"
               f" A4 {costs['A4 Renew now'][0]:.0f}, A6 {costs['A6 Restrict use'][0]:.0f};"
               f" cheapest {ev.split()[0]}, lowest CE {ce_best.split()[0]}")
+    # Effect of the measures: a measure moves an event to the lower bound of its range
+    # (an assumption). Variant: only half that effect, the midpoint.
+    print("\nHalf effect of the measures (event moved to the midpoint), C_f = 1.5 M EUR:")
+    half = {}
+    for name, (once, yearly, change) in ALTERNATIVES.items():
+        ch = {e: (EVENTS[e][0] + v) / 2 if e in EVENTS else v for e, v in change.items() if e != "M"}
+        fac = model_factor(checks, "beta_restrict_use") if change.get("M") else None
+        mm = 1 - (1 - M)**fac if fac else M
+        if fac:
+            mm = 1 - (1 - M)**((1 + fac) / 2)
+        if name.startswith("A4"):
+            cost, ch["T_base"], d = C_RENEW * (np.exp(-RHO * 0.5) - np.exp(-RHO * T)), T, discount(1.0)[0]
+            ch["T"] = (T + 1.0) / 2
+        else:
+            cost, d = once + yearly * annuity, df
+        pf = tree(events("base", T, mm, ch))[0]
+        half[name] = cost + pf * C_F * d
+        print(f"  {name:28s} Pf {pf:.4f} E[C] {half[name]:.0f}")
+    print(f"  cheapest: {min(half, key=half.get)}")
     return {"res": res, "a7": a7, "counts": counts, "C_F": C_F}
 
 

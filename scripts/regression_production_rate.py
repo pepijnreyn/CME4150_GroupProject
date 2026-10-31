@@ -65,6 +65,9 @@ PF_MAX = 0.95
 REMAINING = 780.0               # [m] walmuur still to restore (gu2025up)
 LAST_RAKS = (3, 4, 5, 6)        # raks with many cellar owners, possibly done last
 N_BOOT = 20_000
+UNIT_COST = 35_000.0            # [EUR/m] renewal cost (programme plan, report section 3.2)
+RATE = 0.028                    # discount rate [1/yr]
+C_F_PACE = 1.5e6                # failure cost per wall [EUR] (report section 3.2)
 SEED = 1
 # ----------------------------------------------------------------------------
 
@@ -228,6 +231,27 @@ def main() -> None:
           f" (P(share > 0) = {(share > 0).mean():.4f}); at {low_pace:.0f} m/yr"
           f" {max(0.0, total - years_left * low_pace) / total:.2f}; at {PLAN_RATE:.0f} m/yr"
           f" {max(0.0, total - years_left * PLAN_RATE) / total:.2f}")
+    # Pace as a programme decision: a faster pace advances the renewal cost of the 17
+    # walls (present value at RATE) and avoids limit states (E[N] x C_F x DF).
+    pv, en = {}, {}
+    for name in all_draws:
+        cost, risk = [], []
+        for prod in all_draws[name][:2000]:
+            done, pw = simulate(walls, cumhaz, by_beta, prod, per_wall=True)
+            lengths_ = np.array([walls[i]["length"] for i in by_beta])
+            cost.append(np.sum(lengths_ * UNIT_COST * (1 + RATE) ** -(done - 2026 + 0.5)))
+            risk.append(np.sum(pw))
+        pv[name], en[name] = np.mean(cost), np.mean(risk)
+    base = f"recent pace ({RECENT[0]}-{RECENT[-1]})"
+    for name in pv:
+        extra = pv[name] - pv[base]
+        avoided = (en[base] - en[name]) * C_F_PACE * (1 + RATE) ** -2.5
+        line = (f"pace {name:24s}: PV renewal {pv[name] / 1e6:5.2f} M EUR, E[N] {en[name]:.2f}")
+        if name != base:
+            line += (f"; vs recent: extra cost {extra / 1e6:+.2f} M, avoided failures {avoided / 1e6:+.2f} M"
+                     f" at C_f {C_F_PACE / 1e6:.1f} M; break-even C_f"
+                     f" {extra / ((en[base] - en[name]) * (1 + RATE) ** -2.5) / 1e6:.1f} M")
+        print(line)
     with OUT.open("w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()

@@ -8,6 +8,8 @@
                            modelled walls are renewed (App. B, Section 4.1)
   app_fault_tree.png       failing walls among the 17 and E[C] against C_f (Sections 3.1, 3.2)
   app_beta_variants.png    beta per wall in the base model and the model checks (App. B.10)
+  app_werf_fit.png         AHN werf points against a normal distribution, and the error of
+                           the werf median per wall against the model's 0.05 m (App. B.9)
 
 Reads the outputs of FailureProbability.py, SensitivityTornado.py, ModelChecks.py,
 SensitivityDependence.py and regression_production_rate.py, and reruns the median
@@ -317,7 +319,44 @@ def beta_variants():
     save(fig, "app_beta_variants.png")
 
 
+def werf_fit():
+    import build_walmuur_height as BH
+    pts = pd.read_csv(ROOT / "data" / "raw" / "AHN" / "walmuur_ahn_points.csv")
+    h = pd.read_csv(PROCESSED / "walmuur_height.csv")
+    rng = np.random.default_rng(1)
+    resid, se = [], []
+    for n in h.loc[h["werf"] == "yes", "Nummer"]:
+        p = pts[(pts["Nummer"] == n) & pts["ground_nap"].notna()]
+        g = p[p["side"] == BH.werf_side(pts, n)]["ground_nap"]
+        g = g[g <= BH.NO_WERF_ABOVE].to_numpy()
+        if len(g) < 3:
+            continue
+        resid += list(g - np.median(g))
+        se.append(np.std([np.median(rng.choice(g, len(g))) for _ in range(2000)]))
+    r, se = np.array(resid), np.array(se)
+    robust = 1.4826 * np.median(np.abs(r))
+    fig, (ax, bx) = plt.subplots(1, 2, figsize=(6.4, 2.6))
+    (osm, osr), _ = stats.probplot(r, dist="norm")
+    ax.scatter(osm, osr, s=6, color=BLUE, lw=0)
+    ax.plot(osm, robust * osm, color=INK, lw=0.8, label=f"normal, robust SD {robust:.3f} m")
+    ax.set_xlabel("Normal quantile")
+    ax.set_ylabel("AHN point minus werf median [m]")
+    ax.legend(frameon=False, fontsize=6.3, loc="upper left")
+    ax.text(0.98, 0.04, f"{len(r)} points, {len(se)} walls\nSD {r.std(ddof=1):.3f} m; Shapiro-Wilk p < 0.001",
+            transform=ax.transAxes, ha="right", fontsize=6.3, color=INK_2)
+    bx.hist(se, bins=np.arange(0, se.max() + 0.02, 0.02), color=GREY)
+    bx.axvline(0.05, color=RED, lw=1.0)
+    bx.text(0.052, bx.get_ylim()[1] * 0.92, "model $\\sigma$ = 0.05 m", color=RED, fontsize=6.3)
+    bx.set_xlabel("Bootstrap standard error of the werf median [m]")
+    bx.set_ylabel("Walls")
+    fig.tight_layout()
+    save(fig, "app_werf_fit.png")
+    print(f"werf fit: robust SD {robust:.3f}, SD {r.std(ddof=1):.3f}, SE of median: median {np.median(se):.3f},"
+          f" share below 0.05 {np.mean(se <= 0.05):.2f}, max {se.max():.3f}")
+
+
 def main() -> None:
+    werf_fit()
     cross_sections()
     proven_strength()
     tornado()
