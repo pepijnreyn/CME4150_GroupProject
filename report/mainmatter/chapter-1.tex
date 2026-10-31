@@ -297,10 +297,10 @@ ignores interactions and that its swing depends on the chosen percentiles.
 \small
 \caption{One-at-a-time sensitivity of $\beta$ (updated, 2026): change in
 $\beta$ when an input moves from its 5th to its 95th percentile, median over
-the walls. Best estimate: both types weighted by $P(T \mid \mathcal{E})$. Per wall and as a chart:
+the walls. Best estimate (grey): both types weighted by $P(T \mid \mathcal{E})$, which mixes the types; read the columns per type. Per wall and as a chart:
 Table~\ref{tab:tornado-full}, Figure~\ref{fig:app-tornado}.}
 \label{tab:tornado}
-\begin{tabular}{@{}l l r r r@{}}
+\begin{tabular}{@{}l l r r >{\color{gray}}r@{}}
 \toprule
 Input & 5th to 95th percentile & Type 1 & Type 2 & Best estimate \\
 \midrule
@@ -483,6 +483,8 @@ discrete mixture, and the proven-strength update reduces to keeping the draws
 that pass the survival check \parencite{hemel2024}. A deterministic check with
 partial factors would carry the margins for new structures that the
 assignment questions, and ARK alone would not quantify the uncertainty. A
+Markov model on NEN~2767 scores needs inspection histories, and a Bayesian
+network or a multi-criteria analysis needs data or weights that do not exist. A
 one-at-a-time sensitivity analysis shows what to measure
 (Section~\ref{sec:dimension-reduction}). A fault tree
 (Section~\ref{sec:fault-tree}) adds human and organisational causes, a decision
