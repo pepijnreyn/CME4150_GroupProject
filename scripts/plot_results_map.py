@@ -21,7 +21,8 @@ Figure: left, the walmuren of the Wervengebied, the 17 modelled walls coloured
 by risk class; right, beta per wall (best estimate) with the range from type 1
 to type 2, which shows how much the unknown wall type matters.
 
-Writes data/processed/walmuur_risk_class.csv and figures/results_map.png.
+Writes data/processed/walmuur_risk_class.csv, figures/results_map.png and the map alone,
+figures/results_map_only.png.
 Run: MPLBACKEND=Agg python3 scripts/plot_results_map.py
 """
 
@@ -42,6 +43,7 @@ CONSEQUENCE = ROOT / "data" / "processed" / "walmuur_consequence.csv"
 WERFMUREN = ROOT / "data" / "raw" / "UtrechtOpen" / "werfmuren.geojson"
 OUT = ROOT / "data" / "processed" / "walmuur_risk_class.csv"
 FIG = ROOT / "figures" / "results_map.png"
+FIG_MAP = ROOT / "figures" / "results_map_only.png"
 
 P_FACTOR = 1.5
 CLASS_SCORE = {"low": 1, "medium": 2, "high": 3}
@@ -186,6 +188,9 @@ def main() -> None:
     bx.tick_params(axis="x", colors=INK_2, labelsize=6)
     fig.tight_layout(w_pad=1.5)
     fig.savefig(FIG, dpi=300, bbox_inches="tight")
+    # The map alone, for the results section of the report
+    box = ax.get_tightbbox(fig.canvas.get_renderer()).transformed(fig.dpi_scale_trans.inverted())
+    fig.savefig(FIG_MAP, dpi=300, bbox_inches=box.expanded(1.02, 1.02))
     print(f"-> {FIG.relative_to(ROOT)}, {OUT.relative_to(ROOT)}")
 
 
