@@ -1,7 +1,7 @@
 production,order,done_median,done_p05,done_p95,expected_failures_mean,expected_failures_p05,expected_failures_p95
 recent pace (2019-2026),lowest beta first,2031,2029,2036,0.97,0.61,1.55
-recent pace (2019-2026),random order,2031,2029,2036,1.08,0.66,1.73
+recent pace (2019-2026),random order,2031,2029,2036,1.07,0.66,1.71
 "plan, 100 m/yr",lowest beta first,2033,2033,2033,1.04,1.04,1.04
 "plan, 100 m/yr",random order,2033,2033,2033,1.14,1.02,1.26
 fast pace (2015-2018),lowest beta first,2028,2027,2029,0.56,0.49,0.78
-fast pace (2015-2018),random order,2027,2027,2029,0.56,0.49,0.8
+fast pace (2015-2018),random order,2028,2027,2029,0.56,0.49,0.8

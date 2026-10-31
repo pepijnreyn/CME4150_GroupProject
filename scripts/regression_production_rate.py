@@ -6,12 +6,16 @@ Report section 4.1. Uses the renewal year of every renewed walmuur
 1. Trend: least-squares line through the renewed length per year, 2015-2026
    (a year without a renewal counts as 0 m), with a 95% interval for the slope
    and a t-test of H0: no trend.
-2. Recent pace: mean renewed length per year since 2019, with a 95% t-interval,
-   and a t-test against the 100 m/yr of the programme plan.
+2. Step model: L_y = a + c [y >= 2019] + e_y, compared with the straight line
+   (R2, AIC), with the 95% interval of the step and a prediction interval for
+   one year. Recent pace: mean since 2019 with a 95% t-interval, and a t-test
+   against the 100 m/yr of the programme plan. The forecast uses the step model:
+   its level after 2019 with its residuals, by resampling the years 2019-2026.
 3. Backlog: the 17 modelled walls (walmuur_failure_probability.csv) are renewed
    one after the other from 2027. The yearly production is drawn from the years
    2019-2026 (bootstrap), or fixed at 100 m/yr, or drawn from 2015-2018. Each
-   draw gives the year in which each wall is renewed.
+   draw gives the year in which each wall is renewed; both orders use the same
+   draws, so the year all walls are renewed does not depend on the order.
 4. Risk until renewal: a wall carries the hazard h(t) = -ln(1 - Pf(t)) / 15
    until it is renewed, with Pf(t) its best-estimate updated Pf over the 15-year
    reference period, linear between 2026 and 2041 and extended linearly after
@@ -125,6 +129,22 @@ def main() -> None:
     print(f"Trend: slope {fit.slope:.1f} m/yr per yr, 95% CI {fit.slope - t95 * fit.stderr:.1f}"
           f" to {fit.slope + t95 * fit.stderr:.1f}, p = {fit.pvalue:.3f}, R2 = {fit.rvalue**2:.2f}")
 
+    step = (x >= RECENT[0]).astype(float)
+    X = np.column_stack([np.ones_like(x), step])
+    coef = np.linalg.lstsq(X, per_year, rcond=None)[0]
+    resid = per_year - X @ coef
+    s2 = resid @ resid / (len(x) - 2)
+    xtx = np.linalg.inv(X.T @ X)
+    se_c = np.sqrt(s2 * xtx[1, 1])
+    r2 = 1 - resid @ resid / np.sum((per_year - per_year.mean())**2)
+    aic = lambda rss: len(x) * np.log(rss / len(x)) + 4
+    lin_rss = np.sum((per_year - fit.intercept - fit.slope * x)**2)
+    half = t95 * np.sqrt(s2 * (1 + np.array([1, 1]) @ xtx @ np.array([1, 1])))
+    print(f"Step model: before {coef[0]:.0f} m/yr, step {coef[1]:.0f} (95% CI {coef[1] - t95 * se_c:.0f} to"
+          f" {coef[1] + t95 * se_c:.0f}, p = {2 * stats.t.sf(abs(coef[1] / se_c), len(x) - 2):.3f}),"
+          f" R2 {r2:.2f}, AIC {aic(resid @ resid):.1f} vs straight line {aic(lin_rss):.1f};"
+          f" one-year prediction {coef.sum():.0f} m (95% PI {max(coef.sum() - half, 0):.0f} to {coef.sum() + half:.0f});"
+          f" Shapiro-Wilk on residuals p = {stats.shapiro(resid).pvalue:.2f}")
     recent = per_year[[list(YEARS).index(y) for y in RECENT]]
     fast = per_year[[list(YEARS).index(y) for y in FAST]]
     m, se = recent.mean(), recent.std(ddof=1) / np.sqrt(len(recent))
@@ -146,12 +166,14 @@ def main() -> None:
         f"fast pace ({FAST[0]}-{FAST[-1]})": lambda: rng.choice(fast, n_years),
     }
     rows = []
+    all_draws = {}
     for name, draw in scenarios.items():
+        draws = all_draws[name] = [draw() for _ in range(N_BOOT)]
         for order_name in ("lowest beta first", "random order"):
             done, risk = [], []
-            for _ in range(N_BOOT if "plan" not in name or order_name == "random order" else 1):
+            for b in range(N_BOOT if "plan" not in name or order_name == "random order" else 1):
                 order = by_beta if order_name == "lowest beta first" else rng.permutation(len(walls))
-                d, e = simulate(walls, cumhaz, order, draw())
+                d, e = simulate(walls, cumhaz, order, draws[b])
                 done.append(d)
                 risk.append(e)
             done, risk = np.array(done), np.array(risk)
@@ -170,7 +192,8 @@ def main() -> None:
     done_w = np.zeros((N_BOOT, len(walls)))
     p_w = np.zeros((N_BOOT, len(walls)))
     for b in range(N_BOOT):
-        d, pw = simulate(walls, cumhaz, by_beta, rng.choice(recent, n_years), per_wall=True)
+        d, pw = simulate(walls, cumhaz, by_beta, all_draws[f"recent pace ({RECENT[0]}-{RECENT[-1]})"][b],
+                         per_wall=True)
         done_w[b, by_beta], p_w[b, by_beta] = d, pw
     wall_rows = [{"Nummer": w["Nummer"], "Naam": w["name"], "length_m": w["length"],
                   "pf_2026": w[2026], "pf_2041": w[2041],
