@@ -117,12 +117,19 @@ the scenarios is therefore more reliable than the absolute numbers;
 Section~\ref{sec:results-recommendations} uses it to rank the options of the
 municipality.
 
-\subsection{Maintenance Cost regression}
-Multiple linear regression relates replacement cost (€ million) to wall length (m), heritage and disruption scores, retaining all three predictors across six project records. The purpose is to supplement structural risk assessment with cost estimates that help schedule yearly works. Among walls with comparable urgency, estimates support comparison of affordable replacement packages and allocation of limited municipal funding. Heritage and disruption scores are treated as equally spaced numerical ratings.
+\subsection{Replacement Cost Regression Analysis}
+Multiple linear regression relates replacement cost to wall length, heritage and disruption scores, retaining all three predictors across six quay wall replacement projects. The purpose is to supplement structural risk assessment with cost estimates that help schedule yearly works. Among walls with comparable urgency, estimates support comparison of affordable replacement packages and allocation of limited municipal funding. Heritage and disruption scores are treated as equally spaced numerical ratings.
 
 Length has the strongest adjusted association with cost: approximately €13,806 per additional metre, holding the other factors constant. Standardised coefficients are 0.817 for length, −0.477 for heritage and 0.305 for disruption. The model explains 63.7% of cost variation (adjusted R² = 0.094). Length is not significant at 5% (p = 0.218); neither are heritage (p = 0.429) nor disruption (p = 0.606). Thus, the results identify exploratory associations rather than established causal effects.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Full model fit and pearson correlation matrix.png}
+    \caption{Full model fit and correlation}
+    \label{fig:unique_label}
+\end{figure}
 
+Therefore, to construct the annual schedule from established intervention deadlines from structural risk, estimates will be made for package costs and select works whose combined annual expenditure plus justified contingency fits the available budget. Consistent price escalation towards 2050 will then be applied as outlined in \autoref{chapter:prediction-recommendations} 
 
 \clearpage
 \section{Results Interpretation and Proposed Recommendations}
