@@ -16,9 +16,9 @@ A wall fails when its body, formed by the wall, its floor and the soil on the
 floor, overturns about the front pile row, or when a timber pile breaks in
 bending. Overturning is described by the limit state function
 \begin{equation}
-g_1 = \theta_R M_R + M_\delta - S, \label{eq:g1}
+g_1 = \theta_R M_W + M_\delta - S, \label{eq:g1}
 \end{equation}
-where $M_R$ [kNm/m] is the moment of the weight of the body about the front
+where $M_W$ [kNm/m] is the moment of the weight of the body about the front
 pile row, $\theta_R$ [--] a model factor, $M_\delta$ [kNm/m] the moment of the
 wall friction on the back of the body and $S$ [kNm/m] the moment of the earth
 pressure, the net water pressure and the surcharge over the height $H$ [m]
@@ -27,7 +27,7 @@ from the werf to the underside of the floor. Pile failure is described by
 g_2 = \mathrm{MOR} - \left(\theta_M \frac{32\,M}{\pi d^3} + \frac{4N}{\pi d^2}\right),
 \qquad d = D_0 - 2\bigl(s_0 + r\,(t - 2026)\bigr), \label{eq:g2}
 \end{equation}
-where MOR [kPa] is the bending strength of the timber, $M$ [kNm] and $N$ [kN]
+where MOR [kPa] is the bending strength of the timber (22\,MPa on average), $M$ [kNm] and $N$ [kN]
 the moment and the axial force in the most loaded pile, $\theta_M$ [--] a
 model factor, $d$ [m] the diameter of the sound core, $D_0$ [m] the original
 diameter, $s_0$ [m] the soft shell in 2026, $r$ [m/yr] its growth rate and $t$
@@ -39,12 +39,12 @@ in for drivers of decay such as low groundwater in the drier summers of the
 KNMI'23 scenarios \parencite{knmi2023}.
 
 The wall fails if either limit state is reached (series system). Every
-modelled wall stands today, and this evidence $E$ of proven strength
+modelled wall stands today, and this evidence $\mathcal{E}$ of proven strength
 \parencite{hemel2024} rejects the draws in which the wall would already fail
 under its own soil and water, so that
 \begin{equation}
-P_f = P\left(g_1 < 0 \cup g_2 < 0 \mid E\right) \approx
-\frac{\sum_i \mathbf{1}[\mathrm{fail}_i]\,\mathbf{1}[E_i]}{\sum_i \mathbf{1}[E_i]},
+P_f = P\left(g_1 < 0 \cup g_2 < 0 \mid \mathcal{E}\right) \approx
+\frac{\sum_i \mathbf{1}[\mathrm{fail}_i]\,\mathbf{1}[\mathcal{E}_i]}{\sum_i \mathbf{1}[\mathcal{E}_i]},
 \qquad \beta = -\Phi^{-1}(P_f), \label{eq:pf}
 \end{equation}
 where $i$ numbers the Monte Carlo draws, $\mathbf{1}[\cdot]$ [--] is 1 if the
@@ -57,37 +57,40 @@ positive quantities with a multiplicative error, such as $K$ and the model
 factors \parencite{jcss2001}; normal for unit weights and timber properties;
 uniform where only bounds are known; Bernoulli for the wall type. The normal
 surcharge follows \textcite{hemel2024}, although an extreme-value distribution
-would suit a maximum load better.
+would suit a maximum load better. Only the groundwater and the surcharge vary
+in time (aleatory, A); the others are fixed for a wall but unknown (epistemic,
+E), so measuring them narrows $P_f$.
 
 \begin{table}[htbp]
 \centering
 \footnotesize
 \caption{Random variables of the failure model. $N$(mean, CoV): normal;
 $LN$(mean, CoV): lognormal; $U$(lower, upper): uniform; CoV: coefficient of
-variation. Fixed values: canal level +0.6\,m NAP, reinforced concrete
+variation. Kind: E epistemic (fixed for a wall, unknown), A aleatory (varies in
+time), E/A also varies between piles. Fixed values: canal level +0.6\,m NAP, reinforced concrete
 25\,kN/m$^3$, waterlogged timber 10\,kN/m$^3$.}
 \label{tab:prob-variables}
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.4cm}
-  >{\raggedright\arraybackslash}p{5.5cm} >{\raggedright\arraybackslash}X@{}}
+  >{\raggedright\arraybackslash}p{5.3cm} c >{\raggedright\arraybackslash}X@{}}
 \toprule
-Variable & Distribution & Basis \\
+Variable & Distribution & Kind & Basis \\
 \midrule
-Werf level, per wall & $N$(AHN median, $\sigma = 0.05$\,m)\textsuperscript{a} & AHN \parencite{ahn} \\
-Wall type $T$, per wall & Bernoulli, $P(T{=}2)$ = 0.2--0.9 per rak & \textcite{tno2009} \\
-Foundation level & Drawing + $U$(\textminus0.15, +0.15)\,m & Judgement \\
-Model factor $\theta_R$ & $LN$(1, 0.15) & Judgement \\
-Unit weight masonry; tamped concrete & $N$(19, 0.05); $N$(23, 0.05)\,kN/m$^3$ & Typical values \\
-Earth pressure coefficient $K$ & $LN$(0.35--0.60, 0.20--0.25)\textsuperscript{b} & Team (Table~\ref{tab:soil}) \\
-Unit weight of soil $\gamma$ & $N$(15--18\,kN/m$^3$, 0.05--0.06)\textsuperscript{b} & Team (Table~\ref{tab:soil}) \\
-Groundwater under the werf & $U$(+0.5, +0.9)\,m NAP & Bounds around the canal \\
-Surcharge $q$; distance $a$ & $N$(7\,kPa, 0.20); $U$(0, 3)\,m & \textcite{hemel2024}; judgement \\
-Pile diameter $D_0$; spacing $s$ & $N$(180\,mm, 0.10); $U$(0.8, 1.2)\,m & \textcite{ibu2010}; \textcite{hemel2023} \\
-Soft shell $s_0$; growth $r$ & $U$(0, 45)\,mm; $U$(0.10, 0.25)\,mm/yr & \textcite{hemel2023} \\
-MOR; $E$ & $N$(22\,MPa, 0.10); $N$(9\,GPa, 0.20) & \textcite{hemel2023} \\
-Subgrade modulus $k$ & $U$(4{,}300, 10{,}000)\,kN/m$^3$ & \textcite{hemel2023} \\
-Model factor $\theta_M$ & $LN$(1, 0.10) & \textcite{jcss2001} \\
+Werf level, per wall & $N$(AHN median, $\sigma = 0.05$\,m)\textsuperscript{a} & E & AHN \parencite{ahn} \\
+Wall type $T$, per wall & Bernoulli, $P(T{=}2)$ = 0.2--0.9 per rak & E & \textcite{tno2009} \\
+Foundation level & Drawing + $U$(\textminus0.15, +0.15)\,m & E & Judgement \\
+Model factor $\theta_R$ & $LN$(1, 0.15) & E & Judgement \\
+Unit weight masonry; tamped concrete & $N$(19, 0.05); $N$(23, 0.05)\,kN/m$^3$ & E & Typical values \\
+Earth pressure coefficient $K$ & $LN$(0.35--0.60, 0.20--0.25)\textsuperscript{b} & E & Team (Table~\ref{tab:soil}) \\
+Unit weight of soil $\gamma$ & $N$(15--18\,kN/m$^3$, 0.05--0.06)\textsuperscript{b} & E & Team (Table~\ref{tab:soil}) \\
+Groundwater under the werf & $U$(+0.5, +0.9)\,m NAP & A & Bounds around the canal \\
+Surcharge $q$; distance $a$ & $N$(7\,kPa, 0.20); $U$(0, 3)\,m & A & \textcite{hemel2024}; judgement \\
+Pile diameter $D_0$; spacing $s$ & $N$(180\,mm, 0.10); $U$(0.8, 1.2)\,m & E/A & \textcite{ibu2010}; \textcite{hemel2023} \\
+Soft shell $s_0$; growth $r$ & $U$(0, 45)\,mm; $U$(0.10, 0.25)\,mm/yr & E/A & \textcite{hemel2023} \\
+MOR; $E$ & $N$(22\,MPa, 0.10); $N$(9\,GPa, 0.20) & E/A & \textcite{hemel2023} \\
+Subgrade modulus $k$ & $U$(4{,}300, 10{,}000)\,kN/m$^3$ & E & \textcite{hemel2023} \\
+Model factor $\theta_M$ & $LN$(1, 0.10) & E & \textcite{jcss2001} \\
 \bottomrule
-\multicolumn{3}{@{}p{0.97\textwidth}@{}}{\textsuperscript{a} $U$(+1.0, +1.6)\,m
+\multicolumn{4}{@{}p{0.97\textwidth}@{}}{\textsuperscript{a} $U$(+1.0, +1.6)\,m
 NAP for the three walls whose werf level could not be read.
 \textsuperscript{b} Per soil class.}
 \end{tabularx}
@@ -96,17 +99,16 @@ NAP for the three walls whose werf level could not be read.
 The parameters were estimated in three ways: from a literature mean and
 coefficient of variation by the method of moments, from the data of
 Section~\ref{sec:data} for the werf level and the prior probability of each
-wall type, and by Bayesian updating with the evidence $E$, which updates all
+wall type, and by Bayesian updating with the evidence $\mathcal{E}$, which updates all
 resistance variables and the wall type together. With a prior probability $p$
 [--] of type~2 for the rak, the best estimate weighs the two types as
 \begin{equation}
-P_f = \sum_{T=1}^{2} P(T \mid E)\,P_f(T \mid E), \qquad
-P(T{=}2 \mid E) = \frac{p\,P(E \mid T{=}2)}{p\,P(E \mid T{=}2) + (1-p)\,P(E \mid T{=}1)},
+P_f = \sum_{T=1}^{2} P(T \mid \mathcal{E})\,P_f(T \mid \mathcal{E}), \qquad
+P(T{=}2 \mid \mathcal{E}) = \frac{p\,P(\mathcal{E} \mid T{=}2)}{p\,P(\mathcal{E} \mid T{=}2) + (1-p)\,P(\mathcal{E} \mid T{=}1)},
 \label{eq:mixture}
 \end{equation}
-where $P(E \mid T)$ [--] is the fraction of the draws of type $T$ in which the
-wall stands today. No variable could be fitted to measurements, as
-none exist near these walls for the soil, the piles or the timber.
+where $P(\mathcal{E} \mid T)$ [--] is the fraction of the draws of type $T$ in which the
+wall stands today. No variable could be fitted to local measurements.
 
 \subsection{Dependence between the variables}\label{sec:prob-dependence}
 
@@ -124,9 +126,8 @@ is rare. Other variables are independent for lack of data;
 Gaussian-copula tests of $\rho(K,\gamma) = -0.5$ and
 $\rho(\mathrm{MOR},E) = 0.8$ \parencite{jcss2001} change $\beta$ by at most
 0.03 (Table~\ref{tab:sens-summary}), so independence is acceptable. The walls
-are simulated independently, although neighbouring walls share pile age, soil
-and model; the $\beta$ of a wall is therefore a marginal value, and
-Section~\ref{sec:fault-tree} adds the dependence between walls.
+are simulated independently; Section~\ref{sec:fault-tree} adds the dependence
+between them.
 
 \subsection{Model quality and validity}\label{sec:prob-validity}
 
@@ -134,7 +135,9 @@ Few inputs can be compared with data (Table~\ref{tab:prob-data}). The AHN
 points on a werf scatter by 0.07\,m, which agrees with $\sigma = 0.05$\,m. The
 BRO wells stand under the raised streets and give levels above the werf
 itself, so the model uses a physical bound around the canal level instead;
-raising it by 0.1\,m changes $\beta$ by \textminus0.38 to +0.08. The soil class agrees with only 25 to 67\,\% of the
+raising it by 0.1\,m changes $\beta$ by \textminus0.38 to +0.08, and letting it
+rise to the werf by \textminus0.68 to +0.13, which changes the class of eight
+walls (Appendix~\ref{app:prob-sensitivity}). The soil class agrees with only 25 to 67\,\% of the
 borings within 150\,m, the weakest input; treated as uncertain, it changes
 $\beta$ by \textminus0.70 to +0.56. The soft-shell range has a mean of
 22.5\,mm, close to the 21\,mm measured in Amsterdam \parencite{hemel2023}, but
@@ -145,9 +148,9 @@ model predicted failure of standing walls and was rejected
 (Section~\ref{sec:data-effect}). With the measured cross-sections, type~2
 stands in 95 to 100\,\% of the draws, but type~1 in only 33 to 98\,\%: the
 type-1 model is miscalibrated, as it lets walls that have stood for a century
-fail. The update of the wall type therefore mainly reflects this model error.
-Without it, $\beta$ is 0 to 0.45 lower; the proven-strength evidence is also
-weak, as it ignores the terraces and crowds on the werven, and a survived load
+fail. The update of the wall type therefore mainly reflects this model error;
+without the update of the type, $\beta$ is 0 to 0.45 lower. The proven-strength evidence is also
+weak, as it ignores terraces and crowds, and a survived load
 of 2.5\,kPa at 0.5\,m from the edge \parencite{en1991} would raise $\beta$ by
 0.11 to 0.65. Wall friction from the active state ($\delta = \tfrac23\varphi$)
 is optimistic where $K$ is near its at-rest value; without it, type~1 loses 0.55
@@ -155,7 +158,7 @@ to 1.02. The Monte Carlo error is 0.01 in $\beta$ (Appendix~\ref{app:prob-checks
 
 The best estimates of $\beta$ are \textminus0.06 to 1.52 in 2026 (median
 1.05; Table~\ref{tab:prob-results}). In 2041 they are at most 0.12 lower: the
-growth of the soft shell, the only deterioration in the model, is slow, and the
+soft-shell growth, the only deterioration modelled, is slow, and the
 processes that have caused damage, settlement from pile rot
 \parencite{erfgoed156} and loss of the timber screen, are outside the limit
 states; without the screen, $\beta$ falls by 0.08 to 0.39. The model therefore

@@ -40,17 +40,17 @@ effect (Table~\ref{tab:tornado}) is probably overstated, not understated.
 \subsection{Resistance against overturning}\label{app:prob-resistance}
 
 The body that tips is the wall, its floor and the soil on the floor. Its
-weight $V$ and moment $M$ about the front pile row follow from the areas of the
+weight $V$ and moment $M_W$ about the front pile row follow from the areas of the
 parts in the measured cross-section (masonry, tamped concrete, reinforced
 concrete or timber, and soil). Below the mean of the canal and the groundwater
 level each part weighs $\gamma - \gamma_w$. The soil behind the body drags it
 down by wall friction:
 \begin{equation}
-M_R = \theta_R M + \tan\delta\,F_s\,(x_\text{back} - x_\text{front}),
+M_R = \theta_R M_W + \tan\delta\,F_s\,(x_\text{back} - x_\text{front}),
 \qquad \delta = \tfrac23\varphi, \quad \sin\varphi = \frac{1-K}{1+K},
 \end{equation}
 with $F_s$ the horizontal force of soil and surcharge. The wall overturns when
-$M_R < S$. The friction angle follows from $K$ through the active Rankine state.
+$M_R < S$, which is $g_1 < 0$ in Equation~(\ref{eq:g1}) with $M_\delta$ the friction term. The friction angle follows from $K$ through the active Rankine state.
 For clay and peat, $K = 0.6$ is close to the at-rest value, where much less
 friction is mobilised; without friction, the $\beta$ of type~1 is 0.55 to 1.02
 lower (Appendix~\ref{app:prob-checks}), so this term is an important and weakly
@@ -58,8 +58,8 @@ founded part of the type-1 resistance.
 
 \subsection{Forces in the piles}\label{app:prob-piles}
 
-The rear row carries $R = (M_R - S)/(x_\text{rear} - x_\text{front})$; the
-front row carries the rest of the weight, $F = V + \tan\delta\,F_s - R$. For
+The rear row carries $F_r = (M_R - S)/(x_\text{rear} - x_\text{front})$; the
+front row carries the rest of the weight, $F = V + \tan\delta\,F_s - F_r$. For
 type 2 the front row is raked 1:10 and takes $0.1F$ horizontally. The rest of
 the horizontal force is shared by both rows, so per pile (spacing $s$)
 \begin{equation}
@@ -86,22 +86,22 @@ $\sigma_{\ln}^2 = \ln(1 + v^2)$ and $\mu_{\ln} = \ln m - \sigma_{\ln}^2/2$.
 Normal and uniform distributions are set by their mean and CoV, or by their
 bounds.
 
-\paragraph{Proven strength.} Let $E$ be the event that the wall stands today
+\paragraph{Proven strength.} Let $\mathcal{E}$ be the event that the wall stands today
 under soil and water, without surcharge. Every draw $\mathbf{x}_i$ is checked
-against $E$ with its own resistance and soil and a separate groundwater draw.
-Bayes' rule gives $f(\mathbf{x} \mid E) \propto f(\mathbf{x})\,
-\mathbf{1}[\mathbf{x} \in E]$, so the updated failure probability is
+against $\mathcal{E}$ with its own resistance and soil and a separate groundwater draw.
+Bayes' rule gives $f(\mathbf{x} \mid \mathcal{E}) \propto f(\mathbf{x})\,
+\mathbf{1}[\mathbf{x} \in \mathcal{E}]$, so the updated failure probability is
 estimated by rejection:
 \begin{equation}
-\hat P_{f\mid E} = \frac{\sum_i \mathbf{1}[\text{fail}_i]\,\mathbf{1}[E_i]}{\sum_i \mathbf{1}[E_i]}.
+\hat P_{f\mid \mathcal{E}} = \frac{\sum_i \mathbf{1}[\text{fail}_i]\,\mathbf{1}[\mathcal{E}_i]}{\sum_i \mathbf{1}[\mathcal{E}_i]}.
 \end{equation}
 
 \paragraph{Wall type.} With prior $p = P(T = 2)$ per rak, the same evidence
 updates the type, and the best estimate weighs the two types:
 \begin{equation}
-P(T = 2 \mid E) = \frac{p\,P(E \mid T=2)}{p\,P(E \mid T=2) + (1-p)\,P(E \mid T=1)},
+P(T = 2 \mid \mathcal{E}) = \frac{p\,P(\mathcal{E} \mid T=2)}{p\,P(\mathcal{E} \mid T=2) + (1-p)\,P(\mathcal{E} \mid T=1)},
 \qquad
-P_f = \sum_{T} P(T \mid E)\,P_f(T \mid E).
+P_f = \sum_{T} P(T \mid \mathcal{E})\,P_f(T \mid \mathcal{E}).
 \end{equation}
 
 \subsection{Results per wall}\label{app:prob-results}
@@ -119,7 +119,7 @@ in the data tells them apart.
 \caption{Reliability index $\beta$ per modelled wall, updated with proven
 strength. OG = Oude Gracht, KNG = Kromme Nieuwe Gracht. Type 1 and type 2:
 $\beta$ in 2026 if the wall is of that type. Best estimate: both types
-weighted by $P(T \mid E)$.}
+weighted by $P(T \mid \mathcal{E})$.}
 \label{tab:prob-results}
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{@{}l r l c r r r r@{}}
@@ -165,7 +165,7 @@ $\beta$ (updated, 2026); Table~\ref{tab:sens-walls} gives every wall.
 \centering
 \small
 \caption{Change in $\beta$ against the base model: median [range] over the
-17 walls. Best estimate: the two wall types weighted by $P(T \mid E)$.}
+17 walls. Best estimate: the two wall types weighted by $P(T \mid \mathcal{E})$.}
 \label{tab:sens-summary}
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{@{}l r r r@{}}
@@ -175,8 +175,12 @@ Change & Best estimate & Type 1 & Type 2 \\
 $\rho(K,\gamma) = -0.5$ & $0.00$ [$-0.01$, $0.00$] & $+0.01$ [$-0.01$, $+0.01$] & $0.00$ [$-0.01$, $+0.01$] \\
 $\rho(\text{MOR},E) = +0.8$ & $0.00$ [$0.00$, $+0.01$] & $0.00$ [$-0.01$, $+0.01$] & $+0.01$ [$0.00$, $+0.03$] \\
 Groundwater +0.6 to +1.0\,m NAP & $+0.02$ [$-0.38$, $+0.08$] & $-0.22$ [$-0.43$, $-0.18$] & $-0.06$ [$-0.10$, $-0.05$] \\
+Groundwater +0.5 to +1.3\,m NAP\textsuperscript{a} & $-0.04$ [$-0.68$, $+0.13$] & $-0.40$ [$-0.81$, $-0.35$] & $-0.16$ [$-0.20$, $-0.12$] \\
 Soil class uncertain & $+0.06$ [$-0.70$, $+0.56$] & -- & -- \\
 \bottomrule
+\multicolumn{4}{@{}p{0.97\textwidth}@{}}{\footnotesize\textsuperscript{a} Up to
+the werf level, above which water would flood the werf; covers the lower BRO
+levels (Table~\ref{tab:prob-data}).}
 \end{tabular}
 \end{table}
 
@@ -188,27 +192,27 @@ Shares c/s/m: clay/peat, sand and mixed among the borings within 150\,m.
 OG = Oude Gracht, KNG = Kromme Nieuwe Gracht.}
 \label{tab:sens-walls}
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}l l c r r r r r@{}}
+\begin{tabular}{@{}l l c r r r r r r@{}}
 \toprule
-Wall & Class & Shares c/s/m & Base & $\rho(K,\gamma)$ & $\rho(\text{MOR},E)$ & Groundw. & Soil unc. \\
+Wall & Class & Shares c/s/m & Base & $\rho(K,\gamma)$ & $\rho(\text{MOR},E)$ & Groundw. & Gw.\ werf & Soil unc. \\
 \midrule
-OG Rak 03 OZ & clay/peat & 0.50 / 0.50 / 0.00 & $-0.05$ & $-0.05$ & $-0.05$ & 0.00 & 0.51 \\
-OG Rak 04 OZ & sand & 0.50 / 0.33 / 0.17 & 0.81 & 0.81 & 0.81 & 0.55 & 0.38 \\
-OG Rak 05 NZ & sand & 0.40 / 0.60 / 0.00 & 0.83 & 0.82 & 0.83 & 0.56 & 0.56 \\
-OG Rak 06 NZ & sand & 0.50 / 0.33 / 0.17 & 1.18 & 1.17 & 1.18 & 0.80 & 0.48 \\
-OG Rak 06 ZZ & sand & 0.57 / 0.29 / 0.14 & 0.82 & 0.82 & 0.82 & 0.57 & 0.33 \\
-OG Rak 08 OZ & mixed & 0.56 / 0.11 / 0.33 & 1.38 & 1.38 & 1.38 & 1.30 & 1.28 \\
-OG Rak 09 ZOZ & clay/peat & 0.50 / 0.17 / 0.33 & 1.10 & 1.10 & 1.10 & 1.14 & 1.21 \\
-OG Rak 09 WZ & clay/peat & 0.56 / 0.11 / 0.33 & 1.05 & 1.05 & 1.05 & 1.08 & 1.14 \\
-OG Rak 09 WZ 01 & clay/peat & 0.50 / 0.17 / 0.33 & 1.13 & 1.13 & 1.14 & 1.19 & 1.26 \\
-KNG 002 & clay/peat & 0.67 / 0.00 / 0.33 & 1.37 & 1.37 & 1.38 & 1.39 & 1.43 \\
-KNG 003 & mixed & 0.75 / 0.00 / 0.25 & 1.52 & 1.52 & 1.53 & 1.48 & 1.37 \\
-KNG 004 & mixed & 0.75 / 0.00 / 0.25 & 1.39 & 1.39 & 1.40 & 1.37 & 1.23 \\
-KNG 005 & clay/peat & 0.50 / 0.00 / 0.50 & 0.59 & 0.59 & 0.59 & 0.67 & 0.65 \\
-KNG 006 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.60 & 0.60 & 0.67 & 0.73 \\
-KNG 007 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.59 & 0.59 & 0.67 & 0.73 \\
-KNG 008 & clay/peat & 0.40 / 0.20 / 0.40 & 0.56 & 0.56 & 0.56 & 0.60 & 0.85 \\
-KNG 009 & sand & 0.67 / 0.33 / 0.00 & 1.44 & 1.44 & 1.45 & 1.12 & 0.81 \\
+OG Rak 03 OZ & clay/peat & 0.50 / 0.50 / 0.00 & $-0.05$ & $-0.05$ & $-0.05$ & 0.00 & 0.05 & 0.51 \\
+OG Rak 04 OZ & sand & 0.50 / 0.33 / 0.17 & 0.81 & 0.81 & 0.81 & 0.55 & 0.27 & 0.38 \\
+OG Rak 05 NZ & sand & 0.40 / 0.60 / 0.00 & 0.83 & 0.82 & 0.83 & 0.56 & 0.28 & 0.56 \\
+OG Rak 06 NZ & sand & 0.50 / 0.33 / 0.17 & 1.18 & 1.17 & 1.18 & 0.80 & 0.50 & 0.48 \\
+OG Rak 06 ZZ & sand & 0.57 / 0.29 / 0.14 & 0.82 & 0.82 & 0.82 & 0.57 & 0.28 & 0.33 \\
+OG Rak 08 OZ & mixed & 0.56 / 0.11 / 0.33 & 1.38 & 1.38 & 1.38 & 1.30 & 1.31 & 1.28 \\
+OG Rak 09 ZOZ & clay/peat & 0.50 / 0.17 / 0.33 & 1.10 & 1.10 & 1.10 & 1.14 & 1.10 & 1.21 \\
+OG Rak 09 WZ & clay/peat & 0.56 / 0.11 / 0.33 & 1.05 & 1.05 & 1.05 & 1.08 & 1.01 & 1.14 \\
+OG Rak 09 WZ 01 & clay/peat & 0.50 / 0.17 / 0.33 & 1.13 & 1.13 & 1.14 & 1.19 & 1.18 & 1.26 \\
+KNG 002 & clay/peat & 0.67 / 0.00 / 0.33 & 1.37 & 1.37 & 1.38 & 1.39 & 1.35 & 1.43 \\
+KNG 003 & mixed & 0.75 / 0.00 / 0.25 & 1.52 & 1.52 & 1.53 & 1.48 & 1.46 & 1.37 \\
+KNG 004 & mixed & 0.75 / 0.00 / 0.25 & 1.39 & 1.39 & 1.40 & 1.37 & 1.33 & 1.23 \\
+KNG 005 & clay/peat & 0.50 / 0.00 / 0.50 & 0.59 & 0.59 & 0.59 & 0.67 & 0.67 & 0.65 \\
+KNG 006 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.60 & 0.60 & 0.67 & 0.68 & 0.73 \\
+KNG 007 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.59 & 0.59 & 0.67 & 0.67 & 0.73 \\
+KNG 008 & clay/peat & 0.40 / 0.20 / 0.40 & 0.56 & 0.56 & 0.56 & 0.60 & 0.69 & 0.85 \\
+KNG 009 & sand & 0.67 / 0.33 / 0.00 & 1.44 & 1.44 & 1.45 & 1.12 & 0.92 & 0.81 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -224,6 +228,11 @@ MOR more than covers this.
 wall, so $\beta$ falls for each type. For the best estimate the effect is
 partly offset: under the higher water fewer type-1 draws stand today, so the
 update moves $P(T{=}2)$ up. Walls in sand, where type 1 is likely, lose most.
+With groundwater up to the werf level, the four sand walls of rak~4 to 6 and
+Kromme Nieuwe Gracht 009 lose 0.52 to 0.68, and eight walls change risk class:
+red falls from nine to five walls, as Kromme Nieuwe Gracht 005 to 008 and Rak~09
+ZOZ become orange and Rak~04 OZ red. The groundwater under the werf is therefore
+worth measuring.
 
 \paragraph{Soil class.} Most walls have borings of all three classes within
 150\,m. Walls classed as sand lose up to 0.7 in $\beta$, because half of their
@@ -257,7 +266,7 @@ highest and lowest soil class by 0.49 (0.37 to 1.19, best estimate).
 \footnotesize
 \caption{Change in $\beta$ when one input moves from its 5th to its 95th
 percentile: median [range] over the walls. Best estimate: both types weighted
-by $P(T \mid E)$.}
+by $P(T \mid \mathcal{E})$.}
 \label{tab:tornado-full}
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}l l r r r@{}}

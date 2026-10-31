@@ -28,17 +28,32 @@
 
 
 
-AI used for
-\begin{itemize}
-    \item Creating overview and planning of the assignment, check by comparing dates in the study guide
-    \item Set up overleaf chapters. Copy pased the Team Challange pdf into suitable overleaf files and latex format
-    \item Set up Code base based on the chapters of the pdf team challange. Set up github as well.
-    \item Used Claude artifact to upload the GEO data and create a sharable GIS map with all the data, so we have a clear overview on what data we have and how the general map and data converage is
-    \item Used AI to spar about assumtions that possible need to be in the model. We provided a possible list and Claude looked for possible sources where we could anchor these assumptions to. Checked all the sources if they were corrected and true
-    \item Used AI to translate dutch policy documents to translation, check with dutch team members to check if AI correctly made these assumptions. 
-    \item Drafting and rewriting the text of Sections from our notes and source documents
-    \item Finding and summarising sources (for example the Amsterdam ARK 2.0 report and municipal documents)
-    \item Writing LaTeX code for tables and figures
-    \item Writing simulation code and preparing figures
-    
-\end{itemize}
+The team used Claude (Anthropic): the Claude app, including its artifacts, and
+Claude Code, which works in the project repository. Table~\ref{tab:ai-use} lists
+each use, what was asked and how the output was checked. The team remains
+responsible for every number, source and conclusion in this report.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Use of AI tools, the requests made and the verification.}
+\label{tab:ai-use}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.6cm}
+  >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{5.0cm}@{}}
+\toprule
+Use & Request (prompt) & Verification \\
+\midrule
+Planning & Make an overview and planning of the assignment from the study guide & Dates compared with the study guide \\
+Report and code set-up & Turn the Team Challenge PDF into Overleaf chapter files in LaTeX; set up a code base and a GitHub repository with the same chapters & Chapter files compared with the PDF \\
+Data overview & Upload the geodata and make a shareable GIS map of all data & Coverage compared with the source files \\
+Assumptions & Given our list of model assumptions, find sources that support them & Every source opened and checked by the team \\
+Translation & Translate Dutch policy documents into English & Checked by the Dutch-speaking team members \\
+Sources & Find and summarise sources, such as ARK 2.0 and municipal documents & Summaries checked against the documents \\
+Text & Draft and rewrite sections from our notes and source documents & Numbers checked against the script output; sources checked against the cited documents \\
+Code and figures & Write the simulation and analysis scripts, LaTeX tables and figures & Scripts rerun with fixed seeds; key results recomputed by hand (fault tree, regression, costs) \\
+Review & ``I want a critical, independent review of the current version, as a strict examiner and as the municipality's asset manager would read it'', against the assignment, the municipality's Q\&A and NEN~8700 & Each finding checked by the team before the text was changed; $\beta$ values checked against NEN~8700 Table~B.2 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+AI output itself is not cited as a source.
