@@ -4,8 +4,13 @@
 \section{Probabilistic Models}\label{sec:prob}
 
 Chapter~\ref{chapter:risk-analysis} needs, for each of the 17 walmuren on
-their original timber piles (Section~\ref{sec:data}), the probability of
-failure within the 15-year reference period of NEN~8700 \parencite{nen8700}.
+their original timber piles (Section~\ref{sec:data}), the probability that it
+fails under the loads of the 15-year reference period of NEN~8700
+\parencite{nen8700}, given that it stands today. As in \textcite{hemel2024}, the
+surcharge is the load that occurs in that period; there is no integration over
+time, which enters only through the soft shell (2026 and 2041). Spreading this
+probability evenly over the years (Sections~\ref{sec:fault-tree} and
+\ref{sec:regression}) is therefore an assumption.
 The team modelled it with the lateral failure mechanism that
 \textcite{hemel2023,hemel2024} studied for Amsterdam quay walls, adapted to the
 two cross-section types of the Utrecht walmuren \parencite{ibu2010,erfgoed156}
@@ -68,8 +73,7 @@ E), so measuring them narrows $P_f$.
 \caption{Random variables of the failure model. $N$(mean, CoV): normal;
 $LN$(mean, CoV): lognormal; $U$(lower, upper): uniform; CoV: coefficient of
 variation. Kind: E epistemic (fixed for a wall, unknown), A aleatory (varies in
-time), E/A also varies between piles. Fixed values: canal level +0.6\,m NAP, reinforced concrete
-25\,kN/m$^3$, waterlogged timber 10\,kN/m$^3$.}
+time), E/A also varies between piles. Fixed values: Table~\ref{tab:inputs}.}
 \label{tab:prob-variables}
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{4.4cm}
   >{\raggedright\arraybackslash}p{5.3cm} c >{\raggedright\arraybackslash}X@{}}
@@ -109,7 +113,7 @@ P(T{=}2 \mid \mathcal{E}) = \frac{p\,P(\mathcal{E} \mid T{=}2)}{p\,P(\mathcal{E}
 \label{eq:mixture}
 \end{equation}
 where $P(\mathcal{E} \mid T)$ [--] is the fraction of the draws of type $T$ in which the
-wall stands today. No variable could be fitted to local measurements.
+wall stands today; no variable could be fitted to local data.
 
 \subsection{Dependence between the variables}\label{sec:prob-dependence}
 
@@ -120,15 +124,12 @@ $\gamma$, so all variables are conditional on these two
 (Equation~\ref{eq:mixture}). One draw of $K$ enters the earth pressure, the
 surcharge pressure and the wall friction, and one groundwater level enters the
 soil weight, the water pressure and the buoyancy of the body. Both limit
-states use the same draws: for type~2, overturning and pile failure occur
-together 4.4 times as often (median) as if they were independent, although the
-series $P_f$ stays within 8\,\% of the independent value because overturning
-is rare. Other variables are independent for lack of data;
+states use the same draws: for type~2 they occur together 4.4 times as often as
+if independent (Appendix~\ref{app:prob-sensitivity}). Other variables are independent for lack of data;
 Gaussian-copula tests of $\rho(K,\gamma) = -0.5$ and
 $\rho(\mathrm{MOR},E) = 0.8$ \parencite{jcss2001} change $\beta$ by at most
-0.03 (Table~\ref{tab:sens-summary}), so independence is acceptable. The walls
-are simulated independently; Section~\ref{sec:fault-tree} adds the dependence
-between them.
+0.03 (Table~\ref{tab:sens-summary}), so independence is acceptable. Section~\ref{sec:fault-tree} adds the dependence between
+walls.
 
 \subsection{Model quality and validity}\label{sec:prob-validity}
 
@@ -144,27 +145,26 @@ $\beta$ by \textminus0.70 to +0.56. The soft-shell range has a mean of
 22.5\,mm, close to the 21\,mm measured in Amsterdam \parencite{hemel2023}, but
 no Utrecht data exist.
 
-The strongest test of validity is that all 17 walls stand. A masonry-block
-model predicted failure of standing walls and was rejected
-(Section~\ref{sec:data-effect}). With the measured cross-sections, type~2
+The strongest test of validity is that all 17 walls stand. With the measured cross-sections, type~2
 stands in 95 to 100\,\% of the draws, but type~1 in only 33 to 98\,\%: the
 type-1 model is miscalibrated, as it lets walls that have stood for a century
-fail. The update of the wall type therefore mainly reflects this model error;
-without the update of the type, $\beta$ is 0 to 0.45 lower. The proven-strength evidence is also
+fail. The ranking, however, agrees with the incidents on walls still on timber:
+both walls of rak~6, red in every variant, were widened in 2021 to prevent collapse and stabilised in 2024
+\parencite{gu2023vgr,wijkbericht2024walmuur}; the other incidents could not be
+placed on a modelled wall. Without the type update, which mainly reflects
+this error, $\beta$ is 0 to 0.45 lower. The proven-strength evidence is also
 weak, as it ignores terraces and crowds, and a survived load
 of 2.5\,kPa at 0.5\,m from the edge \parencite{en1991} would raise $\beta$ by
-0.11 to 0.65. Wall friction from the active state ($\delta = \tfrac23\varphi$)
-is optimistic where $K$ is near its at-rest value; without it, type~1 loses 0.55
+0.11 to 0.65. Wall friction ($\delta = \tfrac23\varphi$)
+is optimistic where $K$ is near at rest; without it, type~1 loses 0.55
 to 1.02. The Monte Carlo error is 0.01 in $\beta$ (Appendix~\ref{app:prob-checks}).
 
 The best estimates of $\beta$ are \textminus0.06 to 1.52 in 2026 (median
-1.05; Table~\ref{tab:prob-results}). In 2041 they are at most 0.12 lower: the
-soft-shell growth, the only deterioration modelled, is slow, and the
-processes that have caused damage, settlement from pile rot
-\parencite{erfgoed156} and loss of the timber screen, are outside the limit
-states; without the screen, $\beta$ falls by 0.08 to 0.39. The model therefore
-supports a ranking of the walls and the order of magnitude of $P_f$, not an
-absolute verdict against NEN~8700, which would need calibration first
+1.05; Table~\ref{tab:prob-results}). In 2041 they are at most 0.12 lower. The observed
+damage, settlement from pile rot \parencite{erfgoed156} and loss of the screen,
+is outside the limit states; without the screen, $\beta$ falls by 0.08 to 0.39. The model therefore
+supports a ranking and an order of magnitude, not a verdict against
+NEN~8700, which needs calibration first
 (Section~\ref{sec:approach-selection}).
 
 %% ----------------------------------------------------------------------
