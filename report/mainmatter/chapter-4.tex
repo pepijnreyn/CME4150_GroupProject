@@ -142,83 +142,87 @@ Section~\ref{sec:tradeoff} keeps the budget-based cost per metre.
 The test case gives three results about the method. First, the asset register
 overstates the backlog of walmuren: 11 of the 29 walls that it shows as past
 their design life have already been renewed on steel piles, and only 17 walls,
-611\,m in total, still stand on their original timber piles with a werf
-(Section~\ref{sec:data}). Second, the failure model ranks these 17 walls, and
-with the consequence score (Appendix~\ref{app:portfolio}) nine of them, 398\,m,
-are red. Only four stay red when the class factor or the groundwater changes
-(Sections~\ref{sec:approach-selection} and \ref{sec:prob-validity}): Oude
-Gracht Rak~03 OZ, Rak~05 NZ and both walls of rak~6, 274\,m lined with
-terraces. Kromme Nieuwe Gracht 005 to 008 are red because data are missing
-(Figure~\ref{fig:results-map}). Third, at
-the pace of the last eight years the 17 walls are renewed around 2031; until
-then about one of them is expected to reach a limit state
-(Section~\ref{sec:regression}).
+611\,m, still stand on their original timber piles with a werf
+(Section~\ref{sec:data}). Second, nine of these walls, 398\,m, are red
+(Figure~\ref{fig:results-map}), but only four stay red when the class factor or
+the groundwater changes: Oude Gracht Rak~03 OZ, Rak~05 NZ and both walls of
+rak~6, 274\,m lined with terraces (Sections~\ref{sec:approach-selection} and
+\ref{sec:prob-validity}). Kromme Nieuwe Gracht 005 to 008 are red because data
+are missing. Third, at the pace of the last eight years the 17 walls are renewed
+around 2031, and about one of them is expected to need an emergency measure
+before then (Section~\ref{sec:regression}).
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{figures/results_map.png}
-\caption{Risk class and $\beta$ of the 17 modelled walmuren, in the north of the
-Wervengebied. The numbers give the order: by risk class, then by $P_f$.
-*: no dive note on the wall type (prior 0.5); the class rests on missing data. Right: best estimate of
-$\beta$ (dot) and the range from type~1 to type~2 (bar), with the updated
-probability of type~2. Sources: asset register, Werfmuren layer
+\includegraphics[width=0.56\textwidth]{figures/results_map_only.png}
+\caption{Risk class of the 17 modelled walmuren in the north of the
+Wervengebied; numbers give the order, by class and then by failure probability
+(Table~\ref{tab:risk-classes}; the range per wall is in
+Figure~\ref{fig:app-results-beta}). Sources: asset register, Werfmuren layer
 \parencite{gu2025register,utrecht_werfmuren}, model results.}
 \label{fig:results-map}
 \end{figure}
 
-These are relative results, not a safety verdict. Every wall has a $\beta$
-below 1.8, the lowest rejection level of NEN~8700, but the type-1 model is
-miscalibrated, the evidence ignores the terraces, and the observed damage,
-settlement from pile rot and loss of the screen, is not modelled
-(Section~\ref{sec:prob-validity}). Known are which walls are renewed, the werf
-level and that every wall stands; assumed are the wall type, the pile
-condition, the soil and the load. Per kilometre, the model's 0.17 failures per year are more than twice
-the incidents observed in the Wervengebied, which fits its conservative
-bias; the results rank walls rather than give safety levels, and the choice of
-measure holds only within the tested range of $P_f$ (Section~\ref{sec:tradeoff}).
+In plain terms, a red wall is one of the old walls most likely to need an
+emergency measure before its renewal, at a place where that would most affect
+people on the werf, the cellars or the street; orange walls follow and green
+walls can wait for their turn. The colours compare these walls with each other.
+They do not say that a wall is unsafe today: every wall still stands. The largest
+unknown is how each wall was built. The older type, on a timber floor, is much
+weaker in the model than the post-war type on a concrete floor, and for most
+walls nobody has recorded which type it is.
+
+These are relative results, not a safety verdict against NEN~8700: the model of
+the older type is too pessimistic, the evidence ignores the terraces, and the
+damage actually observed, settlement from pile rot and loss of the screen, is
+not modelled (Section~\ref{sec:prob-validity}). Known are which walls are
+renewed, the werf level and that every wall stands; assumed are the wall type,
+the pile condition, the soil and the load. The model predicts more than twice
+the incidents observed per kilometre, which fits its conservative bias, and the
+choice of measure holds only within the tested range of the failure probability
+(Section~\ref{sec:tradeoff}).
 
 \begin{table}[htbp]
 \centering
 \small
-\caption{Recommendations to the Municipality of Utrecht. Costs are team
-estimates (Section~\ref{sec:tradeoff}).}
+\caption{Recommendations to the Municipality of Utrecht as a timeline. Costs are
+team estimates from Section~\ref{sec:tradeoff}, to be replaced by municipal unit
+costs.}
 \label{tab:recommendations}
-\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X
-  >{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{2.9cm}@{}}
+\begin{tabularx}{\textwidth}{@{}l l >{\raggedright\arraybackslash}X
+  >{\raggedright\arraybackslash}p{2.7cm} >{\raggedright\arraybackslash}p{2.4cm}@{}}
 \toprule
- & Recommendation & What it resolves & Needs \\
+ & When & Recommendation & Cost & Needs \\
 \midrule
-R1 & Establish the wall type of the red and orange walls, first on the Kromme Nieuwegracht, and the groundwater under the werf: drawings, dives, a survey, wells & Largest uncertainty ($\Delta\beta \approx 2$) & Little money \\
-R2 & Measure the soft shell of sample piles; then calibrate the model and use the NEN~8700 bands & Pile condition; absolute safety level & Money: micro-drilling \\
-R3 & Restrict use until renewal on the four walls that are red in every variant: nothing within 1.5\,m of the edge & $\beta$ +0.2 to +0.4 for \euro25k per wall & Institutional: terrace permits \\
-R4 & Keep renewal at 100\,m per year or more, red walls first; close one rak per canal stretch at a time, combined with street and sewer works & Risk until renewal; reachability & Budget, capacity, coordination \\
-R5 & Rank the rest of the portfolio with indicators; monitor walls far from renewal & The other 60\,km & Data; little money \\
-R6 & Use the municipal unit costs, inspection and incident records in the case-study phase; record renewals, foundation and wall type in the register & Costs and events of Chapter~\ref{chapter:risk-analysis}; overstated backlog & Institutional: data management \\
-R7 & Decide the consequence class of a walmuur and whether proven strength, including survived service loads, is accepted & Which target applies & Institutional and regulatory \\
+R1 & 2027 & Keep the outer 1.5\,m of the werf free on the four walls that are red in every check, until renewal & \euro25k per wall, about \euro100k & Institutional: terrace permits \\
+R2 & 2027 & Establish the type of the red and orange walls, Kromme Nieuwegracht first (drawings, a dive or a displacement survey), and measure the groundwater under the werf in a few wells & \euro15k per wall, about \euro180k & Little money \\
+R3 & 2027--28 & Micro-drill sample piles per rak; then calibrate the model and use the NEN~8700 bands & about \euro60k per rak sampled & Money, divers \\
+R4 & 2027--31 & Renew at least 100\,m per year, red walls first, one rak per canal stretch at a time, with street and sewer works & \euro1.3 million per wall, as planned & Budget, capacity, coordination \\
+R5 & 2027--28 & Rank the other 60\,km with indicators; monitor walls far from renewal & Small & Data \\
+R6 & 2027 & Use the municipal unit costs, inspection and incident records; record renewals, foundation and wall type in the register & -- & Institutional: data management \\
+R7 & 2027 & Decide the consequence class of a walmuur and whether proven strength, including survived service loads, is accepted & -- & Institutional, regulatory \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:recommendations} turns this into recommendations. The first two
-are measurements, because the dominant uncertainties are cheap to reduce
-compared with a renewal of about \euro1.3 million per wall: finding type~2 on
-the three sand walls of rak~4 to 6 would raise their $\beta$ from about 0.8 to
-2.0, whereas groundwater up to the werf would lower it by 0.5. Restricting use (R3) is the cheapest interim measure, but its cost
-falls on terrace owners. If failures are spread over time, the pace (R4) matters
-more than the order: the expected number of walls that reach a limit state
-before renewal is about 1.0 at the recent pace and 0.6 at the pace of 2015 to
-2018, while ordering by $\beta$ saves 10\,\%; if the weakness is present today,
-neither helps much. For the rest of the
-portfolio (R5), indicators rank the walls without a model, and monitoring pays
-where renewal is far away.
+Table~\ref{tab:recommendations} turns this into a programme for 2027. The first
+steps are cheap compared with a renewal of about \euro1.3 million: keeping the
+edge free on four walls costs about \euro100k but falls on terrace owners, and
+finding the wall type of twelve walls about \euro180k; finding the post-war type
+on the three sand walls of rak~4 to 6 would move them from the weakest third to
+the strongest. If failures are spread over time, the pace of renewal (R4) matters
+more than the order: about 1.0 expected emergency at the recent pace against 0.6
+at the pace of 2015 to 2018; if the weakness is present today, neither helps
+much. For the other 60\,km (R5), the method gives a first ranking from the
+register, the subsidence map and the NEN~2767 inspections without a structural
+model (Appendix~\ref{app:portfolio}); the case-study phase must supply the
+inspection, foundation and incident records, after which the failure model can
+be applied wherever masonry stands on timber piles.
 
 The last two recommendations need an institutional change rather than money. A
 register that keeps the year of the original wall makes the design-life rule
-flag walls renewed ten years ago. The municipal unit costs, which the
-municipality can share, and its inspection and incident records, which it holds
-for parts of the portfolio and will provide in the case-study phase
-\parencite{utrecht_qa2026}, would replace most assumptions of
-Chapter~\ref{chapter:risk-analysis}. The municipality also has to decide which consequence
-class applies to a walmuur and whether proven strength, including a history of
-survived service loads, is accepted, because these choices, not new data,
-decide whether a wall with a $\beta$ of 1.5 must be rejected.
+flag walls renewed ten years ago, and the municipal records would replace most
+assumptions of Chapter~\ref{chapter:risk-analysis}
+\parencite{utrecht_qa2026}. The municipality also has to decide which
+consequence class applies to a walmuur and whether proven strength is accepted,
+because these choices, not new data, decide whether a wall must be rejected.
