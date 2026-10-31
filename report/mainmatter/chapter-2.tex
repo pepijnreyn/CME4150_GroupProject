@@ -52,15 +52,12 @@ event occurs in a draw and 0 otherwise, and $\Phi$ is the standard normal
 distribution function. The model uses 400{,}000 draws per wall and type, for 2026
 and for 2041 (Appendix~\ref{app:prob}).
 
-Table~\ref{tab:prob-variables} lists the random variables. Lognormal
-distributions describe positive quantities with a multiplicative error, such
-as $K$ and the model factors \parencite{jcss2001}; normal distributions the
-unit weights and timber properties, whose coefficients of variation of at most
-0.20 make negative values negligible; uniform distributions the variables of
-which only bounds are known; and a Bernoulli distribution the wall type. The
-normal surcharge follows \textcite{hemel2024}, although an extreme-value
-distribution would suit a maximum load better; it has no trend, as a 2\,t
-axle limit applies.
+Table~\ref{tab:prob-variables} lists the random variables: lognormal for
+positive quantities with a multiplicative error, such as $K$ and the model
+factors \parencite{jcss2001}; normal for unit weights and timber properties;
+uniform where only bounds are known; Bernoulli for the wall type. The normal
+surcharge follows \textcite{hemel2024}, although an extreme-value distribution
+would suit a maximum load better.
 
 \begin{table}[htbp]
 \centering
@@ -146,23 +143,25 @@ no Utrecht data exist.
 The strongest test of validity is that all 17 walls stand. A masonry-block
 model predicted failure of standing walls and was rejected
 (Section~\ref{sec:data-effect}). With the measured cross-sections, type~2
-stands in 95 to 100\,\% of the draws and type~1 in only 33 to 98\,\%, so
-either the type-1 model is conservative or most walls are type~2; the update
-shifts $P(T{=}2)$ accordingly, from 0.20 to 0.34 for Oude Gracht Rak~03 OZ.
-Pile failure dominates type~2 (median $P_f$ 0.054 against 0.004 for
-overturning) and overturning dominates type~1. The update raises $\beta$ by
-0.07 to 0.69, and the Monte Carlo error is below 2\,\% of $P_f$, or 0.01
-in $\beta$ (Appendix~\ref{app:prob-mc}).
+stands in 95 to 100\,\% of the draws, but type~1 in only 33 to 98\,\%: the
+type-1 model is miscalibrated, as it lets walls that have stood for a century
+fail. The update of the wall type therefore mainly reflects this model error.
+Without it, $\beta$ is 0 to 0.45 lower; the proven-strength evidence is also
+weak, as it ignores the terraces and crowds on the werven, and a survived load
+of 2.5\,kPa at 0.5\,m from the edge \parencite{en1991} would raise $\beta$ by
+0.11 to 0.65. Wall friction from the active state ($\delta = \tfrac23\varphi$)
+is optimistic where $K$ is near its at-rest value; without it, type~1 loses 0.55
+to 1.02. The Monte Carlo error is 0.01 in $\beta$ (Appendix~\ref{app:prob-checks}).
 
 The best estimates of $\beta$ are \textminus0.06 to 1.52 in 2026 (median
-1.05) and \textminus0.08 to 1.40 in 2041, below the lowest NEN~8700 level of
-1.8 for every wall (Table~\ref{tab:prob-results}). They hold for low walmuren
-with a werf on their original timber piles, described by two cross-sections
-from the Oudegracht, and they exclude settlement from pile rot, the damage
-actually observed \parencite{erfgoed156}, sliding and failure of the timber
-screen. As most inputs are literature values rather than fits to Utrecht
-data, the model supports a ranking of the walls and the order of magnitude of
-$P_f$, not exact values (Section~\ref{sec:results-recommendations}).
+1.05; Table~\ref{tab:prob-results}). In 2041 they are at most 0.12 lower: the
+growth of the soft shell, the only deterioration in the model, is slow, and the
+processes that have caused damage, settlement from pile rot
+\parencite{erfgoed156} and loss of the timber screen, are outside the limit
+states; without the screen, $\beta$ falls by 0.08 to 0.39. The model therefore
+supports a ranking of the walls and the order of magnitude of $P_f$, not an
+absolute verdict against NEN~8700, which would need calibration first
+(Section~\ref{sec:approach-selection}).
 
 %% ----------------------------------------------------------------------
 %%  MAX 2 PAGES

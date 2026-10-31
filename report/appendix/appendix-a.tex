@@ -79,6 +79,37 @@ Rak 07 OZ; they hold up the street and would need another model. Kromme
 Nieuwe Gracht 005 is within its design life in the register, but its
 foundation status is unclear, so it is modelled.
 
+\subsection{Register data quality for the portfolio}\label{app:data-quality}
+
+The portfolio method of Section~\ref{sec:approach-selection} reads the register
+for every quay wall: 1{,}844 objects in use of the types Muur, Kademuur,
+Beschoeiing and Damwand, 142\,km including 72\,km of bank protection
+\parencite{gu2025register}. Table~\ref{tab:data-quality} lists the errors that
+would change which walls are looked at, and how the method handles them.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Data quality of the asset register for the quay walls, and how the
+method handles it.}
+\label{tab:data-quality}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X r r
+  >{\raggedright\arraybackslash}p{5.2cm}@{}}
+\toprule
+Issue & Objects & Length & Handling \\
+\midrule
+Construction year 2118 (Oude Gracht Rak~15 WZ) & 1 & 241\,m & Read as 2018 \\
+Collective year 1917 & 23 & 479\,m & Treated as unknown; data-quality score 5 \\
+Rounded years 1450 and 1900 & 418 & 5.7\,km & Age used with care; data-quality score 4 \\
+No construction year & 105 & 1.6\,km & Not classified until checked \\
+Year of the old wall kept after a renewal & 11 walmuren & 1.3\,km & Screened from the renewal year; other types unknown \\
+Width (\emph{Breedte}): wall thickness for werf- and kluismuren (median 0.33\,m), strip width for walmuren (2 to 3.2\,m), up to 257\,m for a sheet pile wall & 851 & -- & Not used as a thickness without a check per type \\
+Height: \emph{Hoogte} for 2 of the 158 kademuren, \emph{Valhoogte} for 98 & 158 & 11.7\,km & Height from AHN, street or werf level minus water level, as for the walmuren \\
+No foundation, condition or cost data & all & 142\,km & Programme records (walmuren), NEN~2767 inspections, municipal unit costs \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \subsection{Generated input per wall}\label{app:data-walls}
 
 Table~\ref{tab:wall-inputs} gives the values that differ between the 17
@@ -168,7 +199,7 @@ Model factor on pile moment & $LN(1, \text{CoV } 0.10)$ & JCSS, as \textcite{hem
 \multicolumn{3}{@{}l}{\emph{Method}} \\
 Proven strength & Wall stands today, no surcharge &  \cite{hemel2024} eq.~12 \\
 Years & 2026 and 2041 & 15-year reference period \cite{nen8700} \\
-Target $\beta$ & 1.8, 2.5, 3.3 (CC1, CC2, CC3) & \textcite{nen8700} Tab.~B.2, rejection level \\
+Reference $\beta$ & 1.8, 2.5, 3.3 (CC1b, CC2, CC3) & \textcite{nen8700} Tab.~B.2, rejection level; orientation only \\
 \bottomrule
 \end{tabularx}
 \end{table}

@@ -27,6 +27,16 @@ $F_h = \tfrac12 K(\gamma H^2 - \gamma_w h_w^2) + K q_\text{eff} H
 + \tfrac12\gamma_w(h_w^2 - h_c^2)$. The same $K$ and the same groundwater
 level enter every term.
 
+The reduction of a surcharge at a distance $a$ behind the wall has the form of
+the Boussinesq resultant of a line load $Q$ on a rigid wall,
+$P = 0.64\,Q/(1+m^2)$ with $m = a/H$ \parencite{terzaghi1954,navfac1986}. For
+a uniform load from $a$ onwards it is conservative: the Rankine-wedge approach
+of common practice loads only the part of the wall below the line at
+$45^\circ + \varphi/2$ from the edge of the load, which for $H = 1.7$\,m gives
+$0.99\,KqH$ instead of $1.56\,KqH$ at $a = 0.5$\,m, and $0.27$ instead of
+$1.26\,KqH$ at $a = 1$\,m. The position $a$ is therefore an input whose
+effect (Table~\ref{tab:tornado}) is probably overstated, not understated.
+
 \subsection{Resistance against overturning}\label{app:prob-resistance}
 
 The body that tips is the wall, its floor and the soil on the floor. Its
@@ -40,7 +50,11 @@ M_R = \theta_R M + \tan\delta\,F_s\,(x_\text{back} - x_\text{front}),
 \qquad \delta = \tfrac23\varphi, \quad \sin\varphi = \frac{1-K}{1+K},
 \end{equation}
 with $F_s$ the horizontal force of soil and surcharge. The wall overturns when
-$M_R < S$.
+$M_R < S$. The friction angle follows from $K$ through the active Rankine state.
+For clay and peat, $K = 0.6$ is close to the at-rest value, where much less
+friction is mobilised; without friction, the $\beta$ of type~1 is 0.55 to 1.02
+lower (Appendix~\ref{app:prob-checks}), so this term is an important and weakly
+founded part of the type-1 resistance.
 
 \subsection{Forces in the piles}\label{app:prob-piles}
 
@@ -322,6 +336,93 @@ The worst case is Kromme Nieuwe Gracht 009, type 2, with $\hat P_f = 0.007$
 and $n = 398{,}880$: a CoV of 1.9\,\%. The standard error of $\beta$ is at most
 0.01 for every wall and type.
 
+\subsection{Model checks}\label{app:prob-checks}
+
+The script \texttt{ModelChecks.py} reruns the model with 100{,}000 draws per wall,
+type and variant to test the points where the model is weakest, and writes
+\texttt{walmuur\_model\_checks.csv}. Table~\ref{tab:model-checks} gives the
+updated best-estimate $\beta$ (2026) for each variant:
+\begin{itemize}
+  \item \emph{Service load}: the proven-strength check also includes a
+    survived terrace or crowd load of 2.5\,kPa at 0.5\,m from the edge, within
+    the range of EN~1991-1-1 for areas with tables (category C1)
+    \parencite{en1991}.
+  \item \emph{Prior type}: no update of the wall type; the types are weighted
+    by their prior chance.
+  \item \emph{No screen}: the timber screen has gone, so the soil between the
+    floor and the canal bed, between 0.3 and 1.0\,m deep, also pushes on the
+    piles.
+  \item \emph{No friction}: $\delta = 0$ on the back of the body.
+  \item \emph{Restricted use}: no surcharge within 1.5\,m of the edge, the
+    alternative A6 of Section~\ref{sec:tradeoff}.
+  \item \emph{Survey}: the horizontal displacement of the pile heads under
+    today's soil and water (Het\'enyi: $y = P\lambda/(kD_0)$ for a fixed head,
+    twice that for a pinned head) is measured with an error of 2\,mm. Shown are
+    the chance that the measurement is below 5\,mm and $\beta$ after each
+    outcome; this is the preposterior analysis behind A7.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Updated best-estimate $\beta$ (2026) per wall for the model checks.
+Survey: chance of a displacement below 5\,mm, and $\beta$ if it is below or
+above. $y$: median displacement of the pile heads of type~1 and type~2 under
+soil and water [mm].}
+\label{tab:model-checks}
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}l r r r r r r r r r r@{}}
+\toprule
+ & & Service & Prior & No & No & Restr. & \multicolumn{3}{c}{Survey} & \\
+\cmidrule(lr){8-10}
+Wall & Base & load & type & screen & friction & use & $P(<5)$ & below & above & $y$ type 1/2 \\
+\midrule
+OG Rak 03 OZ    & \textminus0.06 & 0.59 & \textminus0.31 & \textminus0.16 & 0.08 & 0.18 & 0.40 & 0.76 & \textminus0.61 & 7.9 / 2.4 \\
+OG Rak 04 OZ    & 0.81 & 1.01 & 0.80 & 0.72 & 0.06 & 1.14 & 0.34 & 1.45 & 0.58 & 7.9 / 2.0 \\
+OG Rak 05 NZ    & 0.82 & 1.02 & 0.82 & 0.74 & 0.07 & 1.16 & 0.34 & 1.45 & 0.60 & 7.8 / 1.9 \\
+OG Rak 06 NZ    & 1.17 & 1.29 & 1.17 & 1.08 & 0.32 & 1.55 & 0.50 & 1.53 & 0.92 & 5.7 / 1.3 \\
+OG Rak 06 ZZ    & 0.82 & 1.02 & 0.82 & 0.74 & 0.06 & 1.16 & 0.34 & 1.45 & 0.60 & 7.8 / 1.9 \\
+OG Rak 08 OZ    & 1.38 & 1.64 & 1.33 & 1.12 & 1.23 & 1.64 & 0.81 & 1.89 & 0.48 & 6.5 / 1.6 \\
+OG Rak 09 ZOZ   & 1.10 & 1.52 & 0.80 & 0.78 & 1.16 & 1.34 & 0.75 & 1.61 & 0.30 & 8.5 / 2.6 \\
+OG Rak 09 WZ    & 1.05 & 1.45 & 0.72 & 0.72 & 1.05 & 1.31 & 0.72 & 1.54 & 0.36 & 9.2 / 3.0 \\
+OG Rak 09 WZ 01 & 1.13 & 1.55 & 0.87 & 0.81 & 1.21 & 1.36 & 0.78 & 1.65 & 0.22 & 7.8 / 2.3 \\
+KNG 002         & 1.37 & 1.71 & 1.19 & 0.98 & 1.39 & 1.64 & 0.83 & 1.76 & 0.49 & 7.6 / 2.2 \\
+KNG 003         & 1.52 & 1.78 & 1.46 & 1.15 & 1.47 & 1.77 & 0.82 & 1.98 & 0.67 & 7.6 / 2.1 \\
+KNG 004         & 1.38 & 1.67 & 1.29 & 1.02 & 1.37 & 1.62 & 0.77 & 1.87 & 0.65 & 8.9 / 2.6 \\
+KNG 005--007    & 0.59 & 1.14 & 0.14 & 0.38 & 0.69 & 0.80 & 0.59 & 1.30 & \textminus0.11 & 8.5 / 3.0 \\
+KNG 008         & 0.56 & 1.07 & 0.38 & 0.42 & 0.58 & 0.79 & 0.67 & 1.15 & \textminus0.31 & 6.4 / 1.7 \\
+KNG 009         & 1.45 & 1.56 & 1.44 & 1.28 & 0.76 & 1.80 & 0.67 & 1.86 & 0.99 & 5.6 / 1.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three points follow. First, the survived service load raises $\beta$ by 0.11
+to 0.65, most for the walls in clay and peat, where it rejects more draws; a
+realistic history of loads is cheap evidence once the municipality accepts it.
+Second, without the update of the type the best estimate falls most where the
+prior is uncertain (Kromme Nieuwe Gracht 005 to 007: 0.59 to 0.14), so the
+ranking of these walls rests partly on the miscalibrated type-1 model. Third,
+type~1 is the type the survey detects: the model expects three times as much
+displacement for it, so a survey mainly settles the wall type.
+
 \section{Source code}
 \label{app:pm-code}
+
+The code is in the folder \texttt{scripts/} of the team repository,
+\url{https://github.com/pepijnreyn/CME4150_GroupProject}; Table~\ref{tab:run-order} gives the run order of the data
+and model scripts. The analyses of Chapters~\ref{chapter:risk-analysis} and
+\ref{chapter:prediction-recommendations} and the portfolio scoring use five
+more scripts:
+\begin{itemize}
+  \item \texttt{StressCaclulation/ModelChecks.py}: the model checks above;
+  \item \texttt{regression\_production\_rate.py}: the regression, the bootstrap
+    of the backlog and, per wall, the years until renewal and the chance of a
+    limit state before it (Section~\ref{sec:regression});
+  \item \texttt{fault\_tree.py}: the fault tree and the decision tree
+    (Sections~\ref{sec:fault-tree} and \ref{sec:tradeoff});
+  \item \texttt{build\_walmuur\_consequence.py}: the consequence score
+    (Appendix~\ref{app:portfolio});
+  \item \texttt{plot\_results\_map.py}: the risk classes and
+    Figure~\ref{fig:results-map}.
+\end{itemize}
 
