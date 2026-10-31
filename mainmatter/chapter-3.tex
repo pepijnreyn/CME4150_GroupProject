@@ -193,14 +193,14 @@ independence of the load events between walls are assumptions.
 For the median wall, the load branch gives 0.023 and ``weakening not repaired in
 time'' 0.48. The probability that the programme does not prevent its failure
 before renewal is 0.049: 0.015 with all probabilities at their lower bound, 0.47
-at their upper bound, where the wall is type~1, and 0.042 to 0.068 over the 17
+at their upper bound, where the wall is type~1, and 0.042 to 0.067 over the 17
 walls. Without any repair it would be 0.077, so the repair chain lowers it by a
 third; if every weakness gave warning (NW~=~0), to 0.039. Over the 17 walls the
-expected number of failures before renewal is 0.83
-(Figure~\ref{fig:app-fault-tree}). The tree takes the 0.98 model events of
+expected number of failures before renewal is 0.82
+(Figure~\ref{fig:app-fault-tree}). The tree takes the 0.97 model events of
 Section~\ref{sec:regression}, lets the repair chain stop half of them, and adds
 0.36 from the other load events. Common cause hardly changes the spread
-(standard deviation 0.92 to 0.94). Of the 18 minimal cut sets, eight are of order 1
+(standard deviation 0.92 to 0.93). Of the 18 minimal cut sets, eight are of order 1
 (the load events), five of order 2 (LS with I3 or L1 to L4) and five of order 3
 (LS with NW and one of S1 to S3, I1 or I2). The Fussell--Vesely importance
 \parencite{fussell1975} is 0.53 for the model event, 0.35 for scour E3, 0.21
@@ -289,7 +289,7 @@ inflation is not modelled and would favour renewing now. Renewing a wall of
 million for the some 3\,km of wal- and kluismuren still to be restored, or
 \euro35k per metre \parencite{utrecht_programmaplan}. As the wall is renewed
 within about five years anyway, renewing now (A4) costs only the bringing
-forward of that renewal, \euro158k in present value, provided extra capacity is
+forward of that renewal, \euro156k in present value, provided extra capacity is
 hired; within the same capacity it would delay another wall, which is the order
 question of Section~\ref{sec:regression}. The failure cost $C_f = $ \euro1.5
 million combines a temporary safety structure of about \euro0.25 million per
@@ -313,7 +313,7 @@ A0 Current programme & -- & No extra measures & \euro0k \\
 A1 Scour and load control & T & Bed protection and yearly soundings; cameras for the axle limit; root barriers. E3, Q1, E2 & \euro72k + 3k/yr \\
 A2 Inspection & H, T & Dive with micro-drilling and a second reviewer; tilt sensors with an alarm. I1, I2, I3, S3; NW 0.50$\to$0.30* & \euro60k + 2k/yr \\
 A3 Organisation & O & Share of an extra project leader; agreements with the heritage department and cellar owners; site investigation. L2, L3, L4 & \euro15k + 7k/yr \\
-A4 Renew now & T & Renewal in the first year with extra capacity: exposure 5.2$\to$1 year*; E3, W2 & \euro158k* \\
+A4 Renew now & T & Renewal in the first year with extra capacity: exposure 5.2$\to$1 year*; E3, W2 & \euro156k* \\
 A5 Package & all & A1 + A2 + A3 together & \euro205k \\
 A6 Restrict use & O & No terraces, goods or vehicles within 1.5\,m of the edge until renewal. LS 0.055$\to$0.035*; Q1, Q2 & \euro10k + 3k/yr \\
 A7 Monitor, then decide & H, T & Survey of the displacement: below 5\,mm keep A0, otherwise A6* & \euro15k (+ A6) \\
@@ -326,10 +326,10 @@ A7 Monitor, then decide & H, T & Survey of the displacement: below 5\,mm keep A0
 Table~\ref{tab:results} and Figure~\ref{fig:dtree} give the results. The
 current programme gives $P_f = 0.049$ and an expected cost of \euro68k. $P_f$ has two main parts: the model event that is not repaired in
 time ($0.055 \times 0.48 = 0.026$) and the load branch (0.023), mostly scour.
-Restricting use (A6) lowers $P_f$ by a fifth, to 0.038, at an expected cost of
-\euro77k, close to A0. Scour and load control (A1) lowers it to 0.036
+Restricting use (A6) lowers $P_f$ by a fifth, to 0.037, at an expected cost of
+\euro77k, close to A0. Scour and load control (A1) lowers it to 0.035
 and inspection (A2), whose sensors make a weakness more likely to be noticed, to
-0.042, but both cost more than they save. Renewing now (A4) gives the lowest $P_f$ (0.007), the
+0.041, but both cost more than they save. Renewing now (A4) gives the lowest $P_f$ (0.007), the
 package (A5) 0.022. Monitoring (A7) costs \euro83k: the survey finds less than
 5\,mm with probability 0.72, after which $\beta$ rises to 1.54 and the wall
 stays in the programme; otherwise $\beta$ falls to 0.36 and use is restricted.
@@ -350,13 +350,13 @@ lowest cost per criterion.}
  & $P_f$ & Load branch & Not repaired & $E[C]$ & CE & $E[C]$ pessimistic & $N_{17}$ \\
  & & & in time & (\euro k) & (\euro k) & (\euro k) & \\
 \midrule
-A0 Current programme  & 0.049 & 0.023 & 0.48 & \textbf{68} & 279 & 655 & 0.83 \\
-A1 Scour/load control & 0.036 & 0.010 & 0.48 & 137 & 306 & 708 & 0.62 \\
-A2 Inspection         & 0.042 & 0.023 & 0.35 & 128 & 317 & 652 & 0.70 \\
-A3 Organisation       & 0.044 & 0.023 & 0.39 & 109 & 305 & 684 & 0.74 \\
-A4 Renew now          & 0.007 & 0.002 & 0.48 & 169 & \textbf{221} & \textbf{320} & 0.16 \\
-A5 Package            & 0.022 & 0.010 & 0.23 & 236 & 351 & 696 & 0.38 \\
-A6 Restrict use       & 0.038 & 0.021 & 0.48 & 77 & 253 & 507 & 0.63 \\
+A0 Current programme  & 0.049 & 0.023 & 0.48 & \textbf{68} & 278 & 653 & 0.82 \\
+A1 Scour/load control & 0.035 & 0.009 & 0.48 & 137 & 305 & 705 & 0.61 \\
+A2 Inspection         & 0.041 & 0.023 & 0.35 & 128 & 316 & 650 & 0.69 \\
+A3 Organisation       & 0.044 & 0.023 & 0.39 & 108 & 303 & 682 & 0.73 \\
+A4 Renew now          & 0.007 & 0.002 & 0.48 & 167 & \textbf{220} & \textbf{319} & 0.16 \\
+A5 Package            & 0.022 & 0.009 & 0.23 & 236 & 350 & 694 & 0.37 \\
+A6 Restrict use       & 0.037 & 0.021 & 0.48 & 77 & 252 & 505 & 0.63 \\
 A7 Monitor, then decide & 0.044 & -- & -- & 83 & 282 & -- & -- \\
 \bottomrule
 \end{tabular}
@@ -368,12 +368,12 @@ A7 Monitor, then decide & 0.044 & -- & -- & 83 & 282 & -- & -- \\
 \node[draw, thick, fill=gray!15, minimum size=5mm] (d) at (0,0) {};
 \foreach \idx/\alt/\cst/\ec/\pf/\pn/\cf/\cn/\col in {
   0/A0 Current programme/0/68/0.049/0.951/1{,}397/0/blue!70!black,
-  1/A1 Scour and load control/88/137/0.036/0.964/1{,}485/88/black,
-  2/A2 Inspection/70/128/0.042/0.958/1{,}467/70/black,
-  3/A3 Organisation/48/109/0.044/0.956/1{,}445/48/black,
-  4/A4 Renew now/158/169/0.007/0.993/1{,}637/158/orange!85!black,
+  1/A1 Scour and load control/88/137/0.035/0.965/1{,}485/88/black,
+  2/A2 Inspection/70/128/0.041/0.959/1{,}467/70/black,
+  3/A3 Organisation/48/108/0.044/0.956/1{,}445/48/black,
+  4/A4 Renew now/156/167/0.007/0.993/1{,}635/156/orange!85!black,
   5/A5 Package A1 + A2 + A3/205/236/0.022/0.978/1{,}602/205/black,
-  6/A6 Restrict use/25/77/0.038/0.962/1{,}422/25/black} {
+  6/A6 Restrict use/25/77/0.037/0.963/1{,}422/25/black} {
   \pgfmathsetmacro{\y}{3.3-0.95*\idx}
   \node[draw, thick, circle, minimum size=4mm, inner sep=0pt, \col] (c\idx) at (5.6,\y) {};
   \draw[thick, \col] (d.east) -- (0.7,\y) -- node[above] {\alt, cost \euro\cst k} (c\idx.west);
@@ -385,8 +385,8 @@ A7 Monitor, then decide & 0.044 & -- & -- & 83 & 282 & -- & -- \\
 \node[draw, thick, circle, minimum size=4mm, inner sep=0pt] (c7) at (5.6,\y) {};
 \draw[thick] (d.east) -- (0.7,\y) -- node[above] {A7 Survey, then decide, cost \euro15k} (c7.west);
 \node[below left] at (c7.south west) {$E[C]$ = \euro83k};
-\draw (c7.east) -- (6.5,\y+0.22) -- (8.2,\y+0.22) node[right] {below 5\,mm, $p$ = 0.72: keep A0, $E[C]$ \euro62k};
-\draw (c7.east) -- (6.5,\y-0.22) -- (8.2,\y-0.22) node[right] {above 5\,mm, $p$ = 0.28: A6, $E[C]$ \euro138k};
+\draw (c7.east) -- (6.5,\y+0.22) -- (8.2,\y+0.22) node[right] {below 5\,mm, $p$ = 0.72: keep A0, $E[C]$ \euro61k};
+\draw (c7.east) -- (6.5,\y-0.22) -- (8.2,\y-0.22) node[right] {above 5\,mm, $p$ = 0.28: A6, $E[C]$ \euro137k};
 \end{tikzpicture}
 \caption{Decision tree for the median wall until its renewal. Square: decision
 node; circle: chance node. $P_f$ follows from the fault tree of
@@ -398,20 +398,20 @@ orange: preferred under both risk-averse criteria.}
 
 A risk-neutral decision maker looks only at $E[C]$, which with $C_f = $ \euro1.5 million favours A0, with A6
 \euro9k behind. The choice depends on $C_f$ (Figure~\ref{fig:app-fault-tree}): A6 is the cheapest from
-\euro2.4 million, A7 from \euro4.35 million and A4 from \euro5.05 million. A public
+\euro2.4 million, A7 from \euro4.4 million and A4 from \euro5.05 million. A public
 owner of heritage walls is more likely risk-averse, which the team tested in two
 ways. With an exponential utility function,
 $\mathrm{CE} = R \ln E[e^{C/R}]$ with risk tolerance $R = $ \euro0.5 million
-(assumption), renewing now has the lowest certainty equivalent (\euro221k
-against \euro253k for A6 and \euro279k for A0), because it almost removes the
+(assumption), renewing now has the lowest certainty equivalent (\euro220k
+against \euro252k for A6 and \euro278k for A0), because it almost removes the
 large loss. In a pessimistic scenario with all events at their upper bound and
-the wall of type~1, A4 is also the cheapest (\euro320k against \euro507k for
+the wall of type~1, A4 is also the cheapest (\euro319k against \euro505k for
 A6). The risk-neutral choice is therefore A0, followed by A6, and the
 risk-averse choice A4. These choices depend on the absolute level of $P_f$,
 which the model does not give (Section~\ref{sec:prob-validity}). With event LS
 three times lower, A0 stays the cheapest (\euro43k against \euro61k for A6).
 With LS three times higher, or without spreading the 15-year value over time
-(LS = 0.15, $P_f = 0.09$ for A0), A6 becomes the cheapest (\euro125k and
+(LS = 0.15, $P_f = 0.09$ for A0), A6 becomes the cheapest (\euro124k and
 \euro116k against \euro140k and \euro127k for A0). A4 keeps the lowest
 certainty equivalent in every case.
 
@@ -468,7 +468,7 @@ allow renewing early only the weak type-1 walls.
 Measured against the current programme, no measure pays for itself in expected
 value at $C_f = $ \euro1.5 million. Restricting use comes closest: it lowers $P_f$ by a fifth for
 \euro25k, under 2\,\% of the cost of a renewal. Renewing now lowers it by 85\,\%
-for an extra \euro158k and the package by 55\,\% for \euro205k, whereas
+for an extra \euro156k and the package by 55\,\% for \euro205k, whereas
 inspection and organisation, at 15 and 10\,\%, are not effective on their own.
 For walls renewed within a few years, the effective measures are those that
 act at once: restricting use on the red walls, and renewing the weakest first

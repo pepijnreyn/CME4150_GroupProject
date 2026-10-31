@@ -46,17 +46,20 @@ where $L_y$ [m] is the length renewed in year $y$, $a$ [m] the intercept,
 $b$ [m/yr per year] the trend and $\varepsilon_y$ [m] an independent normal
 residual, gives $b = -55$\,m/yr per year (95\,\% confidence interval
 \textminus105 to \textminus4, $p = 0.04$, $R^2 = 0.37$). The hypothesis of a
-constant pace is rejected at the 5\,\% level, but only just, on twelve lumpy
-years whose residuals are neither independent nor normal: the programme has
-slowed down, and the residuals show a break rather than a gradual decline. From 2015 to 2018 the programme renewed 607\,m per year, whereas since 2019 the pace has been 125\,m per year (95\,\%
-confidence interval 22 to 228\,m), with three years without any completed
-wall. Extrapolating the straight line would predict negative production
-after 2027, so the line is used only as a test. The second hypothesis, that
-the recent pace equals the 100\,m per year of the plan, is not rejected
-($p = 0.58$), but the interval is too wide to confirm it.
+constant pace is rejected at the 5\,\% level, but only just, and the line
+would predict negative production after 2027. The residuals show a break rather
+than a gradual decline, so the second model has a step in 2019,
+$L_y = a + c\,[y \ge 2019] + \varepsilon_y$: 607\,m per year before, a step of
+\textminus482\,m per year (95\,\% confidence interval \textminus798 to
+\textminus166, $p = 0.007$), $R^2 = 0.54$, a lower AIC than the line (132.5
+against 136.2) and normal residuals (Shapiro--Wilk $p = 0.43$). This model makes
+the forecast: 125\,m per year (95\,\% confidence interval of the recent mean 22
+to 228\,m; 2026 counts the walls completed by October). The hypothesis that the
+recent pace equals the 100\,m per year of the plan is not rejected ($p = 0.58$),
+but the interval is too wide to confirm it.
 
-To predict the backlog, the team resampled the yearly production of 2019 to
-2026 (bootstrap, 20{,}000 runs) and renewed the 17 modelled walls one after
+To predict the backlog, the team resampled the yearly production after the
+step, 2019 to 2026 (bootstrap, 20{,}000 runs, the same draws for both orders) and renewed the 17 modelled walls one after
 the other from 2027. The risk that a wall carries until its renewal year $Y_i$
 follows from its best-estimate failure probability $P_{f,i}(t)$ over the
 15-year reference period (Section~\ref{sec:prob}), taken linear between 2026
@@ -89,11 +92,11 @@ mean, with 90\,\% interval over the bootstrap.}
 Production per year & Order & All renewed & $E[N]$ \\
 \midrule
 Recent pace, 2019--2026 & Lowest $\beta$ first & 2031 (2029--2036) & 0.97 (0.61--1.55) \\
- & Random & 2031 (2029--2036) & 1.08 (0.66--1.73) \\
+ & Random & 2031 (2029--2036) & 1.07 (0.66--1.71) \\
 Plan, 100\,m & Lowest $\beta$ first & 2033 & 1.04 \\
  & Random & 2033 & 1.14 (1.02--1.26) \\
 Fast pace, 2015--2018 & Lowest $\beta$ first & 2028 (2027--2029) & 0.56 (0.49--0.78) \\
- & Random & 2027 (2027--2029) & 0.56 (0.49--0.80) \\
+ & Random & 2028 (2027--2029) & 0.56 (0.49--0.80) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -121,7 +124,14 @@ the scenarios is therefore more reliable than the absolute numbers;
 Section~\ref{sec:results-recommendations} uses it to rank the options of the
 municipality.
 
-A regression of the replacement cost of six projects on length, heritage and
+A third test asks whether register data can stand in for the model, as the
+portfolio score assumes (Appendix~\ref{app:portfolio}). Over the 14 walls with a
+measured werf, $\beta$ does not fall with the retained height in the best
+estimate (slope \textminus0.25 per m, $p = 0.83$), although for a known type it
+falls by about 2.0 per m: the unknown type hides the effect of height. Age
+cannot be tested, as 11 of the 17 walls carry the collective year 1917. Height
+and age are therefore weak indicators on their own, which supports the small
+weight of age in the portfolio score. A regression of the replacement cost of six projects on length, heritage and
 disruption finds no significant predictor (Appendix~\ref{app:cost}), so
 Section~\ref{sec:tradeoff} keeps the budget-based cost per metre.
 
