@@ -1,7 +1,7 @@
 \chapter{Risk Analysis}
 \label{chapter:risk-analysis}
 
-    \section{Fault Tree Construction}
+\section{Fault Tree Construction}
 \label{sec:fault-tree}
 
 %% ----------------------------------------------------------------------
@@ -49,11 +49,34 @@
 %%     assessment convention applied portfolio-wide.
 %% ----------------------------------------------------------------------
 
-\textbf{Top event.} The function of the quay wall programme is to keep the walls from failing until they are renewed. The top event is therefore that the programme does not prevent the failure of a wall before its renewal, a rich event with technical, human, organisational and external causes. We analyse one wall, the median of the 17 modelled walls, Oude Gracht Rak~09 WZ. ``Failure'' means that a limit state of the model in Section~\ref{sec:prob-ls} is reached; in practice this calls for an emergency measure or a closure, not necessarily a collapse.
+The function of the quay wall programme is to keep the walls from failing until
+they are renewed. The top event is therefore that the programme does not prevent
+the failure of a wall before its renewal, a rich event with technical, human,
+organisational and external causes. The team analyses one wall, the median of
+the 17 modelled walls, Oude Gracht Rak~09 WZ. Failure means that a limit state of
+the model in Section~\ref{sec:prob-ls} is reached; in practice this calls for an
+emergency measure or a closure, not necessarily a collapse. At the recent pace
+the walls are renewed around 2031 (Section~\ref{sec:regression}), so the tree
+covers each wall until its renewal, 5.2 years on average for the median wall,
+rather than the 15-year reference period of NEN~8700 \parencite{nen8700}.
 
-\textbf{Exposure.} At the recent pace the walls are renewed around 2031 (Section~\ref{sec:regression}), so the tree covers each wall until its renewal, not the 15-year reference period of NEN~8700~\cite{nen8700}: 5.2 years on average for the median wall. The load events of Table~\ref{tab:ftprob} are given for 15 years and are scaled to $T$ years as $1-(1-p)^{T/15}$; the human and organisational events are chances per weakness or per programme and are not scaled.
+\subsection{Structure of the tree}\label{sec:ft-structure}
 
-\textbf{Structure.} Figure~\ref{fig:faulttree} shows the tree. The top event is an OR gate with two branches. \emph{Load too high} groups soil, water, surcharge and sudden events. \emph{Resistance too low} has two mechanisms that match the two limit states of Section~\ref{sec:prob-ls}: pile bending and overturning. Both are AND gates: a weak pile or wall fails only if the weakness is not repaired before the load that breaks it arrives. The weakness here is a present state, not a slow precursor: the wall type and the soft shell already decide whether the wall can carry its load, as $\beta$ falls by at most 0.12 in 15 years (Section~\ref{sec:prob-validity}). Such a weakness can only be found by a targeted dive with micro-drilling, and pile bending or overturning of a low wall gives little visible warning. The repair chain therefore fails if there is no warning (D), if the weakness is not recognised (screening AND inspection miss it), if a warning is not acted on, or if the repair comes too late. This event feeds both mechanisms and is drawn once; WT (wall type) and GW (groundwater) appear twice as the same event. The programme cannot prevent load events.
+Figure~\ref{fig:faulttree} shows the tree. The top event is an OR gate with two
+branches. \emph{Load too high} groups soil, water, surcharge and sudden events,
+which the programme cannot prevent. \emph{Resistance too low} has two mechanisms
+that match the two limit states of Section~\ref{sec:prob-ls}, pile bending and
+overturning. Both are AND gates: a weak pile or wall fails only if the weakness
+is not repaired before the load that breaks it arrives. The weakness is a
+present state rather than a slow precursor: the wall type and the soft shell
+already decide whether the wall can carry its load, as $\beta$ falls by at most
+0.12 in 15 years (Section~\ref{sec:prob-validity}). Only a targeted dive with
+micro-drilling can find it, and pile bending or overturning of a low wall gives
+little visible warning. The repair chain therefore fails if there is no warning
+(D), if the weakness is not recognised (the screening and the inspection both
+miss it), if a warning is not acted on, or if the repair comes too late. This
+chain feeds both mechanisms and is drawn once; WT (wall type) and GW
+(groundwater) appear twice as the same event.
 
 \begin{figure}[ht]
   \centering
@@ -63,14 +86,46 @@
   \label{fig:faulttree}
 \end{figure}
 
-\textbf{Probabilities.} Each basic event has a probability for one wall, a range and a label for its basis (Table~\ref{tab:ftprob}). Every value that does not come from data or literature is labelled \emph{Assumption}: it is our own judgement.
+\subsection{Probabilities of the basic events}\label{sec:ft-probabilities}
 
-Eight events are already inside the failure model of Section~\ref{sec:prob}~\cite{hemel2023,hemel2024}: G1, G2, P1, P3, WT, GW, M1 and M2. Giving them a second probability would count them twice, so they are combined into one event M, ``wall reaches a limit state in the model before renewal''. For the median wall this is 0.055 (0.15 over 15 years); the range 0.048--0.056 follows from the sensitivity columns of Table~\ref{tab:sens-walls}. The model gives it without any repair and shows a ranking and an order of magnitude (Section~\ref{sec:prob-validity}), so using M as a probability is an assumption. The other events get one of four bases:
+Each basic event has a probability for one wall, a range and a basis
+(Table~\ref{tab:ftprob}). Eight events are already inside the failure model of
+Section~\ref{sec:prob} \parencite{hemel2023,hemel2024}: G1, G2, P1, P3, WT, GW,
+M1 and M2. To avoid counting them twice, they are combined into one event M,
+``wall reaches a limit state in the model before renewal'': 0.055 for the median
+wall (0.15 over 15 years), with a range of 0.048 to 0.056 from the sensitivity
+runs of Table~\ref{tab:sens-walls}. The model gives this probability without any
+repair and supports only a ranking and an order of magnitude
+(Section~\ref{sec:prob-validity}), so using it as a probability is an
+assumption. The load events are given for 15 years and scaled to the $T$ years
+until renewal as $1-(1-p)^{T/15}$; the human and organisational events are
+chances per weakness or per programme and are not scaled. The other events have
+one of four bases:
 \begin{itemize}
-  \item \emph{Data:} S2 is 0 for this wall, because the screening of Section~\ref{sec:approach-selection} flags every wall on its original timber piles (Table~\ref{tab:selection}).
-  \item \emph{Derived:} E3 follows from one reported scour case~\cite{wijkbericht2024walmuur} in the 51 walls of the register over 6 years: $1/(51 \times 6) \times 15 = 0.05$ over 15 years. The window of 6 years is assumed. L1 follows from the production rate of Section~\ref{sec:regression}: at the pace of 2019 to 2026, the 611\,m of the 17 walls are renewed before 2041 in more than 99.9\,\% of the bootstrap runs (0.00); only at the lower bound of that pace, 22\,m per year, would 45\,\% not be reached.
-  \item \emph{Literature:} I2 and I3 are generic HEART values for task types C (complex, needing skill) and M (miscellaneous)~\cite{williams1986heart,heart_table_plos2021}; the type is our choice.
-  \item \emph{Assumption:} for the other events we found no data. We use a fixed scale: extremely rare 0.001, very rare 0.005, rare 0.02, occasional 0.10, likely 0.30, each with the range in Table~\ref{tab:ftprob}. A load event counts only if it occurs \emph{and} brings the wall to its limit state; apart from the scour case the sources contain no such failure, so Q1 and E2 are very rare and the other load events extremely rare. D, no visible warning before failure, is 0.5: half of the weak walls show tilt, cracks or settlement that a regular inspection could see. The re-assessment of all quay walls ends in 2030~\cite{utrecht_teamchallenge2026}, which covers most of the time until renewal; I1 is 0.30, as the inspections need not reach every wall in time.
+  \item \emph{Data:} S2 is 0, because the screening of
+    Section~\ref{sec:approach-selection} flags every wall on its original timber
+    piles (Table~\ref{tab:selection}).
+  \item \emph{Derived:} E3 follows from one reported scour case
+    \parencite{wijkbericht2024walmuur} among the 51 walls of the register in an
+    assumed window of 6 years: $1/(51 \times 6) \times 15 = 0.05$ over 15 years.
+    L1 follows from the production rate of Section~\ref{sec:regression}: at the
+    pace of 2019 to 2026, the 611\,m of the 17 walls are renewed before 2041 in
+    more than 99.9\,\% of the bootstrap runs (0.00); only at the lower bound of
+    that pace, 22\,m per year, would 45\,\% not be reached.
+  \item \emph{Literature:} I2 and I3 are generic HEART values for task types C
+    (complex, needing skill) and M (miscellaneous)
+    \parencite{williams1986heart,heart_table_plos2021}; the choice of type is the
+    team's.
+  \item \emph{Assumption:} for the other events no data were found, and the team
+    used a fixed scale: extremely rare 0.001, very rare 0.005, rare 0.02,
+    occasional 0.10 and likely 0.30. A load event counts only if it occurs
+    \emph{and} brings the wall to its limit state; apart from the scour case the
+    sources report no such failure, so Q1 and E2 are very rare and the other load
+    events extremely rare. D is 0.5: half of the weak walls are assumed to show
+    tilt, cracks or settlement that a regular inspection could see. I1 is 0.30:
+    the re-assessment of all quay walls runs until 2030
+    \parencite{utrecht_teamchallenge2026}, which covers most of the time until
+    renewal, but it need not reach every wall in time.
 \end{itemize}
 
 \begin{table}[tbp]
@@ -84,39 +139,108 @@ ID & Event & $p$ & Range & Basis \\
 \midrule
 M  & Limit state in the model before renewal & 0.055 & 0.048--0.056 & Model (Section~\ref{sec:regression}) \\
 W2 & Drainage blocked & 0.001 & 0.0002--0.005 & Assumption \\
-Q1 & Traffic heavier than allowed & 0.005 & 0.001--0.02 & Assumption; occurs~\cite{duic2021} \\
+Q1 & Traffic heavier than allowed & 0.005 & 0.001--0.02 & Assumption; occurs \parencite{duic2021} \\
 Q2 & Parked vehicles or stored goods & 0.001 & 0.0002--0.005 & Assumption \\
 Q3 & Crane or construction traffic & 0.001 & 0.0002--0.005 & Assumption \\
 E1 & Vessel hits wall or mooring & 0.001 & 0.0002--0.005 & Assumption \\
-E2 & Root pressure & 0.005 & 0.001--0.02 & Assumption; occurs~\cite{duic2020} \\
-E3 & Larger scour event & 0.05 & 0.02--0.15 & Derived~\cite{wijkbericht2024walmuur} \\
-E4 & Excavation or pipe burst & 0.001 & 0.0002--0.005 & Assumption; occurs~\cite{wijkbericht2025rak5} \\
+E2 & Root pressure & 0.005 & 0.001--0.02 & Assumption; occurs \parencite{duic2020} \\
+E3 & Larger scour event & 0.05 & 0.02--0.15 & Derived \parencite{wijkbericht2024walmuur} \\
+E4 & Excavation or pipe burst & 0.001 & 0.0002--0.005 & Assumption; occurs \parencite{wijkbericht2025rak5} \\
 D  & No visible warning before failure & 0.50 & 0.30--0.80 & Assumption \\
 S1 & Wrong year or foundation in register & 0.10 & 0.05--0.20 & Assumption \\
 S2 & Screening rule does not flag wall & 0 & -- & Data (Table~\ref{tab:selection}) \\
 S3 & Model misses the risk & 0.10 & 0.05--0.20 & Assumption \\
-I1 & Inspection not carried out in time & 0.30 & 0.10--0.73 & Assumption~\cite{utrecht_teamchallenge2026} \\
-I2 & Damage under water missed & 0.16 & 0.12--0.28 & HEART type C~\cite{williams1986heart,heart_table_plos2021} \\
-I3 & Warning not acted on & 0.03 & 0.008--0.11 & HEART type M~\cite{williams1986heart,heart_table_plos2021} \\
+I1 & Inspection not carried out in time & 0.30 & 0.10--0.73 & Assumption \parencite{utrecht_teamchallenge2026} \\
+I2 & Damage under water missed & 0.16 & 0.12--0.28 & HEART type C \parencite{williams1986heart,heart_table_plos2021} \\
+I3 & Warning not acted on & 0.03 & 0.008--0.11 & HEART type M \parencite{williams1986heart,heart_table_plos2021} \\
 L1 & Capacity or budget too small & 0.00 & 0--0.45 & Derived (Section~\ref{sec:regression}) \\
 L2 & Heritage permit delays repair & 0.10 & 0.05--0.20 & Assumption \\
-L3 & Cellar owner consents late & 0.10 & 0.05--0.20 & Assumption; occurs~\cite{duic2020} \\
-L4 & Unexpected condition delays repair & 0.10 & 0.05--0.20 & Assumption; occurs~\cite{duic2020} \\
+L3 & Cellar owner consents late & 0.10 & 0.05--0.20 & Assumption; occurs \parencite{duic2020} \\
+L4 & Unexpected condition delays repair & 0.10 & 0.05--0.20 & Assumption; occurs \parencite{duic2020} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Propagation.} For one wall we use $P = 1-\prod_i(1-p_i)$ for an OR gate and $P=\prod_i p_i$ for an AND gate~\cite{vesely1981ftHandbook}. Within one wall, WT and GW sit inside the model event, where they are drawn once, so their dependence is kept. For the 17 walls together, each with its own years until renewal and its own M, we use Monte Carlo simulation ($4\times10^5$ runs), because some causes act on several walls at once. The model events of the walls are linked with a Gaussian copula with an assumed weak correlation $\rho=0.084$, as the failure model simulates the walls independently (Section~\ref{sec:prob-dependence}). S3, I1 and I2 are partly shared by all walls (same screening model, same programme, same inspectors): a share of 100\,\%, 100\,\% and 50\,\% of their probability is one common draw for all walls, the rest is drawn per wall. These shares, the value of $\rho$, and the independence of the load events between walls are our assumptions.
+Of the 20 events, one comes from the model, one from data, two are derived from
+data and two from generic literature; the other 14 are assumptions.
+Organisational events such as a delayed permit or a skipped inspection are
+recorded only in internal files of the municipality, if at all, and there is no
+public register of quay wall incidents. The table understates how much of the
+tree rests on data, as the technical causes with the best data are inside M,
+while Q1 to Q3 and W2 are four assumptions for what is in effect one event, a
+load above the model value. The municipality's inspection and incident records,
+which the team did not request, or a structured expert judgement would replace
+most of them.
 
-\textbf{Results.} For the median wall the load branch gives 0.023 and ``weakening not repaired in time'' 0.67, of which the missing warning D is the largest part. The probability that the programme does not prevent its failure before renewal is 0.059 (0.028 with all probabilities at their lower bound, 0.13 at their upper bound; 0.050 to 0.091 over the 17 walls). Without any repair it would be 0.077, so the repair chain lowers it by a quarter; if every weakness gave warning (D = 0), the chain would lower it to 0.042. Over the 17 walls the expected number of failures before renewal is 1.01. This agrees with Section~\ref{sec:regression}, which counts 0.97 walls that reach a limit state before renewal: the tree takes the same model events (0.98 in its own bootstrap), lets the repair chain stop a third of them (0.66 remain), and adds 0.35 from the other load events. Common cause hardly changes the spread: the standard deviation goes from 1.04 to 1.05 and the probability of at least 5 failures stays at 0.006. There are 20 minimal cut sets: eight of order 1 (the load events), six of order 2 (M with D, I3 or L1 to L4) and six of order 3 (M with one screening and one inspection event). The Fussell--Vesely importance~\cite{fussell1975} is 0.61 for the model event, 0.30 for D, 0.29 for scour E3 and 0.03 each for L2 to L4; all others are 0.03 or less. Moving one probability from its lower to its upper bound changes the result most for E3 (0.046), D (0.018) and L1 (0.008).
+\subsection{Propagation and results}\label{sec:ft-results}
 
-\textbf{Do the results match our beliefs and the data?} Roughly. The sources name about four incidents in the whole Wervengebied between 2017 and 2024: a temporary support at Oudegracht 110--122 (2017)~\cite{duic2022}, a partly closed street on the Kromme Nieuwegracht and a road hole on the Nieuwegracht (reported in 2020)~\cite{duic2020}, and scour under the wall near the Bezembrug (2024)~\cite{wijkbericht2024walmuur}. That is about 0.5 per year, all emergency measures and no collapse. The tree gives 0.21 per year for the 17 modelled walls, which are only part of the area: the same order of magnitude. An earlier version that used the full 15 years and let the repair chain act on every weakness gave 2.1 failures; it overstated both the exposure and the effect of repair. Our incident search was not systematic, so four is a lower bound, and the model event is on the safe side: the type-1 model is conservative (Section~\ref{sec:prob-validity}) and 7\,kPa is a heavy load for a werf (Section~\ref{sec:data-effect}).
+For one wall, an OR gate gives $P = 1-\prod_i(1-p_i)$ and an AND gate
+$P=\prod_i p_i$ \parencite{vesely1981ftHandbook}. Within one wall, WT and GW sit
+inside the model event, where they are drawn once, so their dependence is kept.
+For the 17 walls together, each with its own years until renewal and its own M,
+the team used Monte Carlo simulation ($4\times10^5$ runs), because some causes
+act on several walls at once. The model events of the walls are linked with a
+Gaussian copula with an assumed weak correlation $\rho=0.084$, as the failure
+model simulates the walls independently (Section~\ref{sec:prob-dependence}).
+S3, I1 and I2 are partly shared (the same screening model, programme and
+inspectors): 100\,\%, 100\,\% and 50\,\% of their probability is one common draw
+for all walls, the rest is drawn per wall. These shares, $\rho$ and the
+independence of the load events between walls are assumptions.
 
-\textbf{Why most probabilities are assumptions.} Of the 20 events in Table~\ref{tab:ftprob}, one comes from the model, one from data, two are derived from data and two come from generic literature; the other 14 are assumptions. Organisational events such as a delayed permit or a skipped inspection are recorded only in internal files of the municipality, if at all, and there is no public register of quay wall incidents. The technical causes with the best data are inside the model event M, so the table understates how much of the tree rests on data, while Q1 to Q3 and W2 are four assumptions for what is in effect one event, a load above the model value. The municipality's inspection and incident records, which we did not request, or a structured expert judgement would replace most of them. Pile condition is not a yes/no event, while a missed inspection is; we used the failure probability of the model as one event and added D for the warning it may or may not give.
+For the median wall, the load branch gives 0.023 and ``weakening not repaired in
+time'' 0.67, mostly through the missing warning D. The probability that the
+programme does not prevent its failure before renewal is 0.059: 0.028 with all
+probabilities at their lower bound, 0.13 at their upper bound, and 0.050 to
+0.091 over the 17 walls. Without any repair it would be 0.077, so the repair
+chain lowers it by a quarter; if every weakness gave warning (D~=~0), the chain
+would lower it to 0.042. Over the 17 walls the expected number of failures
+before renewal is 1.01. This agrees with Section~\ref{sec:regression}, which
+counts 0.97 walls that reach a limit state before renewal: the tree takes the
+same model events (0.98 in its own bootstrap), lets the repair chain stop a
+third of them, and adds 0.35 from the other load events. Common cause hardly
+changes the spread: the standard deviation goes from 1.04 to 1.05, and the
+probability of at least five failures stays at 0.006. Of the 20 minimal cut
+sets, eight are of order 1 (the load events), six of order 2 (M with D, I3 or
+L1 to L4) and six of order 3 (M with one screening and one inspection event).
+The Fussell--Vesely importance \parencite{fussell1975} is 0.61 for the model
+event, 0.30 for D and 0.29 for scour E3, and 0.03 or less for every other event.
+Moving one probability from its lower to its upper bound changes the result most
+for E3 (0.046), D (0.018) and L1 (0.008).
 
-\textbf{Technical, human and organisational factors.} The technical part is best supported, by the failure model of Section~\ref{sec:prob}, although its timber model comes from one Amsterdam case; the human part uses generic values and the organisational part mostly assumptions. Because a weak pile gives little warning, the human and organisational events matter little: the repair chain lowers the probability from 0.077 to 0.059. As the assumed D carries this conclusion, measuring the pile condition matters more than speeding up the repair.
+\subsection{Interpretation}\label{sec:ft-interpretation}
 
-\textbf{Conditions for conclusions and further data.} The conclusions hold for the ranking of causes and for comparing walls; the absolute probabilities only agree with the incidents in order of magnitude, and they hold for walls renewed within a few years. The most useful extra data are pile condition from micro-drilling (M, D), canal-bed soundings and scour records (E3), the real programme order (L1, the years until renewal), and an incident log of closures and emergency measures to check the result.
+The results roughly match the team's expectations and the data. The sources
+name about four incidents in the whole Wervengebied between 2017 and 2024: a
+temporary support at Oudegracht 110--122 in 2017 \parencite{duic2022}, a partly
+closed street on the Kromme Nieuwegracht and a road hole on the Nieuwegracht,
+reported in 2020 \parencite{duic2020}, and scour under the wall near the
+Bezembrug in 2024 \parencite{wijkbericht2024walmuur}. That is about 0.5 per year,
+all emergency measures and no collapse. The tree gives 0.21 per year for the 17
+modelled walls, which are only part of the area: the same order of magnitude.
+An earlier version over the full 15 years, in which the repair chain acted on
+every weakness, gave 2.1 failures and overstated both the exposure and the
+effect of repair. The incident search was not systematic, so four is a lower
+bound, and the model event is on the safe side: the type-1 model is
+conservative (Section~\ref{sec:prob-validity}) and 7\,kPa is a heavy load for a
+werf (Section~\ref{sec:data-effect}).
+
+The technical part of the tree is best supported, by the failure model of
+Section~\ref{sec:prob}, although its timber properties come from one Amsterdam
+case; the human part uses generic values and the organisational part mostly
+assumptions. A further difficulty was that pile condition is not a yes/no event,
+while a missed inspection is; the team used the failure probability of the model
+as one event and added D for the warning it may or may not give. Because a weak
+pile gives little warning, the human and organisational events matter little:
+the repair chain lowers the probability only from 0.077 to 0.059. As the assumed
+D carries this conclusion, measuring the pile condition matters more than
+speeding up the repair.
+
+The conclusions therefore hold for the ranking of causes and for comparing
+walls that are renewed within a few years; the absolute probabilities agree with
+the incidents only in order of magnitude. The most useful extra data are the
+pile condition from micro-drilling (M, D), canal-bed soundings and scour records
+(E3), the real programme order (L1 and the years until renewal), and an incident
+log of closures and emergency measures to check the result.
 
 
 % Section 3.2 Trade-off analysis
@@ -126,9 +250,9 @@ L4 & Unexpected condition delays repair & 0.10 & 0.05--0.20 & Assumption; occurs
 \section{Trade-off Analysis}
 \label{sec:tradeoff}
 
-\paragraph{Set-up.} The team used the fault tree of Section~\ref{sec:fault-tree}
-to compare interventions for the median wall until its renewal, 5.2 years at the
-recent pace. Each intervention lowers one or more basic events, and the new
+The team used the fault tree of Section~\ref{sec:fault-tree} to compare
+interventions for the median wall until its renewal, 5.2 years at the recent
+pace. Each intervention lowers one or more basic events, and the new
 probabilities are propagated through the same tree. The decision tree
 (Figure~\ref{fig:dtree}) has one decision node with eight alternatives. Seven end
 in a chance node with two outcomes: the programme does or does not prevent a
@@ -139,13 +263,14 @@ objective is the lowest expected total cost
   E[C_i] = c_i + P_{f,i}\, C_f\, \mathit{DF}_i ,
 \end{equation}
 where $c_i$ [\euro] is the present value of the cost of intervention $i$, $C_f$
-[\euro] the cost of a failure and $\mathit{DF}_i$ [--] the mean discount factor
+[\euro] the cost of a failure and $\mathit{DF}_i$~\mbox{[--]} the mean discount factor
 over the exposure, at 2.8\,\% per year, the standard rate for Dutch social
 cost-benefit analyses from 2026 \parencite{discontovoet2025}.
 
-\paragraph{Interventions and costs.} Table~\ref{tab:interventions} lists the
-alternatives: technical, human and organisational measures, restricting use,
-renewing now and monitoring. How much a measure lowers an event is not known
+\subsection{Interventions and costs}\label{sec:to-interventions}
+
+Table~\ref{tab:interventions} lists the alternatives: technical, human and
+organisational measures, restricting use, renewing now and monitoring. How much a measure lowers an event is not known
 from data, so one rule is assumed: a measure moves the events it acts on to the
 lower bound of their range in Table~\ref{tab:ftprob}. Two alternatives use the
 failure model directly: for A6 it is rerun without surcharge within 1.5\,m of
@@ -154,10 +279,10 @@ it gives the displacement that a survey would see
 (Appendix~\ref{app:prob-checks}). The municipality indicated that it can share
 high-level unit costs of replacement \parencite{utrecht_qa2026}; the team did
 not request them, so the costs below are estimates from published budgets and
-team judgement, to be replaced by the municipal figures. Renewal costs about
-\euro1.3 million per wall: the programme plan reserves about \euro110 million
-for the wal- and kluismuren still to be restored \parencite{utrecht_programmaplan},
-or \euro35k per metre over some 3\,km, for a 36\,m wall. As the wall is renewed
+team judgement, to be replaced by the municipal figures. Renewing a wall of
+36\,m costs about \euro1.3 million: the programme plan reserves about \euro110
+million for the some 3\,km of wal- and kluismuren still to be restored, or
+\euro35k per metre \parencite{utrecht_programmaplan}. As the wall is renewed
 within about five years anyway, renewing now (A4) costs only the bringing
 forward of that renewal, \euro158k in present value, provided extra capacity is
 hired; within the same capacity it would delay another wall, which is the order
@@ -191,14 +316,15 @@ A7 Monitor, then decide & H, T & Survey of the displacement: below 5\,mm keep A0
 \end{tabularx}
 \end{table}
 
-\paragraph{Results.} Table~\ref{tab:results} and Figure~\ref{fig:dtree} give the
-results. The current programme gives $P_f = 0.059$ and an expected cost of
-\euro83k. $P_f$ has two main parts: the model event that is not repaired in
+\subsection{Results and preferred alternative}\label{sec:to-results}
+
+Table~\ref{tab:results} and Figure~\ref{fig:dtree} give the results. The
+current programme gives $P_f = 0.059$ and an expected cost of \euro83k. $P_f$ has two main parts: the model event that is not repaired in
 time ($0.055 \times 0.67 = 0.037$) and the load branch (0.023), mostly scour.
 Restricting use (A6) lowers $P_f$ by a quarter, to 0.044, at an expected cost of
 \euro87k, almost the same as A0. Scour and load control (A1) lowers it to 0.046
-and inspection (A2), which now also gives warning, to 0.050, but both cost more
-than they save. Renewing now (A4) gives by far the lowest $P_f$ (0.009), the
+and inspection (A2), whose sensors make a weakness more likely to be noticed, to
+0.050, but both cost more than they save. Renewing now (A4) gives by far the lowest $P_f$ (0.009), the
 package (A5) 0.033. Monitoring (A7) costs \euro96k: the survey finds less than
 5\,mm with probability 0.72, after which $\beta$ rises to 1.54 and the wall
 stays in the programme; otherwise $\beta$ falls to 0.36 and use is restricted.
@@ -265,8 +391,7 @@ orange: preferred under one of the risk-averse criteria.}
 \label{fig:dtree}
 \end{figure}
 
-\paragraph{Risk-neutral and risk-averse choice.} A risk-neutral decision maker
-looks only at $E[C]$, which with $C_f = $ \euro1.5 million favours A0, with A6
+A risk-neutral decision maker looks only at $E[C]$, which with $C_f = $ \euro1.5 million favours A0, with A6
 only \euro4k behind. The choice depends on $C_f$: A6 is the cheapest from
 \euro1.8 million, A7 from \euro3.6 million and A4 from \euro4.65 million. A public
 owner of heritage walls is more likely risk-averse, which the team tested in two
@@ -279,9 +404,10 @@ is the cheapest (\euro167k). The risk-neutral choice is therefore A0, closely
 followed by A6, and the risk-averse choice A4 or A6, depending on how risk
 aversion is expressed.
 
-\paragraph{Monitoring and the value of information.} The municipality pointed
-the team to monitoring \parencite{utrecht_qa2026}. In the model, a type-1 wall
-has moved 6 to 9\,mm under its soil and water and a type-2 wall 1 to 3\,mm, so a
+\subsection{Monitoring and the value of information}\label{sec:to-monitoring}
+
+The municipality named monitoring as a source of evidence
+\parencite{utrecht_qa2026}. In the model, a type-1 wall has moved 6 to 9\,mm under its soil and water and a type-2 wall 1 to 3\,mm, so a
 survey of the horizontal displacement, with an error of 2\,mm, mainly reveals
 the wall type, much as a measured displacement below 4\,mm raised $\beta$ from
 2.0 to 3.2 in \textcite{hemel2024}. For the median wall the survey is worth only
@@ -294,10 +420,12 @@ where renewal is far away, which is where the portfolio method uses it
 movement, which belongs to the settlement mechanism that the model leaves out;
 they serve as an indicator, not as an update of $\beta$.
 
-\paragraph{Reflection.} The team expected the organisational measures to matter;
-with the warning event D they matter little, because a repair can only stop a
-failure that announces itself. It did not expect restricting use to compete
-with the current programme, nor renewing now to win under risk aversion. Both
+\subsection{Reflection}\label{sec:to-reflection}
+
+The team expected the organisational measures to matter, but with the warning
+event D they matter little, because a repair can only stop a failure that
+announces itself. The team did not expect restricting use to compete with the
+current programme, nor renewing now to win under risk aversion. Both
 follow from the short exposure, which favours measures that work at once over
 measures whose benefit builds up over years, such as bed protection or an extra
 project leader. Not all objectives can be put in euros. $C_f$ has no life-safety
@@ -323,9 +451,10 @@ soundings and a scour record, to estimate E3; how often weak walls in Utrecht
 showed warning signs, to estimate D; and the wall type per wall, which would
 allow renewing early only the weak type-1 walls.
 
-\paragraph{Effectiveness of the interventions.} Measured against the current
-programme, no measure pays for itself in expected value at $C_f = $ \euro1.5
-million. Restricting use comes closest: it lowers $P_f$ by a quarter for
+\subsection{Effectiveness of the interventions}\label{sec:to-effectiveness}
+
+Measured against the current programme, no measure pays for itself in expected
+value at $C_f = $ \euro1.5 million. Restricting use comes closest: it lowers $P_f$ by a quarter for
 \euro25k, under 2\,\% of the cost of a renewal. Renewing now lowers it by 85\,\%
 for an extra \euro158k and the package by 45\,\% for \euro205k, whereas
 inspection and organisation, at 15 and 5\,\%, are not effective on their own.
