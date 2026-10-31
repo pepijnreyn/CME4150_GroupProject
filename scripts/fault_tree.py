@@ -142,7 +142,7 @@ def model_factor(checks, col):
 
 
 def monte_carlo(p_walls, rng):
-    """Mean, SD and P(N >= 5) of the number of failing walls, with and without common cause."""
+    """Mean, SD, P(N >= 5) and the draws of the number of failing walls, without and with common cause."""
     n = len(p_walls)
     m = np.array([pw["M"] for pw in p_walls])
     out = []
@@ -160,11 +160,12 @@ def monte_carlo(p_walls, rng):
         not_recognised = (o["S1"] | o["S2"] | o["S3"]) & (o["I1"] | o["I2"])
         not_repaired = o["D"] | not_recognised | o["I3"] | o["L1"] | o["L2"] | o["L3"] | o["L4"]
         count = (load | (o["M"] & not_repaired)).sum(axis=1)
-        out.append((count.mean(), count.std(), (count >= 5).mean()))
+        out.append((count.mean(), count.std(), (count >= 5).mean(), count))
     return out
 
 
-def main() -> None:
+def main() -> dict:
+    """Prints the results and returns what plot_appendix_figures.py needs."""
     walls = read_walls()
     checks = {r["Naam"]: r for r in csv.DictReader(CHECKS.open())}[MEDIAN_WALL]
     T, M, pf15 = walls[MEDIAN_WALL]
@@ -193,8 +194,10 @@ def main() -> None:
     print("swing low->high: " + ", ".join(f"{e} {s:.4f}" for e, s in
                                           sorted(swings.items(), key=lambda x: -x[1])[:7]))
     rng = np.random.default_rng(SEED)
-    for common, (mean, sd, p5) in zip((False, True), monte_carlo(p_walls, rng)):
+    counts = {}
+    for common, (mean, sd, p5, count) in zip((False, True), monte_carlo(p_walls, rng)):
         print(f"17 walls, common cause {common}: mean {mean:.2f}, SD {sd:.2f}, P(N>=5) {p5:.4f}")
+        counts[common] = count
 
     df, annuity = discount(T)
     print(f"\ndiscount: mean factor over {T:.2f} yr {df:.3f}; PV of 1 per year {annuity:.2f}")
@@ -314,6 +317,7 @@ def main() -> None:
               f" N17 {n17:.2f}; E[C] A0 {costs['A0 Current programme'][0]:.0f},"
               f" A4 {costs['A4 Renew now'][0]:.0f}, A6 {costs['A6 Restrict use'][0]:.0f};"
               f" cheapest {ev.split()[0]}, lowest CE {ce_best.split()[0]}")
+    return {"res": res, "a7": a7, "counts": counts, "C_F": C_F}
 
 
 if __name__ == "__main__":
