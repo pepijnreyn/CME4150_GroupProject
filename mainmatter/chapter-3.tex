@@ -66,7 +66,7 @@
 Eight events are already inside the failure model of Section~\ref{sec:prob}~\cite{hemel2023,hemel2024}: G1, G2, P1, P3, WT, GW, M1 and M2. Giving them a second probability would count them twice, so they are combined into one event M, ``wall reaches a limit state in the model'', with $p=\Phi(-\beta)$ from Table~\ref{tab:sens-walls}. For the median wall, Oude Gracht Rak~09 WZ, this is 0.15; the range 0.13--0.15 comes from the sensitivity columns of that table. The model gives this probability without any repair. Section~\ref{sec:prob-validity} states that the model shows a ranking and order of magnitude, not exact values. Using M as a probability in the tree is therefore an assumption. The other events get one of four bases:
 \begin{itemize}
   \item \emph{Data:} S2 is 0 for this wall, because 16 of the 17 modelled walls are past their design life and are flagged by the register (Table~\ref{tab:selection}).
-  \item \emph{Derived:} E3 follows from one reported scour case~\cite{wijkbericht2024walmuur} in the 51 walls of the register over 6 years: $1/(51 \times 6) \times 15 = 0.05$. The window of 6 years is assumed. L1 follows from the city programme~\cite{utrecht_herstelwerven}: at 100\,m per year, 1.5\,km of the remaining 1.88\,km is done in 15 years, so 20\,\% of the walls is not reached. This assumes that the order of work does not follow the risk, and that a wall not reached in 15 years is repaired too late.
+  \item \emph{Derived:} E3 follows from one reported scour case~\cite{wijkbericht2024walmuur} in the 51 walls of the register over 6 years: $1/(51 \times 6) \times 15 = 0.05$. The window of 6 years is assumed. L1 follows from the production rate of Section~\ref{sec:regression}: at the pace of 2019 to 2026, the 611\,m of the 17 walls are renewed before 2041 in more than 99.9\,\% of the bootstrap runs, so practically no wall is out of reach within the reference period (0.00); only at the lower bound of that pace, 22\,m per year, would 45\,\% not be reached. This assumes that a wall not reached in 15 years is repaired too late; the risk a wall carries while it waits is quantified in Section~\ref{sec:regression}.
   \item \emph{Literature:} I2 and I3 are generic HEART values~\cite{williams1986heart,heart_table_plos2021}. The task type (C: complex task needing skill; M: miscellaneous) is our choice, and the values are not specific to Utrecht.
   \item \emph{Assumption:} for the other events we found no data. We use a fixed scale: extremely rare 0.001, very rare 0.005, rare 0.02, occasional 0.10, likely 0.30, each with the range in Table~\ref{tab:ftprob}. The sources in the table only show that an event type occurs, not how often. A load event counts only if it occurs \emph{and} brings the wall to its limit state: one heavy vehicle does not fail a wall. Apart from the scour case, the sources contain no such failure, so Q1 and E2 are very rare and the other load events extremely rare. For I1 the programme ends in 2030~\cite{utrecht_teamchallenge2026}, so 11 of the 15 years have no planned inspection; 0.73 is therefore the upper bound and 0.30 our choice.
 \end{itemize}
@@ -95,7 +95,7 @@ S3 & Model misses the risk & 0.10 & 0.05--0.20 & Assumption \\
 I1 & Inspection not carried out & 0.30 & 0.10--0.73 & Assumption~\cite{utrecht_teamchallenge2026} \\
 I2 & Damage under water missed & 0.16 & 0.12--0.28 & HEART type C~\cite{williams1986heart,heart_table_plos2021} \\
 I3 & Warning not acted on & 0.03 & 0.008--0.11 & HEART type M~\cite{williams1986heart,heart_table_plos2021} \\
-L1 & Capacity or budget too small & 0.20 & 0--0.37 & Derived~\cite{utrecht_herstelwerven} \\
+L1 & Capacity or budget too small & 0.00 & 0--0.45 & Derived (Section~\ref{sec:regression}) \\
 L2 & Heritage permit delays repair & 0.10 & 0.05--0.20 & Assumption \\
 L3 & Cellar owner consents late & 0.10 & 0.05--0.20 & Assumption; occurs~\cite{duic2020} \\
 L4 & Unexpected condition delays repair & 0.10 & 0.05--0.20 & Assumption; occurs~\cite{duic2020} \\
@@ -105,13 +105,13 @@ L4 & Unexpected condition delays repair & 0.10 & 0.05--0.20 & Assumption; occurs
 
 \textbf{Propagation.} For one wall we use $P = 1-\prod_i(1-p_i)$ for an OR gate and $P=\prod_i p_i$ for an AND gate~\cite{vesely1981ftHandbook}. Within one wall, WT and GW sit inside the model event, where they are drawn once, so their dependence is kept. ``Weakening not repaired in time'' is one event that feeds both mechanisms, so it is not counted twice. For the 17 walls together we use Monte Carlo simulation ($4\times10^5$ runs), because some causes act on several walls at once. The model events of the walls are linked with a Gaussian copula with $\rho=0.084$, a weak dependence that an earlier version of the failure model gave for two neighbouring sections; the current model simulates the walls independently (Section~\ref{sec:prob-dependence}), so this value is an assumption. S3, I1 and I2 are partly shared by all walls (same screening model, same programme, same inspectors): a share of 100\,\%, 100\,\% and 50\,\% of their probability is one common draw for all walls, the rest is drawn per wall. This keeps the probability per wall the same. These shares, the value of $\rho$, and the independence of the load events between walls are our assumptions.
 
-\textbf{Results.} The load branch gives 0.06 and ``weakening not repaired in time'' 0.48. The probability for one wall is 0.13 (0.04 with all probabilities at their lower bound, 0.30 at their upper bound; 0.09 to 0.30 over the 17 walls). If no weakening were ever repaired in time, it would be 0.20, so the repair chain lowers it by 0.07. Over the 17 walls the expected number of failing walls in 15 years is 2.5. Common cause does not change this mean and widens the spread only slightly: the standard deviation goes from 1.54 to 1.58 and the probability of at least 5 failing walls from 0.10 to 0.11. There are 19 minimal cut sets: eight of order 1 (the load events), five of order 2 and six of order 3 (the model event with one unrepaired path). The Fussell--Vesely importance~\cite{fussell1975} is 0.51 for the model event, 0.35 for scour E3, 0.14 for capacity L1 and 0.06 each for L2 to L4; all others are 0.03 or less. Moving one probability from its lower to its upper bound changes the result most for E3 (0.12) and L1 (0.03), the others by 0.02 or less; M changes it by 0.01 over its range.
+\textbf{Results.} The load branch gives 0.06 and ``weakening not repaired in time'' 0.35. The probability for one wall is 0.11 (0.04 with all probabilities at their lower bound, 0.30 at their upper bound; 0.09 to 0.23 over the 17 walls). If no weakening were ever repaired in time, it would be 0.20, so the repair chain lowers it by 0.09. Over the 17 walls the expected number of failing walls in 15 years is 2.1. Common cause does not change this mean and widens the spread only slightly: the standard deviation goes from 1.41 to 1.46 and the probability of at least 5 failing walls from 0.058 to 0.064. There are 19 minimal cut sets: eight of order 1 (the load events), five of order 2 and six of order 3 (the model event with one unrepaired path). The Fussell--Vesely importance~\cite{fussell1975} is 0.43 for the model event, 0.42 for scour E3 and 0.09 each for L2 to L4; all others are 0.04 or less, and L1 contributes nothing at its base value. Moving one probability from its lower to its upper bound changes the result most for E3 (0.12) and L1 (0.04), the others by 0.02 or less.
 
-\textbf{Do the results match our beliefs and the data?} Roughly. The sources name about four incidents in the whole Wervengebied between 2017 and 2024: a temporary support at Oudegracht 110--122 (2017)~\cite{duic2022}, a partly closed street on the Kromme Nieuwegracht and a road hole on the Nieuwegracht (reported in 2020)~\cite{duic2020}, and scour under the wall near the Bezembrug (2024)~\cite{wijkbericht2024walmuur}. That is about 0.5 per year, all emergency measures and no collapse. The tree gives 0.17 per year for the 17 modelled walls, which are only part of the area: the same order of magnitude. A first version, in which a load event counted as failure as soon as it occurred, gave 6.3 failures for the 17 walls alone and was rejected. Our incident search was not systematic, so four is a lower bound, and the model event is on the safe side: the type-1 model is conservative (Section~\ref{sec:prob-validity}) and 7\,kPa is a heavy load for a werf (Section~\ref{sec:data-effect}). For collapse, the probabilities would be much lower.
+\textbf{Do the results match our beliefs and the data?} Roughly. The sources name about four incidents in the whole Wervengebied between 2017 and 2024: a temporary support at Oudegracht 110--122 (2017)~\cite{duic2022}, a partly closed street on the Kromme Nieuwegracht and a road hole on the Nieuwegracht (reported in 2020)~\cite{duic2020}, and scour under the wall near the Bezembrug (2024)~\cite{wijkbericht2024walmuur}. That is about 0.5 per year, all emergency measures and no collapse. The tree gives 0.14 per year for the 17 modelled walls, which are only part of the area: the same order of magnitude. A first version, in which a load event counted as failure as soon as it occurred, gave 6.3 failures for the 17 walls alone and was rejected. Our incident search was not systematic, so four is a lower bound, and the model event is on the safe side: the type-1 model is conservative (Section~\ref{sec:prob-validity}) and 7\,kPa is a heavy load for a werf (Section~\ref{sec:data-effect}). For collapse, the probabilities would be much lower.
 
 \textbf{Why most probabilities are assumptions.} Of the 19 events in Table~\ref{tab:ftprob}, one comes from the model, one from data, two are derived from data and two come from generic literature; the other 13 are assumptions. There are four reasons for this. First, organisational events such as a delayed permit, late consent of an owner or a skipped inspection are recorded only in internal files of the municipality, if at all; no public source gives how often they happen. Second, there is no public register of quay wall incidents, so the load events can only be checked against a few news items and notices. Third, the technical causes with the best data (G1, G2, P1, P3, WT, GW, M1, M2) are already inside the failure model and appear as one event M, so the table understates how much of the tree rests on data. Fourth, our tree splits the load branch more finely than the data allow: Q1 to Q3 and W2 are four assumptions for what is in effect one event, a load above the model value. The number of assumptions is therefore mainly a result of the available data, and only partly of the tree. A structured expert judgement, as the assignment allows, or the municipality's inspection and incident records, which we did not request, would replace most of them. A further difficulty is that pile condition is not a yes/no event, while a missed inspection is; we solved this by using the failure probability of the model as one event.
 
-\textbf{Technical, human and organisational factors.} The technical part is best supported, by the failure model of Section~\ref{sec:prob}, although that model is calibrated on one Amsterdam case. The human part uses generic values, and the organisational part rests mostly on assumptions. Still, the organisational events matter: the repair chain lowers the probability from 0.20 to 0.13, and L1 to L4 are among the most important events. Because their inputs are weak, the size of this effect is uncertain.
+\textbf{Technical, human and organisational factors.} The technical part is best supported, by the failure model of Section~\ref{sec:prob}, although that model is calibrated on one Amsterdam case. The human part uses generic values, and the organisational part rests mostly on assumptions. Still, the organisational events matter: the repair chain lowers the probability from 0.20 to 0.11, and L2 to L4 are among the most important events. Because their inputs are weak, the size of this effect is uncertain.
 
 \textbf{Conditions for conclusions and further data.} The conclusions hold for the ranking of causes and for comparing walls; the absolute probabilities only agree with the incidents in order of magnitude. The most useful extra data are pile condition from micro-drilling (M), canal-bed soundings and scour records (E3), the real programme order (L1), and an incident log of closures and emergency measures to check the result.
 
@@ -129,17 +129,47 @@ L4 & Unexpected condition delays repair & 0.10 & 0.05--0.20 & Assumption; occurs
 \section{Trade-off Analysis}
 \label{sec:tradeoff}
 
-\paragraph{Set-up.} We use the fault tree of Section~3.1 to compare interventions for the median wall over the 15-year reference period of NEN~8700~\cite{nen8700}. Each intervention lowers one or more basic events. We propagate the new probabilities through the same tree, with the same AND/OR rules, which gives a new probability of the top event $P_f$. The decision tree (Figure~\ref{fig:dtree}) has one decision node with six alternatives. Each alternative ends in a chance node with two outcomes: the programme does not prevent a failure, or it does. As in Section~3.1, a failure means that the wall reaches its limit state, which calls for an emergency measure or a closure. The objective is to minimise the expected total cost:
+\paragraph{Set-up.} The team used the fault tree of Section~\ref{sec:fault-tree}
+to compare interventions for the median wall over the 15-year reference period
+of NEN~8700 \parencite{nen8700}. Each intervention lowers one or more basic
+events, and the new probabilities are propagated through the same tree, which
+gives a new probability $P_f$ of the top event. The decision tree
+(Figure~\ref{fig:dtree}) has one decision node with six alternatives, each
+ending in a chance node with two outcomes: the programme does or does not
+prevent a failure, which here means an emergency measure or a closure. The
+objective is the lowest expected total cost
 \begin{equation}
   E[C_i] = c_i + P_{f,i}\, C_f ,
 \end{equation}
-where $c_i$ is the cost of intervention $i$ and $C_f$ the cost of a failure. We do not discount costs.
+where $c_i$ [\euro] is the cost of intervention $i$ and $C_f$ [\euro] the cost
+of a failure; costs are not discounted.
 
-\paragraph{Interventions.} Table~\ref{tab:interventions} lists the alternatives. They cover the technical, human and organisational perspectives of Section~3.1. A4 is the measure the city uses now; A5 combines the three cheaper measures. How much a measure lowers an event is not known from data, so we use one simple rule (\emph{assumption}): a measure moves the events it acts on to the lower bound of their range in Table~3.1. There are two exceptions, both also assumptions. For A3 we set L1 to 0.05 and not to 0: the lower bound 0 holds only if the work order follows the risk perfectly, and the risk ranking itself is uncertain (Section~1.4). For A4 the foundation is replaced, so the old range of M no longer applies; we set M to 0.01, a value close to the NEN~8700 target for a new wall.
+\paragraph{Interventions and costs.} Table~\ref{tab:interventions} lists the
+alternatives, which cover the technical, human and organisational perspectives
+of Section~\ref{sec:fault-tree}. How much a measure lowers an event is not
+known from data, so one rule is assumed: a measure moves the events it acts on
+to the lower bound of their range in Table~\ref{tab:ftprob}. Two exceptions
+are also assumptions: the ring-fenced budget of A3 keeps L1 at 0 even when the
+pace falls, and A4 replaces the foundation, so M becomes 0.01, close to the
+NEN~8700 target for a new wall. The municipality provided no cost data, so
+most costs are team estimates. Renewal costs about \euro1.3 million per wall:
+the programme plan gives about \euro110 million for the wal- and kluismuren
+\parencite{utrecht_programmaplan}, or \euro35k per metre over 3\,km, for a
+36\,m wall. A2 adds \euro50k for micro-drilling and tilt sensors to the
+\euro20k per wall that Amsterdam spends on investigating its quay walls
+\parencite{amsterdam_brief}; A1 covers bed protection at about \euro2k per
+metre, soundings, cameras and root barriers, and A3 one extra staff member for
+15 years, shared over the 17 walls. The failure cost $C_f = $ \euro1.5
+million combines a temporary safety structure of about \euro0.25 million per
+wall \parencite{amsterdam_tender}, \euro0.65 million for the extra cost of an
+urgent renewal and \euro0.6 million for closures, damage to cellars and
+hindrance; as it is uncertain, it is varied from \euro0.5 to \euro10 million.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
-\caption{Decision alternatives for the median wall (36\,m) over 15 years. T = technical, H = human, O = organisational. New values are lower bounds from Table~3.1, except those marked *.}
+\caption{Decision alternatives for the median wall (36\,m) over 15 years. T =
+technical, H = human, O = organisational. New values are lower bounds from
+Table~\ref{tab:ftprob}, except those marked *.}
 \label{tab:interventions}
 \small
 \begin{tabularx}{\textwidth}{@{}llXr@{}}
@@ -149,49 +179,33 @@ Alternative & Type & Measure and changed basic events & Cost $c_i$ \\
 A0 Current programme & -- & No extra measures & \euro0k \\
 A1 Scour and load control & T & Bed protection and yearly soundings; cameras for the axle limit; root barriers. E3 0.05$\to$0.02, Q1 0.005$\to$0.001, E2 0.005$\to$0.001 & \euro120k \\
 A2 Inspection & H, T & Inspections continue after 2030; diver inspection with micro-drilling and a second reviewer; tilt sensors with an alarm. I1 0.30$\to$0.10, I2 0.16$\to$0.12, I3 0.03$\to$0.008, S3 0.10$\to$0.05 & \euro70k \\
-A3 Organisation & O & Ring-fenced budget, one extra project leader and work in order of risk; fixed agreements with the heritage department and cellar owners; more site investigation before works. L1 0.20$\to$0.05*, L2, L3 and L4 0.10$\to$0.05 & \euro100k \\
+A3 Organisation & O & Ring-fenced budget, an extra project leader and work in order of risk; agreements with the heritage department and cellar owners; more site investigation before works. L2, L3 and L4 0.10$\to$0.05; L1 stays 0* & \euro100k \\
 A4 Strengthen now & T & New foundation on steel piles with scour protection and drainage. M 0.15$\to$0.01*, E3 0.05$\to$0.02, W2 0.001$\to$0.0002 & \euro1{,}300k \\
 A5 Package & all & A1 + A2 + A3 together & \euro290k \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\paragraph{Costs.} The municipality did not give us cost data. Only a few numbers come directly from sources; all other costs are our own estimates and should be read as such.
-\begin{itemize}\setlength\itemsep{0pt}
-  \item \emph{Renewal, \euro1.3 million per wall (own estimate based on a source).} The programme plan gives about \euro110 million for the wal- en kluismuren~\cite{utrecht_programmaplan}. We divide this by 3\,km (100\,m per year for 30 years), which gives about \euro35k per metre. This is rough: the amount also covers the kluismuren and programme costs, and it is a first estimate. For a 36\,m wall (611\,m / 17 walls) this gives \euro1.3 million. As a check, Amsterdam gives \euro20--25 million per km for heavy quay walls~\cite{amsterdam_brief}.
-  \item \emph{A2, \euro70k (partly source, partly own estimate).} Amsterdam spends \euro7.5 million per year to investigate its quay walls~\cite{amsterdam_brief}. Spread over 200\,km, this is about \euro20k per wall over 15 years. We add our own estimate of \euro50k for micro-drilling and tilt sensors.
-  \item \emph{A1, \euro120k and A3, \euro100k (own estimates).} A1 covers bed protection (about \euro2k per metre), soundings, cameras and root barriers. For A3 we assume one extra staff member at about \euro120k per year for 15 years, shared over the 17 walls.
-  \item \emph{Failure cost $C_f$, \euro1.5 million (partly source, partly own estimate).} A temporary safety structure costs about \euro650k per 100\,m in Amsterdam~\cite{amsterdam_tender}, or about \euro0.25 million for one wall. We add our own estimates of \euro0.65 million for the extra cost of an urgent, unplanned renewal (half the normal price) and \euro0.6 million for closing the werf and street, damage to cellars and hindrance. Because this number is uncertain, we vary it from \euro0.5 to \euro10 million.
-\end{itemize}
+\paragraph{Results.} Table~\ref{tab:results} and Figure~\ref{fig:dtree} give
+the results. The current programme gives $P_f = 0.11$ and an expected cost of
+\euro168k per wall. $P_f$ has two main parts: the model event combined with an
+unrepaired weakness ($0.15 \times 0.35 = 0.05$) and scour E3 (0.05). Scour and
+load control (A1) halves the load branch and lowers $P_f$ to 0.08, and
+organisation (A3) lowers ``not repaired in time'' from 0.35 to 0.23 and $P_f$
+to 0.10. Inspection (A2) hardly helps, because a missed inspection only
+matters when the screening also misses the wall, which happens with
+probability 0.19. Strengthening (A4) gives by far the lowest $P_f$ (0.04) at by
+far the highest cost, and the package (A5) gives 0.05 for less than a quarter
+of the cost of A4.
 
-\begin{figure}[h]
+\begin{table}[htbp]
 \centering
-\begin{tikzpicture}[font=\scriptsize\sffamily]
-\node[draw, thick, fill=gray!15, minimum size=5mm] (d) at (0,0) {};
-\foreach \idx/\alt/\cst/\ec/\pf/\pn/\cf/\cn/\col in {
-  0/A0 Current programme/0/195/0.13/0.87/1{,}500/0/blue!70!black,
-  1/A1 Scour and load control/120/263/0.10/0.90/1{,}620/120/orange!85!black,
-  2/A2 Inspection/70/257/0.12/0.88/1{,}570/70/black,
-  3/A3 Organisation/100/252/0.10/0.90/1{,}600/100/black,
-  4/A4 Strengthen now/1{,}300/1{,}358/0.04/0.96/2{,}800/1{,}300/black,
-  5/A5 Package A1 + A2 + A3/290/377/0.06/0.94/1{,}790/290/black} {
-  \pgfmathsetmacro{\y}{3.25-1.3*\idx}
-  \node[draw, thick, circle, minimum size=4mm, inner sep=0pt, \col] (c\idx) at (5.6,\y) {};
-  \draw[thick, \col] (d.east) -- (0.7,\y) -- node[above] {\alt, cost \euro\cst k} (c\idx.west);
-  \node[below left, \col] at (c\idx.south west) {$E[C]$ = \euro\ec k};
-  \draw[\col] (c\idx.east) -- (6.5,\y+0.3) -- (8.2,\y+0.3) node[right] {failure, $p$ = \pf: \euro\cf k};
-  \draw[\col] (c\idx.east) -- (6.5,\y-0.3) -- (8.2,\y-0.3) node[right] {no failure, $p$ = \pn: \euro\cn k};
-}
-\end{tikzpicture}
-\caption{Decision tree for the median wall over 15 years. Square: decision node; circle: chance node. $P_f$ follows from the fault tree of Section~3.1 with the changed basic events. Costs in \euro k, $C_f = $ \euro1{,}500k. Blue: preferred when risk-neutral and with exponential utility; orange: preferred in the pessimistic scenario.}
-\label{fig:dtree}
-\end{figure}
-
-\paragraph{Results.} Table~\ref{tab:results} gives the results. The current programme gives $P_f = 0.13$ and an expected cost of \euro195k per wall. The tree has two main parts: the model event M combined with an unrepaired weakness ($0.15 \times 0.48 = 0.07$), and scour E3 (0.05). Organisation (A3) lowers ``not repaired in time'' from 0.48 to 0.27 and $P_f$ to 0.10. Scour and load control (A1) lowers the load branch from 0.06 to 0.03 and $P_f$ also to 0.10. Inspection (A2) hardly helps, because a missed inspection only matters when the screening also misses the wall (AND gate), and the screening already flags most walls (it misses a wall with probability 0.19). Strengthening (A4) gives by far the lowest $P_f$ (0.04), but it is also by far the most expensive. The package (A5) gives $P_f = 0.06$ for less than a quarter of the cost of A4.
-
-\begin{table}[h]
-\centering
-\caption{Results per alternative for the median wall, $C_f = $ \euro1.5 million. CE: certainty equivalent with exponential utility, $R = $ \euro0.5 million. Pessimistic: all basic events at the upper bound of their range in Table~3.1 (A0 gives 0.30, as in Section~3.1); a measure lowers an event by the same factor as in the base case (assumption). $N_{17}$: expected number of failing walls among the 17 walls.}
+\caption{Results per alternative for the median wall, $C_f = $ \euro1.5
+million. CE: certainty equivalent with exponential utility, $R = $ \euro0.5
+million. Pessimistic: all basic events at the upper bound of their range in
+Table~\ref{tab:ftprob} (A0 gives 0.30); a measure lowers an event by the same
+factor as in the base case (assumption). $N_{17}$: expected number of failing
+walls among the 17 walls. Bold: lowest cost per criterion.}
 \label{tab:results}
 \small
 \begin{tabular}{@{}lccccccc@{}}
@@ -199,29 +213,97 @@ A5 Package & all & A1 + A2 + A3 together & \euro290k \\
  & $P_f$ & Load branch & Not repaired & $E[C]$ & CE & $E[C]$ pessimistic & $N_{17}$ \\
  & & & in time & (\euro k) & (\euro k) & (\euro k) & \\
 \midrule
-A0 Current programme  & 0.13 & 0.06 & 0.48 & \textbf{195} & \textbf{623} & 446 & 2.5 \\
-A1 Scour/load control & 0.10 & 0.03 & 0.48 & 263 & 638 & \textbf{416} & 1.9 \\
-A2 Inspection         & 0.12 & 0.06 & 0.44 & 257 & 678 & 503 & 2.4 \\
-A3 Organisation       & 0.10 & 0.06 & 0.27 & 252 & 639 & 508 & 1.9 \\
-A4 Strengthen now     & 0.04 & 0.03 & 0.48 & 1{,}358 & 1{,}575 & 1{,}485 & 0.7 \\
-A5 Package            & 0.06 & 0.03 & 0.22 & 377 & 661 & 512 & 1.1 \\
+A0 Current programme  & 0.11 & 0.06 & 0.35 & \textbf{168} & 572 & 450 & 2.1 \\
+A1 Scour/load control & 0.08 & 0.03 & 0.35 & 235 & \textbf{570} & \textbf{421} & 1.5 \\
+A2 Inspection         & 0.11 & 0.06 & 0.30 & 228 & 621 & 509 & 2.0 \\
+A3 Organisation       & 0.10 & 0.06 & 0.23 & 244 & 621 & 500 & 1.8 \\
+A4 Strengthen now     & 0.04 & 0.03 & 0.35 & 1{,}356 & 1{,}568 & 1{,}485 & 0.6 \\
+A5 Package            & 0.05 & 0.03 & 0.18 & 368 & 634 & 500 & 1.0 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\paragraph{Risk-neutral and risk-averse choice.} A risk-neutral decision maker only looks at $E[C]$. With $C_f = $ \euro1.5 million this gives A0: the extra measures cost more than the expected damage they prevent. This choice depends strongly on $C_f$. A3 becomes the best when $C_f$ is above \euro3.5 million, and A5 when $C_f$ is above \euro4.3 million. A4 only beats A0 above \euro14 million and never beats A5 in the range we tested. A public owner of heritage walls is more likely risk-averse. We test this in two ways. First, with an exponential utility function, $\mathrm{CE} = R \ln E[e^{C/R}]$ with risk tolerance $R = $ \euro0.5 million (assumption), so a large loss weighs more than its expected value. A0 then still has the lowest certainty equivalent (\euro623k), closely followed by A1 (\euro638k) and A3 (\euro639k). Second, with a pessimistic scenario in which all events are at their upper bound. Here A1 is the best, because scour (E3 = 0.15) then dominates. So the risk-neutral choice is A0, and the risk-averse choice is A0 or A1. The differences between A0, A1 and A3 are small in the certainty equivalent (2 to 3\,\%), and in the pessimistic scenario A1 is 7\,\% cheaper than A0. Which of A1 and A3 is better mainly depends on the true scour probability, which canal soundings can show.
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[font=\scriptsize\sffamily]
+\node[draw, thick, fill=gray!15, minimum size=5mm] (d) at (0,0) {};
+\foreach \idx/\alt/\cst/\ec/\pf/\pn/\cf/\cn/\col in {
+  0/A0 Current programme/0/168/0.11/0.89/1{,}500/0/blue!70!black,
+  1/A1 Scour and load control/120/235/0.08/0.92/1{,}620/120/orange!85!black,
+  2/A2 Inspection/70/228/0.11/0.89/1{,}570/70/black,
+  3/A3 Organisation/100/244/0.10/0.90/1{,}600/100/black,
+  4/A4 Strengthen now/1{,}300/1{,}356/0.04/0.96/2{,}800/1{,}300/black,
+  5/A5 Package A1 + A2 + A3/290/368/0.05/0.95/1{,}790/290/black} {
+  \pgfmathsetmacro{\y}{2.75-1.1*\idx}
+  \node[draw, thick, circle, minimum size=4mm, inner sep=0pt, \col] (c\idx) at (5.6,\y) {};
+  \draw[thick, \col] (d.east) -- (0.7,\y) -- node[above] {\alt, cost \euro\cst k} (c\idx.west);
+  \node[below left, \col] at (c\idx.south west) {$E[C]$ = \euro\ec k};
+  \draw[\col] (c\idx.east) -- (6.5,\y+0.25) -- (8.2,\y+0.25) node[right] {failure, $p$ = \pf: \euro\cf k};
+  \draw[\col] (c\idx.east) -- (6.5,\y-0.25) -- (8.2,\y-0.25) node[right] {no failure, $p$ = \pn: \euro\cn k};
+}
+\end{tikzpicture}
+\caption{Decision tree for the median wall over 15 years. Square: decision
+node; circle: chance node. $P_f$ follows from the fault tree of
+Section~\ref{sec:fault-tree} with the changed basic events. Costs in \euro k,
+$C_f = $ \euro1{,}500k. Blue: preferred when risk-neutral; orange: preferred
+under both risk-averse criteria.}
+\label{fig:dtree}
+\end{figure}
 
-\paragraph{Do the results match our beliefs?} Partly. We expected organisational measures to matter, because L1 to L4 were among the most important events in Section~3.1. They do lower $P_f$ (A3: from 0.13 to 0.10), but at $C_f = $ \euro1.5 million not by enough to pay for themselves. We did not expect ``do nothing extra'' to win in the risk-neutral case. This follows from the low $C_f$: a failure here is an emergency measure, not a collapse. Loss of heritage, injuries and loss of trust are left out of $C_f$, so the true value is probably higher, which favours A3 and A5. Strengthening scores badly on cost, although it is what Utrecht does now. But A4 is not really extra money: the wall has to be renewed before 2050 anyway, so A4 mainly brings the cost forward.
+\paragraph{Risk-neutral and risk-averse choice.} A risk-neutral decision maker
+looks only at $E[C]$, which with $C_f = $ \euro1.5 million favours A0: the extra
+measures cost more than the damage they are expected to prevent. This choice
+depends strongly on $C_f$: A1 is the cheapest above \euro3.4 million and A5
+above \euro6.9 million, whereas A3 and A4 are never the cheapest below
+\euro30 million. A public owner of heritage walls is more likely risk-averse,
+which the team tested in two ways. With an exponential utility function,
+$\mathrm{CE} = R \ln E[e^{C/R}]$ with risk tolerance $R = $ \euro0.5 million
+(assumption), A1 and A0 have practically the same certainty equivalent
+(\euro570k and \euro572k). In a pessimistic scenario with all events at their
+upper bound, A1 is the cheapest (\euro421k), because scour (E3 = 0.15) then
+dominates. The risk-neutral choice is therefore A0 and the risk-averse choice
+A1, but the difference between them is small and depends mainly on the true
+scour probability, which canal soundings can show.
 
-\paragraph{Other data needed.} Most useful would be: (1) real costs of renewal, emergency measures and past incidents in Utrecht, to fix $C_f$, which decides the risk-neutral choice; (2) canal soundings and a scour record, to estimate E3 and choose between A1 and A3; (3) data on capacity, permit times and cellar-owner consent, to check the effect of A3; (4) data on how much a measure really lowers an event, to replace our lower-bound rule; (5) the wall type per wall. A dive inspection that shows the wall type would allow a second decision: strengthen only the weak type-1 walls and use cheaper measures for the rest.
+\paragraph{Reflection.} The team expected the organisational measures to
+matter, because L2 to L4 are among the most important events of
+Section~\ref{sec:fault-tree}; they lower $P_f$ (A3: 0.11 to 0.10), but not
+enough to pay for themselves. It did not expect the current programme to win
+the risk-neutral comparison. This follows from the low $C_f$, since a failure
+here is an emergency measure rather than a collapse, and not all objectives
+can be put in euros: heritage value, accessibility, injuries and the trust of
+residents are only partly in $C_f$, so its true value is probably higher,
+which favours A1 and A5. The safety norm shows the same conflict: no
+alternative brings $P_f$ below the NEN~8700 target of $\Phi(-1.8) = 0.036$.
+A4 comes closest (0.037), but that value rests on the assumed M = 0.01, and
+strengthening mainly brings forward a renewal that is due before 2050 anyway.
 
-\paragraph{Reflection on the procedure.} Not all objectives can be put in euros. Safety, heritage value, accessibility of the city centre and the trust of residents conflict with cost, but we have no accepted price for them. We put part of them in $C_f$ and left the rest out. The safety norm shows this conflict clearly: no alternative brings $P_f$ below the NEN~8700 target of $\Phi(-1.8) = 0.036$. A4 comes closest (0.038), but that value rests on our assumed M = 0.01, and A4 is the worst option on cost. The main difficulties were: (1) almost no cost data, so most costs are estimates; (2) the effect of each measure is set by an assumed rule, not measured; and (3) the measures interact, so they must be judged together.
+The inputs differ in quality. Event M comes from the failure model of
+Section~\ref{sec:prob}, whose inputs are mostly literature values; the human
+events I2 and I3 use generic HEART values, so the effect of A2 rests on general
+numbers; and the organisational events are the weakest, as only L1 is derived
+from data and 13 of the 19 events are assumptions. Scour E3 rests on a single
+case: at its upper bound (0.15) A1 is clearly the best risk-neutral option, at
+its lower bound (0.02) it is not worth its cost. The conclusions therefore hold
+for comparing alternatives, not for absolute costs or probabilities, and they
+assume independent walls, measures that work as soon as they are taken and the
+lower-bound rule for their effect. Two conclusions are robust: inspection
+alone (A2) is never the best, and strengthening every wall now (A4) is never
+the best below $C_f = $ \euro30 million. The data that would help most are
+real costs of renewals, emergency measures and incidents in Utrecht, to fix
+$C_f$; canal soundings and a scour record, to estimate E3; data on permits and
+cellar-owner consent, to check A3; and the wall type per wall, which would
+allow strengthening only the weak type-1 walls and cheaper measures for the
+rest.
 
-\paragraph{Data quality and the technical, human and organisational factors.} The technical part (event M) comes from the calibrated model of Section~2.1 and is the best supported, although it is calibrated on one Amsterdam case. The human part (I2, I3) uses generic HEART values, so the effect of A2 rests on general numbers, not on Utrecht inspections. The organisational part (L1--L4) is the weakest: only L1 is derived from programme data, and Section~3.1 notes that 13 of the 19 events are assumptions. This matters, because A3 is one of the preferred options and its benefit rests mostly on these weak inputs. The same holds for scour: E3 is derived from a single case. If E3 is at its upper bound (0.15), A1 becomes the best risk-neutral option; at its lower bound (0.02), A1 is not worth its cost.
-
-\paragraph{Under what conditions do the conclusions hold?} The conclusions hold for comparing alternatives, not for absolute costs or probabilities. Two conclusions are robust: inspection alone (A2) is never the best, and strengthening all walls now (A4) is never the best below $C_f = $ \euro10 million. Which of A0, A1, A3 and A5 is preferred depends on $C_f$, on E3 and on the attitude to risk. The analysis also assumes that the walls fail independently, that a measure works as soon as it is taken, and that our lower-bound rule describes the effect of a measure.
-
-\paragraph{Effectiveness of the interventions.} The proposed measures lower the probability of failure clearly at a low cost. A1 lowers $P_f$ by about a quarter (0.13 to 0.10) and A3 by about a fifth, each for less than 10\,\% of the cost of renewal. A5 lowers $P_f$ by more than half (0.13 to 0.06) for about 22\,\% of that cost. No measure reaches the safety target, and measures on the inspection side alone are not effective. The most effective approach is therefore to make the repair chain faster and more reliable (A3), to add scour protection where soundings show a risk (A1), and to keep strengthening for the walls that are shown to be weak.
+\paragraph{Effectiveness of the interventions.} The measures lower the
+probability of failure at a low cost. A1 lowers $P_f$ by about 30\,\% (0.11 to
+0.08) and A3 by about 15\,\% (0.11 to 0.10), each for less than 10\,\% of the
+cost of renewal, and A5 by more than half (0.11 to 0.05) for about 22\,\% of
+that cost. No measure reaches the safety target, and inspection alone is not
+effective. The most effective approach is therefore to add scour protection
+where soundings show a risk (A1), to make the repair chain more reliable (A3),
+and to keep strengthening for the walls that are shown to be weak.
 
 
 
