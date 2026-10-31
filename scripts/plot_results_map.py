@@ -10,7 +10,11 @@ median of the 17 modelled walls, not from the NEN 8700 levels:
 
 The consequence class comes from build_walmuur_consequence.py. Both are scored
 1 (low) to 3 (high); their sum gives the risk class, as in a 3 x 3 risk matrix:
-5 or 6 red, 4 orange, 2 or 3 green.
+5 or 6 red, 4 orange, 2 or 3 green. The list is ordered by risk class and,
+within a class, by Pf. A wall whose prior chance of type 2 is 0.5 (no dive note
+on the wall type) is flagged: its class rests on missing data rather than on
+evidence of a weak wall. The script also prints the classes for P_FACTOR 1.25
+and 2.0.
 
 Figure: left, the walmuren of the Wervengebied, the 17 modelled walls coloured
 by risk class; right, beta per wall (best estimate) with the range from type 1
@@ -49,7 +53,7 @@ def short(name):
             .replace(" (thv nr 018)", ""))
 
 
-def risk_table():
+def risk_table(p_factor=P_FACTOR):
     r = pd.read_csv(RESULTS)
     r = r[r["year"].eq(2026)]
     best = r[r["type"] == "unknown"].set_index("Nummer")
@@ -61,12 +65,16 @@ def risk_table():
                       "p_type2": best["p_type2"], "beta_type1": t1, "beta_type2": t2})
     d = d.join(c[["consequence_score", "consequence_class"]])
     med = d["pf"].median()
-    d["p_class"] = np.where(d["pf"] > P_FACTOR * med, "high",
-                            np.where(d["pf"] < med / P_FACTOR, "low", "medium"))
+    d["p_class"] = np.where(d["pf"] > p_factor * med, "high",
+                            np.where(d["pf"] < med / p_factor, "low", "medium"))
     score = d["p_class"].map(CLASS_SCORE) + d["consequence_class"].map(CLASS_SCORE)
     d["risk_class"] = np.where(score >= 5, "red", np.where(score == 4, "orange", "green"))
-    d["risk_rank"] = (d["pf"] * d["consequence_score"]).rank(ascending=False).astype(int)
-    return d.sort_values("risk_rank"), med
+    d["data_flag"] = best["p_type2_prior"].round(2).eq(0.5)
+    order = {"red": 0, "orange": 1, "green": 2}
+    d = d.assign(_c=d["risk_class"].map(order)).sort_values(["_c", "pf"], ascending=[True, False],
+                                                             kind="stable").drop(columns="_c")
+    d["risk_rank"] = np.arange(1, len(d) + 1)
+    return d, med
 
 
 def xy(coords):
@@ -81,6 +89,11 @@ def main() -> None:
     print(d[["Naam", "length_m", "beta", "p_class", "consequence_class", "risk_class", "risk_rank"]]
           .to_string())
     print(d.groupby("risk_class")["length_m"].agg(["count", "sum"]))
+    print("flagged (prior P(type 2) 0.5):", ", ".join(short(n) for n in d.loc[d["data_flag"], "Naam"]))
+    for f in (1.25, 2.0):
+        alt = risk_table(f)[0].groupby("risk_class")["length_m"].agg(["count", "sum"])
+        print(f"P_FACTOR {f}: " + ", ".join(f"{k} {int(v['count'])} ({v['sum']:.0f} m)"
+                                            for k, v in alt.iterrows()))
 
     features = json.loads((ROOT / "data" / "raw" / "Output areaal GU TU Delft 26-08.json")
                           .read_text())["features"]
@@ -104,15 +117,17 @@ def main() -> None:
                 ax.plot(*xy(c), color=MUTED, lw=0.9, ls=(0, (1, 1.5)) if reason.get(n) == "no werf" else "-",
                         zorder=2)
     # Each modelled wall carries its risk rank; offsets in metres, away from the canal.
-    offsets = {1: (-45, 0), 2: (-25, -30), 3: (0, -32), 4: (20, -30), 5: (40, -18), 6: (-10, 30),
-               7: (30, -25), 8: (-45, 0), 9: (35, -5), 10: (5, 30), 11: (-40, 5), 12: (30, 15),
-               13: (-30, 18), 14: (35, 15), 15: (0, 30), 16: (35, -12), 17: (8, -40)}
+    offsets = {"OG 03 OZ": (-45, 0), "KNG 008": (-25, -30), "KNG 007": (0, -32), "KNG 006": (20, -30),
+               "KNG 005": (40, -18), "OG 05 NZ": (-10, 30), "OG 06 ZZ": (30, -25), "OG 04 OZ": (-45, 0),
+               "OG 09 ZOZ": (35, -5), "OG 06 NZ": (5, 30), "OG 09 WZ": (-40, 5), "OG 08 OZ": (30, 15),
+               "KNG 002": (-30, 18), "KNG 004": (35, 15), "KNG 003": (0, 30), "KNG 009": (35, -12),
+               "OG 09 WZ 01": (8, -40)}
     deg_x = 1 / (111_320 * np.cos(np.radians(LAT0))) * np.cos(np.radians(LAT0))
     deg_y = 1 / 111_320
     for n, row in d.iterrows():
         x, y = xy(lines(geom[n])[0])
         x0, y0 = x.mean(), y.mean()
-        dx, dy = offsets[row["risk_rank"]]
+        dx, dy = offsets[short(row["Naam"])]
         tx, ty = x0 + dx * deg_x, y0 + dy * deg_y
         ax.plot([x0, tx], [y0, ty], color=INK_2, lw=0.4, zorder=5)
         ax.text(tx, ty, str(row["risk_rank"]), ha="center", va="center", fontsize=5.6, color=INK,
@@ -143,7 +158,8 @@ def main() -> None:
         bx.scatter(row["beta"], y, s=26, color=COLOURS[row["risk_class"]], edgecolor="white",
                    linewidth=1.0, zorder=3)
         bx.text(3.15, y, f"{row['p_type2']:.2f}", va="center", ha="right", fontsize=5.8, color=INK_2)
-    bx.set_yticks(yy, [f"{r}  {short(n)}" for r, n in zip(order["risk_rank"], order["Naam"])],
+    bx.set_yticks(yy, [f"{r}  {short(n)}{'*' if f else ''}" for r, n, f in
+                       zip(order["risk_rank"], order["Naam"], order["data_flag"])],
                   fontsize=6, color=INK_2)
     bx.set_xlim(-1.1, 3.2)
     bx.set_xticks([-1, 0, 1, 2])

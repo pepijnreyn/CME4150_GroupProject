@@ -18,6 +18,10 @@ Report section 4.1. Uses the renewal year of every renewed walmuur
    2041 (at most 0.95). The expected number of walls that reach a limit state
    before renewal is the sum over the walls of 1 - exp(-sum of h over the years
    it waits). Two orders: lowest beta first, and a random order.
+   The constant hazard treats the 15-year Pf as spread evenly over time. If the
+   weakness is a present state and the critical load occurs within a few years,
+   the chance before renewal is the 15-year Pf itself, whatever the pace or
+   order: the upper bound sum(Pf 2026) is printed as well.
 
 5. Per wall, at the recent pace and lowest beta first: the mean number of years it
    waits (2026 up to and including its renewal year) and its chance to reach a
@@ -133,7 +137,8 @@ def main() -> None:
     cumhaz = cumulative_hazard(walls)
     n_years = HORIZON - START + 1
     by_beta = sorted(range(len(walls)), key=lambda i: walls[i][2026], reverse=True)
-    print(f"Modelled walls: {len(walls)}, {sum(w['length'] for w in walls):.0f} m")
+    print(f"Modelled walls: {len(walls)}, {sum(w['length'] for w in walls):.0f} m;"
+          f" without time scaling E[N] = sum of Pf 2026 = {sum(w[2026] for w in walls):.2f}")
     rng = np.random.default_rng(SEED)
     scenarios = {
         f"recent pace ({RECENT[0]}-{RECENT[-1]})": lambda: rng.choice(recent, n_years),

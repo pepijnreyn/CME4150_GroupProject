@@ -11,6 +11,8 @@ proven strength, 2026):
   more                    MOR and E correlated, rho = +0.8 (JCSS Probabilistic
                           Model Code, part 3.5)
   groundwater             groundwater under the werf Uniform(+0.6, +1.0) m NAP
+  groundwater_werf        groundwater under the werf Uniform(+0.5, +1.3) m NAP, capped at
+                          the werf level: covers the lower BRO levels (GLG +0.90 to +1.64)
                           instead of Uniform(+0.5, +0.9): from the canal level up
                           to about the werf
   soil_mixed              soil class uncertain: a mixture over the classes of the
@@ -46,6 +48,7 @@ YEAR = 2026
 RHO_K_GAMMA = -0.5
 RHO_MOR_E = 0.8
 GROUNDWATER_HIGH = (0.6, 1.0)   # [m NAP], uniform
+GROUNDWATER_WERF = (0.5, 1.3)   # [m NAP], uniform; water above the werf is cut off at the werf
 # ----------------------------------------------------------------------------
 FP.N_MC = N_MC
 TYPES = ("type 1", "type 2")
@@ -84,6 +87,7 @@ VARIANTS = {
     "kgamma": {"sample_soil": soil_correlated(RHO_K_GAMMA)},
     "more": {"sample_piles": piles_correlated(RHO_MOR_E)},
     "groundwater": {"GROUNDWATER_NAP": GROUNDWATER_HIGH},
+    "groundwater_werf": {"GROUNDWATER_NAP": GROUNDWATER_WERF},
 }
 
 
@@ -169,7 +173,7 @@ def main() -> None:
     d = pd.DataFrame(rows)
     d.to_csv(OUT, index=False)
     print()
-    for v in ["kgamma", "more", "groundwater", "soil_mixed"]:
+    for v in ["kgamma", "more", "groundwater", "groundwater_werf", "soil_mixed"]:
         for suffix in ["", "_type1", "_type2"]:
             col = f"beta_{v}{suffix}"
             if col in d:

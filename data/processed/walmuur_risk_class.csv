@@ -1,18 +1,18 @@
-Nummer,Naam,length_m,beta,pf,p_type2,beta_type1,beta_type2,consequence_score,consequence_class,p_class,risk_class,risk_rank
-KM060052,Oude Gracht - Rak 03 OZ,101.1,-0.06,0.522,0.336,-0.7,1.62,2.67,high,high,red,1
-KM060026,Kromme Nieuwe Gracht 008,42.1,0.56,0.289,0.598,-0.47,1.95,2.33,medium,high,red,2
-KM060025,Kromme Nieuwe Gracht 007,10.3,0.59,0.278,0.743,-0.79,1.27,2.33,medium,high,red,3
-KM060024,Kromme Nieuwe Gracht 006,4.1,0.59,0.277,0.744,-0.79,1.27,2.33,medium,high,red,4
-KM060023,Kromme Nieuwe Gracht 005,13.3,0.59,0.277,0.743,-0.79,1.27,2.33,medium,high,red,5
-KM060057,Oude Gracht - Rak 05 NZ,72.1,0.82,0.205,0.21,0.66,2.05,2.67,high,medium,red,6
-KM060060,Oude Gracht - Rak 06 ZZ,57.1,0.83,0.204,0.21,0.66,2.06,2.67,high,medium,red,7
-KM060054,Oude Gracht - Rak 04 OZ,67.4,0.81,0.21,0.21,0.64,2.04,2.33,medium,medium,orange,8
-KM060065,Oude Gracht - Rak 09 ZOZ,54.5,1.1,0.136,0.904,-0.79,1.5,2.67,high,medium,red,9
-KM060059,Oude Gracht - Rak 06 NZ,43.7,1.18,0.119,0.203,1.05,2.45,2.67,high,medium,red,10
-KM060064,Oude Gracht - Rak 09 WZ,53.4,1.05,0.146,0.922,-0.91,1.35,2.0,medium,medium,orange,11
-KM060062,Oude Gracht - Rak 08 OZ,32.7,1.38,0.084,0.822,0.27,2.11,3.0,high,low,orange,12
-KM060020,Kromme Nieuwe Gracht 002,16.2,1.37,0.085,0.944,-0.65,1.68,2.33,medium,low,green,13
-KM060022,Kromme Nieuwe Gracht 004 (thv nr 018),11.1,1.39,0.083,0.928,-0.09,1.66,2.33,medium,low,green,14
-KM060021,Kromme Nieuwe Gracht 003,9.9,1.52,0.064,0.919,0.1,1.89,2.33,medium,low,green,15
-KM060027,Kromme Nieuwe Gracht 009,18.3,1.45,0.074,0.505,1.07,2.46,2.0,medium,low,green,16
-KM060067,Oude Gracht - Rak 09 WZ 01,3.4,1.13,0.129,0.888,-0.69,1.65,1.0,low,medium,green,17
+Nummer,Naam,length_m,beta,pf,p_type2,beta_type1,beta_type2,consequence_score,consequence_class,p_class,risk_class,data_flag,risk_rank
+KM060052,Oude Gracht - Rak 03 OZ,101.1,-0.06,0.522,0.336,-0.7,1.62,2.67,high,high,red,False,1
+KM060026,Kromme Nieuwe Gracht 008,42.1,0.56,0.289,0.598,-0.47,1.95,2.33,medium,high,red,True,2
+KM060025,Kromme Nieuwe Gracht 007,10.3,0.59,0.278,0.743,-0.79,1.27,2.33,medium,high,red,True,3
+KM060024,Kromme Nieuwe Gracht 006,4.1,0.59,0.277,0.744,-0.79,1.27,2.33,medium,high,red,True,4
+KM060023,Kromme Nieuwe Gracht 005,13.3,0.59,0.277,0.743,-0.79,1.27,2.33,medium,high,red,True,5
+KM060057,Oude Gracht - Rak 05 NZ,72.1,0.82,0.205,0.21,0.66,2.05,2.67,high,medium,red,False,6
+KM060060,Oude Gracht - Rak 06 ZZ,57.1,0.83,0.204,0.21,0.66,2.06,2.67,high,medium,red,False,7
+KM060065,Oude Gracht - Rak 09 ZOZ,54.5,1.1,0.136,0.904,-0.79,1.5,2.67,high,medium,red,False,8
+KM060059,Oude Gracht - Rak 06 NZ,43.7,1.18,0.119,0.203,1.05,2.45,2.67,high,medium,red,False,9
+KM060054,Oude Gracht - Rak 04 OZ,67.4,0.81,0.21,0.21,0.64,2.04,2.33,medium,medium,orange,False,10
+KM060064,Oude Gracht - Rak 09 WZ,53.4,1.05,0.146,0.922,-0.91,1.35,2.0,medium,medium,orange,False,11
+KM060062,Oude Gracht - Rak 08 OZ,32.7,1.38,0.084,0.822,0.27,2.11,3.0,high,low,orange,False,12
+KM060067,Oude Gracht - Rak 09 WZ 01,3.4,1.13,0.129,0.888,-0.69,1.65,1.0,low,medium,green,False,13
+KM060020,Kromme Nieuwe Gracht 002,16.2,1.37,0.085,0.944,-0.65,1.68,2.33,medium,low,green,False,14
+KM060022,Kromme Nieuwe Gracht 004 (thv nr 018),11.1,1.39,0.083,0.928,-0.09,1.66,2.33,medium,low,green,False,15
+KM060027,Kromme Nieuwe Gracht 009,18.3,1.45,0.074,0.505,1.07,2.46,2.0,medium,low,green,True,16
+KM060021,Kromme Nieuwe Gracht 003,9.9,1.52,0.064,0.919,0.1,1.89,2.33,medium,low,green,False,17

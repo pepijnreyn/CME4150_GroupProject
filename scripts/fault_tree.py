@@ -286,6 +286,35 @@ def main() -> None:
     print(f"NEN 8700 target Phi(-1.8) over 15 yr = {norm.cdf(-1.8):.3f}, scaled to {T:.1f} yr:"
           f" {scale(norm.cdf(-1.8), T):.4f}")
 
+    # Scenarios for the model event M. The model is not calibrated, so its absolute
+    # level is uncertain: M times 0.3 and 3. "No time scaling": the weakness is a
+    # present state and the critical load occurs within the exposure, so the chance
+    # of a limit state before renewal is the 15-year P_f itself (an upper bound).
+    print("\nScenarios for M (A0-A6, C_f = 1.5 M EUR):")
+    scen = {"x0.3": lambda m, pf: 0.3 * m, "x1": lambda m, pf: m,
+            "x3": lambda m, pf: min(1.0, 3 * m), "no scaling": lambda m, pf: pf}
+    for label, f in scen.items():
+        m_med = f(M, pf15)
+        costs = {}
+        for name, (once, yearly, change) in ALTERNATIVES.items():
+            change = dict(change)
+            fac = model_factor(checks, "beta_restrict_use") if change.pop("M", None) else None
+            if name.startswith("A4"):
+                cost, change["T_base"], d = C_RENEW * (np.exp(-RHO * 0.5) - np.exp(-RHO * T)), T, discount(1.0)[0]
+            else:
+                cost, d = once + yearly * annuity, df
+            mm = 1 - (1 - m_med)**fac if fac else m_med
+            pf = tree(events("base", T, mm, change))[0]
+            ce = cost + R * np.log(1 - pf + pf * np.exp(C_F * d / R))
+            costs[name] = (cost + pf * C_F * d, ce, pf)
+        n17 = sum(tree(events("base", t, f(m, p)))[0] for (t, m, p) in walls.values())
+        ev = min(costs, key=lambda k: costs[k][0])
+        ce_best = min(costs, key=lambda k: costs[k][1])
+        print(f"  M {label:10s}: M median {m_med:.3f}, A0 Pf {costs['A0 Current programme'][2]:.3f},"
+              f" N17 {n17:.2f}; E[C] A0 {costs['A0 Current programme'][0]:.0f},"
+              f" A4 {costs['A4 Renew now'][0]:.0f}, A6 {costs['A6 Restrict use'][0]:.0f};"
+              f" cheapest {ev.split()[0]}, lowest CE {ce_best.split()[0]}")
+
 
 if __name__ == "__main__":
     main()
