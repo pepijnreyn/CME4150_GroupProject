@@ -51,11 +51,11 @@
 %% ----------------------------------------------------------------------
 
 
-\begin{wrapfigure}{r}{5.8cm}
+\begin{wrapfigure}{r}{3.3cm}
     \vspace{-8pt}
     \centering
-    \includegraphics[height=4.1cm]{figures/scope_wervengebiedi83195432-e12f-4974-98be-aaff3c72b58c.jpg}\hspace{2mm}\includegraphics[height=4.1cm]{figures/Plattegrond-wervengebied@2x-scaled-1-636x1024.jpg}
-    \captionof{figure}{The Wervengebied: boundary (left) and reaches (\textit{raks}) 1--27 (right). Sources: Gemeente Utrecht (2023); Werk aan de Werf (2021).}
+    \includegraphics[height=3.7cm]{figures/Plattegrond-wervengebied@2x-scaled-1-636x1024.jpg}
+    \captionof{figure}{Raks 1--27 of the Wervengebied (Werk aan de Werf, 2021).}
     \label{fig:wervengebied}
     \vspace{-8pt}
 \end{wrapfigure}
@@ -80,13 +80,17 @@ want an analysis that prioritises individual Oudegracht sections
 \parencite{utrecht_qa2026}. The team uses the area only to test the method,
 because only here drawings, dive records and renewal data exist to build and
 check a failure model; its ranking illustrates the method and does not reorder
-the programme. Section~\ref{sec:approach-selection} extends it to the portfolio. The system is the wall with its floor
+the programme. The system is the wall with its floor
 and piles; the private wharf cellars, the street with its cables and the
 bridges lie outside it but set the consequences of failure and the constraints
 on the works, over which residents, businesses, cellar owners and the heritage
-authority disagree. The dominant uncertainties are a lack of knowledge that
-inspection and monitoring can reduce: the wall type, the pile condition, the
-soil and the canal bed. Loads, groundwater and organisational factors such as
+authority disagree. Two processes decide failure: bacteria thin the timber piles,
+which lowers their bending capacity, and soil, groundwater and surcharge set the
+earth pressure that tips the wall and bends the piles; the wall type decides
+which governs. The dominant uncertainties are a lack of knowledge that
+inspection can reduce: the werf level is measured to 0.05\,m, but the soil class
+fits only 25--67\,\% of nearby borings, and the wall type, the pile condition
+and the canal bed are not measured. Loads, groundwater and organisational factors such as
 permits have to be carried (Chapter~\ref{chapter:risk-analysis}).
 
 \clearpage
@@ -128,9 +132,8 @@ the Oudegracht and the timber properties from research in Amsterdam. The data
 are therefore most reliable for the werf level and least reliable for the
 wall type and the pile condition, which Section~\ref{sec:dimension-reduction}
 identifies as the inputs that matter most. Street-level imagery, groundwater
-wells and traffic signs served as proxies. Satellite subsidence data were not
-processed for the walmuren; the method uses them as a movement indicator for
-the wider portfolio (Section~\ref{sec:approach-selection}).
+wells and traffic signs served as proxies. Chapter~\ref{chapter:risk-analysis}
+also needs costs and human error rates, from budgets and generic values.
 
 \begin{table}[htbp]
 \centering
@@ -152,23 +155,22 @@ BRO wells \parencite{bro_gmw} & Water level (check) & Nearest 143--418\,m & Unde
 BGT and NDW \parencite{bgt,ndw} & Surcharge (check) & All walls & No traffic counts \\
 TNO dive notes \parencite{tno2009} & Wall type per rak & Rak 3--6, 21, 22 & Bank not stated \\
 Archive reports \parencite{erfgoed156,erfgoed158,ibu2010} & Sections, piles & Two drawings & Schematic; Oudegracht only \\
-Literature \parencite{hemel2023,hemel2024} & Timber, decay, load & Amsterdam piles & No Utrecht measurements \\
+Literature \parencite{hemel2023,hemel2024,williams1986heart} & Timber, load; human error & Amsterdam piles; HEART & No Utrecht data \\
 NEN~8700 and 8707 \parencite{nen8700,nen8707} & Reference $\beta$ & 1.8, 2.5, 3.3 & Class not chosen \\
+Budgets \parencite{utrecht_programmaplan,amsterdam_tender} & Costs, $C_f$ & \texteuro{}35k/m; \texteuro{}650k/100\,m & Not Utrecht unit costs \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 The foundation data decide which walls are modelled. The register keeps the
 year of the original wall after a renewal, so 11 walls renewed on steel piles
-in 2016--2026 still appear past their design life: counted from the renewal
-year, 18 walls (617\,m) are past it, against 29 (1{,}885\,m) on the register
-year alone. Of the 19 walls not renewed or of unclear status, two have no
-werf because the street runs down to the water, a different structure. This
-leaves 17 walls, 611\,m in total (Table~\ref{tab:selection}).
+in 2016--2026 still appear past their design life. Of the 19 walls not renewed
+or of unclear status, two have no werf, which leaves 17 walls, 611\,m
+(Table~\ref{tab:selection}).
 
-Seven scripts turn the raw files into one input row per wall. They run in a
-fixed order, and every raw file is listed with its source and download date,
-so that all results can be regenerated (Appendix~\ref{app:data}). The werf
+Seven scripts turn the raw files into one input row per wall, in a fixed order
+from listed raw files, so that all results can be regenerated
+(Appendix~\ref{app:data}). The werf
 level is the median of the AHN points on the land side of the wall at or
 below +1.6\,m NAP, as higher points fall on stairs or streets; for the 38
 walls with a werf this gives +0.91 to +1.40\,m NAP, and the walls without a
@@ -183,16 +185,16 @@ gives that class, otherwise it is mixed. This yields 23 walls in clay or peat,
 \subsection{Assumptions}\label{sec:data-assumptions}
 
 Where no data exist, the team made the assumptions in
-Table~\ref{tab:assumptions}, each with a distribution rather than a single
-value, so that the lack of knowledge is carried into the failure probability
-instead of being hidden in a safety factor. The last column gives the
-expected bias in $\beta$ and, where tested, its size.
+Table~\ref{tab:assumptions}, each with a distribution or range rather than a
+single value, so that the lack of knowledge is carried into the result instead
+of being hidden in a safety factor.
 
 \begin{table}[htbp]
 \centering
 \small
 \caption{Main assumptions where data are missing, with their basis and their
-effect on $\beta$ (best estimate, 2026, unless stated).}
+effect on $\beta$ (best estimate, 2026) or on the decision. $N$(mean, CoV):
+normal; $U$(lower, upper): uniform.}
 \label{tab:assumptions}
 \begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X
   >{\raggedright\arraybackslash}p{2.6cm} >{\raggedright\arraybackslash}p{3.8cm}@{}}
@@ -207,6 +209,8 @@ A5 & $K$ lognormal and $\gamma$ normal per soil class, independent & Team & Clas
 A6 & Canal +0.6\,m NAP; groundwater $U(+0.5, +0.9)$\,m NAP & \textcite{erfgoed158}; judgement & 0.1\,m higher: \textminus0.38 to +0.08 \\
 A7 & Surcharge $N(7\,\text{kPa}, 0.20)$ at a distance $U(0, 3)$\,m & \textcite{hemel2024} & Conservative for a werf \\
 A8 & Every modelled wall stands today under soil and water & Observation; \textcite{hemel2024} & The whole update raises $\beta$ by 0.07 to 0.69; weak evidence \\
+A9 & Failure cost $C_f$ \texteuro{}1.5 million per wall, tested \texteuro{}0.1--30 million & Budgets; judgement & Restricting use cheapest from \texteuro{}2.4 million \\
+A10 & Half of weak walls give visible warning; organisational events on a five-step scale (0.001--0.30) & Team & Repair chain fails in 48\,\%; scale untested \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -217,10 +221,9 @@ The assumptions do not affect the results equally
 (Section~\ref{sec:dimension-reduction}). The wall type (A2) dominates: for the
 same wall, type~1 gives a $\beta$ that is 1.4 to 2.4 lower than type~2, so the
 type alone can move a wall from the bottom to the top of the ranking.
-The pile condition (A4) matters most for walls that are probably type~2, and
-because the same range is used for every wall, it moves all walls in the same
-direction. The surcharge (A7) is less certain than its source suggests, as
-its assumed position alone changes $\beta$ by 0.7 to 1.5. Two assumptions have
+The pile condition (A4) matters most for walls that are probably type~2 and
+moves all walls in the same direction; the assumed position of the surcharge
+(A7) alone changes $\beta$ by 0.7 to 1.5. Two assumptions have
 a known direction: a surcharge of 7\,kPa (A7) is heavy for a werf used by
 pedestrians and terraces, where every nearby sign limits axle loads to 2\,t,
 and an intact screen (A1) is optimistic, as divers found it in a very poor
@@ -237,13 +240,10 @@ deterministic check that treats it as a block of masonry gives a resisting
 moment of 2.08\,kNm/m against a mean load of 3.94\,kNm/m, so it predicts
 failure even before partial factors are applied, yet the wall stands; with its
 measured cross-section, piles and proven strength the model gives
-$\beta = 1.13$. A model without the floor, the soil on it and the piles thus
-understates the capacity of every wall of this kind, which is why the
-measured cross-sections are used. Settlement
+$\beta = 1.13$, which is why the measured cross-sections are used. Settlement
 from pile rot, the damage actually observed \parencite{erfgoed156}, is not
-modelled, so the results give a ranking and an order of magnitude rather than
-exact values; Section~\ref{sec:results-recommendations} interprets them with
-the biases of Table~\ref{tab:assumptions} in mind.
+modelled, so the results give a ranking rather than exact values
+(Section~\ref{sec:results-recommendations}).
 
 \clearpage
 \section{Problem Exploration and Dimension Reduction}
