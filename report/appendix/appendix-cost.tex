@@ -3,6 +3,44 @@
 
 Multiple linear regression relates replacement cost to wall length, heritage and disruption scores, retaining all three predictors across six quay wall replacement projects. The purpose is to supplement structural risk assessment with cost estimates that help schedule yearly works. Among critical walls with comparable urgency, estimates support comparison of replacement packages and allocation of limited municipal funding. Heritage and disruption scores are treated as equally spaced numerical ratings.
 
+The six projects (Table~\ref{tab:dutch-quay-walls}) share a Dutch procurement,
+regulatory and construction context, and each replaces an identifiable
+quay-wall section. Lengths, works and costs come from public sources; the
+disruption and heritage scores, from 1 (low) to 5 (high), were judged by the
+team from documented site characteristics.
+
+\begin{table}[htbp]
+\centering
+\tiny
+\caption{Characteristics and approximate replacement costs of regression quay-wall projects.}
+\label{tab:dutch-quay-walls}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l l r l c l c r l @{}}
+\toprule
+Quay wall & Replacement works & Len. & Disruption factors & Disp. & Heritage factors & Her. & Cost & References \\
+\midrule
+Beestenmarkt, & Full replacement of masonry & 12 & Very restricted access and & 5 & Protected historic townscape, & 4 & 0.52 & \cite{waterland2025,} \\
+Monnickendam & quay; reuse of bricks. & & vehicle dimensions; pontoons. & & adjacent to historic buildings. & & & \cite{kdekker2025} \\
+\addlinespace
+Maaskade, & Reconstruction and raising of & 500 & Restricted parking, waterfront & 4 & Late 19th-c. quay, historic & 4 & 8.03 & \cite{maaskadeaward2018,} \\
+Rotterdam & existing quay and drainage. & & works and berth loss. & & streetscape and cobblestones.  \\
+\addlinespace
+Haven vak M2, & Complete quay-wall and & 210 & Works in active historic harbour; & 5 & Protected townscape, demolition & 4 & 7.89 & \cite{maassluis2026,} \\
+Maassluis & foundation replacement. & & public/waterway interfaces. & & permit in protected area. & & & \\
+\addlinespace
+Tuingracht, & Planned full replacement of & 330 & Traffic loading, parked vehicles & 4 & Nationally designated protected & 5 & 3.04 & \cite{alkmaarMIP,} \\
+De Rijp & masonry wall on south bank. & & and constrained centre access. & & village centre; historic quay. & & & \cite{tuingrachtTender} \\
+\addlinespace
+Houtzagerssingel, & Demolition and replacement; & $\sim$370 & Utility/sewer diversions, tree & 4 & Established urban canal setting; & 3 & 6.26 & \cite{houtzagersTender,} \\
+Den Haag & sheet piles, anchors, paving. & & works, pavement reinstatement. & & reinstatement of features. & & & \cite{houtzagersContractor} \\
+\addlinespace
+Westerkade West, & Construction of new retaining & 150 & Quayside construction and local & 3 & Historic quay dating from 1922 & 3 & 4.75 & \cite{westerkadeTender,} \\
+Rotterdam & wall with steel sheet piles. & & paving/access changes. & & and waterfront character. & & & \cite{westerkadeContractor} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 Length has the strongest adjusted association with cost: approximately €13,806 per additional metre, holding the other factors constant. Standardised coefficients are 0.817 for length, −0.477 for heritage and 0.305 for disruption (Figure~\ref{fig:cost-regression}). The model explains 63.7\% of cost variation (adjusted R² = 0.094). Length is not significant at 5\% (p = 0.218); neither are heritage (p = 0.429) nor disruption (p = 0.606). With six projects and three predictors, only two degrees of freedom remain for the residuals, so the results identify exploratory associations rather than established causal effects.
 
 \begin{figure}[htbp]

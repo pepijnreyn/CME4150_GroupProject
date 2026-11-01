@@ -1,181 +1,69 @@
 \chapter{Portfolio extension: indicators and consequences}
 \label{app:portfolio}
 
-Section~\ref{sec:approach-selection} ranks a wall with a failure model where one
-exists and with indicators where it does not, and combines either with a
-consequence class in a $3\times3$ risk matrix. This appendix gives the scoring.
-It builds on a scoring framework that the team drafted earlier, which combined
-traffic intensity, land use, observed movement, maintenance history and age in
-one weighted index, following ARK \parencite{ark2023}. That index mixed
-indicators of the probability of failure (movement, maintenance, age) with
-indicators of its consequences (land use, traffic), so it was neither a
-probability proxy nor an impact score. The two sides are therefore separated
-here.
+Section~\ref{sec:approach-selection} ranks a wall with the failure model where
+one exists and with indicators where it does not, and combines either with a
+consequence class in a $3\times3$ risk matrix. This appendix gives both scores.
+It builds on the team's earlier scoring framework, which followed ARK
+\parencite{ark2023} and combined traffic, land use, movement, maintenance and
+age in one index. That index mixed indicators of the probability of failure
+with indicators of its consequences, so the two sides are separated here.
 
 \section{Probability side for walls without a model}\label{app:portfolio-hazard}
 
 For the sheet pile walls, the concrete walls and the kademuren, which the
-failure model of Section~\ref{sec:prob} does not describe, five hazard
-indicators are scored from 1 (low concern) to 5 (high concern) and combined
-with weights: observed movement 30\,\%, NEN~2767 condition 30\,\%, maintenance
-history 15\,\%, data quality 15\,\% and age 10\,\% (assumptions, to be tested
-with a sensitivity analysis). Within each group of similar walls, the third
-with the highest index gets a high probability class, the lowest third a low
-one. This ranks walls only against walls with the same mechanism, which is all
-the indicators can support.
-
-\paragraph{Observed movement} is the absolute vertical movement rate on the
-bodemdalingskaart, from satellite and other geodetic data
-\parencite{bodemdalingskaart} (Table~\ref{tab:score-movement}). It is the most
-direct evidence of a problem, and for walls far from renewal it is the
-monitoring that pays most (Section~\ref{sec:tradeoff}).
-
-\begin{table}[htbp]
-    \centering
-    \small
-    \caption{Scoring criteria for observed movement.}
-    \label{tab:score-movement}
-    \begin{tabularx}{\textwidth}{c X X}
-        \toprule
-        \textbf{Score} & \textbf{Absolute vertical movement rate} & \textbf{Interpretation} \\
-        \midrule
-        1 & Below 1 mm/year & Low measured movement \\
-        2 & 1 to below 2 mm/year & Limited movement \\
-        3 & 2 to below 3 mm/year & Moderate movement \\
-        4 & 3--5 mm/year & High movement \\
-        5 & Above 5 mm/year & Very high movement \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
-\paragraph{Condition} is the NEN~2767 condition score of the most recent
-inspection, from 1 (excellent) to 6 (very bad) \parencite{nen2767}; scores 1
-and 2 give 1, and 3 to 6 give 2 to 5.
-
-\paragraph{Maintenance history} is the time since the last verified structural
-intervention (Table~\ref{tab:score-maintenance}), from the asset register and
-the records of the programmes.
-
-\begin{table}[htbp]
-    \centering
-    \small
-    \caption{Scoring criteria for maintenance history.}
-    \label{tab:score-maintenance}
-    \begin{tabularx}{\textwidth}{c X X}
-        \toprule
-        \textbf{Score} & \textbf{Time since last verified substantive structural maintenance} & \textbf{Interpretation} \\
-        \midrule
-        1 & 0--10 years & Recent intervention \\
-        2 & More than 10--20 years & Relatively recent intervention \\
-        3 & More than 20--30 years & Intermediate period since intervention \\
-        4 & More than 30--50 years & Long period since intervention \\
-        5 & More than 50 years, or no maintenance history found & Very long period or unknown history \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
-\paragraph{Data quality} scores how much of the indicator set rests on data:
-1 for walls with drawings and a recent inspection, 3 for register data only,
-4 for a rounded construction year and 5 for a missing or collective year
-(Table~\ref{tab:data-quality}). Poor data raise the class, because they hide
-problems as easily as they invent them.
-
-\paragraph{Age} is counted from the construction or renewal year
-(Table~\ref{tab:score-age}). It is one indicator among five, not a gate: the
+failure model of Section~\ref{sec:prob} does not describe, five indicators are
+scored from 1 (low concern) to 5 (high concern) and weighted
+(Table~\ref{tab:portfolio-indicators}). The score is proposed, not applied: the
+condition and maintenance records are not public. Within each group of similar
+walls, the third with the highest score gets a high probability class and the
+lowest third a low one, so a wall is only ranked against walls with the same
+mechanism. Poor data raise the score, so missing evidence leads to an
+inspection rather than to a low class. Age has the smallest weight, as the
 theoretical end of life is the rule the municipality wants to move away from
-\parencite{utrecht_teamchallenge2026}.
+\parencite{utrecht_teamchallenge2026}, and Section~\ref{sec:regression} finds
+height and age weak indicators on their own. The weights are assumptions, to be
+tested once the records are available.
 
 \begin{table}[htbp]
-    \centering
-    \small
-    \caption{Scoring criteria for age.}
-    \label{tab:score-age}
-    \begin{tabularx}{\textwidth}{c X X}
-        \toprule
-        \textbf{Score} & \textbf{Age in 2026} & \textbf{Interpretation} \\
-        \midrule
-        1 & 0--50 years & Relatively young \\
-        2 & 50--100 years & Moderate age \\
-        3 & 100--150 years & Older structure \\
-        4 & 150--200 years & Very old structure \\
-        5 & More than 200 years & Historic \\
-        \bottomrule
-    \end{tabularx}
+\centering
+\small
+\caption{Indicator score for walls without a failure model: weight and the
+values that give scores 1 to 5.}
+\label{tab:portfolio-indicators}
+\begin{tabularx}{\textwidth}{@{}l r >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{3.4cm}@{}}
+\toprule
+Indicator & Weight & Scores 1 to 5 & Source \\
+\midrule
+Observed movement & 30\,\% & Vertical rate below 1, 1--2, 2--3, 3--5, above 5\,mm/yr & \textcite{bodemdalingskaart} \\
+Condition & 30\,\% & NEN~2767 score 1--2, 3, 4, 5, 6 & Latest inspection \parencite{nen2767} \\
+Maintenance history & 15\,\% & Last structural intervention within 10, 10--20, 20--30, 30--50 years, longer or unknown & Register, programme records \\
+Data quality & 15\,\% & 1 drawings and a recent inspection, 3 register only, 4 rounded year, 5 missing or collective year & Register (Table~\ref{tab:data-quality}) \\
+Age & 10\,\% & Below 50, 50--100, 100--150, 150--200, above 200 years & Register \\
+\bottomrule
+\end{tabularx}
 \end{table}
-
-For the 158 kademuren, which have almost no height in the register, the
-retained height follows from AHN as the street or werf level minus the water
-level, as for the walmuren (Appendix~\ref{app:data-method}); where a kademuur is
-masonry on timber piles, the failure model can then be applied as well.
 
 \section{Consequence side}\label{app:portfolio-consequence}
 
 Three indicators are scored from 1 (low) to 3 (high); the consequence class is
 low for a mean below 1.75, high from 2.5, and medium in between:
 \begin{itemize}
-  \item \emph{People}: who is on or next to the wall when it fails. On the
-    werven these are pedestrians and terraces, counted as restaurants, cafes,
-    bars and outdoor seating within 20\,m of the wall in OpenStreetMap
-    \parencite{osm2026}: below 0.5 per 100\,m scores 1, from 3 per 100\,m
-    scores 3. Elsewhere the land use of Table~\ref{tab:score-landuse} applies
-    (scores 1--2 give 1, 3 gives 2, 4--5 give 3).
-  \item \emph{Cellars and buildings}: the share of the wall with the front of a
-    wharf cellar (a werfmuur or kluismuur) within 15\,m in the municipal
-    Werfmuren layer \parencite{utrecht_werfmuren}; below 0.25 scores 1, from
-    0.75 scores 3. Elsewhere: buildings within the failure zone.
-  \item \emph{Reachability}: what closes when the wall fails. On the werven this
-    is the street behind the werf, scored by its distance to the wall in the
-    BGT \parencite{bgt}: closer than 3\,m scores 3, farther than 6\,m scores 1.
-    For walls along roads, the traffic intensity of
-    Table~\ref{tab:score-traffic} applies (scores 1--2 give 1, 3 gives 2, 4--5
-    give 3).
+  \item \emph{People}: restaurants, cafes, bars and outdoor seating within
+    20\,m of the wall in OpenStreetMap \parencite{osm2026}: below 0.5 per
+    100\,m scores 1, from 3 per 100\,m scores 3. Outside the werven, land use
+    takes its place.
+  \item \emph{Cellars}: the share of the wall with the front of a wharf cellar
+    within 15\,m in the municipal Werfmuren layer \parencite{utrecht_werfmuren}:
+    below 0.25 scores 1, from 0.75 scores 3. Outside the werven, buildings
+    within the failure zone take its place.
+  \item \emph{Reachability}: the distance from the wall to the street behind
+    the werf in the BGT \parencite{bgt}: closer than 3\,m scores 3, farther than
+    6\,m scores 1. For walls along roads, traffic intensity takes its place.
 \end{itemize}
 Cables, pipes and trees in the werf are not in open data and are left out;
 heritage value is the same for every walmuur (national monument) and is not
 scored.
-
-Traffic intensity in vehicles per day is a consequence indicator, not a load:
-on the werven the load comes from pedestrians and terraces, every nearby sign
-limits axle loads to 2\,t, and the road lies 2.4 to 18\,m behind the wall, over
-the cellars (Appendix~\ref{app:data-method}). Traffic counts therefore tell how
-many people a closure affects, not how heavily the wall is loaded.
-
-\begin{table}[htbp]
-    \centering
-    \small
-    \caption{Scoring criteria for land use, for walls outside the werven.}
-    \label{tab:score-landuse}
-    \begin{tabularx}{\textwidth}{c X X}
-        \toprule
-        \textbf{Score} & \textbf{Land-use category} & \textbf{Interpretation} \\
-        \midrule
-        1 & Unoccupied or low-use open space & Limited activity and exposure \\
-        2 & Green space or low-intensity recreational use & Occasional users \\
-        3 & Residential frontage or local public realm & Regular use by residents and pedestrians \\
-        4 & Commercial frontage, hospitality, busy public realm or major pedestrian route & Frequent occupation and activity \\
-        5 & Critical access, major public gathering location or highly occupied frontage & High potential exposure and disruption \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
-
-\begin{table}[htbp]
-    \centering
-    \small
-    \caption{Scoring criteria for traffic intensity, for walls along roads,
-    from the modelled average working-day traffic of the municipality.}
-    \label{tab:score-traffic}
-    \begin{tabularx}{\textwidth}{c X X}
-        \toprule
-        \textbf{Score} & \textbf{Average working-day traffic (vehicles/day)} & \textbf{Interpretation} \\
-        \midrule
-        1 & Below 500 & Very low motor-traffic exposure \\
-        2 & 500--1,999 & Low traffic \\
-        3 & 2,000--4,999 & Moderate traffic \\
-        4 & 5,000--9,999 & High traffic \\
-        5 & 10,000 or more & Very high traffic exposure \\
-        \bottomrule
-    \end{tabularx}
-\end{table}
 
 \section{Application to the walmuren}\label{app:portfolio-walmuren}
 
@@ -247,68 +135,6 @@ on the wall type; the class rests on missing data.}
 15 & KNG 004 & 1.39 & low & 2.0 & 1.00 & 3.2 & 2/3/2 & medium & green \\
 16 & KNG 009* & 1.45 & low & 0.0 & 1.00 & 5.5 & 1/3/2 & medium & green \\
 17 & KNG 003 & 1.52 & low & 2.0 & 1.00 & 4.6 & 2/3/2 & medium & green \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\section{Quay Wall Replacement Regression Analysis}
-Six quay-wall replacement projects in the Netherlands were selected to provide
-comparative observations for estimating replacement costs. The projects share
-a Dutch procurement, regulatory and construction context and involve the
-reconstruction or replacement of identifiable quay-wall sections making them useful for an exploratory comparison.
-
-Wall lengths, descriptions of replacement works and financial values were
-obtained directly from secondary data while disruption and heritage
-scores were instead \emph{derived by the author} from observable and documented
-site characteristics. Both scores use an indicative ordinal scale from
-1 (low) to 5 (high) as analytical judgements.
-
-The linear regression of replacement cost against length showed a distribution with substantial prediction errors on both sides of zero. This indicates that wall length alone does not explain all the variation in replacement costs. This is represented by the figure on distribution of variables.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/Distribution of Residuals.png}
-    \caption{Distribution of residuals}
-    \label{fig:dwg-png}
-\end{figure}
-
- The confidence interval describes uncertainty in the average estimated cost, while the wider prediction interval represents uncertainty for an individual replacement project. At the notebook's selected length of 54.52 m, the point estimate is €2.711 million, but the nominal 95\% prediction interval extends from approximately −€5.374 million to €10.796 million. The negative lower limit is mathematically possible under this linear model but not a feasible construction cost.
- 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/Length-Cost uncertainty.png}
-    \caption{Length-cost association and 95\% uncertainty intervals }
-    \label{fig:dwg-png}
-\end{figure}
-
-\begin{table}[htbp]
-\centering
-\tiny
-\caption{Characteristics and approximate replacement costs of regression quay-wall projects.}
-\label{tab:dutch-quay-walls}
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{@{} l l r l c l c r l @{}}
-\toprule
-Quay wall & Replacement works & Len. & Disruption factors & Disp. & Heritage factors & Her. & Cost & References \\
-\bottomrule
-Beestenmarkt, & Full replacement of masonry & 12 & Very restricted access and & 5 & Protected historic townscape, & 4 & 0.52 & \cite{waterland2025,} \\
-Monnickendam & quay; reuse of bricks. & & vehicle dimensions; pontoons. & & adjacent to historic buildings. & & & \cite{kdekker2025} \\
-\addlinespace
-Maaskade, & Reconstruction and raising of & 500 & Restricted parking, waterfront & 4 & Late 19th-c. quay, historic & 4 & 8.03 & \cite{maaskadeaward2018,} \\
-Rotterdam & existing quay and drainage. & & works and berth loss. & & streetscape and cobblestones.  \\
-\addlinespace
-Haven vak M2, & Complete quay-wall and & 210 & Works in active historic harbour; & 5 & Protected townscape, demolition & 4 & 7.89 & \cite{maassluis2026,} \\
-Maassluis & foundation replacement. & & public/waterway interfaces. & & permit in protected area. & & & \\
-\addlinespace
-Tuingracht, & Planned full replacement of & 330 & Traffic loading, parked vehicles & 4 & Nationally designated protected & 5 & 3.04 & \cite{alkmaarMIP,} \\
-De Rijp & masonry wall on south bank. & & and constrained centre access. & & village centre; historic quay. & & & \cite{tuingrachtTender} \\
-\addlinespace
-Houtzagerssingel, & Demolition and replacement; & $\sim$370 & Utility/sewer diversions, tree & 4 & Established urban canal setting; & 3 & 6.26 & \cite{houtzagersTender,} \\
-Den Haag & sheet piles, anchors, paving. & & works, pavement reinstatement. & & reinstatement of features. & & & \cite{houtzagersContractor} \\
-\addlinespace
-Westerkade West, & Construction of new retaining & 150 & Quayside construction and local & 3 & Historic quay dating from 1922 & 3 & 4.75 & \cite{westerkadeTender,} \\
-Rotterdam & wall with steel sheet piles. & & paving/access changes. & & and waterfront character. & & & \cite{westerkadeContractor} \\
 \bottomrule
 \end{tabular}
 \end{table}
