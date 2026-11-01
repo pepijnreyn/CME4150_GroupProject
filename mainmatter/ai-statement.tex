@@ -28,10 +28,38 @@
 
 
 
-The team used Claude (Anthropic): the Claude app, including its artifacts, and
-Claude Code, which works in the project repository. Table~\ref{tab:ai-use} lists
+The team used Claude \parencite{anthropic_claude2026}: the Claude app, including
+its artifacts, and Claude Code \parencite{anthropic_claudecode2026}, which works
+in the project repository. Table~\ref{tab:ai-use} lists
 each use, what was asked and how the output was checked. The team remains
-responsible for every number, source and conclusion in this report.
+responsible for every number, source and conclusion in this report. The four
+largest uses were the following.
+
+\paragraph{Code.} The core scripts, which process the data and compute the
+failure model (Table~\ref{tab:run-order}), were drafted by hand by the team. AI
+helped to find and fix bugs and, towards the end, to make the scripts work
+together and use the same assumptions, for example the same water level behind
+the wall in every script. The scripts for the fault tree, the decision tree and
+the regression of Chapters~\ref{chapter:risk-analysis} and
+\ref{chapter:prediction-recommendations} were written with Claude Code from the
+team's description of the events, alternatives and tests.
+
+\paragraph{Text.} English is not our native language, and every section has a
+page limit, so much of the text was rewritten with AI. This made the text more
+readable and more compact. The content, the numbers and the sources come from
+the team's drafts and the script output.
+
+\paragraph{Appendices.} The draft report was given to a large language model
+with the question which claims and arguments it did not support, and what a
+reader would need to understand it fully. From its list of advice the team
+drafted the appendix sections. AI helped to calculate the numbers or provided
+scripts to calculate them; most sections and numbers could already be derived
+from the models the team had.
+
+\paragraph{Figures and diagrams.} AI was very helpful in drafting the Python
+figures and the diagrams: it could show several options for readability
+without the team drafting each of them by hand. The team checked every figure
+against the data and the script output and sanity-checked the values by hand.
 
 \begin{table}[htbp]
 \centering
@@ -49,11 +77,22 @@ Data overview & Upload the geodata and make a shareable GIS map of all data & Co
 Assumptions & Given our list of model assumptions, find sources that support them & Every source opened and checked by the team \\
 Translation & Translate Dutch policy documents into English & Checked by the Dutch-speaking team members \\
 Sources & Find and summarise sources, such as ARK 2.0 and municipal documents & Summaries checked against the documents \\
-Text & Draft and rewrite sections from our notes and source documents & Numbers checked against the script output; sources checked against the cited documents \\
-Code and figures & Write the simulation and analysis scripts, LaTeX tables and figures & Scripts rerun with fixed seeds; key results recomputed by hand (fault tree, regression, costs) \\
+Text & Rewrite our draft in clear and compact English within the page limit, keeping every number, source and claim & Numbers checked against the script output; sources checked against the cited documents; every rewrite read by the authors of the section \\
+Code & Find the cause of this error; check that all scripts use the same inputs and assumptions; write the fault tree, decision tree and regression from our description; LaTeX tables from the script output & Scripts rerun with fixed seeds; key results recomputed by hand (fault tree, regression, costs) \\
+Appendices & Which claims and arguments in this report are not supported, and what does a reader need to understand it? Then: calculate these numbers, or write a script for them & Each point of advice judged by the team; numbers traced back to the model output \\
+Figures and diagrams & Draft this figure in Python and show options that are easier to read & Values checked against the data and the script output; sanity checks by hand \\
 Review & ``I want a critical, independent review of the current version, as a strict examiner and as the municipality's asset manager would read it'', against the assignment, the municipality's Q\&A and NEN~8700 & Each finding checked by the team before the text was changed; $\beta$ values checked against NEN~8700 Table~B.2 \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-AI output itself is not cited as a source.
+\paragraph{Academic integrity.} The assignment allows AI as a supporting tool,
+provided its use is acknowledged, which this chapter does. The team safeguarded
+the integrity of the work in four ways. Every source in the reference list was
+opened and checked by the team; no reference suggested by AI was used without
+that check, and AI output itself is not cited as a source. Every number in the
+report comes from a script in the repository that reruns with fixed seeds, so
+each result can be traced and reproduced. The commits made with Claude Code are
+marked in the repository history as co-authored by Claude, so it shows which
+code AI wrote. Before submission, the team went through every section, appendix
+and script, so that at least one team member can explain each of them.
