@@ -5,17 +5,15 @@
 \section{Data, data generation and assumptions}\label{app:data}
 
 This appendix supports Section~\ref{sec:data}. It explains how to rerun the
-analysis, which walls are modelled, the generated input per wall, every model
-input, and the data that were considered but not used. All file paths are
+analysis, which walls are modelled, the generated input per wall and every
+model input. All file paths are
 relative to the project repository.
 
 \subsection{Reproducing the results}\label{app:data-run}
 
 The scripts below run in this order; each reads the output of the one before.
 Every raw file in \texttt{data/raw/} is listed with its source, URL and
-download date in \texttt{data/raw/SOURCES.md}. Files downloaded from an API
-(AHN, BGT, NDW, \emph{Werfmuren}) are cached; deleting a cached file makes the
-script download it again. The Python packages are in
+download date in \texttt{data/raw/SOURCES.md}. The Python packages are in
 \texttt{requirements.txt}. The Monte Carlo uses a fixed seed (1) and
 400{,}000 draws per wall and wall type; a full run takes about two minutes.
 The two sensitivity scripts (Appendix~\ref{app:prob-sensitivity}) rerun the
@@ -232,9 +230,7 @@ came out 0.3--0.6\,m too high. Where most of the
 ground was above +1.6\,m NAP (possibly no werf), the wall was checked by hand
 on a map and Street View; the lowest AHN point below +1.6\,m NAP is then used.
 The canal bed is not measured anywhere, so $H$ (werf level minus the wall
-underside at $-0.08$\,m NAP) is a lower bound. The median of 1.12\,m NAP on
-the Oudegracht matches the +0.95 to +1.15\,m NAP in
-\textcite{erfgoed156,erfgoed158}.
+underside at $-0.08$\,m NAP) is a lower bound.
 
 \paragraph{Soil class.} Of the 76 DINO borings, the 71 with a known ground
 level are used. For each wall the nearest boring within 250\,m that covers
@@ -249,9 +245,7 @@ compiled the renewal status, method and year per rak and bank from progress
 reports \parencite{antea2019,gu2025up}, the archaeology reports, city news
 and neighbourhood letters (\url{data/raw/walmuur_foundation_sources.csv},
 every row with its sources). The city's \emph{Werfmuren} layer links each
-register wall to its rak and bank. The renewed walls add up to about 3.36\,km
-when the parts still to do are left out, against 3{,}356\,m reported by the
-city.
+register wall to its rak and bank.
 
 \paragraph{Wall type.} Two types of low walmuur stand on timber piles
 \cite{ibu2010}. Type 1 (late 19th, early 20th century) is stepped masonry on a
@@ -265,47 +259,5 @@ TNO does not say which bank a segment is on, so these are chances.
 
 \paragraph{Groundwater and traffic.} GHG and GLG per wall are a
 $1/d^2$-weighted mean of the six nearest BRO wells with a phreatic filter
-measured after 2020. They are not used for $P_f$, because the nearest well is
-143--418\,m away; a range around the canal level is used instead. The road
-(BGT) lies 2.4--18\,m behind the wall, over the werf cellars, and every nearby
-NDW sign limits axles to 2\,t. The load on the werf itself is pedestrians and
-terraces, so $q \sim N(7\,\text{kPa}, 0.20)$ is on the safe side.
-
-\subsection{Data considered but not used}\label{app:data-unused}
-
-\begin{itemize}
-  \item \textbf{BRO CPTs and hand borings:} the CPTs were mostly pre-drilled
-    through the top 2\,m, and the hand borings are one site about 650\,m
-    from the canals.
-  \item \textbf{Traffic counts} in the project folder are from streets outside
-    the Wervengebied.
-  \item \textbf{TNO Pilodyn classes} \cite{tno2009} were measured on the
-    screen planks and the watersloof, not on the piles. The pile values
-    (Bijlagen A and B) are blank in the public copy.
-  \item \textbf{Piles S13--S19} in \textcite{erfgoed156} belong to an earlier
-    stair, not to the walmuur.
-  \item \textbf{A masonry-block resistance} ($\gamma_m H t^2/2$, with $t$ the wall
-    thickness) gave $P_f \approx 1$ for walls that
-    stand, so the measured cross-sections are used instead.
-\end{itemize}
-
-\subsection{Limitations of the model inputs}\label{app:data-limits}
-
-\begin{itemize}
-  \item The two cross-sections are schematic and come from the Oudegracht.
-    The Kromme Nieuwegracht walls (concrete sheet piles in rak 21 and 22) may
-    differ.
-  \item The pile condition is the same broad range for every wall. Measured
-    soft shells per rak would make $P_f$ differ between walls for the right
-    reason.
-  \item $K$ and $\gamma$ are independent, $\gamma_\text{sat} = \gamma$, and the
-    water pressure is hydrostatic. Only one load combination is used.
-  \item Not modelled: sliding, axial pile capacity and settlement, and failure
-    of the timber screen. In 2007--08 divers found the screen in very poor
-    state or gone \cite{ibu2010}; without it the soil below the floor also
-    loads the piles.
-  \item Kromme Nieuwe Gracht 005--007 get identical results, because nothing
-    in the data tells them apart.
-  \item The proven-strength evidence is ``the wall stands today without
-    surcharge'', not a known load that the wall has survived.
-\end{itemize}
+measured after 2020. The road (BGT) lies 2.4 to 18\,m behind the wall, over the
+werf cellars, and every nearby NDW sign limits axles to 2\,t.

@@ -1,13 +1,13 @@
 \chapter{Replacement cost regression}
 \label{app:cost}
 
-Multiple linear regression relates replacement cost to wall length, heritage and disruption scores, retaining all three predictors across six quay wall replacement projects. The purpose is to supplement structural risk assessment with cost estimates that help schedule yearly works. Among critical walls with comparable urgency, estimates support comparison of replacement packages and allocation of limited municipal funding. Heritage and disruption scores are treated as equally spaced numerical ratings.
-
-The six projects (Table~\ref{tab:dutch-quay-walls}) share a Dutch procurement,
-regulatory and construction context, and each replaces an identifiable
-quay-wall section. Lengths, works and costs come from public sources; the
-disruption and heritage scores, from 1 (low) to 5 (high), were judged by the
-team from documented site characteristics.
+Multiple linear regression relates the replacement cost of six Dutch quay wall
+projects (Table~\ref{tab:dutch-quay-walls}) to their length and to a heritage
+and a disruption score, to test whether a cost that depends on the site would
+be better than the cost per metre of Section~\ref{sec:tradeoff}. Lengths, works
+and costs come from public sources; the disruption and heritage scores, from 1
+(low) to 5 (high), were judged by the team from documented site
+characteristics and are treated as equally spaced numbers.
 
 \begin{table}[htbp]
 \centering
@@ -41,15 +41,12 @@ Rotterdam & wall with steel sheet piles. & & paving/access changes. & & and wate
 \end{tabular}
 \end{table}
 
-Length has the strongest adjusted association with cost: approximately €13,806 per additional metre, holding the other factors constant. Standardised coefficients are 0.817 for length, −0.477 for heritage and 0.305 for disruption (Figure~\ref{fig:cost-regression}). The model explains 63.7\% of cost variation (adjusted R² = 0.094). Length is not significant at 5\% (p = 0.218); neither are heritage (p = 0.429) nor disruption (p = 0.606). With six projects and three predictors, only two degrees of freedom remain for the residuals, so the results identify exploratory associations rather than established causal effects.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/Full model fit and pearson correlation matrix.png}
-    \caption{Replacement cost regression on six projects: fit of the full model (length, heritage and disruption) and Pearson correlation matrix of the variables.}
-    \label{fig:cost-regression}
-\end{figure}
-
-Forward and backward AIC selection favoured the simpler length-only model (R² = 0.457), producing an estimated replacement cost of €2.711 million for KM060065 (54.52 m), or about €50k per metre. Its 95\% confidence interval for the mean cost was −€1.801 million to €7.223 million, while the 95\% prediction interval for an individual replacement was −€5.374 million to €10.796 million. The negative bounds are financially unrealistic and demonstrate the model's limitations.
-
-Consequently, the results provide exploratory cost associations rather than reliable standalone project budgets. Section~\ref{sec:tradeoff} therefore keeps the cost of about €35k per metre from the programme plan \parencite{utrecht_programmaplan}, which lies within the interval of the length-only model. With more projects, the same regression could estimate package costs, so that the works selected each year, plus a justified contingency, fit the available budget.
+The model explains 63.7\,\% of the variation in cost ($R^2 = 0.637$), but with
+six projects and three predictors only two degrees of freedom remain for the
+residuals: the adjusted $R^2$ is 0.094, and no predictor is significant at
+5\,\% (length $p = 0.218$, heritage $p = 0.429$, disruption $p = 0.606$).
+Forward and backward selection by AIC keep only the length ($R^2 = 0.457$), and
+for a wall of 55\,m its 95\,\% prediction interval runs from \textminus\euro5.4
+to \euro10.8 million. Section~\ref{sec:tradeoff} therefore keeps the cost of
+about \euro35k per metre from the programme plan
+\parencite{utrecht_programmaplan}.

@@ -7,7 +7,10 @@
 This appendix supports Section~\ref{sec:prob}. It gives the equations of the
 two limit states, the estimation of the parameters, and the checks of the
 model against data and against changes in the dependence assumptions. The
-model is \texttt{scripts/StressCaclulation/FailureProbability.py}.
+model is \texttt{scripts/StressCaclulation/FailureProbability.py}. It leaves
+out sliding and the axial capacity of the piles, uses one load combination,
+and takes the water pressure as hydrostatic with
+$\gamma_\text{sat} = \gamma$.
 
 \subsection{Load on the wall}\label{app:prob-load}
 
@@ -114,13 +117,7 @@ stands today and the failures come mostly from pile bending.
 \label{fig:app-proven}
 \end{figure}
 
-\paragraph{Wall type.} With prior $p = P(T = 2)$ per rak, the same evidence
-updates the type, and the best estimate weighs the two types:
-\begin{equation}
-P(T = 2 \mid \mathcal{E}) = \frac{p\,P(\mathcal{E} \mid T=2)}{p\,P(\mathcal{E} \mid T=2) + (1-p)\,P(\mathcal{E} \mid T=1)},
-\qquad
-P_f = \sum_{T} P(T \mid \mathcal{E})\,P_f(T \mid \mathcal{E}).
-\end{equation}
+The same evidence updates the wall type (Equation~\ref{eq:mixture}).
 
 \subsection{Results per wall}\label{app:prob-results}
 
@@ -178,7 +175,7 @@ the distributions of the two variables. For
 the uncertain soil class, every class found within 150\,m gets a prior weight
 equal to its share of the borings; like the wall type, it is then updated
 with proven strength. Table~\ref{tab:sens-summary} summarises the change in
-$\beta$ (updated, 2026); Table~\ref{tab:sens-walls} gives every wall.
+$\beta$ (updated, 2026).
 
 \begin{table}[htbp]
 \centering
@@ -203,128 +200,35 @@ levels (Table~\ref{tab:prob-data}).}
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
-\centering
-\small
-\caption{$\beta$ per wall (updated, 2026, 200{,}000 draws) for each change.
-Shares c/s/m: clay/peat, sand and mixed among the borings within 150\,m.
-OG = Oude Gracht, KNG = Kromme Nieuwe Gracht.}
-\label{tab:sens-walls}
-\setlength{\tabcolsep}{4pt}
-\begin{tabular}{@{}l l c r r r r r r@{}}
-\toprule
-Wall & Class & Shares c/s/m & Base & $\rho(K,\gamma)$ & $\rho(\text{MOR},E)$ & Groundw. & Gw.\ werf & Soil unc. \\
-\midrule
-OG Rak 03 OZ & clay/peat & 0.50 / 0.50 / 0.00 & $-0.05$ & $-0.05$ & $-0.05$ & 0.00 & 0.05 & 0.51 \\
-OG Rak 04 OZ & sand & 0.50 / 0.33 / 0.17 & 0.81 & 0.81 & 0.81 & 0.55 & 0.27 & 0.38 \\
-OG Rak 05 NZ & sand & 0.40 / 0.60 / 0.00 & 0.83 & 0.82 & 0.83 & 0.56 & 0.28 & 0.56 \\
-OG Rak 06 NZ & sand & 0.50 / 0.33 / 0.17 & 1.18 & 1.17 & 1.18 & 0.80 & 0.50 & 0.48 \\
-OG Rak 06 ZZ & sand & 0.57 / 0.29 / 0.14 & 0.82 & 0.82 & 0.82 & 0.57 & 0.28 & 0.33 \\
-OG Rak 08 OZ & mixed & 0.56 / 0.11 / 0.33 & 1.38 & 1.38 & 1.38 & 1.30 & 1.31 & 1.28 \\
-OG Rak 09 ZOZ & clay/peat & 0.50 / 0.17 / 0.33 & 1.10 & 1.10 & 1.10 & 1.14 & 1.10 & 1.21 \\
-OG Rak 09 WZ & clay/peat & 0.56 / 0.11 / 0.33 & 1.05 & 1.05 & 1.05 & 1.08 & 1.01 & 1.14 \\
-OG Rak 09 WZ 01 & clay/peat & 0.50 / 0.17 / 0.33 & 1.13 & 1.13 & 1.14 & 1.19 & 1.18 & 1.26 \\
-KNG 002 & clay/peat & 0.67 / 0.00 / 0.33 & 1.37 & 1.37 & 1.38 & 1.39 & 1.35 & 1.43 \\
-KNG 003 & mixed & 0.75 / 0.00 / 0.25 & 1.52 & 1.52 & 1.53 & 1.48 & 1.46 & 1.37 \\
-KNG 004 & mixed & 0.75 / 0.00 / 0.25 & 1.39 & 1.39 & 1.40 & 1.37 & 1.33 & 1.23 \\
-KNG 005 & clay/peat & 0.50 / 0.00 / 0.50 & 0.59 & 0.59 & 0.59 & 0.67 & 0.67 & 0.65 \\
-KNG 006 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.60 & 0.60 & 0.67 & 0.68 & 0.73 \\
-KNG 007 & clay/peat & 0.40 / 0.20 / 0.40 & 0.59 & 0.59 & 0.59 & 0.67 & 0.67 & 0.73 \\
-KNG 008 & clay/peat & 0.40 / 0.20 / 0.40 & 0.56 & 0.56 & 0.56 & 0.60 & 0.69 & 0.85 \\
-KNG 009 & sand & 0.67 / 0.33 / 0.00 & 1.44 & 1.44 & 1.45 & 1.12 & 0.92 & 0.81 \\
-\bottomrule
-\end{tabular}
-\end{table}
+Both correlations change $\beta$ by less than the Monte Carlo error of these
+runs ($\pm 0.01$) for most walls, and by at most 0.03. With groundwater up to
+the werf level, the four sand walls of rak~4 to 6 and Kromme Nieuwe Gracht 009
+lose 0.52 to 0.68, and eight walls change risk class: red falls from nine to
+five walls. Walls classed as sand lose up to 0.7 when the soil class is
+uncertain, because about half of their nearby borings find clay or peat; Rak~03
+OZ, classed as clay or peat, gains 0.56, because half of its nearby borings
+find sand.
 
-\paragraph{Correlations.} Both correlations change $\beta$ by less than the
-Monte Carlo error of these runs ($\pm 0.01$) for most walls, and by at most
-0.03. A negative $\rho(K,\gamma)$ narrows the spread of $K\gamma$, which drives
-the soil load. A positive $\rho(\text{MOR},E)$ couples strength to stiffness:
-a stiffer pile attracts a larger moment ($M \propto E^{1/4}$), but its higher
-MOR more than covers this.
-
-\paragraph{Groundwater.} Higher groundwater adds water pressure behind the
-wall, so $\beta$ falls for each type. For the best estimate the effect is
-partly offset: under the higher water fewer type-1 draws stand today, so the
-update moves $P(T{=}2)$ up. Walls in sand, where type 1 is likely, lose most.
-With groundwater up to the werf level, the four sand walls of rak~4 to 6 and
-Kromme Nieuwe Gracht 009 lose 0.52 to 0.68, and eight walls change risk class:
-red falls from nine to five walls, as Kromme Nieuwe Gracht 005 to 008 and Rak~09
-ZOZ become orange and Rak~04 OZ red. The groundwater under the werf is therefore
-worth measuring.
-
-\paragraph{Soil class.} Most walls have borings of all three classes within
-150\,m. Walls classed as sand lose up to 0.7 in $\beta$, because half of their
-nearby borings find clay or peat. Walls classed as clay or peat gain up to
-0.6 (Rak 03 OZ, where half of the nearby borings find sand).
-
-\paragraph{The two limit states.} For type 2, overturning and pile failure
+For type 2, overturning and pile failure
 occur together 4.4 times as often (median) as if they were independent: both
 grow with the soil load. Because overturning is rare for type 2, the series
 $P_f$ differs by less than 8\,\% from the value for independent limit states.
 
 \subsection{One-at-a-time sensitivity}\label{app:prob-tornado}
 
-The script \texttt{SensitivityTornado.py} supports Section~\ref{sec:dimension-reduction}.
+The script \texttt{SensitivityTornado.py} computes Table~\ref{tab:tornado}.
 For each of the 17 walls it reruns the model once as it is, twice for each of
 the 18 random inputs, fixed at its 5th and at its 95th percentile, once for
 each soil class, and once with six minor inputs fixed together at their
 medians, with 100{,}000 draws per wall, type and run. A fixed input still uses
 up its random numbers, so all other inputs get the same draws in every run and
-the differences are not Monte Carlo noise. It writes
+the differences are not Monte Carlo noise. The growth of the soft shell is
+evaluated in 2041, the other inputs in 2026. For Kromme Nieuwe Gracht 005 to
+007 the werf level is an assumed range, not a measurement error, so it is
+shown separately. Fixing the six minor inputs (the measured werf level, the
+unit weights of soil and tamped concrete, $E$, $k$ and the shell growth)
+together at their medians changes $\beta$ by at most 0.03. The script writes
 \texttt{walmuur\_tornado.csv} in \texttt{data/processed/}.
-Table~\ref{tab:tornado-full} and Figure~\ref{fig:app-tornado} give the change in $\beta$ (updated, 2026, for
-the shell growth 2041) from the 5th to the 95th percentile. For Kromme Nieuwe
-Gracht 005 to 007 the werf level is an assumed range, not a measurement error,
-so it is shown separately and is not fixed in the last row. Between the wall
-types, $\beta$ differs by 2.06 (median; 1.36 to 2.41), and between the
-highest and lowest soil class by 0.49 (0.37 to 1.19, best estimate).
-
-\begin{table}[htbp]
-\centering
-\footnotesize
-\caption{Change in $\beta$ when one input moves from its 5th to its 95th
-percentile: median [range] over the walls. Best estimate: both types weighted
-by $P(T \mid \mathcal{E})$.}
-\label{tab:tornado-full}
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}l l r r r@{}}
-\toprule
-Input & 5th to 95th percentile & Type 1 & Type 2 & Best estimate \\
-\midrule
-Earth pressure coefficient $K$ & Per class\textsuperscript{a} & \textminus2.38 [\textminus3.18, \textminus1.71] & \textminus0.97 [\textminus1.23, \textminus0.68] & \textminus0.38 [\textminus2.07, +0.57] \\
-Distance $a$ of the surcharge & 0.15--2.85\,m & +1.45 [+1.08, +1.57] & +1.01 [+0.73, +1.12] & +0.74 [+0.69, +1.08] \\
-Soft shell $s_0$ & 2--43\,mm & \textminus0.04 [\textminus0.17, \textminus0.02] & \textminus1.50 [\textminus2.84, \textminus1.17] & \textminus0.54 [\textminus0.95, \textminus0.18] \\
-Pile diameter $D_0$ & 150--210\,mm & +0.04 [+0.01, +0.18] & +1.49 [+0.92, +2.72] & +0.40 [+0.15, +0.81] \\
-Werf level, assumed (KNG 005--007) & 1.03--1.57\,m NAP & \textminus0.75 [\textminus0.77, \textminus0.73] & \textminus1.04 [\textminus1.05, \textminus1.04] & +0.04 [+0.04, +0.05] \\
-Model factor $\theta_R$ & 0.77--1.26 & +0.84 [+0.67, +1.22] & +0.12 [\textminus0.02, +0.34] & \textminus0.03 [\textminus0.25, +1.10] \\
-Groundwater level & +0.52 to +0.88\,m NAP & \textminus0.82 [\textminus1.46, \textminus0.63] & \textminus0.18 [\textminus0.36, \textminus0.17] & +0.05 [\textminus1.32, +0.28] \\
-Foundation level & \textminus0.135 to +0.135\,m & +0.66 [+0.55, +0.91] & +0.49 [+0.37, +0.52] & +0.20 [\textminus0.04, +0.85] \\
-Surcharge $q$ & 4.7--9.3\,kPa & \textminus0.60 [\textminus0.70, \textminus0.56] & \textminus0.49 [\textminus0.53, \textminus0.34] & \textminus0.36 [\textminus0.55, \textminus0.31] \\
-Pile spacing $s$ & 0.82--1.18\,m & \textminus0.01 [\textminus0.04, 0.00] & \textminus0.41 [\textminus0.46, \textminus0.28] & \textminus0.12 [\textminus0.25, \textminus0.04] \\
-Bending strength MOR & 18.4--25.6\,MPa & +0.01 [0.00, +0.04] & +0.37 [+0.26, +0.41] & +0.12 [+0.04, +0.23] \\
-Werf level, measured (14 walls) & AHN $\pm$0.08\,m & \textminus0.26 [\textminus0.31, \textminus0.22] & \textminus0.32 [\textminus0.39, \textminus0.25] & \textminus0.16 [\textminus0.28, 0.00] \\
-Model factor $\theta_M$ & 0.84--1.17 & \textminus0.01 [\textminus0.03, 0.00] & \textminus0.32 [\textminus0.34, \textminus0.22] & \textminus0.10 [\textminus0.20, \textminus0.03] \\
-Unit weight of masonry & 17.4--20.6\,kN/m$^3$ & +0.20 [+0.15, +0.27] & 0.00 [0.00, 0.00] & \textminus0.01 [\textminus0.10, +0.25] \\
-Subgrade modulus $k$ & 4{,}585--9{,}715\,kN/m$^3$ & 0.00 [0.00, +0.02] & +0.18 [+0.13, +0.20] & +0.06 [+0.02, +0.12] \\
-Modulus of elasticity $E$ & 6.0--12.0\,GPa & 0.00 [\textminus0.01, 0.00] & \textminus0.16 [\textminus0.19, \textminus0.11] & \textminus0.05 [\textminus0.10, \textminus0.02] \\
-Unit weight of soil $\gamma$ & Per class & +0.13 [+0.12, +0.20] & \textminus0.11 [\textminus0.14, \textminus0.03] & +0.05 [\textminus0.05, +0.18] \\
-Unit weight tamped concrete & 21.1--24.9\,kN/m$^3$ & 0.00 [0.00, 0.00] & +0.02 [0.00, +0.03] & 0.00 [0.00, +0.02] \\
-Shell growth $r$ (2041) & 0.11--0.24\,mm/yr & \textminus0.01 [\textminus0.03, \textminus0.01] & \textminus0.14 [\textminus0.18, \textminus0.12] & \textminus0.06 [\textminus0.11, \textminus0.02] \\
-Six minor inputs at their medians\textsuperscript{b} & -- & 0.00 [\textminus0.01, +0.01] & +0.01 [0.00, +0.03] & 0.00 [\textminus0.01, +0.01] \\
-\bottomrule
-\multicolumn{5}{@{}p{0.97\textwidth}@{}}{\textsuperscript{a} Sand 0.25--0.48,
-mixed 0.29--0.65, clay or peat 0.42--0.81. \textsuperscript{b} Measured werf
-level, unit weights of soil and tamped concrete, $E$, $k$ and shell growth.}
-\end{tabular}
-\end{table}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{figures/app_tornado.png}
-\caption{One-at-a-time sensitivity: change in $\beta$ when one input moves from its 5th to its 95th percentile, median over the 17 walls, for each wall type and for the best estimate (Table~\ref{tab:tornado-full}). Type~1 is governed by overturning ($K$, surcharge position, $\theta_R$, groundwater), type~2 by the piles (soft shell, diameter).}
-\label{fig:app-tornado}
-\end{figure}
 
 \subsection{Checks against data}\label{app:prob-data}
 
@@ -367,7 +271,7 @@ normal spread of 0.058\,m, but some fall on steps or terraces. The model
 therefore uses the median, not the mean, and its error is what $\sigma$ must
 cover. The bootstrap standard error of the median is 0.038\,m for the typical
 wall and below 0.05\,m for 63\,\% of the walls; for the others the werf level is
-less certain than the model assumes, which Table~\ref{tab:tornado-full} shows
+less certain than the model assumes, which Table~\ref{tab:tornado} shows
 to matter little ($\pm$0.08\,m changes $\beta$ by about 0.2).
 
 \begin{figure}[htbp]
@@ -456,31 +360,15 @@ KNG 009         & 1.45 & 1.56 & 1.44 & 1.28 & 0.76 & 1.80 & 2.38 & 0.67 & 1.86 &
 \end{tabular}
 \end{table}
 
-Three points follow. First, the survived service load raises $\beta$ by 0.11
-to 0.65, most for the walls in clay and peat, where it rejects more draws; a
-realistic history of loads is cheap evidence once the municipality accepts it.
-Second, without the update of the type the best estimate falls most where the
-prior is uncertain (Kromme Nieuwe Gracht 005 to 007: 0.59 to 0.14), so the
-ranking of these walls rests partly on the miscalibrated type-1 model. Third,
-type~1 is the type the survey detects: the model expects three times as much
-displacement for it, so a survey mainly settles the wall type.
-Figure~\ref{fig:app-variants} puts the checks side by side: the walls in sand
-in rak~4 to 6 are the most sensitive to the groundwater and the wall friction.
-Only the recalibrated type~1 lifts walls above the NEN~8700 rejection level of
-1.8, seven of them, and none above 2.5.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{figures/app_beta_variants.png}
-\caption{Best-estimate $\beta$ per wall in the base model (2026) and in the model checks of Table~\ref{tab:model-checks}, the groundwater variant of Table~\ref{tab:sens-walls} and 2041. The bar spans the variants; dashed lines: NEN~8700 rejection levels for CC1b and CC2 \parencite{nen8700}.}
-\label{fig:app-variants}
-\end{figure}
+Without the update of the type, the best estimate falls most where the prior
+is uncertain (Kromme Nieuwe Gracht 005 to 007: 0.59 to 0.14), so the ranking of
+these walls rests partly on the miscalibrated type-1 model.
 
 \subsection{Robustness of the ranking}\label{app:prob-robustness}
 
 The model is used to rank the walls (Section~\ref{sec:prob-validity}), so the
 script \texttt{ranking\_robustness.py} tests the ranking itself against every
-variant of Tables~\ref{tab:sens-walls} and \ref{tab:model-checks}
+variant of Tables~\ref{tab:sens-summary} and \ref{tab:model-checks}
 (Table~\ref{tab:robustness}). For each variant it gives the Spearman rank
 correlation $\rho_s$, the correlation coefficient of the ranks of the walls by
 best-estimate $\beta$, with the base run of the same script, the number of walls whose risk class changes and how many of the nine
@@ -515,46 +403,28 @@ Type~1 recalibrated & +0.04 to +1.14 & 0.65 & 8 & 5 of 9 \\
 \end{tabular}
 \end{table}
 
-The ranking survives the dependence assumptions, the screen, the type update
-and restricted use ($\rho_s \ge 0.96$), but not the variants that change what
-differs between walls: the soil class, the groundwater, the wall friction and
-the calibration of type~1 ($\rho_s$ 0.59 to 0.72). Oude Gracht Rak~03 OZ is red
-in all eleven variants, Rak~05 NZ and Rak~06 ZZ in ten, Rak~06 NZ in seven and
-the other red walls in four to six. Recalibrating type~1 raises
-$P(\mathcal{E} \mid T{=}1)$ from 0.32--0.98 to 0.90--1.00 and $\beta$ of
-type~1 by 1.18 to 1.47, so the evidence says less about the type and the gap
-between the types falls from 2.06 to 0.87 (median). The walls in sand of rak~4
-to 6, mostly type~1, then move from red to orange (Rak~04 OZ from orange to
-green), and the walls that are probably type~2 move up. Other ways to
-calibrate, such as a lower $K$ for type~1, were not tested; which is right can
-only be settled by establishing the type and the displacement of a few walls
+Oude Gracht Rak~03 OZ is red in all eleven variants, Rak~05 NZ and Rak~06 ZZ
+in ten, Rak~06 NZ in seven and the other red walls in four to six.
+Recalibrating type~1 raises $P(\mathcal{E} \mid T{=}1)$ from 0.33--0.98 to
+0.90--1.00 and $\beta$ of type~1 by 1.18 to 1.47, so the gap between the types
+falls from 2.06 to 0.87 (median). Other ways to calibrate, such as a lower $K$
+for type~1, were not tested; which is right can only be settled by
+establishing the type and the displacement of a few walls
 (Section~\ref{sec:dimension-reduction}).
 
 
-\section{Risk analysis and regression: supporting information}\label{app:risk-figures}
+\section{Risk analysis: supporting information}\label{app:risk-figures}
 
 Figure~\ref{fig:app-fault-tree} supports Sections~\ref{sec:ft-results} and
 \ref{sec:to-results}. Common cause hardly changes the number of walls where the
 programme fails, because the shared events act through the repair chain, which
-matters only when a weakness gives warning. The expected costs cross where the
-text says: restricting use (A6) becomes the cheapest from \euro2.4 million,
-monitoring (A7) from \euro4.4 million and renewing now (A4) from \euro5.05 million.
-Figure~\ref{fig:app-production} supports Section~\ref{sec:regression}: the
-negative trend comes from the fast years 2015 to 2018 followed by a break, not
-from a gradual decline, and at the recent pace the year in which the 17 walls
-are renewed spreads from 2028 to about 2040 (90\,\% interval 2029 to 2036).
+matters only when a weakness gives warning.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/app_fault_tree.png}
 \caption{Left: number of walls among the 17 where the programme fails to prevent a failure before renewal (Monte Carlo, $4\times10^5$ runs), with independent causes and with the shared screening, programme and inspection events. Right: expected cost $E[C]$ of each alternative for the median wall against the failure cost $C_f$ (Figure~\ref{fig:dtree}).}
 \label{fig:app-fault-tree}
-\end{figure}
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{figures/app_production.png}
-\caption{Left: renewed length of walmuur per year (Figure~\ref{fig:production}) with the linear trend, the mean of the fast years and of the recent years, and the 100\,m per year of the plan. Right: year in which all 17 modelled walls are renewed in 20{,}000 bootstrap runs, lowest $\beta$ first, with the expected number of walls that reach a limit state before renewal.}
-\label{fig:app-production}
 \end{figure}
 
 \clearpage
