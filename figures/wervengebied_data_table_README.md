@@ -501,7 +501,7 @@ Wall structure, piles and the failure model:
   Used: what the divers found per rak, watersloof or concrete floor
   (Bijlage G, in `data/raw/walmuur_tno2009_type.csv`), and the conclusions
   (p. 7). Compiled but not used: the Pilodyn classes of the planks and
-  watersloof per rak (Bijlage G, in `data/raw/walmuur_tno2009_pilodyn.csv`)
+  watersloof per rak (Bijlage G)
   and the remaining-diameter rule d = D − 2(I + 5) (Bijlage C). Bijlagen A and
   B, with the pile values, are blank in the public copy.
   https://utrecht.bestuurlijkeinformatie.nl/Document/View/6b59e223-7ec8-40fe-a845-c1223322df17
@@ -643,9 +643,8 @@ Only the rot of the piles changes between the two.
 
 **From the data, per wall:** the werf level (AHN, or a map check, see below),
 the soil type (DINO) and the chance of each wall type (TNO, above). The
-Pilodyn classes TNO measured on the screen planks and the watersloof are
-compiled in `data/raw/walmuur_tno2009_pilodyn.csv` but not used: they are
-not the piles, and the broad range above covers them.
+Pilodyn classes TNO measured on the screen planks and the watersloof are not
+used: they are not the piles, and the broad range above covers them.
 
 **Guesses, the same for every wall** (all in `walmuur_failure_inputs.csv`):
 

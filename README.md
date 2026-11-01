@@ -24,21 +24,10 @@ scripts/StressCaclulation/   the load, resistance and failure probability model
 figures/         plots and the data table for the report
 docs/            notes on the register and on the failure formula
 report/          the Overleaf project (git subtree, see Working together); edit it in Overleaf
-drafts/          drafts of report sections 1.2 and 2.1, their appendices and references.bib
-notebooks/       one notebook per report section (mostly outlines, see below)
 ```
 
-The walmuur model lives in `scripts/`, not in the notebooks. The notebooks map
-to the report sections:
-
-| Notebook | Report section | State |
-|---|---|---|
-| `01_data.ipynb` | 1.2 assumptions, data collection & generation | loads the register; the data work is in `scripts/` |
-| `02_exploration.ipynb` | 1.3 problem exploration and dimension reduction | outline |
-| `03_probabilistic_models.ipynb` | 2.1 probabilistic models | first pile-bending model (Hemel et al. 2024), replaced by `FailureProbability.py` |
-| `04_fault_tree.ipynb` | 3.1 fault tree | outline |
-| `05_decision_tree.ipynb` | 3.2 trade-off analysis | outline |
-| `06_regression.ipynb` | 4.1 regression | outline |
+After the report was submitted (1 November 2026), every script, data file and
+figure the report does not use was removed. They are still in the git history.
 
 ## Setup
 
@@ -46,7 +35,6 @@ to the report sections:
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-jupyter lab
 ```
 
 The scripts need only numpy, pandas, scipy and matplotlib. Run them from the
@@ -236,15 +224,20 @@ Each script reads the output of the one before. All outputs go to
 | 8 | `scripts/StressCaclulation/FailureProbability.py` | `walmuur_failure_probability.csv`, `_draws.json`, `_inputs.csv` | about 2 minutes |
 | (9) | `scripts/StressCaclulation/SensitivityDependence.py` | `walmuur_sensitivity.csv` | about 25 minutes |
 
-Figures:
-- `scripts/plot_screening_sankey.py`: the screening of the register and of the walmuren.
-- `scripts/plot_design_life_by_material.py`: design life per building material.
-- `scripts/StressCaclulation/plot_*.py`: the load Monte Carlo at H = 1.21 m.
+The other analysis scripts (model checks, tornado, ranking robustness,
+regression, fault tree, consequence score) are listed in the appendix "Source
+code" of the report. `scripts/plot_screening_sankey.py` holds the screening
+that most scripts import.
 
-The report itself is the Overleaf project in `report/`. The drafts of sections
-1.2 and 2.1 are in `drafts/`. `preview.tex` there puts sections 1.2 and 2.1 and
-their appendices together; compile it with `tectonic preview.tex` or
-`pdflatex` + `bibtex`.
+Figures in the report:
+- `scripts/plot_appendix_figures.py`: the figures of Appendix B and the
+  production-rate figure of Chapter 4.
+- `scripts/plot_results_map.py`: the risk-class maps.
+- `scripts/fault_tree_figure.py`: the fault tree of Chapter 3, written straight
+  to `report/figures/fault_tree_tikz.tex`.
+
+The PNGs are written to `figures/`; copy a regenerated one to `report/figures/`.
+The report itself is the Overleaf project in `report/`.
 
 ## Sources
 
@@ -255,7 +248,7 @@ The key in brackets is the one used in the data table README and in
 
 | Data | Where to find it | In the repo | What the model uses it for |
 |---|---|---|---|
-| Asset register of the municipality | delivered to TU Delft for the challenge, 26 Aug 2025 | `Output areaal GU TU Delft 26-08.json` / `.xlsx`; overview in `docs/output_areaal_overview.md` | the 51 walmuren, length, material, `Aanlegjaar` and `Eindjaar` for the screening |
+| Asset register of the municipality | delivered to TU Delft for the challenge, 26 Aug 2025 | `Output areaal GU TU Delft 26-08.json`; overview in `docs/output_areaal_overview.md` | the 51 walmuren, length, material, `Aanlegjaar` and `Eindjaar` for the screening |
 | AHN ground level (dtm_05m) | PDOK WMS, https://service.pdok.nl/rws/ahn/wms/v1_0 | `AHN/walmuur_ahn_points.csv` | werf level per wall, so H |
 | DINO borehole logs | BROloket, https://www.broloket.nl | `BRO_GeotechnischBooronderzoek/` (76 logs) | soil type per wall, so K and γ_s |
 | BRO groundwater wells and head series | PDOK OGC API, https://api.pdok.nl/tno/bro-grondwatermonitoring-in-samenhang-karakteristieken/ogc/v1 | `APIDatacollection/` | GHG/GLG per wall. Not used in the Pf: the wells are 143–418 m from the walmuren and under raised streets |
@@ -264,10 +257,8 @@ The key in brackets is the one used in the data table README and in
 | Werfmuren layer, UtrechtOpen | WFS, https://geodata.utrecht.nl/geoserver/UtrechtOpen/ows | `UtrechtOpen/werfmuren.geojson` | rak and bank of each register wall |
 | Foundation per rak (hand-compiled) | the city reports and letters listed below | `walmuur_foundation_sources.csv`, `walmuur_foundation_documents.csv` | renewed or still on timber piles |
 | Wall type per rak (hand-compiled) | [TNO] Bijlage G | `walmuur_tno2009_type.csv` | chance of type 2 per rak |
-| Pilodyn classes per rak (hand-compiled) | [TNO] Bijlage G | `walmuur_tno2009_pilodyn.csv` | kept for reference, not used |
 | Werf check (filled in by hand) | Google Maps, Street View and the AHN viewer, links in the file | `walmuur_werf_check.csv` | werf yes or no, and the level, for 9 walls |
-| Traffic counts | Gemeente Utrecht traffic counts, https://utrechtmilieu.nl/verkeer/tellingen/ | `*_csv/` folders | not used: the count points are outside the Wervengebied |
-| KNMI daily rainfall, De Bilt | https://www.daggegevens.knmi.nl/klimatologie/daggegevens | `result.txt` | not used yet |
+| Hospitality in the inner city | OpenStreetMap, Overpass API | `osm_hospitality_binnenstad.json` | people and terraces on the werf, for the consequence score |
 
 Download dates, coverage and known gaps for each file are in
 `data/raw/SOURCES.md`.
@@ -318,8 +309,8 @@ letters give which walls are renewed. The full list with links is in the
 - **[HEMEL24]** Hemel, M.-J., Peters, D.J., Schweckendiek, T., & Jonkman, S.N.
   (2024). Reliability updating for lateral failure of historic quay walls.
   *Georisk*, 18(4), 882–903. Through the TU Delft library. Used: the
-  surcharge q and updating with proven strength (eq. 12). Notebook 03 and
-  `docs/failure_formula_notes.md` follow this paper.
+  surcharge q and updating with proven strength (eq. 12).
+  `docs/failure_formula_notes.md` follows this paper.
 - **[NEN8700]** NEN 8700:2011+A1:2020, Table B.2: the target β (1.8 / 2.5 /
   3.3) and the 15-year reference period. NEN 8707:2018 (existing geotechnical
   structures) uses the same values. Not in the repo (copyright); open them
@@ -329,7 +320,7 @@ letters give which walls are renewed. The full list with links is in the
 - **[JCSS]** JCSS Probabilistic Model Code (2001), https://www.jcss-lc.org:
   model factors and the MOR–E correlation used in the sensitivity run.
 
-The BibTeX entries are in `drafts/references.bib` (the report uses `report/report.bib`).
+The BibTeX entries are in `report/report.bib`.
 
 ## Where to read more
 
@@ -342,16 +333,13 @@ The BibTeX entries are in `drafts/references.bib` (the report uses `report/repor
 | Download date and gaps of each raw file | `data/raw/SOURCES.md` |
 | The fields of the asset register | `docs/output_areaal_overview.md` |
 | The pile-bending formula of Hemel et al. (2024) | `docs/failure_formula_notes.md` |
-| The report text on data (1.2) and probabilistic models (2.1) | `drafts/sec_1_2_data.tex`, `drafts/sec_2_1_prob.tex` and their appendices |
+| The report | `report/report.tex` |
 
 ## Working together
 
-- One person per notebook or script where possible. Notebooks merge badly, so
-  avoid two people editing the same one at the same time.
-- Run "Restart kernel and run all" before committing a notebook, so outputs
-  match the code.
-- Anything a script or notebook writes goes to `data/processed/` or
-  `figures/`, so it can always be regenerated from `data/raw/`.
+- One person per script where possible.
+- Anything a script writes goes to `data/processed/` or `figures/`, so it can
+  always be regenerated from `data/raw/`.
 - After changing an input, rerun the steps after it (see
   [Running it](#running-it)), and update the numbers in the table README.
 - Note the source and download date of every file you add to `data/raw/` in

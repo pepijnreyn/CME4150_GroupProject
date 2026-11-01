@@ -4,7 +4,7 @@
 
 `report/` is the group's Overleaf project (TU Delft report template), kept as a
 git subtree. Teammates edit it in the Overleaf editor, and their edits arrive as
-commits on the Overleaf side. `drafts/` holds section drafts and is not synced.
+commits on the Overleaf side.
 
 - Remote: `overleaf` = `https://git@git.overleaf.com/6aa142900f2a5438306bc48f`
 - Branch: **`main`** (not `master`)
@@ -52,8 +52,7 @@ so the token is never stored in the macOS Keychain.
   section goes inside the right chapter file. A new file needs an `\input` in
   `report.tex` or in its chapter.
 - Figures go in `report/figures/`. Bibliography entries go in `report/report.bib`
-  (biblatex with biber, so cite with `\cite{key}`). `drafts/references.bib` is a
-  separate file.
+  (biblatex with biber, so cite with `\cite{key}`).
 - The class is `tudelft-report.cls`. Don't edit it.
 
 ### Build before pushing
@@ -141,7 +140,7 @@ ls -d ~/Library/CloudStorage/GoogleDrive-*/"Mijn Drive/Construction Management a
 
 | File | What it is |
 |---|---|
-| `TeamChallange.pdf` | The assignment: required sections, criteria and limits. A markdown copy may be in `drafts/GUIDE_CME4150_Team_Challenge_2026-2027.md`. |
+| `TeamChallange.pdf` | The assignment: required sections, criteria and limits. |
 | `W1.2- Team Challenge Description_Gemeente Utrecht_2026.pdf` | The Municipality of Utrecht's brief |
 | `W1.1 - Introduction_020926.pdf` | Course introduction lecture |
 | `Planning_TeamChallenge_CME4150.docx` | Team planning: who writes what, and by when |
@@ -155,7 +154,7 @@ ls -d ~/Library/CloudStorage/GoogleDrive-*/"Mijn Drive/Construction Management a
 - The folder is read-only for agents. Never edit, move or delete anything in it,
   because it syncs to the user's Google Drive.
 - Which source wins: `report/` (Overleaf) first, then this repo (scripts,
-  `data/processed/`, `drafts/`, `docs/`), then this folder. Use the older drafts
+  `data/processed/`, `docs/`), then this folder. Use the older drafts
   for ideas and sources only. Never let them overwrite newer text in `report/`.
 - Don't copy course PDFs or the TNO report into the repo or into `report/`: the
   repo is on GitHub and the Overleaf project is shared. Cite them instead.
