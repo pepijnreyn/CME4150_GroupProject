@@ -125,8 +125,8 @@ surcharge pressure and the wall friction, and one groundwater level enters the
 soil weight, the water pressure and the buoyancy of the body. Both limit
 states use the same draws: for type~2 they occur together 4.4 times as often as
 if independent (Appendix~\ref{app:prob-sensitivity}). Other variables are independent for lack of data;
-Gaussian-copula tests of $\rho(K,\gamma) = -0.5$ and
-$\rho(\mathrm{MOR},E) = 0.8$ \parencite{jcss2001} change $\beta$ by at most
+tests with correlated draws, $\rho(K,\gamma) = -0.5$ and
+$\rho(\mathrm{MOR},E) = 0.8$ \parencite{jcss2001}, change $\beta$ by at most
 0.03 (Table~\ref{tab:sens-summary}), so independence is acceptable. Section~\ref{sec:fault-tree} adds the dependence between
 walls.
 
@@ -144,7 +144,7 @@ weakest input. The soft-shell range has a mean of 22.5\,mm, close to the
 The strongest test is that all 17 walls stand. Type~2 stands in 95
 to 100\,\% of the draws, but type~1 in only 33 to 98\,\%: the type-1 model is
 miscalibrated. As the model is used to rank the walls, the test is whether the ranking holds (Table~\ref{tab:robustness}). Over the eleven variants of
-Appendix~\ref{app:prob}, the Spearman rank correlation with the base ranking
+Appendix~\ref{app:prob}, the rank correlation with the base ranking
 has a median of 0.86. It is 0.96 or more for the correlations, the screen, the
 type update and restricted use, but 0.59 to 0.72 for variants that change what
 differs between walls: an uncertain soil class, no wall friction, groundwater

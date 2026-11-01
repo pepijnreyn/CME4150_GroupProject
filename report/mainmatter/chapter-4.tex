@@ -40,24 +40,23 @@ renewed in year $y$, $a$ [m] the intercept, $b$ [m/yr per year] the trend and
 $\varepsilon_y$ [m] an independent normal residual, gives $b = -55$\,m/yr per
 year (95\,\% confidence interval \textminus105 to \textminus4, $p = 0.04$,
 $R^2 = 0.37$). The hypothesis of a constant pace is rejected at the 5\,\%
-level, but only just, and the line would predict negative production after
-2027. The residuals show a break rather than a gradual decline, so the second
+level, but only just, and the line would predict negative production from
+2026. The residuals show a break rather than a gradual decline, so the second
 model has a step in 2019, $L_y = a + c\,[y \ge 2019] + \varepsilon_y$: 607\,m
 per year before, a step of \textminus482\,m per year (95\,\% confidence
 interval \textminus798 to \textminus166, $p = 0.007$), $R^2 = 0.54$, a lower
-AIC than the line (132.5 against 136.2) and normal residuals (Shapiro--Wilk
-$p = 0.43$). As 2019 was chosen after looking at the data, this $p$-value is too optimistic: a test for a break in an unknown year (sup-$F$ against 20{,}000
-permutations of the years) finds the largest break in 2019, but with
-$p = 0.07$. The step model is therefore exploratory. It makes the forecast
+AIC than the line (132.5 against 136.2) and normal residuals (Kolmogorov--Smirnov
+$p = 0.72$). As 2019 was chosen after looking at the data, this $p$-value is
+too optimistic, so the step model is exploratory. It makes the forecast
 because it describes the recent years: 125\,m per year (95\,\% confidence
 interval of the recent mean 22 to 228\,m; 2026 counts the walls completed by
 October). The hypothesis that the recent pace equals the 100\,m per year of
 the plan is not rejected ($p = 0.58$), but the interval is too wide to confirm
-it. The permutation test and the bootstrap below assume nothing about the
+it. The bootstrap below assumes nothing about the
 distribution of the yearly lengths, which matters because three years had no completed wall.
 
 To predict the backlog, the team resampled the yearly production after the
-step, 2019 to 2026 (bootstrap, 20{,}000 runs, the same draws for both orders) and renewed the 17 modelled walls one after
+step, drawing years from 2019 to 2026 at random with replacement (bootstrap, 20{,}000 runs, the same draws for both orders), and renewed the 17 modelled walls one after
 the other from 2027 (Figure~\ref{fig:app-production}). The risk that a wall carries until its renewal year $Y_i$
 follows from its best-estimate failure probability $P_{f,i}(t)$ over the
 15-year reference period (Section~\ref{sec:prob}), taken linear between 2026
@@ -67,9 +66,9 @@ E[N] = \sum_{i} \left[1 - \exp\!\left(-\sum_{t=2026}^{Y_i} h_i(t)\right)\right],
 \qquad h_i(t) = -\frac{\ln\bigl(1 - P_{f,i}(t)\bigr)}{15}, \label{eq:exposure}
 \end{equation}
 where $E[N]$ [--] is the expected number of walls that reach a limit state
-before they are renewed and $h_i(t)$ [1/yr] the yearly hazard of wall $i$,
-which assumes that failures occur at a constant rate within a reference
-period. This is an assumption: the wall type and the pile condition are a
+before they are renewed and $h_i(t)$ [1/yr] the yearly failure rate of wall $i$,
+which treats failures as a Poisson process with a constant rate within a
+reference period. This is an assumption: the wall type and the pile condition are a
 present state that is unknown, not random events in time. If a weak wall meets
 its critical load within a few years, $E[N]$ approaches the sum of the 15-year
 $P_f$, 3.2 walls, whatever the pace or order, so the effect of the pace below is
@@ -109,7 +108,7 @@ restore \parencite{gu2025up}, the recent mean pace gives completion around
 2033, but the lower bound of its interval, 22\,m per year, would push
 completion beyond 2050. The bootstrap assumes that the 17 walls are next in
 line. If the 169\,m of other walls still to do come first, the 17 are renewed
-around 2033 (2030--2038) and $E[N]$ rises to 1.29; leaving rak~3 to 6, with many
+around 2033 (2030--2038) and $E[N]$ rises to 1.30; leaving rak~3 to 6, with many
 cellar owners, until last as well gives 1.24, slightly less, because ordering
 by $\beta$ alone ignores the length of a wall: renewing a long wall first delays
 many short ones. These predictions rest on few data: twelve years,
