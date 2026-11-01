@@ -30,9 +30,12 @@ Range of M: from the wall being type 2 (low) to type 1 (high), the largest
 uncertainty in the model (report section 1.3), with the same exposure.
 
 The median wall (median beta) is Oude Gracht Rak 09 WZ. For the 17 walls
-together, a Monte Carlo links the M events of the walls with a Gaussian copula
-(RHO_WALLS, an assumption) and draws S3 and I1 once for all walls and half of
-I2 once for all walls.
+together, a Monte Carlo draws the M events of the walls from correlated standard
+normals with one common part (correlation RHO_WALLS, an assumption) and draws S3
+and I1 once for all walls and half of I2 once for all walls.
+
+Fussell-Vesely importance of an event: the share of the top event probability
+that comes from the minimal cut sets containing the event (lecture of 7 October).
 
 Decision, per alternative, with costs discounted at RATE (Werkgroep
 discontovoet 2025: 2.8 %): E[C] = c + P_f C_f DF, with DF the mean discount
@@ -40,7 +43,8 @@ factor over the exposure; CE = c + R ln(1 - P_f + P_f exp(C_f DF / R));
 pessimistic: every event at its upper bound, and a measure lowers an event by
 the same factor as in the base case. Two alternatives use the failure model
 directly (walmuur_model_checks.csv): A6 restricts use until renewal, and A7
-first measures the displacement of the wall (preposterior): if it is below
+first measures the displacement of the wall (a decision with imperfect
+information): if it is below
 5 mm the wall stays in the programme as it is, otherwise use is restricted.
 
 The script also prints the cost at which each measure would match A0, the choice
@@ -52,6 +56,7 @@ Run: python3 scripts/fault_tree.py
 """
 
 import csv
+from itertools import combinations
 from pathlib import Path
 
 import numpy as np
@@ -82,7 +87,7 @@ RATE = 0.028                    # discount rate [1/yr]
 C_F = 1500.0                    # failure cost [k EUR]
 C_RENEW = 1300.0                # renewal of the median wall (36 m) [k EUR]
 R = 500.0                       # risk tolerance [k EUR]
-RHO_WALLS = 0.084               # copula correlation between the M events of the walls (assumption)
+RHO_WALLS = 0.1                 # correlation between the M events of the walls (assumption)
 COMMON = {"S3": 1.0, "I1": 1.0, "I2": 0.5}   # share of the probability drawn once for all walls
 N_MC = 400_000
 SEED = 1
@@ -127,6 +132,21 @@ def tree(p):
     not_recognised = p_or(p["S1"], p["S2"], p["S3"], p["I1"], p["I2"]) * p["D"]
     not_repaired = p_or(not_recognised, p["I3"], p_or(p["L1"], p["L2"], p["L3"], p["L4"]))
     return p_or(load, p["M"] * not_repaired), load, not_repaired
+
+
+# Minimal cut sets of the tree: each load event alone, M with I3 or one of L1-L4, and
+# M with D and one of S1-S3, I1, I2
+CUT_SETS = ([{e} for e in LOAD] + [{"M", e} for e in ("I3", "L1", "L2", "L3", "L4")]
+            + [{"M", "D", e} for e in ("S1", "S2", "S3", "I1", "I2")])
+
+
+def fussell_vesely(p, event):
+    """Share of the top event probability from the minimal cut sets that contain the event:
+    P(union of those cut sets) / P(top), with the union by inclusion-exclusion."""
+    sets = [c for c in CUT_SETS if event in c]
+    union = sum((-1)**(k + 1) * np.prod([p[e] for e in set().union(*combo)])
+                for k in range(1, len(sets) + 1) for combo in combinations(sets, k))
+    return union / tree(p)[0]
 
 
 def events(level, T, M, change=None):
@@ -267,7 +287,7 @@ def main() -> dict:
           f" {m_part.sum():.2f}; other loads {per_wall.sum() - m_part.sum():.2f});"
           f" per year {per_wall.sum() / np.mean([t for (t, _, _) in walls.values()]):.2f}")
     print("Fussell-Vesely: " + ", ".join(
-        f"{e} {1 - tree(base | {e: 0.0})[0] / top:.2f}" for e in ["M"] + list(EVENTS) if base[e] > 0))
+        f"{e} {fussell_vesely(base, e):.2f}" for e in ["M"] + list(EVENTS) if base[e] > 0))
     swings = {e: tree(base | {e: high[e]})[0] - tree(base | {e: low[e]})[0] for e in ["M"] + list(EVENTS)}
     print("swing low->high: " + ", ".join(f"{e} {s:.4f}" for e, s in
                                           sorted(swings.items(), key=lambda x: -x[1])[:7]))

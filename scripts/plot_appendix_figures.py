@@ -371,7 +371,9 @@ def werf_fit():
     ax.set_xlabel("Normal quantile")
     ax.set_ylabel("AHN point minus werf median [m]")
     ax.legend(frameon=False, fontsize=6.3, loc="upper left")
-    ax.text(0.98, 0.04, f"{len(r)} points, {len(se)} walls\nSD {r.std(ddof=1):.3f} m; Shapiro-Wilk p < 0.001",
+    ks = stats.kstest(r / r.std(ddof=1), "norm").pvalue   # Kolmogorov-Smirnov against a normal
+    ks_text = "< 0.001" if ks < 0.001 else f"= {ks:.3f}"
+    ax.text(0.98, 0.04, f"{len(r)} points, {len(se)} walls\nSD {r.std(ddof=1):.3f} m; Kolmogorov-Smirnov p {ks_text}",
             transform=ax.transAxes, ha="right", fontsize=6.3, color=INK_2)
     bx.hist(se, bins=np.arange(0, se.max() + 0.02, 0.02), color=GREY)
     bx.axvline(0.05, color=RED, lw=1.0)

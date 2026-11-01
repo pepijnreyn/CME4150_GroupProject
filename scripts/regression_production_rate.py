@@ -11,8 +11,9 @@ Report section 4.1. Uses the renewal year of every renewed walmuur
    one year. Recent pace: mean since 2019 with a 95% t-interval, and a t-test
    against the 100 m/yr of the programme plan. The forecast uses the step model:
    its level after 2019 with its residuals, by resampling the years 2019-2026.
-   As 2019 was chosen after looking at the data, a sup-F test checks for a break
-   at an unknown year, with a permutation p-value.
+   A Kolmogorov-Smirnov test compares the residuals with a normal distribution.
+   As 2019 was chosen after looking at the data, the p-value of the step is too
+   optimistic, so the step model is exploratory.
 3. Backlog: the 17 modelled walls (walmuur_failure_probability.csv) are renewed
    one after the other from 2027. The yearly production is drawn from the years
    2019-2026 (bootstrap), or fixed at 100 m/yr, or drawn from 2015-2018. Each
@@ -67,7 +68,6 @@ PF_MAX = 0.95
 REMAINING = 780.0               # [m] walmuur still to restore (gu2025up)
 LAST_RAKS = (3, 4, 5, 6)        # raks with many cellar owners, possibly done last
 N_BOOT = 20_000
-N_PERM = 20_000                 # permutations of the test for a break at an unknown year
 UNIT_COST = 35_000.0            # [EUR/m] renewal cost (programme plan, report section 3.2)
 RATE = 0.028                    # discount rate [1/yr]
 C_F_PACE = 1.5e6                # failure cost per wall [EUR] (report section 3.2)
@@ -150,24 +150,8 @@ def main() -> None:
           f" {coef[1] + t95 * se_c:.0f}, p = {2 * stats.t.sf(abs(coef[1] / se_c), len(x) - 2):.3f}),"
           f" R2 {r2:.2f}, AIC {aic(resid @ resid):.1f} vs straight line {aic(lin_rss):.1f};"
           f" one-year prediction {coef.sum():.0f} m (95% PI {max(coef.sum() - half, 0):.0f} to {coef.sum() + half:.0f});"
-          f" Shapiro-Wilk on residuals p = {stats.shapiro(resid).pvalue:.2f}")
-    # The break year 2019 was chosen after looking at the data. Test for a break at an
-    # unknown year (sup-F, Andrews 1993): the largest F of a step model over all break
-    # years with at least two years on each side, against its distribution when the yearly
-    # values are permuted (no break; no assumption about the distribution of the values,
-    # so the years without a completed wall do not matter). Own seed: the bootstrap below
-    # keeps its draws.
-    def sup_f(y):
-        rss0 = np.sum((y - y.mean())**2)
-        f = {k: (rss0 - rss) / (rss / (len(y) - 2)) for k in range(2, len(y) - 1)
-             for rss in [np.sum((y[:k] - y[:k].mean())**2) + np.sum((y[k:] - y[k:].mean())**2)]}
-        k = max(f, key=f.get)
-        return f[k], k
-    f_obs, k_obs = sup_f(per_year)
-    rng_perm = np.random.default_rng(SEED + 1)
-    f_perm = np.array([sup_f(rng_perm.permutation(per_year))[0] for _ in range(N_PERM)])
-    print(f"Break at an unknown year: sup F {f_obs:.1f} at {list(YEARS)[k_obs]}, permutation p ="
-          f" {(f_perm >= f_obs).mean():.3f} ({N_PERM} permutations)")
+          f" Kolmogorov-Smirnov test of the residuals against a normal distribution"
+          f" p = {stats.kstest(resid / np.sqrt(s2), 'norm').pvalue:.2f}")
     recent = per_year[[list(YEARS).index(y) for y in RECENT]]
     fast = per_year[[list(YEARS).index(y) for y in FAST]]
     m, se = recent.mean(), recent.std(ddof=1) / np.sqrt(len(recent))
