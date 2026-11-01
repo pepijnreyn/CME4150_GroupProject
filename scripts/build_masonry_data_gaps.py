@@ -1,7 +1,7 @@
 """Per-wall data gaps for the walls that get a failure probability.
 
 Takes the walls that end in "red or orange" in the screening of
-plot_screening_sankey.py (in use, past design life, masonry) and lists per
+screening.py (in use, past design life, masonry) and lists per
 wall which inputs of the strength models are in the data:
 
   input            source                                    counted missing when
@@ -30,7 +30,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from plot_screening_sankey import load, register, to_num
+from screening import load, register, to_num
 
 ROOT = Path(__file__).resolve().parents[1]
 GROUNDWATER = ROOT / "data" / "processed" / "objects_groundwater.csv"

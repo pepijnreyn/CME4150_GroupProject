@@ -46,12 +46,6 @@ def soil_force(K, gamma_soil, H, d_w=np.inf):
     return K * (gamma_soil * H**2 - GAMMA_W * h_w**2) / 2
 
 
-def soil_stress_mean(soil_type, H, d_w=np.inf):
-    """S for a soil type in SOIL_TYPES, using the mean K and gamma_s."""
-    soil = SOIL_TYPES[soil_type]
-    return soil_stress(soil["K_mean"], soil["gamma_mean"], H, d_w)
-
-
 def sample_soil(soil_type, n, rng):
     """Draw n values of K (lognormal) and gamma_s (normal) for a soil type."""
     soil = SOIL_TYPES[soil_type]
@@ -60,16 +54,3 @@ def sample_soil(soil_type, n, rng):
     K = rng.lognormal(mu, sigma, n)
     gamma = rng.normal(soil["gamma_mean"], soil["gamma_cov"] * soil["gamma_mean"], n)
     return K, gamma
-
-
-if __name__ == "__main__":
-    H = 1.21  # retained soil height, werf to canal bed [m]
-    rng = np.random.default_rng(1)
-    for soil_type in SOIL_TYPES:
-        K, gamma = sample_soil(soil_type, 100_000, rng)
-        S = soil_stress(K, gamma, H)
-        print(f"{soil_type:15s} mean values: S = {soil_stress_mean(soil_type, H):6.2f}"
-              f"   sampled: mean {S.mean():6.2f}, CoV {S.std() / S.mean():.3f}")
-
-
-

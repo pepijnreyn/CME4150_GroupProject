@@ -32,7 +32,6 @@ Run: python scripts/build_walmuur_traffic.py, after build_walmuur_height.py
 """
 
 import json
-import math
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -42,7 +41,7 @@ import pandas as pd
 
 from build_walmuur_height import (AHN_CACHE, M_PER_DEG_LAT, M_PER_DEG_LON, N_PLACES,
                                   places_along, walmuur_lines, werf_side)
-from plot_screening_sankey import load, walmuren
+from screening import load, walmuren
 
 ROOT = Path(__file__).resolve().parents[1]
 BGT_CACHE = ROOT / "data" / "raw" / "BGT" / "walmuur_wegdeel.geojson"

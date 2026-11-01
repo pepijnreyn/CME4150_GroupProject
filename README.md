@@ -49,7 +49,7 @@ The municipal asset register has 51 named walmuren.
 - **Foundation** (`scripts/build_walmuur_foundation.py`): from the city's
   progress reports, 32 of the 51 are already renewed on steel sheet or tube
   piles. The timber model does not describe them, so they are not computed.
-- **Screening** (`scripts/plot_screening_sankey.py`): a wall is past its design
+- **Screening** (`scripts/screening.py`): a wall is past its design
   life when `Eindjaar` (= `Aanlegjaar` + 80 years) is before 2026. Past design
   life and masonry puts it in red/orange: 18 of the 51. The register's
   `Aanlegjaar` is often not updated after a renewal, so a renewed wall counts
@@ -171,7 +171,7 @@ Run of 30 October 2026, updated with proven strength:
   rises less (0.20 → 0.34, before the fix 0.60) and the best estimate drops.
 - No consequence class is chosen. β is held against all three rejection
   levels of NEN 8700 Table B.2: 1.8 (CC1), 2.5 (CC2) and 3.3 (CC3).
-- With only the masonry block (`M_R = γ_m H t² / 2`, also in
+- With only the masonry block (`M_R = γ_m H t² / 2`, an earlier version of
   `WallResistance.py`) Pf is about 1 for every wall. That is why the model uses
   the real cross-sections with their floor.
 - `SensitivityDependence.py` reruns the model with one change at a time.
@@ -226,7 +226,7 @@ Each script reads the output of the one before. All outputs go to
 
 The other analysis scripts (model checks, tornado, ranking robustness,
 regression, fault tree, consequence score) are listed in the appendix "Source
-code" of the report. `scripts/plot_screening_sankey.py` holds the screening
+code" of the report. `scripts/screening.py` holds the screening
 that most scripts import.
 
 Figures in the report:

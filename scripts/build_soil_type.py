@@ -53,7 +53,7 @@ import pandas as pd
 
 from build_masonry_data_gaps import H_MAX, H_MIN, walls as masonry_walls
 from build_walmuur_height import BED_AT_WALL_NAP
-from plot_screening_sankey import load, to_num, walmuren
+from screening import load, to_num, walmuren
 
 ROOT = Path(__file__).resolve().parents[1]
 DELIVERY = ROOT / "data" / "raw" / "BRO_GeotechnischBooronderzoek"

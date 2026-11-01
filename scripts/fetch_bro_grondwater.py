@@ -8,7 +8,6 @@ Collections, and how they hang together:
     gm_gmw                 monitoring well: location, ground level (m NAP), owner
       gm_gmw_monitoringtube  one tube per well: screen top/bottom (m NAP)
         gm_gld               head time series: metadata + CSV download URLs
-        gm_gar               water quality sample
 
 Writes GeoJSON per collection to data/raw/APIDatacollection/. With --series it
 also downloads the head time series themselves (one CSV per GLD).
@@ -34,7 +33,7 @@ BASE = ("https://api.pdok.nl/tno/bro-grondwatermonitoring-in-samenhang-"
 # and the CRS the areaal file is already in).
 UTRECHT_BBOX = (4.93, 52.02, 5.25, 52.16)
 
-COLLECTIONS = ("gm_gmw", "gm_gmw_monitoringtube", "gm_gld", "gm_gar")
+COLLECTIONS = ("gm_gmw", "gm_gmw_monitoringtube", "gm_gld")
 
 OUT_DIR = Path(__file__).resolve().parents[1] / "data" / "raw" / "APIDatacollection"
 

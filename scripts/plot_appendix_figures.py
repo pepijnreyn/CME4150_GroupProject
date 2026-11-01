@@ -3,19 +3,16 @@
   app_cross_sections.png   the two walmuur types with the loads and the pivot (App. B.2)
   app_proven_strength.png  draws of the median wall: rejected by the evidence, failing,
                            surviving (App. B.4)
-  app_tornado.png          one-at-a-time sensitivity, median over the walls (App. B.8)
-  app_production.png       renewed length per year with the trend, and the year all 17
-                           modelled walls are renewed (App. B, Section 4.1)
   fig_production_step.png  renewed length per year with the straight line, the step model
                            and the plan (Section 4.1)
   app_fault_tree.png       failing walls among the 17 and E[C] against C_f (Sections 3.1, 3.2)
-  app_beta_variants.png    beta per wall in the base model and the model checks (App. B.10)
   app_werf_fit.png         AHN werf points against a normal distribution, and the error of
                            the werf median per wall against the model's 0.05 m (App. B.9)
 
-Reads the outputs of FailureProbability.py, SensitivityTornado.py, ModelChecks.py,
-SensitivityDependence.py and regression_production_rate.py, and reruns the median
-wall (FailureProbability.simulate) and the fault tree (fault_tree.main).
+Reads walmuur_height.csv and the AHN points, and reruns the median wall
+(FailureProbability.simulate), the renewal data of regression_production_rate.py
+and the fault tree (fault_tree.main, on the outputs of FailureProbability.py and
+ModelChecks.py).
 
 Writes figures/app_*.png. Run: MPLBACKEND=Agg python3 scripts/plot_appendix_figures.py
 """
@@ -37,7 +34,7 @@ import fault_tree as FT                                  # noqa: E402
 import regression_production_rate as RP                  # noqa: E402
 import FailureProbability as FP                          # noqa: E402
 from WallResistance import SECTIONS                      # noqa: E402
-from plot_screening_sankey import GREEN, INK, INK_2, MUTED, ORANGE, RED  # noqa: E402
+from screening import GREEN, INK, INK_2, MUTED, ORANGE, RED  # noqa: E402
 
 PROCESSED = ROOT / "data" / "processed"
 FIGURES = ROOT / "figures"
@@ -167,94 +164,6 @@ def proven_strength():
     save(fig, "app_proven_strength.png")
 
 
-TORNADO_LABELS = {"K": "Earth pressure coefficient K", "a": "Distance a of the surcharge",
-                  "shell": "Soft shell $s_0$", "D0": "Pile diameter $D_0$",
-                  "theta_R": "Model factor $\\theta_R$", "groundwater": "Groundwater level",
-                  "dz": "Foundation level", "q": "Surcharge q", "s": "Pile spacing s",
-                  "MOR": "Bending strength MOR", "theta_M": "Model factor $\\theta_M$",
-                  "gamma_m": "Unit weight of masonry", "k": "Subgrade modulus k",
-                  "E": "Modulus of elasticity E", "gamma_s": "Unit weight of soil",
-                  "gamma_c": "Unit weight tamped concrete", "rate": "Shell growth r (2041)",
-                  "werf_m": "Werf level, measured", "werf_a": "Werf level, assumed (KNG 005-007)"}
-
-
-def tornado():
-    t = pd.read_csv(PROCESSED / "walmuur_tornado.csv")
-    assumed = set(pd.read_csv(PROCESSED / "walmuur_failure_probability.csv")
-                  .query("werf_assumed == True")["Nummer"])
-    t.loc[(t["input"] == "werf") & t["Nummer"].isin(assumed), "input"] = "werf_a"
-    t.loc[t["input"] == "werf", "input"] = "werf_m"
-    rows = []
-    for inp, g in t[t["level"].isin(["low", "high"])].groupby("input"):
-        year = "2041" if inp == "rate" else "2026"
-        lo, hi = g[g["level"] == "low"].set_index("Nummer"), g[g["level"] == "high"].set_index("Nummer")
-        r = {"input": inp}
-        for col, key in ((f"beta_type1_{year}", "Type 1"), (f"beta_type2_{year}", "Type 2"),
-                         (f"beta_{year}", "Best estimate")):
-            r[key] = (hi[col] - lo[col]).median()
-        rows.append(r)
-    d = pd.DataFrame(rows).set_index("input")
-    d = d.loc[d[["Type 1", "Type 2"]].abs().max(axis=1).sort_values().index]
-    fig, ax = plt.subplots(figsize=(6.4, 3.6))
-    y = np.arange(len(d))
-    for k, (col, colour) in enumerate((("Type 1", RED), ("Type 2", BLUE), ("Best estimate", INK_2))):
-        ax.barh(y + (k - 1) * 0.27, d[col], height=0.26, color=colour, label=col)
-    ax.set_yticks(y, [TORNADO_LABELS.get(i, i) for i in d.index])
-    ax.axvline(0, color=INK, lw=0.6)
-    ax.set_xlabel("Change in $\\beta$ (updated, 2026) from the 5th to the 95th percentile of the input,"
-                  " median over the 17 walls")
-    ax.legend(frameon=False, loc="lower right")
-    ax.grid(axis="x", color="#e8e7e1", lw=0.5)
-    ax.text(0.01, 0.03, "Not shown: wall type 1 to type 2 +2.06 (1.36 to 2.41);\nsoil class, lowest to"
-            " highest, 0.49 (best estimate)", transform=ax.transAxes, ha="left", fontsize=6.5, color=INK_2)
-    fig.tight_layout()
-    save(fig, "app_tornado.png")
-
-
-def production():
-    per_year = RP.renewed_per_year(RP.lengths())
-    years = np.array(list(RP.YEARS))
-    fit = stats.linregress(years, per_year)
-    recent = per_year[[list(RP.YEARS).index(y) for y in RP.RECENT]]
-    fast = per_year[[list(RP.YEARS).index(y) for y in RP.FAST]]
-    walls = RP.modelled_walls()
-    cumhaz = RP.cumulative_hazard(walls)
-    order = sorted(range(len(walls)), key=lambda i: walls[i][2026], reverse=True)
-    n_years = RP.HORIZON - RP.START + 1
-    rng = np.random.default_rng(RP.SEED)
-    sims = {}
-    for name, sample, colour in (("Recent pace, 2019-2026", recent, ORANGE),
-                                 ("Fast pace, 2015-2018", fast, GREEN)):
-        out = np.array([RP.simulate(walls, cumhaz, order, rng.choice(sample, n_years))
-                        for _ in range(RP.N_BOOT)])
-        sims[name] = (out, colour)
-
-    fig, (ax, bx) = plt.subplots(1, 2, figsize=(6.4, 2.6), gridspec_kw={"width_ratios": [1.25, 1]})
-    ax.bar(years, per_year, color=GREY, width=0.75, label="Renewed length")
-    ax.plot(years, fit.intercept + fit.slope * years, color=INK, lw=0.9,
-            label=f"Trend {fit.slope:.0f} m/yr per yr (p = {fit.pvalue:.2f})")
-    ax.hlines(recent.mean(), RP.RECENT[0] - 0.4, RP.RECENT[-1] + 0.4, color=ORANGE, lw=1.6,
-              label=f"Recent mean {recent.mean():.0f} m/yr")
-    ax.hlines(fast.mean(), RP.FAST[0] - 0.4, RP.FAST[-1] + 0.4, color=GREEN, lw=1.6,
-              label=f"2015-2018 mean {fast.mean():.0f} m/yr")
-    ax.axhline(RP.PLAN_RATE, color=MUTED, lw=0.7, ls="--", label="Plan 100 m/yr")
-    ax.set_ylabel("Walmuur renewed [m]")
-    ax.set_xticks(years[::2])
-    ax.legend(frameon=False, fontsize=6.2, loc="upper right")
-    for name, (out, colour) in sims.items():
-        done, en = out[:, 0], out[:, 1]
-        vals, counts = np.unique(done, return_counts=True)
-        bx.bar(vals + (0.2 if "Fast" in name else -0.2), counts / len(done), width=0.4, color=colour,
-               label=f"{name}: E[N] = {en.mean():.2f}")
-    bx.set_xlim(2026, 2041)
-    bx.set_xticks(range(2027, 2041, 3))
-    bx.set_xlabel("Year all 17 modelled walls are renewed")
-    bx.set_ylabel("Share of bootstrap runs")
-    bx.legend(frameon=False, fontsize=6.2, loc="upper right")
-    fig.tight_layout()
-    save(fig, "app_production.png")
-
-
 def production_step():
     """Renewed length per year with the straight line, the step model and the plan (report 4.1)."""
     per_year = RP.renewed_per_year(RP.lengths())
@@ -313,41 +222,6 @@ def fault_tree_results():
     save(fig, "app_fault_tree.png")
 
 
-def beta_variants():
-    checks = pd.read_csv(PROCESSED / "walmuur_model_checks.csv").set_index("Nummer")
-    sens = pd.read_csv(PROCESSED / "walmuur_sensitivity.csv").set_index("Nummer")
-    res = pd.read_csv(PROCESSED / "walmuur_failure_probability.csv")
-    res = res[res["type"].eq("unknown")].pivot_table(index="Nummer", columns="year", values="beta_updated")
-    d = checks[["Naam", "beta_base"]].join(res[2041].rename("y2041"))
-    variants = {"2041": (d["y2041"], MUTED, "o"),
-                "Survived service load": (checks["beta_service_load"], GREEN, "^"),
-                "No timber screen": (checks["beta_screen_failed"], RED, "v"),
-                "No wall friction": (checks["beta_no_friction"], ORANGE, "<"),
-                "Groundwater up to werf": (sens["beta_groundwater_werf"], BLUE, "s"),
-                "Restricted use (A6)": (checks["beta_restrict_use"], INK_2, ">"),
-                "Type 1 recalibrated": (checks["beta_calibrated"], "#7c3aed", "D")}
-    d = d.sort_values("beta_base")
-    y = np.arange(len(d))
-    fig, ax = plt.subplots(figsize=(6.4, 4.1))
-    lo = pd.concat([v[0] for v in variants.values()] + [d["beta_base"]], axis=1).loc[d.index].min(axis=1)
-    hi = pd.concat([v[0] for v in variants.values()] + [d["beta_base"]], axis=1).loc[d.index].max(axis=1)
-    ax.hlines(y, lo, hi, color="#e2e1da", lw=3, zorder=0)
-    for label, (v, colour, marker) in variants.items():
-        ax.scatter(v.loc[d.index], y, s=14, color=colour, marker=marker, label=label, zorder=2,
-                   lw=0)
-    ax.scatter(d["beta_base"], y, s=30, color=INK, marker="o", label="Base model, 2026", zorder=3)
-    for b, lab in ((1.8, "NEN 8700 rejection, CC1b"), (2.5, "CC2")):
-        ax.axvline(b, color=MUTED, lw=0.6, ls="--")
-        ax.text(b + 0.03, len(d) - 0.4, lab, fontsize=6, color=MUTED)
-    names = d["Naam"].str.replace("Oude Gracht - Rak ", "OG ").str.replace("Kromme Nieuwe Gracht ", "KNG ")
-    ax.set_yticks(y, names.str.replace(" (thv nr 018)", "", regex=False))
-    ax.set_xlabel("Best-estimate $\\beta$ (updated)")
-    ax.legend(frameon=False, fontsize=6.2, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=4)
-    ax.grid(axis="x", color="#e8e7e1", lw=0.5)
-    fig.tight_layout()
-    save(fig, "app_beta_variants.png")
-
-
 def werf_fit():
     import build_walmuur_height as BH
     pts = pd.read_csv(ROOT / "data" / "raw" / "AHN" / "walmuur_ahn_points.csv")
@@ -390,11 +264,8 @@ def main() -> None:
     werf_fit()
     cross_sections()
     proven_strength()
-    tornado()
-    production()
     production_step()
     fault_tree_results()
-    beta_variants()
 
 
 if __name__ == "__main__":

@@ -46,7 +46,7 @@ These columns are copied from `Output areaal GU TU Delft 26-08.json`.
 
 ## Screening
 
-This column is computed in `scripts/plot_screening_sankey.py`. The design
+This column is computed in `scripts/screening.py`. The design
 life is the register's own: `Eindjaar` − `Aanlegjaar` is 80 years for all 51
 walmuren. For the 32 walls renewed on steel (see Foundation) it runs from the
 renewal year instead (`with_renewals`), because the register keeps the year of

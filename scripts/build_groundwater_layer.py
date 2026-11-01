@@ -5,13 +5,12 @@ Two steps, both cheap enough to rerun:
   1. Per head series, compute the statistics that matter for a quay wall on
      timber piles: GLG (the Dutch mean lowest groundwater level), GHG, the
      annual swing, and the trend. GLG is the one that decides whether pile
-     heads dry out, so it is what the map colours by.
+     heads dry out.
   2. Interpolate those onto the retaining structures in the areaal file with
      inverse distance weighting, and record how far the nearest well was, so a
      reader can tell an interpolated value from a supported one.
 
-Writes data/processed/wells_groundwater.csv, objects_groundwater.csv, and
-groundwater_layer.json (the compact file the Utrecht Areaal artifact loads).
+Writes data/processed/objects_groundwater.csv.
 """
 
 import json
@@ -156,8 +155,7 @@ def build_wells():
     # the water table drops that far below ground in a dry summer.
     df["glg_depth_m"] = df["ground_level_m_nap"] - df["glg"]
     PROC.mkdir(parents=True, exist_ok=True)
-    df.to_csv(PROC / "wells_groundwater.csv", index=False)
-    print(f"  {len(df)} wells with a usable GxG -> wells_groundwater.csv")
+    print(f"  {len(df)} wells with a usable GxG")
     return df
 
 
@@ -227,41 +225,8 @@ def build_objects(wells):
     return df
 
 
-def write_layer(wells, objects):
-    """Compact JSON for the artifact: one row per object, plus the wells."""
-    layer = {
-        "generated_from": "BRO grondwatermonitoring (PDOK OGC API), CC0",
-        "statistic": "GLG, mean lowest groundwater level; glg in m NAP, dp in m below ground",
-        "idw": {"power": IDW_POWER, "neighbours": IDW_NEIGHBOURS},
-        "objects": [
-            {"n": r.Nummer,
-             "glg": round(r.glg_m_nap, 2),
-             "dp": round(r.glg_depth_below_ground_m, 2),
-             "sw": round(r.swing_m, 2),
-             "tr": None if pd.isna(r.trend_mm_per_year) else round(r.trend_mm_per_year, 1),
-             "d": round(r.nearest_well_m)}
-            for r in objects.itertuples()
-        ],
-        "wells": [
-            {"id": r.gld_bro_id,
-             "lon": round(r.lon, 6), "lat": round(r.lat, 6),
-             "glg": round(r.glg, 2),
-             "dp": round(r.glg_depth_m, 2),
-             "sw": round(r.swing, 2),
-             "yr": int(r.n_years),
-             "dep": round(r.screen_depth_below_ground_m, 1),
-             "last": str(r.last_date)[:10]}
-            for r in wells.itertuples()
-        ],
-    }
-    path = PROC / "groundwater_layer.json"
-    path.write_text(json.dumps(layer, separators=(",", ":")))
-    print(f"  {path.name}: {path.stat().st_size / 1024:.0f} KB")
-
-
 if __name__ == "__main__":
     print("series statistics:")
     wells = build_wells()
     print("interpolation onto assets:")
-    objects = build_objects(wells)
-    write_layer(wells, objects)
+    build_objects(wells)

@@ -60,7 +60,7 @@ from scipy.stats import norm
 from PileStrength import (D0_COV, D0_MEAN, E_COV, E_MEAN, K_SUBGRADE, MOR_COV, MOR_MEAN,
                           RATE, SHELL_NOW, SPACING, THETA_M_COV, head_moment, pile_stress,
                           remaining_diameter, sample_piles)
-from SoilForce import SOIL_TYPES, sample_soil, soil_force
+from SoilForce import sample_soil, soil_force
 from TotalStress import total_stress
 from TraficLoad import A_MAX, A_MIN, Q_COV, Q_MEAN, sample_surcharge, surcharge_force
 from WallResistance import (GAMMA_C_COV, GAMMA_C_MEAN, GAMMA_M_COV, GAMMA_M_MEAN, GAMMA_RC,
@@ -70,7 +70,7 @@ from WaterLoad import CANAL_NAP, GROUNDWATER_NAP, water_force
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
-from plot_screening_sankey import load, walmuren, with_renewals  # noqa: E402
+from screening import load, walmuren, with_renewals  # noqa: E402
 
 PROCESSED = ROOT / "data" / "processed"
 TNO_TYPE = ROOT / "data" / "raw" / "walmuur_tno2009_type.csv"

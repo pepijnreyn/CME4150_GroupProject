@@ -35,7 +35,7 @@ import pandas as pd
 from scipy.stats import norm
 
 from build_walmuur_consequence import lines
-from plot_screening_sankey import GREEN, INK, INK_2, MUTED, ORANGE, RED, load, walmuren
+from screening import GREEN, INK, INK_2, MUTED, ORANGE, RED, load, walmuren
 
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "data" / "processed" / "walmuur_failure_probability.csv"

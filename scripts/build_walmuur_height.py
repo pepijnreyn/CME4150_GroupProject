@@ -35,7 +35,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from plot_screening_sankey import AREAAL, load, walmuren
+from screening import AREAAL, load, walmuren
 
 ROOT = Path(__file__).resolve().parents[1]
 AHN_CACHE = ROOT / "data" / "raw" / "AHN" / "walmuur_ahn_points.csv"

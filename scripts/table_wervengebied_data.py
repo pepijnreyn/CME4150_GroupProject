@@ -1,6 +1,6 @@
 """Markdown table of the walmuren of the Wervengebied and the data per wall.
 
-One row per walmuur: the 51 of plot_screening_sankey.walmuren(). One column
+One row per walmuur: the 51 of screening.walmuren(). One column
 per input the strength models need per wall, filled with the value from the data, or a dash if no
 data set has it. The last row counts the walls with a value per column.
 
@@ -27,7 +27,7 @@ from build_masonry_data_gaps import DEFAULT_YEAR, ORIGINAL_BEFORE, T_MAX, ground
 from build_soil_type import WHARF_LEVEL_NAP
 from build_walmuur_height import BED_AT_WALL_NAP, NO_WERF_ABOVE
 from build_walmuur_traffic import MAX_A_M, SIGN_RADIUS_M
-from plot_screening_sankey import CANALS, YEAR_FIXES, load, to_num, walmuren, with_renewals
+from screening import CANALS, YEAR_FIXES, load, to_num, walmuren, with_renewals
 
 ROOT = Path(__file__).resolve().parents[1]
 HEIGHT = ROOT / "data" / "processed" / "walmuur_height.csv"

@@ -30,7 +30,7 @@ import numpy as np
 import pandas as pd
 
 from build_walmuur_height import M_PER_DEG_LAT, M_PER_DEG_LON
-from plot_screening_sankey import load, walmuren
+from screening import load, walmuren
 
 ROOT = Path(__file__).resolve().parents[1]
 OSM = ROOT / "data" / "raw" / "osm_hospitality_binnenstad.json"

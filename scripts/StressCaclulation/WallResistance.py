@@ -1,31 +1,18 @@
 """Resistance of a masonry wall against overturning.
 
-Two models:
+The model uses the real cross-sections of the low walmuren on their old timber
+foundation (SECTIONS below). The body that tips is the wall, its floor and the
+soil on the floor, about the front pile row at the underside of the floor. Its
+weight comes from the areas of the parts in the drawing; below the water each
+part weighs gamma - gamma_w. The soil behind the body also drags it down along
+its back (wall friction, delta = 2/3 phi), which adds
 
-1. The masonry block. The wall is a rigid block of masonry, height H and
-   thickness t, that tips over its toe (the front edge of the base, on the
-   canal side). Its own weight W = gamma_m H t acts at t/2 from the toe, so
+    M_delta = tan(delta) F_h (x_back - x_front)     [kNm/m]
 
-       M_R = gamma_m H t^2 / 2                     [kNm/m]
+with F_h the horizontal force of the soil and the surcharge.
 
-   Only the masonry resists; the floor, the soil on it and the piles are left
-   out. For a 0.40-0.45 m walmuur this is far below the load.
-
-2. The real cross-sections of the low walmuren on their old timber foundation
-   (SECTIONS below). The body that tips is the wall, its floor and the soil on
-   the floor, about the front pile row at the underside of the floor. Its
-   weight comes from the areas of the parts in the drawing; below the water
-   each part weighs gamma - gamma_w. The soil behind the body also drags it
-   down along its back (wall friction, delta = 2/3 phi), which adds
-
-       M_delta = tan(delta) F_h (x_back - x_front)     [kNm/m]
-
-   with F_h the horizontal force of the soil and the surcharge.
-
-The wall overturns when M_R < S_total (TotalStress.py), both about the same
-level: the base of the block, or the underside of the floor.
-
-Run: python3 scripts/StressCaclulation/WallResistance.py
+The wall overturns when M_R < S_total (TotalStress.py), both about the
+underside of the floor.
 """
 
 import numpy as np
@@ -97,23 +84,14 @@ SECTIONS = {
 MATERIALS = ["masonry", "concrete", "rc", "timber", "soil"]
 
 
-def resistance_moment(gamma_m, H, t):
-    """
-    gamma_m : unit weight of the masonry [kN/m3]
-    H       : wall height [m]
-    t       : wall thickness [m]
-    """
-    return gamma_m * H * t**2 / 2
-
-
-def resistance_moment_mean(H, gamma_m_mean=GAMMA_M_MEAN, t_min=T_MIN, t_max=T_MAX):
-    """M_R using the mean gamma_m and the mean t."""
-    return resistance_moment(gamma_m_mean, H, (t_min + t_max) / 2)
-
-
 def sample_wall(n, rng, gamma_m_mean=GAMMA_M_MEAN, gamma_m_cov=GAMMA_M_COV,
                 t_min=T_MIN, t_max=T_MAX):
-    """Draw n values of gamma_m (normal) and t (uniform)."""
+    """Draw n values of gamma_m (normal) and t (uniform).
+
+    The model uses only gamma_m. t is the thickness of an earlier masonry-block
+    model (M_R = gamma_m H t^2 / 2); it is still drawn so that the random draws,
+    and so the results in the report, stay the same.
+    """
     gamma_m = rng.normal(gamma_m_mean, gamma_m_cov * gamma_m_mean, n)
     t = rng.uniform(t_min, t_max, n)
     return gamma_m, t
@@ -203,24 +181,3 @@ def section_resistance(section, werf, dz, z_water, gammas, n_grid=(15, 7, 7)):
         M = M + gammas[material] * mom - GAMMA_W * mb
     x_front = SECTIONS[section]["piles"][0]
     return V, M - V * x_front
-
-
-if __name__ == "__main__":
-    H = 1.21  # wall height, werf to wall underside, median in walmuur_height.csv [m]
-    rng = np.random.default_rng(1)
-    gamma_m, t = sample_wall(100_000, rng)
-    M_R = resistance_moment(gamma_m, H, t)
-    print(f"Masonry block, H = {H:g} m, gamma_m ~ Normal({GAMMA_M_MEAN:g} kN/m3, CoV {GAMMA_M_COV:g}),"
-          f" t ~ Uniform({T_MIN:g}, {T_MAX:g}) m")
-    print(f"mean values: M_R = {resistance_moment_mean(H):6.2f} kNm/m"
-          f"   sampled: mean {M_R.mean():6.2f}, CoV {M_R.std() / M_R.mean():.3f},"
-          f" 5% {np.percentile(M_R, 5):6.2f}, 95% {np.percentile(M_R, 95):6.2f}")
-
-    gammas = {"masonry": GAMMA_M_MEAN, "concrete": GAMMA_C_MEAN, "rc": GAMMA_RC,
-              "timber": GAMMA_TIMBER, "soil": 16.5}
-    print("\nCross-sections at werf +1.10 m NAP, water +0.60 m NAP, soil 16.5 kN/m3:")
-    for name, s in SECTIONS.items():
-        one = np.array([1.10])
-        V, M = section_resistance(name, one, np.zeros(1), np.full(1, 0.60), gammas)
-        print(f"{name}: underside of the floor {s['base']:+.2f} m NAP, H = {1.10 - s['base']:.2f} m,"
-              f" V = {V[0]:5.1f} kN/m, M_R about the front pile = {M[0]:5.2f} kNm/m")

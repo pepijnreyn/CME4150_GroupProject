@@ -16,8 +16,6 @@ a horizontal force P at the head gives
     M = 0.3224 P / lambda       head pinned into a timber beam (type 1)
 
 with lambda = (k D0 / (4 E I_core))^(1/4) and k the subgrade modulus of the soil.
-
-Run: python3 scripts/StressCaclulation/PileStrength.py
 """
 
 import numpy as np
@@ -73,13 +71,3 @@ def sample_piles(n, rng):
         "shell": rng.uniform(*SHELL_NOW, n),
         "rate": rng.uniform(*RATE, n),
     }
-
-
-if __name__ == "__main__":
-    # One pile at mean values: 3 kN at the head, 30 kN axial, fixed head.
-    for shell_mm in (0, 10, 21, 30, 45):
-        d = remaining_diameter(D0_MEAN, shell_mm / 1000, np.mean(RATE), NOW)
-        M = head_moment(3.0, d, D0_MEAN, E_MEAN, np.mean(K_SUBGRADE), True)
-        s = pile_stress(M, 30.0, d, 1.0)
-        print(f"soft shell {shell_mm:2d} mm: d = {d * 1000:5.1f} mm,"
-              f" M = {M:4.2f} kNm, stress = {s / 1000:5.1f} MPa (MOR {MOR_MEAN / 1000:g})")

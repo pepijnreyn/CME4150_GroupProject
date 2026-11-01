@@ -40,7 +40,7 @@ import pandas as pd
 
 from build_walmuur_height import places_along, walmuur_lines
 from build_walmuur_traffic import distance_to_line, entry_distance, rings
-from plot_screening_sankey import load, to_num, walmuren
+from screening import load, to_num, walmuren
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCES = ROOT / "data" / "raw" / "walmuur_foundation_sources.csv"
