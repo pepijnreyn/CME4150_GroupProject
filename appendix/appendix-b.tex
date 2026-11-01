@@ -30,11 +30,17 @@ $F_h = \tfrac12 K(\gamma H^2 - \gamma_w h_w^2) + K q_\text{eff} H
 + \tfrac12\gamma_w(h_w^2 - h_c^2)$. The same $K$ and the same groundwater
 level enter every term.
 
-The reduction of a surcharge at a distance $a$ behind the wall has the form of
-the resultant of a line load on a wall, $0.64\,Q/(1+m^2)$ with $m = a/H$
-\parencite{terzaghi1954,navfac1986}. It is on the safe side for a uniform
-load, so the effect of the position $a$ (Table~\ref{tab:tornado}) is probably
-overstated, not understated.
+The reduction of a surcharge at a distance $a$ behind the wall is the team's
+own approximation. It has the shape $1/(1+m^2)$, with $m = a/H$, of the
+resultant of a line load $Q$ on a wall, $0.64\,Q/(1+m^2)$
+\parencite{terzaghi1954,navfac1986}, but without the factor 0.64 and applied to
+a uniform load. It is on the safe side: the Rankine wedge, a common
+simplification, loads only the part of the wall below the depth
+$a \tan(45^\circ + \varphi/2)$. For a load 1\,m behind a wall of 1.7\,m this
+depth is at least 1.29\,m with the $\varphi$ of the three soil classes, so the
+wedge loads at most the lowest 0.41\,m, whereas $q_\text{eff} = 0.74\,q$ acts
+over the whole height. The effect of the position $a$
+(Table~\ref{tab:tornado}) is therefore probably overstated, not understated.
 
 \subsection{Resistance against overturning}\label{app:prob-resistance}
 
@@ -50,7 +56,8 @@ The body that tips is the wall, its floor and the soil on the floor. Its
 weight $V$ and moment $M_W$ about the front pile row follow from the areas of the
 parts in the measured cross-section (masonry, tamped concrete, reinforced
 concrete or timber, and soil). Below the mean of the canal and the groundwater
-level each part weighs $\gamma - \gamma_w$. The soil behind the body drags it
+level each part weighs $\gamma - \gamma_w$, a simplification of the two water
+levels. The soil behind the body drags it
 down by wall friction:
 \begin{equation}
 M_R = \theta_R M_W + \tan\delta\,F_s\,(x_\text{back} - x_\text{front}),
@@ -67,24 +74,29 @@ founded part of the type-1 resistance.
 
 The rear row carries $F_r = (M_R - S)/(x_\text{rear} - x_\text{front})$; the
 front row carries the rest of the weight, $F = V + \tan\delta\,F_s - F_r$. For
-type 2 the front row is raked 1:10 and takes $0.1F$ horizontally. The rest of
-the horizontal force is shared by both rows, so per pile (spacing $s$)
+type 2 the front row is raked 1:10 and takes $0.1F$ horizontally. The team
+assumes that both rows share the rest of the horizontal force equally, so per
+pile (spacing $s$)
 \begin{equation}
 P = \tfrac12 (F_h - 0.1F)\,s, \qquad N = F s \sqrt{1 + 0.1^2}.
 \end{equation}
-The moment in a long pile on elastic springs (Hetényi) is
+The moment in a long pile on elastic springs follows from the theory of a beam
+on an elastic foundation \parencite{hetenyi1946}:
 \begin{equation}
 M = \frac{P}{2\lambda} \;\text{(fixed head, type 2)}, \qquad
 M = \frac{0.3224\,P}{\lambda} \;\text{(pinned head, type 1)},
 \end{equation}
-with $\lambda = \left(k D_0 / 4 E I\right)^{1/4}$ and $I = \pi d^4/64$.
-A sound core thinner than 20\,mm counts as broken.
-The pile breaks when
+with $\lambda = \left(k D_0 / 4 E I\right)^{1/4}$ and $I = \pi d^4/64$. The
+team takes the head as fixed for type~2, as the concrete floor restrains the
+rotation of the pile heads, and as pinned for type~1, as a timber beam hardly
+does. A sound core thinner than 20\,mm counts as broken, a lower limit set by
+the team. As in \textcite[eq.~7.3]{hemel2023}, the pile breaks when
 \begin{equation}
 \theta_M \frac{32 M}{\pi d^3} + \frac{4N}{\pi d^2} > \text{MOR},
 \qquad d = D_0 - 2\bigl(s_0 + r\,(t - 2026)\bigr),
 \end{equation}
-where $s_0$ is today's soft shell and $r$ its growth rate.
+where $s_0$ is today's soft shell and $r$ its growth rate: the soft shell
+carries no load and grows at a constant rate \parencite{hemel2023,nen8707}.
 
 \subsection{Parameter estimation}\label{app:prob-estimation}
 
@@ -320,8 +332,9 @@ updated best-estimate $\beta$ (2026) for each variant:
     90\,\% of the draws (found by trial, with 20{,}000 draws per wall); type~2 as in
     the base model.
   \item \emph{Survey}: the horizontal displacement of the pile heads under
-    today's soil and water (Het\'enyi: $y = P\lambda/(kD_0)$ for a fixed head,
-    twice that for a pinned head) is measured with an error of 2\,mm. Shown are
+    today's soil and water, $y = P\lambda/(kD_0)$ for a fixed head and twice
+    that for a pinned head \parencite{hetenyi1946}, is measured with an error
+    of 2\,mm. Shown are
     the chance that the measurement is below 5\,mm and $\beta$ after each
     outcome; this is the decision with imperfect information behind A7.
 \end{itemize}
