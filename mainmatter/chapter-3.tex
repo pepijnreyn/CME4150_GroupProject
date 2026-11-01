@@ -108,11 +108,12 @@ one of four bases:
     pace of 2019 to 2026, the 611\,m of the 17 walls are renewed before 2041 in
     more than 99.9\,\% of the bootstrap runs (0.00); only at the lower bound of
     that pace, 22\,m per year, would 45\,\% not be reached.
-  \item \emph{Literature:} I2 and I3 are the nominal HEART values for task types C
+  \item \emph{Literature:} I2 and I3 are the generic HEART values for task types C
     (complex, needing skill) and M (miscellaneous)
-    \parencite{williams1986heart}, as tabulated by \textcite{heart_table_plos2021}, without error-producing
-    conditions; the choice of type is the team's, and plausible conditions would
-    raise the top event from 0.049 to 0.052 (Appendix~\ref{app:heart}).
+    \parencite{williams1986heart}, as tabulated by \textcite{heart_table_plos2021}.
+    Both lie within the ranges for a knowledge-based (I2) and a rule-based (I3)
+    action \parencite[Swain and Guttmann, 1983, as cited in][]{vangelder2026risk};
+    the choice of type is the team's.
   \item \emph{Assumption:} for the other events no data were found, and the team
     used a fixed scale: extremely rare 0.001, very rare 0.005, rare 0.02,
     occasional 0.10 and likely 0.30. A load event counts only if it occurs
@@ -177,7 +178,7 @@ For the 17 walls together, each with its own years until renewal and its own LS,
 the team used Monte Carlo simulation ($4\times10^5$ runs), because some causes
 act on several walls at once. The failure model simulates the walls
 independently (Section~\ref{sec:prob-dependence}), so their model events are
-linked here with a Gaussian copula and a weak correlation, $\rho=0.084$, a team
+drawn here from correlated standard normals with a weak correlation, $\rho=0.1$, a team
 judgement for the shared pile age and soil without data.
 S3, I1 and I2 are partly shared (the same screening model, programme and
 inspectors): 100\,\%, 100\,\% and 50\,\% of their probability is one common draw
@@ -194,11 +195,12 @@ expected number of failures before renewal is 0.82
 (Figure~\ref{fig:app-fault-tree}). The tree takes the 0.97 model events of
 Section~\ref{sec:regression}, lets the repair chain stop half of them, and adds
 0.36 from the other load events. Common cause hardly changes the spread
-(standard deviation 0.92 to 0.93). Of the 18 minimal cut sets, eight are of order 1
+(standard deviation 0.93 to 0.94). Of the 18 minimal cut sets, eight are of order 1
 (the load events), five of order 2 (LS with I3 or L1 to L4) and five of order 3
 (LS with NW and one of S1 to S3, I1 or I2). The Fussell--Vesely importance
-\parencite{fussell1975} is 0.53 for the model event, 0.35 for scour E3, 0.21
-for NW, 0.08 for I1 and 0.06 for each of L2 to L4. Moving one probability from
+\parencite{fussell1975}, the share of the top event from the minimal cut sets
+that contain an event, is 0.54 for the model event, 0.36 for scour E3, 0.30
+for NW, 0.17 for I1 and 0.11 for each of L2 to L4. Moving one probability from
 its lower to its upper bound changes the result most for LS (0.20), E3 (0.047)
 and L1 (0.013).
 
@@ -249,7 +251,7 @@ probabilities are propagated through the same tree. The decision tree
 (Figure~\ref{fig:dtree}) has one decision node with eight alternatives. Seven end
 in a chance node with two outcomes: the programme does or does not prevent a
 failure, which here means an emergency measure or a closure. The eighth, A7,
-first measures the wall and then chooses (a preposterior analysis). The
+first measures the wall and then chooses (a decision with imperfect information). The
 objective is the lowest expected total cost
 \begin{equation}
   E[C_i] = c_i + P_{f,i}\, C_f\, \mathit{DF}_i ,

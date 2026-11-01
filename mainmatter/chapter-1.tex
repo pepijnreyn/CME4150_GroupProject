@@ -286,10 +286,9 @@ all 17 walls with 100{,}000 draws per run. All runs share the random numbers of
 the inputs that are not fixed, so the differences are not Monte Carlo noise.
 The swing between the two values shows how much knowing an input could change
 $\beta$, and the number of walls whose risk class then changes shows whether it
-would change a decision. FORM influence coefficients were not an option,
-because threshold functions and the rejection step make the limit state
-non-smooth, and variance-based indices of a failure indicator do not
-translate directly into the effect of a measurement on $\beta$. The one-at-a-time method ignores interactions; the strongest, between the wall type and the other inputs, shows in the swings per type. Its swings also depend on the chosen percentiles.
+would change a decision. FORM influence factors were not an option,
+because threshold functions and the proven-strength check make the limit state
+non-smooth. The one-at-a-time method ignores interactions; the strongest, between the wall type and the other inputs, shows in the swings per type. Its swings also depend on the chosen percentiles.
 
 \begin{table}[htbp]
 \centering
@@ -471,12 +470,10 @@ of NEN~8700 can replace the relative classes: red below the rejection level,
 orange up to the renovation level, green above it \parencite{nen8700}.
 
 Crude Monte Carlo simulation computes the failure probability, rather than
-FORM, because the limit states are not smooth, the wall type enters as a
+the mean-value approach or FORM, because the limit states are not smooth, the wall type enters as a
 discrete mixture, and the proven-strength update reduces to keeping the draws
 that pass the survival check \parencite{hemel2024}. A deterministic check with
-partial factors would build in the safety margins for new structures, which the assignment asks to question, and ARK alone would not quantify the uncertainty. A
-Markov model on NEN~2767 scores needs inspection histories, and a Bayesian
-network or a multi-criteria analysis needs data or weights that do not exist. A
+partial factors would build in the safety margins for new structures, which the assignment asks to question, and a weighted multi-criteria score such as ARK ranks walls but gives no failure probability, so it serves only the walls without a model (Appendix~\ref{app:portfolio}). A
 one-at-a-time sensitivity analysis shows what to measure
 (Section~\ref{sec:dimension-reduction}). A fault tree
 (Section~\ref{sec:fault-tree}) adds human and organisational causes, a decision

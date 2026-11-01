@@ -28,14 +28,10 @@ $F_h = \tfrac12 K(\gamma H^2 - \gamma_w h_w^2) + K q_\text{eff} H
 level enter every term.
 
 The reduction of a surcharge at a distance $a$ behind the wall has the form of
-the Boussinesq resultant of a line load $Q$ on a rigid wall,
-$P = 0.64\,Q/(1+m^2)$ with $m = a/H$ \parencite{terzaghi1954,navfac1986}. For
-a uniform load from $a$ onwards it is conservative: the Rankine-wedge approach
-of common practice loads only the part of the wall below the line at
-$45^\circ + \varphi/2$ from the edge of the load, which for $H = 1.7$\,m gives
-$0.99\,KqH$ instead of $1.56\,KqH$ at $a = 0.5$\,m, and $0.27$ instead of
-$1.26\,KqH$ at $a = 1$\,m. The position $a$ is therefore an input whose
-effect (Table~\ref{tab:tornado}) is probably overstated, not understated.
+the resultant of a line load on a wall, $0.64\,Q/(1+m^2)$ with $m = a/H$
+\parencite{terzaghi1954,navfac1986}. It is on the safe side for a uniform
+load, so the effect of the position $a$ (Table~\ref{tab:tornado}) is probably
+overstated, not understated.
 
 \subsection{Resistance against overturning}\label{app:prob-resistance}
 
@@ -97,9 +93,10 @@ bounds.
 \paragraph{Proven strength.} Let $\mathcal{E}$ be the event that the wall stands today
 under soil and water, without surcharge. Every draw $\mathbf{x}_i$ is checked
 against $\mathcal{E}$ with its own resistance and soil and a separate groundwater draw.
-Bayes' rule gives $f(\mathbf{x} \mid \mathcal{E}) \propto f(\mathbf{x})\,
-\mathbf{1}[\mathbf{x} \in \mathcal{E}]$, so the updated failure probability is
-estimated by rejection:
+By the definition of conditional probability,
+$P(\text{fail} \mid \mathcal{E}) = P(\text{fail} \cap \mathcal{E})/P(\mathcal{E})$,
+so the updated failure probability is the share of failures among the draws in
+which the wall stands today:
 \begin{equation}
 \hat P_{f\mid \mathcal{E}} = \frac{\sum_i \mathbf{1}[\text{fail}_i]\,\mathbf{1}[\mathcal{E}_i]}{\sum_i \mathbf{1}[\mathcal{E}_i]}.
 \end{equation}
@@ -174,9 +171,10 @@ KNG 009         &  18.3 & sand      & 0.5 $\rightarrow$ 0.51 & 1.07    & 2.46 & 
 
 The script \texttt{SensitivityDependence.py} reruns the model with one change at a
 time, with 200{,}000 draws per wall, type and variant and the same seeds. It
-writes \texttt{walmuur\_sensitivity.csv} in \texttt{data/processed/}. The
-correlations use a Gaussian copula: the two variables are drawn from
-correlated standard normals and transformed to their own distributions. For
+writes \texttt{walmuur\_sensitivity.csv} in \texttt{data/processed/}. For a
+correlation $\rho$, two standard normals $z_1$ and $z_2$ give
+$z_3 = \rho z_1 + \sqrt{1-\rho^2}\,z_2$, and $z_1$ and $z_3$ are transformed to
+the distributions of the two variables. For
 the uncertain soil class, every class found within 150\,m gets a prior weight
 equal to its share of the borings; like the wall type, it is then updated
 with proven strength. Table~\ref{tab:sens-summary} summarises the change in
@@ -364,7 +362,7 @@ Surcharge & $N(7\,\text{kPa}, 0.20)$ &
 
 Figure~\ref{fig:app-werf-fit} tests the one input with enough data for a fit.
 The AHN points on the werf of the 38 walls with a werf deviate from their wall
-median in a heavy-tailed way (Shapiro--Wilk $p < 0.001$): most lie within a
+median in a heavy-tailed way (Kolmogorov--Smirnov $p < 0.001$): most lie within a
 normal spread of 0.058\,m, but some fall on steps or terraces. The model
 therefore uses the median, not the mean, and its error is what $\sigma$ must
 cover. The bootstrap standard error of the median is 0.038\,m for the typical
@@ -415,13 +413,13 @@ updated best-estimate $\beta$ (2026) for each variant:
     alternative A6 of Section~\ref{sec:tradeoff}.
   \item \emph{Type~1 recalibrated}: $\theta_R$ of type~1 times 2.09, the
     smallest factor at which every wall of type~1 stands today in at least
-    90\,\% of the draws (bisection with 20{,}000 draws per wall); type~2 as in
+    90\,\% of the draws (found by trial, with 20{,}000 draws per wall); type~2 as in
     the base model.
   \item \emph{Survey}: the horizontal displacement of the pile heads under
     today's soil and water (Het\'enyi: $y = P\lambda/(kD_0)$ for a fixed head,
     twice that for a pinned head) is measured with an error of 2\,mm. Shown are
     the chance that the measurement is below 5\,mm and $\beta$ after each
-    outcome; this is the preposterior analysis behind A7.
+    outcome; this is the decision with imperfect information behind A7.
 \end{itemize}
 
 \begin{table}[htbp]
@@ -484,8 +482,8 @@ The model is used to rank the walls (Section~\ref{sec:prob-validity}), so the
 script \texttt{ranking\_robustness.py} tests the ranking itself against every
 variant of Tables~\ref{tab:sens-walls} and \ref{tab:model-checks}
 (Table~\ref{tab:robustness}). For each variant it gives the Spearman rank
-correlation $\rho_s$ of the best-estimate $\beta$ with the base run of the same
-script, the number of walls whose risk class changes and how many of the nine
+correlation $\rho_s$, the correlation coefficient of the ranks of the walls by
+best-estimate $\beta$, with the base run of the same script, the number of walls whose risk class changes and how many of the nine
 red walls stay red. In a variant every wall changes, so the classes are set
 relative to the median $P_f$ of that variant, as the method would do.
 
@@ -558,37 +556,6 @@ are renewed spreads from 2028 to about 2040 (90\,\% interval 2029 to 2036).
 \caption{Left: renewed length of walmuur per year (Figure~\ref{fig:production}) with the linear trend, the mean of the fast years and of the recent years, and the 100\,m per year of the plan. Right: year in which all 17 modelled walls are renewed in 20{,}000 bootstrap runs, lowest $\beta$ first, with the expected number of walls that reach a limit state before renewal.}
 \label{fig:app-production}
 \end{figure}
-
-\subsection{Human error probabilities}\label{app:heart}
-
-HEART gives a human error probability as a nominal value for a generic task
-type, multiplied for each error-producing condition (EPC) by
-$(\text{EPC} - 1) \times \text{APOA} + 1$, with APOA the assessed proportion of
-affect between 0 and 1 \parencite{williams1986heart}, as tabulated by
-\textcite{heart_table_plos2021}.
-Section~\ref{sec:ft-probabilities} uses the nominal values without EPCs, as the
-conditions of a dive inspection and of the follow-up in Utrecht are not known.
-Table~\ref{tab:heart} shows the EPCs that plausibly apply, with proportions
-chosen by the team. They raise the top event of the median wall from 0.049 to
-0.052; the cheapest alternative (A0) and the risk-averse choice (A4) of
-Section~\ref{sec:tradeoff} stay the same.
-
-\begin{table}[htbp]
-\centering
-\small
-\caption{HEART values of I2 and I3: nominal value of the generic task type
-(5th--95th percentile) and the value with the EPCs that plausibly apply.}
-\label{tab:heart}
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.4cm}
-  >{\raggedright\arraybackslash}p{2.6cm} l >{\raggedright\arraybackslash}X r@{}}
-\toprule
-Event & Generic task type & Nominal & EPCs (multiplier, APOA) & With EPCs \\
-\midrule
-I2 Damage under water missed & C: complex task needing skill and understanding & 0.16 (0.12--0.28) & Low signal-to-noise ratio under water ($\times$10, 0.1); little independent checking ($\times$3, 0.2) & 0.43 \\
-I3 Warning not acted on & M: miscellaneous task & 0.03 (0.008--0.11) & Mismatch between perceived and real risk ($\times$4, 0.2); conflict between immediate and long-term objectives ($\times$2.5, 0.2) & 0.06 \\
-\bottomrule
-\end{tabularx}
-\end{table}
 
 \clearpage
 \section{Source code}
