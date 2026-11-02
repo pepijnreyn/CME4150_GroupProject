@@ -2,8 +2,9 @@
 
 Code and data behind the report *Quay walls under uncertainty: a risk-based
 programming method for Utrecht, tested on the walmuren of the Wervengebied*
-(CME4150 Managing Uncertainty & Data, TU Delft, 2026). The report itself is the
-Overleaf project in `report/`.
+(CME4150 Managing Uncertainty & Data, TU Delft, 2026). The LaTeX source of the
+report was kept in `report/` until submission; it is in the git history up to
+commit `f823887`.
 
 The analysis computes a **failure probability (Pf and β) for each walmuur** in
 the Wervengebied that still stands on its old timber foundation, combines it
@@ -28,7 +29,6 @@ scripts/         data, screening, risk and regression scripts
 scripts/StressCaclulation/   the load, resistance and failure probability model
 figures/         figures for the report and the per-wall data table
 docs/            notes on the register and on the failure formula
-report/          the report (Overleaf project, kept in sync as a git subtree)
 ```
 
 ## Setup
@@ -66,7 +66,7 @@ seeds, so a rerun gives the same files.
 | 14 | `regression_production_rate.py` | `production_rate_walls.csv`, `production_rate_risk.csv` | renewal-rate regression, Section 4.1 |
 | 15 | `fault_tree.py` | printed only | fault tree and decision tree, Ch. 3 |
 | 16 | `ranking_robustness.py` | `walmuur_ranking_robustness.csv`, `walmuur_tornado_class_changes.csv` | robustness of the ranking, App. B |
-| 17 | `fault_tree_figure.py` | `report/figures/fault_tree_tikz.tex` | fault tree figure, Ch. 3 |
+| 17 | `fault_tree_figure.py` | `figures/fault_tree_tikz.tex` | fault tree figure, Ch. 3 |
 | 18 | `plot_appendix_figures.py` | `figures/app_*.png`, `figures/fig_production_step.png` | figures of App. B and Section 4.1 |
 
 All scripts are in `scripts/`. Notes:
@@ -79,7 +79,6 @@ All scripts are in `scripts/`. Notes:
 - `scripts/screening.py` holds the green / orange / red screening of the
   register that most scripts import. Run on its own, it prints the screening
   counts of App. A.
-- The PNGs in `figures/` are copied by hand to `report/figures/`.
 - The replacement-cost regression of App. D has no script in this repository.
 
 ## What the model does
@@ -319,8 +318,6 @@ letters give which walls are renewed. The full list with links is in the
 - **[JCSS]** JCSS Probabilistic Model Code (2001), https://www.jcss-lc.org:
   model factors and the MOR–E correlation used in the sensitivity run.
 
-The BibTeX entries of the report are in `report/report.bib`.
-
 ## Where to read more
 
 | Question | File |
@@ -332,19 +329,3 @@ The BibTeX entries of the report are in `report/report.bib`.
 | Download date and gaps of each raw file | `data/raw/SOURCES.md` |
 | The fields of the asset register | `docs/output_areaal_overview.md` |
 | The pile-bending formula of Hemel et al. (2024) | `docs/failure_formula_notes.md` |
-| The report | `report/report.tex` |
-
-## The report folder
-
-`report/` is the team's Overleaf project, kept in sync with git subtree through
-the `overleaf` remote (branch `main`). Edits made in the Overleaf editor arrive
-as commits there, so always pull before pushing, and never force push:
-
-```
-git subtree pull --prefix=report overleaf main
-git subtree push --prefix=report overleaf main
-```
-
-The Overleaf Git token goes in `.env` at the repo root as `OVERLEAF_TOKEN=...`
-(`.env` is git-ignored). Each clone needs its own credential helper in
-`.git/config` that reads the token from there.

@@ -14,7 +14,7 @@ that the model of report section 2.1 contains (soil, canal bed, groundwater,
 pile decay and condition, wall type, masonry, cross-section). They are listed
 inside its box rather than drawn as separate events, so nothing counts twice.
 
-Writes report/figures/fault_tree_tikz.tex. Run: python3 scripts/fault_tree_figure.py
+Writes figures/fault_tree_tikz.tex. Run: python3 scripts/fault_tree_figure.py
 """
 
 from pathlib import Path
@@ -22,7 +22,7 @@ from pathlib import Path
 import fault_tree as FT
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "report" / "figures" / "fault_tree_tikz.tex"
+OUT = ROOT / "figures" / "fault_tree_tikz.tex"
 
 # category: T technical, H human, O organisational, E external (colours of the old figure)
 LEAVES = {
