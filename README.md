@@ -1,33 +1,35 @@
-# CME4150 Team Challenge - quay walls Utrecht
+# Quay walls under uncertainty: code and data
 
-Code and data for the team challenge on strategic programming of maintenance,
-strengthening and replacement of quay walls in the Municipality of Utrecht.
+Code and data behind the report *Quay walls under uncertainty: a risk-based
+programming method for Utrecht, tested on the walmuren of the Wervengebied*
+(CME4150 Managing Uncertainty & Data, TU Delft, 2026). The report itself is the
+Overleaf project in `report/`.
 
-The main result so far is a **failure probability (Pf and β) for each walmuur**
-in the Wervengebied that still stands on its old timber foundation. This README
-explains what that model does, what it is built on, where every source can be
-found, and how to rerun it. The details are in the files listed under
-[Where to read more](#where-to-read-more).
+The analysis computes a **failure probability (Pf and β) for each walmuur** in
+the Wervengebied that still stands on its old timber foundation, combines it
+with a consequence score into a risk class, and uses those results for the
+fault tree, the trade-off between measures and the renewal-rate regression.
 
 A walmuur is the low masonry wall between the werf (wharf) and the canal. It
 holds back the soil under the werf. A rak is one stretch of canal between two
 bridges; the register names a wall by its rak and bank (for example "Oude
 Gracht - Rak 03 OZ").
 
+The repository holds only what the report uses. Earlier drafts, notebooks and
+exploratory scripts were removed after submission (1 November 2026) and are
+still in the git history.
+
 ## Layout
 
 ```
 data/raw/        source data, never edited by hand (except the hand-compiled CSVs listed below)
 data/processed/  everything the scripts produce
-scripts/         build scripts: one per input (groundwater, soil, height, traffic, foundation)
+scripts/         data, screening, risk and regression scripts
 scripts/StressCaclulation/   the load, resistance and failure probability model
-figures/         plots and the data table for the report
+figures/         figures for the report and the per-wall data table
 docs/            notes on the register and on the failure formula
-report/          the Overleaf project (git subtree, see Working together); edit it in Overleaf
+report/          the report (Overleaf project, kept in sync as a git subtree)
 ```
-
-After the report was submitted (1 November 2026), every script, data file and
-figure the report does not use was removed. They are still in the git history.
 
 ## Setup
 
@@ -40,21 +42,61 @@ pip install -r requirements.txt
 The scripts need only numpy, pandas, scipy and matplotlib. Run them from the
 repository root, for example `python3 scripts/StressCaclulation/FailureProbability.py`.
 
+## Running it
+
+Run the scripts in this order; each reads the outputs of the ones before. All
+outputs go to `data/processed/` or `figures/`. The Monte Carlo runs use fixed
+seeds, so a rerun gives the same files.
+
+| Step | Script | Writes | In the report |
+|---|---|---|---|
+| 1 | `build_groundwater_layer.py` | `objects_groundwater.csv` | groundwater check, App. A |
+| 2 | `build_soil_type.py` | `masonry_walls_soil.csv` | soil class per wall, App. A |
+| 3 | `build_walmuur_height.py` | `walmuur_height.csv` | werf level and H, App. A |
+| 4 | `build_walmuur_traffic.py` | `walmuur_traffic.csv` | road distance and axle limit, App. A |
+| 5 | `build_walmuur_foundation.py` | `walmuur_foundation.csv` | renewed or still on timber, App. A |
+| 6 | `build_masonry_data_gaps.py` | `masonry_walls_data_gaps.csv` | missing register fields, App. A |
+| 7 | `table_wervengebied_data.py` | `figures/wervengebied_data_table.md` | per-wall data table |
+| 8 | `StressCaclulation/FailureProbability.py` | `walmuur_failure_probability.csv`, `_draws.json`, `_inputs.csv` | Pf per wall, Ch. 2, App. B (about 2 min) |
+| 9 | `StressCaclulation/SensitivityDependence.py` | `walmuur_sensitivity.csv` | correlations, groundwater, soil class, App. B (about 5 min) |
+| 10 | `StressCaclulation/SensitivityTornado.py` | `walmuur_tornado.csv` | one input fixed at a time, App. B (about 15 min) |
+| 11 | `StressCaclulation/ModelChecks.py` | `walmuur_model_checks.csv` | model checks, App. B (about 5 min) |
+| 12 | `build_walmuur_consequence.py` | `walmuur_consequence.csv` | consequence score, App. C |
+| 13 | `plot_results_map.py` | `walmuur_risk_class.csv`, `figures/results_map*.png` | risk classes, Ch. 4, App. C |
+| 14 | `regression_production_rate.py` | `production_rate_walls.csv`, `production_rate_risk.csv` | renewal-rate regression, Section 4.1 |
+| 15 | `fault_tree.py` | printed only | fault tree and decision tree, Ch. 3 |
+| 16 | `ranking_robustness.py` | `walmuur_ranking_robustness.csv`, `walmuur_tornado_class_changes.csv` | robustness of the ranking, App. B |
+| 17 | `fault_tree_figure.py` | `report/figures/fault_tree_tikz.tex` | fault tree figure, Ch. 3 |
+| 18 | `plot_appendix_figures.py` | `figures/app_*.png`, `figures/fig_production_step.png` | figures of App. B and Section 4.1 |
+
+All scripts are in `scripts/`. Notes:
+
+- Step 1 needs the BRO head series (about 1.2 GB), which are not in the
+  repository. Run `scripts/fetch_bro_grondwater.py --series` first, or skip the
+  step: its output is in the repository.
+- Steps 3–5 download AHN, BGT, NDW and the UtrechtOpen layer when their files
+  in `data/raw/` are missing.
+- `scripts/screening.py` holds the green / orange / red screening of the
+  register that most scripts import. Run on its own, it prints the screening
+  counts of App. A.
+- The PNGs in `figures/` are copied by hand to `report/figures/`.
+- The replacement-cost regression of App. D has no script in this repository.
+
 ## What the model does
 
 ### Which walls get a Pf
 
 The municipal asset register has 51 named walmuren.
 
-- **Foundation** (`scripts/build_walmuur_foundation.py`): from the city's
-  progress reports, 32 of the 51 are already renewed on steel sheet or tube
-  piles. The timber model does not describe them, so they are not computed.
-- **Screening** (`scripts/screening.py`): a wall is past its design
-  life when `Eindjaar` (= `Aanlegjaar` + 80 years) is before 2026. Past design
-  life and masonry puts it in red/orange: 18 of the 51. The register's
-  `Aanlegjaar` is often not updated after a renewal, so a renewed wall counts
-  from its renewal year; on the register year alone, 11 renewed walls would
-  also be red/orange (29 of the 51).
+- **Foundation** (`build_walmuur_foundation.py`): from the city's progress
+  reports, 32 of the 51 are already renewed on steel sheet or tube piles. The
+  timber model does not describe them, so they are not computed.
+- **Screening** (`screening.py`): a wall is past its design life when
+  `Eindjaar` (= `Aanlegjaar` + 80 years) is before 2026. Past design life and
+  masonry puts it in red/orange: 18 of the 51. The register's `Aanlegjaar` is
+  often not updated after a renewal, so a renewed wall counts from its renewal
+  year; on the register year alone, 11 renewed walls would also be red/orange
+  (29 of the 51).
 - **Werf check** (`data/raw/walmuur_werf_check.csv`, done on a map): 2 of the
   remaining 19 have no werf (Kromme Nieuwe Gracht 001, Oude Gracht Rak 07 OZ).
   There the street runs to the water, which is a different structure.
@@ -93,11 +135,11 @@ S_q     = ½ K q_eff H²,  q_eff = q H² / (H² + a²)   surcharge q at distance
 - **H** runs from the werf (AHN, per wall) to the wall underside at −0.08 m
   NAP (report 158). The median is 1.21 m. The canal bed is not measured, so H
   is a lower bound; S grows with H³, so 0.1 m more adds about 25%.
-- **K and γ_s** follow from the soil type of the nearest DINO boring (soft
+- **K and γ_s** follow from the soil class of the nearest DINO boring (soft
   clay / peat, mixed, or sand). K is lognormal, γ_s normal.
 - **Water:** the canal is fixed at +0.6 m NAP (report 158); the groundwater
   under the werf is Uniform(+0.5, +0.9) m NAP, a guess. Both are set in
-  `WaterLoad.py`, which `TotalStress.py` and `FailureProbability.py` share.
+  `WaterLoad.py`.
 - **Surcharge:** q ~ Normal(7 kPa, CoV 0.20) (Hemel et al. 2024) at
   a ~ Uniform(0, 3) m. That is heavy for a pedestrian werf.
 
@@ -128,13 +170,13 @@ the chance of each wall type.
 
 ### Inputs
 
-From the data, per wall: the werf level, the soil type and the chance of each
+From the data, per wall: the werf level, the soil class and the chance of each
 wall type. Everything else is a distribution, the same for every wall:
 
 | Input | Distribution | Source |
 |---|---|---|
 | Werf level | Normal(AHN median, 0.05 m) | AHN; Kromme Nieuwe Gracht 005–007: Uniform(1.0, 1.6) m NAP |
-| K, γ_s | per soil type, K CoV 0.20–0.25 | group report, App. C, table C.5 |
+| K, γ_s | per soil class, K CoV 0.20–0.25 | team judgement (report Table A.6) |
 | Unit weights | masonry N(19, 0.05), tamped concrete N(23, 0.05), reinforced concrete 25, timber 10 kN/m³ | typical values |
 | Foundation level | drawing ± Uniform(−0.15, 0.15) m | schematic drawings |
 | Model factor on the resisting moment | Lognormal(1, CoV 0.15) | dimensions read from schematic drawings |
@@ -144,7 +186,7 @@ wall type. Everything else is a distribution, the same for every wall:
 | Shell growth after 2026 | Uniform(0.10, 0.25) mm/yr | Hemel 2023 §7.3.2: 0.17 mm/yr |
 | MOR, E | Normal(22 MPa, 0.10), Normal(9 GPa, 0.20) | Hemel 2023 Table 7.1 |
 | Subgrade modulus k | Uniform(4,300, 10,000) kN/m³ | Hemel 2023 Table 7.1 (clay and peat) |
-| Model factor on the pile moment θ_M | Lognormal(1, CoV 0.10) | Hemel 2023 Table 7.1, JCSS |
+| Model factor on the pile moment θ_M | Lognormal(1, CoV 0.10) | JCSS, as Hemel et al. 2024 |
 
 Every input, its distribution and its source is also written to
 `data/processed/walmuur_failure_inputs.csv`.
@@ -155,7 +197,7 @@ changes between the two years.
 
 ### Results
 
-Run of 30 October 2026, updated with proven strength:
+Base model, updated with proven strength:
 
 | | β in 2026 | β in 2041 | Walls below 1.8 (2026) |
 |---|---|---|---|
@@ -166,21 +208,21 @@ Run of 30 October 2026, updated with proven strength:
 - For type 2 the piles fail more often than the wall tips over: median Pf 0.054
   against 0.004.
 - Rak 03 OZ is lowest because type 1 is likely there (TNO found a watersloof)
-  and it holds back soft clay. Its corrected, lower werf raises β for both
-  types, but more type-1 draws now pass the proven-strength check, so P(type 2)
-  rises less (0.20 → 0.34, before the fix 0.60) and the best estimate drops.
-- No consequence class is chosen. β is held against all three rejection
-  levels of NEN 8700 Table B.2: 1.8 (CC1), 2.5 (CC2) and 3.3 (CC3).
+  and it holds back soft clay. The proven-strength check raises its chance of
+  type 2 only from 0.20 to 0.34.
+- No consequence class is chosen. β is held against the three rejection
+  levels of NEN 8700 Table B.2 for orientation: 1.8 (CC1b), 2.5 (CC2) and
+  3.3 (CC3).
 - With only the masonry block (`M_R = γ_m H t² / 2`, an earlier version of
   `WallResistance.py`) Pf is about 1 for every wall. That is why the model uses
   the real cross-sections with their floor.
 - `SensitivityDependence.py` reruns the model with one change at a time.
-  Correlating K with γ_s, or MOR with E, changes β by 0.03 at most. Groundwater
+  Correlating K with γ_s, or MOR with E, changes β by 0.01 at most. Groundwater
   0.1 m higher moves β by −0.38 to +0.08. The soil class matters most: taking a
   mix of the borings within 150 m moves β by −0.70 to +0.56.
-
-An interactive dashboard of these results is a private claude.ai page; ask
-Pepijn for access. It is updated by hand after a rerun.
+- Combined with the consequence score, 9 of the 17 walls (398 m) are red,
+  3 orange and 5 green (`walmuur_risk_class.csv`). How stable that ranking is
+  under the model variants is in App. B.
 
 ### Main limitations
 
@@ -196,49 +238,6 @@ Pepijn for access. It is updated by hand after a rerun.
   screen. Settlement from pile rot is the damage actually seen on these walls
   (report 156, IBU).
 
-Corrected on 30 October 2026:
-- The werf level was the median of all AHN points on the werf side. Points on
-  a stair or the street raised the werf of Rak 03 OZ (+1.48 → +1.14 m NAP), Kromme Nieuwe Gracht 002
-  (+1.57 → +1.11) and 009 (+1.53 → +0.98), and of 12 other walls by
-  0.01–0.14 m. `build_walmuur_height.py` now leaves out points above +1.6 m NAP.
-- `TotalStress.py` and `WaterLoad.py` measured the water from the street
-  (groundwater 1.73–2.13 m and canal 2.0 m deep), so the load figures at
-  H ≈ 1.2 m had no water. They now use the werf levels of `FailureProbability.py`.
-- The screening counted renewed walls from the register's old `Aanlegjaar`;
-  it now counts them from their renewal year (29 → 18 red/orange).
-
-## Running it
-
-Each script reads the output of the one before. All outputs go to
-`data/processed/` or `figures/`.
-
-| Step | Script | Writes | Notes |
-|---|---|---|---|
-| 1 | `scripts/build_groundwater_layer.py` | `objects_groundwater.csv` | needs the BRO head series, which are not in git (about 2.5 GB): run `scripts/fetch_bro_grondwater.py --series` first, or skip this step, as its output is in the repo |
-| 2 | `scripts/build_soil_type.py` | `masonry_walls_soil.csv` | |
-| 3 | `scripts/build_walmuur_height.py` | `walmuur_height.csv` | downloads AHN if `data/raw/AHN/` is empty |
-| 4 | `scripts/build_walmuur_traffic.py` | `walmuur_traffic.csv` | downloads BGT and NDW if their files are missing |
-| 5 | `scripts/build_walmuur_foundation.py` | `walmuur_foundation.csv` | downloads the UtrechtOpen layer if missing |
-| 6 | `scripts/build_masonry_data_gaps.py` | `masonry_walls_data_gaps.csv` | |
-| 7 | `scripts/table_wervengebied_data.py` | `figures/wervengebied_data_table.md` | |
-| 8 | `scripts/StressCaclulation/FailureProbability.py` | `walmuur_failure_probability.csv`, `_draws.json`, `_inputs.csv` | about 2 minutes |
-| (9) | `scripts/StressCaclulation/SensitivityDependence.py` | `walmuur_sensitivity.csv` | about 25 minutes |
-
-The other analysis scripts (model checks, tornado, ranking robustness,
-regression, fault tree, consequence score) are listed in the appendix "Source
-code" of the report. `scripts/screening.py` holds the screening
-that most scripts import.
-
-Figures in the report:
-- `scripts/plot_appendix_figures.py`: the figures of Appendix B and the
-  production-rate figure of Chapter 4.
-- `scripts/plot_results_map.py`: the risk-class maps.
-- `scripts/fault_tree_figure.py`: the fault tree of Chapter 3, written straight
-  to `report/figures/fault_tree_tikz.tex`.
-
-The PNGs are written to `figures/`; copy a regenerated one to `report/figures/`.
-The report itself is the Overleaf project in `report/`.
-
 ## Sources
 
 The key in brackets is the one used in the data table README and in
@@ -250,10 +249,10 @@ The key in brackets is the one used in the data table README and in
 |---|---|---|---|
 | Asset register of the municipality | delivered to TU Delft for the challenge, 26 Aug 2025 | `Output areaal GU TU Delft 26-08.json`; overview in `docs/output_areaal_overview.md` | the 51 walmuren, length, material, `Aanlegjaar` and `Eindjaar` for the screening |
 | AHN ground level (dtm_05m) | PDOK WMS, https://service.pdok.nl/rws/ahn/wms/v1_0 | `AHN/walmuur_ahn_points.csv` | werf level per wall, so H |
-| DINO borehole logs | BROloket, https://www.broloket.nl | `BRO_GeotechnischBooronderzoek/` (76 logs) | soil type per wall, so K and γ_s |
-| BRO groundwater wells and head series | PDOK OGC API, https://api.pdok.nl/tno/bro-grondwatermonitoring-in-samenhang-karakteristieken/ogc/v1 | `APIDatacollection/` | GHG/GLG per wall. Not used in the Pf: the wells are 143–418 m from the walmuren and under raised streets |
+| DINO borehole logs | BROloket, https://www.broloket.nl | `BRO_GeotechnischBooronderzoek/` (76 logs) | soil class per wall, so K and γ_s |
+| BRO groundwater wells and head series | PDOK OGC API, https://api.pdok.nl/tno/bro-grondwatermonitoring-in-samenhang-karakteristieken/ogc/v1 | `APIDatacollection/` (wells, tubes, series list; the series themselves are not kept) | GHG/GLG per wall. Not used in the Pf: the wells are 143–418 m from the walmuren and under raised streets |
 | BGT road areas (wegdeel) | PDOK OGC API, https://api.pdok.nl/kadaster/bgt/ogc/v1 | `BGT/walmuur_wegdeel.geojson` | distance from each wall to the nearest road |
-| NDW traffic signs | https://data.ndw.nu/api/rest/static-road-data/traffic-signs/v5/current-state | `NDW/traffic_signs_utrecht.geojson` | axle limit (2.0 t on all canal streets), for the traffic group |
+| NDW traffic signs | https://data.ndw.nu/api/rest/static-road-data/traffic-signs/v5/current-state | `NDW/traffic_signs_utrecht.geojson` | axle limit (2.0 t on all canal streets) |
 | Werfmuren layer, UtrechtOpen | WFS, https://geodata.utrecht.nl/geoserver/UtrechtOpen/ows | `UtrechtOpen/werfmuren.geojson` | rak and bank of each register wall |
 | Foundation per rak (hand-compiled) | the city reports and letters listed below | `walmuur_foundation_sources.csv`, `walmuur_foundation_documents.csv` | renewed or still on timber piles |
 | Wall type per rak (hand-compiled) | [TNO] Bijlage G | `walmuur_tno2009_type.csv` | chance of type 2 per rak |
@@ -309,8 +308,8 @@ letters give which walls are renewed. The full list with links is in the
 - **[HEMEL24]** Hemel, M.-J., Peters, D.J., Schweckendiek, T., & Jonkman, S.N.
   (2024). Reliability updating for lateral failure of historic quay walls.
   *Georisk*, 18(4), 882–903. Through the TU Delft library. Used: the
-  surcharge q and updating with proven strength (eq. 12).
-  `docs/failure_formula_notes.md` follows this paper.
+  surcharge q, the model factor on the pile moment and updating with proven
+  strength (eq. 12). `docs/failure_formula_notes.md` follows this paper.
 - **[NEN8700]** NEN 8700:2011+A1:2020, Table B.2: the target β (1.8 / 2.5 /
   3.3) and the 15-year reference period. NEN 8707:2018 (existing geotechnical
   structures) uses the same values. Not in the repo (copyright); open them
@@ -320,7 +319,7 @@ letters give which walls are renewed. The full list with links is in the
 - **[JCSS]** JCSS Probabilistic Model Code (2001), https://www.jcss-lc.org:
   model factors and the MOR–E correlation used in the sensitivity run.
 
-The BibTeX entries are in `report/report.bib`.
+The BibTeX entries of the report are in `report/report.bib`.
 
 ## Where to read more
 
@@ -335,22 +334,17 @@ The BibTeX entries are in `report/report.bib`.
 | The pile-bending formula of Hemel et al. (2024) | `docs/failure_formula_notes.md` |
 | The report | `report/report.tex` |
 
-## Working together
+## The report folder
 
-- One person per script where possible.
-- Anything a script writes goes to `data/processed/` or `figures/`, so it can
-  always be regenerated from `data/raw/`.
-- After changing an input, rerun the steps after it (see
-  [Running it](#running-it)), and update the numbers in the table README.
-- Note the source and download date of every file you add to `data/raw/` in
-  `data/raw/SOURCES.md`.
-- `report/` is the Overleaf project, kept in sync with git subtree through the
-  `overleaf` remote (branch `main`). Always pull before pushing, because edits
-  made in the Overleaf editor arrive as commits there. Never force push.
-  ```
-  git subtree pull --prefix=report overleaf main
-  git subtree push --prefix=report overleaf main
-  ```
-  The Overleaf Git token goes in `.env` at the repo root as `OVERLEAF_TOKEN=...`
-  (`.env` is git-ignored). Each clone needs its own credential helper in
-  `.git/config` that reads the token from there.
+`report/` is the team's Overleaf project, kept in sync with git subtree through
+the `overleaf` remote (branch `main`). Edits made in the Overleaf editor arrive
+as commits there, so always pull before pushing, and never force push:
+
+```
+git subtree pull --prefix=report overleaf main
+git subtree push --prefix=report overleaf main
+```
+
+The Overleaf Git token goes in `.env` at the repo root as `OVERLEAF_TOKEN=...`
+(`.env` is git-ignored). Each clone needs its own credential helper in
+`.git/config` that reads the token from there.
