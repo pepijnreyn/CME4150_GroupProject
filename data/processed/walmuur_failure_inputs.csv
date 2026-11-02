@@ -2,7 +2,7 @@ input,distribution,per_wall,source
 Werf level,"Normal(AHN median, 0.05 m)",yes,"AHN dtm_05m, build_walmuur_height.py"
 "Werf level, walls marked [h]","Uniform(1.0, 1.6) m NAP",yes,guess: the range of the measured werven; replaced once checked on a map
 "Werf level, walls checked on a map","Normal(level read, 0.05 m)",yes,"data/raw/walmuur_werf_check.csv, filled in by hand"
-"Soil type (K, gamma_s)",per SOIL_TYPES in SoilForce.py,yes,"DINO borings, build_soil_type.py; K and gamma_s: group report table C.5"
+"Soil type (K, gamma_s)",per SOIL_TYPES in SoilForce.py,yes,"DINO borings, build_soil_type.py; K and gamma_s: team judgement (report Table A.6)"
 Wall type,"chance of type 2 per rak: 20% where TNO found a watersloof, 90% where it found a concrete floor, 50% for both, 80% without a hint",yes,TNO-034-DTM-2009-01978 Bijlage G (walmuur_tno2009_type.csv); IBU note pp. 4-5; report 156 p. 23
 Cross-section,"measured polygons, WallResistance.SECTIONS",no,Erfgoed Utrecht report 156 Afb. 3.1 (type 2); IBU note Afb. 2.1.1a (type 1)
 Foundation level,"drawing + Uniform(-0.15, 0.15) m",no,guess: schematic drawings; report 158 gives -0.08 m NAP for the wall underside
@@ -24,4 +24,4 @@ Soft-shell growth after 2026,"Uniform(0.10, 0.25) mm/yr",no,Hemel (2023) 7.3.2: 
 Bending strength MOR,"Normal(22 MPa, CoV 0.1)",no,Hemel (2023) Table 7.1
 Modulus of elasticity,"Normal(9 GPa, CoV 0.2)",no,Hemel (2023) Table 7.1
 Subgrade modulus k,"Uniform(4300, 10000) kN/m3",no,"Hemel (2023) Table 7.1, clay and peat"
-Model factor on the pile moment,"Lognormal(1, CoV 0.1)",no,"JCSS, as Hemel (2023)"
+Model factor on the pile moment,"Lognormal(1, CoV 0.1)",no,"JCSS, as Hemel et al. (2024)"

@@ -102,7 +102,7 @@ INPUTS = [
     ("Werf level, walls checked on a map", f"Normal(level read, {WERF_SD} m)", "yes",
      "data/raw/walmuur_werf_check.csv, filled in by hand"),
     ("Soil type (K, gamma_s)", "per SOIL_TYPES in SoilForce.py", "yes",
-     "DINO borings, build_soil_type.py; K and gamma_s: group report table C.5"),
+     "DINO borings, build_soil_type.py; K and gamma_s: team judgement (report Table A.6)"),
     ("Wall type", "chance of type 2 per rak: 20% where TNO found a watersloof, 90% where it "
      f"found a concrete floor, 50% for both, {P_TYPE2:.0%} without a hint", "yes",
      "TNO-034-DTM-2009-01978 Bijlage G (walmuur_tno2009_type.csv); IBU note pp. 4-5; "
@@ -143,7 +143,7 @@ INPUTS = [
     ("Subgrade modulus k", f"Uniform({K_SUBGRADE[0]:g}, {K_SUBGRADE[1]:g}) kN/m3", "no",
      "Hemel (2023) Table 7.1, clay and peat"),
     ("Model factor on the pile moment", f"Lognormal(1, CoV {THETA_M_COV})", "no",
-     "JCSS, as Hemel (2023)"),
+     "JCSS, as Hemel et al. (2024)"),
 ]
 
 

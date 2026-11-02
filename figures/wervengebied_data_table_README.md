@@ -221,8 +221,7 @@ boring in brackets. The class chooses K and γ_s in `SOIL_TYPES` of
 | mixed | 0.45 (0.25) | 16.5 kN/m³ (0.06) | 7.4 |
 | sand | 0.35 (0.20) | 18.0 kN/m³ (0.05) | 6.3 |
 
-The K and γ_s values are assumptions from the group report (App. C,
-table C.5). The soil load scales with K·γ_s, so a wall in soft clay / peat gets
+The K and γ_s values are the team's own judgement (report Table A.6). The soil load scales with K·γ_s, so a wall in soft clay / peat gets
 about 43% more load than the same wall in sand.
 
 **How a walmuur gets its class:**
